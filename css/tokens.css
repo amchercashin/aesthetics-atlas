@@ -1,0 +1,113 @@
+/* Токены дизайн-системы «Музей-хамелеон».
+   Стены — нейтральная бумага; акцент — ультрамарин; эпохи — исторические пигменты
+   (палитры проверены на различимость при дальтонизме и контраст ≥ 3:1). */
+
+:root {
+  color-scheme: light;
+  --paper: #f2f1ee;
+  --paper-2: #fbfaf8;
+  --paper-3: #e7e5e0;
+  --ink: #1a1a1c;
+  --ink-2: #44433f;
+  --ink-3: #69675f;
+  --rule: rgb(26 26 28 / 0.13);
+  --rule-strong: rgb(26 26 28 / 0.3);
+  --accent: #2f43b8;
+  --accent-ink: #ffffff;
+  --shadow-art: 0 1px 2px rgb(0 0 0 / 0.08), 0 12px 32px -12px rgb(0 0 0 / 0.28);
+  --scrim: rgb(20 20 22 / 0.42);
+
+  --era-prehistory: #c05d1d;
+  --era-ancient: #1e82b0;
+  --era-antiquity: #a7041c;
+  --era-medieval: #91791a;
+  --era-renaissance: #596cda;
+  --era-xix: #913a9d;
+  --era-fin-de-siecle: #01734a;
+  --era-avant-garde: #c22d1f;
+  --era-postwar: #1d3fbf;
+  --era-postmodern: #932065;
+  --era-digital: #0683aa;
+  --era-internet: #693aa6;
+
+  --serif: "Spectral", "Georgia", "Times New Roman", serif;
+  --sans: "Golos Text", "Segoe UI", system-ui, -apple-system, sans-serif;
+
+  /* Типографская шкала (классическая: 12 14 16 18 21 24 30 36 48 60 72 96) */
+  --t-xs: 0.75rem;
+  --t-sm: 0.875rem;
+  --t-md: 1rem;
+  --t-lg: 1.125rem;
+  --t-xl: 1.3125rem;
+  --t-2xl: 1.5rem;
+  --t-3xl: 1.875rem;
+  --t-4xl: 2.25rem;
+  --t-5xl: 3rem;
+  --t-6xl: 3.75rem;
+  --t-7xl: 4.5rem;
+
+  --gutter: clamp(16px, 4vw, 48px);
+  --measure: 68ch;
+  --header-h: 60px;
+  --radius-chip: 999px;
+  --radius-ui: 6px;
+  --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --paper: #202226;
+    --paper-2: #2a2c31;
+    --paper-3: #34373d;
+    --ink: #ecebe7;
+    --ink-2: #c4c2bc;
+    --ink-3: #9a9891;
+    --rule: rgb(236 235 231 / 0.13);
+    --rule-strong: rgb(236 235 231 / 0.3);
+    --accent: #8c9bff;
+    --accent-ink: #12142b;
+    --shadow-art: 0 1px 2px rgb(0 0 0 / 0.3), 0 16px 40px -14px rgb(0 0 0 / 0.7);
+    --scrim: rgb(0 0 0 / 0.55);
+    --era-prehistory: #b8683c;
+    --era-ancient: #2671db;
+    --era-antiquity: #af5946;
+    --era-medieval: #aa9007;
+    --era-renaissance: #3c90f5;
+    --era-xix: #be44a7;
+    --era-fin-de-siecle: #369a73;
+    --era-avant-garde: #e85a3a;
+    --era-postwar: #5b7cf0;
+    --era-postmodern: #aa5974;
+    --era-digital: #1ea1c4;
+    --era-internet: #936be6;
+  }
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --paper: #202226;
+  --paper-2: #2a2c31;
+  --paper-3: #34373d;
+  --ink: #ecebe7;
+  --ink-2: #c4c2bc;
+  --ink-3: #9a9891;
+  --rule: rgb(236 235 231 / 0.13);
+  --rule-strong: rgb(236 235 231 / 0.3);
+  --accent: #8c9bff;
+  --accent-ink: #12142b;
+  --shadow-art: 0 1px 2px rgb(0 0 0 / 0.3), 0 16px 40px -14px rgb(0 0 0 / 0.7);
+  --scrim: rgb(0 0 0 / 0.55);
+  --era-prehistory: #b8683c;
+  --era-ancient: #2671db;
+  --era-antiquity: #af5946;
+  --era-medieval: #aa9007;
+  --era-renaissance: #3c90f5;
+  --era-xix: #be44a7;
+  --era-fin-de-siecle: #369a73;
+  --era-avant-garde: #e85a3a;
+  --era-postwar: #5b7cf0;
+  --era-postmodern: #aa5974;
+  --era-digital: #1ea1c4;
+  --era-internet: #936be6;
+}

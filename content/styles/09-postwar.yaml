@@ -1,0 +1,654 @@
+- id: abstract-expressionism
+  name: Абстрактный экспрессионизм
+  orig: Abstract Expressionism
+  aliases: [абэкс, Поллок, живопись действия, нью-йоркская школа, дриппинг]
+  start: 1943
+  end: 1965
+  dates: 1943 – 1965
+  era: postwar
+  domain: [art]
+  region: США
+  tier: 1
+  parents:
+    - { id: surrealism, type: evolved }
+    - { id: abstract-art, type: evolved }
+  summary: >
+    Огромные холсты, по которым краска разбрызгана, пролита и размазана жестом: Нью-Йорк становится столицей искусства.
+  description: |
+    Европейские сюрреалисты, бежавшие от войны в Нью-Йорк, принесли идею автоматизма, и американцы довели
+    её до масштаба. Джексон Поллок клал холст на пол и разбрызгивал краску, двигаясь вокруг, — «живопись
+    действия». Де Кунинг писал яростными мазками, Ротко и Ньюман — огромными полями цвета. Впервые центр
+    мирового искусства переместился из Парижа в Америку.
+  traits:
+    - Монументальные холсты «во всю стену»
+    - Жест, брызги, потёки — дриппинг
+    - Отказ от фигуративности
+    - Процесс создания важнее результата
+  names: [Джексон Поллок, Виллем де Кунинг, Франц Клайн, Ли Краснер, Аршил Горки]
+  example:
+    file: "enwiki:Autumn Rhythm.jpg"
+    title: Осенний ритм (Номер 30)
+    author: Джексон Поллок
+    year: 1950
+    place: Метрополитен-музей, Нью-Йорк
+  wiki: Abstract expressionism
+  links:
+    - { title: "Abstract Expressionism", url: "https://www.theartstory.org/movement/abstract-expressionism/", src: "The Art Story", lang: en }
+    - { title: "Abstract Expressionism", url: "https://www.tate.org.uk/art/art-terms/a/abstract-expressionism", src: "Tate", lang: en }
+
+- id: color-field
+  name: Живопись цветового поля
+  orig: Color field painting
+  aliases: [колор-филд, Ротко, Ньюман, пост-живописная абстракция]
+  start: 1948
+  end: 1970
+  dates: 1948 – 1970
+  era: postwar
+  domain: [art]
+  region: США
+  tier: 3
+  parents:
+    - { id: abstract-expressionism, type: evolved }
+  summary: >
+    Большие светящиеся поля цвета, в которые зритель погружается, как в медитацию.
+  description: |
+    Внутри абстрактного экспрессионизма сложилось тихое крыло: Марк Ротко, Барнетт Ньюман, Клиффорд Стилл
+    отказались от жеста ради цвета. Мягкие прямоугольники Ротко будто парят и вибрируют, а сам художник
+    хотел, чтобы перед его картинами плакали. Хелен Франкенталер и Моррис Луис позже стали заливать
+    разбавленную краску прямо в ткань холста.
+  traits:
+    - Большие однородные поля цвета
+    - Мягкие, размытые края
+    - Отказ от жеста и фактуры
+    - Созерцательность, «духовность» цвета
+  names: [Марк Ротко, Барнетт Ньюман, Клиффорд Стилл, Хелен Франкенталер, Моррис Луис]
+  example:
+    file: "enwiki:No. 9, 1948, Mark Rothko at NGA 2023.jpg"
+    title: Номер 9
+    author: Марк Ротко
+    year: 1948
+    place: Национальная галерея искусства, Вашингтон
+  wiki: Color field
+  links:
+    - { title: "Color Field Painting", url: "https://www.theartstory.org/movement/color-field-painting/", src: "The Art Story", lang: en }
+
+- id: swiss-style
+  name: Швейцарский стиль
+  orig: International Typographic Style
+  aliases: [интернациональный типографический стиль, Helvetica, модульная сетка, Мюллер-Брокман]
+  start: 1950
+  end: 1975
+  dates: 1950 – 1970-е
+  era: postwar
+  domain: [design]
+  region: Швейцария, затем весь мир
+  tier: 2
+  parents:
+    - { id: bauhaus, type: evolved }
+    - { id: constructivism, type: influence }
+  summary: >
+    Модульная сетка, гротеск без засечек, флажковый набор и объективность: язык, на котором говорят аэропорты и корпорации.
+  description: |
+    Дизайнеры Базеля и Цюриха — Армин Хофман, Йозеф Мюллер-Брокман, Эмиль Рудер — превратили уроки Баухауса
+    в строгую систему. Модульная сетка, асимметрия, крупные шрифты Akzidenz и Helvetica, фотография вместо
+    иллюстрации: информация должна быть ясной и нейтральной. Стиль стал международным языком навигации,
+    корпоративной айдентики и, позже, веб-дизайна.
+  traits:
+    - Модульная сетка
+    - Гротески — Helvetica, Univers, Akzidenz
+    - Асимметричная вёрстка, флажковый набор
+    - Фотография и геометрия вместо иллюстрации
+  names: [Йозеф Мюллер-Брокман, Армин Хофман, Эмиль Рудер, Макс Мидингер]
+  example:
+    file: 1959 - Gewerbemuseum Basel - Alte und neue Formen in Japan.jpg
+    title: Плакат «Старые и новые формы в Японии»
+    author: Армин Хофман
+    year: 1959
+    place: Музей прикладного искусства, Базель
+  wiki: International Typographic Style
+  links: []
+
+- id: ulm-school
+  name: Ульмская школа и функционализм
+  orig: Ulm School of Design
+  aliases: [HfG Ulm, Дитер Рамс, Braun, «меньше, но лучше»]
+  start: 1953
+  end: 1980
+  dates: 1953 – 1980-е
+  era: postwar
+  domain: [design]
+  region: Германия
+  tier: 3
+  parents:
+    - { id: bauhaus, type: evolved }
+    - { id: swiss-style, type: influence }
+  summary: >
+    Наследник Баухауса: системный дизайн, серые и белые приборы Braun и десять принципов Дитера Рамса.
+  description: |
+    Высшая школа дизайна в Ульме, основанная Максом Биллом, сделала дизайн наукой: исследования, системы,
+    модульность. Вместе с ней Braun создал радиолу SK 4 — «гроб Белоснежки» с прозрачной крышкой. Дитер Рамс
+    сформулировал принцип «меньше, но лучше», а его вещи напрямую вдохновили дизайн Apple.
+  traits:
+    - Белый, серый, точечные цветовые акценты
+    - Модульность и системность
+    - Предельная ясность функции
+    - Честные материалы — пластик, металл, оргстекло
+  names: [Макс Билл, Отль Айхер, Ханс Гугелот, Дитер Рамс]
+  example:
+    file: 1956 Braun Phonosuper SK4 Schneewittchensarg.JPG
+    title: Радиола Braun SK 4
+    author: Ханс Гугелот, Дитер Рамс
+    year: 1956
+  gallery:
+    - { file: "Max-bill junghans retouched.jpg", title: "Часы Junghans", author: "Макс Билл", year: "1961" }
+  wiki: Ulm School of Design
+  links: []
+
+- id: mid-century-modern
+  name: Мидсенчури-модерн
+  orig: Mid-century modern
+  aliases: [mid-century modern, модернизм середины века, Имзы, скандинавский модерн]
+  start: 1945
+  end: 1969
+  dates: 1945 – 1969
+  era: postwar
+  domain: [design, architecture]
+  region: США, Скандинавия
+  tier: 1
+  parents:
+    - { id: bauhaus, type: evolved }
+    - { id: organic-architecture, type: evolved }
+  summary: >
+    Тёплый модернизм пригорода: стеклянные стены, гнутая фанера, мебель Имзов и тиковые комоды.
+  description: |
+    После войны модернизм переехал в частный дом. Калифорнийские архитекторы строили одноэтажные дома
+    со стеклянными стенами и открытыми балками, Чарльз и Рэй Имз — мебель из гнутой фанеры и пластика,
+    скандинавы — светлую мебель из тика и бука. Стиль стал вновь модным в 2000-х благодаря сериалу «Безумцы».
+  traits:
+    - Чистые линии и органичные изгибы
+    - Гнутая фанера, тик, стеклопластик
+    - Стеклянные стены, связь дома с садом
+    - Яркие акценты на нейтральном фоне
+  names: [Чарльз и Рэй Имз, Арне Якобсен, Ээро Сааринен, Джордж Нельсон, Ханс Вегнер]
+  example:
+    file: California Mid-Century Modern Home with open-beam ceiling 1960.jpg
+    title: Калифорнийский дом середины века
+    year: 1960
+  gallery:
+    - { file: "Arne Jacobsen - Grand Prix chair.jpg", title: "Стул Grand Prix", author: "Арне Якобсен", year: "1957" }
+  wiki: Mid-century modern
+  links: []
+
+- id: googie
+  name: Гуги (атомный стиль)
+  orig: Googie architecture
+  aliases: [googie, атомный век, атомик, дорожная архитектура]
+  start: 1945
+  end: 1965
+  dates: 1945 – 1965
+  era: postwar
+  domain: [architecture, design]
+  region: США
+  tier: 3
+  parents:
+    - { id: streamline-moderne, type: evolved }
+  summary: >
+    Футуризм придорожных закусочных: крыши-бумеранги, звёздочки, атомы и неоновые вывески Лас-Вегаса.
+  description: |
+    Автомобильная Америка 1950-х строила кафе, мотели и автомойки, которые должны были бросаться в глаза
+    с шоссе. Архитекторы брали образы космической эры и атомного века: наклонные крыши, параболы, звёзды
+    и неон. Знак «Добро пожаловать в сказочный Лас-Вегас» — самый узнаваемый памятник стиля.
+  traits:
+    - Наклонные крыши-бумеранги и параболы
+    - Атомы, звёзды, летающие тарелки
+    - Неон, стекло, яркие цвета
+    - Архитектура, рассчитанная на взгляд из машины
+  names: [Джон Лотнер, Армет и Дэвис, Бетти Уиллис]
+  example:
+    file: Welcome to Fabulous Las Vegas.jpg
+    title: Знак «Welcome to Fabulous Las Vegas»
+    author: Бетти Уиллис
+    year: 1959
+    place: Лас-Вегас
+  gallery:
+    - { file: "NormsRestaurant LaCienega.JPG", title: "Ресторан Norms", year: "1957" }
+  wiki: Googie architecture
+  links: []
+
+- id: brutalism
+  name: Брутализм
+  orig: Brutalism
+  aliases: [брутализм, необрутализм, бетон, Барбикан]
+  start: 1950
+  end: 1980
+  dates: 1950 – 1980
+  era: postwar
+  domain: [architecture]
+  region: Великобритания, весь мир
+  tier: 1
+  parents:
+    - { id: international-style, type: evolved }
+  summary: >
+    Грубый бетон, массивные объёмы и честная конструкция: архитектура социального государства.
+  description: |
+    Название идёт от béton brut — «необработанный бетон» Ле Корбюзье. Британские архитекторы Смитсоны
+    и их последователи строили жилые комплексы, университеты и театры из открытого бетона со следами
+    опалубки. Барбикан в Лондоне — целый город-крепость с садами и озером. Долго ненавидимый, сегодня
+    брутализм — культовая эстетика интернета.
+  traits:
+    - Открытый бетон со следами опалубки
+    - Массивные, скульптурные объёмы
+    - Повторяющиеся модули и ячейки
+    - Честно показанная конструкция
+  names: [Ле Корбюзье, Элисон и Питер Смитсон, Пол Рудольф, Эрнё Голдфингер]
+  example:
+    file: Barbican Lakeside on a summer evening.jpg
+    title: Жилой комплекс Барбикан
+    author: Chamberlin, Powell and Bon
+    year: 1965–1976
+    place: Лондон
+  gallery:
+    - { file: "1981 BostonCityHall byLebovich8 HABS MA1176.jpg", title: "Мэрия Бостона", year: "1968" }
+  wiki: Brutalist architecture
+  links:
+    - { title: "Brutalism", url: "https://www.archdaily.com/tag/brutalism", src: "ArchDaily", lang: en }
+
+- id: soviet-modernism
+  name: Советский модернизм
+  orig: Soviet Modernism
+  aliases: [советский модернизм, послевоенный модернизм СССР, космические санатории]
+  start: 1955
+  end: 1991
+  dates: 1955 – 1991
+  era: postwar
+  domain: [architecture]
+  region: СССР
+  tier: 3
+  parents:
+    - { id: international-style, type: evolved }
+    - { id: constructivism, type: revival }
+  summary: >
+    После «борьбы с излишествами» — стекло, бетон и смелые формы: дворцы пионеров, санатории-тарелки и здания-конструкторы.
+  description: |
+    Хрущёвское постановление 1955 года положило конец сталинскому ампиру. Советские архитекторы вернулись
+    к модернизму и наследию конструктивизма, а к 1970-м строили всё смелее: санаторий «Дружба» в Ялте
+    похож на летающую тарелку, а бывшее Министерство автодорог в Тбилиси — на сложенные в небе брусья.
+  traits:
+    - Бетон, стекло, мозаичные панно
+    - Смелые консоли и необычные формы
+    - Типовое домостроение рядом с уникальными объектами
+    - Космическая и научная символика
+  names: [Георгий Чахава, Игорь Василевский, Евгений Розанов, Дворец пионеров на Ленинских горах]
+  example:
+    file: Bank-of-georgia-hq.jpg
+    title: Здание бывшего Министерства автомобильных дорог Грузинской ССР
+    author: Георгий Чахава
+    year: 1975
+    place: Тбилиси
+  wiki: { en: Soviet architectural modernism, ru: Советский архитектурный модернизм }
+  links: []
+
+- id: metabolism
+  name: Метаболизм
+  orig: Metabolism (architecture)
+  aliases: [японский метаболизм, капсульная башня Накагин, Кисё Курокава]
+  start: 1959
+  end: 1975
+  dates: 1959 – 1970-е
+  era: postwar
+  domain: [architecture]
+  region: Япония
+  tier: 3
+  parents:
+    - { id: brutalism, type: evolved }
+  summary: >
+    Города как живые организмы: ядра-стволы и сменные жилые капсулы, которые должны расти и обновляться.
+  description: |
+    Молодые японские архитекторы во главе с Кэндзо Тангэ предложили проектировать мегаструктуры, способные
+    расти, как живые клетки. Самый известный пример — капсульная башня Накагин Кисё Курокавы: 140 капсул-квартир
+    с круглыми окнами, прикреплённых к двум бетонным стволам. Капсулы так и не заменили, и в 2022 году
+    башню разобрали, сохранив несколько модулей для музеев.
+  traits:
+    - Сменные модульные капсулы
+    - Мегаструктуры с ядрами-стволами
+    - Круглые иллюминаторы и сборные элементы
+    - Идея роста и обновления
+  names: [Кэндзо Тангэ, Кисё Курокава, Киёнори Кикутакэ, Фумихико Маки]
+  example:
+    file: Nakagin.jpg
+    title: Капсульная башня Накагин
+    author: Кисё Курокава
+    year: 1972
+    place: Токио
+  wiki: Metabolism (architecture)
+  links: []
+
+- id: pop-art
+  name: Поп-арт
+  orig: Pop art
+  aliases: [поп-арт, Уорхол, Лихтенштейн, массовая культура]
+  start: 1955
+  end: 1970
+  dates: 1955 – 1970
+  era: postwar
+  domain: [art, design]
+  region: Великобритания, США
+  tier: 1
+  parents:
+    - { id: dada, type: evolved }
+    - { id: abstract-expressionism, type: reaction }
+  summary: >
+    Банки супа, комиксы и звёзды Голливуда как искусство: массовая культура входит в музей.
+  description: |
+    После серьёзного абстрактного экспрессионизма молодые художники обратились к тому, что видели каждый день:
+    рекламе, комиксам, товарам. Энди Уорхол повторил 32 банки супа Campbell's и шелкографические Мэрилин,
+    Рой Лихтенштейн увеличил точки растра из комиксов. Поп-арт стёр границу между высоким искусством
+    и рекламой — и сам стал мощнейшим брендом.
+  traits:
+    - Образы рекламы, комиксов и знаменитостей
+    - Шелкография, серийность, повтор
+    - Яркие плоские цвета, точки растра
+    - Ирония и холодная отстранённость
+  names: [Энди Уорхол, Рой Лихтенштейн, Ричард Гамильтон, Клас Олденбург]
+  example:
+    file: Campbell's Soup Cans by Andy Warhol.jpg
+    title: Банки супа Campbell's
+    author: Энди Уорхол
+    year: 1962
+    place: Музей современного искусства (MoMA), Нью-Йорк
+  wiki: Pop art
+  links:
+    - { title: "Pop Art", url: "https://www.tate.org.uk/art/art-terms/p/pop-art", src: "Tate", lang: en }
+    - { title: "Pop Art", url: "https://www.theartstory.org/movement/pop-art/", src: "The Art Story", lang: en }
+
+- id: op-art
+  name: Оп-арт
+  orig: Op art
+  aliases: [оптическое искусство, Вазарели, Бриджет Райли, оптические иллюзии]
+  start: 1960
+  end: 1970
+  dates: 1960 – 1970
+  era: postwar
+  domain: [art, design]
+  region: Европа, США
+  tier: 2
+  parents:
+    - { id: abstract-art, type: evolved }
+    - { id: bauhaus, type: influence }
+  summary: >
+    Картины, которые шевелятся: чёрно-белые полосы и клетки обманывают глаз и вызывают головокружение.
+  description: |
+    Виктор Вазарели и Бриджет Райли строили геометрические композиции так точно, что неподвижная поверхность
+    начинала вибрировать, пульсировать и выгибаться. Выставка «Отзывчивый глаз» в MoMA в 1965 году сделала
+    оп-арт модным: узоры мгновенно перешли на платья, обложки пластинок и рекламу 1960-х.
+  traits:
+    - Чёрно-белые полосы, клетки, волны
+    - Иллюзия движения и объёма
+    - Точная геометрия и повтор
+    - Психофизика восприятия вместо сюжета
+  names: [Виктор Вазарели, Бриджет Райли, Хесус Рафаэль Сото, Ричард Анушкевич]
+  example:
+    file: "enwiki:Riley, Movement in Squares.jpg"
+    title: Движение в квадратах
+    author: Бриджет Райли
+    year: 1961
+    place: Совет по делам искусств, Лондон
+  wiki: Op art
+  links:
+    - { title: "Op Art", url: "https://www.theartstory.org/movement/op-art/", src: "The Art Story", lang: en }
+
+- id: kinetic-art
+  name: Кинетическое искусство
+  orig: Kinetic art
+  aliases: [кинетизм, мобили, Калдер, Тэнгли]
+  start: 1950
+  end: 1975
+  dates: 1950 – 1970-е
+  era: postwar
+  domain: [art]
+  region: Европа, США, Латинская Америка
+  tier: 3
+  parents:
+    - { id: constructivism, type: evolved }
+    - { id: dada, type: influence }
+  summary: >
+    Скульптура, которая движется: мобили Калдера качаются от воздуха, машины Тэнгли гремят и самоуничтожаются.
+  description: |
+    Идея движения как материала искусства пришла от конструктивистов и Дюшана, а после войны стала отдельным
+    направлением. Александр Калдер подвешивал на проволоке цветные лепестки, которые медленно поворачиваются.
+    Жан Тэнгли строил абсурдные машины из хлама, а латиноамериканские кинетисты играли со светом и вибрацией.
+  traits:
+    - Реальное движение — от ветра, мотора, зрителя
+    - Металл, проволока, моторы
+    - Баланс, игра, случайность
+    - Связь со светом и оптикой
+  names: [Александр Калдер, Жан Тэнгли, Хесус Рафаэль Сото, Ласло Мохой-Надь]
+  example:
+    file: Alexander Calder Crinkly avec disc Rouge 1973-1.jpg
+    title: «Crinkly avec disc rouge»
+    author: Александр Калдер
+    year: 1973
+    place: Штутгарт
+  wiki: Kinetic art
+  links:
+    - { title: "Kinetic Art", url: "https://www.theartstory.org/movement/kinetic-art/", src: "The Art Story", lang: en }
+
+- id: minimalism
+  name: Минимализм
+  orig: Minimalism
+  aliases: [минимал-арт, Джадд, литерализм, «меньше — значит больше»]
+  start: 1960
+  end: 1975
+  dates: 1960 – 1975
+  era: postwar
+  domain: [art, design]
+  region: США
+  tier: 2
+  parents:
+    - { id: color-field, type: evolved }
+    - { id: constructivism, type: influence }
+  summary: >
+    Повторяющиеся металлические ящики, кирпичи на полу и флуоресцентные лампы: объект без метафор и эмоций.
+  description: |
+    Минималисты отвергли и драму абстрактного экспрессионизма, и иронию поп-арта. Дональд Джадд делал
+    «специфические объекты» — одинаковые ящики, изготовленные на фабрике, Карл Андре клал на пол металлические
+    плиты, Дэн Флавин работал с лампами дневного света. «Ты видишь то, что видишь», — говорил Фрэнк Стелла.
+    Эстетика минимализма потом перешла в архитектуру, интерьер и моду.
+  traits:
+    - Простые геометрические формы
+    - Серийность и повтор одинаковых модулей
+    - Промышленные материалы и изготовление
+    - Отказ от метафор и выражения чувств
+  names: [Дональд Джадд, Карл Андре, Дэн Флавин, Сол Левитт, Агнес Мартин]
+  example:
+    file: Donald Judd installation in Saatchi Gallery.jpg
+    title: Инсталляция Дональда Джадда
+    author: Дональд Джадд
+    place: Галерея Саатчи, Лондон
+  wiki: { en: Minimalism (visual arts), ru: Минимализм }
+  links:
+    - { title: "Minimalism", url: "https://www.theartstory.org/movement/minimalism/", src: "The Art Story", lang: en }
+    - { title: "Minimalism", url: "https://www.tate.org.uk/art/art-terms/m/minimalism", src: "Tate", lang: en }
+
+- id: conceptual-art
+  name: Концептуализм
+  orig: Conceptual art
+  aliases: [концептуальное искусство, Кошут, флюксус, идея как искусство]
+  start: 1960
+  end: 1980
+  dates: 1960 – 1980
+  era: postwar
+  domain: [art]
+  region: США, Европа, СССР
+  tier: 2
+  parents:
+    - { id: dada, type: evolved }
+    - { id: minimalism, type: influence }
+  summary: >
+    Искусство — это идея, а не вещь: стул, фото стула и словарное определение стула рядом на стене.
+  description: |
+    Концептуалисты довели вопрос Дюшана до предела: если искусство — это идея, сам объект можно заменить
+    текстом, инструкцией или документом. Джозеф Кошут в «Одном и трёх стульях» показывает настоящий стул,
+    его фотографию и словарную статью. В СССР свой концептуализм создали Илья Кабаков и Андрей Монастырский.
+  traits:
+    - Текст, документ, инструкция вместо образа
+    - Идея важнее исполнения
+    - Тавтология и игра с языком
+    - Перформанс, хэппенинг (флюксус)
+  names: [Джозеф Кошут, Сол Левитт, Йоко Оно, Илья Кабаков, Йозеф Бойс]
+  example:
+    file: One and Three Chair.jpg
+    title: Один и три стула
+    author: Джозеф Кошут
+    year: 1965
+    place: Музей современного искусства (MoMA), Нью-Йорк
+  wiki: Conceptual art
+  links:
+    - { title: "Conceptual Art", url: "https://www.theartstory.org/movement/conceptual-art/", src: "The Art Story", lang: en }
+    - { title: "Conceptual Art", url: "https://www.tate.org.uk/art/art-terms/c/conceptual-art", src: "Tate", lang: en }
+
+- id: psychedelic-art
+  name: Психоделическое искусство
+  orig: Psychedelic art
+  aliases: [психоделия, концертные плакаты, лето любви, хиппи]
+  start: 1965
+  end: 1972
+  dates: 1965 – 1972
+  era: postwar
+  domain: [art, design]
+  region: США, Великобритания
+  tier: 2
+  parents:
+    - { id: art-nouveau, type: revival }
+    - { id: op-art, type: influence }
+    - { id: surrealism, type: influence }
+  summary: >
+    Плавящиеся буквы, кислотные цвета и узоры, вдохновлённые ЛСД, рок-концертами и модерном.
+  description: |
+    Сан-Франциско 1966–1967 годов: концертные плакаты для Fillmore и Avalon, светошоу из масла и воды,
+    газета San Francisco Oracle. Художники брали изгибы модерна Мухи, вибрации оп-арта и сюрреалистические
+    образы и добавляли кислотные контрастные цвета. Буквы растекаются так, что текст почти не читается —
+    и это было частью опыта.
+  traits:
+    - Кислотные контрастные цвета
+    - Растекающиеся, «плавящиеся» шрифты
+    - Мотивы модерна, калейдоскопы, спирали
+    - Связь с музыкой и контркультурой
+  names: [Уэс Уилсон, Виктор Москосо, Питер Макс, Мартин Шарп]
+  example:
+    file: San Francisco Oracle Cover Vol.1 No.5, January 1967.jpg
+    title: Обложка газеты San Francisco Oracle
+    year: 1967
+  gallery:
+    - { file: "The art of peter max.jpg", title: "Работы Питера Макса", author: "Питер Макс" }
+  wiki: Psychedelic art
+  links: []
+
+- id: space-age
+  name: Дизайн космической эры
+  orig: Space Age design
+  aliases: [спейс-эйдж, космический дизайн, Футуро, Пантон]
+  start: 1957
+  end: 1975
+  dates: 1957 – 1975
+  era: postwar
+  domain: [design, architecture]
+  region: Европа, США
+  tier: 3
+  parents:
+    - { id: googie, type: evolved }
+    - { id: futurism, type: influence }
+  summary: >
+    После спутника — пластик, капсулы и белые овалы: дома-тарелки, стулья из одного куска и мода из металла.
+  description: |
+    Запуск спутника в 1957 году и полёт Гагарина сделали космос главной мечтой эпохи. Дизайнеры получили
+    новые пластики и стеклопластик и создали мебель из одного литого куска — стул Пантона, кресла-яйца
+    и пузыри. Финский дом «Футуро» Матти Сууронена похож на приземлившуюся летающую тарелку.
+  traits:
+    - Литой пластик и стеклопластик
+    - Капсулы, сферы, овалы
+    - Белый, серебро, оранжевый
+    - Образы ракет, спутников и планет
+  names: [Вернер Пантон, Ээро Аарнио, Матти Сууронен, Пьер Карден, Джо Коломбо]
+  example:
+    file: Futuro Pinakothek München 6491.jpg
+    title: Дом «Футуро»
+    author: Матти Сууронен
+    year: 1968
+    place: Пинакотека современности, Мюнхен
+  gallery:
+    - { file: "Panton Chair by Verner Panton.JPG", title: "Стул Пантона", author: "Вернер Пантон", year: "1960" }
+  wiki: Space Age
+  links: []
+
+- id: land-art
+  name: Ленд-арт
+  orig: Land art
+  aliases: [ленд-арт, искусство земли, Спиральная дамба, Смитсон]
+  start: 1968
+  end: 1980
+  dates: 1968 – 1980
+  era: postwar
+  domain: [art]
+  region: США, Великобритания
+  tier: 3
+  parents:
+    - { id: minimalism, type: evolved }
+    - { id: conceptual-art, type: influence }
+  summary: >
+    Искусство, которое нельзя повесить в галерее: спираль из камней в солёном озере, линии в пустыне.
+  description: |
+    Художники конца 1960-х ушли из галерей в пустыни и на берега, чтобы работать с самой землёй. Роберт
+    Смитсон построил «Спиральную дамбу» — 457-метровую спираль из базальта в Большом Солёном озере, которая
+    то уходит под воду, то покрывается солью. Многие работы ленд-арта существуют сегодня лишь в фотографиях.
+  traits:
+    - Природа и ландшафт как материал
+    - Огромный масштаб
+    - Эрозия и время как часть работы
+    - Документация — фото, карты, фильм
+  names: [Роберт Смитсон, Майкл Хайзер, Нэнси Холт, Ричард Лонг, Христо и Жанна-Клод]
+  example:
+    file: Spiral-jetty-from-rozel-point.png
+    title: Спиральная дамба
+    author: Роберт Смитсон
+    year: 1970
+    place: Большое Солёное озеро, Юта
+  wiki: Land art
+  links:
+    - { title: "Land Art", url: "https://www.theartstory.org/movement/earth-art/", src: "The Art Story", lang: en }
+
+- id: computer-art
+  name: Компьютерное искусство
+  orig: Computer art
+  aliases: [генеративное искусство, плоттерная графика, алгоритмическое искусство]
+  start: 1960
+  end: 1990
+  dates: 1960 – 1990
+  era: postwar
+  domain: [art, internet]
+  region: Германия, Великобритания, США
+  tier: 2
+  parents:
+    - { id: op-art, type: influence }
+    - { id: constructivism, type: influence }
+  summary: >
+    Первые картины, нарисованные машиной: плоттеры, алгоритмы и случайность в руках математиков и инженеров.
+  description: |
+    В 1960-х компьютеры занимали целые комнаты, но инженеры Георг Нис, Фридер Наке и Майкл Нолл уже писали
+    программы, которые рисовали на плоттерах геометрические композиции со случайностью. Британец Десмонд Пол
+    Генри собрал рисующую машину из бомбового прицела. Отсюда растут пиксель-арт, компьютерная графика,
+    глитч и — через полвека — нейросетевое искусство.
+  traits:
+    - Алгоритм и случайность как метод
+    - Плоттерные линии, сетки, вариации
+    - Чёрно-белая или минимальная палитра
+    - Художник пишет правила, машина исполняет
+  names: [Георг Нис, Фридер Наке, А. Майкл Нолл, Вера Мольнар, Десмонд Пол Генри]
+  example:
+    file: Picture produced by Drawing Machine 1.jpg
+    title: Рисунок «рисующей машины»
+    author: Десмонд Пол Генри
+    year: 1960-е
+  wiki: Computer art
+  links:
+    - { title: "Digital Art", url: "https://www.theartstory.org/movement/digital-art/", src: "The Art Story", lang: en }

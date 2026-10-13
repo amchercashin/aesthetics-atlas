@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Атлас эстетик</title>
+  <meta name="description" content="Навигатор по визуальным стилям человечества: от наскальной живописи до vaporwave и weirdcore. Родословная стилей, хронология, главные работы и ссылки для изучения.">
+  <meta property="og:title" content="Атлас эстетик">
+  <meta property="og:description" content="Родословная визуальных стилей: от пещеры Ласко до уирдкора.">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#f2f1ee" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#202226" media="(prefers-color-scheme: dark)">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='5' fill='%232f43b8'/%3E%3Cg fill='none' stroke='%23fff' stroke-width='1.8' stroke-linecap='round'%3E%3Cpath d='M7 19V6M7 14c0-3.5 4-5.5 10-6M7 17.5c2.5-1 5-1.6 8-1.6'/%3E%3C/g%3E%3Cg fill='%23fff'%3E%3Ccircle cx='7' cy='6' r='1.9'/%3E%3Ccircle cx='17' cy='8' r='1.9'/%3E%3Ccircle cx='15' cy='15.9' r='1.9'/%3E%3C/g%3E%3C/svg%3E">
+  <script>
+    try { const t = localStorage.getItem('atlas-theme'); if (t === 'light' || t === 'dark') document.documentElement.dataset.theme = t; } catch (e) {}
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600&family=Spectral:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap&subset=cyrillic" rel="stylesheet">
+  <link rel="preconnect" href="https://thumb.wikimedia.org">
+  <link rel="preconnect" href="https://upload.wikimedia.org">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/views.css">
+  <link rel="stylesheet" href="css/map.css">
+</head>
+<body>
+  <a class="skip-link" href="#app">К содержимому</a>
+  <header class="site-header">
+    <a class="brand" href="#/" aria-label="Атлас эстетик — на главную">
+      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><g stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M7 19V6M7 14c0-3.5 4-5.5 10-6M7 17.5c2.5-1 5-1.6 8-1.6"/></g><g fill="currentColor"><circle cx="7" cy="6" r="1.9"/><circle cx="17" cy="8" r="1.9"/><circle cx="15" cy="15.9" r="1.9"/></g></svg>
+      Атлас эстетик
+    </a>
+    <nav class="main-nav" aria-label="Разделы">
+      <a href="#/map" data-nav="map">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><circle cx="5" cy="6" r="2"/><circle cx="19" cy="6" r="2"/><circle cx="12" cy="18" r="2"/><path d="M7 6h10M6 8l5 8M18 8l-5 8"/></svg>
+        Карта
+      </a>
+      <a href="#/timeline" data-nav="timeline">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M6 3v18"/><path d="M10 6h9M10 12h6M10 18h8"/><circle cx="6" cy="6" r="1.5" fill="currentColor"/><circle cx="6" cy="12" r="1.5" fill="currentColor"/><circle cx="6" cy="18" r="1.5" fill="currentColor"/></svg>
+        Хронология
+      </a>
+      <a href="#/catalog" data-nav="catalog">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3.5" y="3.5" width="7" height="9" rx="1"/><rect x="13.5" y="3.5" width="7" height="5" rx="1"/><rect x="13.5" y="11.5" width="7" height="9" rx="1"/><rect x="3.5" y="15.5" width="7" height="5" rx="1"/></svg>
+        Каталог
+      </a>
+      <a href="#/about" data-nav="about">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.5"/></svg>
+        О проекте
+      </a>
+    </nav>
+    <div class="header-tools">
+      <button class="search-trigger" type="button" data-open-search aria-label="Найти стиль">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4.5 4.5"/></svg>
+        <span>Стиль, художник или год</span>
+        <kbd>/</kbd>
+      </button>
+      <button class="icon-btn theme-toggle" type="button" aria-label="Сменить тему">
+        <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2M12 19.5v2M4.6 4.6 6 6M18 18l1.4 1.4M2.5 12h2M19.5 12h2M4.6 19.4 6 18M18 6l1.4-1.4"/></svg>
+        <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" aria-hidden="true"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5Z"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <main id="app" tabindex="-1"><div class="loading">Открываем залы…</div></main>
+
+  <dialog class="search-dialog" aria-label="Поиск по атласу">
+    <div class="search-box">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4.5 4.5"/></svg>
+      <input type="search" placeholder="Импрессионизм, Малевич, 1920…" autocomplete="off" spellcheck="false" aria-label="Запрос" aria-controls="search-results">
+      <kbd>Esc</kbd>
+    </div>
+    <ul class="search-results" id="search-results" role="listbox"></ul>
+    <div class="search-hint"></div>
+  </dialog>
+
+  <dialog class="lightbox" aria-label="Изображение">
+    <button class="icon-btn" type="button" data-close aria-label="Закрыть">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg>
+    </button>
+    <img alt="">
+    <figcaption></figcaption>
+  </dialog>
+
+  <div class="toast" role="status" aria-live="polite"></div>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>

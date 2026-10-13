@@ -1,0 +1,578 @@
+- id: vaporwave
+  name: Вейпорвейв
+  orig: Vaporwave
+  aliases: [vaporwave, вейпорвейв, вапорвейв, aesthetic, Ａｅｓｔｈｅｔｉｃ]
+  start: 2011
+  end: null
+  dates: 2011 – наши дни
+  era: internet
+  domain: [internet, design]
+  region: Интернет
+  tier: 1
+  parents:
+    - { id: early-cgi, type: revival }
+    - { id: seapunk, type: evolved }
+    - { id: glitch-art, type: influence }
+    - { id: classical-greece, type: revival }
+  summary: >
+    Ироничная ностальгия по потребительскому раю 80–90-х: античные бюсты, розово-бирюзовые
+    градиенты, Windows 95, японские иероглифы и пальмы.
+  description: |
+    Вейпорвейв появился как микрожанр электронной музыки — замедленные корпоративные мелодии
+    и поп-хиты — и сразу получил узнаваемый визуальный язык. Альбом Macintosh Plus «Floral Shoppe»
+    (2011) с бюстом Гелиоса на фоне шахматного пола стал его иконой.
+
+    Это одновременно пародия на поздний капитализм и тоска по будущему, которое обещали
+    торговые центры и ранние компьютеры. Вейпорвейв породил целое семейство эстетик —
+    от синтвейва до liminal space.
+  traits:
+    - Розово-бирюзовые и фиолетовые градиенты
+    - Античные бюсты, пальмы, дельфины, шахматный пол
+    - Интерфейсы Windows 95 и низкополигональная 3D-графика
+    - Японская катакана, широкие ｓｐａｃｅｄ буквы
+    - Глитч, VHS-шум, корпоративная эстетика 80–90-х
+  names: [Macintosh Plus (Vektroid), James Ferraro, Daniel Lopatin, Saint Pepsi]
+  example:
+    file: "enwiki:Macintosh Plus - Floral Shoppe album cover.jpg"
+    title: Обложка альбома «Floral Shoppe»
+    author: Macintosh Plus (Vektroid)
+    year: 2011
+  gallery:
+    - { file: "Vaporwave art example.png", title: "Пример вейпорвейв-коллажа", year: "2010-е" }
+  wiki: Vaporwave
+  links:
+    - { title: "Vaporwave", url: "https://aesthetics.fandom.com/wiki/Vaporwave", src: "Aesthetics Wiki", lang: en }
+
+- id: synthwave
+  name: Синтвейв (аутран)
+  orig: Synthwave / Outrun
+  aliases: [synthwave, outrun, ретровейв, retrowave, неоновый закат]
+  start: 2008
+  end: null
+  dates: 2008 – наши дни
+  era: internet
+  domain: [internet, design]
+  region: Франция, интернет
+  tier: 2
+  parents:
+    - { id: early-cgi, type: revival }
+    - { id: cyberpunk, type: influence }
+  summary: >
+    Неоновый закат над бесконечной сеткой, хромированные буквы и спортивная машина: 80-е, какими их помнит VHS.
+  description: |
+    Французские музыканты Kavinsky и College, а затем фильм «Драйв» (2011) вернули звук синтезаторов 80-х,
+    а с ним — визуальный набор: сетка-горизонт, полосатое солнце, неон, пальмы, хром и спортивные машины
+    в стиле игры OutRun. В отличие от ироничного вейпорвейва, синтвейв ностальгирует всерьёз и стал
+    массовой эстетикой обложек, постеров и игр.
+  traits:
+    - Неоновые розовый, фиолетовый, бирюзовый
+    - Сетка-горизонт и полосатое закатное солнце
+    - Хромированные надписи с бликом
+    - Машины, пальмы, ночной город
+  names: [Kavinsky, College, Perturbator, «Драйв», «Хотлайн Майами»]
+  example:
+    file: Synthwave cyberspace sunset (low res).jpg
+    title: Закат в киберпространстве
+    author: G. Casqueiro
+  wiki: Synthwave
+  links:
+    - { title: "Synthwave", url: "https://aesthetics.fandom.com/wiki/Synthwave", src: "Aesthetics Wiki", lang: en }
+
+- id: corporate-memphis
+  name: Корпоративный Мемфис
+  orig: Corporate Memphis
+  aliases: [corporate memphis, Alegria, плоские человечки, «стиль Фейсбука»]
+  start: 2017
+  end: null
+  dates: 2017 – наши дни
+  era: internet
+  domain: [design]
+  region: Кремниевая долина, весь мир
+  tier: 2
+  parents:
+    - { id: flat-design, type: evolved }
+    - { id: memphis-design, type: revival }
+  summary: >
+    Плоские человечки с крошечными головами и длинными фиолетовыми руками на сайтах всех стартапов мира.
+  description: |
+    В 2017 году студия Buck создала для Facebook иллюстративный стиль Alegria: плоские фигуры с непропорционально
+    длинными конечностями, маленькими головами и нереальными цветами кожи — нарочито нейтральные и
+    «инклюзивные». Стиль мгновенно разошёлся по корпоративным сайтам, приложениям и госуслугам, а затем
+    стал объектом насмешек как символ безликого техно-оптимизма.
+  traits:
+    - Плоские фигуры с длинными конечностями
+    - Маленькие головы, условные цвета кожи
+    - Яркие пастельные фоны и геометрия
+    - Бодрый, обезличенный оптимизм
+  names: [Buck (Alegria), Humaaans, Slack, Airbnb]
+  example:
+    file: Corporate Memphis (2019).png
+    title: Иллюстрация в стиле корпоративного Мемфиса
+    author: Katharina Brenner
+    year: 2019
+  wiki: Corporate Memphis
+  links:
+    - { title: "Corporate Memphis", url: "https://aesthetics.fandom.com/wiki/Corporate_Memphis", src: "Aesthetics Wiki", lang: en }
+
+- id: cottagecore
+  name: Коттеджкор
+  orig: Cottagecore
+  aliases: [cottagecore, деревенский уют, пастораль]
+  start: 2018
+  end: null
+  dates: 2018 – наши дни
+  era: internet
+  domain: [internet, design]
+  region: Tumblr, TikTok
+  tier: 2
+  parents:
+    - { id: arts-and-crafts, type: revival }
+    - { id: romanticism, type: influence }
+  summary: >
+    Идиллия сельской жизни: домашний хлеб, полевые цветы, льняные платья и коттедж с соломенной крышей.
+  description: |
+    Коттеджкор вырос на Tumblr и расцвёл в TikTok во время локдауна 2020 года: мечта о простой жизни
+    на природе — выпечка, сад, вышивка, грибы и цветы. Это современная версия пасторали и романтической
+    тоски по деревне, а по духу — наследник движения искусств и ремёсел с его ручным трудом
+    и цветочными узорами.
+  traits:
+    - Природа, цветы, сад, выпечка
+    - Лён, кружево, винтажные платья
+    - Тёплый мягкий свет, пастельно-землистая палитра
+    - Ручной труд и домашний уют
+  names: [Тейлор Свифт («folklore»), Animal Crossing]
+  example:
+    file: Anne Hathaways Cottage 1 (5662418953).jpg
+    title: Коттедж Энн Хэтэуэй
+    place: Стратфорд-апон-Эйвон, Англия
+  wiki: Cottagecore
+  links:
+    - { title: "Cottagecore", url: "https://aesthetics.fandom.com/wiki/Cottagecore", src: "Aesthetics Wiki", lang: en }
+
+- id: dark-academia
+  name: Дарк-академия
+  orig: Dark academia
+  aliases: [dark academia, тёмная академия, «Тайная история»]
+  start: 2015
+  end: null
+  dates: 2015 – наши дни
+  era: internet
+  domain: [internet, design]
+  region: Tumblr, TikTok
+  tier: 3
+  parents:
+    - { id: gothic-revival, type: revival }
+    - { id: romanticism, type: influence }
+  summary: >
+    Романтика старых университетов: готические галереи, библиотеки, твид, свечи и греческая поэзия.
+  description: |
+    Эстетика выросла из поклонников романа Донны Тартт «Тайная история» и фильма «Общество мёртвых поэтов»:
+    культ классического образования, старых библиотек и готических кампусов Оксфорда и Кембриджа.
+    Тёмные деревянные интерьеры, твидовые пиджаки, свечи, книги и чуть меланхолии — в TikTok во время
+    пандемии она стала массовой.
+  traits:
+    - Готические кампусы и старые библиотеки
+    - Тёмное дерево, кожа, твид, свечи
+    - Коричнево-оливковая, чернильная палитра
+    - Классическая литература и меланхолия
+  names: [Донна Тартт, «Общество мёртвых поэтов», Оксфорд]
+  example:
+    file: University of Glasgow Quadrangle.jpg
+    title: Галереи Университета Глазго
+    place: Глазго, Шотландия
+  wiki: Dark academia
+  links:
+    - { title: "Dark Academia", url: "https://aesthetics.fandom.com/wiki/Dark_Academia", src: "Aesthetics Wiki", lang: en }
+
+- id: kidcore
+  name: Кидкор
+  orig: Kidcore
+  aliases: [kidcore, кидкор, детство 90-х]
+  start: 2017
+  end: null
+  dates: 2017 – наши дни
+  era: internet
+  domain: [internet]
+  region: Интернет
+  tier: 3
+  parents:
+    - { id: y2k-aesthetic, type: revival }
+    - { id: pop-art, type: influence }
+  summary: >
+    Детство 90-х и нулевых как эстетика: основные цвета, наклейки, мелки, детские передачи и бусины.
+  description: |
+    Кидкор собирает образы детских комнат и телевизора 90-х: основные цвета, радуги, смайлики, мелки,
+    пластиковые игрушки и фенечки из бусин. Это ностальгия поколения по беззаботности, но часто с тревожной
+    нотой — отсюда близость к уирдкору и dreamcore, которые используют те же детские мотивы.
+  traits:
+    - Основные цвета — красный, жёлтый, синий
+    - Радуги, смайлики, звёзды, наклейки
+    - Игрушки, мелки, пластик, бусины
+    - Детская «наивная» графика
+  names: [детские телепередачи 90-х, Lisa Frank, кандикор]
+  palette: ["#ff3b30", "#ffcc00", "#007aff", "#34c759", "#ff2d92"]
+  example:
+    title: Детская комната 90-х
+    note: Показана палитра эстетики — основные цвета детских игрушек.
+  links:
+    - { title: "Kidcore", url: "https://aesthetics.fandom.com/wiki/Kidcore", src: "Aesthetics Wiki", lang: en }
+    - { title: "Gen X Soft Club", url: "https://cari.institute/aesthetics/gen-x-soft-club", src: "CARI Institute", lang: en }
+
+- id: liminal-space
+  name: Лиминальные пространства
+  orig: Liminal space
+  aliases: [liminal space, лиминальность, Закулисье, Backrooms, пустые коридоры]
+  start: 2019
+  end: null
+  dates: 2019 – наши дни
+  era: internet
+  domain: [internet]
+  region: Интернет
+  tier: 1
+  parents:
+    - { id: vaporwave, type: evolved }
+    - { id: metaphysical-painting, type: influence }
+  summary: >
+    Пустые коридоры, торговые центры ночью и бассейны без людей: места «между», которые кажутся знакомыми и чужими.
+  description: |
+    В 2019 году на 4chan появились «Закулисье» (Backrooms) — фото пустого офиса с жёлтыми обоями и гудящими
+    лампами, а Twitter-аккаунты стали собирать «лиминальные пространства»: коридоры отелей, пустые
+    школы, парковки. Эффект — тревожная ностальгия и ощущение сна. Это прямой наследник пустых площадей
+    де Кирико и пустых торговых центров вейпорвейва.
+  traits:
+    - Пустые транзитные пространства — коридоры, холлы, бассейны
+    - Флуоресцентный свет, ковролин, жёлтые стены
+    - Отсутствие людей и ощущение «застывшего времени»
+    - Любительская фотография среднего качества
+  names: [Закулисье (Backrooms), Kane Pixels]
+  example:
+    file: Disney’s Contemporary Liminal Hallway.jpg
+    title: Коридор отеля
+    year: 2020-е
+  gallery:
+    - { file: "Corridor Stanley Hotel Estes Park Colorado 2024.jpg", title: "Коридор отеля «Стэнли»", year: "2024" }
+  wiki: { en: Liminal space (aesthetic), ru: Лиминальное пространство }
+  links:
+    - { title: "Liminal Space", url: "https://aesthetics.fandom.com/wiki/Liminal_Space", src: "Aesthetics Wiki", lang: en }
+
+- id: weirdcore
+  name: Уирдкор
+  orig: Weirdcore
+  aliases: [weirdcore, вирдкор, уиердкор]
+  start: 2019
+  end: null
+  dates: 2019 – наши дни
+  era: internet
+  domain: [internet]
+  region: Интернет
+  tier: 1
+  parents:
+    - { id: liminal-space, type: evolved }
+    - { id: web-1-0, type: revival }
+    - { id: surrealism, type: influence }
+  summary: >
+    Тревожные «воспоминания, которых не было»: пустые комнаты, шумные фото низкого качества,
+    глаза в небе и подписи вроде «ты здесь уже был».
+  description: |
+    Уирдкор складывается из любительских снимков с плохой камеры, грубых коллажей в стиле
+    ранних редакторов и коротких фраз, обращённых прямо к зрителю. Он играет с чувством
+    дезориентации и ложной памяти и близок к dreamcore и liminal space, но жёстче и тревожнее.
+  traits:
+    - Низкое качество, шум и пересвет старых камер
+    - Пустые интерьеры, детские площадки, бассейны
+    - Глаза, смайлики, радуги и облака как вставки
+    - Короткие тревожные подписи пиксельным шрифтом
+    - Ощущение ложного воспоминания
+  names: []
+  example:
+    file: Weirdcore 862761.jpg
+    title: Пример уирдкор-изображения
+    year: 2020-е
+  wiki: Weirdcore
+  links:
+    - { title: "Weirdcore", url: "https://aesthetics.fandom.com/wiki/Weirdcore", src: "Aesthetics Wiki", lang: en }
+    - { title: "Закулисье (Backrooms)", url: "https://ru.wikipedia.org/wiki/%D0%97%D0%B0%D0%BA%D1%83%D0%BB%D0%B8%D1%81%D1%8C%D0%B5", src: "Википедия", lang: ru }
+
+- id: dreamcore
+  name: Дримкор
+  orig: Dreamcore
+  aliases: [dreamcore, дримкор, сновидческая эстетика]
+  start: 2020
+  end: null
+  dates: 2020 – наши дни
+  era: internet
+  domain: [internet]
+  region: Интернет
+  tier: 2
+  parents:
+    - { id: weirdcore, type: evolved }
+    - { id: surrealism, type: influence }
+  summary: >
+    Мягкая версия уирдкора: облака, пастельные поля, двери в небе и тихое ощущение сна наяву.
+  description: |
+    Дримкор отделился от уирдкора в 2020–2021 годах в TikTok. Здесь те же любительские снимки и коллажи,
+    но вместо угрозы — нежность и меланхолия: бесконечные лестницы, облака в комнате, поля, пастельный свет
+    и надписи о детстве. Это интернет-сюрреализм: сон, который снится сразу миллионам.
+  traits:
+    - Пастельные, мягкие тона
+    - Облака, небо, поля, вода
+    - Невозможные пространства и двери в никуда
+    - Ностальгия и спокойная меланхолия
+  names: []
+  example:
+    file: Dreamcore (cropped).jpg
+    title: Пример дримкор-изображения
+    author: Crafts97
+  wiki: Dreamcore
+  links:
+    - { title: "Dreamcore", url: "https://aesthetics.fandom.com/wiki/Dreamcore", src: "Aesthetics Wiki", lang: en }
+
+- id: glassmorphism
+  name: Глассморфизм
+  orig: Glassmorphism
+  aliases: [glassmorphism, неоморфизм, neumorphism, Liquid Glass, матовое стекло]
+  start: 2020
+  end: null
+  dates: 2020 – наши дни
+  era: internet
+  domain: [design, internet]
+  region: Весь мир
+  tier: 3
+  parents:
+    - { id: material-design, type: evolved }
+    - { id: frutiger-aero, type: revival }
+    - { id: skeuomorphism, type: revival }
+  summary: >
+    Полупрозрачные панели матового стекла над размытыми цветными пятнами: объём возвращается в плоский интерфейс.
+  description: |
+    В 2020 году дизайнеры на Dribbble увлеклись неоморфизмом — мягкими выпуклыми кнопками — и глассморфизмом:
+    панелями, похожими на матовое стекло, через которые просвечивают яркие градиенты. Эффект размытия фона
+    вошёл в macOS Big Sur и Windows 11, а в 2025 году Apple сделала «жидкое стекло» (Liquid Glass) основой
+    всех своих систем. Это тихое возвращение Frutiger Aero и скевоморфизма.
+  traits:
+    - Матовое стекло, размытие фона
+    - Яркие цветные пятна и градиенты позади
+    - Тонкие светлые обводки и мягкие тени
+    - Объём без текстур
+  names: [macOS Big Sur, Windows 11 (Fluent), Apple Liquid Glass]
+  example:
+    file: Glassmorphism ejemplo.jpg
+    title: Пример глассморфизма
+    author: CarlosEduardoPA
+  wiki: Glassmorphism
+  links:
+    - { title: "Glassmorphism", url: "https://aesthetics.fandom.com/wiki/Glassmorphism", src: "Aesthetics Wiki", lang: en }
+
+- id: solarpunk
+  name: Соларпанк
+  orig: Solarpunk
+  aliases: [solarpunk, соларпанк, зелёное будущее, экоутопия]
+  start: 2014
+  end: null
+  dates: 2014 – наши дни
+  era: internet
+  domain: [internet, art, architecture]
+  region: Интернет
+  tier: 2
+  parents:
+    - { id: art-nouveau, type: revival }
+    - { id: afrofuturism, type: influence }
+    - { id: cyberpunk, type: reaction }
+  summary: >
+    Оптимистичная противоположность киберпанку: солнечные панели, сады на небоскрёбах и модерн из зелени.
+  description: |
+    Соларпанк возник в Tumblr около 2014 года как ответ на мрачные антиутопии: что, если будущее будет
+    светлым, зелёным и справедливым? Его образы — города, заросшие садами, солнечные батареи и ветряки,
+    витражи и формы ар-нуво, ремонт вместо потребления. В 2020-х эстетика стала знаменем климатического
+    оптимизма в архитектуре и иллюстрации.
+  traits:
+    - Зелень на зданиях, вертикальные сады
+    - Солнечные панели, ветряки, витражи
+    - Плавные формы в духе ар-нуво
+    - Тёплый свет, белый, зелёный и золотой
+  names: [Hayao Miyazaki (вдохновение), Vincent Callebaut, Stefano Boeri]
+  example:
+    file: Berlin Friedrichstraße Utopia 2048 small file.jpg
+    title: Фридрихштрассе в 2048 году (визуализация)
+    author: Aerroscape & Lino Zeddies
+  wiki: Solarpunk
+  links:
+    - { title: "Solarpunk", url: "https://aesthetics.fandom.com/wiki/Solarpunk", src: "Aesthetics Wiki", lang: en }
+
+- id: coquette
+  name: Кокетт
+  orig: Coquette
+  aliases: [coquette, кокетт, банты, балеткор]
+  start: 2022
+  end: null
+  dates: 2022 – наши дни
+  era: internet
+  domain: [internet, design]
+  region: TikTok
+  tier: 3
+  parents:
+    - { id: rococo, type: revival }
+    - { id: kidcore, type: influence }
+  summary: >
+    Банты, кружево, жемчуг и бледно-розовый: рококо, пересобранное для TikTok.
+  description: |
+    Кокетт — одна из самых долгоживущих TikTok-эстетик 2022–2025 годов: атласные банты на всём, кружево,
+    рюши, жемчуг, бледно-розовый и кремовый. Источники очевидны — рококо с его пастелью и «Мария-Антуанетта»
+    Софии Копполы. Банты в 2024 году стали главным декоративным мотивом соцсетей.
+  traits:
+    - Атласные банты и ленты
+    - Кружево, рюши, жемчуг
+    - Бледно-розовый, кремовый, белый
+    - Нарочитая хрупкость и романтика
+  names: [София Коппола («Мария-Антуанетта»), Лана Дель Рей]
+  palette: ["#f7d6e0", "#f2b5c9", "#fff4e6", "#e8c7a8", "#c97b93"]
+  example:
+    title: Банты и кружево
+    note: Показана палитра эстетики — бледно-розовый, кремовый и жемчужный.
+  wiki: Coquette aesthetic
+  links:
+    - { title: "Coquette", url: "https://aesthetics.fandom.com/wiki/Coquette", src: "Aesthetics Wiki", lang: en }
+
+- id: barbiecore
+  name: Барбикор
+  orig: Barbiecore
+  aliases: [barbiecore, барбикор, розовый Барби]
+  start: 2022
+  end: 2024
+  dates: 2022 – 2024
+  era: internet
+  domain: [internet, design]
+  region: Весь мир
+  tier: 3
+  parents:
+    - { id: y2k-aesthetic, type: revival }
+    - { id: pop-art, type: influence }
+  summary: >
+    Всё ярко-розовое: эстетика, которую фильм «Барби» 2023 года превратил в мировой маркетинговый взрыв.
+  description: |
+    Ещё до выхода фильма Греты Гервиг съёмки в розовых нарядах вызвали волну барбикора в моде и соцсетях.
+    Ярко-розовый (Pantone 219C), пластиковый блеск, кукольные интерьеры и ирония над гламуром захватили
+    рекламу, бренды и интерьеры. Ради декораций фильма, по слухам, закончилась мировая поставка розовой краски.
+  traits:
+    - Ярко-розовый, фуксия
+    - Пластик, глянец, блёстки
+    - Кукольные интерьеры и мода
+    - Ирония над гламуром
+  names: [Грета Гервиг, Сара Гринвуд, Mattel]
+  example:
+    file: Interior of the Barbie Cafe.jpg
+    title: Кафе в стиле Барби
+  wiki: Barbiecore
+  links:
+    - { title: "Barbiecore", url: "https://aesthetics.fandom.com/wiki/Barbiecore", src: "Aesthetics Wiki", lang: en }
+
+- id: brat
+  name: Брэт
+  orig: Brat
+  aliases: [brat, brat summer, брэт, лаймовый, Charli XCX]
+  start: 2024
+  end: 2025
+  dates: 2024 – 2025
+  era: internet
+  domain: [internet, design]
+  region: Весь мир
+  tier: 3
+  parents:
+    - { id: web-brutalism, type: influence }
+    - { id: punk-graphics, type: revival }
+  summary: >
+    Кислотно-лаймовый квадрат и слово «brat» размытым Arial: самая заразительная эстетика лета 2024 года.
+  description: |
+    Обложка альбома Charli XCX «Brat» — лаймово-зелёный фон и надпись строчными буквами Arial, слегка размытая,
+    — стала мемом «brat summer». Её нарочитая дешевизна высмеивает гладкий дизайн и стала мгновенно копируемым
+    шаблоном: генераторы обложек, предвыборные кампании, бренды. Collins назвал «brat» словом 2024 года.
+  traits:
+    - Кислотно-лаймовый зелёный
+    - Шрифт Arial, строчные, лёгкое размытие
+    - Намеренная дешевизна и анти-дизайн
+    - Мем как формат
+  names: [Charli XCX, Atlantic Records]
+  example:
+    file: Charli XCX - Brat (album cover).png
+    title: Обложка альбома «Brat»
+    author: Charli XCX
+    year: 2024
+  wiki: Brat (album)
+  links:
+    - { title: "Brat", url: "https://aesthetics.fandom.com/wiki/Brat", src: "Aesthetics Wiki", lang: en }
+
+- id: ai-aesthetic
+  name: Нейросетевая эстетика
+  orig: AI art aesthetic
+  aliases: [AI-арт, нейросети, DeepDream, GAN, Midjourney, генеративное искусство]
+  start: 2015
+  end: null
+  dates: 2015 – наши дни
+  era: internet
+  domain: [internet, art]
+  region: Весь мир
+  tier: 1
+  parents:
+    - { id: computer-art, type: evolved }
+    - { id: glitch-art, type: influence }
+    - { id: surrealism, type: influence }
+  summary: >
+    От психоделических собачьих морд DeepDream до гладких «идеальных» картинок Midjourney: визуальный язык машин.
+  description: |
+    В 2015 году DeepDream от Google превратил фотографии в галлюцинации из глаз и собачьих морд. Затем
+    генеративно-состязательные сети дали размытые портреты: «Эдмон де Белами» от коллектива Obvious ушёл
+    с аукциона Christie's за 432 тысячи долларов. С 2022 года диффузионные модели — DALL·E, Midjourney,
+    Stable Diffusion — сделали генерацию массовой, а её узнаваемый глянец, сияние и «слишком идеальные» детали
+    стали отдельной, спорной эстетикой эпохи.
+  traits:
+    - Сюрреалистичные, «галлюцинаторные» детали
+    - Гладкий глянец и мягкое кинематографичное сияние
+    - Смешение стилей и эпох по запросу
+    - Странные ошибки — пальцы, тексты, перетекающие формы
+  names: [DeepDream, Obvious, Refik Anadol, Midjourney, Stable Diffusion]
+  example:
+    file: Edmond de Belamy.png
+    title: Портрет Эдмона де Белами
+    author: Obvious (GAN)
+    year: 2018
+  gallery:
+    - { file: "\"Mona Lisa\" with DeepDream effect using VGG16 network trained on ImageNet.jpg", title: "«Мона Лиза» после DeepDream", year: "2015" }
+  wiki: { en: Artificial intelligence visual art, ru: Искусственный интеллект в искусстве }
+  links:
+    - { title: "DeepDream", url: "https://en.wikipedia.org/wiki/DeepDream", src: "Wikipedia", lang: en }
+
+- id: alien-core
+  name: Элиенкор / Y3K
+  orig: Alien core
+  aliases: [alien core, alien-core, Y3K, инопланетная эстетика, опалесцентный]
+  start: 2024
+  end: null
+  dates: 2024 – наши дни
+  era: internet
+  domain: [internet, design]
+  region: Интернет
+  tier: 2
+  parents:
+    - { id: y2k-aesthetic, type: revival }
+    - { id: ai-aesthetic, type: influence }
+  summary: >
+    Эстетика 2025–2026 годов: опалесцентные переливы, хром, жидкий металл, бледно-зелёная кожа
+    и формы, будто выращенные не на Земле.
+  description: |
+    По данным Pinterest Predicts 2026, поисковые запросы «alien core» выросли на 80%, «opalescent» —
+    на 115%. Эстетика продолжает хромированный Y3K и смешивает голографические поверхности,
+    биоморфные формы и макияж «как у пришельца» — ностальгию по будущему, но уже без иронии vaporwave.
+  traits:
+    - Опалесцентные, голографические переливы
+    - Хром и эффект жидкого металла
+    - Биоморфные, «органические» формы
+    - Бледно-зелёные, лиловые и перламутровые тона
+  names: []
+  palette: ["#c9f5e9", "#b9a8ff", "#7fe8d0", "#efe9ff", "#3b3f5c"]
+  example:
+    title: Отчёт Pinterest Predicts 2026
+    note: Свободных изображений пока нет — показана палитра эстетики.
+  links:
+    - { title: "Pinterest Predicts 2026 (обзор)", url: "https://axios.com/2025/12/09/2026-pinterest-trend-report", src: "Axios", lang: en }
+    - { title: "The aesthetics that will define 2026 according to Pinterest", url: "https://nssmag.com/en/lifestyle/43770/pinterest-predicts-2026-aesthetic-trends", src: "nss magazine", lang: en }
+    - { title: "Pinterest Predicts", url: "https://business.pinterest.com/pinterest-predicts/", src: "Pinterest", lang: en }

@@ -1,0 +1,256 @@
+- id: greek-archaic
+  name: Греческая архаика
+  orig: Archaic Greek art
+  aliases: [архаика, куросы, чернофигурная вазопись, Эксекий]
+  start: -800
+  end: -480
+  dates: ок. 800 – 480 до н. э.
+  era: antiquity
+  domain: [art]
+  region: Греция
+  tier: 2
+  parents:
+    - { id: minoan-art, type: evolved }
+    - { id: ancient-egypt, type: influence }
+  summary: >
+    Застывшие куросы с «архаической улыбкой» и чернофигурные вазы: Греция учится у Египта
+    и ищет свой язык.
+  description: |
+    После «тёмных веков» греки начинают с геометрического орнамента на вазах, а затем, глядя на Египет,
+    высекают куросов — обнажённых юношей в строгой фронтальной позе с лёгкой «архаической улыбкой».
+    В Афинах расцветает чернофигурная вазопись: силуэты героев на рыжей глине. Эксекий изображает
+    Ахилла и Аякса за игрой в кости так напряжённо, что сцена читается как кадр из фильма.
+  traits:
+    - Строгая фронтальность, левая нога чуть впереди
+    - «Архаическая улыбка»
+    - Чёрные силуэты на рыжей глине
+    - Геометрический орнамент и меандр
+  names: [Эксекий, Клеобис и Битон, Мосхофор, Кора в пеплосе]
+  example:
+    file: Akhilleus Aias MGEt 16757.jpg
+    title: Ахилл и Аякс играют в кости (амфора)
+    author: Эксекий
+    year: ок. 540–530 до н. э.
+    place: Музеи Ватикана
+  gallery:
+    - { file: "Kouros anavissos.jpg", title: "Курос из Анависсоса", year: "ок. 530 до н. э." }
+  wiki: Archaic Greece
+  links:
+    - { title: "Kouros", url: "https://www.worldhistory.org/Kouros/", src: "World History Encyclopedia", lang: en }
+
+- id: classical-greece
+  name: Греческая классика
+  orig: Classical Greek art
+  aliases: [античная Греция, классика, Парфенон, ордер, Фидий]
+  start: -480
+  end: -323
+  dates: 480 – 323 до н. э.
+  era: antiquity
+  domain: [art, architecture]
+  region: Греция
+  tier: 1
+  parents:
+    - { id: greek-archaic, type: evolved }
+  summary: >
+    Идеальные пропорции, ордер и человеческое тело как мера всего: эталон, к которому Европа
+    будет возвращаться две с половиной тысячи лет.
+  description: |
+    После персидских войн Афины переживают расцвет: на Акрополе строят Парфенон, Поликлет пишет
+    трактат о пропорциях, а скульптура переходит от застывших архаических фигур к живому
+    контрапосту. Классика — это поиск гармонии через число и меру.
+
+    Белизна античного мрамора — позднее недоразумение: статуи и храмы были ярко раскрашены. Но именно
+    «белая» классика стала идеалом для Возрождения, неоклассицизма и даже бюстов вейпорвейва.
+  traits:
+    - Пропорции, выверенные математически
+    - Ордер — колонна, антаблемент, фронтон
+    - Контрапост — вес тела на одной ноге
+    - Идеализированное, спокойное лицо
+    - Белый мрамор (изначально раскрашенный)
+  names: [Фидий, Поликлет, Мирон, Иктин, Калликрат]
+  example:
+    file: Parthenon from west.jpg
+    title: Парфенон
+    author: Иктин и Калликрат, скульптор Фидий
+    year: 447–432 до н. э.
+    place: Акрополь, Афины
+  wiki: Ancient Greek art
+  links:
+    - { title: "Parthenon", url: "https://www.worldhistory.org/parthenon/", src: "World History Encyclopedia", lang: en }
+
+- id: hellenistic-art
+  name: Эллинизм
+  orig: Hellenistic art
+  aliases: [эллинистическое искусство, Ника Самофракийская, Лаокоон]
+  start: -323
+  end: -31
+  dates: 323 – 31 до н. э.
+  era: antiquity
+  domain: [art]
+  region: Восточное Средиземноморье
+  tier: 2
+  parents:
+    - { id: classical-greece, type: evolved }
+  summary: >
+    После Александра Македонского классика получает драму: развевающиеся одежды, страдание,
+    старость и движение.
+  description: |
+    Империя Александра разнесла греческое искусство от Египта до Индии. Спокойный идеал классики сменяется
+    пафосом и театральностью: Ника Самофракийская будто шагает навстречу ветру, Лаокоон корчится в кольцах
+    змей. Скульпторы впервые всерьёз изображают детей, стариков, уродство и чувственность.
+  traits:
+    - Бурное движение и развевающиеся драпировки
+    - Сильные эмоции, страдание, пафос
+    - Реализм деталей — возраст, мышцы, кожа
+    - Театральная постановка для обхода по кругу
+  names: [Ника Самофракийская, Лаокоон, Пергамский алтарь, Венера Милосская]
+  example:
+    file: Victoire de Samothrace - Musee du Louvre - 20190812.jpg
+    title: Ника Самофракийская
+    year: ок. 190 до н. э.
+    place: Лувр, Париж
+  wiki: Hellenistic art
+  links:
+    - { title: "Hellenistic Art", url: "https://www.worldhistory.org/Hellenistic_Art/", src: "World History Encyclopedia", lang: en }
+
+- id: ancient-rome
+  name: Древний Рим
+  orig: Ancient Roman art and architecture
+  aliases: [римское искусство, Колизей, Пантеон, римская архитектура, арка]
+  start: -200
+  end: 476
+  dates: ок. 200 до н. э. – 476 н. э.
+  era: antiquity
+  domain: [architecture, art]
+  region: Римская империя
+  tier: 1
+  parents:
+    - { id: hellenistic-art, type: evolved }
+  summary: >
+    Греческие формы плюс римская инженерия: арка, свод, купол и бетон. Плюс беспощадно честный
+    портрет.
+  description: |
+    Рим заимствовал греческие ордера, но построил из них то, что Греции и не снилось: акведуки, амфитеатры,
+    термы и купол Пантеона диаметром 43 метра из бетона. Римские скульпторы делали портреты с морщинами
+    и бородавками, а стены домов в Помпеях расписывали иллюзорными архитектурами и садами.
+  traits:
+    - Арка, свод, купол, бетон
+    - Греческий ордер как декор фасада
+    - Веристический, «честный» портрет
+    - Помпейская роспись с иллюзией пространства
+  names: [Витрувий, Пантеон, Колизей, Помпеи, колонна Траяна]
+  example:
+    file: Colosseum in Rome, Italy - April 2007.jpg
+    title: Колизей (амфитеатр Флавиев)
+    year: 70–80 н. э.
+    place: Рим
+  gallery:
+    - { file: "Pantheon (Rome) - Right side and front.jpg", title: "Пантеон", year: "ок. 125 н. э." }
+  wiki: Ancient Roman architecture
+  links:
+    - { title: "Roman Architecture", url: "https://www.worldhistory.org/Roman_Architecture/", src: "World History Encyclopedia", lang: en }
+
+- id: fayum-portraits
+  name: Фаюмский портрет
+  orig: Fayum mummy portraits
+  aliases: [фаюмские портреты, портреты мумий, энкаустика]
+  start: 30
+  end: 250
+  dates: I – III века
+  era: antiquity
+  domain: [art]
+  region: Римский Египет
+  tier: 3
+  parents:
+    - { id: ancient-rome, type: evolved }
+    - { id: ancient-egypt, type: influence }
+  summary: >
+    Живые лица римских египтян, написанные восковыми красками на досках для мумий. Они смотрят
+    на нас уже две тысячи лет.
+  description: |
+    В римском Египте умерших по-прежнему мумифицировали, но поверх лица клали портрет, написанный
+    при жизни или сразу после смерти. Техника энкаустики — краски на горячем воске — даёт удивительную
+    светоносность. Большие глаза и прямой взгляд фаюмских портретов напрямую ведут к византийской иконе.
+  traits:
+    - Фронтальный портрет по грудь
+    - Огромные выразительные глаза
+    - Энкаустика — краски на воске, тёплое свечение
+    - Индивидуальные черты при общей схеме
+  names: [Фаюмский оазис, Хавара, Флиндерс Питри]
+  example:
+    file: Fayum-02.jpg
+    title: Портрет мумии из Фаюма
+    year: II век
+  wiki: Fayum mummy portraits
+  links:
+    - { title: "Fayum Mummy Portraits", url: "https://www.worldhistory.org/article/1610/fayum-mummy-portraits/", src: "World History Encyclopedia", lang: en }
+
+- id: gandhara
+  name: Гандхара
+  orig: Greco-Buddhist art of Gandhara
+  aliases: [греко-буддийское искусство, гандхарский Будда]
+  start: -100
+  end: 500
+  dates: ок. I в. до н. э. – V в. н. э.
+  era: antiquity
+  domain: [art]
+  region: Пакистан, Афганистан
+  tier: 3
+  parents:
+    - { id: ancient-indian-art, type: evolved }
+    - { id: hellenistic-art, type: influence }
+  summary: >
+    Будда в греческих одеждах: встреча эллинистической скульптуры и буддизма на краю мира Александра.
+  description: |
+    В Гандхаре, где после походов Александра жили греческие колонисты, впервые стали изображать Будду
+    в облике человека. Скульпторы дали ему волнистые волосы и тогу греческой статуи, лицо — спокойствие
+    медитации. Этот образ ушёл по Шёлковому пути в Китай, Корею и Японию.
+  traits:
+    - Складки драпировки, как у греческих статуй
+    - Волнистые волосы и спокойное идеализированное лицо
+    - Серый сланец и стукко
+    - Буддийские сюжеты в эллинистической форме
+  names: [Таксила, Хадда, Кушанское царство]
+  example:
+    file: Gandhara Buddha (tnm).jpeg
+    title: Стоящий Будда
+    year: I–II век
+    place: Национальный музей, Токио
+  wiki: Greco-Buddhist art
+  links:
+    - { title: "Gandhara Civilization", url: "https://www.worldhistory.org/Gandhara_Civilization/", src: "World History Encyclopedia", lang: en }
+
+- id: celtic-art
+  name: Кельтское искусство
+  orig: Celtic (La Tène) art
+  aliases: [латенская культура, кельты, кельтский орнамент]
+  start: -500
+  end: 100
+  dates: ок. 500 до н. э. – I век н. э.
+  era: antiquity
+  domain: [art, design]
+  region: Западная и Центральная Европа
+  tier: 3
+  parents:
+    - { id: neolithic-art, type: evolved }
+    - { id: greek-archaic, type: influence }
+  summary: >
+    Текучие спирали, трискели и пальметты на щитах, шейных гривнах и зеркалах латенских кельтов.
+  description: |
+    Кельты латенской культуры взяли греческие и этрусские растительные мотивы и превратили их в абстрактную
+    игру изгибов: S-образные спирали, трискели, «лица», проступающие в орнаменте. Шлемы, щиты и золотые
+    гривны — вещи статуса и магии. Этот язык переживёт Рим и вернётся в ирландских рукописях.
+  traits:
+    - Спирали, трискели, S-образные изгибы
+    - Асимметричная, «текучая» композиция
+    - Бронза, золото, эмаль
+    - Растительный мотив, ставший абстракцией
+  names: [Ла-Тен, щит из Баттерси, котёл из Гундеструпа]
+  example:
+    file: British Museum Battersea Shield.jpg
+    title: Щит из Баттерси
+    year: ок. 350–50 до н. э.
+    place: Британский музей, Лондон
+  wiki: La Tène culture
+  links:
+    - { title: "Celtic Art", url: "https://www.worldhistory.org/Celtic_Art/", src: "World History Encyclopedia", lang: en }

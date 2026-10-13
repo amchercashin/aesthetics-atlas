@@ -1,0 +1,133 @@
+/* Карта родословной */
+body[data-view="map"] { overflow: hidden; }
+body[data-view="map"] .site-footer { display: none; }
+
+.map-view {
+  display: grid; grid-template-rows: auto 1fr auto;
+  height: calc(100dvh - var(--header-h));
+}
+@media (max-width: 760px) { .map-view { height: calc(100dvh - var(--header-h) - 64px - env(safe-area-inset-bottom)); } body[data-view="map"] { padding-bottom: 0; } }
+
+.map-toolbar {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 10px 22px;
+  padding: 10px var(--gutter); border-bottom: 1px solid var(--rule);
+}
+.map-legend { list-style: none; display: flex; flex-wrap: wrap; gap: 4px 16px; font-size: var(--t-xs); color: var(--ink-3); }
+.map-legend li { display: flex; align-items: center; gap: 6px; }
+.map-legend svg { width: 34px; height: 10px; overflow: visible; }
+.zoom-ctrls { margin-left: auto; display: flex; align-items: center; gap: 2px; }
+
+.map-stage { position: relative; overflow: hidden; touch-action: none; cursor: grab; user-select: none; -webkit-user-select: none; outline-offset: -3px; }
+.map-stage.dragging { cursor: grabbing; }
+.map-svg { position: absolute; inset: 0; }
+
+.col-bg { fill-opacity: 0.045; }
+.col-line { stroke: var(--rule); stroke-width: 1; }
+.axis-bg { fill: color-mix(in oklab, var(--paper) 94%, transparent); }
+.axis-line { stroke: var(--rule-strong); }
+.axis-era { font-family: var(--serif); font-size: 15px; font-weight: 500; fill: var(--ink); }
+.axis-start { font-size: 11px; fill: var(--ink-2); font-weight: 500; }
+.axis-break { fill: none; stroke: var(--ink-3); stroke-width: 1.2; }
+.tick { stroke: var(--rule-strong); }
+.tick-label { font-size: 11px; fill: var(--ink-3); text-anchor: middle; }
+
+.bar { stroke-linecap: round; stroke-opacity: 0.42; }
+.bar.t1 { stroke-width: 4; } .bar.t2 { stroke-width: 3; } .bar.t3 { stroke-width: 2; }
+
+.edge { fill: none; stroke: var(--ink-2); stroke-opacity: 0.5; stroke-width: 1.4; stroke-linecap: round; transition: stroke 0.35s, stroke-opacity 0.35s, stroke-width 0.35s; }
+.edge.rel-evolved { stroke-width: 1.8; }
+.edge.rel-influence { stroke-width: 1; stroke-opacity: 0.4; }
+.edge.rel-reaction { stroke-dasharray: 7 5; }
+.edge.rel-revival { stroke-dasharray: 1.5 4.5; stroke-width: 2; }
+.edge.far { stroke-opacity: 0.16; }
+.map-legend .edge { stroke-opacity: 0.9; }
+
+.node { cursor: pointer; outline: none; }
+.node .hit { fill: transparent; }
+.node .dot { stroke: var(--paper); stroke-width: 1.5; transition: r 0.2s; }
+.node text {
+  fill: var(--ink); paint-order: stroke; stroke: color-mix(in oklab, var(--paper) 92%, transparent); stroke-width: 4px; stroke-linejoin: round;
+  font-family: var(--sans); font-size: 13px; font-weight: 500;
+}
+.node.t1 text { font-family: var(--serif); font-size: 16px; font-weight: 600; }
+.node.t3 text { font-size: 12px; font-weight: 400; fill: var(--ink-2); }
+.node:hover text { fill: var(--accent); }
+.node:focus-visible .dot { stroke: var(--accent); stroke-width: 3; }
+.node:focus-visible text { text-decoration: underline; }
+
+.filtered { opacity: 0.14; }
+.edge.filtered { stroke-opacity: 0.08; }
+
+/* Выделение родословной */
+.has-selection .node:not(.lit) { opacity: 0.22; }
+.has-selection .bar { stroke-opacity: 0.16; }
+.has-selection .edge { stroke-opacity: 0.1; }
+.has-selection .edge.hl { stroke: var(--accent); stroke-opacity: 0.45; stroke-width: 1.4; }
+.has-selection .edge.hl.main { stroke-opacity: 1; stroke-width: 3.4; }
+.has-selection .edge.hl.desc { stroke-opacity: 0.85; stroke-width: 2.2; }
+.has-selection .node.lit:not(.on-line):not(.is-selected) { opacity: 0.6; }
+.has-selection .node.on-line text { font-weight: 600; }
+.node.is-selected .dot { stroke: var(--accent); stroke-width: 3; }
+.node.is-selected text { fill: var(--accent); }
+
+/* Подсказка */
+.map-tip {
+  position: absolute; left: 0; top: 0; z-index: 6; pointer-events: none;
+  display: grid; grid-template-columns: 72px 1fr; gap: 12px; width: 320px; padding: 10px;
+  background: var(--paper-2); border: 1px solid var(--rule); border-radius: 8px;
+  box-shadow: 0 14px 40px -14px rgb(0 0 0 / 0.4);
+}
+.map-tip[hidden] { display: none; }
+.map-tip .thumb { width: 72px; height: 72px; display: block; overflow: hidden; background: var(--ph); }
+.map-tip .thumb img { width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity 0.3s; }
+.map-tip .thumb img.is-loaded { opacity: 1; }
+.tip-text { display: grid; align-content: start; gap: 2px; }
+.tip-name { font-family: var(--serif); font-size: var(--t-lg); line-height: 1.15; }
+.tip-dates { font-size: var(--t-xs); color: var(--ink-3); }
+.tip-sum { margin-top: 4px; font-size: var(--t-sm); color: var(--ink-2); line-height: 1.35; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+
+/* Панель выбранного стиля */
+.map-panel {
+  position: absolute; z-index: 8; top: 12px; right: 12px; bottom: 12px; width: min(380px, calc(100% - 24px));
+  overflow-y: auto; overscroll-behavior: contain; cursor: auto;
+  background: var(--paper-2); border: 1px solid var(--rule); border-radius: 10px;
+  box-shadow: 0 24px 60px -24px rgb(0 0 0 / 0.45);
+  animation: panel-in 0.35s var(--ease);
+}
+.map-panel[hidden] { display: none; }
+@keyframes panel-in { from { opacity: 0; transform: translateX(16px); } }
+.mp-close { position: absolute; top: 8px; right: 8px; z-index: 2; background: color-mix(in oklab, var(--paper-2) 80%, transparent); }
+.mp-art { display: block; }
+.mp-art .art-frame { border-radius: 10px 10px 0 0; }
+.mp-body { padding: 16px 18px 20px; display: grid; gap: 6px; }
+.mp-name { font-family: var(--serif); font-size: var(--t-3xl); line-height: 1.08; letter-spacing: -0.01em; margin-top: 4px; }
+.mp-orig { color: var(--ink-3); font-size: var(--t-sm); }
+.mp-sum { margin-top: 8px; font-family: var(--serif); font-size: var(--t-lg); line-height: 1.5; color: var(--ink-2); }
+.mp-rel { margin-top: 12px; }
+.mp-rel h3 { font-size: var(--t-xs); font-weight: 600; color: var(--ink-3); margin-bottom: 6px; }
+.mp-rel ul { list-style: none; display: grid; gap: 4px; }
+.mp-node {
+  display: flex; align-items: center; gap: 10px; width: 100%; padding: 7px 10px; text-align: left;
+  border: 1px solid var(--rule); border-radius: 6px; background: none; font-family: var(--serif); font-size: var(--t-md);
+}
+.mp-node:hover { border-color: var(--ink-3); }
+.mp-node-rel { display: block; font-family: var(--sans); font-size: 11px; color: var(--ink-3); }
+.mp-open { margin-top: 16px; justify-content: center; }
+
+.map-loading { position: absolute; inset: 0; display: grid; place-items: center; font-family: var(--serif); font-size: var(--t-xl); color: var(--ink-3); }
+.map-hint { position: absolute; left: 12px; bottom: 10px; font-size: var(--t-xs); color: var(--ink-3); pointer-events: none; background: color-mix(in oklab, var(--paper) 80%, transparent); padding: 3px 8px; border-radius: 4px; }
+
+/* Мини-карта */
+.map-mini { position: relative; height: 46px; margin: 0 var(--gutter) 10px; border: 1px solid var(--rule); border-radius: 6px; overflow: hidden; cursor: pointer; touch-action: none; background: var(--paper-2); }
+.mini-svg { width: 100%; height: 100%; }
+.mini-window { position: absolute; top: 0; bottom: 0; left: 0; border: 2px solid var(--accent); border-radius: 4px; background: color-mix(in oklab, var(--accent) 8%, transparent); pointer-events: none; }
+
+@media (max-width: 760px) {
+  .map-legend, .map-hint { display: none; }
+  .map-toolbar { padding: 8px var(--gutter); flex-wrap: nowrap; overflow-x: auto; }
+  .map-toolbar .filter-row { flex-wrap: nowrap; }
+  .map-panel { top: auto; left: 8px; right: 8px; bottom: 8px; width: auto; max-height: 46%; animation-name: sheet-in; }
+  .mp-art .art-frame { aspect-ratio: 21 / 9 !important; }
+  @keyframes sheet-in { from { opacity: 0; transform: translateY(24px); } }
+  .map-mini { margin-bottom: 8px; height: 36px; }
+}

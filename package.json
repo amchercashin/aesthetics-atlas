@@ -1,0 +1,16 @@
+{
+  "name": "aesthetics-atlas",
+  "private": true,
+  "type": "module",
+  "description": "Атлас эстетик — навигатор по визуальным стилям человечества",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "check-links": "node scripts/check-links.mjs",
+    "find": "node scripts/find-media.mjs",
+    "test": "node --test test/*.test.mjs"
+  },
+  "devDependencies": {
+    "js-yaml": "^4.1.0",
+    "sharp": "^0.34.5"
+  }
+}

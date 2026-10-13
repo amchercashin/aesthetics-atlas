@@ -1,0 +1,739 @@
+- id: cubism
+  name: Кубизм
+  orig: Cubism
+  aliases: [кубисты, Пикассо, Брак, аналитический кубизм, синтетический кубизм]
+  start: 1907
+  end: 1925
+  dates: 1907 – 1925
+  era: avant-garde
+  domain: [art]
+  region: Франция
+  tier: 1
+  parents:
+    - { id: post-impressionism, type: evolved }
+  summary: >
+    Предмет, разобранный на грани и показанный сразу с нескольких сторон: конец перспективы, придуманной Возрождением.
+  description: |
+    Вслед за Сезанном и под впечатлением от африканской скульптуры Пикассо пишет «Авиньонских девиц» —
+    угловатые фигуры с масками вместо лиц. Вместе с Браком он разбирает гитары, бутылки и портреты на
+    кристаллические плоскости, а затем начинает вклеивать в картины газеты и обои — так рождается коллаж.
+    Кубизм стал общим языком почти всего авангарда.
+  traits:
+    - Предмет с нескольких точек зрения одновременно
+    - Геометрические грани и плоскости
+    - Сдержанная охристо-серая палитра (аналитический период)
+    - Коллаж, буквы, газетные вырезки
+  names: [Пабло Пикассо, Жорж Брак, Хуан Грис, Фернан Леже]
+  example:
+    file: "enwiki:Les Demoiselles d'Avignon.jpg"
+    title: Авиньонские девицы
+    author: Пабло Пикассо
+    year: 1907
+    place: Музей современного искусства (MoMA), Нью-Йорк
+  wiki: Cubism
+  links:
+    - { title: "Cubism", url: "https://www.theartstory.org/movement/cubism/", src: "The Art Story", lang: en }
+    - { title: "Cubism", url: "https://www.guggenheim.org/artwork/movement/cubism", src: "Guggenheim", lang: en }
+
+- id: futurism
+  name: Футуризм
+  orig: Futurism
+  aliases: [итальянский футуризм, Маринетти, Боччони, динамизм]
+  start: 1909
+  end: 1944
+  dates: 1909 – 1944
+  era: avant-garde
+  domain: [art, design]
+  region: Италия, Россия
+  tier: 1
+  parents:
+    - { id: cubism, type: influence }
+    - { id: neo-impressionism, type: influence }
+  summary: >
+    Скорость, машины и город: «рычащий автомобиль прекраснее Ники Самофракийской».
+  description: |
+    Поэт Маринетти в 1909 году опубликовал манифест, призывающий сжечь музеи и воспеть скорость, электричество
+    и войну. Художники Боччони, Балла и Северини пытались показать движение на холсте: повторяющиеся
+    контуры, силовые линии, вихри цвета. В «Городе встаёт» Боччони кони и люди сливаются в стройку будущего.
+  traits:
+    - Изображение движения и скорости
+    - Силовые линии и повторяющиеся контуры
+    - Машины, поезда, город, толпа
+    - Агрессивные манифесты и типографика
+  names: [Филиппо Томмазо Маринетти, Умберто Боччони, Джакомо Балла, Джино Северини]
+  example:
+    file: The City Rises by Umberto Boccioni 1910.jpg
+    title: Город встаёт
+    author: Умберто Боччони
+    year: 1910
+    place: Музей современного искусства (MoMA), Нью-Йорк
+  wiki: Futurism
+  links:
+    - { title: "Futurism", url: "https://www.theartstory.org/movement/futurism/", src: "The Art Story", lang: en }
+
+- id: cubo-futurism
+  name: Кубофутуризм
+  orig: Cubo-Futurism
+  aliases: [русский авангард, будетляне, Малевич, Гончарова]
+  start: 1912
+  end: 1915
+  dates: 1912 – 1915
+  era: avant-garde
+  domain: [art]
+  region: Россия
+  tier: 2
+  parents:
+    - { id: cubism, type: evolved }
+    - { id: futurism, type: evolved }
+  summary: >
+    Русский сплав кубизма и футуризма: металлические грани, мелькание движения и заумная поэзия будетлян.
+  description: |
+    Русские художники соединили кубистическое дробление формы с футуристическим движением. «Точильщик»
+    Малевича состоит из блестящих металлических граней, повторяющихся, как кадры. Рядом — поэты Хлебников
+    и Кручёных с «заумью» и опера «Победа над солнцем», в декорациях к которой впервые появился чёрный квадрат.
+  traits:
+    - Металлические, цилиндрические формы
+    - Мерцание движения, повтор контуров
+    - Связь с поэзией, театром и заумью
+    - Яркие контрасты и народные мотивы
+  names: [Казимир Малевич, Наталья Гончарова, Михаил Ларионов, Любовь Попова, Давид Бурлюк]
+  example:
+    file: The Knife Grinder Principle of Glittering by Kazimir Malevich.jpeg
+    title: Точильщик (принцип мелькания)
+    author: Казимир Малевич
+    year: 1912–1913
+    place: Художественная галерея Йельского университета
+  wiki: Cubo-Futurism
+  links:
+    - { title: "Cubo-Futurism", url: "https://www.theartstory.org/movement/russian-futurism/", src: "The Art Story", lang: en }
+
+- id: orphism
+  name: Орфизм
+  orig: Orphism
+  aliases: [симультанизм, Делоне, орфический кубизм]
+  start: 1912
+  end: 1914
+  dates: 1912 – 1914
+  era: avant-garde
+  domain: [art]
+  region: Франция
+  tier: 3
+  parents:
+    - { id: cubism, type: evolved }
+  summary: >
+    Кубизм, наполненный светом и цветом: прозрачные окна, круги-диски и музыка красок.
+  description: |
+    Поэт Аполлинер назвал так живопись Робера и Сони Делоне, в которой кубистические плоскости стали
+    прозрачными и цветными. Серия «Одновременные окна» превращает вид на Париж и Эйфелеву башню в ритм
+    цветных призм. Делоне считали, что цвет сам по себе создаёт форму и движение, как звук в музыке.
+  traits:
+    - Чистые спектральные цвета
+    - Прозрачные, перекрывающиеся плоскости
+    - Круговые диски и ритмы
+    - Путь к абстракции через цвет
+  names: [Робер Делоне, Соня Делоне, Франтишек Купка]
+  example:
+    file: Robert Delaunay, 1912, Les Fenêtres simultanée sur la ville (Simultaneous Windows on the City), 40 x 46 cm, Kunsthalle Hamburg.jpg
+    title: Одновременные окна на город
+    author: Робер Делоне
+    year: 1912
+    place: Гамбургский кунстхалле
+  wiki: Orphism (art)
+  links:
+    - { title: "Orphism", url: "https://www.theartstory.org/movement/orphism/", src: "The Art Story", lang: en }
+
+- id: abstract-art
+  name: Абстракционизм
+  orig: Abstract art
+  aliases: [абстракция, беспредметное искусство, Кандинский, лирическая абстракция]
+  start: 1910
+  end: 1940
+  dates: 1910 – 1940
+  era: avant-garde
+  domain: [art]
+  region: Германия, Россия, Франция
+  tier: 1
+  parents:
+    - { id: expressionism, type: evolved }
+    - { id: symbolism, type: influence }
+  summary: >
+    Живопись без предмета: цвет, линия и форма звучат сами по себе, как музыка.
+  description: |
+    Василий Кандинский пришёл к абстракции через экспрессионизм и музыку: краски для него звучали, а картины
+    назывались «Композициями» и «Импровизациями». «Композиция VII» — буря цветовых пятен и линий без единого
+    узнаваемого предмета. Одновременно к беспредметности шли Купка, Малевич и Мондриан — каждый своим путём.
+  traits:
+    - Отказ от изображения предметов
+    - Цвет и линия как самостоятельный язык
+    - Музыкальные названия — композиции, импровизации
+    - Духовное, «внутреннее» содержание
+  names: [Василий Кандинский, Франтишек Купка, Хильма аф Клинт, Пауль Клее]
+  example:
+    file: Composition VII - Wassily Kandinsky, GAC.jpg
+    title: Композиция VII
+    author: Василий Кандинский
+    year: 1913
+    place: Государственная Третьяковская галерея, Москва
+  wiki: Abstract art
+  links:
+    - { title: "Abstract Art", url: "https://www.tate.org.uk/art/art-terms/a/abstract-art", src: "Tate", lang: en }
+
+- id: suprematism
+  name: Супрематизм
+  orig: Suprematism
+  aliases: [Малевич, Чёрный квадрат, беспредметность, УНОВИС]
+  start: 1915
+  end: 1935
+  dates: 1915 – 1935
+  era: avant-garde
+  domain: [art, design]
+  region: Россия
+  tier: 1
+  parents:
+    - { id: cubo-futurism, type: evolved }
+  summary: >
+    «Чёрный квадрат» и парящие в белом пространстве плоскости: точка нуля живописи и начало новой формы.
+  description: |
+    В 1915 году на выставке «0,10» Малевич повесил «Чёрный квадрат» в красный угол, где в русской избе висят
+    иконы. Супрематизм — «превосходство чистого чувства»: геометрические плоскости парят в белой бесконечности.
+    Через школу УНОВИС в Витебске идеи Малевича ушли в архитектуру, фарфор, плакат и, позже, в мировой дизайн.
+  traits:
+    - Простые геометрические формы — квадрат, круг, крест
+    - Плоскости, парящие на белом фоне
+    - Ограниченная палитра — чёрный, красный, белый
+    - Динамика диагоналей без предмета
+  names: [Казимир Малевич, Эль Лисицкий, Ольга Розанова, Илья Чашник, Николай Суетин]
+  example:
+    file: Kazimir Malevich, 1915, Black Suprematic Square, oil on linen canvas, 79.5 x 79.5 cm, Tretyakov Gallery, Moscow.jpg
+    title: Чёрный супрематический квадрат
+    author: Казимир Малевич
+    year: 1915
+    place: Государственная Третьяковская галерея, Москва
+  wiki: Suprematism
+  links:
+    - { title: "Suprematism", url: "https://www.theartstory.org/movement/suprematism/", src: "The Art Story", lang: en }
+    - { title: "Suprematism", url: "https://www.tate.org.uk/art/art-terms/s/suprematism", src: "Tate", lang: en }
+
+- id: constructivism
+  name: Конструктивизм
+  orig: Constructivism
+  aliases: [конструктивисты, Лисицкий, Родченко, Татлин, ВХУТЕМАС]
+  start: 1915
+  end: 1934
+  dates: 1915 – 1934
+  era: avant-garde
+  domain: [design, architecture, art]
+  region: СССР
+  tier: 1
+  parents:
+    - { id: suprematism, type: evolved }
+    - { id: cubism, type: influence }
+  summary: >
+    Искусство как инженерия для нового общества: плакаты-клинья, фотомонтаж, рабочие клубы и башня Татлина.
+  description: |
+    После революции художники решили, что картина устарела: нужно конструировать вещи, здания и сознание.
+    Лисицкий в плакате «Клином красным бей белых» превращает супрематические формы в политическую агитацию.
+    Родченко делает фотомонтаж и рекламу с Маяковским, братья Веснины и Мельников строят клубы и дома-коммуны,
+    а ВХУТЕМАС становится советским Баухаусом.
+  traits:
+    - Геометрия, диагонали, красный и чёрный
+    - Фотомонтаж и резкие ракурсы
+    - Рубленые шрифты, типографика как образ
+    - Функциональная архитектура из простых объёмов
+  names: [Эль Лисицкий, Александр Родченко, Владимир Татлин, Варвара Степанова, Константин Мельников]
+  example:
+    file: Beat the Whites with the Red Wedge.jpg
+    title: Клином красным бей белых
+    author: Эль Лисицкий
+    year: 1919–1920
+  wiki: Constructivism (art)
+  links:
+    - { title: "Constructivism", url: "https://www.theartstory.org/movement/constructivism/", src: "The Art Story", lang: en }
+    - { title: "Constructivism", url: "https://www.tate.org.uk/art/art-terms/c/constructivism", src: "Tate", lang: en }
+
+- id: dada
+  name: Дадаизм
+  orig: Dada
+  aliases: [дада, Дюшан, реди-мейд, Кабаре Вольтер]
+  start: 1916
+  end: 1924
+  dates: 1916 – 1924
+  era: avant-garde
+  domain: [art, design]
+  region: Цюрих, Берлин, Париж, Нью-Йорк
+  tier: 1
+  parents:
+    - { id: futurism, type: influence }
+    - { id: cubism, type: influence }
+  summary: >
+    Антиискусство в ответ на бойню Первой мировой: писсуар как скульптура, бессмысленные стихи и коллажи из газет.
+  description: |
+    В 1916 году в цюрихском «Кабаре Вольтер» эмигранты устроили шоу абсурда: если цивилизация привела
+    к войне, её искусство тоже ничего не стоит. Марсель Дюшан выставил перевёрнутый писсуар под названием
+    «Фонтан» — так появился реди-мейд и вопрос «что такое искусство?». Берлинские дадаисты изобрели
+    политический фотомонтаж. Из дада вырастут сюрреализм, поп-арт, концептуализм и панк.
+  traits:
+    - Реди-мейд — готовый предмет как произведение
+    - Абсурд, случайность, провокация
+    - Коллаж и фотомонтаж
+    - Хаотичная типографика
+  names: [Марсель Дюшан, Тристан Тцара, Ханна Хёх, Курт Швиттерс, Ман Рэй]
+  example:
+    file: Marcel Duchamp, 1917, Fountain, photograph by Alfred Stieglitz.jpg
+    title: Фонтан (фотография Альфреда Стиглица)
+    author: Марсель Дюшан
+    year: 1917
+  wiki: Dada
+  links:
+    - { title: "Dada", url: "https://www.theartstory.org/movement/dada/", src: "The Art Story", lang: en }
+    - { title: "Dada", url: "https://www.tate.org.uk/art/art-terms/d/dada", src: "Tate", lang: en }
+
+- id: metaphysical-painting
+  name: Метафизическая живопись
+  orig: Metaphysical painting
+  aliases: [питтура метафизика, де Кирико, пустые площади]
+  start: 1911
+  end: 1920
+  dates: 1911 – 1920
+  era: avant-garde
+  domain: [art]
+  region: Италия
+  tier: 2
+  parents:
+    - { id: symbolism, type: evolved }
+  summary: >
+    Пустые площади, длинные тени, аркады и манекены: тревожная тишина города, где что-то вот-вот случится.
+  description: |
+    Джорджо де Кирико писал итальянские площади, будто увиденные во сне: резкие тени, безлюдные аркады,
+    гипсовые головы, перчатки и поезда на горизонте. Предметы стоят рядом без логики, а пространство
+    одновременно знакомо и чуждо. Это прямой предок сюрреализма — и, через сто лет, эстетики liminal space.
+  traits:
+    - Безлюдные площади и аркады
+    - Длинные косые тени, вечерний свет
+    - Манекены, статуи, странные сочетания предметов
+    - Неправильная, «сновидческая» перспектива
+  names: [Джорджо де Кирико, Карло Карра, Джорджо Моранди]
+  example:
+    file: "enwiki:De Chirico's Love Song.jpg"
+    title: Песнь любви
+    author: Джорджо де Кирико
+    year: 1914
+    place: Музей современного искусства (MoMA), Нью-Йорк
+  wiki: Metaphysical painting
+  links:
+    - { title: "Metaphysical Painting", url: "https://www.theartstory.org/movement/metaphysical-painting/", src: "The Art Story", lang: en }
+
+- id: surrealism
+  name: Сюрреализм
+  orig: Surrealism
+  aliases: [сюрреалисты, Дали, Магритт, сверхреализм]
+  start: 1924
+  end: 1966
+  dates: 1924 – 1966
+  era: avant-garde
+  domain: [art]
+  region: Франция, затем весь мир
+  tier: 1
+  parents:
+    - { id: dada, type: evolved }
+    - { id: metaphysical-painting, type: influence }
+  summary: >
+    Логика сна: тающие часы, окаменевшие пейзажи и невозможные встречи предметов, выписанные
+    с фотографической точностью.
+  description: |
+    Андре Бретон в «Манифесте сюрреализма» 1924 года предложил освободить творчество от контроля
+    разума — через автоматическое письмо, сны и случайность. Одни сюрреалисты писали иллюзорно
+    точные сновидения (Дали, Магритт), другие — почти абстрактные «автоматические» картины (Миро).
+
+    Сюрреализм повлиял на кино, моду, рекламу и, в конце концов, на интернет: dreamcore и уирдкор —
+    его прямые наследники.
+  traits:
+    - Сновидческие, иррациональные сюжеты
+    - Иллюзорная, «академическая» точность письма
+    - Неожиданные сочетания предметов
+    - Пустынные бесконечные пейзажи
+    - Автоматизм и случайность
+  names: [Сальвадор Дали, Рене Магритт, Макс Эрнст, Жоан Миро, Андре Бретон]
+  example:
+    file: "enwiki:The Persistence of Memory.jpg"
+    title: Постоянство памяти
+    author: Сальвадор Дали
+    year: 1931
+    place: Музей современного искусства (MoMA), Нью-Йорк
+  wiki: Surrealism
+  links:
+    - { title: "Surrealism", url: "https://www.tate.org.uk/art/art-terms/s/surrealism", src: "Tate", lang: en }
+    - { title: "Surrealism", url: "https://www.theartstory.org/movement/surrealism/", src: "The Art Story", lang: en }
+
+- id: de-stijl
+  name: Де Стейл (неопластицизм)
+  orig: De Stijl
+  aliases: [неопластицизм, Мондриан, ван Дусбург, Ритвельд]
+  start: 1917
+  end: 1931
+  dates: 1917 – 1931
+  era: avant-garde
+  domain: [art, design, architecture]
+  region: Нидерланды
+  tier: 1
+  parents:
+    - { id: cubism, type: evolved }
+  summary: >
+    Только прямые углы, чёрные линии и три основных цвета: универсальная гармония Мондриана.
+  description: |
+    Голландская группа вокруг журнала «Де Стейл» хотела свести искусство к абсолютным элементам: горизонталь,
+    вертикаль, красный, синий, жёлтый, чёрный, белый и серый. Мондриан годами уточнял баланс прямоугольников,
+    Ритвельд построил по этим принципам красно-синий стул и дом Шрёдер. Язык де Стейл до сих пор узнаётся
+    в моде, логотипах и интерфейсах.
+  traits:
+    - Только горизонтали и вертикали
+    - Основные цвета плюс чёрный, белый, серый
+    - Асимметричное равновесие прямоугольников
+    - Единство живописи, мебели и архитектуры
+  names: [Пит Мондриан, Тео ван Дусбург, Геррит Ритвельд, Барт ван дер Лек]
+  example:
+    file: Piet Mondriaan, 1930 - Mondrian Composition II in Red, Blue, and Yellow.jpg
+    title: Композиция с красным, синим и жёлтым
+    author: Пит Мондриан
+    year: 1930
+    place: Кунстхаус, Цюрих
+  wiki: De Stijl
+  links:
+    - { title: "De Stijl", url: "https://www.theartstory.org/movement/de-stijl/", src: "The Art Story", lang: en }
+
+- id: bauhaus
+  name: Баухаус
+  orig: Bauhaus
+  aliases: [Bauhaus, баухауз, школа Баухаус]
+  start: 1919
+  end: 1933
+  dates: 1919 – 1933
+  era: avant-garde
+  domain: [design, architecture]
+  region: Германия
+  tier: 1
+  parents:
+    - { id: arts-and-crafts, type: evolved }
+    - { id: de-stijl, type: influence }
+    - { id: constructivism, type: influence }
+  summary: >
+    Школа, которая соединила искусство и промышленность: функция, геометрия, основные цвета
+    и шрифт без засечек.
+  description: |
+    Вальтер Гропиус основал Баухаус в Веймаре, чтобы обучать художников и ремесленников вместе.
+    Здесь преподавали Кандинский, Клее, Мохой-Надь; здесь придумали стальной стул, современную
+    вёрстку и мебель для массового производства. Нацисты закрыли школу в 1933-м, но эмигрировавшие
+    мастера разнесли её идеи по всему миру.
+  traits:
+    - Форма следует функции
+    - Геометрия — круг, квадрат, треугольник
+    - Основные цвета плюс чёрный и белый
+    - Шрифты без засечек, асимметричная вёрстка
+    - Сталь, стекло, промышленные материалы
+  names: [Вальтер Гропиус, Людвиг Мис ван дер Роэ, Марсель Брейер, Василий Кандинский, Ласло Мохой-Надь]
+  example:
+    file: Bauhaus-Dessau main building.jpg
+    title: Здание Баухауса в Дессау
+    author: Вальтер Гропиус
+    year: 1925–1926
+    place: Дессау, Германия
+  wiki: Bauhaus
+  links:
+    - { title: "Bauhaus", url: "https://www.tate.org.uk/art/art-terms/b/bauhaus", src: "Tate", lang: en }
+    - { title: "Bauhaus", url: "https://www.theartstory.org/movement/bauhaus/", src: "The Art Story", lang: en }
+
+- id: art-deco
+  name: Ар-деко
+  orig: Art Deco
+  aliases: [арт-деко, стиль 1920-х, джаз-модерн]
+  start: 1920
+  end: 1940
+  dates: 1920 – 1940
+  era: avant-garde
+  domain: [design, architecture]
+  region: Франция, США, весь мир
+  tier: 1
+  parents:
+    - { id: vienna-secession, type: evolved }
+    - { id: cubism, type: influence }
+    - { id: art-nouveau, type: reaction }
+  summary: >
+    Роскошь эпохи джаза: зигзаги, солнечные лучи, хром, лак и небоскрёбы со ступенчатыми шпилями.
+  description: |
+    Название пришло от парижской выставки декоративных искусств 1925 года. Ар-деко взял у модерна любовь
+    к декору, но заменил стебли геометрией: ступенчатые формы, веерные лучи, зигзаги и египетские мотивы
+    после открытия гробницы Тутанхамона. Он одел всё — от лайнеров и кинотеатров до Крайслер-билдинг.
+  traits:
+    - Геометрический декор — зигзаги, лучи, ступени
+    - Дорогие материалы — хром, лак, слоновая кость
+    - Стилизованные фигуры и египетские мотивы
+    - Вертикальный ритм небоскрёбов
+  names: [Тамара де Лемпицка, Эмиль-Жак Рульман, Кассандр, Уильям ван Ален]
+  example:
+    file: Chrysler Building spire, Manhattan, by Carol Highsmith (LOC highsm.04444).jpg
+    title: Шпиль Крайслер-билдинг
+    author: Уильям ван Ален
+    year: 1928–1930
+    place: Нью-Йорк
+  wiki: Art Deco
+  links:
+    - { title: "Art Deco", url: "https://www.theartstory.org/movement/art-deco/", src: "The Art Story", lang: en }
+
+- id: new-objectivity
+  name: Новая вещественность
+  orig: New Objectivity (Neue Sachlichkeit)
+  aliases: [Neue Sachlichkeit, Дикс, Гросс, магический реализм]
+  start: 1920
+  end: 1933
+  dates: 1920 – 1933
+  era: avant-garde
+  domain: [art]
+  region: Германия
+  tier: 3
+  parents:
+    - { id: expressionism, type: reaction }
+    - { id: dada, type: influence }
+  summary: >
+    Холодный, едкий реализм Веймарской Германии: кабаре, инвалиды войны и портреты с беспощадной точностью.
+  description: |
+    После экспрессионистского крика художники Веймарской республики вернулись к чёткой форме — но не
+    к идеализации. Отто Дикс, Георг Гросс, Кристиан Шад писали общество как вскрытие: спекулянтов,
+    проституток, искалеченных солдат. Портрет журналистки Сильвии фон Харден с моноклем — икона эпохи.
+  traits:
+    - Чёткая, гладкая, почти фотографическая форма
+    - Сатира и социальная критика
+    - Холодный, «стеклянный» взгляд
+    - Город, кабаре, послевоенная травма
+  names: [Отто Дикс, Георг Гросс, Кристиан Шад, Макс Бекман]
+  example:
+    file: "enwiki:Otto Dix Sy von Harden.jpg"
+    title: Портрет журналистки Сильвии фон Харден
+    author: Отто Дикс
+    year: 1926
+    place: Центр Помпиду, Париж
+  wiki: New Objectivity
+  links:
+    - { title: "New Objectivity", url: "https://www.theartstory.org/movement/new-objectivity/", src: "The Art Story", lang: en }
+
+- id: international-style
+  name: Интернациональный стиль
+  orig: International Style
+  aliases: [функционализм, модернизм в архитектуре, Мис ван дер Роэ, стекло и сталь]
+  start: 1925
+  end: 1965
+  dates: 1925 – 1965
+  era: avant-garde
+  domain: [architecture]
+  region: Европа, США, весь мир
+  tier: 1
+  parents:
+    - { id: bauhaus, type: evolved }
+    - { id: de-stijl, type: influence }
+    - { id: chicago-school, type: influence }
+  summary: >
+    Стеклянные коробки на тонких опорах: плоские крыши, ленточные окна и «меньше — значит больше».
+  description: |
+    В 1932 году выставка MoMA дала имя архитектуре Гропиуса, Ле Корбюзье и Миса ван дер Роэ. Принципы
+    простые: объём вместо массы, отказ от декора, каркас и свободный план. После войны интернациональный
+    стиль стал языком корпораций: Сигрем-билдинг Миса в Нью-Йорке с бронзовыми стойками на фасаде —
+    эталон офисного небоскрёба.
+  traits:
+    - Плоские крыши и гладкие белые или стеклянные стены
+    - Ленточные окна, стеклянные навесные фасады
+    - Отказ от орнамента — «меньше — значит больше»
+    - Каркас и свободная планировка
+  names: [Людвиг Мис ван дер Роэ, Ле Корбюзье, Вальтер Гропиус, Филип Джонсон]
+  example:
+    file: Seagram Building-NewYork-3.jpg
+    title: Сигрем-билдинг
+    author: Людвиг Мис ван дер Роэ, Филип Джонсон
+    year: 1954–1958
+    place: Нью-Йорк
+  wiki: International Style
+  links:
+    - { title: "International Style", url: "https://www.theartstory.org/movement/international-style/", src: "The Art Story", lang: en }
+
+- id: organic-architecture
+  name: Органическая архитектура
+  orig: Organic architecture
+  aliases: [Фрэнк Ллойд Райт, Дом над водопадом, стиль прерий]
+  start: 1900
+  end: 1960
+  dates: 1900 – 1960
+  era: avant-garde
+  domain: [architecture, design]
+  region: США, Финляндия
+  tier: 3
+  parents:
+    - { id: chicago-school, type: evolved }
+    - { id: arts-and-crafts, type: influence }
+    - { id: wabi-sabi, type: influence }
+  summary: >
+    Дом, который вырастает из ландшафта: камень, дерево, консоли над водопадом и единство с природой.
+  description: |
+    Ученик Салливана Фрэнк Ллойд Райт противопоставил европейским белым коробкам архитектуру, сросшуюся
+    с местом. Его «дома прерий» стелятся по земле, а «Дом над водопадом» нависает бетонными террасами
+    над ручьём. Японская эстетика, природные материалы и открытые пространства — его главные инструменты.
+    Близкие идеи развивал Алвар Аалто в Финляндии.
+  traits:
+    - Единство здания и ландшафта
+    - Природные материалы — камень, дерево
+    - Горизонтальные консоли и террасы
+    - Открытые, перетекающие пространства
+  names: [Фрэнк Ллойд Райт, Алвар Аалто, Брюс Гофф]
+  example:
+    file: Wrightfallingwater.jpg
+    title: Дом над водопадом
+    author: Фрэнк Ллойд Райт
+    year: 1936–1939
+    place: Милл-Ран, Пенсильвания
+  wiki: Organic architecture
+  links: []
+
+- id: streamline-moderne
+  name: Стримлайн-модерн
+  orig: Streamline Moderne
+  aliases: [стримлайн, обтекаемый стиль, промышленный дизайн 1930-х]
+  start: 1930
+  end: 1945
+  dates: 1930 – 1945
+  era: avant-garde
+  domain: [design, architecture]
+  region: США
+  tier: 3
+  parents:
+    - { id: art-deco, type: evolved }
+    - { id: futurism, type: influence }
+  summary: >
+    Аэродинамика как стиль: закруглённые углы, горизонтальные полосы и хромированные поезда, похожие на пули.
+  description: |
+    В годы Великой депрессии американские дизайнеры Реймонд Лоуи и Норман Бел Геддес сделали обтекаемую
+    форму символом прогресса. Обтекаемыми стали не только поезда и самолёты, но и тостеры, радиоприёмники
+    и здания с закруглёнными углами и «корабельными» иллюминаторами. Из стримлайна вырастет весь
+    послевоенный «атомный» дизайн.
+  traits:
+    - Каплевидные, обтекаемые формы
+    - Закруглённые углы и горизонтальные полосы-«скорости»
+    - Хром, алюминий, бакелит
+    - Иллюминаторы и корабельные мотивы
+  names: [Реймонд Лоуи, Норман Бел Геддес, Генри Дрейфус]
+  example:
+    file: Pioneer Zephyr.JPG
+    title: Поезд Pioneer Zephyr
+    author: Budd Company
+    year: 1934
+  gallery:
+    - { file: "Coca-Cola Building Los Angeles.jpg", title: "Здание Coca-Cola в Лос-Анджелесе", year: "1939" }
+  wiki: Streamline Moderne
+  links: []
+
+- id: socialist-realism
+  name: Социалистический реализм
+  orig: Socialist realism
+  aliases: [соцреализм, Мухина, Дейнека, сталинское искусство]
+  start: 1932
+  end: 1988
+  dates: 1932 – 1980-е
+  era: avant-garde
+  domain: [art]
+  region: СССР и соцстраны
+  tier: 2
+  parents:
+    - { id: peredvizhniki, type: evolved }
+    - { id: constructivism, type: reaction }
+  summary: >
+    Официальный метод советского искусства: героические рабочие, светлое будущее и монументальный оптимизм.
+  description: |
+    В 1932 году все художественные группировки распустили, а затем объявили единственный метод — изображать
+    жизнь «в её революционном развитии». Авангард был объявлен формализмом. Соцреализм дал и пропаганду,
+    и сильные вещи: «Рабочий и колхозница» Веры Мухиной, созданная для Всемирной выставки 1937 года в Париже,
+    стала символом эпохи.
+  traits:
+    - Героические, идеализированные фигуры
+    - Оптимизм и движение вперёд
+    - Реалистичная, понятная форма
+    - Монументальность и плакатность
+  names: [Вера Мухина, Александр Дейнека, Исаак Бродский, Александр Герасимов]
+  example:
+    file: Worker and Kolkhoz Woman.jpg
+    title: Рабочий и колхозница
+    author: Вера Мухина
+    year: 1937
+    place: ВДНХ, Москва
+  wiki: Socialist realism
+  links:
+    - { title: "Socialist Realism", url: "https://www.theartstory.org/movement/socialist-realism/", src: "The Art Story", lang: en }
+
+- id: stalinist-architecture
+  name: Сталинский ампир
+  orig: Stalinist architecture
+  aliases: [сталинская архитектура, сталинские высотки, сталинский неоклассицизм]
+  start: 1933
+  end: 1955
+  dates: 1933 – 1955
+  era: avant-garde
+  domain: [architecture]
+  region: СССР
+  tier: 2
+  parents:
+    - { id: socialist-realism, type: evolved }
+    - { id: neoclassicism, type: revival }
+    - { id: art-deco, type: influence }
+  summary: >
+    Монументальная архитектура империи: колонны, шпили, гербы и семь высоток Москвы.
+  description: |
+    После конкурса на Дворец Советов конструктивизм уступил место парадной архитектуре на основе классики.
+    Колоннады, арки, скульптура и гербы украсили станции метро, проспекты и высотные здания. Главное здание
+    МГУ на Воробьёвых горах соединяет классическую симметрию со ступенчатым силуэтом американских
+    небоскрёбов ар-деко.
+  traits:
+    - Классические ордера в гигантском масштабе
+    - Ступенчатые высотки со шпилями
+    - Гербы, звёзды, скульптура на фасадах
+    - Парадная симметрия ансамблей
+  names: [Лев Руднев, Борис Иофан, Дмитрий Чечулин, Аркадий Мордвинов]
+  example:
+    file: Moscow State University crop.jpg
+    title: Главное здание МГУ
+    author: Лев Руднев и др.
+    year: 1949–1953
+    place: Москва
+  wiki: Stalinist architecture
+  links: []
+
+- id: mexican-muralism
+  name: Мексиканский мурализм
+  orig: Mexican muralism
+  aliases: [мурализм, Диего Ривера, Ороско, Сикейрос]
+  start: 1920
+  end: 1970
+  dates: 1920 – 1970
+  era: avant-garde
+  domain: [art]
+  region: Мексика, США
+  tier: 3
+  parents:
+    - { id: mesoamerican-art, type: revival }
+    - { id: cubism, type: influence }
+  summary: >
+    Огромные фрески на стенах общественных зданий: история Мексики, индейское наследие и революция — для всех.
+  description: |
+    После революции правительство Мексики заказало художникам росписи общественных зданий, чтобы рассказать
+    народу его историю. Диего Ривера, Хосе Клементе Ороско и Давид Альфаро Сикейрос соединили доколумбовые
+    мотивы, урок кубизма и левую политику. Фреска Риверы «Человек на перепутье» была уничтожена в
+    Рокфеллер-центре из-за портрета Ленина и воссоздана в Мехико.
+  traits:
+    - Монументальные фрески в общественных зданиях
+    - Доколумбовые и народные мотивы
+    - Политические и исторические сюжеты
+    - Плотные, многофигурные композиции
+  names: [Диего Ривера, Хосе Клементе Ороско, Давид Альфаро Сикейрос, Руфино Тамайо]
+  example:
+    file: Mural. El hombre en el cruce de caminos. Diego rivera (1934).JPG
+    title: Человек на перепутье (фрагмент)
+    author: Диего Ривера
+    year: 1934
+    place: Дворец изящных искусств, Мехико
+  wiki: Mexican muralism
+  links:
+    - { title: "Mexican Muralism", url: "https://www.theartstory.org/movement/mexican-muralism/", src: "The Art Story", lang: en }

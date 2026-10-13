@@ -1,0 +1,502 @@
+- id: hyperrealism
+  name: Фотореализм и гиперреализм
+  orig: Photorealism / Hyperrealism
+  aliases: [фотореализм, гиперреализм, суперреализм, Эстес]
+  start: 1968
+  end: 2000
+  dates: 1968 – 2000-е
+  era: postmodern
+  domain: [art]
+  region: США
+  tier: 3
+  parents:
+    - { id: pop-art, type: evolved }
+  summary: >
+    Картины, неотличимые от фотографии: хромированные закусочные, витрины и отражения, написанные кистью.
+  description: |
+    Вслед за поп-артом художники взяли фотографию как исходник и стали переносить её на холст с машинной
+    точностью. Ричард Эстес писал витрины Нью-Йорка со сложными отражениями, Джон Бедер — придорожные
+    закусочные, Чак Клоуз — гигантские лица. Позже гиперреалисты в скульптуре вроде Рона Мьюика довели
+    иллюзию до жути.
+  traits:
+    - Фотографическая точность
+    - Хром, стекло, отражения, неон
+    - Городская повседневность Америки
+    - Холодная, безоценочная интонация
+  names: [Ричард Эстес, Чак Клоуз, Ральф Гоингс, Джон Бедер, Рон Мьюик]
+  example:
+    file: John's Diner by John Baeder.jpg
+    title: Закусочная Джона
+    author: Джон Бедер
+  wiki: Photorealism
+  links:
+    - { title: "Photorealism", url: "https://www.theartstory.org/movement/photorealism/", src: "The Art Story", lang: en }
+
+- id: postmodern-architecture
+  name: Постмодернизм в архитектуре
+  orig: Postmodern architecture
+  aliases: [постмодерн, архитектурный постмодернизм, Грейвз, Вентури]
+  start: 1972
+  end: 2000
+  dates: 1972 – 1990-е
+  era: postmodern
+  domain: [architecture, design]
+  region: США, Европа
+  tier: 2
+  parents:
+    - { id: international-style, type: reaction }
+    - { id: historicism, type: revival }
+  summary: >
+    «Меньше — это скучно»: колонны и фронтоны возвращаются — в цвете, гипертрофированные и с иронией.
+  description: |
+    Роберт Вентури ответил Мису: «Less is a bore». Постмодернисты вернули в архитектуру историю, символ
+    и декор, но в виде цитат и шуток. Майкл Грейвз построил Портленд-билдинг с гигантскими плоскими
+    пилястрами и гирляндами, Чарльз Мур — «Пьяцца д'Италия» из неоновых колонн. Многие здания эпохи
+    сегодня кажутся комиксом на классику.
+  traits:
+    - Исторические формы как ирония и цитата
+    - Яркие цвета, пастель, контрасты
+    - Гипертрофированные фронтоны, арки, колонны
+    - Смешение высокого и популярного
+  names: [Роберт Вентури, Майкл Грейвз, Чарльз Мур, Альдо Росси, Филип Джонсон]
+  example:
+    file: Portland Building 1982.jpg
+    title: Портленд-билдинг
+    author: Майкл Грейвз
+    year: 1982
+    place: Портленд, США
+  gallery:
+    - { file: "Piazza d'Italia, New Orleans, from Commerce Street, 22 May 2024.jpg", title: "Пьяцца д'Италия", author: "Чарльз Мур", year: "1978" }
+  wiki: Postmodern architecture
+  links:
+    - { title: "Postmodern Architecture", url: "https://www.archdaily.com/tag/postmodernism", src: "ArchDaily", lang: en }
+
+- id: high-tech
+  name: Хай-тек
+  orig: High-tech architecture
+  aliases: [хай-тек, структурный экспрессионизм, Роджерс, Фостер]
+  start: 1970
+  end: 2000
+  dates: 1970 – 2000-е
+  era: postmodern
+  domain: [architecture]
+  region: Великобритания, Франция, весь мир
+  tier: 2
+  parents:
+    - { id: international-style, type: evolved }
+    - { id: space-age, type: influence }
+  summary: >
+    Здание-машина: трубы, лифты, лестницы и конструкции вынесены наружу и покрашены как в учебнике.
+  description: |
+    Ричард Роджерс и Ренцо Пьяно вывернули Центр Помпиду наизнанку: вентиляция, лифты и эскалаторы оказались
+    на фасаде. Тот же Роджерс построил здание страховой компании Lloyd's в Лондоне — нержавеющую сталь,
+    стеклянные лифты и сервисные башни снаружи. Норман Фостер сделал хай-тек языком банков и аэропортов.
+  traits:
+    - Конструкции и коммуникации снаружи
+    - Сталь, стекло, алюминий
+    - Индустриальная эстетика, «машинность»
+    - Гибкое внутреннее пространство
+  names: [Ричард Роджерс, Ренцо Пьяно, Норман Фостер, Николас Гримшоу]
+  example:
+    file: Lloyd's Building surrounded.jpg
+    title: Здание Lloyd's
+    author: Ричард Роджерс
+    year: 1978–1986
+    place: Лондон
+  wiki: High-tech architecture
+  links: []
+
+- id: memphis-design
+  name: Мемфис
+  orig: Memphis Group
+  aliases: [Memphis Milano, Соттсасс, мемфис-дизайн, 80-е]
+  start: 1981
+  end: 1988
+  dates: 1981 – 1988
+  era: postmodern
+  domain: [design]
+  region: Италия
+  tier: 1
+  parents:
+    - { id: pop-art, type: evolved }
+    - { id: art-deco, type: influence }
+  summary: >
+    Пластиковый ламинат в горошек, кислотные цвета и мебель-игрушки: дерзкий ответ «хорошему вкусу».
+  description: |
+    В 1980 году Этторе Соттсасс собрал у себя в Милане молодых дизайнеров, и под песню Боба Дилана «Stuck
+    Inside of Mobile with the Memphis Blues Again» родилось название. Книжный шкаф «Карлтон» похож на
+    тотем из цветных пластиковых плоскостей. Мемфис был коммерческим провалом и культурной бомбой: его
+    узоры на десятилетия определили облик 80-х и вернулись в «корпоративном Мемфисе» 2010-х.
+  traits:
+    - Пластиковый ламинат с узорами — горошек, зигзаги, «червячки»
+    - Кислотные и пастельные цвета вместе
+    - Геометрические, игрушечные формы
+    - Ирония против функционализма
+  names: [Этторе Соттсасс, Микеле де Лукки, Натали дю Паскье, Мартин Бедин, Майкл Грейвз]
+  example:
+    file: Carlton Bookcase, by Ettore Sottsass, 1981, wood veneer and plastic laminate, Inv. FNAC 1980, Musée des Arts Décoratifs, Paris (01).png
+    title: Книжный шкаф «Карлтон»
+    author: Этторе Соттсасс
+    year: 1981
+    place: Музей декоративного искусства, Париж
+  gallery:
+    - { file: "Memphis-Milano Movement.jpg", title: "Предметы группы Memphis" }
+  wiki: Memphis Group
+  links: []
+
+- id: punk-graphics
+  name: Панк-графика и DIY
+  orig: Punk visual art
+  aliases: [панк, зины, DIY, коллаж из вырезок, Джейми Рид]
+  start: 1976
+  end: 1990
+  dates: 1976 – 1990
+  era: postmodern
+  domain: [design, art]
+  region: Великобритания, США
+  tier: 2
+  parents:
+    - { id: dada, type: revival }
+    - { id: pop-art, type: influence }
+  summary: >
+    Буквы, вырезанные из газет, как в письме с угрозой, ксерокс, булавки и «сделай сам».
+  description: |
+    Панк-рок 1976–1977 годов принёс эстетику дешёвой ярости. Джейми Рид оформил «God Save the Queen» Sex
+    Pistols, заклеив глаза королевы буквами из газет. Самиздатовские зины печатались на ксероксе, флаеры
+    клеились из вырезок. Главный принцип — DIY: не нужно уметь, нужно делать. Отсюда растут гранж-типографика,
+    стрит-арт и нынешний «уродливый» дизайн.
+  traits:
+    - Буквы из газетных вырезок
+    - Ксерокс, грубый контраст, грязь
+    - Коллаж, булавки, рваные края
+    - Провокация и анти-эстетика
+  names: [Джейми Рид, Реймонд Петтибон, Линдер, Малкольм Макларен]
+  example:
+    file: "enwiki:Sex Pistols - God Save the Queen.jpg"
+    title: Обложка сингла «God Save the Queen»
+    author: Джейми Рид для Sex Pistols
+    year: 1977
+  gallery:
+    - { file: "UK and US zines.jpg", title: "Британские и американские зины" }
+  wiki: { en: Punk visual art, ru: Панк }
+  links:
+    - { title: "Punk", url: "https://aesthetics.fandom.com/wiki/Punk", src: "Aesthetics Wiki", lang: en }
+
+- id: graffiti-street-art
+  name: Граффити и стрит-арт
+  orig: Graffiti and street art
+  aliases: [граффити, стрит-арт, теги, Бэнкси, нью-йоркские поезда]
+  start: 1970
+  end: null
+  dates: 1970 – наши дни
+  era: postmodern
+  domain: [art]
+  region: Нью-Йорк, затем весь мир
+  tier: 1
+  parents:
+    - { id: pop-art, type: influence }
+  summary: >
+    Подписи-теги на поездах метро превращаются в многоцветные «куски», а затем — в мировой музейный стрит-арт.
+  description: |
+    В начале 1970-х подростки Нью-Йорка начали расписывать вагоны метро своими именами. Теги выросли
+    в огромные «пис» с объёмными буквами wildstyle, персонажами и эффектами. Вместе с хип-хопом граффити
+    разошлось по миру, а в 2000-х стрит-арт Бэнкси, Shepard Fairey и других стал одним из самых узнаваемых
+    языков современной культуры.
+  traits:
+    - Объёмные буквы, wildstyle, теги
+    - Аэрозольная краска, яркие контуры
+    - Публичное пространство как холст
+    - Трафареты, стикеры, муралы
+  names: [Донди Уайт, Lee Quiñones, Futura, Кит Харинг, Бэнкси]
+  example:
+    file: Bus129 dondi ny 1984.jpg
+    title: Граффити Донди Уайта
+    author: Донди Уайт
+    year: 1984
+    place: Нью-Йорк
+  wiki: Graffiti
+  links:
+    - { title: "Street Art", url: "https://www.theartstory.org/movement/street-art/", src: "The Art Story", lang: en }
+
+- id: neo-expressionism
+  name: Неоэкспрессионизм
+  orig: Neo-expressionism
+  aliases: [неоэкспрессионизм, Баския, новые дикие, трансавангард]
+  start: 1978
+  end: 1990
+  dates: 1978 – 1990
+  era: postmodern
+  domain: [art]
+  region: США, Германия, Италия
+  tier: 3
+  parents:
+    - { id: expressionism, type: revival }
+    - { id: graffiti-street-art, type: influence }
+  summary: >
+    После минимализма и концептуализма — снова грубая, яркая, фигуративная живопись: Баския, Кифер, «новые дикие».
+  description: |
+    К концу 1970-х многим надоело искусство идей, и живопись вернулась с размахом. Жан-Мишель Баския пришёл
+    из уличного граффити (SAMO) и заполнил холсты коронами, черепами, анатомическими схемами и зачёркнутыми
+    словами. В Германии Ансельм Кифер и Георг Базелиц писали темы истории и травмы. Арт-рынок 1980-х
+    сделал неоэкспрессионистов звёздами.
+  traits:
+    - Грубая, экспрессивная фигуративность
+    - Яркие цвета, наивный рисунок
+    - Слова, символы, зачёркивания
+    - Большие форматы и миф художника
+  names: [Жан-Мишель Баския, Джулиан Шнабель, Ансельм Кифер, Георг Базелиц, Франческо Клементе]
+  example:
+    file: "enwiki:Untitled acrylic and mixed media on canvas by --Jean-Michel Basquiat--, 1984.jpg"
+    title: Без названия
+    author: Жан-Мишель Баския
+    year: 1984
+  wiki: Neo-expressionism
+  links:
+    - { title: "Neo-Expressionism", url: "https://www.theartstory.org/movement/neo-expressionism/", src: "The Art Story", lang: en }
+
+- id: deconstructivism
+  name: Деконструктивизм
+  orig: Deconstructivism
+  aliases: [деконструктивизм, Гери, Хадид, Либескинд]
+  start: 1982
+  end: null
+  dates: 1980-е – наши дни
+  era: postmodern
+  domain: [architecture]
+  region: Весь мир
+  tier: 2
+  parents:
+    - { id: constructivism, type: revival }
+    - { id: postmodern-architecture, type: reaction }
+  summary: >
+    Здания, которые будто взорвались и застыли: изломанные плоскости, наклонные стены и титановые волны.
+  description: |
+    В 1988 году MoMA показала выставку «Деконструктивистская архитектура» с проектами Гери, Хадид, Колхаса,
+    Либескинда и других. Они ломали прямой угол, напоминая о конструктивистах, и вдохновлялись философией
+    Деррида. Компьютерное проектирование позволило построить невозможное: музей Гуггенхайма Фрэнка Гери
+    в Бильбао из изогнутых титановых листов изменил целый город.
+  traits:
+    - Изломанные, наклонные, фрагментированные объёмы
+    - Отказ от прямого угла и симметрии
+    - Титан, сталь, стекло, сложные оболочки
+    - Компьютерное проектирование форм
+  names: [Фрэнк Гери, Заха Хадид, Даниэль Либескинд, Рем Колхас, Coop Himmelb(l)au]
+  example:
+    file: Museo Guggenheim, Bilbao (31273245344).jpg
+    title: Музей Гуггенхайма в Бильбао
+    author: Фрэнк Гери
+    year: 1997
+    place: Бильбао, Испания
+  wiki: Deconstructivism
+  links:
+    - { title: "Deconstructivism", url: "https://www.archdaily.com/tag/deconstructivism", src: "ArchDaily", lang: en }
+
+- id: cyberpunk
+  name: Киберпанк
+  orig: Cyberpunk
+  aliases: [киберпанк, «Бегущий по лезвию», неон, high tech low life]
+  start: 1982
+  end: null
+  dates: 1982 – наши дни
+  era: postmodern
+  domain: [design, art]
+  region: США, Япония
+  tier: 1
+  parents:
+    - { id: punk-graphics, type: influence }
+    - { id: high-tech, type: influence }
+  summary: >
+    «Высокие технологии, низкая жизнь»: неоновый дождь, иероглифы на рекламе, мегакорпорации и импланты.
+  description: |
+    Фильм «Бегущий по лезвию» Ридли Скотта и роман «Нейромант» Уильяма Гибсона в 1982–1984 годах создали
+    образ будущего, который до сих пор узнаётся мгновенно: перенаселённый мегаполис под вечным дождём,
+    неон и голограммы, азиатские вывески, грязь и хром. Аниме «Акира» и «Призрак в доспехах» сделали
+    стиль мировым, а гонконгские улицы — его реальным прототипом.
+  traits:
+    - Неон в темноте и дождь
+    - Плотный мегаполис, вывески, иероглифы
+    - Хром, провода, импланты
+    - Контраст роскоши корпораций и нищеты улиц
+  names: [Ридли Скотт, Сид Мид, Уильям Гибсон, Кацухиро Отомо, Мамору Осии]
+  example:
+    file: "enwiki:Blade Runner spinner flyby.png"
+    title: Кадр из фильма «Бегущий по лезвию»
+    author: Ридли Скотт, художник Сид Мид
+    year: 1982
+  gallery:
+    - { file: "Hong Kong night street.jpg", title: "Ночная улица Гонконга" }
+  wiki: Cyberpunk
+  links:
+    - { title: "Cyberpunk", url: "https://aesthetics.fandom.com/wiki/Cyberpunk", src: "Aesthetics Wiki", lang: en }
+
+- id: early-cgi
+  name: Ранняя компьютерная графика
+  orig: Early computer graphics (CGI)
+  aliases: [3D-графика 80-х, «Трон», чайник Юта, CGI, рейтрейсинг]
+  start: 1975
+  end: 1995
+  dates: 1975 – 1995
+  era: postmodern
+  domain: [internet, design]
+  region: США, Япония
+  tier: 2
+  parents:
+    - { id: computer-art, type: evolved }
+  summary: >
+    Глянцевые шары на шахматной доске, светящиеся каркасные сетки «Трона» и знаменитый чайник Юта.
+  description: |
+    В 1975 году в Университете Юты сделали трёхмерную модель обычного чайника — она стала «Hello, world!»
+    компьютерной графики. Дальше пошли фильм «Трон» (1982) с неоновыми каркасами, рейтрейсинговые
+    зеркальные шары на клетчатом полу, заставки телеканалов и первые 3D-логотипы. Эта синтетическая
+    эстетика станет главным материалом для вейпорвейва, синтвейва и Y2K.
+  traits:
+    - Зеркальные шары, хром, клетчатый пол
+    - Каркасные сетки и неоновые контуры
+    - Идеальные, стерильные поверхности
+    - Закатные градиенты и «цифровой горизонт»
+  names: [Мартин Ньюэлл, Тёрнер Уиттед, «Трон», Pixar]
+  example:
+    file: Utah teapot simple.png
+    title: Чайник Юта
+    author: Мартин Ньюэлл (модель 1975)
+    year: 1975
+  wiki: Computer-generated imagery
+  links:
+    - { title: "Utah teapot", url: "https://en.wikipedia.org/wiki/Utah_teapot", src: "Wikipedia", lang: en }
+
+- id: afrofuturism
+  name: Афрофутуризм
+  orig: Afrofuturism
+  aliases: [афрофутуризм, Сан Ра, космическая диаспора]
+  start: 1970
+  end: null
+  dates: 1970-е – наши дни
+  era: postmodern
+  domain: [art, design]
+  region: США, Африка
+  tier: 3
+  parents:
+    - { id: space-age, type: influence }
+    - { id: psychedelic-art, type: influence }
+  summary: >
+    Будущее, в котором центр — африканская культура: космические фараоны Сан Ра, фанк-корабли и Ваканда.
+  description: |
+    Джазмен Сан Ра в 1970-х выступал в костюмах египетских фараонов-космонавтов и снял фильм «Space Is the
+    Place». Parliament-Funkadelic летал на «Материнском корабле». Термин «афрофутуризм» появился в 1990-х,
+    а в 2010-х эстетика стала массовой благодаря Жанель Монэ и фильму «Чёрная пантера» с его Вакандой.
+  traits:
+    - Космос и древний Египет вместе
+    - Африканские узоры, ткани и символы в футуристическом ключе
+    - Золото, металл, яркие цвета
+    - Музыка как источник образов
+  names: [Сан Ра, Джордж Клинтон, Октавия Батлер, Жанель Монэ, Рут Картер]
+  example:
+    file: Sun Ra (1973 publicity photo - Impulse ABC Dunhill).jpg
+    title: Сан Ра, рекламное фото
+    year: 1973
+  wiki: Afrofuturism
+  links:
+    - { title: "Afrofuturism", url: "https://aesthetics.fandom.com/wiki/Afrofuturism", src: "Aesthetics Wiki", lang: en }
+
+- id: new-wave-graphic
+  name: Новая волна и гранж-типографика
+  orig: New Wave and grunge typography
+  aliases: [новая волна в типографике, Вайнгарт, Дэвид Карсон, Ray Gun]
+  start: 1977
+  end: 1998
+  dates: 1977 – 1990-е
+  era: postmodern
+  domain: [design]
+  region: Швейцария, США
+  tier: 3
+  parents:
+    - { id: swiss-style, type: reaction }
+    - { id: punk-graphics, type: influence }
+  summary: >
+    Типографика, разорвавшая сетку: наложенные слои, разреженный набор, а у Дэвида Карсона — нечитаемость как стиль.
+  description: |
+    Вольфганг Вайнгарт, преподававший в Базеле, начал ломать строгий швейцарский стиль изнутри: слои,
+    растры, ступенчатые строки. Его ученики принесли «новую волну» в Америку, а Эйприл Грейман соединила
+    её с первыми компьютерами Macintosh. В 1990-х Дэвид Карсон в журнале Ray Gun набрал целое интервью
+    шрифтом-дингбатом — и это стало манифестом гранж-типографики.
+  traits:
+    - Сломанная сетка и наложенные слои
+    - Разные кегли и шрифты в одной строке
+    - Растр, шум, фотокопия
+    - Выразительность важнее читаемости
+  names: [Вольфганг Вайнгарт, Эйприл Грейман, Дэвид Карсон, Невилл Броуди]
+  example:
+    file: Weingart tuellinger vinyards 2011-11.jpg
+    title: Плакат
+    author: Вольфганг Вайнгарт
+  wiki: Grunge typography
+  links:
+    - { title: "David Carson", url: "https://en.wikipedia.org/wiki/David_Carson_(graphic_designer)", src: "Wikipedia", lang: en }
+    - { title: "Wolfgang Weingart", url: "https://en.wikipedia.org/wiki/Wolfgang_Weingart", src: "Wikipedia", lang: en }
+
+- id: pixel-art
+  name: Пиксель-арт
+  orig: Pixel art
+  aliases: [пиксельная графика, 8-бит, 16-бит, спрайты]
+  start: 1975
+  end: null
+  dates: 1975 – наши дни
+  era: postmodern
+  domain: [internet, design]
+  region: США, Япония, весь мир
+  tier: 2
+  parents:
+    - { id: computer-art, type: evolved }
+  summary: >
+    Изображение, собранное вручную по квадратику: от спрайтов аркад и приставок до инди-игр и NFT.
+  description: |
+    Ограниченная память ранних компьютеров и приставок заставила художников рисовать каждый пиксель вручную,
+    с палитрой из нескольких цветов. Из технического ограничения выросла самостоятельная эстетика: читаемые
+    силуэты, дизеринг, изометрия. Сегодня пиксель-арт — сознательный выбор инди-разработчиков, иллюстраторов
+    и интерфейсов, а 8-битная ностальгия питает Web 1.0 и уирдкор.
+  traits:
+    - Видимые квадратные пиксели
+    - Ограниченная палитра и дизеринг
+    - Чёткие, читаемые силуэты
+    - Изометрия и тайловые сцены
+  names: [Сьюзан Кэр, Марк Феррари, Пол Робертсон, eBoy]
+  example:
+    file: "enwiki:Maniac Mansion.png"
+    title: Кадр из игры Maniac Mansion
+    author: Lucasfilm Games
+    year: 1987
+  wiki: Pixel art
+  links: []
+
+- id: lowbrow
+  name: Лоубров (поп-сюрреализм)
+  orig: Lowbrow (Pop Surrealism)
+  aliases: [лоубров, поп-сюрреализм, Juxtapoz, тики-арт]
+  start: 1970
+  end: null
+  dates: 1970-е – наши дни
+  era: postmodern
+  domain: [art]
+  region: Калифорния, США
+  tier: 3
+  parents:
+    - { id: surrealism, type: revival }
+    - { id: pop-art, type: influence }
+  summary: >
+    Андеграундные комиксы, хот-роды, тики и кукольные девочки с огромными глазами: сюрреализм для поп-культуры.
+  description: |
+    В Калифорнии 1970-х художники из мира андеграундных комиксов, кастомных машин и тату создали искусство,
+    которое галереи считали «низким». Роберт Уильямс основал журнал Juxtapoz, а Марк Райден и Рэй Цезарь
+    в 2000-х сделали поп-сюрреализм с его жутковато-милыми персонажами мировым явлением.
+  traits:
+    - Мультяшные, «милые» и жуткие персонажи
+    - Детализированная академическая техника
+    - Кич, тики, хот-роды, комиксы
+    - Сюрреалистические сюжеты
+  names: [Роберт Уильямс, Марк Райден, Рэй Цезарь, Камилла Роуз Гарсия]
+  example:
+    file: Parker Tiki Cat.jpg
+    title: Тики-кот
+    author: Old Man Parker
+  wiki: Lowbrow (art movement)
+  links: []

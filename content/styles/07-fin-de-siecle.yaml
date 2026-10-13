@@ -1,0 +1,362 @@
+- id: neo-impressionism
+  name: Неоимпрессионизм
+  orig: Neo-Impressionism
+  aliases: [пуантилизм, дивизионизм, Сёра, Синьяк]
+  start: 1886
+  end: 1906
+  dates: 1886 – 1906
+  era: fin-de-siecle
+  domain: [art]
+  region: Франция
+  tier: 2
+  parents:
+    - { id: impressionism, type: evolved }
+  summary: >
+    Импрессионизм, поставленный на научную основу: картина складывается из тысяч точек чистого цвета.
+  description: |
+    Жорж Сёра изучал оптику и теорию цвета и решил, что смешивать краски должен глаз зрителя, а не палитра.
+    Его «Воскресный день на острове Гранд-Жатт» написан мелкими точками дополнительных цветов и строится
+    с почти архитектурной неподвижностью. Синьяк развил метод в мозаичный дивизионизм с крупными мазками.
+  traits:
+    - Точки и мазки чистого цвета
+    - Оптическое смешение в глазу зрителя
+    - Застывшие, геометризованные фигуры
+    - Научный подход к свету и цвету
+  names: [Жорж Сёра, Поль Синьяк, Анри-Эдмон Кросс, Тео ван Рейссельберге]
+  example:
+    file: A Sunday on La Grande Jatte, Georges Seurat, 1884.jpg
+    title: Воскресный день на острове Гранд-Жатт
+    author: Жорж Сёра
+    year: 1884–1886
+    place: Чикагский институт искусств
+  wiki: Neo-impressionism
+  links:
+    - { title: "Neo-Impressionism", url: "https://www.theartstory.org/movement/neo-impressionism/", src: "The Art Story", lang: en }
+
+- id: post-impressionism
+  name: Постимпрессионизм
+  orig: Post-Impressionism
+  aliases: [Ван Гог, Сезанн, Гоген, постимпрессионисты]
+  start: 1886
+  end: 1905
+  dates: ок. 1886 – 1905
+  era: fin-de-siecle
+  domain: [art]
+  region: Франция
+  tier: 1
+  parents:
+    - { id: impressionism, type: evolved }
+  summary: >
+    Четыре гения, пошедших дальше импрессионизма: Сезанн строит форму, Ван Гог выражает чувство, Гоген ищет символ.
+  description: |
+    Термин придумали позже для художников, выросших из импрессионизма, но недовольных его «мгновенностью».
+    Сезанн сводит природу к цилиндру, шару и конусу и тем самым готовит кубизм. Ван Гог пишет вихрящимися
+    мазками звёздное небо, Гоген — плоскими пятнами цвета таитянские мифы, Тулуз-Лотрек — афиши Монмартра.
+  traits:
+    - Выразительный, личный мазок
+    - Условный, эмоциональный цвет
+    - Упрощённая, построенная форма
+    - Плоские силуэты и контуры (Гоген)
+  names: [Поль Сезанн, Винсент ван Гог, Поль Гоген, Анри де Тулуз-Лотрек]
+  example:
+    file: Van Gogh - Starry Night - Google Art Project.jpg
+    title: Звёздная ночь
+    author: Винсент ван Гог
+    year: 1889
+    place: Музей современного искусства (MoMA), Нью-Йорк
+  wiki: Post-Impressionism
+  links:
+    - { title: "Post-Impressionism", url: "https://www.theartstory.org/movement/post-impressionism/", src: "The Art Story", lang: en }
+
+- id: symbolism
+  name: Символизм
+  orig: Symbolism
+  aliases: [символисты, Бёклин, Моро, Врубель]
+  start: 1880
+  end: 1910
+  dates: ок. 1880 – 1910
+  era: fin-de-siecle
+  domain: [art]
+  region: Франция, Бельгия, Германия, Россия
+  tier: 2
+  parents:
+    - { id: romanticism, type: evolved }
+    - { id: pre-raphaelites, type: influence }
+  summary: >
+    Не изображать, а намекать: сны, мифы, смерть и тайна в сумеречных, мерцающих образах.
+  description: |
+    В ответ на позитивизм и реализм символисты обратились к невидимому: душе, мифу, эротике и смерти.
+    «Остров мёртвых» Бёклина — тёмные кипарисы, белая фигура в лодке, абсолютная тишина. Гюстав Моро
+    пишет драгоценных Саломей, а Михаил Врубель — Демона, сложенного из мозаичных граней.
+  traits:
+    - Мистические, сновидческие сюжеты
+    - Мифы, смерть, роковые женщины
+    - Сумеречный, мерцающий колорит
+    - Образ как символ, а не описание
+  names: [Арнольд Бёклин, Гюстав Моро, Одилон Редон, Михаил Врубель, Фернан Кнопф]
+  example:
+    file: Arnold Böcklin - Die Toteninsel III (Alte Nationalgalerie, Berlin).jpg
+    title: Остров мёртвых (третья версия)
+    author: Арнольд Бёклин
+    year: 1883
+    place: Старая национальная галерея, Берлин
+  wiki: { en: Symbolism (arts), ru: Символизм }
+  links:
+    - { title: "Symbolism", url: "https://www.theartstory.org/movement/symbolism/", src: "The Art Story", lang: en }
+
+- id: nabis
+  name: Наби
+  orig: Les Nabis
+  aliases: [наби, пророки, Серюзье, Боннар, Вюйар]
+  start: 1888
+  end: 1900
+  dates: 1888 – 1900
+  era: fin-de-siecle
+  domain: [art, design]
+  region: Франция
+  tier: 3
+  parents:
+    - { id: post-impressionism, type: evolved }
+  summary: >
+    «Картина — это плоская поверхность, покрытая красками»: декоративные пятна цвета вместо иллюзии.
+  description: |
+    Поль Серюзье написал под руководством Гогена крошечный пейзаж из чистых цветовых пятен — его назвали
+    «Талисманом», а друзья-художники объявили себя «наби», пророками. Морис Дени сформулировал главное:
+    прежде чем быть лошадью или обнажённой, картина — это плоскость с красками. Боннар и Вюйар перенесли это
+    в уютные узорчатые интерьеры.
+  traits:
+    - Плоские декоративные пятна цвета
+    - Узорчатые интерьеры и ткани
+    - Интимные бытовые сцены
+    - Работа с плакатом, театром, книгой
+  names: [Поль Серюзье, Морис Дени, Пьер Боннар, Эдуар Вюйар]
+  example:
+    file: Paul Sérusier - The Talisman - Google Art Project.jpg
+    title: Талисман
+    author: Поль Серюзье
+    year: 1888
+    place: Музей Орсе, Париж
+  wiki: Les Nabis
+  links:
+    - { title: "Les Nabis", url: "https://www.theartstory.org/movement/les-nabis/", src: "The Art Story", lang: en }
+
+- id: art-nouveau
+  name: Модерн (ар-нуво)
+  orig: Art Nouveau
+  aliases: [ар-нуво, модерн, югендстиль, сецессион, Муха, Гимар]
+  start: 1890
+  end: 1910
+  dates: ок. 1890 – 1910
+  era: fin-de-siecle
+  domain: [design, architecture, art]
+  region: Европа, Россия, США
+  tier: 1
+  parents:
+    - { id: arts-and-crafts, type: evolved }
+    - { id: japonisme, type: influence }
+    - { id: symbolism, type: influence }
+  summary: >
+    Линия «удар бича»: стебли, лилии, женские волосы и стрекозы прорастают в афишах, вокзалах и дверных ручках.
+  description: |
+    Модерн хотел покончить с копированием старых стилей и создать новый язык для всего — от вокзала до
+    ложки. Его источник — природа: изгибы растений, водоросли, насекомые. Альфонс Муха рисует афиши с
+    ореолами из волос и цветов, Гимар — входы в парижское метро в виде чугунных стеблей, Гауди — дома без
+    прямых углов, Шехтель — особняки в Москве.
+  traits:
+    - Плавная линия «удар бича»
+    - Растительные и женские мотивы
+    - Единство архитектуры, мебели, плаката, ювелирки
+    - Витражи, гнутый металл, майолика
+  names: [Альфонс Муха, Эктор Гимар, Виктор Орта, Антонио Гауди, Фёдор Шехтель]
+  example:
+    file: Alphonse Mucha - Job - Google Art Project.jpg
+    title: Плакат для бумаги JOB
+    author: Альфонс Муха
+    year: 1896
+  wiki: Art Nouveau
+  links:
+    - { title: "Art Nouveau", url: "https://www.theartstory.org/movement/art-nouveau/", src: "The Art Story", lang: en }
+    - { title: "Art Nouveau", url: "https://www.tate.org.uk/art/art-terms/a/art-nouveau", src: "Tate", lang: en }
+
+- id: vienna-secession
+  name: Венский сецессион
+  orig: Vienna Secession
+  aliases: [сецессион, Климт, золотой период, венский модерн]
+  start: 1897
+  end: 1910
+  dates: 1897 – 1910-е
+  era: fin-de-siecle
+  domain: [art, design, architecture]
+  region: Австрия
+  tier: 2
+  parents:
+    - { id: art-nouveau, type: evolved }
+    - { id: symbolism, type: influence }
+  summary: >
+    Золото, орнамент и геометрия Вены: Климт, Венские мастерские и павильон с золотой «капустой».
+  description: |
+    Молодые художники во главе с Густавом Климтом вышли из официального Дома художников и основали
+    Сецессион под девизом «Времени — его искусство, искусству — его свобода». Климт в «Поцелуе» кутает
+    влюблённых в золотые мантии из квадратов и спиралей. Венский модерн строже французского: больше
+    прямоугольников и сеток, что предвещает ар-деко и модернизм.
+  traits:
+    - Золото и сусальное золото на холсте
+    - Орнамент из квадратов, кругов и спиралей
+    - Геометризация модерна, сетки и прямоугольники
+    - Синтез живописи, архитектуры и дизайна
+  names: [Густав Климт, Коломан Мозер, Йозеф Хоффман, Йозеф Мария Ольбрих, Эгон Шиле]
+  example:
+    file: The Kiss - Gustav Klimt - Google Cultural Institute.jpg
+    title: Поцелуй
+    author: Густав Климт
+    year: 1907–1908
+    place: Галерея Бельведер, Вена
+  wiki: Vienna Secession
+  links:
+    - { title: "Vienna Secession", url: "https://www.theartstory.org/movement/vienna-secession/", src: "The Art Story", lang: en }
+
+- id: mir-iskusstva
+  name: «Мир искусства»
+  orig: Mir iskusstva (World of Art)
+  aliases: [мирискусники, Бенуа, Бакст, Сомов, Русские сезоны]
+  start: 1898
+  end: 1927
+  dates: 1898 – 1927
+  era: fin-de-siecle
+  domain: [art, design]
+  region: Россия
+  tier: 3
+  parents:
+    - { id: symbolism, type: evolved }
+    - { id: art-nouveau, type: influence }
+  summary: >
+    Петербургские эстеты: ностальгия по XVIII веку, изысканная графика и костюмы «Русских сезонов» Дягилева.
+  description: |
+    Объединение вокруг журнала Дягилева и Бенуа противопоставило передвижникам культ красоты и стиля.
+    Мирискусники обожали Версаль и старый Петербург, книжную графику и театр. Лев Бакст создал для
+    «Русских сезонов» в Париже ослепительные восточные костюмы, повлиявшие на моду всего мира.
+  traits:
+    - Ретроспективизм — XVIII век, маскарады
+    - Изысканная графика и книжный дизайн
+    - Театральные декорации и костюмы
+    - Ирония и стилизация
+  names: [Александр Бенуа, Лев Бакст, Константин Сомов, Мстислав Добужинский, Сергей Дягилев]
+  example:
+    file: Bakst Uzhin.jpg
+    title: Ужин
+    author: Лев Бакст
+    year: 1902
+    place: Государственный Русский музей, Санкт-Петербург
+  wiki: Mir iskusstva
+  links: []
+
+- id: chicago-school
+  name: Чикагская школа
+  orig: Chicago school (architecture)
+  aliases: [первые небоскрёбы, Салливан, форма следует функции]
+  start: 1880
+  end: 1910
+  dates: 1880-е – 1910-е
+  era: fin-de-siecle
+  domain: [architecture]
+  region: США
+  tier: 3
+  parents:
+    - { id: historicism, type: reaction }
+  summary: >
+    Стальной каркас, большие окна и честная вертикаль: Чикаго придумывает небоскрёб и принцип «форма следует функции».
+  description: |
+    После пожара 1871 года Чикаго отстраивается заново, и архитекторы используют стальной каркас и лифт,
+    чтобы строить вверх. Луис Салливан формулирует принцип «форма следует функции» и делает фасад
+    небоскрёба выразительной вертикальной сеткой с орнаментом лишь наверху. Его ученик — Фрэнк Ллойд Райт.
+  traits:
+    - Стальной каркас и высотность
+    - «Чикагские окна» — широкие, трёхчастные
+    - Ясная вертикальная сетка фасада
+    - Минимум исторического декора
+  names: [Луис Салливан, Уильям Ле Барон Дженни, Дэниел Бёрнем, Холаберд и Рош]
+  example:
+    file: Wainwright building st louis USA.jpg
+    title: Уэйнрайт-билдинг
+    author: Луис Салливан, Данкмар Адлер
+    year: 1891
+    place: Сент-Луис, США
+  wiki: Chicago school (architecture)
+  links: []
+
+- id: fauvism
+  name: Фовизм
+  orig: Fauvism
+  aliases: [фовисты, дикие, Матисс, Дерен]
+  start: 1904
+  end: 1908
+  dates: 1904 – 1908
+  era: fin-de-siecle
+  domain: [art]
+  region: Франция
+  tier: 1
+  parents:
+    - { id: post-impressionism, type: evolved }
+    - { id: neo-impressionism, type: influence }
+  summary: >
+    «Дикие» цвета прямо из тюбика: зелёный нос, оранжевое небо, красное дерево — цвет освобождается от предмета.
+  description: |
+    На Осеннем салоне 1905 года критик увидел комнату с картинами Матисса, Дерена и Вламинка и назвал их
+    «дикими зверями» — фовами. Цвет у них больше не описывает предмет: лицо в «Женщине в шляпе» Матисса
+    покрыто зелёными и лиловыми пятнами. Движение длилось всего три года, но навсегда отменило «правильный» цвет.
+  traits:
+    - Чистый, нереалистичный цвет
+    - Широкие свободные мазки
+    - Упрощённый рисунок
+    - Цвет как выражение чувства
+  names: [Анри Матисс, Андре Дерен, Морис де Вламинк, Рауль Дюфи]
+  example:
+    file: Matisse-Woman-with-a-Hat.jpg
+    title: Женщина в шляпе
+    author: Анри Матисс
+    year: 1905
+    place: Музей современного искусства, Сан-Франциско
+  wiki: Fauvism
+  links:
+    - { title: "Fauvism", url: "https://www.theartstory.org/movement/fauvism/", src: "The Art Story", lang: en }
+    - { title: "Fauvism", url: "https://www.tate.org.uk/art/art-terms/f/fauvism", src: "Tate", lang: en }
+
+- id: expressionism
+  name: Экспрессионизм
+  orig: Expressionism
+  aliases: [экспрессионисты, Мост, Синий всадник, Мунк, Крик]
+  start: 1905
+  end: 1925
+  dates: 1905 – 1925
+  era: fin-de-siecle
+  domain: [art]
+  region: Германия, Австрия, Скандинавия
+  tier: 1
+  parents:
+    - { id: post-impressionism, type: evolved }
+    - { id: fauvism, type: influence }
+    - { id: symbolism, type: influence }
+  summary: >
+    Мир, искажённый тревогой: кричащие цвета, рубленые формы и лица, в которых видна душа на грани.
+  description: |
+    Экспрессионисты изображали не мир, а своё переживание мира. Его предтеча — «Крик» Эдварда Мунка, где
+    небо и пейзаж корчатся вместе с фигурой. В Дрездене группа «Мост» пишет города резкими углами,
+    в Мюнхене «Синий всадник» Кандинского и Марка идёт к абстракции. Экспрессионизм охватил кино, театр
+    и архитектуру.
+  traits:
+    - Искажённые формы и перспектива
+    - Кричащие, контрастные цвета
+    - Резкие, «рубленые» мазки и линии
+    - Тревога, одиночество, большой город
+  names: [Эдвард Мунк, Эрнст Людвиг Кирхнер, Франц Марк, Эмиль Нольде, Эгон Шиле]
+  example:
+    file: Edvard Munch, 1893, The Scream, oil, tempera and pastel on cardboard, 91 x 73 cm, National Gallery of Norway.jpg
+    title: Крик
+    author: Эдвард Мунк
+    year: 1893
+    place: Национальный музей, Осло
+    note: Предтеча экспрессионизма
+  wiki: Expressionism
+  links:
+    - { title: "Expressionism", url: "https://www.theartstory.org/movement/expressionism/", src: "The Art Story", lang: en }
+    - { title: "Expressionism", url: "https://www.tate.org.uk/art/art-terms/e/expressionism", src: "Tate", lang: en }

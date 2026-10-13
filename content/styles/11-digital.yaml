@@ -1,0 +1,425 @@
+- id: web-1-0
+  name: Web 1.0 (эстетика GeoCities)
+  orig: Web 1.0 / Old Web
+  aliases: [GeoCities, олдвеб, old web, веб 90-х, Netscape, under construction]
+  start: 1994
+  end: 2004
+  dates: 1994 – 2004
+  era: digital
+  domain: [internet, design]
+  region: Интернет
+  tier: 2
+  parents:
+    - { id: pixel-art, type: evolved }
+    - { id: punk-graphics, type: influence }
+  summary: >
+    Домашние страницы 90-х: мигающие GIF, счётчики посетителей, фоны со звёздами и вечное «Under construction».
+  description: |
+    Когда веб стал доступен всем, каждый мог сделать свою страницу на GeoCities или Narod.ru — без дизайнеров
+    и правил. Анимированные гифки, бегущие строки, таблицы, «веб-безопасные» кислотные цвета, гостевые книги
+    и счётчики посетителей. Это была DIY-культура интернета, которую через двадцать лет с нежностью
+    возродят Neocities, уирдкор и веб-брутализм.
+  traits:
+    - Мигающие GIF и бегущие строки
+    - Кислотные «веб-безопасные» цвета на тёмных фонах
+    - Таблицы, рамки, счётчики посетителей
+    - Значки «Under construction» и «Best viewed in Netscape»
+  names: [GeoCities, Angelfire, Narod.ru, Netscape Navigator]
+  palette: ["#000080", "#00ffff", "#ff00ff", "#ffff00", "#c0c0c0"]
+  example:
+    title: Домашняя страница на GeoCities
+    note: Свободных скриншотов эпохи почти нет — показана палитра веб-безопасных цветов.
+  wiki: GeoCities
+  links:
+    - { title: "Old Web", url: "https://aesthetics.fandom.com/wiki/Old_Web", src: "Aesthetics Wiki", lang: en }
+    - { title: "Web 1.0", url: "https://en.wikipedia.org/wiki/Web_1.0", src: "Wikipedia", lang: en }
+
+- id: y2k-aesthetic
+  name: Y2K
+  orig: Y2K aesthetic
+  aliases: [y2k, эстетика нулевых, миллениум, iMac G3, хром, Y2K futurism]
+  start: 1997
+  end: 2004
+  dates: 1997 – 2004
+  era: digital
+  domain: [design, internet]
+  region: США, Япония, весь мир
+  tier: 1
+  parents:
+    - { id: early-cgi, type: evolved }
+    - { id: space-age, type: revival }
+    - { id: cyberpunk, type: influence }
+  summary: >
+    Оптимистичный цифровой футуризм рубежа тысячелетий: прозрачный цветной пластик, хром, пузыри и голограммы.
+  description: |
+    Накануне 2000 года мир ждал будущего — и одновременно боялся «проблемы 2000». Дизайн ответил прозрачным
+    цветным пластиком iMac G3 и Game Boy Color, хромированными 3D-шрифтами, капельками, голографическими
+    плёнками и серебристыми костюмами в клипах. Это был, пожалуй, последний момент, когда технологии
+    казались чистым праздником. С 2020-х эстетика переживает мощное возрождение.
+  traits:
+    - Прозрачный цветной пластик
+    - Хром, жидкий металл, голограммы
+    - Капли, пузыри, сферы
+    - Серебристый, голубой, лаймовый и розовый
+  names: [Джонатан Айв, Hype Williams, Designers Republic]
+  example:
+    file: IMac G3 Bondi Blue, three-quarters view.png
+    title: Компьютер iMac G3 Bondi Blue
+    author: Apple, дизайнер Джонатан Айв
+    year: 1998
+  wiki: Y2K aesthetic
+  links:
+    - { title: "Y2K", url: "https://cari.institute/aesthetics/y2k-aesthetic", src: "CARI Institute", lang: en }
+    - { title: "Y2K", url: "https://aesthetics.fandom.com/wiki/Y2K", src: "Aesthetics Wiki", lang: en }
+
+- id: frutiger-aero
+  name: Фрутигер-аэро
+  orig: Frutiger Aero
+  aliases: [frutiger aero, аэро, Windows Vista, Windows 7, пузыри и трава]
+  start: 2004
+  end: 2013
+  dates: 2004 – 2013
+  era: digital
+  domain: [design, internet]
+  region: Весь мир
+  tier: 1
+  parents:
+    - { id: y2k-aesthetic, type: evolved }
+  summary: >
+    Глянцевый оптимизм нулевых: пузыри, капли воды, зелёная трава, голубое небо и стеклянные кнопки Windows Vista.
+  description: |
+    Термин придумали в 2017 году, чтобы описать визуальный язык 2004–2013: прозрачные «аэро»-панели Windows
+    Vista и 7, глянцевые иконки, обои с травой и небом, рыбками и пузырями, шрифт Frutiger в рекламе.
+    Это была эстетика экологичной, светлой цифровой утопии. В 2020-х она вернулась как ностальгия поколения,
+    выросшего на этих экранах, и как «desktop core» в дизайне.
+  traits:
+    - Глянец, стекло, отражения
+    - Вода, пузыри, трава, голубое небо
+    - Бирюзово-зелёные и синие градиенты
+    - Шрифты-гротески — Frutiger, Segoe
+  names: [Windows Vista, Windows 7, Nokia, Wii]
+  example:
+    file: Frutiger Aero Composite.jpg
+    title: Композиция в стиле Frutiger Aero
+    author: Aarón Ramirez
+  gallery:
+    - { file: "Frutiger Aero Bubbles And Grass.jpg", title: "Пузыри и трава" }
+  wiki: Frutiger Aero
+  links:
+    - { title: "Frutiger Aero", url: "https://cari.institute/aesthetics/frutiger-aero", src: "CARI Institute", lang: en }
+    - { title: "Frutiger Aero", url: "https://aesthetics.fandom.com/wiki/Frutiger_Aero", src: "Aesthetics Wiki", lang: en }
+
+- id: skeuomorphism
+  name: Скевоморфизм
+  orig: Skeuomorphism
+  aliases: [скевоморфизм, iOS 6, кожа и дерево в интерфейсе]
+  start: 2007
+  end: 2013
+  dates: 2007 – 2013
+  era: digital
+  domain: [design, internet]
+  region: США
+  tier: 2
+  parents:
+    - { id: y2k-aesthetic, type: evolved }
+  summary: >
+    Интерфейсы, имитирующие реальные вещи: кожаный календарь, деревянная книжная полка и жёлтая бумага заметок.
+  description: |
+    В первых версиях iPhone Apple учила людей пользоваться сенсорным экраном с помощью знакомых материалов:
+    календарь в коже со строчкой, заметки на линованной бумаге, книжная полка из дерева, кнопки-тумблеры.
+    Скевоморфизм делал цифровое тактильным и понятным, но к 2013 году показался перегруженным — и iOS 7
+    резко перешла на плоский дизайн.
+  traits:
+    - Имитация кожи, дерева, металла, бумаги
+    - Тени, блики, объёмные кнопки
+    - Метафоры реальных предметов
+    - Подробные, «вкусные» иконки
+  names: [Скотт Форстолл, iPhone OS 1–6, Mac OS X Aqua]
+  palette: ["#6b4a2e", "#c9a46b", "#f3e7b6", "#3f5f3a", "#9aa3ab"]
+  example:
+    title: Интерфейс iOS 6 (календарь, заметки, книжная полка)
+    note: Скриншоты интерфейсов Apple защищены — показана палитра кожи, дерева и бумаги.
+  wiki: Skeuomorph
+  links:
+    - { title: "Skeuomorphism", url: "https://aesthetics.fandom.com/wiki/Skeuomorphism", src: "Aesthetics Wiki", lang: en }
+
+- id: net-art
+  name: Net.art
+  orig: Net art
+  aliases: [нет-арт, net.art, искусство интернета, Лялина, JODI]
+  start: 1994
+  end: 2005
+  dates: 1994 – 2000-е
+  era: digital
+  domain: [art, internet]
+  region: Европа, Россия, США
+  tier: 3
+  parents:
+    - { id: conceptual-art, type: evolved }
+    - { id: web-1-0, type: influence }
+  summary: >
+    Искусство, которое существует только в браузере: гиперссылки, фреймы и ошибки как материал.
+  description: |
+    В середине 1990-х художники увидели во всемирной паутине новый медиум. Ольга Лялина в «Мой парень
+    вернулся с войны» рассказывает историю через расщепляющиеся чёрно-белые фреймы: зритель кликает и
+    сам собирает сюжет. Дуэт JODI делал сайты, похожие на сломанный компьютер, Алексей Шульгин и Вук Чосич —
+    концептуальные жесты о сети.
+  traits:
+    - Браузер и гиперссылка как холст
+    - Фреймы, HTML, код, ошибки
+    - Интерактивность и нелинейность
+    - Минимализм ранних веб-страниц
+  names: [Ольга Лялина, JODI, Алексей Шульгин, Вук Чосич, Хит Бантинг]
+  example:
+    file: "enwiki:My Boyfriend Came Back from the War screenshot.gif"
+    title: Мой парень вернулся с войны
+    author: Ольга Лялина
+    year: 1996
+  wiki: Net art
+  links:
+    - { title: "Net Art", url: "https://www.theartstory.org/movement/internet-art/", src: "The Art Story", lang: en }
+
+- id: glitch-art
+  name: Глитч-арт
+  orig: Glitch art
+  aliases: [глитч, сбой, датамошинг, пиксельный шум]
+  start: 2000
+  end: null
+  dates: 2000-е – наши дни
+  era: digital
+  domain: [art, internet]
+  region: Весь мир
+  tier: 2
+  parents:
+    - { id: computer-art, type: evolved }
+    - { id: dada, type: influence }
+  summary: >
+    Красота сбоя: разломанные JPEG, сдвинутые RGB-каналы и рассыпающиеся видеокадры.
+  description: |
+    Глитч-художники намеренно ломают файлы, сигналы и программы, чтобы увидеть, как выглядит ошибка машины.
+    Датамошинг склеивает видеокадры в текучие мазки, изменение байтов в JPEG даёт цветные полосы и смещения.
+    Как и дадаисты, глитч-арт ставит случайность и поломку в центр, а его приёмы давно ушли в музыку,
+    рекламу и вейпорвейв.
+  traits:
+    - Разорванные, смещённые пиксели
+    - Разделённые RGB-каналы
+    - Цифровой шум, полосы, артефакты сжатия
+    - Случайность и ошибка как метод
+  names: [Роза Менкман, Takeshi Murata, Ant Scott]
+  example:
+    file: Glitch Art by James Connolly and Eric Pellegrino.jpg
+    title: Глитч-арт
+    author: James Connolly, Eric Pellegrino
+  wiki: Glitch art
+  links:
+    - { title: "Glitch Art", url: "https://aesthetics.fandom.com/wiki/Glitch_Art", src: "Aesthetics Wiki", lang: en }
+
+- id: flat-design
+  name: Плоский дизайн
+  orig: Flat design
+  aliases: [флэт, плоский дизайн, Metro, iOS 7]
+  start: 2012
+  end: null
+  dates: 2012 – наши дни
+  era: digital
+  domain: [design, internet]
+  region: Весь мир
+  tier: 1
+  parents:
+    - { id: swiss-style, type: revival }
+    - { id: skeuomorphism, type: reaction }
+  summary: >
+    Никаких теней и текстур: чистые цветные плоскости, простые иконки и типографика — как швейцарский плакат в смартфоне.
+  description: |
+    Microsoft с интерфейсом Metro (Windows Phone, Windows 8) и Apple с iOS 7 в 2013 году отказались от
+    имитации материалов. Плоские цветные плитки, тонкие иконки, крупная типографика и много воздуха
+    вернули в цифровой дизайн принципы швейцарского стиля. Плоский дизайн быстро стал стандартом веба,
+    логотипов и иллюстрации.
+  traits:
+    - Отсутствие теней, бликов и текстур
+    - Яркие плоские цветные плоскости
+    - Простые линейные иконки
+    - Типографика и сетка как основа
+  names: [Microsoft Metro, Джонатан Айв (iOS 7), Google]
+  example:
+    file: "enwiki:Flat widgets.png"
+    title: Пример плоских элементов интерфейса
+  wiki: Flat design
+  links:
+    - { title: "Flat Design", url: "https://aesthetics.fandom.com/wiki/Flat_Design", src: "Aesthetics Wiki", lang: en }
+
+- id: material-design
+  name: Material Design
+  orig: Material Design
+  aliases: [материальный дизайн, Material You, Google, Android]
+  start: 2014
+  end: null
+  dates: 2014 – наши дни
+  era: digital
+  domain: [design, internet]
+  region: Весь мир
+  tier: 3
+  parents:
+    - { id: flat-design, type: evolved }
+  summary: >
+    Плоский дизайн с физикой: «цифровая бумага» с мягкими тенями, яркие акценты и осмысленная анимация Google.
+  description: |
+    В 2014 году Google представила Material Design: интерфейс как слои бумаги, которые лежат друг на друге
+    и отбрасывают тени, подчиняясь свету. Яркие акцентные цвета, плавающая кнопка, сетка 8 пикселей
+    и анимации, объясняющие переходы. В 2021-м система стала персональной — Material You подстраивает
+    палитру под обои пользователя.
+  traits:
+    - Слои «бумаги» с мягкими тенями
+    - Яркие акцентные цвета
+    - Сетка с шагом 8 пикселей
+    - Осмысленная анимация переходов
+  names: [Маттиас Дуарте, Google Design, Android]
+  example:
+    file: Material you light.png
+    title: Material You
+    author: Google
+    year: 2021
+  wiki: Material Design
+  links:
+    - { title: "Material Design", url: "https://m3.material.io/", src: "Google", lang: en }
+
+- id: post-internet
+  name: Пост-интернет
+  orig: Post-Internet art
+  aliases: [пост-интернет, DIS, постинтернет-арт]
+  start: 2008
+  end: 2018
+  dates: 2008 – 2010-е
+  era: digital
+  domain: [art, internet]
+  region: Нью-Йорк, Берлин
+  tier: 3
+  parents:
+    - { id: net-art, type: evolved }
+  summary: >
+    Искусство после интернета: стоковые фото, корпоративный глянец и 3D-рендеры как материал для галерей.
+  description: |
+    Когда интернет стал повсеместным, художники перестали работать «в сети» и начали работать с тем, как
+    сеть изменила всё вокруг. Коллектив DIS, Райан Трекартин, Петра Кортрайт использовали стоковые
+    фотографии, бренды, рекламу и рендеры, превращая гладкую поверхность онлайн-культуры в иронический
+    материал. Многое из этого перешло в вейпорвейв.
+  traits:
+    - Стоковая фотография и рекламный глянец
+    - 3D-рендеры, бренды, гаджеты
+    - Ирония по отношению к корпоративной культуре
+    - Галерея и интернет на равных
+  names: [DIS, Петра Кортрайт, Райан Трекартин, Арти Виркант, Джон Рафман]
+  example:
+    file: Fair Trade. Frieze Projects 2012.jpg
+    title: Fair Trade, Frieze Projects
+    author: DIS
+    year: 2012
+  wiki: Post-Internet
+  links: []
+
+- id: seapunk
+  name: Сипанк
+  orig: Seapunk
+  aliases: [seapunk, сипанк, морской панк]
+  start: 2011
+  end: 2014
+  dates: 2011 – 2014
+  era: digital
+  domain: [internet]
+  region: Tumblr, интернет
+  tier: 3
+  parents:
+    - { id: web-1-0, type: revival }
+    - { id: y2k-aesthetic, type: influence }
+  summary: >
+    Подводный мир из 3D-графики 90-х: дельфины, бирюзовые волосы, инь-ян и голографические волны.
+  description: |
+    Сипанк начался в 2011 году как шутка в Твиттере и быстро стал микрожанром музыки и эстетикой Tumblr:
+    бирюзовые и неоновые цвета, дельфины, ракушки, голограммы, низкополигональная вода и шрифты
+    из Windows 95. После того как образы позаимствовали Рианна и Azealia Banks, сипанк угас — но успел
+    подготовить почву для вейпорвейва.
+  traits:
+    - Бирюзово-неоновая палитра
+    - Дельфины, волны, ракушки
+    - Ранняя 3D-графика и голограммы
+    - Ирония Tumblr-культуры
+  names: [Lil Internet, Zombelle, Ultrademon]
+  example:
+    file: Seapunk is Alive!.png
+    title: Seapunk is Alive!
+    author: Ridley369
+  wiki: Seapunk
+  links:
+    - { title: "Seapunk", url: "https://aesthetics.fandom.com/wiki/Seapunk", src: "Aesthetics Wiki", lang: en }
+
+- id: web-brutalism
+  name: Веб-брутализм
+  orig: Brutalist web design
+  aliases: [брутализм в вебе, необрутализм, neubrutalism, антидизайн]
+  start: 2014
+  end: null
+  dates: 2014 – наши дни
+  era: digital
+  domain: [design, internet]
+  region: Интернет
+  tier: 3
+  parents:
+    - { id: web-1-0, type: revival }
+    - { id: flat-design, type: reaction }
+  summary: >
+    Сырые сайты наперекор гладким шаблонам: системные шрифты, толстые рамки, синие ссылки и резкие тени.
+  description: |
+    Когда весь веб стал одинаково аккуратным, дизайнеры начали делать нарочито грубые сайты: стандартный
+    Times или моноширинный шрифт, подчёркнутые синие ссылки, видимые рамки, кислотные плашки. Сайт
+    brutalistwebsites.com собрал примеры в 2014-м. Позже возник более дружелюбный «необрутализм» —
+    яркие плоские блоки с толстыми чёрными обводками и жёсткими тенями.
+  traits:
+    - Системные и моноширинные шрифты
+    - Толстые чёрные рамки и жёсткие тени
+    - Грубые цветные плашки
+    - Нарочитая «несделанность»
+  names: [brutalistwebsites.com, Паскаль Девиль, Gumroad]
+  palette: ["#ffffff", "#000000", "#0000ee", "#ff4911", "#ffde59"]
+  example:
+    title: Сайт в стиле веб-брутализма
+    note: Показана палитра — белый фон, чёрные рамки, синие ссылки и кислотные плашки.
+  links:
+    - { title: "Brutalist Websites", url: "https://brutalistwebsites.com/", src: "brutalistwebsites.com", lang: en }
+    - { title: "Neubrutalism", url: "https://aesthetics.fandom.com/wiki/Neubrutalism", src: "Aesthetics Wiki", lang: en }
+
+- id: superflat
+  name: Суперплоский (Superflat)
+  orig: Superflat
+  aliases: [superflat, Мураками, суперфлэт, каваии]
+  start: 2000
+  end: null
+  dates: 2000 – наши дни
+  era: digital
+  domain: [art, design]
+  region: Япония
+  tier: 3
+  parents:
+    - { id: pop-art, type: evolved }
+    - { id: ukiyo-e, type: revival }
+  summary: >
+    Улыбающиеся цветы, аниме и логотипы Louis Vuitton: Такаси Мураками соединяет укиё-э, мангу и поп-арт.
+  description: |
+    Выставка «Superflat» Такаси Мураками в 2000 году утверждала, что японская визуальная культура — от
+    гравюр укиё-э до аниме — всегда была «плоской», и эта плоскость отражает общество потребления. Мураками
+    стал японским Уорхолом: его разноцветные улыбающиеся цветы украшают и музеи, и сумки Louis Vuitton,
+    и обложки Канье Уэста.
+  traits:
+    - Плоские яркие цвета, чёткий контур
+    - Аниме, манга, каваии
+    - Повтор и паттерн (цветы, черепа)
+    - Стирание границы искусства и коммерции
+  names: [Такаси Мураками, Ёситомо Нара, Чихо Аосима, Mr.]
+  example:
+    file: Takashi Murakami Mononoke Kyoto.jpg
+    title: Выставка «Мононокэ Киото»
+    author: Такаси Мураками
+    year: 2024
+    place: Киото
+  wiki: Superflat
+  links:
+    - { title: "Superflat", url: "https://www.theartstory.org/movement/superflat/", src: "The Art Story", lang: en }

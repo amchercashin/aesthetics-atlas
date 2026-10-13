@@ -1,0 +1,26 @@
+# Общие ресурсы для самостоятельного изучения (раздел «Копать дальше»).
+- group: Энциклопедии и справочники по искусству
+  items:
+    - { title: Heilbrunn Timeline of Art History, url: "https://www.metmuseum.org/toah/", note: "Хронология мирового искусства от Метрополитен-музея", lang: en }
+    - { title: Smarthistory, url: "https://smarthistory.org/", note: "Бесплатный учебник истории искусства с видео", lang: en }
+    - { title: Tate — Art Terms, url: "https://www.tate.org.uk/art/art-terms", note: "Словарь терминов и направлений галереи Тейт", lang: en }
+    - { title: The Art Story, url: "https://www.theartstory.org/", note: "Подробные страницы о направлениях и художниках", lang: en }
+    - { title: World History Encyclopedia, url: "https://www.worldhistory.org/", note: "Древний мир и Средневековье — статьи и иллюстрации", lang: en }
+    - { title: Google Arts & Culture, url: "https://artsandculture.google.com/", note: "Коллекции музеев мира в высоком разрешении", lang: en }
+
+- group: На русском
+  items:
+    - { title: Arzamas, url: "https://arzamas.academy/", note: "Курсы и лекции по истории искусства и культуры", lang: ru }
+
+- group: Интернет-эстетики
+  items:
+    - { title: Aesthetics Wiki, url: "https://aesthetics.fandom.com/wiki/Aesthetics_Wiki", note: "Народная энциклопедия эстетик — от cottagecore до самых свежих «-core»", lang: en }
+    - { title: CARI Institute, url: "https://cari.institute/", note: "Исследовательский институт потребительских эстетик (Y2K, Frutiger Aero и другие)", lang: en }
+
+- group: Соседние области — музыка, мода, дизайн
+  items:
+    - { title: Musicmap, url: "https://musicmap.info/", note: "Генеалогия жанров популярной музыки — образец для этого атласа", lang: en }
+    - { title: Ishkur's Guide to Electronic Music, url: "https://music.ishkur.com/", note: "Карта жанров электронной музыки с примерами", lang: en }
+    - { title: Fashion History Timeline, url: "https://fashionhistory.fitnyc.edu/", note: "История моды по десятилетиям от Fashion Institute of Technology", lang: en }
+    - { title: Fonts In Use, url: "https://fontsinuse.com/", note: "Архив типографики: какие шрифты где использовались", lang: en }
+    - { title: ArchDaily, url: "https://www.archdaily.com/", note: "Крупнейший архитектурный портал — стили, здания, архитекторы", lang: en }
