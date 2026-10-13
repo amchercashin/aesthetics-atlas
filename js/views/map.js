@@ -1,20 +1,30 @@
-// Карта родословной. Ось X — кусочно-линейное время (масштабируется), строки фиксированной высоты.
-// Подписи имеют постоянный экранный размер и скрываются, когда не помещаются.
-import { html, mount } from '../html.js';
-import { fmtDates, fmtYear, RELATION, DOMAIN } from '../format.js';
+// Карта родословной. Время — по горизонтали; по вертикали — родословное древо: потомок стоит рядом
+// с главным предком, ветви расходятся вверх и вниз. Каждый стиль — точка, подпись и тонкая линия жизни;
+// ветви древа обходят подписи и на пересечениях проходят «над» чужими линиями (подложка цвета бумаги).
+// Уровни: обзор → чтение → детали (миниатюры). Клик по стилю — крупный план ближайших связей,
+// с подписями типов связей и метками дальних родственников на краю экрана; полная родословная — по запросу.
+import { html, mount, safeUrl } from '../html.js';
+import { fmtDates, fmtYear, RELATION, REL_STATUS, DOMAIN, KIND, KIND_FAMILY, plural } from '../format.js?v=audit';
 import { createTimeScale, segmentWidths, segmentTicks } from '../timescale.js';
-import { layoutRows } from '../layout.js';
-import { frame, markLoaded } from '../ui/image.js';
-import { eraTag, thumb } from '../ui/common.js';
+import { layoutGenealogy, routeBranches } from '../layout.js?v=tree';
+import { frame, markLoaded } from '../ui/image.js?v=audit';
+import { eraTag, thumb } from '../ui/common.js?v=audit';
 import { replaceParams } from '../router.js';
+import { buildIndex, search } from '../search.js?v=audit';
 
 const NS = 'http://www.w3.org/2000/svg';
-const AXIS_H = 64;
-const ROW_H = 30;
-const R = { 1: 6, 2: 4.5, 3: 3.5 };
-const FONT = { 1: '600 16px Spectral', 2: '500 13px "Golos Text"', 3: '400 12px "Golos Text"' };
-const DASH = { evolved: '', influence: '', reaction: '7 5', revival: '1.5 4.5' };
+const AXIS_H = 30;      // строка делений шкалы внутри SVG
+const ROW = 44;         // высота строки при рабочем масштабе
+const PAD = 26;         // поля сверху и снизу полотна (в координатах раскладки)
+const K_DETAIL = 1;     // масштаб, при котором строки раскрыты полностью
+const FONT = { 1: '600 16px Spectral', 2: '500 14px "Golos Text"', 3: '400 13px "Golos Text"' };
+const FONT_PX = { 1: 16, 2: 14, 3: 13 };
+const DATE_FONT = '400 11px "Golos Text"';
+const R = { z0: { 1: 3.6, 2: 2.8, 3: 2.4 }, z1: { 1: 6, 2: 5, 3: 4.2 }, z2: { 1: 15, 2: 13, 3: 11 } };
+const DASH = { evolved: '', influence: '', reaction: '6 4', revival: '1.5 4' };
+const LONG = 1200;      // разрыв во времени (px рабочего масштаба), после которого связь рисуется парными отростками
 const reduceMotion = () => window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const clamp = (v, a, b) => Math.min(b, Math.max(a, v));
 
 function el(name, attrs = {}, parent) {
   const n = document.createElementNS(NS, name);
@@ -23,430 +33,1000 @@ function el(name, attrs = {}, parent) {
   return n;
 }
 
+// Пространственная сетка для проверки наложения подписей: быстро и на сотнях стилей.
+function grid(cell = 96) {
+  const m = new Map();
+  const keys = (b) => { const out = []; for (let i = Math.floor(b[0] / cell); i <= Math.floor(b[1] / cell); i++) for (let j = Math.floor(b[2] / cell); j <= Math.floor(b[3] / cell); j++) out.push(i + ',' + j); return out; };
+  return {
+    hit(b, id) { for (const k of keys(b)) for (const o of m.get(k) ?? []) if (o[4] !== id && b[0] < o[1] && o[0] < b[1] && b[2] < o[3] && o[2] < b[3]) return true; return false; },
+    add(b) { for (const k of keys(b)) { if (!m.has(k)) m.set(k, []); m.get(k).push(b); } },
+  };
+}
+
 export default {
   render(root, ctx) {
     const { store } = ctx;
     document.title = 'Карта родословной — Атлас эстетик';
+    const famCount = (k) => store.styles.filter((s) => KIND_FAMILY[k].kinds.includes(s.kind[0])).length;
 
     mount(root, html`
     <div class="map-view">
       <div class="map-toolbar">
-        <div class="filter-row" role="group" aria-label="Область">
-          <button class="chip" type="button" data-domain="" aria-pressed="true">Все</button>
-          ${Object.entries(DOMAIN).map(([k, v]) => html`<button class="chip" type="button" data-domain="${k}" aria-pressed="false">${v}</button>`)}
+        <div class="map-find" role="search">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4.5 4.5"/></svg>
+          <input type="search" placeholder="Найти на карте" aria-label="Найти стиль на карте" autocomplete="off" spellcheck="false">
+          <ul class="map-find-results" role="listbox" hidden></ul>
         </div>
-        <ul class="map-legend" aria-label="Типы связей">
-          ${Object.keys(RELATION).map((k) => html`<li><svg viewBox="0 0 34 10" aria-hidden="true"><path d="M1 5h32" class="edge rel-${k}"/></svg>${RELATION[k].label}</li>`)}
-        </ul>
+        <div class="map-pop-wrap map-filter-wrap">
+          <button class="chip map-filter-btn" type="button" data-filter-btn aria-expanded="false" aria-haspopup="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><path d="M4 6h16M7 12h10M10 18h4"/></svg>
+            <span class="mfb-label">Все стили</span>
+          </button>
+          <div class="map-pop map-filter-pop" hidden>
+            <p class="lg-title">Показать на карте</p>
+            <p class="mf-group">Область</p>
+            <div class="mf-chips" role="group" aria-label="Область">
+              <button class="chip" type="button" data-f-domain="">Все</button>
+              ${Object.entries(DOMAIN).map(([k, v]) => html`<button class="chip" type="button" data-f-domain="${k}">${v} <span class="count">${store.styles.filter((s) => s.domain.includes(k)).length}</span></button>`)}
+            </div>
+            <p class="mf-group">Тип карточки</p>
+            <div class="mf-chips" role="group" aria-label="Тип карточки">
+              <button class="chip" type="button" data-f-family="">Все</button>
+              ${Object.entries(KIND_FAMILY).map(([k, f]) => html`<button class="chip" type="button" data-f-family="${k}" title="${f.kinds.map((x) => KIND[x]).join(', ')}">${f.label} <span class="count">${famCount(k)}</span></button>`)}
+            </div>
+            <p class="lg-note">Остальные стили не исчезают, а бледнеют: карта не перестраивается, камера наводится на найденное. «Сбросить» возвращает прежний вид.</p>
+            <button class="btn ghost mf-reset" type="button" data-f-reset>Сбросить</button>
+          </div>
+        </div>
+        <label class="map-switch map-all-switch"><input type="checkbox" data-layer="all"><span class="sw" aria-hidden="true"></span>Все связи</label>
+        <div class="map-pop-wrap map-legend-wrap">
+          <button class="icon-btn" type="button" data-legend aria-expanded="false" aria-label="Как читать карту">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9.6 9.3a2.5 2.5 0 1 1 3.3 2.4c-.6.2-.9.7-.9 1.3v.5M12 16.6v.3"/></svg>
+          </button>
+          <div class="map-pop map-legend-pop" hidden>
+            <p class="lg-title">Как читать карту</p>
+            <ul>
+              <li><svg viewBox="0 0 40 14" aria-hidden="true"><circle cx="5" cy="7" r="4" fill="var(--era-xix)"/><path d="M10 7h22M32 4v6" class="life-legend"/></svg>Точка — начало стиля, тонкая линия — сколько он жил, цвет — эпоха</li>
+              <li><svg viewBox="0 0 40 14" aria-hidden="true"><path d="M4 2v5q0 5 5 5h27" class="edge lg rel-evolved"/></svg>Развитие — ветвь от предка</li>
+              <li><svg viewBox="0 0 40 14" aria-hidden="true"><path d="M2 7h36" class="edge lg rel-influence"/></svg>Влияние</li>
+              <li><svg viewBox="0 0 40 14" aria-hidden="true"><path d="M2 7h36" class="edge lg rel-reaction" stroke-dasharray="6 4"/></svg>Реакция, спор с предшественником</li>
+              <li><svg viewBox="0 0 40 14" aria-hidden="true"><path d="M2 7h36" class="edge lg rel-revival" stroke-dasharray="1.5 4"/></svg>Возрождение через века</li>
+              <li><svg viewBox="0 0 40 14" aria-hidden="true"><path d="M2 7h36" class="edge lg weight"/></svg>Толщина — сколько стилей выросло из этой линии</li>
+              <li><svg viewBox="0 0 40 14" aria-hidden="true"><path d="M2 4h36" class="edge lg st-verified"/><path d="M2 11h36" class="edge lg st-unverified"/></svg>Тёмная — подтверждена источником, светлая — гипотеза редакции</li>
+              <li><svg viewBox="0 0 40 14" aria-hidden="true"><path d="M2 7h36" class="edge cmp"/></svg>Визуальное сопоставление — сходство, а не происхождение</li>
+            </ul>
+            <div class="lg-layers" role="group" aria-label="Слои карты">
+              <label class="map-switch lg-all"><input type="checkbox" data-layer="all"><span class="sw" aria-hidden="true"></span>Все связи сразу</label>
+              <label class="map-switch"><input type="checkbox" data-layer="compare"><span class="sw" aria-hidden="true"></span>Визуальные сопоставления</label>
+              <label class="map-switch"><input type="checkbox" data-layer="verified"><span class="sw" aria-hidden="true"></span>Только связи с источником</label>
+            </div>
+            <p class="lg-note">Вертикаль не означает иерархию: стили стоят рядом с главным предком, чтобы ветви были короткими. Большинство связей пока не сверены с источниками — это редакционная схема. Шкала времени неравномерная: каждой эпохе — место по числу стилей. Нажмите на линию — появится объяснение связи; на стиль — его связи крупным планом.</p>
+          </div>
+        </div>
         <div class="zoom-ctrls">
           <button class="icon-btn" type="button" data-zoom="out" aria-label="Отдалить"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M6 12h12"/></svg></button>
           <button class="icon-btn" type="button" data-zoom="in" aria-label="Приблизить"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M6 12h12M12 6v12"/></svg></button>
           <button class="chip" type="button" data-zoom="fit">Вся история</button>
         </div>
       </div>
-      <div class="map-stage" tabindex="0" aria-label="Карта родословной стилей. Стрелки — двигать, плюс и минус — масштаб.">
-        <svg class="map-svg" aria-hidden="false">
-          <g class="m-cols"></g><g class="m-edges"></g><g class="m-bars"></g><g class="m-nodes"></g><g class="m-axis"></g>
+      <nav class="era-nav" aria-label="Эпохи: нажмите, чтобы приблизить">
+        <div class="era-nav-track">
+          ${store.eras.map((e, i) => html`<button type="button" class="en-seg" data-era-i="${i}" style="--c:var(--era-${e.id})" title="${e.name}">
+            <span class="en-name">${e.short}</span><span class="en-count">${store.inEra(e.id).length}</span>
+          </button>`)}
+          <div class="era-nav-window" aria-hidden="true"></div>
+        </div>
+        <div class="minimap" role="img" aria-label="Обзор всей карты: нажмите или тяните, чтобы перейти">
+          <canvas></canvas><div class="mm-frame" aria-hidden="true"></div>
+        </div>
+      </nav>
+      <div class="map-stage" tabindex="0" aria-label="Карта родословной стилей. Стрелки — двигать, плюс и минус — масштаб, Tab — по стилям.">
+        <svg class="map-svg z0">
+          <defs>${[11, 13, 15].map((r) => html`<clipPath id="clip-${r}"><circle cx="0" cy="0" r="${r}"/></clipPath>`)}</defs>
+          <g class="m-eras"></g><g class="m-life"></g><g class="m-cmp"></g><g class="m-edges"></g><g class="m-edge-hits"></g><g class="m-plates"></g>
+          <g class="m-nodes"></g><g class="m-labels"></g><g class="m-stubs"></g><g class="m-sel"></g><g class="m-elabels"></g><g class="m-axis"></g>
         </svg>
+        <div class="map-offscreen" aria-label="Связи за краем экрана"></div>
         <div class="map-tip" hidden></div>
+        <div class="map-edge-pop" role="dialog" aria-label="Связь" hidden></div>
         <aside class="map-panel" hidden aria-live="polite"></aside>
         <p class="map-loading">Строим карту…</p>
-        <p class="map-hint">Тяните, чтобы двигать. Shift с колесом — по времени, Ctrl или ⌘ с колесом и щипок — масштаб.</p>
+        <p class="map-hint"></p>
       </div>
-      <div class="map-mini" aria-hidden="true"><svg class="mini-svg" preserveAspectRatio="none"></svg><div class="mini-window"></div></div>
     </div>`);
 
-    const stage = root.querySelector('.map-stage');
-    const svg = root.querySelector('.map-svg');
-    const gCols = svg.querySelector('.m-cols');
-    const gEdges = svg.querySelector('.m-edges');
-    const gBars = svg.querySelector('.m-bars');
-    const gNodes = svg.querySelector('.m-nodes');
-    const gAxis = svg.querySelector('.m-axis');
-    const tip = root.querySelector('.map-tip');
-    const panel = root.querySelector('.map-panel');
-    const mini = root.querySelector('.map-mini');
-    const miniSvg = root.querySelector('.mini-svg');
-    const miniWin = root.querySelector('.mini-window');
+    const q = (s) => root.querySelector(s);
+    const stage = q('.map-stage');
+    const svg = q('.map-svg');
+    const G = Object.fromEntries(['eras', 'life', 'cmp', 'edges', 'edge-hits', 'plates', 'nodes', 'labels', 'stubs', 'sel', 'elabels', 'axis'].map((k) => [k, svg.querySelector(`.m-${k}`)]));
+    const tip = q('.map-tip');
+    const edgePop = q('.map-edge-pop');
+    const panel = q('.map-panel');
+    const chips = q('.map-offscreen');
+    const hint = q('.map-hint');
+    const navTrack = q('.era-nav-track');
+    const navWin = q('.era-nav-window');
+    const navSegs = [...root.querySelectorAll('.en-seg')];
+    const mm = q('.minimap');
+    const mmCanvas = mm.querySelector('canvas');
+    const mmFrame = mm.querySelector('.mm-frame');
 
     let destroyed = false;
     const cleanups = [];
     const on = (target, ev, fn, opts) => { target.addEventListener(ev, fn, opts); cleanups.push(() => target.removeEventListener(ev, fn, opts)); };
 
-    // Состояние
+    // ---------- состояние ----------
     const t = { k: 1, tx: 0, ty: 0 };
-    let vw = 0, vh = 0, sc, rows, rowCount = 0, contentH = 0;
-    let nodes = [], edges = [], colEls = [], tickPool = [];
-    let selected = null, domain = '', raf = 0, kFit = 0.1;
+    let vw = 0, vh = 0, sc, k0 = 0.1, syFit = 0.5, contentRefH = 0;
+    const nodes = [], edges = [], cmps = [];
     const nodeById = new Map();
     const axis = {};
+    let raf = 0, selected = null, focusMode = 'near', hovered = null, mode = 'z0';
+    let showAll = false, showCmp = false, verifiedOnly = false;
+    let filter = { domain: '', family: '' };
+    let camBeforeFocus = null, camBeforeFilter = null;
+    const LABEL_PAD = window.innerWidth < 760 ? 110 : 170;
+    const isNarrow = () => vw < 760;
 
+    function syOf(k) {
+      const fitY = Math.min(1, syFit);
+      if (k0 >= K_DETAIL) return fitY;
+      const p = clamp(Math.log(k / k0) / Math.log(K_DETAIL / k0), 0, 1);
+      return Math.pow(fitY, 1 - p);
+    }
     const X = (year) => sc.x(year) * t.k + t.tx;
-    const Y = (row) => AXIS_H + 26 + row * ROW_H + t.ty;
+    const XR = (xr) => xr * t.k + t.tx;           // координата раскладки → экран
+    const yRef = (n) => PAD + n.row * ROW + ROW / 2;
+    const Y = (n) => AXIS_H + t.ty + yRef(n) * syOf(t.k);
+    const panelWidth = () => (!panel.hidden && !isNarrow() ? panel.offsetWidth + 24 : 0);
+    const sheetHeight = () => (!panel.hidden && isNarrow() ? panel.offsetHeight + 8 : 0);
+    const viewRect = () => ({ x0: 0, x1: vw - panelWidth(), y0: AXIS_H, y1: vh - sheetHeight() });
 
     // ---------- построение ----------
     async function build() {
-      // Подписи меряем настоящими шрифтами: явно подгружаем начертания и кириллический набор.
       try {
-        await Promise.all(Object.values(FONT).map((f) => document.fonts.load(f, 'Аа')));
+        await Promise.all([...Object.values(FONT), DATE_FONT].map((f) => document.fonts.load(f, 'Аа')));
         await document.fonts.ready;
       } catch { /* шрифты не критичны */ }
       if (destroyed) return;
       const canvas = document.createElement('canvas').getContext('2d');
-      const width = (s) => { canvas.font = FONT[s.tier]; return canvas.measureText(s.name).width; };
+      const measure = (font, text) => { canvas.font = font; return canvas.measureText(text).width; };
 
       const breaks = [...store.eras.map((e) => e.start), store.now + 1];
-      const widths = segmentWidths(breaks, store.styles.map((s) => s.start), { base: 200, perItem: 70, min: 320 });
-      sc = createTimeScale(breaks, widths);
-      const lay = layoutRows(
-        store.styles.map((s) => ({ id: s.id, start: s.start, end: s.end, tier: s.tier, row: s.row ?? undefined, width: width(s) + R[s.tier] + 6, parents: s.parents.map((p) => p.id) })),
-        sc.x, { now: store.now, dot: 14, gap: 30 },
-      );
-      rows = lay.rows; rowCount = lay.count;
-      contentH = AXIS_H + 26 + rowCount * ROW_H + 30;
+      sc = createTimeScale(breaks, segmentWidths(breaks, store.styles.map((s) => s.start), { base: 60, perItem: 76, min: 170 }));
 
-      // Колонки эпох
-      colEls = store.eras.map((e, i) => {
-        const g = el('g', { class: 'm-col' }, gCols);
-        const rect = el('rect', { class: 'col-bg', fill: `var(--era-${e.id})` }, g);
-        const line = el('line', { class: 'col-line' }, g);
-        return { e, seg: sc.segments[i], g, rect, line };
-      });
-      // Ось
-      const axisBg = el('rect', { class: 'axis-bg', x: 0, y: 0, height: AXIS_H }, gAxis);
-      const axisLine = el('line', { class: 'axis-line', y1: AXIS_H - 0.5, y2: AXIS_H - 0.5, x1: 0 }, gAxis);
-      const eraLabels = colEls.map(({ e }) => {
-        const strip = el('rect', { class: 'axis-strip', y: 0, height: 4, fill: `var(--era-${e.id})` }, gAxis);
-        const label = el('text', { class: 'axis-era', y: 26 }, gAxis);
-        label.textContent = e.name;
-        label.dataset.full = e.name;
-        label.dataset.short = e.short;
-        const start = el('text', { class: 'axis-start', y: 48 }, gAxis);
+      const meta = new Map(store.styles.map((s) => [s.id, { w: measure(FONT[s.tier], s.name), wd: measure(DATE_FONT, fmtDates(s)) }]));
+      const layNodes = store.styles.map((s) => ({
+        id: s.id, start: s.start, end: s.end, tier: s.tier,
+        width: R.z2[s.tier] + 8 + Math.max(meta.get(s.id).w, meta.get(s.id).wd),
+        parents: s.parents.map((p) => p.id),
+      }));
+      const lay = layoutGenealogy(layNodes, sc.x, { now: store.now, dot: 16, gap: 22, tail: 28 });
+      const routes = routeBranches(layNodes, sc.x, lay, { now: store.now, dot: 16, scale: 0.7 });
+      contentRefH = PAD * 2 + lay.count * ROW;
+      // Вес линии (как в OneZoom): сколько стилей выросло из неё по главной линии родства.
+      const kidsOf = new Map(store.styles.map((s) => [s.id, []]));
+      for (const s of store.styles) { const pid = lay.primary.get(s.id); if (pid) kidsOf.get(pid).push(s.id); }
+      const sizeOf = new Map();
+      const size = (id) => { if (sizeOf.has(id)) return sizeOf.get(id); sizeOf.set(id, 1); const v = 1 + kidsOf.get(id).reduce((a, k) => a + size(k), 0); sizeOf.set(id, v); return v; };
+      store.styles.forEach((s) => size(s.id));
+      const weight = (id) => Math.log2(sizeOf.get(id));
+      // Ориентиры для общего вида: крупные узлы родословной с картинкой, не больше двух на эпоху.
+      const perEra = new Map();
+      const landmarks = new Set(store.styles.filter((s) => s.example.img)
+        .sort((a, b) => sizeOf.get(b.id) - sizeOf.get(a.id) || a.tier - b.tier || a.start - b.start)
+        .filter((s) => { const c = perEra.get(s.era) ?? 0; if (c >= 2 || (sizeOf.get(s.id) < 4 && s.tier > 1)) return false; perEra.set(s.era, c + 1); return true; })
+        .slice(0, 16).map((s) => s.id));
+
+      // Эпохи и ось
+      store.eras.forEach(() => el('line', { class: 'era-line' }, G.eras));
+      axis.bg = el('rect', { class: 'axis-bg', x: 0, y: 0, height: AXIS_H }, G.axis);
+      axis.line = el('line', { class: 'axis-line', y1: AXIS_H - 0.5, y2: AXIS_H - 0.5, x1: 0 }, G.axis);
+      axis.eraMarks = store.eras.map((e) => {
+        const strip = el('rect', { class: 'axis-strip', y: 0, height: 3, fill: `var(--era-${e.id})` }, G.axis);
+        const start = el('text', { class: 'axis-start', y: 20 }, G.axis);
         start.textContent = fmtYear(e.start);
-        const brk = el('path', { class: 'axis-break', d: 'M-4,58 l3,-6 l2,4 l3,-6' }, gAxis);
-        return { strip, label, start, brk, w: 0, sw: 0 };
+        return { strip, start, sw: 0 };
       });
-      const tickGroup = el('g', { class: 'axis-ticks' }, gAxis);
-      Object.assign(axis, { axisBg, axisLine, eraLabels, tickGroup });
+      axis.ticks = el('g', { class: 'axis-ticks' }, G.axis);
+      axis.pool = [];
 
-      // Узлы, полосы, связи
+      // Стили: линия жизни, точка, подпись (имя и даты)
       for (const s of store.styles) {
-        const bar = el('line', { class: `bar t${s.tier}`, stroke: `var(--era-${s.era})` }, gBars);
-        const g = el('g', { class: `node t${s.tier}`, tabindex: '0', role: 'button', 'aria-label': `${s.name}, ${fmtDates(s)}`, 'data-id': s.id }, gNodes);
-        el('circle', { r: R[s.tier] + 7, class: 'hit' }, g);
-        el('circle', { r: R[s.tier], class: 'dot', fill: `var(--era-${s.era})` }, g);
-        const text = el('text', { x: R[s.tier] + 6, y: s.tier === 1 ? 5.5 : 4.5 }, g);
-        text.textContent = s.name;
-        const n = { s, row: rows.get(s.id), g, bar, text, w: width(s), visible: true };
+        const life = el('path', { class: `life t${s.tier}`, stroke: `var(--era-${s.era})`, 'data-id': s.id, style: `--w:${weight(s.id).toFixed(2)}` }, G.life);
+        const g = el('g', { class: `node t${s.tier}`, tabindex: '0', role: 'button', 'aria-label': `${s.name}, ${fmtDates(s)}`, 'data-id': s.id }, G.nodes);
+        el('circle', { class: 'hit', r: 18 }, g);
+        const dot = el('circle', { class: 'dot', fill: `var(--era-${s.era})` }, g);
+        const ring = el('circle', { class: 'ring', stroke: `var(--era-${s.era})` }, g);
+        // Подложка подписи: линии уходят под название, как на транспортной карте, а не сквозь текст.
+        const plate = el('rect', { class: 'plate', rx: 3 }, G.plates);
+        const text = el('text', { class: `label t${s.tier}`, 'data-id': s.id }, G.labels);
+        const name = el('tspan', { class: 'l-name' }, text);
+        name.textContent = s.name;
+        const dates = el('tspan', { class: 'l-dates' }, text);
+        dates.textContent = fmtDates(s);
+        const m = meta.get(s.id);
+        const n = { s, row: lay.pos.get(s.id), g, dot, ring, text, name, dates, life, plate, img: null, w: m.w, wd: m.wd, x: 0, y: 0, r: 4, labelOn: false, landmark: landmarks.has(s.id) };
+        if (n.landmark) g.classList.add('landmark');
         nodes.push(n);
         nodeById.set(s.id, n);
       }
-      for (const s of store.styles) for (const p of s.parents) {
+      // Связи: первая (parents[0]) — ветвь древа с подобранным коридором; остальные — дуги.
+      for (const s of store.styles) s.parents.forEach((p, i) => {
         const par = nodeById.get(p.id), ch = nodeById.get(s.id);
-        if (!par || !ch) continue;
-        // Дальние связи (возрождения через века) на обзоре бледнее, чтобы не забивать карту.
-        const span = sc.x(s.start) - sc.x(Math.min(s.start, par.s.end ?? store.now));
-        const path = el('path', { class: `edge rel-${p.type}${span > 1400 ? ' far' : ''}` }, gEdges);
+        if (!par || !ch) return;
+        const primary = i === 0;
+        const st = p.status === 'verified' ? 'st-verified' : 'st-unverified';
+        const g = el('g', { class: `edge-g ${primary ? 'tree' : 'sec'}` }, G.edges);
+        const casing = el('path', { class: 'case' }, g);
+        const path = el('path', { class: `edge ${primary ? 'tree' : 'sec'} rel-${p.type} ${st}`, 'data-from': p.id, 'data-to': s.id, style: `--w:${(primary ? weight(s.id) : 0).toFixed(2)}` }, g);
         if (DASH[p.type]) path.setAttribute('stroke-dasharray', DASH[p.type]);
-        edges.push({ par, ch, type: p.type, path });
+        const hit = el('path', { class: `edge-hit ${st}`, 'data-edge': edges.length }, G['edge-hits']);
+        const long = sc.x(s.start) - sc.x(par.s.end ?? store.now) > LONG;
+        const stubText = long ? el('text', { class: 'stub-label' }, G.stubs) : null;
+        if (stubText) stubText.textContent = `← ${par.s.name}`;
+        edges.push({ par, ch, type: p.type, primary, g, casing, path, hit, rel: p, jx: primary ? routes.get(s.id)?.jx ?? null : null, drawn: false, long, stubText });
+      });
+      // У предка — парная метка для всех его «далёких» потомков: куда ведёт оборванная линия.
+      for (const n of nodes) {
+        const far = edges.filter((e) => e.par === n && e.long && e.primary);
+        if (!far.length) continue;
+        n.outText = el('text', { class: 'stub-label out-label' }, G.stubs);
+        const names = far.map((e) => e.ch.s.name);
+        n.outText.textContent = `→ ${names.slice(0, 2).join(', ')}${names.length > 2 ? ` и ещё ${names.length - 2}` : ''}`;
+        n.outCount = far.length;
       }
-      buildMini();
-      root.querySelector('.map-loading').remove();
+      const seenCmp = new Set();
+      for (const s of store.styles) for (const c of s.comparisons) {
+        const key = [s.id, c.id].sort().join('|');
+        const a = nodeById.get(s.id), b = nodeById.get(c.id);
+        if (seenCmp.has(key) || !a || !b) continue;
+        seenCmp.add(key);
+        const path = el('path', { class: 'edge cmp', 'data-from': s.id, 'data-to': c.id }, G.cmp);
+        const hit = el('path', { class: 'edge-hit cmp-hit', 'data-cmp': cmps.length }, G['edge-hits']);
+        cmps.push({ a, b, path, hit, note: c.note, sources: c.sources });
+      }
+      // Годы выбранного стиля — у концов его линии жизни
+      axis.selStart = el('text', { class: 'sel-year' }, G.sel);
+      axis.selEnd = el('text', { class: 'sel-year end' }, G.sel);
 
+      svg.dataset.nodes = String(nodes.length);
+      svg.dataset.edges = String(edges.length);
+      svg.dataset.comparisons = String(cmps.length);
+      svg.dataset.rows = String(lay.count);
+      q('.map-loading').remove();
       resize();
-      // На телефоне вся история в одну ширину нечитаема — стартуем с крупного вида от начала.
-      if (vw < 760) { Object.assign(t, { k: 0.34, tx: 24, ty: 0 }); clamp(); schedule(); }
-      else fit(false);
-      const focus = ctx.params.get('s');
-      if (focus && nodeById.has(focus)) select(focus, { center: true, animate: false });
+      drawMinimap();
+      fit(false);
+      applyParams(ctx.params, true);
     }
 
-    function buildMini() {
-      const W = 1000, H = 40;
-      miniSvg.setAttribute('viewBox', `0 0 ${W} ${H}`);
-      const fx = (year) => (sc.x(year) / sc.total) * W;
-      const fy = (row) => 6 + (row / Math.max(rowCount - 1, 1)) * (H - 10);
-      store.eras.forEach((e, i) => {
-        const seg = sc.segments[i];
-        el('rect', { x: (seg.x0 / sc.total) * W, y: 0, width: ((seg.x1 - seg.x0) / sc.total) * W, height: H, fill: `var(--era-${e.id})`, 'fill-opacity': 0.12 }, miniSvg);
-      });
-      for (const n of nodes) el('line', { x1: fx(n.s.start), x2: Math.max(fx(n.s.end ?? store.now), fx(n.s.start) + 2), y1: fy(n.row), y2: fy(n.row), stroke: `var(--era-${n.s.era})`, 'stroke-width': 2, 'vector-effect': 'non-scaling-stroke' }, miniSvg);
+    function applyParams(params, first = false) {
+      if (params.get('links') === 'all') setLayer('all', true);
+      if (params.get('cmp') === '1') setLayer('compare', true);
+      if (params.get('rel') === 'verified') setLayer('verified', true);
+      const d = params.get('d') ?? '', k = params.get('k') ?? '';
+      if ((DOMAIN[d] || KIND_FAMILY[k]) && (d !== filter.domain || k !== filter.family)) setFilter({ domain: DOMAIN[d] ? d : '', family: KIND_FAMILY[k] ? k : '' }, { animate: !first });
+      const focus = store.resolve(params.get('s') ?? '');
+      const eraI = store.eras.findIndex((e) => e.id === params.get('era'));
+      if (focus && nodeById.has(focus)) select(focus, { animate: !first, mode: params.get('view') === 'line' ? 'line' : 'near' });
+      else if (eraI >= 0) zoomToEra(eraI, first ? 0 : 650);
     }
 
     // ---------- отрисовка ----------
-    function schedule() { if (!raf) raf = requestAnimationFrame(draw); }
+    const schedule = () => { if (!raf) raf = requestAnimationFrame(draw); };
 
     function draw() {
       raf = 0;
       if (!sc) return;
-      // Колонки эпох
-      for (const c of colEls) {
-        const x0 = X(c.e.start), x1 = X(c.seg.end);
-        c.rect.setAttribute('x', x0); c.rect.setAttribute('width', Math.max(0, x1 - x0));
-        c.rect.setAttribute('y', 0); c.rect.setAttribute('height', vh);
-        c.line.setAttribute('x1', x0); c.line.setAttribute('x2', x0); c.line.setAttribute('y1', 0); c.line.setAttribute('y2', vh);
-      }
-      // Ось
-      const { axisBg, axisLine, eraLabels, tickGroup } = axis;
-      axisBg.setAttribute('width', vw); axisLine.setAttribute('x2', vw);
-      colEls.forEach((c, i) => {
-        const L = eraLabels[i];
-        const x0 = X(c.e.start), x1 = X(c.seg.end), w = x1 - x0;
-        L.strip.setAttribute('x', x0); L.strip.setAttribute('width', Math.max(0, w - 1));
-        if (!L.w) {
-          L.w = L.label.getComputedTextLength();
-          L.label.textContent = L.label.dataset.short;
-          L.ws = L.label.getComputedTextLength();
-          L.label.textContent = L.label.dataset.full;
-          L.sw = L.start.getComputedTextLength();
-          L.mode = 'full';
-        }
-        const mode = w > L.w + 20 ? 'full' : w > L.ws + 16 ? 'short' : 'none';
-        if (mode !== L.mode && mode !== 'none') { L.label.textContent = L.label.dataset[mode]; L.mode = mode; }
-        const lw = mode === 'short' ? L.ws : L.w;
-        const lx = Math.min(Math.max(x0 + 10, 10), x1 - lw - 10);
-        const fits = mode !== 'none' && x1 > 0 && x0 < vw;
-        L.label.setAttribute('x', lx); L.label.style.display = fits ? '' : 'none';
-        L.start.setAttribute('x', x0 + 8); L.start.style.display = w > L.sw + 16 && x1 > 0 && x0 < vw ? '' : 'none';
-        L.brk.setAttribute('transform', `translate(${x0},0)`); L.brk.style.display = i && x0 > -10 && x0 < vw + 10 ? '' : 'none';
+      const sy = syOf(t.k);
+      const rowH = ROW * sy;
+      const m = rowH < 17 ? 'z0' : rowH < 31 ? 'z1' : 'z2';
+      if (m !== mode) { svg.classList.remove(mode); svg.classList.add(m); mode = m; }
+
+      store.eras.forEach((e, i) => {
+        const x = X(e.start);
+        const ln = G.eras.children[i];
+        ln.setAttribute('x1', x); ln.setAttribute('x2', x); ln.setAttribute('y1', AXIS_H); ln.setAttribute('y2', vh);
       });
-      // Деления
+      drawAxis();
+
+      // Узлы и линии жизни
+      const visible = [];
+      for (const n of nodes) {
+        const x = X(n.s.start), y = Y(n);
+        const x2 = X(n.s.end ?? store.now);
+        n.x = x; n.y = y; n.r = n.landmark && m !== 'z2' ? 11 : R[m][n.s.tier];
+        const off = x2 < -40 || x > vw + 40 || y < AXIS_H - 30 || y > vh + 30;
+        n.g.style.display = off ? 'none' : '';
+        n.life.style.display = off ? 'none' : '';
+        // С клавиатуры обходятся только стили на экране: Tab не уводит камеру в другой конец истории.
+        const tabOff = off || x < 0 || x > vw - panelWidth() || y < AXIS_H || y > vh - sheetHeight();
+        if (n.tabOff !== tabOff) { n.tabOff = tabOff; n.g.setAttribute('tabindex', tabOff ? '-1' : '0'); }
+        if (off) { n.text.style.display = 'none'; n.plate.style.display = 'none'; n.labelOn = false; n.lbox = null; continue; }
+        // Линия жизни: от точки до конца стиля; у завершённых — короткая засечка.
+        const lx0 = x + n.r + 1;
+        const tick = n.s.end != null ? `M${x2.toFixed(1)},${(y - 3.5).toFixed(1)}V${(y + 3.5).toFixed(1)}` : '';
+        n.life.setAttribute('d', x2 > lx0 + 2 ? `M${lx0.toFixed(1)},${y.toFixed(1)}H${x2.toFixed(1)}${tick}` : '');
+        n.g.setAttribute('transform', `translate(${x.toFixed(1)},${y.toFixed(1)})`);
+        n.dot.setAttribute('r', n.r);
+        n.ring.setAttribute('r', n.r + 1);
+        if ((m === 'z2' || n.landmark) && n.s.example.img) {
+          const r = m === 'z2' ? R.z2[n.s.tier] : 11;
+          if (!n.img) {
+            n.img = el('image', { href: n.s.example.img.src[250], preserveAspectRatio: 'xMidYMid slice', class: 'thumb-img' });
+            n.g.insertBefore(n.img, n.ring);
+          }
+          if (n.imgR !== r) {
+            n.imgR = r;
+            for (const [k, v] of Object.entries({ x: -r, y: -r, width: r * 2, height: r * 2, 'clip-path': `url(#clip-${r})` })) n.img.setAttribute(k, v);
+          }
+        }
+        const lx = x + n.r + 7;
+        n.name.setAttribute('x', lx.toFixed(1));
+        n.name.setAttribute('y', (y + (m === 'z2' ? -1 : FONT_PX[n.s.tier] * 0.36)).toFixed(1));
+        n.dates.setAttribute('x', lx.toFixed(1));
+        n.dates.setAttribute('y', (y + 14).toFixed(1));
+        visible.push(n);
+      }
+
+      // Подписи: по приоритету, без наложений друг на друга и на точки. Сетка — чтобы и 600 стилей не тормозили.
+      const occ = grid();
+      for (const n of visible) occ.add([n.x - n.r - 1, n.x + n.r + 1, n.y - n.r - 1, n.y + n.r + 1, n.s.id]);
+      const allowTier = m === 'z0' ? 2 : 3;
+      const focusSet = svg.classList.contains('has-selection');
+      visible.sort((a, b) => prio(b) - prio(a));
+      for (const n of visible) {
+        const forced = n.s.id === selected || n.s.id === hovered;
+        const lit = n.g.classList.contains('lit');
+        const fh = FONT_PX[n.s.tier];
+        const w = m === 'z2' ? Math.max(n.w, n.wd) : n.w;
+        // Прямоугольник подписи — от базовой линии шрифта: с надстрочными и подстрочными элементами.
+        const base = n.y + (m === 'z2' ? -1 : fh * 0.36);
+        // У правого края подпись переворачивается налево от точки, чтобы название не обрезалось.
+        const flip = n.x + n.r + 9 + w > vw - 6 && n.x - n.r - 9 - w > 4;
+        const a = flip ? n.x - n.r - 9 - w : n.x + n.r + 5, b = flip ? n.x - n.r - 5 : n.x + n.r + 9 + w;
+        if (flip !== !!n.flipped) {
+          n.flipped = flip;
+          n.text.setAttribute('text-anchor', flip ? 'end' : 'start');
+        }
+        if (flip) { const lx = (n.x - n.r - 7).toFixed(1); n.name.setAttribute('x', lx); n.dates.setAttribute('x', lx); }
+        const c = base - fh * 0.95, d = m === 'z2' ? n.y + 17 : base + fh * 0.3;
+        let show = forced || (focusSet ? lit : n.s.tier <= allowTier || n.g.classList.contains('near'));
+        if (show && !forced) show = !occ.hit([a, b, c, d], n.s.id);
+        // Ориентир без подписи — не ориентир: в тесноте он становится обычной точкой.
+        if (n.landmark && m !== 'z2') {
+          const asThumb = show && !!n.img;
+          n.g.classList.toggle('lm-on', asThumb);
+          if (!asThumb && n.r !== R[m][n.s.tier]) { n.r = R[m][n.s.tier]; n.dot.setAttribute('r', n.r); n.ring.setAttribute('r', n.r + 1); }
+        } else n.g.classList.remove('lm-on');
+        n.text.style.display = show ? '' : 'none';
+        n.plate.style.display = show ? '' : 'none';
+        n.labelOn = show;
+        n.lbox = show ? [a, b, c, d] : null;
+        if (show) {
+          occ.add([a, b, c, d, n.s.id]);
+          n.plate.setAttribute('x', (a - 1).toFixed(1)); n.plate.setAttribute('width', (b - a - 1).toFixed(1));
+          n.plate.setAttribute('y', (c + 1).toFixed(1)); n.plate.setAttribute('height', (d - c - 1).toFixed(1));
+        }
+      }
+      drawEdges();
+      drawSelection();
+      drawOffscreen();
+      drawNav();
+      drawMinimapFrame();
+    }
+
+    function prio(n) {
+      let p = (4 - n.s.tier) * 1000 - n.s.start / 100000;
+      if (n.s.id === selected || n.s.id === hovered) p += 1e6;
+      if (n.g.classList.contains('is-related') || n.g.classList.contains('on-line')) p += 5e5;
+      else if (n.g.classList.contains('lit') || n.g.classList.contains('near')) p += 2e5;
+      if (n.landmark) p += 3e5;
+      if (n.g.classList.contains('out')) p -= 5e5;
+      return p;
+    }
+
+    function drawAxis() {
+      axis.bg.setAttribute('width', vw);
+      axis.line.setAttribute('x2', vw);
+      sc.segments.forEach((seg, i) => {
+        const M = axis.eraMarks[i];
+        const x0 = X(seg.start), x1 = X(seg.end), w = x1 - x0;
+        M.strip.setAttribute('x', x0); M.strip.setAttribute('width', Math.max(0, w - 1));
+        if (!M.sw) M.sw = M.start.getComputedTextLength();
+        M.start.setAttribute('x', x0 + 6);
+        M.start.style.display = w > M.sw + 12 && x1 > 0 && x0 < vw ? '' : 'none';
+      });
       let ti = 0;
-      colEls.forEach((c, idx) => {
-        const x0 = X(c.e.start), x1 = X(c.seg.end);
+      sc.segments.forEach((seg, i) => {
+        const x0 = X(seg.start), x1 = X(seg.end);
         if (x1 < 0 || x0 > vw) return;
-        const startW = eraLabels[idx].start.style.display === 'none' ? 0 : (eraLabels[idx].sw || 40);
-        for (const y of segmentTicks(c.seg, t.k, 84)) {
+        const sw = axis.eraMarks[i].start.style.display === 'none' ? 0 : axis.eraMarks[i].sw;
+        for (const y of segmentTicks(seg, t.k, 90)) {
           const x = X(y);
-          if (x < x0 + startW + 50 || x > vw + 40 || x < -40) continue;
-          let tk = tickPool[ti];
-          if (!tk) { tk = { line: el('line', { class: 'tick', y1: AXIS_H - 6, y2: AXIS_H }, tickGroup), text: el('text', { class: 'tick-label', y: 48 }, tickGroup) }; tickPool.push(tk); }
+          if (x < x0 + sw + 40 || x > vw + 40 || x < -40) continue;
+          let tk = axis.pool[ti];
+          if (!tk) { tk = { line: el('line', { class: 'tick', y1: AXIS_H - 5, y2: AXIS_H }, axis.ticks), text: el('text', { class: 'tick-label', y: 20 }, axis.ticks) }; axis.pool.push(tk); }
           tk.line.setAttribute('x1', x); tk.line.setAttribute('x2', x); tk.line.style.display = '';
           tk.text.setAttribute('x', x); tk.text.textContent = fmtYear(y); tk.text.style.display = '';
           ti++;
         }
       });
-      for (; ti < tickPool.length; ti++) { tickPool[ti].line.style.display = 'none'; tickPool[ti].text.style.display = 'none'; }
-
-      // Полосы и узлы. Точки видны всегда — сначала занимаем их место, потом раздаём подписи.
-      const occupied = new Map();
-      for (const n of nodes) {
-        if (n.g.classList.contains('filtered')) continue;
-        const x = X(n.s.start), r = R[n.s.tier] + 3;
-        const list = occupied.get(n.row) ?? [];
-        list.push([x - r, x + r, n.s.id]);
-        occupied.set(n.row, list);
-      }
-      const order = [...nodes].sort((a, b) => prio(b) - prio(a));
-      for (const n of order) {
-        const x = X(n.s.start), y = Y(n.row);
-        const x2 = X(n.s.end ?? store.now);
-        const off = x2 < -20 || x > vw + 20 || y < AXIS_H - 10 || y > vh + 20;
-        n.bar.setAttribute('x1', x); n.bar.setAttribute('x2', Math.max(x, x2)); n.bar.setAttribute('y1', y); n.bar.setAttribute('y2', y);
-        n.g.setAttribute('transform', `translate(${x.toFixed(1)},${y.toFixed(1)})`);
-        n.g.style.display = off && x > vw + 20 ? 'none' : '';
-        // Подпись: помещается ли без наложений в своей строке
-        const a = x + R[n.s.tier] + 4, b = x + R[n.s.tier] + 6 + n.w + 8;
-        const list = occupied.get(n.row) ?? [];
-        const free = !list.some(([c, d, id]) => id !== n.s.id && a < d && c < b);
-        const show = free && !n.g.classList.contains('filtered');
-        n.text.style.display = show ? '' : 'none';
-        if (show) list.push([a, b, n.s.id]);
-      }
-      // Связи
-      for (const e of edges) {
-        const p = e.par.s, c = e.ch.s;
-        const py = Y(e.par.row), cy = Y(e.ch.row);
-        const ex = X(c.start);
-        let sx = X(Math.max(p.start, Math.min(c.start, p.end ?? store.now)));
-        sx = Math.max(X(p.start), Math.min(sx, ex - 16));
-        if (Math.max(sx, ex) < -50 || Math.min(sx, ex) > vw + 50) { e.path.setAttribute('d', ''); continue; }
-        if (Math.abs(cy - py) < 1) e.path.setAttribute('d', `M${sx.toFixed(1)},${py.toFixed(1)}L${ex.toFixed(1)},${cy.toFixed(1)}`);
-        else {
-          const c1 = Math.max(14, (ex - sx) * 0.5);
-          e.path.setAttribute('d', `M${sx.toFixed(1)},${py.toFixed(1)}C${(sx + c1).toFixed(1)},${py.toFixed(1)} ${(ex - c1).toFixed(1)},${cy.toFixed(1)} ${ex.toFixed(1)},${cy.toFixed(1)}`);
-        }
-      }
-      // Мини-карта
-      const mw = mini.clientWidth;
-      const left = (-t.tx / (sc.total * t.k)) * mw, width = (vw / (sc.total * t.k)) * mw;
-      miniWin.style.transform = `translateX(${Math.max(0, left)}px)`;
-      miniWin.style.width = `${Math.max(12, Math.min(mw, width + Math.min(0, left)))}px`;
+      for (; ti < axis.pool.length; ti++) { axis.pool[ti].line.style.display = 'none'; axis.pool[ti].text.style.display = 'none'; }
     }
 
-    function prio(n) {
-      let p = (4 - n.s.tier) * 1000 - n.s.start / 100000;
-      if (n.s.id === selected) p += 1e6;
-      if (n.g.classList.contains('lit')) p += 5e5;
-      return p;
+    // Геометрия ветви древа: по строке предка (если потомок появился после его конца) → поворот →
+    // вертикаль в коридоре jx → поворот → по строке потомка к его точке. Повороты скруглены одинаково.
+    function branchPath(e) {
+      const p = e.par, c = e.ch;
+      const xc = X(c.s.start) - c.r - 1, yc = c.y, yp = p.y;
+      const xps = X(p.s.start), xpe = X(p.s.end ?? store.now);
+      if (Math.abs(yc - yp) < 0.5) return `M${Math.min(xpe, xc).toFixed(1)},${yp.toFixed(1)}H${xc.toFixed(1)}`;
+      let jx = e.jx != null ? XR(e.jx) : xc - 10;
+      jx = clamp(jx, xps, xc - 2);
+      const dir = yc > yp ? 1 : -1;
+      const rad = Math.max(0, Math.min(8, Math.abs(yc - yp) / 2, xc - jx));
+      let d;
+      if (jx > xpe + 1) {
+        const r1 = Math.min(rad, jx - xpe);
+        d = `M${xpe.toFixed(1)},${yp.toFixed(1)}H${(jx - r1).toFixed(1)}Q${jx.toFixed(1)},${yp.toFixed(1)} ${jx.toFixed(1)},${(yp + dir * r1).toFixed(1)}`;
+      } else if (jx - xps < p.r + 1) {
+        jx = xps;
+        d = `M${xps.toFixed(1)},${(yp + dir * (p.r + 1)).toFixed(1)}`;
+      } else if (p.lbox && jx > p.lbox[0] && jx < p.lbox[1]) {
+        // Ветвь выходит из-под подписи предка: начинаем у края подписи, а не сквозь текст.
+        d = `M${jx.toFixed(1)},${(dir > 0 ? p.lbox[3] : p.lbox[2]).toFixed(1)}`;
+      } else d = `M${jx.toFixed(1)},${yp.toFixed(1)}`;
+      d += `V${(yc - dir * rad).toFixed(1)}Q${jx.toFixed(1)},${yc.toFixed(1)} ${(jx + rad).toFixed(1)},${yc.toFixed(1)}H${xc.toFixed(1)}`;
+      return d;
+    }
+    // Оборванная далёкая связь: короткий отросток с кружком на входе в потомка и отросток у предка.
+    function stubPath(e) {
+      const p = e.par, c = e.ch;
+      const xc = X(c.s.start) - c.r - 1, yc = c.y;
+      const xpe = X(p.s.end ?? store.now), yp = p.y;
+      const L = 22, o = 2.4;
+      const into = `M${(xc - L - o).toFixed(1)},${yc.toFixed(1)}a${o},${o} 0 1,0 ${2 * o},0a${o},${o} 0 1,0 ${-2 * o},0M${(xc - L + o).toFixed(1)},${yc.toFixed(1)}H${xc.toFixed(1)}`;
+      if (!e.primary) return into;
+      const out = `M${(xpe + 2).toFixed(1)},${yp.toFixed(1)}h${L - 6}l-3,-3m3,3l-3,3`;
+      return `${into}${out}`;
+    }
+    function drawStubLabels() {
+      const show = mode === 'z2' && !svg.classList.contains('has-selection');
+      const occ = grid();
+      for (const n of nodes) if (n.labelOn) { const w = mode === 'z2' ? Math.max(n.w, n.wd) : n.w; occ.add([n.x + n.r + 5, n.x + n.r + 9 + w, n.y - 16, n.y + 18, n.s.id]); }
+      for (const e of edges) {
+        if (!e.stubText) continue;
+        const on = show && e.stub && e.drawn && e.ch.g.style.display !== 'none';
+        let vis = false;
+        if (on) {
+          const x1 = X(e.ch.s.start) - e.ch.r - 30, w = e.stubText.getComputedTextLength?.() || 80;
+          const xe = x1 + 22;
+          const box = [xe - w - 2, xe + 2, e.ch.y - 18, e.ch.y - 4];
+          if (!occ.hit(box)) { occ.add(box); vis = true; e.stubText.setAttribute('x', xe.toFixed(1)); e.stubText.setAttribute('y', (e.ch.y - 7).toFixed(1)); }
+        }
+        e.stubText.style.display = vis ? '' : 'none';
+      }
+      for (const n of nodes) {
+        if (!n.outText) continue;
+        const xpe = X(n.s.end ?? store.now);
+        let vis = false;
+        if (show && n.g.style.display !== 'none' && edges.some((e) => e.par === n && e.stub)) {
+          const x0 = xpe + 2, w = n.outText.getComputedTextLength?.() || 120;
+          const box = [x0 - 2, x0 + w + 2, n.y - 18, n.y - 4];
+          if (!occ.hit(box)) { occ.add(box); vis = true; n.outText.setAttribute('x', x0.toFixed(1)); n.outText.setAttribute('y', (n.y - 7).toFixed(1)); }
+        }
+        n.outText.style.display = vis ? '' : 'none';
+      }
+    }
+    function arcPath(e) {
+      const p = e.par, c = e.ch;
+      const xc = X(c.s.start) - c.r - 1, yc = c.y, yp = p.y;
+      const xps = X(p.s.start), xpe = X(p.s.end ?? store.now);
+      const sx = clamp(Math.min(xc - 24, xpe), xps, xc - 12);
+      const k1 = Math.max(16, (xc - sx) * 0.5);
+      return `M${sx.toFixed(1)},${yp.toFixed(1)}C${(sx + k1).toFixed(1)},${yp.toFixed(1)} ${(xc - k1).toFixed(1)},${yc.toFixed(1)} ${xc.toFixed(1)},${yc.toFixed(1)}`;
+    }
+
+    function drawEdges() {
+      const focusNear = selected && focusMode === 'near';
+      for (const e of edges) {
+        const p = e.par, c = e.ch;
+        const lit = e.g.classList.contains('hl');
+        const near = !!hovered && (p.s.id === hovered || c.s.id === hovered);
+        e.g.classList.toggle('near', near);
+        const out = e.g.classList.contains('out');
+        const hidden = (verifiedOnly && e.rel.status !== 'verified') || (focusNear && !lit && !e.primary);
+        const want = !hidden && (e.primary || showAll || lit || near || verifiedOnly) && !(out && !lit);
+        const xa = Math.min(X(p.s.start), X(c.s.start)), xb = Math.max(X(p.s.start), X(c.s.start));
+        const offscreen = xb < -60 || xa > vw + 60 || Math.max(p.y, c.y) < AXIS_H - 40 || Math.min(p.y, c.y) > vh + 40;
+        if (!want || offscreen) {
+          if (e.drawn) { e.path.setAttribute('d', ''); e.casing.setAttribute('d', ''); e.hit.setAttribute('d', ''); e.drawn = false; }
+          continue;
+        }
+        e.stub = e.long && !lit && !near && !showAll;
+        e.g.classList.toggle('stub', e.stub);
+        const d = e.stub ? stubPath(e) : e.primary ? branchPath(e) : arcPath(e);
+        e.path.setAttribute('d', d); e.casing.setAttribute('d', d); e.hit.setAttribute('d', d);
+        e.drawn = true;
+      }
+      drawStubLabels();
+      for (const c of cmps) {
+        const near = !!hovered && (c.a.s.id === hovered || c.b.s.id === hovered);
+        const sel = !!selected && (c.a.s.id === selected || c.b.s.id === selected);
+        const offA = c.a.g.style.display === 'none', offB = c.b.g.style.display === 'none';
+        c.path.classList.toggle('near', near || sel);
+        if (!(showCmp || near || sel) || (offA && offB && !sel)) { c.path.setAttribute('d', ''); c.hit.setAttribute('d', ''); continue; }
+        const [l, r] = c.a.x <= c.b.x ? [c.a, c.b] : [c.b, c.a];
+        const mx = (l.x + r.x) / 2, lift = Math.min(70, Math.abs(r.x - l.x) * 0.15 + 14);
+        const d = `M${l.x.toFixed(1)},${l.y.toFixed(1)}Q${mx.toFixed(1)},${(Math.min(l.y, r.y) - lift).toFixed(1)} ${r.x.toFixed(1)},${r.y.toFixed(1)}`;
+        c.path.setAttribute('d', d); c.hit.setAttribute('d', d);
+      }
+    }
+
+    // Крупный план: подписи типов связей словами и годы выбранного стиля.
+    function drawSelection() {
+      const n = selected && nodeById.get(selected);
+      const showYears = !!n && n.g.style.display !== 'none';
+      axis.selStart.style.display = showYears ? '' : 'none';
+      axis.selEnd.style.display = showYears && n.s.end != null ? '' : 'none';
+      if (showYears) {
+        axis.selStart.textContent = fmtYear(n.s.start);
+        axis.selStart.setAttribute('x', n.x.toFixed(1)); axis.selStart.setAttribute('y', (n.y + n.r + 14).toFixed(1));
+        if (n.s.end != null) {
+          axis.selEnd.textContent = fmtYear(n.s.end);
+          axis.selEnd.setAttribute('x', X(n.s.end).toFixed(1)); axis.selEnd.setAttribute('y', (n.y + 17).toFixed(1));
+        }
+      }
+      const labels = [];
+      if (selected && focusMode === 'near') {
+        for (const e of edges) if (e.g.classList.contains('hl') && e.drawn) labels.push({ text: `${RELATION[e.type].label}${e.rel.status === 'verified' ? ' ✓' : ''}`, path: e.path });
+        for (const c of cmps) if (c.path.classList.contains('near') && c.path.getAttribute('d')) labels.push({ text: 'сходство', path: c.path });
+      }
+      const pool = G.elabels;
+      while (pool.children.length < labels.length) el('text', { class: 'elabel' }, pool);
+      [...pool.children].forEach((tEl, i) => {
+        const L = labels[i];
+        if (!L) { tEl.style.display = 'none'; return; }
+        const len = L.path.getTotalLength();
+        const pt = L.path.getPointAtLength(len * 0.5);
+        const vr = viewRect();
+        if (pt.x < vr.x0 + 30 || pt.x > vr.x1 - 30 || pt.y < vr.y0 + 8 || pt.y > vr.y1 - 8) { tEl.style.display = 'none'; return; }
+        tEl.style.display = '';
+        tEl.textContent = L.text;
+        tEl.setAttribute('x', pt.x.toFixed(1)); tEl.setAttribute('y', (pt.y + 4).toFixed(1));
+      });
+    }
+
+    // Метки связей за краем экрана: дальние концы длинных связей не теряются.
+    function drawOffscreen() {
+      if (!selected || focusMode !== 'near' || isNarrow()) { if (chips.childElementCount) chips.replaceChildren(); return; }
+      const s = store.get(selected);
+      const sel = nodeById.get(selected);
+      const rect = viewRect();
+      const inset = 10;
+      const rels = [
+        ...s.parents.map((r) => ({ id: r.id, word: RELATION[r.type].from })),
+        ...s.children.map((r) => ({ id: r.id, word: RELATION[r.type].to })),
+        ...s.comparisons.map((r) => ({ id: r.id, word: 'похож на' })),
+      ];
+      const items = [];
+      for (const r of rels) {
+        const o = nodeById.get(r.id);
+        if (!o) continue;
+        if (o.x > rect.x0 + 4 && o.x < rect.x1 - 4 && o.y > rect.y0 + 4 && o.y < rect.y1 - 4) continue;
+        // Точка выхода луча «выбранный → родственник» на рамке видимой области.
+        const cx = clamp(sel.x, rect.x0 + 40, rect.x1 - 40), cy = clamp(sel.y, rect.y0 + 30, rect.y1 - 30);
+        const dx = o.x - cx, dy = o.y - cy;
+        const tx = dx > 0 ? (rect.x1 - inset - cx) / dx : dx < 0 ? (rect.x0 + inset - cx) / dx : Infinity;
+        const ty = dy > 0 ? (rect.y1 - inset - cy) / dy : dy < 0 ? (rect.y0 + inset - cy) / dy : Infinity;
+        const tt = Math.min(tx, ty);
+        const ang = Math.atan2(dy, dx);
+        const arrow = ['→', '↘', '↓', '↙', '←', '↖', '↑', '↗'][((Math.round(ang / (Math.PI / 4)) % 8) + 8) % 8];
+        items.push({ o, word: r.word, arrow, x: cx + dx * tt, y: clamp(cy + dy * tt, rect.y0 + 22, rect.y1 - 22), left: dx < 0 });
+      }
+      items.sort((a, b) => a.y - b.y);
+      const placed = [];
+      for (const it of items) {
+        for (const p of placed) if (p.left === it.left && Math.abs(p.x - it.x) < 220 && Math.abs(p.y - it.y) < 40) it.y = p.y + 40;
+        placed.push(it);
+      }
+      chips.replaceChildren(...items.map((it) => {
+        const b = document.createElement('button');
+        b.type = 'button';
+        b.className = 'oc-chip';
+        b.dataset.select = it.o.s.id;
+        b.innerHTML = String(html`<span class="oc-arrow" aria-hidden="true">${it.arrow}</span><span class="oc-text"><span class="oc-rel">${it.word}</span><span class="oc-name">${it.o.s.name}</span></span>`);
+        b.setAttribute('aria-label', `${it.word}: ${it.o.s.name} — за краем экрана, перейти`);
+        b.style.transform = `translate(${it.x.toFixed(0)}px, ${it.y.toFixed(0)}px) translate(${it.left ? '0' : '-100%'}, -50%)`;
+        return b;
+      }));
+    }
+
+    // Шкала эпох: равные сегменты, рамка показывает видимый период.
+    const navPos = (year) => {
+      const segs = sc.segments;
+      let i = segs.findIndex((s) => year < s.end);
+      if (i < 0) i = segs.length - 1;
+      const s = segs[i];
+      return (i + clamp((year - s.start) / (s.end - s.start), 0, 1)) / segs.length;
+    };
+    const navYear = (f) => {
+      const segs = sc.segments, n = segs.length;
+      const i = clamp(Math.floor(f * n), 0, n - 1);
+      const s = segs[i];
+      return s.start + clamp(f * n - i, 0, 1) * (s.end - s.start);
+    };
+    function drawNav() {
+      const y0 = sc.invert((0 - t.tx) / t.k), y1 = sc.invert((vw - panelWidth() - t.tx) / t.k);
+      const a = navPos(y0), b = navPos(y1);
+      const W = navSegs.length ? navSegs[navSegs.length - 1].offsetLeft + navSegs[navSegs.length - 1].offsetWidth - navSegs[0].offsetLeft : 0;
+      const left0 = navSegs[0]?.offsetLeft ?? 0;
+      const wl = left0 + a * W, ww = Math.max(8, (b - a) * W);
+      navWin.style.left = `${wl.toFixed(1)}px`;
+      navWin.style.width = `${ww.toFixed(1)}px`;
+      if (!navDrag && performance.now() > navUserUntil && navTrack.scrollWidth > navTrack.clientWidth) {
+        const sl = navTrack.scrollLeft, cw = navTrack.clientWidth;
+        if (wl < sl || wl + Math.min(ww, cw) > sl + cw) navTrack.scrollLeft = Math.max(0, wl - 16);
+      }
+      sc.segments.forEach((s, i) => navSegs[i].classList.toggle('in-view', s.end > y0 && s.start < y1));
+    }
+
+    // ---------- миникарта: вся карта в координатах раскладки, рамка — видимая область ----------
+    let mmW = 0, mmH = 0;
+    function drawMinimap() {
+      const dpr = window.devicePixelRatio || 1;
+      // Миникарта живёт в строке навигатора эпох: не закрывает полотно.
+      mmW = mm.clientWidth || 140; mmH = mm.clientHeight || 50;
+      mmCanvas.width = mmW * dpr; mmCanvas.height = mmH * dpr;
+      mmCanvas.style.width = `${mmW}px`; mmCanvas.style.height = `${mmH}px`;
+      const c = mmCanvas.getContext('2d');
+      c.setTransform(dpr, 0, 0, dpr, 0, 0);
+      c.clearRect(0, 0, mmW, mmH);
+      const cs = getComputedStyle(svg);
+      const mx = (xr) => (xr / sc.total) * mmW, my = (yr) => (yr / contentRefH) * mmH;
+      store.eras.forEach((e, i) => {
+        const seg = sc.segments[i];
+        c.fillStyle = cs.getPropertyValue(`--era-${e.id}`).trim() || '#888';
+        c.globalAlpha = 0.09; c.fillRect(mx(seg.x0), 0, mx(seg.x1) - mx(seg.x0), mmH);
+        c.globalAlpha = 0.9; c.fillRect(mx(seg.x0), 0, Math.max(1, mx(seg.x1) - mx(seg.x0) - 1), 2);
+      });
+      for (const n of nodes) {
+        const out = n.g.classList.contains('out');
+        c.globalAlpha = out ? 0.2 : 0.9;
+        c.fillStyle = cs.getPropertyValue(`--era-${n.s.era}`).trim() || '#555';
+        const r = n.s.tier === 1 ? 1.7 : 1.15;
+        c.beginPath(); c.arc(mx(sc.x(n.s.start)), my(yRef(n)), r, 0, Math.PI * 2); c.fill();
+      }
+      c.globalAlpha = 1;
+    }
+    function drawMinimapFrame() {
+      if (!mmW) return;
+      const sy = syOf(t.k);
+      const xr0 = (0 - t.tx) / t.k, xr1 = (vw - panelWidth() - t.tx) / t.k;
+      const yr0 = (0 - t.ty) / sy, yr1 = (vh - AXIS_H - sheetHeight() - t.ty) / sy;
+      const fx0 = clamp((xr0 / sc.total) * mmW, 0, mmW), fx1 = clamp((xr1 / sc.total) * mmW, 0, mmW);
+      const fy0 = clamp((yr0 / contentRefH) * mmH, 0, mmH), fy1 = clamp((yr1 / contentRefH) * mmH, 0, mmH);
+      mmFrame.style.transform = `translate(${fx0.toFixed(1)}px, ${fy0.toFixed(1)}px)`;
+      mmFrame.style.width = `${Math.max(6, fx1 - fx0).toFixed(1)}px`;
+      mmFrame.style.height = `${Math.max(6, fy1 - fy0).toFixed(1)}px`;
+    }
+    function minimapGo(e) {
+      const r = mmCanvas.getBoundingClientRect();
+      const xr = clamp((e.clientX - r.left) / r.width, 0, 1) * sc.total;
+      const yr = clamp((e.clientY - r.top) / r.height, 0, 1) * contentRefH;
+      const sy = syOf(t.k);
+      t.tx = (vw - panelWidth()) / 2 - xr * t.k;
+      t.ty = (vh - AXIS_H - sheetHeight()) / 2 - yr * sy;
+      clampT(); schedule();
     }
 
     // ---------- трансформация ----------
-    function clamp() {
-      // Открытая панель закрывает правую часть — разрешаем прокрутить карту дальше на её ширину.
-      const panelW = !panel.hidden && vw >= 760 ? panel.offsetWidth + 24 : 0;
-      const w = sc.total * t.k + LABEL_PAD + panelW;
+    function clampT() {
+      const sy = syOf(t.k);
+      const w = sc.total * t.k + LABEL_PAD + panelWidth();
       const minTx = Math.min(40, vw - w - 40), maxTx = Math.max(40, vw - w - 40);
-      t.tx = Math.min(maxTx, Math.max(minTx, t.tx));
-      const sheet = vw < 760 && !panel.hidden ? panel.offsetHeight : 0;
-      const minTy = Math.min(0, vh - contentH - 20 - sheet);
-      t.ty = Math.min(0, Math.max(minTy, t.ty));
+      t.tx = clamp(t.tx, minTx, maxTx);
+      const h = contentRefH * sy;
+      const avail = vh - AXIS_H - sheetHeight();
+      t.ty = h <= avail ? clamp(t.ty, 0, avail - h) : clamp(t.ty, avail - h, 0);
     }
-    function zoomAt(px, factor) {
-      const k2 = Math.min(5, Math.max(kFit * 0.9, t.k * factor));
+    function zoomAt(px, py, factor) {
+      const k2 = clamp(t.k * factor, Math.min(k0 * 0.9, t.k), 5);
+      const s1 = syOf(t.k), s2 = syOf(k2);
       t.tx = px - ((px - t.tx) * k2) / t.k;
+      const yy = py - AXIS_H;
+      t.ty = yy - ((yy - t.ty) * s2) / s1;
       t.k = k2;
-      clamp(); schedule();
+      clampT(); schedule();
     }
     let anim = 0;
     function animateTo(k, tx, ty, ms = 650) {
       cancelAnimationFrame(anim);
-      if (reduceMotion() || ms === 0) { Object.assign(t, { k, tx, ty }); clamp(); schedule(); return; }
+      if (reduceMotion() || ms === 0) { Object.assign(t, { k, tx, ty }); clampT(); schedule(); return; }
       const from = { ...t };
       const t0 = performance.now();
       const step = (now) => {
         const p = Math.min(1, (now - t0) / ms);
         const e = 1 - Math.pow(1 - p, 3);
-        // Масштаб интерполируем логарифмически — так движение выглядит равномерным.
         t.k = Math.exp(Math.log(from.k) + (Math.log(k) - Math.log(from.k)) * e);
         t.tx = from.tx + (tx - from.tx) * e;
         t.ty = from.ty + (ty - from.ty) * e;
-        clamp(); draw();
+        clampT(); draw();
         if (p < 1) anim = requestAnimationFrame(step);
       };
       anim = requestAnimationFrame(step);
     }
-    const LABEL_PAD = window.innerWidth < 760 ? 140 : 220; // место справа под подписи последних стилей
+    function computeFit() {
+      k0 = (vw - 80 - LABEL_PAD) / sc.total;
+      syFit = (vh - AXIS_H - 16) / contentRefH;
+    }
     function fit(animate = true) {
-      kFit = (vw - 80 - LABEL_PAD) / sc.total;
-      const ty = 0;
-      if (animate) animateTo(kFit, 40, ty); else { Object.assign(t, { k: kFit, tx: 40, ty }); clamp(); schedule(); }
+      computeFit();
+      animateTo(k0, 40, 0, animate ? 600 : 0);
     }
-    function centerOn(id, animate = true) {
+    // Вписать прямоугольник раскладки [x0..x1] × [y0..y1] в видимую область.
+    // fitY: false — не ужимать масштаб ради высоты (рабочий вид, вертикаль листается);
+    // тогда по вертикали центрируется «центр тяжести» yFocus.
+    // keep — стиль, который обязан остаться в видимой области (не под панелью и не за краем).
+    function fitBox(x0, x1, y0, y1, { kMin = k0, kMax = 1.15, ms = 650, fitY = true, yFocus = null, keep = null } = {}) {
+      const rect = viewRect();
+      const availW = Math.max(120, rect.x1 - rect.x0 - 80 - (isNarrow() ? 60 : 160)), availH = rect.y1 - rect.y0 - 50;
+      let k = clamp(availW / Math.max(1, x1 - x0), kMin, kMax);
+      if (fitY) for (let i = 0; i < 6; i++) { if ((y1 - y0) * syOf(k) > availH && k > kMin) k = Math.max(kMin, k * 0.85); else break; }
+      const sy = syOf(k);
+      let tx = rect.x0 + 40 + Math.max(0, availW - (x1 - x0) * k) / 2 - x0 * k;
+      const yc = (y1 - y0) * sy <= availH || yFocus == null ? (y0 + y1) / 2 : yFocus;
+      let ty = (rect.y1 - rect.y0) / 2 - yc * sy;
+      if (keep) {
+        const n = nodeById.get(keep);
+        const nx = sc.x(n.s.start) * k + tx, ny = AXIS_H + ty + yRef(n) * sy;
+        const right = rect.x1 - Math.min(220, (rect.x1 - rect.x0) * 0.35), left = rect.x0 + 30;
+        if (nx > right) tx -= nx - right; else if (nx < left) tx += left - nx;
+        const top = rect.y0 + 40, bottom = rect.y1 - 50;
+        if (ny > bottom) ty -= ny - bottom; else if (ny < top) ty += top - ny;
+      }
+      animateTo(k, tx, ty, ms);
+    }
+    function zoomToEra(i, ms = 650) {
+      const seg = sc.segments[i];
+      const ys = nodes.filter((n) => n.s.start >= seg.start && n.s.start < seg.end).map(yRef);
+      const y0 = ys.length ? Math.min(...ys) - ROW : 0, y1 = ys.length ? Math.max(...ys) + ROW : contentRefH;
+      const yFocus = ys.length ? ys.reduce((a, b) => a + b, 0) / ys.length : contentRefH / 2;
+      fitBox(seg.x0, seg.x1, y0, y1, { kMin: isNarrow() ? 0.5 : 0.72, kMax: 3, ms, fitY: false, yFocus });
+    }
+    // Крупный план: выбранный стиль и ближайшие связи в рабочем масштабе. Если родственники далеко,
+    // камера держит выбранный стиль читаемым, а дальние концы показывают метки на краю экрана.
+    function focusCamera(id, ms = 650) {
+      const s = store.get(id);
       const n = nodeById.get(id);
-      if (!n) return;
-      const k = Math.max(t.k, 0.9);
-      const panelW = panel.hidden || vw < 760 ? 0 : panel.offsetWidth;
-      const targetX = (vw - panelW) * 0.42;
-      const tx = targetX - sc.x(n.s.start) * k;
-      const visibleH = vw < 760 && !panel.hidden ? vh - panel.offsetHeight - 16 : vh;
-      const ty = Math.min(0, Math.max(AXIS_H + 40, visibleH / 2) - (AXIS_H + 26 + n.row * ROW_H));
-      animateTo(k, tx, ty, animate ? 700 : 0);
+      const rel = [...s.parents, ...s.children, ...s.comparisons].map((r) => nodeById.get(r.id)).filter(Boolean);
+      const rect = viewRect();
+      const availW = Math.max(120, rect.x1 - rect.x0 - 80 - (isNarrow() ? 60 : 220));
+      const kRead = isNarrow() ? 0.6 : 0.72;
+      // Берём ближайших по времени родственников, пока они помещаются в рабочем масштабе;
+      // остальные останутся метками на краю экрана.
+      const x0 = sc.x(n.s.start);
+      const keep = [n];
+      let lo = x0, hi = x0;
+      for (const o of [...rel].sort((a, b) => Math.abs(sc.x(a.s.start) - x0) - Math.abs(sc.x(b.s.start) - x0))) {
+        const xo = sc.x(o.s.start);
+        const nlo = Math.min(lo, xo), nhi = Math.max(hi, xo);
+        if ((nhi - nlo) * kRead <= availW) { keep.push(o); lo = nlo; hi = nhi; }
+      }
+      // Если в рабочем масштабе не помещается ни один родственник, чуть отдаляемся ради ближайшего:
+      // крупный план без единой связи на экране теряет смысл.
+      let kMin = kRead;
+      if (keep.length === 1 && rel.length && !isNarrow()) {
+        const near = [...rel].sort((a, b) => Math.abs(sc.x(a.s.start) - x0) - Math.abs(sc.x(b.s.start) - x0))[0];
+        const xo = sc.x(near.s.start), k2 = availW / Math.max(1, Math.abs(xo - x0));
+        if (k2 >= 0.42) { keep.push(near); lo = Math.min(lo, xo); hi = Math.max(hi, xo); kMin = Math.min(kRead, k2); }
+      }
+      const ys = keep.map(yRef);
+      fitBox(lo, hi, Math.min(...ys) - ROW, Math.max(...ys) + ROW, { kMin, kMax: 1.15, ms, keep: id, fitY: !isNarrow(), yFocus: yRef(n) });
     }
-    // Вписать в экран всю линию: от самого раннего предка до самого позднего потомка.
     function fitLineage(id, animate = true) {
-      const ids = [id, ...store.ancestors(id), ...store.descendants(id)];
-      const ns = ids.map((i) => nodeById.get(i)).filter(Boolean);
-      const x0 = Math.min(...ns.map((n) => sc.x(n.s.start)));
-      const x1 = Math.max(...ns.map((n) => sc.x(n.s.start)));
-      const panelW = panel.hidden || vw < 760 ? 0 : panel.offsetWidth + 24;
-      const avail = vw - panelW - 80 - 160;
-      const k = Math.min(1.4, Math.max(kFit, avail / Math.max(1, x1 - x0)));
-      // Если линия не помещается целиком — прижимаем её к правому краю: выбранный стиль и потомки видны,
-      // ранние предки уходят влево (их видно на мини-карте и при прокрутке).
-      const fitsAll = (x1 - x0) * k <= avail;
-      const tx = fitsAll ? 40 - x0 * k + (avail - (x1 - x0) * k) / 2 : vw - panelW - 200 - x1 * k;
-      const rowsY = ns.map((n) => n.row);
-      const r0 = Math.min(...rowsY), r1 = Math.max(...rowsY);
-      const visibleH = vw < 760 && !panel.hidden ? vh - panel.offsetHeight - 16 : vh;
-      const midRow = (r1 - r0) * ROW_H < visibleH - AXIS_H - 60 ? (r0 + r1) / 2 : nodeById.get(id).row;
-      const ty = Math.min(0, (AXIS_H + visibleH) / 2 - (AXIS_H + 26 + midRow * ROW_H));
-      animateTo(k, tx, ty, animate ? 750 : 0);
-    }
-    // Сдвинуть карту, не меняя масштаба, чтобы узел не прятался под панелью.
-    function revealNode(id) {
-      const n = nodeById.get(id);
-      const panelW = vw < 760 ? 0 : panel.offsetWidth + 24;
-      const x = X(n.s.start), y = Y(n.row);
-      let tx = t.tx, ty = t.ty;
-      if (x > vw - panelW - 140) tx -= x - (vw - panelW) * 0.6;
-      const visibleH = vw < 760 ? vh - panel.offsetHeight - 16 : vh;
-      if (y > visibleH - 30) ty -= y - visibleH * 0.5;
-      animateTo(t.k, tx, ty, 450);
+      const ns = [id, ...store.ancestors(id), ...store.descendants(id)].map((i) => nodeById.get(i)).filter(Boolean);
+      const xs = ns.map((n) => sc.x(n.s.start)), ys = ns.map(yRef);
+      const rect = viewRect();
+      const span = Math.max(1, Math.max(...xs) - Math.min(...xs));
+      const kMin = Math.min(k0, Math.max(0.02, (rect.x1 - rect.x0 - 240) / span));
+      fitBox(Math.min(...xs), Math.max(...xs), Math.min(...ys) - ROW, Math.max(...ys) + ROW, { kMin, kMax: 1.1, ms: animate ? 750 : 0, keep: id });
     }
     function resize() {
       vw = stage.clientWidth; vh = stage.clientHeight;
       svg.setAttribute('width', vw); svg.setAttribute('height', vh);
       svg.setAttribute('viewBox', `0 0 ${vw} ${vh}`);
-      if (sc) { kFit = (vw - 80 - LABEL_PAD) / sc.total; clamp(); schedule(); }
+      if (sc) {
+        const wasFit = Math.abs(t.k - k0) < 1e-6;
+        computeFit();
+        if (wasFit) t.k = k0;
+        clampT(); drawMinimap(); schedule();
+      }
     }
+    const camera = () => ({ k: t.k, tx: t.tx, ty: t.ty });
 
-    // ---------- выбор ----------
-    function select(id, { center = false, animate = true } = {}) {
-      selected = id;
-      const anc = store.ancestors(id), desc = store.descendants(id);
-      const lit = new Set([id, ...anc, ...desc]);
-      svg.classList.add('has-selection');
-      for (const n of nodes) {
-        n.g.classList.toggle('lit', lit.has(n.s.id));
-        n.g.classList.toggle('is-selected', n.s.id === id);
-      }
-      const depth = (sid, set, dir) => {
-        // Расстояние по графу от выбранного: для задержки анимации.
-        let d = 0, frontier = [id];
-        const seen = new Set([id]);
-        while (frontier.length && d < 60) {
-          if (frontier.includes(sid)) return d;
-          const next = [];
-          for (const f of frontier) for (const r of store.get(f)[dir]) if (set.has(r.id) && !seen.has(r.id)) { seen.add(r.id); next.push(r.id); }
-          frontier = next; d++;
-        }
-        return d;
-      };
-      // Главная линия (по первым родителям) — как полоса «Родословная» на странице стиля.
-      const line = store.mainLine(id).map((x) => x.id);
-      const mainPairs = new Set(line.slice(1).map((cid, i) => `${line[i]}>${cid}`));
-      for (const n of nodes) n.g.classList.toggle('on-line', line.includes(n.s.id));
-      for (const e of edges) {
-        e.path.classList.toggle('main', mainPairs.has(`${e.par.s.id}>${e.ch.s.id}`));
-        const up = (anc.has(e.par.s.id) || e.par.s.id === id) && (anc.has(e.ch.s.id) || e.ch.s.id === id);
-        const down = (desc.has(e.ch.s.id)) && (desc.has(e.par.s.id) || e.par.s.id === id);
-        const hl = up || down;
-        e.path.classList.toggle('hl', hl);
-        e.path.classList.toggle('desc', down && !up);
-        const d = hl ? (up ? depth(e.par.s.id, anc, 'parents') : depth(e.ch.s.id, desc, 'children')) : 0;
-        e.path.style.transitionDelay = hl && animate && !reduceMotion() ? `${Math.min(d, 14) * 70}ms` : '0ms';
-      }
-      openPanel(store.get(id));
-      replaceParams('map', { s: id });
-      const n = nodeById.get(id);
-      const sx = X(n.s.start), sy = Y(n.row);
-      const covered = vw >= 760 ? sx > vw - panel.offsetWidth - 60 : sy > vh - panel.offsetHeight - 30;
-      if (center) fitLineage(id, animate);
-      else if (covered) revealNode(id);
+    // ---------- наведение ----------
+    function setHover(id) {
+      if (hovered === id) return;
+      hovered = id;
+      const s = id ? store.get(id) : null;
+      const near = s ? new Set([id, ...s.parents.map((p) => p.id), ...s.children.map((c) => c.id), ...s.comparisons.map((c) => c.id)]) : null;
+      svg.classList.toggle('has-hover', !!id && !selected);
+      for (const n of nodes) { const v = !!near && near.has(n.s.id); n.g.classList.toggle('near', v); n.text.classList.toggle('near', v); n.life.classList.toggle('near', v); n.plate.classList.toggle('near', v); }
       schedule();
     }
-    function clearSelection() {
+
+    // ---------- выбор: крупный план связей или полная родословная ----------
+    function select(id, { animate = true, mode: m = 'near' } = {}) {
+      if (!selected) camBeforeFocus = camera();
+      selected = id;
+      focusMode = m;
+      setHover(null);
+      hideTip(); hideEdgeInfo();
+      const s = store.get(id);
+      const relIds = new Set([...s.parents.map((r) => r.id), ...s.children.map((r) => r.id), ...s.comparisons.map((r) => r.id)]);
+      const anc = store.ancestors(id), desc = store.descendants(id);
+      const lit = m === 'near' ? new Set([id, ...relIds]) : new Set([id, ...anc, ...desc]);
+      const line = m === 'line' ? store.mainLine(id).map((x) => x.id) : [];
+      const mainPairs = new Set(line.slice(1).map((cid, i) => `${line[i]}>${cid}`));
+      svg.classList.add('has-selection');
+      svg.classList.toggle('mode-line', m === 'line');
+      svg.classList.remove('has-hover');
+      for (const n of nodes) {
+        const on = lit.has(n.s.id);
+        for (const x of [n.g, n.text, n.life, n.plate]) {
+          x.classList.toggle('lit', on);
+          x.classList.toggle('is-related', m === 'near' && relIds.has(n.s.id));
+          x.classList.toggle('on-line', line.includes(n.s.id));
+          x.classList.toggle('is-selected', n.s.id === id);
+        }
+      }
+      const depthOf = (sid, set, dir) => {
+        let dpt = 0, frontier = [id];
+        const seen = new Set([id]);
+        while (frontier.length && dpt < 60) {
+          if (frontier.includes(sid)) return dpt;
+          const next = [];
+          for (const f of frontier) for (const r of store.get(f)[dir]) if (set.has(r.id) && !seen.has(r.id)) { seen.add(r.id); next.push(r.id); }
+          frontier = next; dpt++;
+        }
+        return dpt;
+      };
+      for (const e of edges) {
+        let hl, up = false, down = false;
+        if (m === 'near') hl = e.par.s.id === id || e.ch.s.id === id;
+        else {
+          up = (anc.has(e.par.s.id) || e.par.s.id === id) && (anc.has(e.ch.s.id) || e.ch.s.id === id);
+          down = desc.has(e.ch.s.id) && (desc.has(e.par.s.id) || e.par.s.id === id);
+          hl = up || down;
+        }
+        e.g.classList.toggle('hl', hl);
+        e.g.classList.toggle('main', mainPairs.has(`${e.par.s.id}>${e.ch.s.id}`));
+        e.g.classList.toggle('desc', down && !up);
+        const dd = up ? depthOf(e.par.s.id, anc, 'parents') : down ? depthOf(e.ch.s.id, desc, 'children') : 0;
+        e.path.style.transitionDelay = (up || down) && animate && !reduceMotion() ? `${Math.min(dd, 14) * 60}ms` : '0ms';
+      }
+      openPanel(s);
+      syncUrl();
+      draw();
+      if (m === 'line') fitLineage(id, animate); else focusCamera(id, animate ? 650 : 0);
+    }
+    function clearSelection({ restore = false } = {}) {
+      if (!selected) return;
       selected = null;
-      svg.classList.remove('has-selection');
-      for (const n of nodes) n.g.classList.remove('lit', 'is-selected', 'on-line');
-      for (const e of edges) { e.path.classList.remove('hl', 'main', 'desc'); e.path.style.transitionDelay = '0ms'; }
+      svg.classList.remove('has-selection', 'mode-line');
+      for (const n of nodes) for (const x of [n.g, n.text, n.life, n.plate]) x.classList.remove('lit', 'is-selected', 'on-line', 'is-related');
+      for (const e of edges) { e.g.classList.remove('hl', 'main', 'desc'); e.path.style.transitionDelay = '0ms'; }
       panel.hidden = true;
-      replaceParams('map', {});
+      syncUrl();
+      if (restore && camBeforeFocus) { const c = camBeforeFocus; animateTo(c.k, c.tx, c.ty, 550); }
+      camBeforeFocus = null;
       schedule();
     }
 
     function relList(s, key, dir) {
       if (!s[key].length) return '';
       return html`<div class="mp-rel"><h3>${dir === 'from' ? 'Откуда' : 'Куда'}</h3><ul>
-        ${s[key].map((r) => { const o = store.get(r.id); return o ? html`<li><button type="button" class="mp-node" data-select="${o.id}"><span class="swatch" style="--c:var(--era-${o.era})"></span><span><span class="mp-node-rel">${RELATION[r.type][dir]}</span>${o.name}</span></button></li>` : ''; })}
+        ${s[key].map((r) => { const o = store.get(r.id); return o ? html`<li><button type="button" class="mp-node" data-select="${o.id}"><span class="swatch" style="--c:var(--era-${o.era})"></span><span><span class="mp-node-rel">${RELATION[r.type][dir]} · <span class="st st-${r.status}">${REL_STATUS[r.status]}</span></span>${o.name}</span></button>${r.note ? html`<p class="mp-rel-note">${r.note}</p>` : ''}</li>` : ''; })}
       </ul></div>`;
     }
+    function cmpList(s) {
+      if (!s.comparisons.length) return '';
+      return html`<div class="mp-rel"><h3>Похоже на</h3><ul>
+        ${s.comparisons.map((c) => { const o = store.get(c.id); return o ? html`<li><button type="button" class="mp-node" data-select="${o.id}"><span class="swatch" style="--c:var(--era-${o.era})"></span><span><span class="mp-node-rel">сопоставление, не происхождение</span>${o.name}</span></button>${c.note ? html`<p class="mp-rel-note">${c.note}</p>` : ''}</li>` : ''; })}
+      </ul></div>`;
+    }
+    function sourceLinks(ids) {
+      const list = (ids ?? []).map((id) => store.source(id)).filter(Boolean);
+      return list.length ? html`<p class="ep-src">Источник: ${list.map((src, i) => html`${i ? ', ' : ''}<a href="${safeUrl(src.url)}" target="_blank" rel="noopener">${src.publisher ?? src.title}</a>`)}</p>` : '';
+    }
     function openPanel(s) {
+      const nRel = s.parents.length + s.children.length + s.comparisons.length;
       mount(panel, html`
-        <button class="icon-btn mp-close" type="button" data-close-panel aria-label="Закрыть"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
-        <a class="mp-art" href="#/s/${s.id}">${frame(s.example.img, s.palette, { ratio: '16 / 10', sizes: '360px', alt: '', note: s.example.img ? '' : 'Палитра стиля' })}</a>
+        <button class="icon-btn mp-close" type="button" data-close-panel aria-label="Закрыть и вернуться к прежнему виду"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+        <a class="mp-art" href="#/s/${s.id}">${frame(s.example.img, s.palette, { ratio: '16 / 10', sizes: '380px', alt: '', note: s.example.img ? '' : s.palette?.source === 'editorial' ? 'Редакторская подборка цветов' : '' })}</a>
         <div class="mp-body">
-          ${eraTag(store, s.era, { link: false })}
+          <p class="mp-meta">${eraTag(store, s.era, { link: false })}${s.kind[0] ? html`<span class="mp-kind">${KIND[s.kind[0]].toLowerCase()}</span>` : ''}</p>
           <h2 class="mp-name">${s.name}</h2>
           <p class="mp-orig">${s.orig}, ${fmtDates(s)}</p>
           <p class="mp-sum">${s.summary}</p>
+          <div class="mp-modes" role="group" aria-label="Что показать на карте">
+            <button class="chip" type="button" data-focus-mode="near" aria-pressed="${focusMode === 'near'}">Ближайшие связи <span class="count">${nRel}</span></button>
+            <button class="chip" type="button" data-focus-mode="line" aria-pressed="${focusMode === 'line'}">Вся родословная</button>
+          </div>
+          ${s.origin === 'unknown' ? html`<p class="mp-origin">Происхождение не установлено.</p>` : ''}
           ${relList(s, 'parents', 'from')}
           ${relList(s, 'children', 'to')}
+          ${cmpList(s)}
           <a class="btn mp-open" href="#/s/${s.id}">Открыть зал</a>
         </div>`);
       panel.hidden = false;
       markLoaded(panel);
+    }
+
+    // Объяснение связи по клику на линию.
+    function showEdgeInfo(info, px, py) {
+      if (info.cmp) {
+        const c = info.cmp;
+        mount(edgePop, html`<p class="ep-head"><span>${c.a.s.name}</span> ↔ <span>${c.b.s.name}</span></p>
+          <p class="ep-kind">Визуальное сопоставление · не заявление о происхождении</p>
+          ${c.note ? html`<p class="ep-note">${c.note}</p>` : ''}${sourceLinks(c.sources)}
+          <p class="ep-go"><button class="chip" type="button" data-select="${c.a.s.id}">${c.a.s.name}</button><button class="chip" type="button" data-select="${c.b.s.id}">${c.b.s.name}</button></p>`);
+      } else {
+        const e = info.edge, r = e.rel;
+        mount(edgePop, html`<p class="ep-head"><span>${e.par.s.name}</span> → <span>${e.ch.s.name}</span></p>
+          <p class="ep-kind">${RELATION[r.type].label} · <span class="st st-${r.status}">${REL_STATUS[r.status]}</span></p>
+          ${r.note ? html`<p class="ep-note">${r.note}</p>` : r.status !== 'verified' ? html`<p class="ep-note muted">Пояснения и источника пока нет: связь проведена редакцией атласа и ждёт проверки.</p>` : ''}
+          ${sourceLinks(r.sources)}
+          <p class="ep-go"><button class="chip" type="button" data-select="${e.par.s.id}">← ${e.par.s.name}</button><button class="chip" type="button" data-select="${e.ch.s.id}">${e.ch.s.name} →</button></p>`);
+      }
+      edgePop.hidden = false;
+      const w = edgePop.offsetWidth, h = edgePop.offsetHeight;
+      const left = clamp(px + 12, 8, vw - w - 8), top = py + 14 + h > vh - 8 ? Math.max(AXIS_H + 4, py - h - 14) : py + 14;
+      edgePop.style.transform = `translate(${left}px, ${top}px)`;
+    }
+    const hideEdgeInfo = () => { edgePop.hidden = true; };
+
+    // ---------- слои и фильтр ----------
+    const syncUrl = () => replaceParams('map', {
+      s: selected ?? '', view: selected && focusMode === 'line' ? 'line' : '',
+      d: filter.domain, k: filter.family,
+      cmp: showCmp ? '1' : '', rel: verifiedOnly ? 'verified' : '', links: showAll ? 'all' : '',
+    });
+    function setLayer(name, v) {
+      if (name === 'all') { showAll = v; svg.classList.toggle('show-all', v); }
+      if (name === 'compare') { showCmp = v; svg.classList.toggle('show-cmp', v); }
+      if (name === 'verified') { verifiedOnly = v; svg.classList.toggle('verified-only', v); }
+      root.querySelectorAll(`[data-layer="${name}"]`).forEach((b) => { b.checked = v; });
+      schedule();
+    }
+    const matches = (s) => (!filter.domain || s.domain.includes(filter.domain)) && (!filter.family || KIND_FAMILY[filter.family].kinds.includes(s.kind[0]));
+    // Фильтр не перестраивает карту: несовпавшие стили бледнеют, камера наводится на найденное.
+    function setFilter(next, { animate = true } = {}) {
+      const was = filter.domain || filter.family;
+      filter = next;
+      const active = !!(filter.domain || filter.family);
+      if (active && !was) camBeforeFilter = camera();
+      svg.classList.toggle('has-filter', active);
+      const hits = [];
+      for (const n of nodes) { const ok = !active || matches(n.s); for (const x of [n.g, n.text, n.life, n.plate]) x.classList.toggle('out', !ok); if (ok) hits.push(n); }
+      for (const e of edges) e.g.classList.toggle('out', active && (e.par.g.classList.contains('out') || e.ch.g.classList.contains('out')));
+      const label = [filter.domain && DOMAIN[filter.domain], filter.family && KIND_FAMILY[filter.family].label].filter(Boolean).join(' · ');
+      q('.mfb-label').textContent = active ? `${label} · ${hits.length}` : 'Все стили';
+      q('[data-filter-btn]').classList.toggle('is-active', active);
+      root.querySelectorAll('[data-f-domain]').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.fDomain === filter.domain)));
+      root.querySelectorAll('[data-f-family]').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.fFamily === filter.family)));
+      drawMinimap();
+      syncUrl();
+      if (active && hits.length) {
+        const xs = hits.map((n) => sc.x(n.s.start)), ys = hits.map(yRef);
+        fitBox(Math.min(...xs), Math.max(...xs), Math.min(...ys) - ROW, Math.max(...ys) + ROW, { ms: animate ? 650 : 0, kMax: 1.1 });
+      } else if (!active && camBeforeFilter) {
+        const c = camBeforeFilter; camBeforeFilter = null;
+        animateTo(c.k, c.tx, c.ty, animate ? 550 : 0);
+      } else schedule();
     }
 
     // ---------- подсказка при наведении ----------
@@ -454,59 +1034,67 @@ export default {
     function showTip(n) {
       const s = n.s;
       tipFor = s.id;
-      mount(tip, html`${thumb(s, 72)}<span class="tip-text"><span class="tip-name">${s.name}</span><span class="tip-dates">${fmtDates(s)}</span><span class="tip-sum">${s.summary}</span></span>`);
+      const from = s.parents.slice(0, 2).map((p) => store.get(p.id)?.name).filter(Boolean);
+      const to = s.children.length;
+      mount(tip, html`${thumb(s, 72)}<span class="tip-text"><span class="tip-name">${s.name}</span><span class="tip-dates">${fmtDates(s)}</span><span class="tip-sum">${s.summary}</span>
+        <span class="tip-rel">${from.length ? `из: ${from.join(', ')}` : s.origin === 'unknown' ? 'происхождение не установлено' : 'исток'}${to ? ` · ${to} ${plural(to, 'потомок', 'потомка', 'потомков')}` : ''}</span></span>`);
       markLoaded(tip);
       tip.hidden = false;
-      const x = X(s.start), y = Y(n.row);
       const tw = tip.offsetWidth, th = tip.offsetHeight;
-      let left = x + 14, top = y + 16;
-      if (left + tw > vw - 10) left = Math.max(10, x - tw - 14);
-      if (top + th > vh - 10) top = y - th - 16;
+      let left = n.x + 18, top = n.y + 18;
+      if (left + tw > vw - 10) left = Math.max(10, n.x - tw - 18);
+      if (top + th > vh - 10) top = n.y - th - 18;
       tip.style.transform = `translate(${left}px, ${top}px)`;
     }
-    function hideTip() { clearTimeout(tipTimer); tip.hidden = true; tipFor = null; }
+    function hideTip() { clearTimeout(tipTimer); tipTimer = 0; tip.hidden = true; tipFor = null; }
 
-    // ---------- события ----------
+    // ---------- события полотна ----------
     const pointers = new Map();
     let drag = null, pinch = null, moved = false;
+    const uiTarget = (e) => e.target.closest?.('.map-panel, .map-tip, .map-edge-pop, .map-offscreen');
 
     on(stage, 'pointerdown', (e) => {
-      if (e.target.closest('.map-panel, .map-tip')) return;
-      stage.setPointerCapture?.(e.pointerId);
+      if (uiTarget(e)) return;
+      hideEdgeInfo();
+      try { stage.setPointerCapture?.(e.pointerId); } catch { /* указатель уже отпущен */ }
       pointers.set(e.pointerId, { x: e.clientX, y: e.clientY });
       moved = false;
-      if (pointers.size === 1) drag = { x: e.clientX, y: e.clientY, tx: t.tx, ty: t.ty, node: e.target.closest('.node') };
+      if (pointers.size === 1) drag = { x: e.clientX, y: e.clientY, tx: t.tx, ty: t.ty, node: e.target.closest('.node, .label'), edge: e.target.closest('.edge-hit') };
       if (pointers.size === 2) {
         const [a, b] = [...pointers.values()];
-        pinch = { d: Math.hypot(a.x - b.x, a.y - b.y), k: t.k, mid: (a.x + b.x) / 2, tx: t.tx, ty: t.ty, my: (a.y + b.y) / 2 };
+        pinch = { d: Math.hypot(a.x - b.x, a.y - b.y), k: t.k, cx: (a.x + b.x) / 2, cy: (a.y + b.y) / 2, tx: t.tx, ty: t.ty };
         drag = null;
       }
     });
     on(stage, 'pointermove', (e) => {
       if (!pointers.has(e.pointerId)) {
-        // наведение
-        const nodeEl = e.target.closest('.node');
+        if (uiTarget(e)) return;
+        const nodeEl = e.target.closest('.node, .label');
         if (nodeEl && e.pointerType === 'mouse') {
           const id = nodeEl.dataset.id;
-          if (id !== tipFor) { clearTimeout(tipTimer); tipTimer = setTimeout(() => showTip(nodeById.get(id)), 110); }
-        } else if (tipFor || tipTimer) hideTip();
+          if (id !== tipFor) {
+            clearTimeout(tipTimer);
+            tipTimer = setTimeout(() => { setHover(id); showTip(nodeById.get(id)); }, 90);
+          }
+        } else if (tipFor || tipTimer) { hideTip(); setHover(null); }
         return;
       }
       pointers.set(e.pointerId, { x: e.clientX, y: e.clientY });
       const rect = stage.getBoundingClientRect();
       if (pinch && pointers.size >= 2) {
         const [a, b] = [...pointers.values()];
-        const d = Math.hypot(a.x - b.x, a.y - b.y);
-        const k2 = Math.min(5, Math.max(kFit * 0.9, pinch.k * (d / pinch.d)));
-        const mid = (a.x + b.x) / 2 - rect.left, my = (a.y + b.y) / 2;
-        t.tx = mid - ((pinch.mid - rect.left - pinch.tx) * k2) / pinch.k;
+        const dist = Math.hypot(a.x - b.x, a.y - b.y);
+        const k2 = clamp(pinch.k * (dist / pinch.d), Math.min(k0 * 0.9, pinch.k), 5);
+        const cx = (a.x + b.x) / 2 - rect.left, cy = (a.y + b.y) / 2 - rect.top - AXIS_H;
+        const s1 = syOf(pinch.k), s2 = syOf(k2);
+        t.tx = cx - ((pinch.cx - rect.left - pinch.tx) * k2) / pinch.k;
+        t.ty = cy - ((pinch.cy - rect.top - AXIS_H - pinch.ty) * s2) / s1;
         t.k = k2;
-        t.ty = pinch.ty + (my - pinch.my);
-        moved = true; clamp(); schedule();
+        moved = true; clampT(); schedule();
       } else if (drag) {
         const dx = e.clientX - drag.x, dy = e.clientY - drag.y;
         if (Math.abs(dx) + Math.abs(dy) > 4) moved = true;
-        if (moved) { hideTip(); stage.classList.add('dragging'); t.tx = drag.tx + dx; t.ty = drag.ty + dy; clamp(); schedule(); }
+        if (moved) { hideTip(); setHover(null); stage.classList.add('dragging'); t.tx = drag.tx + dx; t.ty = drag.ty + dy; clampT(); schedule(); }
       }
     });
     const end = (e) => {
@@ -515,96 +1103,170 @@ export default {
       stage.classList.remove('dragging');
       if (pointers.size < 2) pinch = null;
       if (drag && !moved && e.type === 'pointerup') {
+        const rect = stage.getBoundingClientRect();
         if (drag.node) select(drag.node.dataset.id);
-        else if (!e.target.closest('.map-panel')) clearSelection();
+        else if (drag.edge) {
+          const info = drag.edge.dataset.cmp != null ? { cmp: cmps[+drag.edge.dataset.cmp] } : { edge: edges[+drag.edge.dataset.edge] };
+          showEdgeInfo(info, e.clientX - rect.left, e.clientY - rect.top);
+        } else clearSelection();
       }
       if (!pointers.size) drag = null;
     };
     on(stage, 'pointerup', end);
     on(stage, 'pointercancel', end);
-    on(stage, 'pointerleave', (e) => { if (e.pointerType === 'mouse' && !pointers.size) hideTip(); });
+    on(stage, 'pointerleave', (e) => { if (e.pointerType === 'mouse' && !pointers.size) { hideTip(); setHover(null); } });
 
     on(stage, 'wheel', (e) => {
       if (e.target.closest('.map-panel')) return;
       e.preventDefault();
       hideTip();
       const rect = stage.getBoundingClientRect();
-      if (e.ctrlKey || e.metaKey) zoomAt(e.clientX - rect.left, Math.exp(-e.deltaY * (e.deltaMode ? 0.05 : 0.0025)));
+      if (e.ctrlKey || e.metaKey) zoomAt(e.clientX - rect.left, e.clientY - rect.top, Math.exp(-e.deltaY * (e.deltaMode ? 0.05 : 0.0025)));
       else {
         const unit = e.deltaMode === 1 ? 16 : 1;
-        const tall = contentH > vh;
+        const tall = contentRefH * syOf(t.k) > vh - AXIS_H;
         if (e.shiftKey || !tall) t.tx -= (e.deltaY + e.deltaX) * unit;
         else { t.tx -= e.deltaX * unit; t.ty -= e.deltaY * unit; }
-        clamp(); schedule();
+        clampT(); schedule();
       }
     }, { passive: false });
 
     on(stage, 'dblclick', (e) => {
-      if (e.target.closest('.map-panel, .node')) return;
+      if (uiTarget(e) || e.target.closest('.node, .label')) return;
       const rect = stage.getBoundingClientRect();
-      const px = e.clientX - rect.left;
-      const k2 = Math.min(5, t.k * 2);
-      animateTo(k2, px - ((px - t.tx) * k2) / t.k, t.ty, 450);
+      const px = e.clientX - rect.left, py = e.clientY - rect.top - AXIS_H;
+      const k2 = Math.min(5, t.k * 2.2);
+      const s1 = syOf(t.k), s2 = syOf(k2);
+      animateTo(k2, px - ((px - t.tx) * k2) / t.k, py - ((py - t.ty) * s2) / s1, 450);
     });
 
     on(stage, 'keydown', (e) => {
       const nodeEl = e.target.closest?.('.node');
-      if (nodeEl && (e.key === 'Enter' || e.key === ' ')) { e.preventDefault(); select(nodeEl.dataset.id, { center: true }); return; }
-      if (e.target.closest('.map-panel')) return;
+      if (nodeEl && (e.key === 'Enter' || e.key === ' ')) { e.preventDefault(); select(nodeEl.dataset.id); return; }
+      if (uiTarget(e)) { if (e.key === 'Escape' && selected) clearSelection({ restore: true }); return; }
       const step = 90;
       if (e.key === 'ArrowLeft') t.tx += step; else if (e.key === 'ArrowRight') t.tx -= step;
       else if (e.key === 'ArrowUp') t.ty += step / 2; else if (e.key === 'ArrowDown') t.ty -= step / 2;
-      else if (e.key === '+' || e.key === '=') return zoomAt(vw / 2, 1.4);
-      else if (e.key === '-' || e.key === '_') return zoomAt(vw / 2, 1 / 1.4);
+      else if (e.key === '+' || e.key === '=') return zoomAt(vw / 2, vh / 2, 1.5);
+      else if (e.key === '-' || e.key === '_') return zoomAt(vw / 2, vh / 2, 1 / 1.5);
       else if (e.key === '0') return fit();
-      else if (e.key === 'Escape') return clearSelection();
+      else if (e.key === 'Escape') { if (!edgePop.hidden) return hideEdgeInfo(); return clearSelection({ restore: true }); }
       else return;
-      e.preventDefault(); clamp(); schedule();
+      e.preventDefault(); clampT(); schedule();
     });
     on(stage, 'focusin', (e) => {
       const nodeEl = e.target.closest?.('.node');
-      if (!nodeEl || e.target.matches(':focus-visible') === false) return;
+      if (!nodeEl || !e.target.matches(':focus-visible')) return;
       const n = nodeById.get(nodeEl.dataset.id);
-      const x = X(n.s.start), y = Y(n.row);
-      if (x < 40 || x > vw - 200 || y < AXIS_H + 20 || y > vh - 40) {
-        t.tx += vw * 0.4 - x; t.ty += vh / 2 - y; clamp(); schedule();
+      if (n.x < 40 || n.x > vw - 200 || n.y < AXIS_H + 20 || n.y > vh - 40) { t.tx += vw * 0.4 - n.x; t.ty += vh / 2 - n.y; clampT(); schedule(); }
+    });
+
+    // ---------- миникарта ----------
+    let mmDrag = false;
+    on(mm, 'pointerdown', (e) => { mmDrag = true; try { mm.setPointerCapture(e.pointerId); } catch { /* */ } minimapGo(e); });
+    on(mm, 'pointermove', (e) => { if (mmDrag) minimapGo(e); });
+    on(mm, 'pointerup', () => { mmDrag = false; });
+    on(mm, 'pointercancel', () => { mmDrag = false; });
+
+    // ---------- шкала эпох ----------
+    let navDrag = null, navUserUntil = 0;
+    for (const ev of ['wheel', 'touchstart']) on(navTrack, ev, () => { navUserUntil = performance.now() + 2000; }, { passive: true });
+    const navFrac = (e) => {
+      const first = navSegs[0], last = navSegs[navSegs.length - 1];
+      const rect = navTrack.getBoundingClientRect();
+      const x = e.clientX - rect.left + navTrack.scrollLeft - first.offsetLeft;
+      return clamp(x / (last.offsetLeft + last.offsetWidth - first.offsetLeft), 0, 1);
+    };
+    on(navTrack, 'pointerdown', (e) => {
+      if (!sc || e.button > 0) return;
+      navDrag = { x: e.clientX, moved: false, seg: e.target.closest('[data-era-i]'), id: e.pointerId };
+    });
+    on(navTrack, 'pointermove', (e) => {
+      if (!navDrag) return;
+      if (!navDrag.moved && Math.abs(e.clientX - navDrag.x) > 6) { navDrag.moved = true; navTrack.setPointerCapture(navDrag.id); navTrack.classList.add('dragging'); }
+      if (navDrag.moved) {
+        t.tx = (vw - panelWidth()) / 2 - sc.x(navYear(navFrac(e))) * t.k;
+        clampT(); schedule();
       }
     });
+    const navEnd = () => {
+      if (navDrag && !navDrag.moved && navDrag.seg) zoomToEra(Number(navDrag.seg.dataset.eraI));
+      navTrack.classList.remove('dragging');
+      navDrag = null;
+    };
+    on(navTrack, 'pointerup', navEnd);
+    on(navTrack, 'click', (e) => { const seg = e.target.closest('[data-era-i]'); if (seg && e.detail === 0 && sc) zoomToEra(Number(seg.dataset.eraI)); });
+    on(navTrack, 'pointercancel', () => { navTrack.classList.remove('dragging'); navDrag = null; });
+    on(navTrack, 'scroll', () => schedule());
+
+    // ---------- тулбар ----------
+    const findInput = q('.map-find input');
+    const findList = q('.map-find-results');
+    const index = buildIndex(store.styles);
+    let findItems = [], findActive = 0;
+    const renderFind = () => {
+      const v = findInput.value.trim();
+      findItems = v ? search(index, v, { limit: 7, now: store.now }).map((r) => r.style) : [];
+      findActive = 0;
+      findList.hidden = !findItems.length;
+      mount(findList, html`${findItems.map((s, i) => html`<li role="option" aria-selected="${i === 0}" data-find="${s.id}"><span class="swatch" style="--c:var(--era-${s.era})"></span><span class="mf-name">${s.name}</span><span class="mf-dates">${fmtDates(s)}</span></li>`)}`);
+    };
+    const pickFind = (id) => { findInput.value = ''; findList.hidden = true; findInput.blur(); select(id); };
+    on(findInput, 'input', renderFind);
+    on(findInput, 'keydown', (e) => {
+      if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+        e.preventDefault();
+        if (!findItems.length) return;
+        findActive = (findActive + (e.key === 'ArrowDown' ? 1 : -1) + findItems.length) % findItems.length;
+        findList.querySelectorAll('li').forEach((li, i) => li.setAttribute('aria-selected', String(i === findActive)));
+      } else if (e.key === 'Enter' && findItems[findActive]) { e.preventDefault(); pickFind(findItems[findActive].id); }
+      else if (e.key === 'Escape') { e.preventDefault(); findInput.value = ''; findList.hidden = true; }
+      e.stopPropagation();
+    });
+    on(findList, 'pointerdown', (e) => { const li = e.target.closest('[data-find]'); if (li) { e.preventDefault(); pickFind(li.dataset.find); } });
+    on(findInput, 'blur', () => setTimeout(() => { findList.hidden = true; }, 150));
+
+    // Всплывающие окна тулбара: легенда и фильтр.
+    const pops = [...root.querySelectorAll('.map-pop-wrap')].map((wrap) => ({ wrap, btn: wrap.querySelector('button'), pop: wrap.querySelector('.map-pop') }));
+    const togglePop = (p, force) => {
+      const open = force ?? p.pop.hidden;
+      for (const o of pops) if (o !== p && open) { o.pop.hidden = true; o.btn.setAttribute('aria-expanded', 'false'); }
+      p.pop.hidden = !open;
+      p.btn.setAttribute('aria-expanded', String(open));
+    };
+    for (const p of pops) on(p.btn, 'click', () => togglePop(p));
+    on(document, 'pointerdown', (e) => { for (const p of pops) if (!p.pop.hidden && !p.wrap.contains(e.target)) togglePop(p, false); });
+    on(document, 'keydown', (e) => { if (e.key === 'Escape') for (const p of pops) if (!p.pop.hidden) { togglePop(p, false); p.btn.focus(); } });
+
+    for (const box of root.querySelectorAll('[data-layer]')) on(box, 'change', (e) => { setLayer(box.dataset.layer, e.target.checked); syncUrl(); });
 
     on(root, 'click', (e) => {
       const z = e.target.closest('[data-zoom]');
       if (z) {
-        if (z.dataset.zoom === 'fit') fit();
-        else { const f = z.dataset.zoom === 'in' ? 1.6 : 1 / 1.6; const k2 = Math.min(5, Math.max(kFit * 0.9, t.k * f)); animateTo(k2, vw / 2 - ((vw / 2 - t.tx) * k2) / t.k, t.ty, 350); }
-      }
-      const d = e.target.closest('[data-domain]');
-      if (d) {
-        domain = d.dataset.domain;
-        root.querySelectorAll('[data-domain]').forEach((b) => b.setAttribute('aria-pressed', String(b === d)));
-        for (const n of nodes) {
-          const off = domain && !n.s.domain.includes(domain);
-          n.g.classList.toggle('filtered', !!off);
-          n.bar.classList.toggle('filtered', !!off);
+        if (z.dataset.zoom === 'fit') { if (selected) clearSelection(); fit(); }
+        else {
+          const f = z.dataset.zoom === 'in' ? 1.7 : 1 / 1.7;
+          const k2 = clamp(t.k * f, Math.min(k0 * 0.9, t.k), 5);
+          const s1 = syOf(t.k), s2 = syOf(k2);
+          const cy = (vh - AXIS_H) / 2;
+          animateTo(k2, vw / 2 - ((vw / 2 - t.tx) * k2) / t.k, cy - ((cy - t.ty) * s2) / s1, 380);
         }
-        for (const ed of edges) ed.path.classList.toggle('filtered', !!domain && (!ed.par.s.domain.includes(domain) || !ed.ch.s.domain.includes(domain)));
-        schedule();
       }
       const sel = e.target.closest('[data-select]');
-      if (sel) select(sel.dataset.select, { center: true });
-      if (e.target.closest('[data-close-panel]')) clearSelection();
+      if (sel) select(sel.dataset.select);
+      const fm = e.target.closest('[data-focus-mode]');
+      if (fm && selected) select(selected, { mode: fm.dataset.focusMode });
+      if (e.target.closest('[data-close-panel]')) clearSelection({ restore: true });
+      const fd = e.target.closest('[data-f-domain]');
+      if (fd) setFilter({ ...filter, domain: fd.dataset.fDomain });
+      const ff = e.target.closest('[data-f-family]');
+      if (ff) setFilter({ ...filter, family: ff.dataset.fFamily });
+      if (e.target.closest('[data-f-reset]')) { setFilter({ domain: '', family: '' }); togglePop(pops.find((p) => p.wrap.classList.contains('map-filter-wrap')), false); }
     });
 
-    // Мини-карта: клик или перетаскивание переносит окно.
-    let miniDrag = false;
-    const miniMove = (e) => {
-      const rect = mini.getBoundingClientRect();
-      const frac = (e.clientX - rect.left) / rect.width;
-      t.tx = vw / 2 - frac * sc.total * t.k;
-      clamp(); schedule();
-    };
-    on(mini, 'pointerdown', (e) => { if (!sc) return; miniDrag = true; mini.setPointerCapture(e.pointerId); miniMove(e); });
-    on(mini, 'pointermove', (e) => { if (miniDrag) miniMove(e); });
-    on(mini, 'pointerup', () => { miniDrag = false; });
+    hint.textContent = window.innerWidth < 760
+      ? 'Нажмите на эпоху сверху или на стиль. Щипок — масштаб.'
+      : 'Нажмите на эпоху сверху или прокрутите с Ctrl/⌘, чтобы приблизить. Нажмите на стиль — его связи крупным планом.';
 
     const ro = new ResizeObserver(() => resize());
     ro.observe(stage);
@@ -614,8 +1276,11 @@ export default {
 
     return {
       update(next) {
-        const id = next.params.get('s');
-        if (id && id !== selected && nodeById.has(id)) select(id, { center: true });
+        if (!sc) return;
+        const id = store.resolve(next.params.get('s') ?? '');
+        const eraI = store.eras.findIndex((e) => e.id === next.params.get('era'));
+        if (id && id !== selected && nodeById.has(id)) select(id);
+        else if (!id && eraI >= 0) zoomToEra(eraI);
       },
       destroy() {
         destroyed = true;

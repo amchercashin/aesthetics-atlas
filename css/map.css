@@ -1,96 +1,248 @@
-/* Карта родословной */
+/* Карта родословной: полосы по областям, древо связей, шкала эпох */
 body[data-view="map"] { overflow: hidden; }
 body[data-view="map"] .site-footer { display: none; }
 
 .map-view {
-  display: grid; grid-template-rows: auto 1fr auto;
+  display: grid; grid-template-rows: auto auto 1fr; grid-template-columns: minmax(0, 1fr);
   height: calc(100dvh - var(--header-h));
 }
 @media (max-width: 760px) { .map-view { height: calc(100dvh - var(--header-h) - 64px - env(safe-area-inset-bottom)); } body[data-view="map"] { padding-bottom: 0; } }
 
-.map-toolbar {
-  display: flex; flex-wrap: wrap; align-items: center; gap: 10px 22px;
-  padding: 10px var(--gutter); border-bottom: 1px solid var(--rule);
+/* ---------- Тулбар ---------- */
+.map-toolbar { display: flex; align-items: center; gap: 10px 16px; padding: 10px var(--gutter) 8px; }
+.map-find { position: relative; display: flex; align-items: center; flex: 0 1 300px; }
+.map-find > svg { position: absolute; left: 10px; width: 16px; height: 16px; color: var(--ink-3); pointer-events: none; }
+.map-find input {
+  width: 100%; height: 36px; padding: 0 12px 0 34px;
+  border: 1px solid var(--rule-strong); border-radius: var(--radius-ui); background: var(--paper-2); font-size: var(--t-sm);
 }
-.map-legend { list-style: none; display: flex; flex-wrap: wrap; gap: 4px 16px; font-size: var(--t-xs); color: var(--ink-3); }
-.map-legend li { display: flex; align-items: center; gap: 6px; }
-.map-legend svg { width: 34px; height: 10px; overflow: visible; }
+.map-find input:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px color-mix(in oklab, var(--accent) 20%, transparent); }
+.map-find-results {
+  position: absolute; top: calc(100% + 6px); left: 0; z-index: 30; width: min(380px, 90vw); list-style: none; padding: 6px;
+  background: var(--paper-2); border: 1px solid var(--rule); border-radius: 10px; box-shadow: 0 18px 40px -16px rgb(0 0 0 / 0.35);
+}
+.map-find-results li { display: grid; grid-template-columns: 10px 1fr auto; gap: 10px; align-items: center; padding: 8px 10px; border-radius: 6px; cursor: pointer; }
+.map-find-results li[aria-selected="true"], .map-find-results li:hover { background: color-mix(in oklab, var(--ink) 7%, transparent); }
+.mf-name { font-family: var(--serif); font-size: var(--t-md); }
+.mf-dates { font-size: var(--t-xs); color: var(--ink-3); }
+
+.map-switch { display: inline-flex; align-items: center; gap: 8px; font-size: var(--t-sm); color: var(--ink-2); cursor: pointer; user-select: none; white-space: nowrap; }
+.map-switch input { position: absolute; opacity: 0; width: 1px; height: 1px; }
+.map-switch .sw { width: 32px; height: 18px; border-radius: 999px; background: var(--rule-strong); position: relative; transition: background 0.2s; flex: none; }
+.map-switch .sw::after { content: ""; position: absolute; top: 2px; left: 2px; width: 14px; height: 14px; border-radius: 50%; background: var(--paper-2); transition: transform 0.2s var(--ease); box-shadow: 0 1px 2px rgb(0 0 0 / 0.25); }
+.map-switch input:checked + .sw { background: var(--accent); }
+.map-switch input:checked + .sw::after { transform: translateX(14px); }
+.map-switch input:focus-visible + .sw { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+.map-pop-wrap { position: relative; }
+.map-pop {
+  position: absolute; top: calc(100% + 6px); left: 0; z-index: 30; width: 340px; padding: 14px 16px;
+  background: var(--paper-2); border: 1px solid var(--rule); border-radius: 10px; box-shadow: 0 18px 40px -16px rgb(0 0 0 / 0.35);
+}
+.map-filter-pop { width: 380px; }
+.map-filter-btn { display: inline-flex; align-items: center; gap: 6px; white-space: nowrap; }
+.map-filter-btn svg { width: 16px; height: 16px; }
+.map-filter-btn.is-active { background: var(--ink); border-color: var(--ink); color: var(--paper); }
+.mf-group { margin: 12px 0 6px; font-size: var(--t-xs); font-weight: 600; color: var(--ink-3); }
+.mf-chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.mf-reset { margin-top: 12px; }
+.lg-all { display: none; }
+.lg-title { font-family: var(--serif); font-size: var(--t-lg); margin-bottom: 10px; }
+.map-legend-pop ul { list-style: none; display: grid; gap: 8px; }
+.map-legend-pop li { display: grid; grid-template-columns: 40px 1fr; gap: 10px; align-items: center; font-size: var(--t-sm); color: var(--ink-2); }
+.map-legend-pop li svg { width: 40px; height: 14px; overflow: visible; }
+.map-legend-pop .edge { stroke-opacity: 0.9; }
+.edge.sec-legend { stroke: var(--ink-2); stroke-width: 1.4; fill: none; }
+.lg-note { margin-top: 12px; padding-top: 10px; border-top: 1px solid var(--rule); font-size: var(--t-xs); color: var(--ink-3); line-height: 1.5; }
 .zoom-ctrls { margin-left: auto; display: flex; align-items: center; gap: 2px; }
 
+/* ---------- Шкала эпох ---------- */
+.era-nav { display: flex; gap: 8px; padding: 0 var(--gutter) 8px; border-bottom: 1px solid var(--rule); }
+.era-nav-track { flex: 1 1 0; min-width: 0; }
+.era-nav-track { position: relative; display: flex; gap: 2px; overflow-x: auto; scrollbar-width: none; cursor: pointer; touch-action: pan-x; }
+.era-nav-track::-webkit-scrollbar { display: none; }
+.era-nav-track.dragging { cursor: grabbing; }
+.en-seg {
+  flex: 1 1 0; min-width: 0; display: grid; gap: 1px; padding: 6px 8px 7px; text-align: left;
+  border: 0; border-top: 3px solid var(--c); border-radius: 0 0 6px 6px; background: color-mix(in oklab, var(--c) 6%, transparent);
+  transition: background 0.2s;
+}
+.en-seg:hover { background: color-mix(in oklab, var(--c) 16%, transparent); }
+.en-seg.in-view { background: color-mix(in oklab, var(--c) 14%, transparent); }
+.en-name { font-size: 12px; font-weight: 500; color: var(--ink-2); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.en-seg.in-view .en-name { color: var(--ink); }
+.en-count { font-size: 11px; color: var(--ink-3); }
+.era-nav-window {
+  position: absolute; top: 0; bottom: 0; left: 0; width: 0; pointer-events: none;
+  border: 2px solid var(--accent); border-radius: 6px; box-shadow: 0 0 0 3px color-mix(in oklab, var(--accent) 14%, transparent);
+}
+
+/* ---------- Полотно ---------- */
 .map-stage { position: relative; overflow: hidden; touch-action: none; cursor: grab; user-select: none; -webkit-user-select: none; outline-offset: -3px; }
 .map-stage.dragging { cursor: grabbing; }
 .map-svg { position: absolute; inset: 0; }
+.era-line { stroke: var(--rule); stroke-width: 1; }
 
-.col-bg { fill-opacity: 0.045; }
-.col-line { stroke: var(--rule); stroke-width: 1; }
 .axis-bg { fill: color-mix(in oklab, var(--paper) 94%, transparent); }
 .axis-line { stroke: var(--rule-strong); }
-.axis-era { font-family: var(--serif); font-size: 15px; font-weight: 500; fill: var(--ink); }
+.axis-strip { opacity: 0.85; }
 .axis-start { font-size: 11px; fill: var(--ink-2); font-weight: 500; }
-.axis-break { fill: none; stroke: var(--ink-3); stroke-width: 1.2; }
 .tick { stroke: var(--rule-strong); }
 .tick-label { font-size: 11px; fill: var(--ink-3); text-anchor: middle; }
 
-.bar { stroke-linecap: round; stroke-opacity: 0.42; }
-.bar.t1 { stroke-width: 4; } .bar.t2 { stroke-width: 3; } .bar.t3 { stroke-width: 2; }
+/* Линии жизни: тихие, цвета эпохи; это длительность, а не связь. */
+.life { fill: none; stroke-width: calc(1.4px + var(--w, 0) * 0.55px); stroke-opacity: calc(0.22 + var(--w, 0) * 0.035); stroke-linecap: butt; transition: stroke-opacity 0.25s; }
+.z0 .life { stroke-width: calc(1px + var(--w, 0) * 0.42px); stroke-opacity: calc(0.16 + var(--w, 0) * 0.04); }
+.life-legend { fill: none; stroke: var(--era-xix); stroke-width: 2.4; stroke-opacity: 0.45; }
 
-.edge { fill: none; stroke: var(--ink-2); stroke-opacity: 0.5; stroke-width: 1.4; stroke-linecap: round; transition: stroke 0.35s, stroke-opacity 0.35s, stroke-width 0.35s; }
-.edge.rel-evolved { stroke-width: 1.8; }
-.edge.rel-influence { stroke-width: 1; stroke-opacity: 0.4; }
-.edge.rel-reaction { stroke-dasharray: 7 5; }
-.edge.rel-revival { stroke-dasharray: 1.5 4.5; stroke-width: 2; }
-.edge.far { stroke-opacity: 0.16; }
-.map-legend .edge { stroke-opacity: 0.9; }
+/* Ветви и связи: чернила; тип — штрихом и словом, статус — толщиной. Подложка цвета бумаги
+   делает пересечения «мостиками», чтобы они не выглядели узлами. */
+.edge { fill: none; stroke: var(--ink-2); stroke-linecap: round; stroke-linejoin: round; transition: stroke 0.3s, stroke-opacity 0.3s, stroke-width 0.3s; }
+.edge-g .case { fill: none; stroke: var(--paper); stroke-width: 5; stroke-linecap: butt; stroke-dasharray: 0 9 100000; }
+.edge.tree { stroke-opacity: 0.55; stroke-width: calc(1.1px + var(--w, 0) * 0.32px); }
+.z0 .edge.tree { stroke-opacity: 0.42; stroke-width: calc(0.8px + var(--w, 0) * 0.26px); }
+.z0 .edge-g .case { stroke-width: 3; }
+.edge.sec { stroke-opacity: 0.45; stroke-width: 1.1; }
+.show-all .edge.sec { stroke-opacity: 0.22; }
+.edge.rel-influence { stroke-width: 1; }
+.edge.st-verified { stroke: var(--ink); stroke-opacity: 0.95; }
+.edge-g.near .edge { stroke: var(--ink); stroke-opacity: 0.9; stroke-width: 1.8; }
+.edge.lg { stroke-opacity: 0.9; stroke-width: 1.5; }
+.edge.lg.st-verified { stroke: var(--ink); stroke-opacity: 1; }
+.edge.lg.st-unverified { stroke-opacity: 0.45; }
+.edge.lg.weight { stroke-width: 3.2; }
+/* Визуальные сопоставления — отдельный слой: цвет акцента, редкий пунктир. */
+.edge.cmp { stroke: var(--accent); stroke-opacity: 0.55; stroke-width: 1.3; stroke-dasharray: 2 5; }
+.edge.cmp.near { stroke-opacity: 0.95; stroke-width: 1.8; }
+.edge-hit { fill: none; stroke: transparent; stroke-width: 14; pointer-events: stroke; cursor: pointer; }
+.lg-layers { display: grid; gap: 8px; margin-top: 12px; padding-top: 10px; border-top: 1px solid var(--rule); }
 
-.node { cursor: pointer; outline: none; }
+/* Оборванные далёкие связи: отростки и парные подписи */
+.edge-g.stub .case { display: none; }
+.edge-g.stub .edge { stroke-opacity: 0.6; }
+.stub-label { font-family: var(--sans); font-size: 11px; fill: var(--ink-3); text-anchor: end; pointer-events: none; paint-order: stroke; stroke: var(--paper); stroke-width: 4px; stroke-linejoin: round; }
+.stub-label.out-label { text-anchor: start; }
+.ep-go { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+.ep-go .chip { font-size: var(--t-xs); }
+
+/* Ориентиры общего вида: миниатюры крупных узлов родословной */
+.node.lm-on .ring { display: block; }
+
+/* Подложки подписей: цвет бумаги, чтобы линия уходила под название */
+.plate { fill: var(--paper); fill-opacity: 0.94; pointer-events: none; transition: opacity 0.25s; }
+.has-hover .plate:not(.near) { opacity: 0.28; }
+.has-selection .plate:not(.lit) { opacity: 0.16; }
+.plate.out { opacity: 0.12; }
+
+/* Узлы и подписи */
+.node { cursor: pointer; outline: none; transition: opacity 0.25s; }
 .node .hit { fill: transparent; }
-.node .dot { stroke: var(--paper); stroke-width: 1.5; transition: r 0.2s; }
-.node text {
-  fill: var(--ink); paint-order: stroke; stroke: color-mix(in oklab, var(--paper) 92%, transparent); stroke-width: 4px; stroke-linejoin: round;
-  font-family: var(--sans); font-size: 13px; font-weight: 500;
+.node .dot { stroke: var(--paper); stroke-width: 1.5; }
+.node .ring { fill: none; stroke-width: 2; display: none; }
+.z2 .node .ring { display: block; }
+.map-svg:not(.z2) .node:not(.lm-on) .thumb-img { display: none; }
+.z2 .node .dot { stroke: none; }
+.label {
+  fill: var(--ink); paint-order: stroke; stroke: var(--paper); stroke-width: 4px; stroke-linejoin: round;
+  font-family: var(--sans); font-size: 14px; font-weight: 500; cursor: pointer; transition: opacity 0.25s;
 }
-.node.t1 text { font-family: var(--serif); font-size: 16px; font-weight: 600; }
-.node.t3 text { font-size: 12px; font-weight: 400; fill: var(--ink-2); }
-.node:hover text { fill: var(--accent); }
-.node:focus-visible .dot { stroke: var(--accent); stroke-width: 3; }
-.node:focus-visible text { text-decoration: underline; }
+.label.t1 { font-family: var(--serif); font-size: 16px; font-weight: 600; }
+.label.t3 { font-size: 13px; font-weight: 400; fill: var(--ink-2); }
+.label .l-dates { display: none; font-family: var(--sans); font-size: 11px; font-weight: 400; fill: var(--ink-3); }
+.z2 .label .l-dates { display: inline; }
+.label:hover { fill: var(--accent); }
+.node:focus-visible .dot, .node:focus-visible .ring { stroke: var(--accent); stroke-width: 3; }
 
-.filtered { opacity: 0.14; }
-.edge.filtered { stroke-opacity: 0.08; }
+/* Фильтр: несовпавшие стили бледнеют, но остаются на своих местах. */
+.node.out, .label.out { opacity: 0.12; }
+.life.out { stroke-opacity: 0.06; }
+.edge-g.out .edge { stroke-opacity: 0.06; }
+.edge-g.out .case { display: none; }
 
-/* Выделение родословной */
-.has-selection .node:not(.lit) { opacity: 0.22; }
-.has-selection .bar { stroke-opacity: 0.16; }
-.has-selection .edge { stroke-opacity: 0.1; }
-.has-selection .edge.hl { stroke: var(--accent); stroke-opacity: 0.45; stroke-width: 1.4; }
-.has-selection .edge.hl.main { stroke-opacity: 1; stroke-width: 3.4; }
-.has-selection .edge.hl.desc { stroke-opacity: 0.85; stroke-width: 2.2; }
-.has-selection .node.lit:not(.on-line):not(.is-selected) { opacity: 0.6; }
-.has-selection .node.on-line text { font-weight: 600; }
-.node.is-selected .dot { stroke: var(--accent); stroke-width: 3; }
-.node.is-selected text { fill: var(--accent); }
+/* Наведение: стиль и его прямые связи */
+.has-hover .node:not(.near), .has-hover .label:not(.near) { opacity: 0.28; }
+.has-hover .life:not(.near) { stroke-opacity: 0.1; }
+.has-hover .edge-g:not(.near) .edge { stroke-opacity: 0.08; }
+
+/* Выбор: крупный план связей или вся родословная */
+.has-selection .node:not(.lit), .has-selection .label:not(.lit) { opacity: 0.16; }
+.has-selection .life:not(.lit) { stroke-opacity: 0.07; }
+.has-selection .life.lit { stroke-opacity: 0.5; }
+.has-selection .life.is-selected { stroke-opacity: 0.95; stroke-width: 3.2; }
+.has-selection .edge-g .edge { stroke-opacity: 0.06; }
+.has-selection .edge-g:not(.hl) .case { display: none; }
+.has-selection .edge-g.hl .edge { stroke: var(--ink); stroke-opacity: 0.9; stroke-width: 2; }
+.has-selection .edge-g.hl .edge.st-unverified { stroke-opacity: 0.7; }
+.mode-line .edge-g.hl .edge { stroke-opacity: 0.45; stroke-width: 1.4; }
+.mode-line .edge-g.hl.desc .edge { stroke-opacity: 0.8; stroke-width: 2; }
+.mode-line .edge-g.hl.main .edge { stroke: var(--accent); stroke-opacity: 1; stroke-width: 3.2; }
+.has-selection .edge.cmp:not(.near) { stroke-opacity: 0.05; }
+.node.is-selected .dot, .node.is-selected .ring { stroke: var(--ink); stroke-width: 3; }
+.label.is-selected { fill: var(--ink); font-weight: 700; }
+.elabel {
+  font-family: var(--sans); font-size: 11.5px; font-weight: 500; fill: var(--ink-2); text-anchor: middle; pointer-events: none;
+  paint-order: stroke; stroke: var(--paper); stroke-width: 5px; stroke-linejoin: round;
+}
+.sel-year { font-size: 11px; font-weight: 600; fill: var(--ink-2); text-anchor: middle; paint-order: stroke; stroke: var(--paper); stroke-width: 4px; pointer-events: none; }
+.sel-year.end { text-anchor: middle; }
+
+/* Метки связей за краем экрана */
+.map-offscreen { position: absolute; inset: 0; pointer-events: none; z-index: 5; }
+.oc-chip {
+  position: absolute; left: 0; top: 0; pointer-events: auto; display: inline-flex; align-items: center; gap: 8px;
+  max-width: 230px; padding: 5px 10px 5px 8px; text-align: left;
+  background: var(--paper-2); border: 1px solid var(--rule-strong); border-radius: 999px;
+  box-shadow: 0 6px 18px -10px rgb(0 0 0 / 0.4); font-size: var(--t-xs); color: var(--ink-2); cursor: pointer;
+}
+.oc-chip:hover { border-color: var(--ink-2); color: var(--ink); }
+.oc-arrow { font-size: 15px; line-height: 1; color: var(--ink); }
+.oc-text { display: grid; line-height: 1.15; min-width: 0; }
+.oc-rel { font-size: 10.5px; color: var(--ink-3); }
+.oc-name { font-family: var(--serif); font-size: var(--t-sm); color: var(--ink); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+/* Миникарта */
+.minimap {
+  position: relative; flex: none; width: 150px; align-self: stretch; cursor: crosshair; touch-action: none;
+  background: var(--paper-2); border: 1px solid var(--rule); border-radius: 0 0 6px 6px; border-top: 3px solid var(--ink-3); overflow: hidden;
+}
+.minimap canvas { position: absolute; inset: 0; display: block; }
+.mm-frame { position: absolute; left: 0; top: 0; border: 1.5px solid var(--ink); border-radius: 3px; background: color-mix(in oklab, var(--ink) 6%, transparent); pointer-events: none; }
 
 /* Подсказка */
 .map-tip {
   position: absolute; left: 0; top: 0; z-index: 6; pointer-events: none;
-  display: grid; grid-template-columns: 72px 1fr; gap: 12px; width: 320px; padding: 10px;
-  background: var(--paper-2); border: 1px solid var(--rule); border-radius: 8px;
+  display: grid; grid-template-columns: 72px 1fr; gap: 12px; width: 330px; padding: 10px;
+  background: var(--paper-2); border: 1px solid var(--rule); border-radius: 10px;
   box-shadow: 0 14px 40px -14px rgb(0 0 0 / 0.4);
 }
 .map-tip[hidden] { display: none; }
-.map-tip .thumb { width: 72px; height: 72px; display: block; overflow: hidden; background: var(--ph); }
+.map-tip .thumb { width: 72px; height: 72px; display: block; overflow: hidden; background: var(--ph); border-radius: 6px; }
 .map-tip .thumb img { width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity 0.3s; }
 .map-tip .thumb img.is-loaded { opacity: 1; }
 .tip-text { display: grid; align-content: start; gap: 2px; }
 .tip-name { font-family: var(--serif); font-size: var(--t-lg); line-height: 1.15; }
 .tip-dates { font-size: var(--t-xs); color: var(--ink-3); }
 .tip-sum { margin-top: 4px; font-size: var(--t-sm); color: var(--ink-2); line-height: 1.35; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+.tip-rel { margin-top: 4px; font-size: var(--t-xs); color: var(--accent); }
+
+/* Объяснение связи */
+.map-edge-pop {
+  position: absolute; left: 0; top: 0; z-index: 7; width: min(320px, calc(100% - 16px)); padding: 12px 14px;
+  background: var(--paper-2); border: 1px solid var(--rule); border-radius: 10px;
+  box-shadow: 0 14px 40px -14px rgb(0 0 0 / 0.4); font-size: var(--t-sm); line-height: 1.45; cursor: auto;
+}
+.map-edge-pop[hidden] { display: none; }
+.ep-head { font-family: var(--serif); font-size: var(--t-lg); line-height: 1.25; }
+.ep-kind { margin-top: 4px; color: var(--ink-2); }
+.ep-note { margin-top: 8px; color: var(--ink-2); }
+.ep-src { margin-top: 8px; font-size: var(--t-xs); color: var(--ink-3); }
+.ep-src a { color: inherit; }
 
 /* Панель выбранного стиля */
 .map-panel {
   position: absolute; z-index: 8; top: 12px; right: 12px; bottom: 12px; width: min(380px, calc(100% - 24px));
   overflow-y: auto; overscroll-behavior: contain; cursor: auto;
-  background: var(--paper-2); border: 1px solid var(--rule); border-radius: 10px;
+  background: var(--paper-2); border: 1px solid var(--rule); border-radius: 12px;
   box-shadow: 0 24px 60px -24px rgb(0 0 0 / 0.45);
   animation: panel-in 0.35s var(--ease);
 }
@@ -98,7 +250,7 @@ body[data-view="map"] .site-footer { display: none; }
 @keyframes panel-in { from { opacity: 0; transform: translateX(16px); } }
 .mp-close { position: absolute; top: 8px; right: 8px; z-index: 2; background: color-mix(in oklab, var(--paper-2) 80%, transparent); }
 .mp-art { display: block; }
-.mp-art .art-frame { border-radius: 10px 10px 0 0; }
+.mp-art .art-frame { border-radius: 12px 12px 0 0; }
 .mp-body { padding: 16px 18px 20px; display: grid; gap: 6px; }
 .mp-name { font-family: var(--serif); font-size: var(--t-3xl); line-height: 1.08; letter-spacing: -0.01em; margin-top: 4px; }
 .mp-orig { color: var(--ink-3); font-size: var(--t-sm); }
@@ -112,22 +264,40 @@ body[data-view="map"] .site-footer { display: none; }
 }
 .mp-node:hover { border-color: var(--ink-3); }
 .mp-node-rel { display: block; font-family: var(--sans); font-size: 11px; color: var(--ink-3); }
+.mp-rel-note { margin: 4px 2px 6px; font-size: var(--t-xs); color: var(--ink-2); line-height: 1.45; }
+.mp-origin { margin-top: 10px; font-size: var(--t-sm); color: var(--ink-2); }
+.mp-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 12px; }
+.mp-kind { font-size: var(--t-xs); color: var(--ink-3); }
+.mp-modes { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
 .mp-open { margin-top: 16px; justify-content: center; }
 
 .map-loading { position: absolute; inset: 0; display: grid; place-items: center; font-family: var(--serif); font-size: var(--t-xl); color: var(--ink-3); }
-.map-hint { position: absolute; left: 12px; bottom: 10px; font-size: var(--t-xs); color: var(--ink-3); pointer-events: none; background: color-mix(in oklab, var(--paper) 80%, transparent); padding: 3px 8px; border-radius: 4px; }
+.map-hint { position: absolute; left: 12px; bottom: 10px; font-size: var(--t-xs); color: var(--ink-3); pointer-events: none; background: color-mix(in oklab, var(--paper) 85%, transparent); padding: 4px 9px; border-radius: 6px; }
 
-/* Мини-карта */
-.map-mini { position: relative; height: 46px; margin: 0 var(--gutter) 10px; border: 1px solid var(--rule); border-radius: 6px; overflow: hidden; cursor: pointer; touch-action: none; background: var(--paper-2); }
-.mini-svg { width: 100%; height: 100%; }
-.mini-window { position: absolute; top: 0; bottom: 0; left: 0; border: 2px solid var(--accent); border-radius: 4px; background: color-mix(in oklab, var(--accent) 8%, transparent); pointer-events: none; }
-
+@media (max-width: 900px) {
+  .map-switch { font-size: var(--t-xs); }
+}
 @media (max-width: 760px) {
-  .map-legend, .map-hint { display: none; }
-  .map-toolbar { padding: 8px var(--gutter); flex-wrap: nowrap; overflow-x: auto; }
-  .map-toolbar .filter-row { flex-wrap: nowrap; }
+  .map-toolbar { gap: 8px; padding: 8px var(--gutter); }
+  .map-find { flex: 1 1 0; min-width: 0; }
+  .map-switch { gap: 6px; font-size: 12px; }
+  .map-switch .sw { width: 28px; height: 16px; }
+  .map-switch .sw::after { width: 12px; height: 12px; }
+  .map-switch input:checked + .sw::after { transform: translateX(12px); }
+  .zoom-ctrls .chip { padding: 0 10px; font-size: 12px; }
+  .zoom-ctrls .icon-btn, .map-all-switch { display: none; }
+  .lg-all { display: inline-flex; }
+  .map-filter-btn .mfb-label { max-width: 96px; overflow: hidden; text-overflow: ellipsis; }
+  .map-filter-pop { position: fixed; left: 8px; right: 8px; top: calc(var(--header-h) + 58px); width: auto; max-height: 68dvh; overflow-y: auto; }
+  .minimap { display: none; }
+  .map-hint { display: none; }
+
+  /* Легенда нужна и на телефоне: в ней слои и объяснение статусов связей. */
+  .map-legend-pop { position: fixed; left: 8px; right: 8px; top: calc(var(--header-h) + 58px); width: auto; max-height: 68dvh; overflow-y: auto; }
+  .zoom-ctrls { margin-left: 0; }
+  .en-seg { flex: 0 0 auto; min-width: 84px; }
   .map-panel { top: auto; left: 8px; right: 8px; bottom: 8px; width: auto; max-height: 46%; animation-name: sheet-in; }
   .mp-art .art-frame { aspect-ratio: 21 / 9 !important; }
   @keyframes sheet-in { from { opacity: 0; transform: translateY(24px); } }
-  .map-mini { margin-bottom: 8px; height: 36px; }
 }
+.map-stage:has(.map-panel:not([hidden])) .map-hint { display: none; }
