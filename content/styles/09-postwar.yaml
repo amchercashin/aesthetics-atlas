@@ -9,6 +9,7 @@
   domain: [art]
   region: США
   tier: 1
+  kind: movement
   parents:
     - { id: surrealism, type: evolved }
     - { id: abstract-art, type: evolved }
@@ -17,13 +18,13 @@
   description: |
     Европейские сюрреалисты, бежавшие от войны в Нью-Йорк, принесли идею автоматизма, и американцы довели
     её до масштаба. Джексон Поллок клал холст на пол и разбрызгивал краску, двигаясь вокруг, — «живопись
-    действия». Де Кунинг писал яростными мазками, Ротко и Ньюман — огромными полями цвета. Впервые центр
-    мирового искусства переместился из Парижа в Америку.
+    действия». Де Кунинг писал яростными мазками, Ротко и Ньюман — огромными полями цвета. После войны
+    Нью-Йорк стали считать новым центром западного искусства вместо Парижа.
   traits:
     - Монументальные холсты «во всю стену»
     - Жест, брызги, потёки — дриппинг
-    - Отказ от фигуративности
-    - Процесс создания важнее результата
+    - Чаще всего абстракция (но у де Кунинга — и фигуративные «Женщины»)
+    - Видимый жест и процесс письма («живопись действия»)
   names: [Джексон Поллок, Виллем де Кунинг, Франц Клайн, Ли Краснер, Аршил Горки]
   example:
     file: "enwiki:Autumn Rhythm.jpg"
@@ -47,6 +48,7 @@
   domain: [art]
   region: США
   tier: 3
+  kind: movement
   parents:
     - { id: abstract-expressionism, type: evolved }
   summary: >
@@ -83,6 +85,7 @@
   domain: [design]
   region: Швейцария, затем весь мир
   tier: 2
+  kind: movement
   parents:
     - { id: bauhaus, type: evolved }
     - { id: constructivism, type: influence }
@@ -111,7 +114,8 @@
 - id: ulm-school
   name: Ульмская школа и функционализм
   orig: Ulm School of Design
-  aliases: [HfG Ulm, Дитер Рамс, Braun, «меньше, но лучше»]
+  aliases: [HfG Ulm, Ульмская школа дизайна]
+  searchKeywords: [Дитер Рамс, Braun, "«меньше, но лучше»", Макс Билл]
   start: 1953
   end: 1980
   dates: 1953 – 1980-е
@@ -119,6 +123,7 @@
   domain: [design]
   region: Германия
   tier: 3
+  kind: school
   parents:
     - { id: bauhaus, type: evolved }
     - { id: swiss-style, type: influence }
@@ -127,7 +132,7 @@
   description: |
     Высшая школа дизайна в Ульме, основанная Максом Биллом, сделала дизайн наукой: исследования, системы,
     модульность. Вместе с ней Braun создал радиолу SK 4 — «гроб Белоснежки» с прозрачной крышкой. Дитер Рамс
-    сформулировал принцип «меньше, но лучше», а его вещи напрямую вдохновили дизайн Apple.
+    сформулировал принцип «меньше, но лучше»; его вещи часто сравнивают с продуктами Apple 2000-х.
   traits:
     - Белый, серый, точечные цветовые акценты
     - Модульность и системность
@@ -155,6 +160,7 @@
   domain: [design, architecture]
   region: США, Скандинавия
   tier: 1
+  kind: period
   parents:
     - { id: bauhaus, type: evolved }
     - { id: organic-architecture, type: evolved }
@@ -190,6 +196,7 @@
   domain: [architecture, design]
   region: США
   tier: 3
+  kind: period
   parents:
     - { id: streamline-moderne, type: evolved }
   summary: >
@@ -226,6 +233,7 @@
   domain: [architecture]
   region: Великобритания, весь мир
   tier: 1
+  kind: movement
   parents:
     - { id: international-style, type: evolved }
   summary: >
@@ -264,6 +272,7 @@
   domain: [architecture]
   region: СССР
   tier: 3
+  kind: period
   parents:
     - { id: international-style, type: evolved }
     - { id: constructivism, type: revival }
@@ -299,6 +308,7 @@
   domain: [architecture]
   region: Япония
   tier: 3
+  kind: school
   parents:
     - { id: brutalism, type: evolved }
   summary: >
@@ -334,6 +344,7 @@
   domain: [art, design]
   region: Великобритания, США
   tier: 1
+  kind: movement
   parents:
     - { id: dada, type: evolved }
     - { id: abstract-expressionism, type: reaction }
@@ -372,6 +383,7 @@
   domain: [art, design]
   region: Европа, США
   tier: 2
+  kind: movement
   parents:
     - { id: abstract-art, type: evolved }
     - { id: bauhaus, type: influence }
@@ -408,6 +420,7 @@
   domain: [art]
   region: Европа, США, Латинская Америка
   tier: 3
+  kind: movement
   parents:
     - { id: constructivism, type: evolved }
     - { id: dada, type: influence }
@@ -444,6 +457,7 @@
   domain: [art, design]
   region: США
   tier: 2
+  kind: movement
   parents:
     - { id: color-field, type: evolved }
     - { id: constructivism, type: influence }
@@ -473,7 +487,9 @@
 - id: conceptual-art
   name: Концептуализм
   orig: Conceptual art
-  aliases: [концептуальное искусство, Кошут, флюксус, идея как искусство]
+  aliases: [концептуальное искусство, conceptual art]
+  searchKeywords: [Кошут, флюксус, Fluxus, идея как искусство, московский концептуализм]
+  scopeNote: Флюксус — родственное, но отдельное движение (события, партитуры, мейл-арт); отдельной карточки в атласе пока нет.
   start: 1960
   end: 1980
   dates: 1960 – 1980
@@ -481,6 +497,7 @@
   domain: [art]
   region: США, Европа, СССР
   tier: 2
+  kind: movement
   parents:
     - { id: dada, type: evolved }
     - { id: minimalism, type: influence }
@@ -518,6 +535,7 @@
   domain: [art, design]
   region: США, Великобритания
   tier: 2
+  kind: movement
   parents:
     - { id: art-nouveau, type: revival }
     - { id: op-art, type: influence }
@@ -555,6 +573,7 @@
   domain: [design, architecture]
   region: Европа, США
   tier: 3
+  kind: period
   parents:
     - { id: googie, type: evolved }
     - { id: futurism, type: influence }
@@ -592,6 +611,7 @@
   domain: [art]
   region: США, Великобритания
   tier: 3
+  kind: movement
   parents:
     - { id: minimalism, type: evolved }
     - { id: conceptual-art, type: influence }
@@ -628,11 +648,13 @@
   domain: [art, internet]
   region: Германия, Великобритания, США
   tier: 2
+  kind: technique
+  kindNote: "Метод (изображение, созданное программой), а не единый стиль."
   parents:
     - { id: op-art, type: influence }
     - { id: constructivism, type: influence }
   summary: >
-    Первые картины, нарисованные машиной: плоттеры, алгоритмы и случайность в руках математиков и инженеров.
+    Ранние изображения, нарисованные машиной: плоттеры, алгоритмы и случайность в руках математиков и инженеров.
   description: |
     В 1960-х компьютеры занимали целые комнаты, но инженеры Георг Нис, Фридер Наке и Майкл Нолл уже писали
     программы, которые рисовали на плоттерах геометрические композиции со случайностью. Британец Десмонд Пол

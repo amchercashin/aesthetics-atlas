@@ -9,6 +9,7 @@
   domain: [art]
   region: Франция
   tier: 1
+  kind: movement
   parents:
     - { id: post-impressionism, type: evolved }
   summary: >
@@ -46,6 +47,7 @@
   domain: [art, design]
   region: Италия, Россия
   tier: 1
+  kind: movement
   parents:
     - { id: cubism, type: influence }
     - { id: neo-impressionism, type: influence }
@@ -82,6 +84,7 @@
   domain: [art]
   region: Россия
   tier: 2
+  kind: movement
   parents:
     - { id: cubism, type: evolved }
     - { id: futurism, type: evolved }
@@ -90,7 +93,7 @@
   description: |
     Русские художники соединили кубистическое дробление формы с футуристическим движением. «Точильщик»
     Малевича состоит из блестящих металлических граней, повторяющихся, как кадры. Рядом — поэты Хлебников
-    и Кручёных с «заумью» и опера «Победа над солнцем», в декорациях к которой впервые появился чёрный квадрат.
+    и Кручёных с «заумью» и опера «Победа над солнцем», в эскизах декораций к которой, по словам Малевича, появился чёрный квадрат.
   traits:
     - Металлические, цилиндрические формы
     - Мерцание движения, повтор контуров
@@ -118,6 +121,7 @@
   domain: [art]
   region: Франция
   tier: 3
+  kind: movement
   parents:
     - { id: cubism, type: evolved }
   summary: >
@@ -153,6 +157,8 @@
   domain: [art]
   region: Германия, Россия, Франция
   tier: 1
+  kind: overview
+  kindNote: "Обзор способа изображения, а не одно движение: абстракция возникала у разных групп независимо."
   parents:
     - { id: expressionism, type: evolved }
     - { id: symbolism, type: influence }
@@ -189,6 +195,7 @@
   domain: [art, design]
   region: Россия
   tier: 1
+  kind: movement
   parents:
     - { id: cubo-futurism, type: evolved }
   summary: >
@@ -225,6 +232,7 @@
   domain: [design, architecture, art]
   region: СССР
   tier: 1
+  kind: movement
   parents:
     - { id: suprematism, type: evolved }
     - { id: cubism, type: influence }
@@ -254,7 +262,8 @@
 - id: dada
   name: Дадаизм
   orig: Dada
-  aliases: [дада, Дюшан, реди-мейд, Кабаре Вольтер]
+  aliases: [дада, dada]
+  searchKeywords: [Дюшан, реди-мейд, Кабаре Вольтер, Фонтан, фотомонтаж]
   start: 1916
   end: 1924
   dates: 1916 – 1924
@@ -262,6 +271,7 @@
   domain: [art, design]
   region: Цюрих, Берлин, Париж, Нью-Йорк
   tier: 1
+  kind: movement
   parents:
     - { id: futurism, type: influence }
     - { id: cubism, type: influence }
@@ -269,15 +279,19 @@
     Антиискусство в ответ на бойню Первой мировой: писсуар как скульптура, бессмысленные стихи и коллажи из газет.
   description: |
     В 1916 году в цюрихском «Кабаре Вольтер» эмигранты устроили шоу абсурда: если цивилизация привела
-    к войне, её искусство тоже ничего не стоит. Марсель Дюшан выставил перевёрнутый писсуар под названием
-    «Фонтан» — так появился реди-мейд и вопрос «что такое искусство?». Берлинские дадаисты изобрели
-    политический фотомонтаж. Из дада вырастут сюрреализм, поп-арт, концептуализм и панк.
+    к войне, её искусство тоже ничего не стоит. Марсель Дюшан ещё в 1913 году в Париже поставил
+    велосипедное колесо на табурет, а словом «реди-мейд» стал называть такие вещи двумя годами позже.
+    В 1917-м он подал на нью-йоркскую выставку перевёрнутый писсуар под названием «Фонтан» и заострил
+    вопрос «что такое искусство?». Берлинские дадаисты сделали фотомонтаж политическим высказыванием.
+    На дада потом будут ссылаться сюрреалисты, поп-арт, концептуализм и панк-графика.
   traits:
     - Реди-мейд — готовый предмет как произведение
     - Абсурд, случайность, провокация
     - Коллаж и фотомонтаж
     - Хаотичная типографика
   names: [Марсель Дюшан, Тристан Тцара, Ханна Хёх, Курт Швиттерс, Ман Рэй]
+  evidence:
+    - { claim: "Оригинал «Велосипедного колеса» — Париж, 1913, за два года до первого употребления Дюшаном слова «readymade»", field: description, source: moma-bicycle-wheel }
   example:
     file: Marcel Duchamp, 1917, Fountain, photograph by Alfred Stieglitz.jpg
     title: Фонтан (фотография Альфреда Стиглица)
@@ -299,6 +313,7 @@
   domain: [art]
   region: Италия
   tier: 2
+  kind: movement
   parents:
     - { id: symbolism, type: evolved }
   summary: >
@@ -306,7 +321,9 @@
   description: |
     Джорджо де Кирико писал итальянские площади, будто увиденные во сне: резкие тени, безлюдные аркады,
     гипсовые головы, перчатки и поезда на горизонте. Предметы стоят рядом без логики, а пространство
-    одновременно знакомо и чуждо. Это прямой предок сюрреализма — и, через сто лет, эстетики liminal space.
+    одновременно знакомо и чуждо. Сюрреалисты считали де Кирико своим предшественником. С его пустыми
+    площадями сегодня сопоставляют и интернет-эстетику liminal space — это визуальная аналогия,
+    а не доказанная преемственность.
   traits:
     - Безлюдные площади и аркады
     - Длинные косые тени, вечерний свет
@@ -334,6 +351,7 @@
   domain: [art]
   region: Франция, затем весь мир
   tier: 1
+  kind: movement
   parents:
     - { id: dada, type: evolved }
     - { id: metaphysical-painting, type: influence }
@@ -368,7 +386,8 @@
 - id: de-stijl
   name: Де Стейл (неопластицизм)
   orig: De Stijl
-  aliases: [неопластицизм, Мондриан, ван Дусбург, Ритвельд]
+  aliases: [неопластицизм, De Stijl]
+  searchKeywords: [Мондриан, ван Дусбург, Ритвельд, элементаризм]
   start: 1917
   end: 1931
   dates: 1917 – 1931
@@ -376,21 +395,24 @@
   domain: [art, design, architecture]
   region: Нидерланды
   tier: 1
+  kind: school
   parents:
     - { id: cubism, type: evolved }
   summary: >
-    Только прямые углы, чёрные линии и три основных цвета: универсальная гармония Мондриана.
+    Прямые углы, чёрные линии и три основных цвета: поиск универсальной гармонии у Мондриана и его соратников.
   description: |
     Голландская группа вокруг журнала «Де Стейл» хотела свести искусство к абсолютным элементам: горизонталь,
     вертикаль, красный, синий, жёлтый, чёрный, белый и серый. Мондриан годами уточнял баланс прямоугольников,
     Ритвельд построил по этим принципам красно-синий стул и дом Шрёдер. Язык де Стейл до сих пор узнаётся
     в моде, логотипах и интерфейсах.
   traits:
-    - Только горизонтали и вертикали
+    - Горизонтали и вертикали (ван Дусбург позже ввёл диагональ)
     - Основные цвета плюс чёрный, белый, серый
     - Асимметричное равновесие прямоугольников
     - Единство живописи, мебели и архитектуры
   names: [Пит Мондриан, Тео ван Дусбург, Геррит Ритвельд, Барт ван дер Лек]
+  evidence:
+    - { claim: "Мондриан вышел из группы в 1923 году после того, как ван Дусбург ввёл диагональные элементы", field: traits, source: tate-de-stijl }
   example:
     file: Piet Mondriaan, 1930 - Mondrian Composition II in Red, Blue, and Yellow.jpg
     title: Композиция с красным, синим и жёлтым
@@ -412,6 +434,7 @@
   domain: [design, architecture]
   region: Германия
   tier: 1
+  kind: school
   parents:
     - { id: arts-and-crafts, type: evolved }
     - { id: de-stijl, type: influence }
@@ -453,6 +476,7 @@
   domain: [design, architecture]
   region: Франция, США, весь мир
   tier: 1
+  kind: period
   parents:
     - { id: vienna-secession, type: evolved }
     - { id: cubism, type: influence }
@@ -490,6 +514,7 @@
   domain: [art]
   region: Германия
   tier: 3
+  kind: movement
   parents:
     - { id: expressionism, type: reaction }
     - { id: dada, type: influence }
@@ -526,6 +551,7 @@
   domain: [architecture]
   region: Европа, США, весь мир
   tier: 1
+  kind: movement
   parents:
     - { id: bauhaus, type: evolved }
     - { id: de-stijl, type: influence }
@@ -564,6 +590,7 @@
   domain: [architecture, design]
   region: США, Финляндия
   tier: 3
+  kind: movement
   parents:
     - { id: chicago-school, type: evolved }
     - { id: arts-and-crafts, type: influence }
@@ -601,6 +628,7 @@
   domain: [design, architecture]
   region: США
   tier: 3
+  kind: period
   parents:
     - { id: art-deco, type: evolved }
     - { id: futurism, type: influence }
@@ -638,6 +666,8 @@
   domain: [art]
   region: СССР и соцстраны
   tier: 2
+  kind: movement
+  kindNote: "Официальный художественный метод, установленный государством, а не добровольное движение."
   parents:
     - { id: peredvizhniki, type: evolved }
     - { id: constructivism, type: reaction }
@@ -675,6 +705,7 @@
   domain: [architecture]
   region: СССР
   tier: 2
+  kind: period
   parents:
     - { id: socialist-realism, type: evolved }
     - { id: neoclassicism, type: revival }
@@ -712,6 +743,7 @@
   domain: [art]
   region: Мексика, США
   tier: 3
+  kind: movement
   parents:
     - { id: mesoamerican-art, type: revival }
     - { id: cubism, type: influence }

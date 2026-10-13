@@ -9,6 +9,7 @@
   domain: [art]
   region: Франция
   tier: 2
+  kind: movement
   parents:
     - { id: impressionism, type: evolved }
   summary: >
@@ -44,6 +45,8 @@
   domain: [art]
   region: Франция
   tier: 1
+  kind: period
+  kindNote: "Ретроспективное объединение очень разных художников (термин Роджера Фрая), а не группа."
   parents:
     - { id: impressionism, type: evolved }
   summary: >
@@ -79,6 +82,7 @@
   domain: [art]
   region: Франция, Бельгия, Германия, Россия
   tier: 2
+  kind: movement
   parents:
     - { id: romanticism, type: evolved }
     - { id: pre-raphaelites, type: influence }
@@ -115,6 +119,7 @@
   domain: [art, design]
   region: Франция
   tier: 3
+  kind: school
   parents:
     - { id: post-impressionism, type: evolved }
   summary: >
@@ -151,6 +156,7 @@
   domain: [design, architecture, art]
   region: Европа, Россия, США
   tier: 1
+  kind: movement
   parents:
     - { id: arts-and-crafts, type: evolved }
     - { id: japonisme, type: influence }
@@ -189,6 +195,7 @@
   domain: [art, design, architecture]
   region: Австрия
   tier: 2
+  kind: school
   parents:
     - { id: art-nouveau, type: evolved }
     - { id: symbolism, type: influence }
@@ -226,6 +233,7 @@
   domain: [art, design]
   region: Россия
   tier: 3
+  kind: school
   parents:
     - { id: symbolism, type: evolved }
     - { id: art-nouveau, type: influence }
@@ -261,6 +269,7 @@
   domain: [architecture]
   region: США
   tier: 3
+  kind: school
   parents:
     - { id: historicism, type: reaction }
   summary: >
@@ -295,6 +304,7 @@
   domain: [art]
   region: Франция
   tier: 1
+  kind: movement
   parents:
     - { id: post-impressionism, type: evolved }
     - { id: neo-impressionism, type: influence }
@@ -332,6 +342,7 @@
   domain: [art]
   region: Германия, Австрия, Скандинавия
   tier: 1
+  kind: movement
   parents:
     - { id: post-impressionism, type: evolved }
     - { id: fauvism, type: influence }
@@ -355,7 +366,8 @@
     author: Эдвард Мунк
     year: 1893
     place: Национальный музей, Осло
-    note: Предтеча экспрессионизма
+    role: precursor
+    whyRepresentative: Деформация пейзажа и фигуры ради переживания — то, что позже станет программой экспрессионистов. Написано за 12 лет до группы «Мост».
   wiki: Expressionism
   links:
     - { title: "Expressionism", url: "https://www.theartstory.org/movement/expressionism/", src: "The Art Story", lang: en }

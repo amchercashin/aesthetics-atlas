@@ -1,7 +1,12 @@
 - id: hyperrealism
   name: Фотореализм и гиперреализм
   orig: Photorealism / Hyperrealism
-  aliases: [фотореализм, гиперреализм, суперреализм, Эстес]
+  aliases: [фотореализм, гиперреализм, суперреализм, photorealism]
+  searchKeywords: [Ричард Эстес, Чак Клоуз, Рон Мьюик]
+  scopeNote: >
+    Объединяет фотореализм — живопись по фотографии конца 1960-х — 1970-х — и более широкий термин
+    «гиперреализм», позже распространившийся и на скульптуру. Различие терминов обсуждается; здесь они
+    собраны как близкие.
   start: 1968
   end: 2000
   dates: 1968 – 2000-е
@@ -9,6 +14,7 @@
   domain: [art]
   region: США
   tier: 3
+  kind: movement
   parents:
     - { id: pop-art, type: evolved }
   summary: >
@@ -43,6 +49,7 @@
   domain: [architecture, design]
   region: США, Европа
   tier: 2
+  kind: movement
   parents:
     - { id: international-style, type: reaction }
     - { id: historicism, type: revival }
@@ -82,6 +89,7 @@
   domain: [architecture]
   region: Великобритания, Франция, весь мир
   tier: 2
+  kind: movement
   parents:
     - { id: international-style, type: evolved }
     - { id: space-age, type: influence }
@@ -117,6 +125,7 @@
   domain: [design]
   region: Италия
   tier: 1
+  kind: school
   parents:
     - { id: pop-art, type: evolved }
     - { id: art-deco, type: influence }
@@ -155,6 +164,7 @@
   domain: [design, art]
   region: Великобритания, США
   tier: 2
+  kind: movement
   parents:
     - { id: dada, type: revival }
     - { id: pop-art, type: influence }
@@ -193,6 +203,7 @@
   domain: [art]
   region: Нью-Йорк, затем весь мир
   tier: 1
+  kind: technique
   parents:
     - { id: pop-art, type: influence }
   summary: >
@@ -229,6 +240,7 @@
   domain: [art]
   region: США, Германия, Италия
   tier: 3
+  kind: movement
   parents:
     - { id: expressionism, type: revival }
     - { id: graffiti-street-art, type: influence }
@@ -265,6 +277,7 @@
   domain: [architecture]
   region: Весь мир
   tier: 2
+  kind: movement
   parents:
     - { id: constructivism, type: revival }
     - { id: postmodern-architecture, type: reaction }
@@ -302,6 +315,8 @@
   domain: [design, art]
   region: США, Япония
   tier: 1
+  kind: movement
+  kindNote: "Жанр научной фантастики и его визуальный язык в кино, иллюстрации и играх."
   parents:
     - { id: punk-graphics, type: influence }
     - { id: high-tech, type: influence }
@@ -340,6 +355,7 @@
   domain: [internet, design]
   region: США, Япония
   tier: 2
+  kind: technique
   parents:
     - { id: computer-art, type: evolved }
   summary: >
@@ -375,6 +391,7 @@
   domain: [art, design]
   region: США, Африка
   tier: 3
+  kind: movement
   parents:
     - { id: space-age, type: influence }
     - { id: psychedelic-art, type: influence }
@@ -401,39 +418,59 @@
 - id: new-wave-graphic
   name: Новая волна и гранж-типографика
   orig: New Wave and grunge typography
-  aliases: [новая волна в типографике, Вайнгарт, Дэвид Карсон, Ray Gun]
+  aliases: [новая волна в типографике, New Wave typography, Swiss Punk, гранж-типографика]
+  searchKeywords: [Вайнгарт, Эйприл Грейман, Дэвид Карсон, Ray Gun, Emigre, Design Quarterly]
   start: 1977
   end: 1998
-  dates: 1977 – 1990-е
+  dates: конец 1970-х – 1990-е
+  dateKind: practice
+  approx: true
   era: postmodern
   domain: [design]
+  medium: [graphic-design, typography]
   region: Швейцария, США
   tier: 3
+  kind: movement
+  scopeNote: >
+    Карточка объединяет две волны отказа от модернистской сетки: «новую волну» конца 1970-х — 1980-х,
+    выросшую из базельской школы и соединившуюся с первыми Macintosh, и гранж-типографику 1990-х.
+    Это редакционное объединение последовательных этапов, а не одно движение с общей программой.
   parents:
-    - { id: swiss-style, type: reaction }
+    - { id: swiss-style, type: reaction, status: verified, sources: [moma-greiman-dq133], note: "MoMA: Грейман училась швейцарскому модернизму в Базеле, а затем оказалась в авангарде движения, отказавшегося от сеток, гротесков и «чистого» вида модернистской типографики." }
     - { id: punk-graphics, type: influence }
   summary: >
-    Типографика, разорвавшая сетку: наложенные слои, разреженный набор, а у Дэвида Карсона — нечитаемость как стиль.
+    Типографика, разорвавшая сетку: наложенные слои, растр и пиксели, разреженный набор, а в 1990-х —
+    нечитаемость как стиль.
   description: |
     Вольфганг Вайнгарт, преподававший в Базеле, начал ломать строгий швейцарский стиль изнутри: слои,
-    растры, ступенчатые строки. Его ученики принесли «новую волну» в Америку, а Эйприл Грейман соединила
-    её с первыми компьютерами Macintosh. В 1990-х Дэвид Карсон в журнале Ray Gun набрал целое интервью
-    шрифтом-дингбатом — и это стало манифестом гранж-типографики.
+    растры, ступенчатые строки. Его ученики принесли «новую волну» в Америку. Эйприл Грейман, учившаяся
+    в Базеле, в Лос-Анджелесе сделала компьютер инструментом дизайна: выпуск Design Quarterly №133
+    «Does It Make Sense?» (1986) целиком собран в MacDraw из пиксельного видео, текста и чужих изображений.
+    В 1990-х Дэвид Карсон в журнале Ray Gun довёл разрушение сетки до нечитаемости — это назвали
+    гранж-типографикой.
   traits:
     - Сломанная сетка и наложенные слои
     - Разные кегли и шрифты в одной строке
-    - Растр, шум, фотокопия
+    - Растр, пиксели, шум, фотокопия
     - Выразительность важнее читаемости
   names: [Вольфганг Вайнгарт, Эйприл Грейман, Дэвид Карсон, Невилл Броуди]
+  evidence:
+    - { claim: "«Does It Make Sense?», Design Quarterly №133, 1986, литография; сделано в MacDraw из пиксельного видео, текста и заимствованных изображений", field: example, source: moma-greiman-dq133 }
+    - { claim: "Прежняя главная иллюстрация была фотографией Вайнгарта в винограднике, а не его работой (исправлено)", field: example, source: commons-weingart-photo }
+  review: { status: partial, date: 2026-10-13, note: "Заменена главная иллюстрация, сверены атрибуция и реакция на швейцарский стиль. Роль Вайнгарта и Карсона описана по общим сведениям, без отдельного источника." }
   example:
-    file: Weingart tuellinger vinyards 2011-11.jpg
-    title: Плакат
-    author: Вольфганг Вайнгарт
+    file: DQ133.jpg
+    title: Does It Make Sense? (Design Quarterly №133)
+    author: Эйприл Грейман
+    year: 1986
+    place: экземпляр есть в собрании MoMA, Нью-Йорк
+    whyRepresentative: Слои растра, пиксельный шрифт, текст поверх изображений и полный отказ от сетки — новая волна, соединённая с первым Macintosh.
+    rights: { note: "Фото экземпляра выложено студией дизайнера (MadeInSpace.la) под CC BY-SA 4.0. Лицензия фотографии не заменяет права на само произведение." }
   wiki: Grunge typography
   links:
+    - { title: "April Greiman — Does It Make Sense?", url: "https://www.moma.org/collection/works/172729", src: "MoMA", lang: en }
     - { title: "David Carson", url: "https://en.wikipedia.org/wiki/David_Carson_(graphic_designer)", src: "Wikipedia", lang: en }
     - { title: "Wolfgang Weingart", url: "https://en.wikipedia.org/wiki/Wolfgang_Weingart", src: "Wikipedia", lang: en }
-
 - id: pixel-art
   name: Пиксель-арт
   orig: Pixel art
@@ -445,6 +482,7 @@
   domain: [internet, design]
   region: США, Япония, весь мир
   tier: 2
+  kind: technique
   parents:
     - { id: computer-art, type: evolved }
   summary: >
@@ -479,6 +517,7 @@
   domain: [art]
   region: Калифорния, США
   tier: 3
+  kind: movement
   parents:
     - { id: surrealism, type: revival }
     - { id: pop-art, type: influence }

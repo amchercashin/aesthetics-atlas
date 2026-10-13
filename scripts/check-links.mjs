@@ -1,4 +1,4 @@
-// Проверка внешних ссылок из content/: 404 — ошибка; 403/429 (защита от ботов) — «не проверить».
+// Проверка внешних ссылок из content/ (включая sources.yaml): 404 — ошибка; 403/429 (защита от ботов) — «не проверить».
 // Aesthetics Wiki (Fandom) закрыта для скриптов, поэтому проверяется через её MediaWiki API.
 import fs from 'node:fs';
 import path from 'node:path';
@@ -15,6 +15,8 @@ for (const f of fs.readdirSync(dir).filter((f) => f.endsWith('.yaml') && (!only 
   for (const s of yaml.load(fs.readFileSync(path.join(dir, f), 'utf8')) ?? []) for (const l of s.links ?? []) links.push({ id: s.id, url: l.url });
 }
 for (const g of yaml.load(fs.readFileSync(path.join(ROOT, 'content/resources.yaml'), 'utf8')) ?? []) for (const r of g.items) links.push({ id: 'resources', url: r.url });
+// Источники утверждений: битая ссылка здесь хуже, чем в «почитать».
+if (!only) for (const src of yaml.load(fs.readFileSync(path.join(ROOT, 'content/sources.yaml'), 'utf8')) ?? []) links.push({ id: `source ${src.id}`, url: src.url });
 
 async function check(url) {
   const fandom = /^https:\/\/([a-z0-9-]+)\.fandom\.com\/wiki\/(.+)$/.exec(url);

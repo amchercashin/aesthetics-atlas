@@ -7,7 +7,8 @@
     "build": "node scripts/build.mjs",
     "check-links": "node scripts/check-links.mjs",
     "find": "node scripts/find-media.mjs",
-    "test": "node --test test/*.test.mjs"
+    "test": "node --test test/*.test.mjs",
+    "coverage": "node scripts/coverage.mjs"
   },
   "devDependencies": {
     "js-yaml": "^4.1.0",

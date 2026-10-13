@@ -38,14 +38,19 @@ export function frame(img, palette, { ratio = 'natural', sizes, alt, eager, fit 
   </span>`;
 }
 
-const FAIR_TITLE = 'Изображение защищено авторским правом. Показано в низком разрешении в образовательных целях (fair use), источник — Википедия.';
+const NONFREE_TITLE = 'Работа защищена авторским правом. Превью низкого разрешения взято из английской Википедии, где оно используется по её собственному обоснованию fair use. Это обоснование не переносится автоматически на атлас.';
 
+// Подпись к изображению: автор фотографии или репродукции, лицензия файла, статус прав.
+// Лицензия фотографии не распространяется на изображённое произведение.
 export function credit(img) {
   if (!img) return '';
   const who = img.artist || 'автор не указан';
+  const r = img.rights ?? {};
   return html`<p class="credit">
-    ${img.nonfree ? html`<span class="badge-fair" title="${FAIR_TITLE}">fair use</span>` : ''}${who}${img.license ? `, ${img.license}` : ''}.
+    ${img.nonfree ? html`<span class="badge-fair" title="${NONFREE_TITLE}">несвободное</span>` : ''}${who}${img.license ? `, ${img.license}` : ''}.
     <a href="${safeUrl(img.page)}" target="_blank" rel="noopener">${img.page?.includes('commons.wikimedia') ? 'Wikimedia Commons' : 'Википедия'}</a>
+    ${img.nonfree ? html`<span class="credit-note">${r.basis ? `Основание: ${r.basis}` : 'Основание использования в атласе ещё не проверено.'}</span>` : ''}
+    ${r.note ? html`<span class="credit-note">${r.note}</span>` : ''}
   </p>`;
 }
 

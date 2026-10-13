@@ -9,6 +9,7 @@
   domain: [internet, design]
   region: Интернет
   tier: 2
+  kind: period
   parents:
     - { id: pixel-art, type: evolved }
     - { id: punk-graphics, type: influence }
@@ -26,9 +27,10 @@
     - Значки «Under construction» и «Best viewed in Netscape»
   names: [GeoCities, Angelfire, Narod.ru, Netscape Navigator]
   palette: ["#000080", "#00ffff", "#ff00ff", "#ffff00", "#c0c0c0"]
+  paletteNote: Редакторская подборка из «веб-безопасной» палитры 216 цветов — тёмно-синий, циан, маджента, жёлтый, серый.
   example:
     title: Домашняя страница на GeoCities
-    note: Свободных скриншотов эпохи почти нет — показана палитра веб-безопасных цветов.
+    note: Свободных скриншотов эпохи почти нет — показана редакторская подборка из веб-безопасных цветов.
   wiki: GeoCities
   links:
     - { title: "Old Web", url: "https://aesthetics.fandom.com/wiki/Old_Web", src: "Aesthetics Wiki", lang: en }
@@ -45,6 +47,8 @@
   domain: [design, internet]
   region: США, Япония, весь мир
   tier: 1
+  kind: [period, internet-aesthetic]
+  kindNote: "Дизайн-язык рубежа 1990–2000-х; само название «Y2K-эстетика» — позднее, из интернет-сообществ."
   parents:
     - { id: early-cgi, type: evolved }
     - { id: space-age, type: revival }
@@ -75,51 +79,77 @@
 - id: frutiger-aero
   name: Фрутигер-аэро
   orig: Frutiger Aero
-  aliases: [frutiger aero, аэро, Windows Vista, Windows 7, пузыри и трава]
-  start: 2004
+  aliases: [frutiger aero, фрутигер аэро]
+  searchKeywords: [аэро, Windows Vista, Windows 7, пузыри и трава, Web 2.0 Gloss, Aqua]
+  start: 2005
   end: 2013
-  dates: 2004 – 2013
+  dates: ок. 2005 – 2013
+  dateKind: popularity
+  approx: true
+  dateNote: >
+    Это «период актуальности» визуального языка, а не годы жизни направления: название придумано задним
+    числом, а сама эстетика вернулась как ностальгия в 2020-х.
+  revivals:
+    - { start: 2020, note: "Ностальгическое возвращение в интернет-сообществах" }
   era: digital
   domain: [design, internet]
+  medium: [ui, graphic-design, digital-art]
   region: Весь мир
   tier: 1
+  kind: [period, internet-aesthetic]
+  kindNote: "Дизайн-язык периода, получивший имя задним числом в интернет-сообществе исследователей эстетик."
+  scopeNote: >
+    Корпоративный и интерфейсный визуальный язык середины 2000-х — начала 2010-х и его поздняя
+    ностальгическая волна. Название ретроспективное: в своё время у стиля не было общего имени.
   parents:
     - { id: y2k-aesthetic, type: evolved }
   summary: >
     Глянцевый оптимизм нулевых: пузыри, капли воды, зелёная трава, голубое небо и стеклянные кнопки Windows Vista.
   description: |
-    Термин придумали в 2017 году, чтобы описать визуальный язык 2004–2013: прозрачные «аэро»-панели Windows
-    Vista и 7, глянцевые иконки, обои с травой и небом, рыбками и пузырями, шрифт Frutiger в рекламе.
-    Это была эстетика экологичной, светлой цифровой утопии. В 2020-х она вернулась как ностальгия поколения,
-    выросшего на этих экранах, и как «desktop core» в дизайне.
+    Название соединяет шрифт Frutiger и дизайн-язык Windows Aero. Его придумали задним числом
+    исследователи Consumer Aesthetics Research Institute (CARI), чтобы описать визуальный язык
+    примерно 2005–2013 годов: прозрачные «аэро»-панели Windows Vista и 7, глянцевые иконки, обои с травой
+    и небом, рыбками и пузырями, гуманистические гротески в рекламе. Это была эстетика экологичной,
+    светлой цифровой утопии. В 2020-х она вернулась как ностальгия поколения, выросшего на этих экранах.
   traits:
     - Глянец, стекло, отражения
-    - Вода, пузыри, трава, голубое небо
+    - Вода, пузыри, трава, голубое небо, полярное сияние
     - Бирюзово-зелёные и синие градиенты
-    - Шрифты-гротески — Frutiger, Segoe
+    - Гуманистические гротески — Frutiger, Segoe
   names: [Windows Vista, Windows 7, Nokia, Wii]
+  evidence:
+    - { claim: "Ретроспективный термин; период актуальности — середина 2000-х — начало 2010-х (около 2005–2013); название — от шрифта Frutiger и Windows Aero; авторы названия по CARI — Froyo Tam, Sofi Xian", field: dates, source: cari-frutiger-aero }
+  review: { status: partial, date: 2026-10-13, note: "Даты переведены в «период актуальности» по CARI; убрана неподтверждённая дата появления термина (было «2017»). Связь с Y2K не проверена." }
   example:
     file: Frutiger Aero Composite.jpg
     title: Композиция в стиле Frutiger Aero
     author: Aarón Ramirez
+    role: illustration
+    whyRepresentative: Современная композиция из типичных мотивов — стекло, вода, пузыри, трава и небо. Не материал 2000-х.
   gallery:
-    - { file: "Frutiger Aero Bubbles And Grass.jpg", title: "Пузыри и трава" }
+    - { file: "Frutiger Aero Bubbles And Grass.jpg", title: "Пузыри и трава", role: illustration }
   wiki: Frutiger Aero
   links:
     - { title: "Frutiger Aero", url: "https://cari.institute/aesthetics/frutiger-aero", src: "CARI Institute", lang: en }
     - { title: "Frutiger Aero", url: "https://aesthetics.fandom.com/wiki/Frutiger_Aero", src: "Aesthetics Wiki", lang: en }
-
 - id: skeuomorphism
   name: Скевоморфизм
   orig: Skeuomorphism
-  aliases: [скевоморфизм, iOS 6, кожа и дерево в интерфейсе]
+  aliases: [скевоморфизм, skeuomorphism]
+  searchKeywords: [iOS 6, кожа и дерево в интерфейсе, Aqua]
+  scopeNote: >
+    Принцип — имитировать в интерфейсе физические материалы и предметы — старше этих дат. Карточка описывает
+    его пик в мобильных интерфейсах, от первых iPhone до перехода iOS 7 на плоский дизайн.
   start: 2007
   end: 2013
   dates: 2007 – 2013
+  dateKind: popularity
+  dateNote: Пик в мобильных интерфейсах Apple; сам приём имитации материалов использовался и раньше, в настольных системах.
   era: digital
   domain: [design, internet]
   region: США
   tier: 2
+  kind: design-system
   parents:
     - { id: y2k-aesthetic, type: evolved }
   summary: >
@@ -136,9 +166,10 @@
     - Подробные, «вкусные» иконки
   names: [Скотт Форстолл, iPhone OS 1–6, Mac OS X Aqua]
   palette: ["#6b4a2e", "#c9a46b", "#f3e7b6", "#3f5f3a", "#9aa3ab"]
+  paletteNote: Редакторская подборка — оттенки кожи, дерева, жёлтой бумаги, сукна и металла, которые имитировали интерфейсы.
   example:
     title: Интерфейс iOS 6 (календарь, заметки, книжная полка)
-    note: Скриншоты интерфейсов Apple защищены — показана палитра кожи, дерева и бумаги.
+    note: Скриншоты интерфейсов Apple защищены — показана редакторская подборка цветов кожи, дерева и бумаги.
   wiki: Skeuomorph
   links:
     - { title: "Skeuomorphism", url: "https://aesthetics.fandom.com/wiki/Skeuomorphism", src: "Aesthetics Wiki", lang: en }
@@ -154,6 +185,7 @@
   domain: [art, internet]
   region: Европа, Россия, США
   tier: 3
+  kind: movement
   parents:
     - { id: conceptual-art, type: evolved }
     - { id: web-1-0, type: influence }
@@ -190,6 +222,7 @@
   domain: [art, internet]
   region: Весь мир
   tier: 2
+  kind: technique
   parents:
     - { id: computer-art, type: evolved }
     - { id: dada, type: influence }
@@ -225,6 +258,7 @@
   domain: [design, internet]
   region: Весь мир
   tier: 1
+  kind: design-system
   parents:
     - { id: swiss-style, type: revival }
     - { id: skeuomorphism, type: reaction }
@@ -259,6 +293,7 @@
   domain: [design, internet]
   region: Весь мир
   tier: 3
+  kind: design-system
   parents:
     - { id: flat-design, type: evolved }
   summary: >
@@ -294,6 +329,7 @@
   domain: [art, internet]
   region: Нью-Йорк, Берлин
   tier: 3
+  kind: movement
   parents:
     - { id: net-art, type: evolved }
   summary: >
@@ -328,6 +364,7 @@
   domain: [internet]
   region: Tumblr, интернет
   tier: 3
+  kind: internet-aesthetic
   parents:
     - { id: web-1-0, type: revival }
     - { id: y2k-aesthetic, type: influence }
@@ -337,7 +374,7 @@
     Сипанк начался в 2011 году как шутка в Твиттере и быстро стал микрожанром музыки и эстетикой Tumblr:
     бирюзовые и неоновые цвета, дельфины, ракушки, голограммы, низкополигональная вода и шрифты
     из Windows 95. После того как образы позаимствовали Рианна и Azealia Banks, сипанк угас — но успел
-    подготовить почву для вейпорвейва.
+    пересечься в Tumblr с ранним вейпорвейвом.
   traits:
     - Бирюзово-неоновая палитра
     - Дельфины, волны, ракушки
@@ -355,7 +392,13 @@
 - id: web-brutalism
   name: Веб-брутализм
   orig: Brutalist web design
-  aliases: [брутализм в вебе, необрутализм, neubrutalism, антидизайн]
+  aliases: [веб-брутализм, брутализм в вебе, web brutalism]
+  searchKeywords: [необрутализм, neubrutalism, антидизайн, brutalistwebsites]
+  scopeNote: >
+    Семейство из двух вариантов. Ранний веб-брутализм (с 2014 года) — нарочито «сырые» сайты на системных
+    шрифтах. Более поздний необрутализм — оформленный стиль интерфейсов: яркие плоские блоки, толстые
+    чёрные обводки, жёсткие тени. Общее у них — демонстративный отказ от гладкости; различие — степень
+    отделки.
   start: 2014
   end: null
   dates: 2014 – наши дни
@@ -363,6 +406,7 @@
   domain: [design, internet]
   region: Интернет
   tier: 3
+  kind: design-system
   parents:
     - { id: web-1-0, type: revival }
     - { id: flat-design, type: reaction }
@@ -380,9 +424,10 @@
     - Нарочитая «несделанность»
   names: [brutalistwebsites.com, Паскаль Девиль, Gumroad]
   palette: ["#ffffff", "#000000", "#0000ee", "#ff4911", "#ffde59"]
+  paletteNote: Редакторская подборка — белый фон, чёрные рамки, стандартный синий цвет ссылок и кислотные плашки.
   example:
     title: Сайт в стиле веб-брутализма
-    note: Показана палитра — белый фон, чёрные рамки, синие ссылки и кислотные плашки.
+    note: Свободного скриншота нет — показана редакторская подборка цветов.
   links:
     - { title: "Brutalist Websites", url: "https://brutalistwebsites.com/", src: "brutalistwebsites.com", lang: en }
     - { title: "Neubrutalism", url: "https://aesthetics.fandom.com/wiki/Neubrutalism", src: "Aesthetics Wiki", lang: en }
@@ -398,6 +443,7 @@
   domain: [art, design]
   region: Япония
   tier: 3
+  kind: movement
   parents:
     - { id: pop-art, type: evolved }
     - { id: ukiyo-e, type: revival }

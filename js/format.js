@@ -22,6 +22,55 @@ export const RELATION = {
   revival: { label: 'возрождение', from: 'возрождает', to: 'возрождён в' },
 };
 
+export const REL_STATUS = { verified: 'подтверждено', unverified: 'не проверено' };
+
+// Тип карточки: что именно описывает карточка.
+export const KIND = {
+  overview: 'Обзор',
+  tradition: 'Традиция',
+  period: 'Период',
+  movement: 'Движение',
+  school: 'Школа или группа',
+  technique: 'Техника, метод',
+  'design-system': 'Дизайн-подход',
+  'internet-aesthetic': 'Интернет-эстетика',
+  trend: 'Тренд',
+};
+export const KIND_DESC = {
+  overview: 'обзор цивилизации, региона или эпохи, объединяющий несколько самостоятельных традиций',
+  tradition: 'долгая региональная или культурная традиция без единой программы',
+  period: 'стиль периода, выделенный историками задним числом',
+  movement: 'направление с участниками, манифестами или самоназванием',
+  school: 'школа, группа или институция',
+  technique: 'техника или метод создания изображений, а не стиль',
+  'design-system': 'дизайн-подход или система интерфейса',
+  'internet-aesthetic': 'эстетика, сложившаяся и названная в интернет-сообществах',
+  trend: 'короткая волна моды, рекламы и соцсетей',
+};
+// Семейства для фильтра каталога: история искусства и дизайна, техники, интернет-тренды.
+export const KIND_FAMILY = {
+  history: { label: 'Традиции и периоды', kinds: ['overview', 'tradition', 'period'] },
+  movements: { label: 'Движения и школы', kinds: ['movement', 'school'] },
+  methods: { label: 'Техники и дизайн-подходы', kinds: ['technique', 'design-system'] },
+  online: { label: 'Интернет-эстетики и тренды', kinds: ['internet-aesthetic', 'trend'] },
+};
+export const DATE_KIND = {
+  archaeological: 'по археологическим датировкам',
+  period: 'периодизация историков',
+  institution: 'годы существования группы или институции',
+  practice: 'документированная практика',
+  popularity: 'период популярности',
+};
+// Роль изображения: всё, кроме обычного произведения своего времени, помечается явно.
+export const ROLE = {
+  precursor: 'Предтеча',
+  revival: 'Позднее возрождение',
+  reconstruction: 'Реконструкция',
+  illustration: 'Современная иллюстрация',
+  portrait: 'Портрет автора',
+};
+export const roleLabel = (role) => ROLE[role] ?? null;
+
 export const DOMAIN = {
   art: 'Искусство',
   architecture: 'Архитектура',

@@ -9,6 +9,7 @@
   domain: [art, architecture]
   region: Франция, Европа, Россия
   tier: 1
+  kind: movement
   parents:
     - { id: classical-greece, type: revival }
     - { id: rococo, type: reaction }
@@ -46,6 +47,7 @@
   domain: [architecture, design]
   region: Франция, Россия, Европа
   tier: 2
+  kind: period
   parents:
     - { id: neoclassicism, type: evolved }
   summary: >
@@ -80,6 +82,7 @@
   domain: [art]
   region: Германия, Англия, Франция
   tier: 1
+  kind: movement
   parents:
     - { id: neoclassicism, type: reaction }
   summary: >
@@ -115,6 +118,7 @@
   domain: [design, art]
   region: Германия, Австрия
   tier: 3
+  kind: period
   parents:
     - { id: empire-style, type: evolved }
   summary: >
@@ -149,6 +153,7 @@
   domain: [art]
   region: Франция, Европа, Россия
   tier: 2
+  kind: school
   parents:
     - { id: neoclassicism, type: evolved }
   summary: >
@@ -183,6 +188,7 @@
   domain: [art]
   region: Франция
   tier: 3
+  kind: school
   parents:
     - { id: romanticism, type: evolved }
     - { id: dutch-golden-age, type: influence }
@@ -219,6 +225,7 @@
   domain: [art]
   region: Великобритания
   tier: 2
+  kind: school
   parents:
     - { id: academism, type: reaction }
     - { id: early-renaissance, type: revival }
@@ -255,6 +262,7 @@
   domain: [art]
   region: Россия
   tier: 2
+  kind: school
   parents:
     - { id: realism, type: evolved }
     - { id: academism, type: reaction }
@@ -291,6 +299,7 @@
   domain: [architecture, design]
   region: Европа, Америка, Россия
   tier: 3
+  kind: period
   parents:
     - { id: gothic-revival, type: evolved }
     - { id: neoclassicism, type: evolved }
@@ -327,6 +336,7 @@
   domain: [art, design]
   region: Великобритания
   tier: 3
+  kind: movement
   parents:
     - { id: pre-raphaelites, type: evolved }
     - { id: japonisme, type: influence }
@@ -364,6 +374,7 @@
   domain: [art, design]
   region: Франция, Европа
   tier: 3
+  kind: tradition
   parents:
     - { id: ukiyo-e, type: influence }
   summary: >
@@ -400,6 +411,7 @@
   domain: [architecture, design]
   region: Великобритания, затем весь мир
   tier: 2
+  kind: movement
   parents:
     - { id: gothic, type: revival }
     - { id: romanticism, type: influence }
@@ -437,6 +449,7 @@
   domain: [art]
   region: Франция
   tier: 1
+  kind: movement
   parents:
     - { id: barbizon-school, type: evolved }
     - { id: romanticism, type: reaction }
@@ -474,6 +487,7 @@
   domain: [design]
   region: Великобритания, США
   tier: 2
+  kind: movement
   parents:
     - { id: gothic-revival, type: evolved }
     - { id: pre-raphaelites, type: influence }
@@ -482,13 +496,16 @@
   description: |
     Уильям Моррис и его последователи считали, что промышленность убила красоту и радость труда.
     Они возрождали средневековые цеха, печатали обои и ткани вручную, переплетали книги. Идея,
-    что дизайн повседневных вещей — это искусство, напрямую привела к модерну и Баухаусу.
+    что дизайн повседневных вещей — это искусство, повлияла на модерн, а в Европе честность ремесла стала
+    одним из катализаторов модернизма.
   traits:
     - Растительные узоры, птицы, переплетения
     - Видимая ручная работа и честные материалы
     - Средневековые и народные мотивы
     - Единство архитектуры, мебели и текстиля
   names: [Уильям Моррис, Джон Рёскин, Чарльз Эшби, Густав Стикли]
+  evidence:
+    - { claim: "В Европе честность выражения в работах «Искусств и ремёсел» стала катализатором радикальных форм модернизма", field: description, source: vam-arts-and-crafts }
   example:
     file: Morris Strawberry Thief 1883.jpg
     title: Похититель клубники (ткань)
@@ -510,6 +527,7 @@
   domain: [art]
   region: Франция
   tier: 1
+  kind: movement
   parents:
     - { id: realism, type: evolved }
     - { id: japonisme, type: influence }

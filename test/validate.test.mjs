@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { validate } from '../scripts/lib/validate.mjs';
+import { validate, relationDateIssue } from '../scripts/lib/validate.mjs';
 
 const eras = [{ id: 'a', name: 'A', start: -50000, end: 0 }, { id: 'b', name: 'B', start: 0, end: 2030 }];
 const base = (over = {}) => ({
@@ -48,9 +48,73 @@ test('bad relation type, unknown era, bad dates', () => {
   assert.ok(r.errors.some((e) => e.includes('start > end')));
 });
 
-test('parent starting after child is a warning, not an error', () => {
+test('relation dates: warnings depend on relation type and approximate dates', () => {
   const late = base({ id: 'late', start: 500, end: 600 });
-  const r = validate([root, late, base({ parents: [{ id: 'late', type: 'influence' }] })], eras);
+  // Развитие из более позднего стиля — предупреждение, не ошибка.
+  const r1 = validate([root, late, base({ parents: [{ id: 'late', type: 'evolved' }] })], eras);
+  assert.deepEqual(r1.errors, []);
+  assert.ok(r1.warnings.some((w) => w.includes('развитие из "late"')));
+  // Влияние современника допустимо; влияние стиля, начавшегося после конца потомка, — нет.
+  const peer = base({ id: 'peer', start: 150, end: 300 });
+  const r2 = validate([root, peer, base({ parents: [{ id: 'root', type: 'evolved' }, { id: 'peer', type: 'influence' }] })], eras);
+  assert.ok(!r2.warnings.some((w) => w.includes('peer')));
+  const r3 = validate([root, late, base({ parents: [{ id: 'root', type: 'evolved' }, { id: 'late', type: 'influence' }] })], eras);
+  assert.ok(r3.warnings.some((w) => w.includes('влияние "late"')));
+  // Приблизительные даты дают запас: расхождение в 10 лет не шумит.
+  const near = base({ id: 'near', start: 110, end: 300, approx: true });
+  const r4 = validate([root, near, base({ start: 100, approx: true, parents: [{ id: 'near', type: 'evolved' }] })], eras);
+  assert.deepEqual(r4.warnings.filter((w) => w.includes('near')), []);
+});
+
+test('relationDateIssue: revival of a later style is flagged', () => {
+  assert.match(relationDateIssue({ id: 'p', start: 1900 }, { id: 'c', start: 1800 }, 'revival'), /возрождение/);
+  assert.equal(relationDateIssue({ id: 'p', start: 1700 }, { id: 'c', start: 1800 }, 'revival'), null);
+});
+
+const sources = [{ id: 'src-a', title: 'A', url: 'https://a.example', sourceType: 'museum', checked: '2026-10-13' }];
+
+test('unknown source id is detected everywhere it can be referenced', () => {
+  const r = validate([root, base({
+    evidence: [{ claim: 'c', source: 'nope-1' }],
+    termAttested: { year: 1900, source: 'nope-2' },
+    parents: [{ id: 'root', type: 'evolved', status: 'verified', sources: ['nope-3'] }],
+  })], eras, sources);
+  for (const id of ['nope-1', 'nope-2', 'nope-3']) assert.ok(r.errors.some((e) => e.includes(`unknown source "${id}"`)), id);
+});
+
+test('verified relation needs a source; known source passes', () => {
+  const r1 = validate([root, base({ parents: [{ id: 'root', type: 'evolved', status: 'verified' }] })], eras, sources);
+  assert.ok(r1.errors.some((e) => e.includes('needs sources')));
+  const r2 = validate([root, base({ parents: [{ id: 'root', type: 'evolved', status: 'verified', sources: ['src-a'] }] })], eras, sources);
+  assert.deepEqual(r2.errors, []);
+});
+
+test('unknown origin is allowed without an invented parent', () => {
+  const r = validate([root, base({ parents: [], origin: 'unknown' })], eras);
   assert.deepEqual(r.errors, []);
-  assert.ok(r.warnings.some((w) => w.includes('starts after child')));
+  const r2 = validate([root, base({ parents: [], origin: 'unknown', root: true })], eras);
+  assert.ok(r2.errors.some((e) => e.includes('mutually exclusive')));
+});
+
+test('comparisons are a separate layer: not cycles, but checked for shape', () => {
+  const a = base({ id: 'a1', compare: [{ id: 'b1', note: 'похожи' }] });
+  const b = base({ id: 'b1', compare: [] });
+  assert.deepEqual(validate([root, a, b], eras).errors, []);
+  // Пара объявлена с обеих сторон — ошибка; сопоставление без пояснения — ошибка.
+  const b2 = base({ id: 'b1', compare: [{ id: 'a1', note: 'x' }] });
+  assert.ok(validate([root, a, b2], eras).errors.some((e) => e.includes('both sides')));
+  const a3 = base({ id: 'a1', compare: [{ id: 'b1' }] });
+  assert.ok(validate([root, a3, b], eras).errors.some((e) => e.includes('needs a note')));
+});
+
+test('bad kind, image role and dateKind are rejected', () => {
+  const r = validate([root, base({ kind: 'genre', dateKind: 'vibes', example: { file: 'X.jpg', title: 't', role: 'fake' } })], eras);
+  assert.ok(r.errors.some((e) => e.includes('bad kind')));
+  assert.ok(r.errors.some((e) => e.includes('bad dateKind')));
+  assert.ok(r.errors.some((e) => e.includes('bad image role')));
+});
+
+test('formerIds may not shadow an active id', () => {
+  const r = validate([root, base({ formerIds: ['root'] })], eras);
+  assert.ok(r.errors.some((e) => e.includes('still an active id')));
 });

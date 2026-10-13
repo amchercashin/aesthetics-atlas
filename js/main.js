@@ -1,10 +1,10 @@
 // Точка входа: данные, тема, поиск, роутинг между видами.
-import { loadAtlas } from './store.js';
+import { loadAtlas } from './store.js?v=audit';
 import { parseHash } from './router.js';
 import { initTheme } from './theme.js';
-import { initSearch } from './ui/search-dialog.js';
+import { initSearch } from './ui/search-dialog.js?v=audit';
 import { initLightbox } from './ui/lightbox.js';
-import { initImageEvents, markLoaded } from './ui/image.js';
+import { initImageEvents, markLoaded } from './ui/image.js?v=audit';
 import { html, mount } from './html.js';
 
 const app = document.getElementById('app');
@@ -21,13 +21,18 @@ function setNav(view) {
 
 async function route(base, { first = false } = {}) {
   const r = parseHash();
+  // Старый адрес карточки (после разделения или переименования) — на действующий, без лишней записи в истории.
+  if (r.view === 'style') {
+    const id = base.store.resolve(r.id);
+    if (id && id !== r.id) { history.replaceState(null, '', `#/s/${id}`); r.id = id; }
+  }
   const seq = ++routeSeq;
   setNav(r.view);
   if (current && current.view === r.view && current.instance?.update && r.view !== 'style') {
     current.instance.update({ ...base, ...r });
     return;
   }
-  const mod = await import(`./views/${r.view}.js`);
+  const mod = await import(`./views/${r.view}.js?v=tree`);
   if (seq !== routeSeq) return;
   const swap = () => {
     current?.instance?.destroy?.();

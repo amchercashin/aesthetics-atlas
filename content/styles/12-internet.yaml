@@ -9,9 +9,10 @@
   domain: [internet, design]
   region: Интернет
   tier: 1
+  kind: internet-aesthetic
   parents:
     - { id: early-cgi, type: revival }
-    - { id: seapunk, type: evolved }
+    - { id: seapunk, type: influence, note: "Сцены пересекались в Tumblr 2011–2012 годов; что вейпорвейв вырос именно из сипанка, не установлено." }
     - { id: glitch-art, type: influence }
     - { id: classical-greece, type: revival }
   summary: >
@@ -23,8 +24,8 @@
     (2011) с бюстом Гелиоса на фоне шахматного пола стал его иконой.
 
     Это одновременно пародия на поздний капитализм и тоска по будущему, которое обещали
-    торговые центры и ранние компьютеры. Вейпорвейв породил целое семейство эстетик —
-    от синтвейва до liminal space.
+    торговые центры и ранние компьютеры. С ним часто путают синтвейв, но это отдельная сцена
+    со своей историей: синтвейв ностальгирует по 80-м всерьёз, вейпорвейв — с иронией.
   traits:
     - Розово-бирюзовые и фиолетовые градиенты
     - Античные бюсты, пальмы, дельфины, шахматный пол
@@ -54,6 +55,7 @@
   domain: [internet, design]
   region: Франция, интернет
   tier: 2
+  kind: internet-aesthetic
   parents:
     - { id: early-cgi, type: revival }
     - { id: cyberpunk, type: influence }
@@ -89,6 +91,7 @@
   domain: [design]
   region: Кремниевая долина, весь мир
   tier: 2
+  kind: trend
   parents:
     - { id: flat-design, type: evolved }
     - { id: memphis-design, type: revival }
@@ -125,6 +128,7 @@
   domain: [internet, design]
   region: Tumblr, TikTok
   tier: 2
+  kind: internet-aesthetic
   parents:
     - { id: arts-and-crafts, type: revival }
     - { id: romanticism, type: influence }
@@ -160,6 +164,7 @@
   domain: [internet, design]
   region: Tumblr, TikTok
   tier: 3
+  kind: internet-aesthetic
   parents:
     - { id: gothic-revival, type: revival }
     - { id: romanticism, type: influence }
@@ -187,7 +192,8 @@
 - id: kidcore
   name: Кидкор
   orig: Kidcore
-  aliases: [kidcore, кидкор, детство 90-х]
+  aliases: [kidcore, кидкор]
+  searchKeywords: [детство 90-х, кандикор, Lisa Frank]
   start: 2017
   end: null
   dates: 2017 – наши дни
@@ -195,6 +201,7 @@
   domain: [internet]
   region: Интернет
   tier: 3
+  kind: internet-aesthetic
   parents:
     - { id: y2k-aesthetic, type: revival }
     - { id: pop-art, type: influence }
@@ -209,52 +216,67 @@
     - Радуги, смайлики, звёзды, наклейки
     - Игрушки, мелки, пластик, бусины
     - Детская «наивная» графика
-  names: [детские телепередачи 90-х, Lisa Frank, кандикор]
+  names: [Lisa Frank]
   palette: ["#ff3b30", "#ffcc00", "#007aff", "#34c759", "#ff2d92"]
+  paletteNote: Редакторская подборка по признакам из описания — основные цвета детских игрушек; не измерена по корпусу изображений.
   example:
     title: Детская комната 90-х
-    note: Показана палитра эстетики — основные цвета детских игрушек.
+    note: Свободного изображения нет — показана редакторская подборка цветов.
   links:
     - { title: "Kidcore", url: "https://aesthetics.fandom.com/wiki/Kidcore", src: "Aesthetics Wiki", lang: en }
-    - { title: "Gen X Soft Club", url: "https://cari.institute/aesthetics/gen-x-soft-club", src: "CARI Institute", lang: en }
+    - { title: "Gen X Soft Club — соседняя эстетика, для сравнения", url: "https://cari.institute/aesthetics/gen-x-soft-club", src: "CARI Institute", lang: en }
 
 - id: liminal-space
   name: Лиминальные пространства
   orig: Liminal space
-  aliases: [liminal space, лиминальность, Закулисье, Backrooms, пустые коридоры]
+  aliases: [liminal space, лиминальность, лиминальное пространство]
+  searchKeywords: [Закулисье, Backrooms, пустые коридоры, Kane Pixels]
   start: 2019
   end: null
   dates: 2019 – наши дни
+  dateKind: popularity
+  dateNote: 2019 — тред на 4chan, из которого выросло «Закулисье»; фотографии пустых пространств, конечно, существовали и раньше.
   era: internet
   domain: [internet]
+  medium: [photography, digital-art]
   region: Интернет
   tier: 1
-  parents:
-    - { id: vaporwave, type: evolved }
-    - { id: metaphysical-painting, type: influence }
+  kind: internet-aesthetic
+  origin: unknown
+  parents: []
+  compare:
+    - { id: metaphysical-painting, note: "Пустые площади, косой свет и тревожная тишина. Это визуальная аналогия; историческое влияние де Кирико на интернет-эстетику не подтверждено." }
+    - { id: vaporwave, note: "Пустые торговые центры и коммерческие интерьеры 80–90-х как предмет ностальгии. Пересечение мотивов, а не установленное происхождение." }
   summary: >
     Пустые коридоры, торговые центры ночью и бассейны без людей: места «между», которые кажутся знакомыми и чужими.
   description: |
-    В 2019 году на 4chan появились «Закулисье» (Backrooms) — фото пустого офиса с жёлтыми обоями и гудящими
-    лампами, а Twitter-аккаунты стали собирать «лиминальные пространства»: коридоры отелей, пустые
-    школы, парковки. Эффект — тревожная ностальгия и ощущение сна. Это прямой наследник пустых площадей
-    де Кирико и пустых торговых центров вейпорвейва.
+    В мае 2019 года на доске /x/ форума 4chan попросили выложить картинки, от которых «не по себе». Одним
+    из ответов стало фото пустого офиса с жёлтыми стенами и лампами дневного света; позже анонимный
+    комментарий назвал это место «Закулисьем» (Backrooms). Вокруг таких снимков сложилась эстетика
+    «лиминальных пространств» — коридоров отелей, пустых школ, парковок, бассейнов. Эффект — тревожная
+    ностальгия и ощущение сна.
+
+    Пустые площади де Кирико и пустые торговые центры вейпорвейва позволяют сопоставить эти изображения.
+    Это визуальные аналогии; историческое влияние требует отдельного подтверждения.
   traits:
     - Пустые транзитные пространства — коридоры, холлы, бассейны
     - Флуоресцентный свет, ковролин, жёлтые стены
     - Отсутствие людей и ощущение «застывшего времени»
     - Любительская фотография среднего качества
   names: [Закулисье (Backrooms), Kane Pixels]
+  evidence:
+    - { claim: "Май 2019: тред на /x/ 4chan, фото пустого офиса с жёлтыми стенами, позже названное «the Backrooms»", field: dates, source: vice-backrooms-2022 }
+  review: { status: partial, date: 2026-10-13, note: "Сверены дата и история «Закулисья»; генеалогические связи заменены сопоставлениями. Происхождение самой эстетики не установлено." }
   example:
     file: Disney’s Contemporary Liminal Hallway.jpg
     title: Коридор отеля
     year: 2020-е
+    whyRepresentative: Пустой транзитный коридор, искусственный свет, ни одного человека.
   gallery:
     - { file: "Corridor Stanley Hotel Estes Park Colorado 2024.jpg", title: "Коридор отеля «Стэнли»", year: "2024" }
   wiki: { en: Liminal space (aesthetic), ru: Лиминальное пространство }
   links:
     - { title: "Liminal Space", url: "https://aesthetics.fandom.com/wiki/Liminal_Space", src: "Aesthetics Wiki", lang: en }
-
 - id: weirdcore
   name: Уирдкор
   orig: Weirdcore
@@ -266,6 +288,7 @@
   domain: [internet]
   region: Интернет
   tier: 1
+  kind: internet-aesthetic
   parents:
     - { id: liminal-space, type: evolved }
     - { id: web-1-0, type: revival }
@@ -304,6 +327,7 @@
   domain: [internet]
   region: Интернет
   tier: 2
+  kind: internet-aesthetic
   parents:
     - { id: weirdcore, type: evolved }
     - { id: surrealism, type: influence }
@@ -330,79 +354,121 @@
 - id: glassmorphism
   name: Глассморфизм
   orig: Glassmorphism
-  aliases: [glassmorphism, неоморфизм, neumorphism, Liquid Glass, матовое стекло]
+  aliases: [glassmorphism, матовое стекло, frosted glass]
+  searchKeywords: [неоморфизм, neumorphism, Liquid Glass, Acrylic, Fluent Design]
   start: 2020
   end: null
-  dates: 2020 – наши дни
+  dates: ок. 2020 – наши дни
+  dateKind: popularity
+  approx: true
+  dateNote: Около 2020 года — всплеск на дизайнерских платформах. Системные полупрозрачные материалы (Microsoft Acrylic, Apple Liquid Glass) — отдельная линия со своими датами.
   era: internet
   domain: [design, internet]
+  medium: [ui]
   region: Весь мир
   tier: 3
+  kind: [design-system, trend]
+  kindNote: "Приём интерфейсного дизайна и тренд дизайнерских платформ; системные материалы Apple и Microsoft — родственные, но самостоятельные решения."
+  scopeNote: >
+    Полупрозрачные «стеклянные» панели с размытием фона. Не путать с неоморфизмом: там элемент выдавлен
+    из того же материала, что и фон, светлой и тёмной тенями, без прозрачности. Apple Liquid Glass
+    и Microsoft Acrylic — системные материалы из этого семейства, а не синонимы термина.
   parents:
-    - { id: material-design, type: evolved }
-    - { id: frutiger-aero, type: revival }
-    - { id: skeuomorphism, type: revival }
+    - { id: material-design, type: influence, note: "Слои с глубиной и тенями Material Design — контекст, в котором появились «стеклянные» панели; прямая связь не установлена." }
+  compare:
+    - { id: frutiger-aero, note: "Глянец, стекло и прозрачность интерфейсов 2000-х. Сходство материала, а не доказанное возрождение." }
+    - { id: skeuomorphism, note: "Интерес к физическому материалу в интерфейсе — но без имитации кожи и дерева." }
   summary: >
     Полупрозрачные панели матового стекла над размытыми цветными пятнами: объём возвращается в плоский интерфейс.
   description: |
-    В 2020 году дизайнеры на Dribbble увлеклись неоморфизмом — мягкими выпуклыми кнопками — и глассморфизмом:
-    панелями, похожими на матовое стекло, через которые просвечивают яркие градиенты. Эффект размытия фона
-    вошёл в macOS Big Sur и Windows 11, а в 2025 году Apple сделала «жидкое стекло» (Liquid Glass) основой
-    всех своих систем. Это тихое возвращение Frutiger Aero и скевоморфизма.
+    Около 2020 года на Dribbble и в дизайнерских блогах обсуждали сразу два приёма. Неоморфизм — мягкие
+    кнопки, будто выдавленные из фона. Глассморфизм — панели, похожие на матовое стекло, сквозь которые
+    просвечивают яркие градиенты.
+
+    Полупрозрачные материалы с размытием есть и в операционных системах: Microsoft описывает Acrylic
+    из Fluent Design как полупрозрачную текстуру с размытием и шумом, а в июне 2025 года Apple представила
+    Liquid Glass — материал, который отражает и преломляет окружение, сразу для всех своих платформ.
+    С Frutiger Aero глассморфизм часто сравнивают: это сходство материала, а не доказанная преемственность.
   traits:
     - Матовое стекло, размытие фона
     - Яркие цветные пятна и градиенты позади
     - Тонкие светлые обводки и мягкие тени
     - Объём без текстур
-  names: [macOS Big Sur, Windows 11 (Fluent), Apple Liquid Glass]
+  names: [Microsoft Fluent (Acrylic), Apple Liquid Glass]
+  evidence:
+    - { claim: "Неоморфизм — выпуклая форма из того же материала, что и фон (а не панель над ним)", field: scope, source: hype4-neumorphism }
+    - { claim: "Acrylic — полупрозрачная текстура Fluent Design: прозрачность, размытие, шум, тонирование", field: description, source: ms-acrylic }
+    - { claim: "Liquid Glass (июнь 2025) — полупрозрачный материал, отражает и преломляет окружение; iOS, iPadOS, macOS, watchOS, tvOS 26", field: description, source: apple-liquid-glass-2025 }
+  review: { status: partial, date: 2026-10-13, note: "Разделены термины и поисковые слова, сверены системные материалы. Дата «около 2020» и связь с Material Design не подтверждены источниками." }
   example:
     file: Glassmorphism ejemplo.jpg
     title: Пример глассморфизма
     author: CarlosEduardoPA
+    role: illustration
+    whyRepresentative: Учебная демонстрация приёма — полупрозрачная панель с размытием над цветными пятнами. Не интерфейс реального продукта.
   wiki: Glassmorphism
   links:
     - { title: "Glassmorphism", url: "https://aesthetics.fandom.com/wiki/Glassmorphism", src: "Aesthetics Wiki", lang: en }
-
+    - { title: "Neumorphism in user interfaces — для сравнения", url: "https://hype4.academy/articles/design/neumorphism-in-user-interfaces", src: "Hype4 Academy", lang: en }
 - id: solarpunk
   name: Соларпанк
   orig: Solarpunk
-  aliases: [solarpunk, соларпанк, зелёное будущее, экоутопия]
+  aliases: [solarpunk, соларпанк]
+  searchKeywords: [зелёное будущее, экоутопия, Миядзаки, Винсент Каллебо, Стефано Боэри]
   start: 2014
   end: null
-  dates: 2014 – наши дни
+  dates: 2014 – наши дни (слово — с 2008)
+  dateKind: practice
+  dateNote: С 2014 года — визуальная эстетика в Tumblr; слово появилось раньше как название литературного жанра.
+  termAttested: { year: 2008, source: rotb-solarpunk-2008, note: "Употребление к маю 2008 года подтверждено; что это первое употребление — нет." }
   era: internet
   domain: [internet, art, architecture]
+  medium: [illustration, architecture, digital-art]
   region: Интернет
   tier: 2
+  kind: [internet-aesthetic, movement]
+  kindNote: "Одновременно жанр фантастики, визуальная эстетика и социальное движение."
   parents:
-    - { id: art-nouveau, type: revival }
+    - { id: art-nouveau, type: revival, status: verified, sources: [flynn-solarpunk-2014], note: "Флинн (2014) пишет, что визуальный образ задал пост в Tumblr с соларпанком «в эстетике ар-нуво и эдвардианского сада»." }
     - { id: afrofuturism, type: influence }
-    - { id: cyberpunk, type: reaction }
+    - { id: cyberpunk, type: reaction, status: verified, sources: [flynn-solarpunk-2014], note: "Флинн прямо противопоставляет соларпанк «нигилистическому» киберпанку." }
   summary: >
     Оптимистичная противоположность киберпанку: солнечные панели, сады на небоскрёбах и модерн из зелени.
   description: |
-    Соларпанк возник в Tumblr около 2014 года как ответ на мрачные антиутопии: что, если будущее будет
-    светлым, зелёным и справедливым? Его образы — города, заросшие садами, солнечные батареи и ветряки,
-    витражи и формы ар-нуво, ремонт вместо потребления. В 2020-х эстетика стала знаменем климатического
-    оптимизма в архитектуре и иллюстрации.
+    Слово «solarpunk» встречается уже в мае 2008 года — в блоге Republic of the Bees как название
+    возможного литературного жанра о будущем на возобновляемой энергии. Визуальная эстетика сложилась
+    позже: в сентябре 2014 года Адам Флинн писал, что Tumblr «загорелся» от поста художницы Olivia
+    с соларпанком в духе ар-нуво и эдвардианского сада, и называл визуальный язык открытым и развивающимся.
+
+    Его образы — города, заросшие садами, солнечные батареи и ветряки, витражи и плавные формы ар-нуво,
+    ремонт вместо потребления. Соларпанк сознательно отвечает мрачным антиутопиям: что, если будущее
+    будет светлым, зелёным и справедливым?
   traits:
     - Зелень на зданиях, вертикальные сады
     - Солнечные панели, ветряки, витражи
     - Плавные формы в духе ар-нуво
     - Тёплый свет, белый, зелёный и золотой
-  names: [Hayao Miyazaki (вдохновение), Vincent Callebaut, Stefano Boeri]
+  names: [Olivia (Land of Masks and Jewels), Адам Флинн]
+  evidence:
+    - { claim: "Слово «solarpunk» употреблено в мае 2008 года как название литературного жанра", field: termAttested, source: rotb-solarpunk-2008 }
+    - { claim: "Сентябрь 2014: пост в Tumblr с соларпанком в эстетике ар-нуво; визуальный язык «открытый и развивающийся»", field: dates, source: flynn-solarpunk-2014 }
+  review: { status: partial, date: 2026-10-13, note: "Разделены история слова (2008) и визуальной сцены (2014); связи с ар-нуво и киберпанком подтверждены текстом 2014 года. Влияние афрофутуризма не проверено." }
   example:
     file: Berlin Friedrichstraße Utopia 2048 small file.jpg
     title: Фридрихштрассе в 2048 году (визуализация)
     author: Aerroscape & Lino Zeddies
+    role: illustration
+    whyRepresentative: Современная архитектурная визуализация с садами на фасадах и солнечными панелями — типичный образ соларпанка, а не историческое произведение.
   wiki: Solarpunk
   links:
     - { title: "Solarpunk", url: "https://aesthetics.fandom.com/wiki/Solarpunk", src: "Aesthetics Wiki", lang: en }
-
+    - { title: "Solarpunk: Notes toward a manifesto (2014)", url: "https://web.archive.org/web/20150628114055/http://hieroglyph.asu.edu/2014/09/solarpunk-notes-toward-a-manifesto/", src: "Project Hieroglyph, архив", lang: en }
 - id: coquette
   name: Кокетт
   orig: Coquette
-  aliases: [coquette, кокетт, банты, балеткор]
+  aliases: [coquette, кокетт]
+  searchKeywords: [банты, балеткор, balletcore, кружево]
+  scopeNote: Балеткор (пачки, балетки, гетры) с кокетт пересекается, но здесь не описывается — это отдельная эстетика.
   start: 2022
   end: null
   dates: 2022 – наши дни
@@ -410,15 +476,16 @@
   domain: [internet, design]
   region: TikTok
   tier: 3
+  kind: internet-aesthetic
   parents:
     - { id: rococo, type: revival }
     - { id: kidcore, type: influence }
   summary: >
     Банты, кружево, жемчуг и бледно-розовый: рококо, пересобранное для TikTok.
   description: |
-    Кокетт — одна из самых долгоживущих TikTok-эстетик 2022–2025 годов: атласные банты на всём, кружево,
-    рюши, жемчуг, бледно-розовый и кремовый. Источники очевидны — рококо с его пастелью и «Мария-Антуанетта»
-    Софии Копполы. Банты в 2024 году стали главным декоративным мотивом соцсетей.
+    Кокетт — TikTok-эстетика 2020-х: атласные банты на всём, кружево, рюши, жемчуг, бледно-розовый
+    и кремовый. Её часто связывают с рококо с его пастелью и с «Марией-Антуанеттой» Софии Копполы.
+    Банты стали самым узнаваемым её мотивом.
   traits:
     - Атласные банты и ленты
     - Кружево, рюши, жемчуг
@@ -426,9 +493,10 @@
     - Нарочитая хрупкость и романтика
   names: [София Коппола («Мария-Антуанетта»), Лана Дель Рей]
   palette: ["#f7d6e0", "#f2b5c9", "#fff4e6", "#e8c7a8", "#c97b93"]
+  paletteNote: Редакторская подборка по признакам из описания — бледно-розовый, кремовый, жемчужный.
   example:
     title: Банты и кружево
-    note: Показана палитра эстетики — бледно-розовый, кремовый и жемчужный.
+    note: Свободного изображения нет — показана редакторская подборка цветов.
   wiki: Coquette aesthetic
   links:
     - { title: "Coquette", url: "https://aesthetics.fandom.com/wiki/Coquette", src: "Aesthetics Wiki", lang: en }
@@ -440,10 +508,13 @@
   start: 2022
   end: 2024
   dates: 2022 – 2024
+  dateKind: popularity
+  dateNote: Даты — пик внимания в моде, рекламе и соцсетях вокруг фильма «Барби»; розовый в моде после этого никуда не исчез.
   era: internet
   domain: [internet, design]
   region: Весь мир
   tier: 3
+  kind: trend
   parents:
     - { id: y2k-aesthetic, type: revival }
     - { id: pop-art, type: influence }
@@ -452,7 +523,7 @@
   description: |
     Ещё до выхода фильма Греты Гервиг съёмки в розовых нарядах вызвали волну барбикора в моде и соцсетях.
     Ярко-розовый (Pantone 219C), пластиковый блеск, кукольные интерьеры и ирония над гламуром захватили
-    рекламу, бренды и интерьеры. Ради декораций фильма, по слухам, закончилась мировая поставка розовой краски.
+    рекламу, бренды и интерьеры.
   traits:
     - Ярко-розовый, фуксия
     - Пластик, глянец, блёстки
@@ -473,10 +544,13 @@
   start: 2024
   end: 2025
   dates: 2024 – 2025
+  dateKind: popularity
+  dateNote: Даты — волна мемов и брендовых подражаний после выхода альбома летом 2024 года, а не срок жизни приёма.
   era: internet
   domain: [internet, design]
   region: Весь мир
   tier: 3
+  kind: trend
   parents:
     - { id: web-brutalism, type: influence }
     - { id: punk-graphics, type: revival }
@@ -504,7 +578,12 @@
 - id: ai-aesthetic
   name: Нейросетевая эстетика
   orig: AI art aesthetic
-  aliases: [AI-арт, нейросети, DeepDream, GAN, Midjourney, генеративное искусство]
+  aliases: [AI-арт, ИИ-арт, AI art]
+  searchKeywords: [нейросети, DeepDream, GAN, Midjourney, Stable Diffusion, DALL·E, генеративное искусство]
+  scopeNote: >
+    Не стиль, а метод: изображения, созданные генеративными моделями. Карточка описывает узнаваемые
+    визуальные клише моделей 2015–2026 годов. Генеративное и компьютерное искусство в целом (с 1960-х)
+    шире — см. «Компьютерное искусство».
   start: 2015
   end: null
   dates: 2015 – наши дни
@@ -512,6 +591,8 @@
   domain: [internet, art]
   region: Весь мир
   tier: 1
+  kind: [technique, trend]
+  kindNote: "Это метод создания изображений, а не единый стиль; карточка описывает узнаваемые визуальные клише генеративных моделей."
   parents:
     - { id: computer-art, type: evolved }
     - { id: glitch-art, type: influence }
@@ -544,14 +625,21 @@
 - id: alien-core
   name: Элиенкор / Y3K
   orig: Alien core
-  aliases: [alien core, alien-core, Y3K, инопланетная эстетика, опалесцентный]
+  aliases: [alien core, alien-core, aliencore]
+  searchKeywords: [Y3K, инопланетная эстетика, опалесцентный, хром, Extra Celestial]
+  scopeNote: >
+    Редакционная группировка: alien core и соседний хромированный Y3K собраны здесь как близкие тренды
+    2024–2026 годов. Общего сообщества или манифеста у них нет, а рост поисковых запросов — данные одной
+    платформы, а не доказательство единого художественного движения.
   start: 2024
   end: null
   dates: 2024 – наши дни
+  dateKind: popularity
   era: internet
   domain: [internet, design]
   region: Интернет
   tier: 2
+  kind: trend
   parents:
     - { id: y2k-aesthetic, type: revival }
     - { id: ai-aesthetic, type: influence }
@@ -559,9 +647,10 @@
     Эстетика 2025–2026 годов: опалесцентные переливы, хром, жидкий металл, бледно-зелёная кожа
     и формы, будто выращенные не на Земле.
   description: |
-    По данным Pinterest Predicts 2026, поисковые запросы «alien core» выросли на 80%, «opalescent» —
-    на 115%. Эстетика продолжает хромированный Y3K и смешивает голографические поверхности,
-    биоморфные формы и макияж «как у пришельца» — ностальгию по будущему, но уже без иронии vaporwave.
+    Pinterest включил тему в прогноз трендов Pinterest Predicts 2026 (раздел «Extra Celestial»): по пересказу
+    nss magazine, запросы «alien core aesthetics» выросли на 80%, «opalescent» — на 115%. Визуально это
+    голографические поверхности, хром, биоморфные формы и макияж «как у пришельца» — ностальгия по будущему,
+    близкая хромированному Y3K.
   traits:
     - Опалесцентные, голографические переливы
     - Хром и эффект жидкого металла
@@ -569,9 +658,12 @@
     - Бледно-зелёные, лиловые и перламутровые тона
   names: []
   palette: ["#c9f5e9", "#b9a8ff", "#7fe8d0", "#efe9ff", "#3b3f5c"]
+  paletteNote: Редакторская подборка по признакам из описания — опалесцентные, хромовые, бледно-зелёные и лиловые тона.
+  evidence:
+    - { claim: "Pinterest Predicts 2026, раздел «Extra Celestial»: «alien core aesthetics» +80%, «opalescent» +115%", field: description, source: nss-pinterest-2026 }
   example:
     title: Отчёт Pinterest Predicts 2026
-    note: Свободных изображений пока нет — показана палитра эстетики.
+    note: Свободных изображений пока нет — показана редакторская подборка цветов.
   links:
     - { title: "Pinterest Predicts 2026 (обзор)", url: "https://axios.com/2025/12/09/2026-pinterest-trend-report", src: "Axios", lang: en }
     - { title: "The aesthetics that will define 2026 according to Pinterest", url: "https://nssmag.com/en/lifestyle/43770/pinterest-predicts-2026-aesthetic-trends", src: "nss magazine", lang: en }

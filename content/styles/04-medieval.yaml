@@ -9,6 +9,7 @@
   domain: [art, architecture]
   region: Восточная Римская империя
   tier: 1
+  kind: overview
   parents:
     - { id: ancient-rome, type: evolved }
     - { id: fayum-portraits, type: influence }
@@ -46,6 +47,7 @@
   domain: [art]
   region: Русь
   tier: 2
+  kind: tradition
   parents:
     - { id: byzantine-art, type: evolved }
   summary: >
@@ -61,12 +63,14 @@
     - Ритм силуэтов, вписанных в круг и вертикаль
     - Яичная темпера на доске, золото
   names: [Андрей Рублёв, Феофан Грек, Дионисий, Симон Ушаков]
+  evidence:
+    - { claim: "«Троица» — из собрания Третьяковской галереи (с 1929 года); в 2023 году решено передать РПЦ. Актуальное место экспонирования не подтверждено", field: example, source: currenttime-trinity-2023 }
   example:
     file: Angelsatmamre-trinity-rublev-1410.jpg
     title: Троица
     author: Андрей Рублёв
     year: 1411 или 1425–1427
-    place: Государственная Третьяковская галерея, Москва
+    place: из собрания Третьяковской галереи (там с 1929 года); в 2023 году передана РПЦ
   wiki: Russian icons
   links: []
 
@@ -81,6 +85,7 @@
   domain: [art, design]
   region: Ирландия, Британия
   tier: 3
+  kind: tradition
   parents:
     - { id: celtic-art, type: evolved }
     - { id: byzantine-art, type: influence }
@@ -116,8 +121,9 @@
   domain: [art, design]
   region: Скандинавия
   tier: 3
+  kind: tradition
   parents:
-    - { id: scythian-animal-style, type: influence }
+    - { id: scythian-animal-style, type: influence, note: "Длинная стрелка: путь от степного звериного стиля к скандинавскому идёт через германские звериные стили V–VIII веков, которых в атласе нет; происхождение германского стиля обсуждается." }
     - { id: insular-art, type: influence }
   summary: >
     Звери, змеи и драконы, сплетённые в тугие петли на носах кораблей, брошах и порталах деревянных церквей.
@@ -151,6 +157,7 @@
   domain: [architecture, art]
   region: Западная Европа
   tier: 2
+  kind: period
   parents:
     - { id: ancient-rome, type: evolved }
     - { id: byzantine-art, type: influence }
@@ -187,6 +194,7 @@
   domain: [architecture, art]
   region: Франция, затем вся Европа
   tier: 1
+  kind: period
   parents:
     - { id: romanesque, type: evolved }
   summary: >
@@ -223,6 +231,7 @@
   domain: [art]
   region: Франция, Бургундия, Богемия, Италия
   tier: 3
+  kind: period
   parents:
     - { id: gothic, type: evolved }
   summary: >
@@ -257,6 +266,7 @@
   domain: [art, architecture, design]
   region: От Испании до Индии
   tier: 1
+  kind: overview
   parents:
     - { id: byzantine-art, type: influence }
     - { id: achaemenid-art, type: influence }
@@ -293,6 +303,7 @@
   domain: [art]
   region: Иран, Средняя Азия
   tier: 3
+  kind: tradition
   parents:
     - { id: islamic-art, type: evolved }
     - { id: shan-shui, type: influence }
@@ -330,6 +341,7 @@
   domain: [art]
   region: Китай
   tier: 2
+  kind: tradition
   parents:
     - { id: ancient-chinese-art, type: evolved }
   summary: >
@@ -365,6 +377,7 @@
   domain: [art]
   region: Япония
   tier: 3
+  kind: tradition
   parents:
     - { id: shan-shui, type: influence }
   summary: >
@@ -398,6 +411,8 @@
   domain: [art, design]
   region: Япония
   tier: 2
+  kind: tradition
+  kindNote: "Эстетическое понятие японской культуры, а не стиль с границами; карточка показывает его визуальное выражение."
   parents:
     - { id: shan-shui, type: influence }
   summary: >
@@ -432,6 +447,7 @@
   domain: [architecture, art]
   region: Индия, Камбоджа, Юго-Восточная Азия
   tier: 3
+  kind: tradition
   parents:
     - { id: ancient-indian-art, type: evolved }
     - { id: gandhara, type: influence }

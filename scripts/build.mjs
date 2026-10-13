@@ -5,7 +5,8 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import yaml from 'js-yaml';
-import { validate } from './lib/validate.mjs';
+import { validate, ymd } from './lib/validate.mjs';
+import { buildRecord, childrenOf, comparisonsOf } from './lib/record.mjs';
 import { resolveFiles, resolveWiki, commonsCategories, commonsCategoriesExist, saveCache } from './lib/wikimedia.mjs';
 import { downloadThumb, paletteFromImage, paletteFromHexList, mapLimit } from './lib/palette.mjs';
 
@@ -16,14 +17,15 @@ const opts = { offline: args.has('--offline'), refresh: args.has('--refresh'), l
 const readYaml = (p) => yaml.load(fs.readFileSync(p, 'utf8'));
 const eras = readYaml(path.join(ROOT, 'content/eras.yaml'));
 const resources = readYaml(path.join(ROOT, 'content/resources.yaml')) ?? [];
+const sources = readYaml(path.join(ROOT, 'content/sources.yaml')) ?? [];
 const styleDir = path.join(ROOT, 'content/styles');
 const styles = fs.readdirSync(styleDir).filter((f) => f.endsWith('.yaml')).sort()
   .flatMap((f) => (readYaml(path.join(styleDir, f)) ?? []).map((s) => ({ ...s, _file: f })));
 
-console.log(`Loaded ${styles.length} styles, ${eras.length} eras`);
+console.log(`Loaded ${styles.length} styles, ${eras.length} eras, ${sources.length} sources`);
 
 // 1. Структура и граф
-const { errors, warnings } = validate(styles, eras);
+const { errors, warnings } = validate(styles, eras, sources);
 
 // 2. Картинки
 const fileRefs = styles.flatMap((s) => [s.example?.file, ...(s.gallery ?? []).map((g) => g.file)]).filter(Boolean);
@@ -73,7 +75,7 @@ await mapLimit(styles, 3, async (s) => {
   }
 });
 
-// 5. Сборка записей
+// 5. Сборка записей (перенос полей — в scripts/lib/record.mjs)
 const img = (ref) => {
   const m = ref && media.get(ref);
   if (!m || m.missing) return null;
@@ -83,31 +85,21 @@ const img = (ref) => {
     credit: m.credit, nonfree: m.nonfree,
   };
 };
-const paragraphs = (t) => String(t ?? '').split(/\n\s*\n/).map((p) => p.replace(/\s+/g, ' ').trim()).filter(Boolean);
 
-const children = new Map(styles.map((s) => [s.id, []]));
-for (const s of styles) for (const p of s.parents ?? []) children.get(p.id)?.push({ id: s.id, type: p.type });
+const children = childrenOf(styles);
+const comparisons = comparisonsOf(styles);
 
 const out = styles.map((s) => {
   const links = [...wikiLinks(s), ...(s.links ?? []).map((l) => ({ title: l.title ?? null, url: l.url, src: l.src, lang: l.lang ?? 'en' }))];
-  // ≥3 ссылки; для свежих эстетик без статьи в русской Википедии достаточно двух.
+  // ≥3 ссылки «почитать»; для свежих эстетик без статьи в русской Википедии достаточно двух.
+  // Это ссылки для самостоятельного чтения, а не подтверждение текста: источники утверждений — в evidence.
   const need = links.some((l) => l.src === 'Википедия') ? 3 : 2;
   if (links.length < need) errors.push(`[${s.id}] needs ≥${need} links (has ${links.length})`);
   if (!palettes.has(s.id)) errors.push(`[${s.id}] no palette`);
-  return {
-    id: s.id, name: s.name, orig: s.orig, aliases: s.aliases ?? [],
-    start: s.start, end: s.end ?? null, dates: s.dates ?? null,
-    era: s.era, domain: s.domain, region: s.region ?? null, tier: s.tier,
-    root: !!s.root, row: s.row ?? null,
-    parents: s.parents ?? [], children: children.get(s.id) ?? [],
-    summary: String(s.summary).trim(), description: paragraphs(s.description),
-    traits: s.traits ?? [], names: s.names ?? [],
-    example: { title: s.example?.title ?? null, author: s.example?.author ?? null, year: s.example?.year ?? null,
-      place: s.example?.place ?? null, note: s.example?.note ?? null, img: img(s.example?.file) },
-    gallery: (s.gallery ?? []).map((g) => ({ title: g.title ?? null, author: g.author ?? null, year: g.year ?? null, img: img(g.file) })),
-    palette: palettes.get(s.id) ?? null,
-    links,
-  };
+  return buildRecord(s, {
+    links, img, palette: palettes.get(s.id) ?? null,
+    children: children.get(s.id) ?? [], comparisons: comparisons.get(s.id) ?? [],
+  });
 });
 out.sort((a, b) => a.start - b.start || a.tier - b.tier || a.name.localeCompare(b.name, 'ru'));
 out.forEach((s, i) => { s.order = i; });
@@ -117,9 +109,15 @@ saveCache();
 // 6. Отчёт
 for (const w of warnings) console.warn('  warn  ' + w);
 for (const e of errors) console.error('  ERROR ' + e);
-const imgs = out.reduce((n, s) => n + (s.example.img ? 1 : 0) + s.gallery.length, 0);
-const fair = out.reduce((n, s) => n + [s.example.img, ...s.gallery.map((g) => g.img)].filter((m) => m?.nonfree).length, 0);
-console.log(`\n${out.length} styles · ${imgs} images (${fair} fair use) · ${out.reduce((n, s) => n + s.links.length, 0)} links · ${errors.length} errors · ${warnings.length} warnings`);
+const shots = out.flatMap((s) => [s.example, ...s.gallery]);
+const imgs = shots.filter((g) => g.img).length;
+const fair = shots.filter((g) => g.img?.nonfree).length;
+const fairOpen = shots.filter((g) => g.img?.nonfree && !g.img.rights.basis).length;
+const reviewed = out.filter((s) => s.review.status !== 'legacy').length;
+const verifiedRel = out.reduce((n, s) => n + s.parents.filter((p) => p.status === 'verified').length, 0);
+const allRel = out.reduce((n, s) => n + s.parents.length, 0);
+console.log(`\n${out.length} styles · ${imgs} images (${fair} non-free, ${fairOpen} without recorded basis) · ${out.reduce((n, s) => n + s.links.length, 0)} links`);
+console.log(`${reviewed} reviewed cards · ${verifiedRel}/${allRel} verified relations · ${out.reduce((n, s) => n + s.comparisons.length, 0) / 2} comparisons · ${errors.length} errors · ${warnings.length} warnings`);
 
 if (errors.length) { console.error('\nBuild failed — data/atlas.json not written.'); process.exit(1); }
 
@@ -128,6 +126,10 @@ const atlas = {
   builtAt: new Date().toISOString().slice(0, 10),
   eras: eras.map((e) => ({ ...e, intro: String(e.intro ?? '').trim() })),
   resources,
+  sources: sources.map(({ id, title, url, publisher, sourceType, published, checked, note }) => ({
+    id, title, url, publisher: publisher ?? null, sourceType, published: ymd(published),
+    checked: ymd(checked), note: note ?? null,
+  })),
   styles: out,
 };
 fs.writeFileSync(path.join(ROOT, 'data/atlas.json'), JSON.stringify(atlas));

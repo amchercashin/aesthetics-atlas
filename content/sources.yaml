@@ -1,0 +1,238 @@
+# Источники утверждений (не путать со ссылками «Изучить дальше»).
+# Карточка ссылается на источник по id: в evidence[], parents[].sources, termAttested.source.
+# sourceType: museum | scholarly | primary | official | encyclopedia | community | press | catalog
+# checked — дата, когда страница была открыта и сверена; note — что именно она подтверждает или чего не подтверждает.
+
+- id: oktaviana-2026
+  title: "Rock art from at least 67,800 years ago in Sulawesi"
+  publisher: "Nature 650 (2026), 652–656 · Oktaviana A. A. et al."
+  url: https://doi.org/10.1038/s41586-025-09968-y
+  sourceType: scholarly
+  published: 2026-01-21
+  checked: 2026-10-13
+  note: "Аннотация (PubMed 41565802). U-серия по кальциту поверх трафарета ладони в Лианг-Метандуно (о. Муна) — 71,6 ± 3,8 тыс. лет; минимальный возраст изображения 67,8 тыс. лет. Методика в атласе не анализировалась."
+
+- id: unesco-gobekli-tepe
+  title: "Göbekli Tepe"
+  publisher: "UNESCO World Heritage Centre"
+  url: https://whc.unesco.org/en/list/1572/
+  sourceType: official
+  checked: 2026-10-13
+  note: "Мегалитические сооружения охотников-собирателей докерамического неолита, 9600–8200 до н. э.; «одно из первых проявлений» монументальной архитектуры."
+
+- id: schulz-paulsson-2019
+  title: "Radiocarbon dates and Bayesian modeling support maritime diffusion model for megaliths in Europe"
+  publisher: "PNAS 116 (9), 3460–3465 · Schulz Paulsson B."
+  url: https://doi.org/10.1073/pnas.1813268116
+  sourceType: scholarly
+  published: 2019-02-11
+  checked: 2026-10-13
+  note: "Аннотация (PubMed 30808740). Мегалитические гробницы Европы появились во второй половине V тыс. до н. э. на северо-западе Франции, в Средиземноморье и на атлантическом побережье Иберии; распространение морским путём в три фазы."
+
+- id: met-jomon
+  title: "Jōmon Culture (ca. 10,500–ca. 300 B.C.)"
+  publisher: "The Metropolitan Museum of Art, Heilbrunn Timeline of Art History (2002)"
+  url: https://www.metmuseum.org/essays/jomon-culture-ca-10500-ca-300-b-c
+  sourceType: museum
+  published: 2002-10
+  checked: 2026-10-13
+  note: "Люди дзёмон добывали пищу собирательством, рыболовством и охотой; ранняя керамика — одна из древнейших известных; ранние попытки культивации растений, возможно, в среднем дзёмоне. Обзор 2002 года — не источник современных абсолютных дат."
+
+- id: rotb-solarpunk-2008
+  title: "From Steampunk to Solarpunk"
+  publisher: "Republic of the Bees (блог)"
+  url: https://republicofthebees.wordpress.com/2008/05/27/from-steampunk-to-solarpunk/
+  sourceType: primary
+  published: 2008-05-27
+  checked: 2026-10-13
+  note: "Слово «solarpunk» предложено как название литературного жанра. Подтверждает употребление к этой дате, но не то, что это первое употребление. Википедия ссылается на более раннюю копию в blogspot (30.04.2008)."
+
+- id: flynn-solarpunk-2014
+  title: "Solarpunk: Notes toward a manifesto"
+  publisher: "Project Hieroglyph (ASU) · Adam Flynn — копия web.archive.org"
+  url: https://web.archive.org/web/20150628114055/http://hieroglyph.asu.edu/2014/09/solarpunk-notes-toward-a-manifesto/
+  sourceType: primary
+  published: 2014-09-04
+  checked: 2026-10-13
+  note: "«Tumblr lit up within the last week» от поста Olivia (Land of Masks and Jewels) с соларпанком в эстетике ар-нуво и эдвардианского сада; визуальная эстетика названа «открытой и развивающейся»."
+
+- id: hype4-neumorphism
+  title: "Neumorphism in user interfaces"
+  publisher: "Hype4 Academy · Michał Malewicz"
+  url: https://hype4.academy/articles/design/neumorphism-in-user-interfaces
+  sourceType: primary
+  checked: 2026-10-13
+  note: "Неоморфные элементы — «выпуклая форма из того же материала, что и фон», а не панель над ним. Название — от комментария Jason Kelley («Neuomorphism»)."
+
+- id: ms-acrylic
+  title: "Acrylic material"
+  publisher: "Microsoft Learn"
+  url: https://learn.microsoft.com/en-us/windows/apps/design/style/acrylic
+  sourceType: official
+  checked: 2026-10-13
+  note: "Полупрозрачная текстура Fluent Design (прозрачность, размытие, шум, тонирование). Описание одной системы, не определение глассморфизма вообще."
+
+- id: apple-liquid-glass-2025
+  title: "Apple introduces a delightful and elegant new software design"
+  publisher: "Apple Newsroom"
+  url: https://www.apple.com/newsroom/2025/06/apple-introduces-a-delightful-and-elegant-new-software-design/
+  sourceType: official
+  published: 2025-06-09
+  checked: 2026-10-13
+  note: "Liquid Glass — полупрозрачный материал, который отражает и преломляет окружение; iOS 26, iPadOS 26, macOS Tahoe 26, watchOS 26, tvOS 26."
+
+- id: cari-frutiger-aero
+  title: "Frutiger Aero"
+  publisher: "Consumer Aesthetics Research Institute (CARI)"
+  url: https://cari.institute/aesthetics/frutiger-aero
+  sourceType: community
+  checked: 2026-10-13
+  note: "Ретроспективный термин; «период актуальности» — середина 2000-х — начало 2010-х (в тексте — примерно 2005–2013). Название: Froyo Tam, Sofi Xian (в описании — Sofi Lee). Дата появления термина на странице не указана."
+
+- id: moma-greiman-dq133
+  title: "April Greiman. DOES IT MAKE SENSE? Design Quarterly #133. 1986"
+  publisher: "The Museum of Modern Art"
+  url: https://www.moma.org/collection/works/172729
+  sourceType: museum
+  checked: 2026-10-13
+  note: "Атрибуция и дата работы на главной иллюстрации карточки «Новая волна»."
+
+- id: commons-weingart-photo
+  title: "File:Weingart tuellinger vinyards 2011-11.jpg"
+  publisher: "Wikimedia Commons"
+  url: https://commons.wikimedia.org/wiki/File:Weingart_tuellinger_vinyards_2011-11.jpg
+  sourceType: catalog
+  checked: 2026-10-13
+  note: "Описание файла — фотография Вайнгарта в винограднике (2011), а не его плакат."
+
+- id: franklin-2005
+  title: "Leonardo da Vinci, Michelangelo, and the Renaissance in Florence"
+  publisher: "National Gallery of Canada / Yale University Press, 2005 · ed. David Franklin — аннотация в каталоге библиотеки CCA"
+  url: https://www.cca.qc.ca/en/search/details/library/publication/60668687
+  sourceType: catalog
+  published: 2005
+  checked: 2026-10-13
+  note: "Авторы ставят под вопрос полезность терминов «Высокое Возрождение» и «маньеризм» и не видят резкой стилистической границы во Флоренции около 1520 года. Проверена только аннотация."
+
+- id: vatican-sistine-ceiling
+  title: "The Sistine Chapel — The Ceiling"
+  publisher: "Musei Vaticani"
+  url: https://www.museivaticani.va/content/museivaticani/en/collezioni/musei/cappella-sistina/volta.html
+  sourceType: museum
+  checked: 2026-10-13
+  note: "Микеланджело расписывал свод в 1508–1512 годах."
+
+- id: louvre-mona-lisa
+  title: "From the Mona Lisa to The Wedding Feast at Cana"
+  publisher: "Musée du Louvre"
+  url: https://www.louvre.fr/en/explore/the-palace/from-the-mona-lisa-to-the-wedding-feast-at-cana
+  sourceType: museum
+  checked: 2026-10-13
+  note: "Сфумато — лессировки, создающие «дымчатый» эффект. Дату создания «Моны Лизы» страница не приводит."
+
+- id: vice-backrooms-2022
+  title: "The Backrooms: How a Creepy Office Photo Became an Internet Bogeyman"
+  publisher: "VICE · Andrew Lloyd"
+  url: https://www.vice.com/en/article/is-the-backrooms-real
+  sourceType: press
+  published: 2022-03-29
+  checked: 2026-10-13
+  note: "В мае 2019 года на доске /x/ 4chan попросили «тревожные картинки»; в ответ — фото пустого офиса с жёлтыми стенами, позже названное «the Backrooms»."
+
+- id: moma-bicycle-wheel
+  title: "Marcel Duchamp. Bicycle Wheel. New York, 1951 (third version, after lost original of 1913)"
+  publisher: "The Museum of Modern Art"
+  url: https://www.moma.org/collection/works/81631
+  sourceType: museum
+  checked: 2026-10-13
+  note: "Оригинал «Велосипедного колеса» сделан в Париже в 1913 году — за два года до того, как Дюшан впервые употребил слово «readymade»."
+
+- id: tate-de-stijl
+  title: "De Stijl — Art Term"
+  publisher: "Tate"
+  url: https://www.tate.org.uk/art/art-terms/d/de-stijl
+  sourceType: museum
+  checked: 2026-10-13
+  note: "Мондриан вышел из группы в 1923 году, после того как ван Дусбург ввёл в работы диагональные элементы."
+
+- id: asia-society-buddha
+  title: "Buddhist Art and the Trade Routes: India"
+  publisher: "Asia Society Museum"
+  url: https://asiasocietymuseum.com/buddhist_trade/indian.html
+  sourceType: museum
+  checked: 2026-10-13
+  note: "Неизвестно точно, когда и где было создано первое изображение Будды в облике человека: вероятно, в районе Матхуры или в Гандхаре."
+
+- id: vam-arts-and-crafts
+  title: "Arts and Crafts: an introduction"
+  publisher: "Victoria and Albert Museum"
+  url: https://www.vam.ac.uk/articles/arts-and-crafts-an-introduction
+  sourceType: museum
+  checked: 2026-10-13
+  note: "В Европе честность выражения в работах «Искусств и ремёсел» стала катализатором радикальных форм модернизма. О модерне и Баухаусе статья не говорит."
+
+- id: currenttime-trinity-2023
+  title: "Решение о передаче «Троицы» Рублёва РПЦ"
+  publisher: "Настоящее время"
+  url: https://www.currenttime.tv/a/32412547.html
+  sourceType: press
+  published: 2023-05
+  checked: 2026-10-13
+  note: "Икона из собрания Третьяковской галереи (там с 1929 года) передаётся РПЦ; сначала — храм Христа Спасителя, затем планировался Троицкий собор Троице-Сергиевой лавры. Актуальное место экспонирования не подтверждено."
+
+- id: wp-reusing
+  title: "Wikipedia:Reusing Wikipedia content — Fair use materials and special requirements"
+  publisher: "Wikipedia"
+  url: https://en.wikipedia.org/wiki/Wikipedia:Reusing_Wikipedia_content
+  sourceType: official
+  site: true
+  checked: 2026-10-13
+  note: "Несвободные изображения в Википедии используются по её собственному обоснованию; это не переносимая лицензия на любое повторное использование."
+
+- id: lascaux-dating
+  title: "Dating the figures at Lascaux"
+  publisher: "Ministère de la Culture / Centre national de préhistoire — Lascaux"
+  url: https://archeologie.culture.gouv.fr/lascaux/en/dating-figures-lascaux
+  sourceType: official
+  checked: 2026-10-13
+  note: "Радиоуглеродные даты угля из пещеры — примерно 21 000–18 000 лет назад (BP); датировка изображений обсуждается со времён открытия."
+
+- id: eh-stonehenge-history
+  title: History of Stonehenge
+  publisher: English Heritage
+  url: https://www.english-heritage.org.uk/visit/places/stonehenge/history-and-stories/history/
+  sourceType: official
+  checked: 2026-10-13
+  note: "Ров и вал — около 3000 года до н. э.; камни в центре поставлены около 2500 года до н. э."
+
+- id: eh-understanding-stonehenge
+  title: Understanding Stonehenge
+  publisher: English Heritage
+  url: https://www.english-heritage.org.uk/visit/places/stonehenge/history-and-stories/understanding-stonehenge/
+  sourceType: official
+  checked: 2026-10-13
+  note: "Памятник ориентирован на солнцестояния: летний восход у Пяточного камня, зимний закат между столбами самого высокого трилита."
+
+- id: nss-pinterest-2026
+  title: "Pinterest Predicts 2026: aesthetic trends"
+  publisher: nss magazine
+  url: https://nssmag.com/en/lifestyle/43770/pinterest-predicts-2026-aesthetic-trends
+  sourceType: press
+  checked: 2026-10-13
+  note: "Пересказ отчёта Pinterest: раздел «Extra Celestial» — запросы «alien core aesthetics» +80%, «opalescent» +115%. Первичный отчёт Pinterest атлас не открыл; это статистика поиска одной платформы."
+
+- id: met-andes-1000bc
+  title: "Central and Southern Andes, 1000 B.C.–1 A.D."
+  publisher: The Metropolitan Museum of Art, Heilbrunn Timeline of Art History
+  url: https://www.metmuseum.org/toah/ht/04/sac
+  sourceType: museum
+  checked: 2026-10-13
+  note: "Культуры Чавин — 1000–500 до н. э.; образы, связанные с Чавин-де-Уантаром, распространяются по побережью и нагорью на керамике, тканях, золоте и камне; культура Котош — 2200–900 до н. э."
+
+- id: cleveland-inca-tunic
+  title: "Tunic, Peru, Inca, c. 1400–1540 (1957.136)"
+  publisher: Cleveland Museum of Art
+  url: https://clevelandart.org/art/1957.136
+  sourceType: museum
+  checked: 2026-10-13
+  note: "Гобеленовые туники — привилегия знати империи инков, государство раздавало их как дар; узор «инкский ключ» — один из самых распространённых. Данные из открытого API музея."

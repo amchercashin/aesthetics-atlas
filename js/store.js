@@ -1,5 +1,5 @@
 // Данные атласа и навигация по графу родословной.
-import { NOW } from './format.js';
+import { NOW } from './format.js?v=audit';
 
 export async function loadAtlas(url = 'data/atlas.json') {
   const res = await fetch(url, { cache: 'no-cache' });
@@ -10,6 +10,9 @@ export async function loadAtlas(url = 'data/atlas.json') {
 export function createStore(data) {
   const styles = [...data.styles].sort((a, b) => a.order - b.order);
   const byId = new Map(styles.map((s) => [s.id, s]));
+  // Старые адреса после разделения или переименования карточек ведут на новые.
+  const former = new Map(styles.flatMap((s) => (s.formerIds ?? []).map((f) => [f, s.id])));
+  const sources = new Map((data.sources ?? []).map((src) => [src.id, src]));
   const eras = data.eras;
   const eraById = new Map(eras.map((e, i) => [e.id, { ...e, index: i }]));
 
@@ -29,8 +32,11 @@ export function createStore(data) {
     eras,
     builtAt: data.builtAt,
     resources: data.resources ?? [],
-    get: (id) => byId.get(id),
-    has: (id) => byId.has(id),
+    get: (id) => byId.get(id) ?? byId.get(former.get(id)),
+    has: (id) => byId.has(id) || former.has(id),
+    resolve: (id) => (byId.has(id) ? id : former.get(id) ?? null),
+    source: (id) => sources.get(id) ?? null,
+    sources: [...sources.values()],
     era: (id) => eraById.get(id),
     eraColor: (id) => `var(--era-${id})`,
     ancestors: (id) => walk(id, 'parents'),

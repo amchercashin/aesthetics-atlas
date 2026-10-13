@@ -1,8 +1,9 @@
 // Зал стиля: стена тонируется палитрой, работа висит с этикеткой, ниже — текст, родословная, ссылки.
+// Статус проверки карточки и связей виден сразу; источники утверждений — под раскрытием.
 import { html, mount, safeUrl } from '../html.js';
-import { fmtDates, RELATION, DOMAIN } from '../format.js';
-import { frame, credit } from '../ui/image.js';
-import { eraTag, thumb, footer } from '../ui/common.js';
+import { fmtDates, fmtYear, RELATION, DOMAIN, KIND, DATE_KIND, REL_STATUS, roleLabel, plural } from '../format.js?v=audit';
+import { frame, credit } from '../ui/image.js?v=audit';
+import { eraTag, thumb, footer } from '../ui/common.js?v=audit';
 import { toast } from '../ui/toast.js';
 import notfound from './notfound.js';
 
@@ -10,14 +11,58 @@ const ARROW_L = html`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" 
 const ARROW_R = html`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>`;
 const EXT = html`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M14 5h5v5M19 5l-8 8M17 14v5H5V7h5"/></svg>`;
 
+// «13 октября 2026» — без «г.», чтобы не получить двойную точку в конце фразы.
+const fmtDay = (d) => (d ? new Date(d).toLocaleDateString('ru-RU', { day: 'numeric', month: 'long', year: 'numeric' }).replace(/\s*г\.$/, '') : '');
+
+function sourceLinks(store, ids) {
+  const list = (ids ?? []).map((id) => store.source(id)).filter(Boolean);
+  if (!list.length) return '';
+  return html`<p class="ego-src">Источник: ${list.map((src, i) => html`${i ? '; ' : ''}<a href="${safeUrl(src.url)}" target="_blank" rel="noopener">${src.publisher ?? src.title}</a>`)}</p>`;
+}
+
 function relCard(store, rel, dir) {
   const s = store.get(rel.id);
   if (!s) return '';
   const label = RELATION[rel.type]?.[dir] ?? '';
-  return html`<li class="ego-item rel-${rel.type}">
-    <span class="ego-rel">${label}</span>
+  return html`<li class="ego-item rel-${rel.type} st-${rel.status}">
+    <span class="ego-rel">${label} · <span class="st st-${rel.status}">${REL_STATUS[rel.status]}</span></span>
     <a class="ego-link" href="#/s/${s.id}">${thumb(s, 44)}<span><span class="ego-name">${s.name}</span><span class="ego-dates">${fmtDates(s)}</span></span></a>
+    ${rel.note ? html`<p class="ego-note">${rel.note}</p>` : ''}
+    ${sourceLinks(store, rel.sources)}
   </li>`;
+}
+
+function reviewLine(s) {
+  const r = s.review;
+  if (r.status === 'reviewed') return html`<p class="review st-reviewed">Сверено с источниками ${fmtDay(r.date)}.${r.note ? ` ${r.note}` : ''}</p>`;
+  if (r.status === 'partial') return html`<p class="review st-partial">Частично сверено с источниками ${fmtDay(r.date)}. ${r.note ?? ''}</p>`;
+  return html`<p class="review st-legacy">Черновая карточка: даты, связи и формулировки ещё не сверены с источниками. <a href="#/about">Как устроена проверка</a></p>`;
+}
+
+function datesBlock(store, s) {
+  const term = s.termAttested;
+  const src = term ? store.source(term.source) : null;
+  if (!s.dateKind && !s.dateNote && !term && !s.revivals.length) return '';
+  return html`<h2 class="side-title">Что значат даты</h2>
+    <p class="dates-main">${fmtDates(s)}${s.dateKind ? html`<span class="dates-kind">${DATE_KIND[s.dateKind]}</span>` : ''}</p>
+    ${s.dateNote ? html`<p class="dates-note">${s.dateNote}</p>` : ''}
+    ${term ? html`<p class="dates-note">Слово документировано к ${fmtYear(term.year)} году${src ? html` — <a href="${safeUrl(src.url)}" target="_blank" rel="noopener">${src.publisher ?? src.title}</a>` : ''}.${term.note ? ` ${term.note}` : ''}</p>` : ''}
+    ${s.revivals.map((r) => html`<p class="dates-note">Возвращение: ${fmtYear(r.start)}${r.end ? `–${fmtYear(r.end)}` : '-е'}${r.note ? ` — ${r.note.toLowerCase()}` : ''}.</p>`)}`;
+}
+
+function paletteBlock(s, img) {
+  const p = s.palette;
+  if (!p) return '';
+  const editorial = p.source === 'editorial';
+  const label = editorial ? 'Редакторская подборка цветов' : 'Цвета этого изображения';
+  const hint = editorial
+    ? p.note ?? 'Цвета подобраны редакцией по признакам стиля.'
+    : 'Пять цветов, которые алгоритм нашёл на главной иллюстрации. Это не палитра всего стиля.';
+  return html`<p class="pal-label">${label}</p>
+    <div class="palette-strip" role="group" aria-label="${label}">
+      ${p.colors.map((c) => html`<button type="button" class="pal" style="--c:${c}" data-hex="${c}" title="Скопировать ${c}"><span class="visually-hidden">Скопировать цвет ${c}</span></button>`)}
+    </div>
+    <p class="pal-hint">${hint} Нажмите на цвет, чтобы скопировать.</p>`;
 }
 
 export default {
@@ -33,11 +78,13 @@ export default {
     body.style.setProperty('--style-accent-l', p?.accentLight ?? '');
     body.style.setProperty('--style-accent-d', p?.accentDark ?? '');
 
-    const img = s.example.img;
+    const ex = s.example;
+    const img = ex.img;
     const line = store.mainLine(s.id);
     const prev = store.prev(s.id);
     const next = store.next(s.id);
-    const ex = s.example;
+    const role = roleLabel(ex.role);
+    const evidence = s.evidence.map((e) => ({ ...e, src: store.source(e.source) })).filter((e) => e.src);
 
     mount(root, html`
     <article class="room">
@@ -50,25 +97,28 @@ export default {
         </div>
         <h1 class="room-title">${s.name}</h1>
         <p class="room-orig">${s.orig}</p>
+        ${s.kind.length ? html`<p class="room-kind">${s.kind.map((k) => html`<span class="kind-badge">${KIND[k]}</span>`)}${s.kindNote ? html`<span class="kind-note">${s.kindNote}</span>` : ''}</p>` : ''}
+        ${s.scopeNote ? html`<p class="room-scope"><strong>Границы карточки.</strong> ${s.scopeNote}</p>` : ''}
+        ${reviewLine(s)}
       </header>
 
       <div class="room-hang">
         <figure class="room-work">
           <button class="work-zoom" type="button" ${img ? '' : 'disabled'} aria-label="Открыть работу крупно">
-            ${frame(img, p, { sizes: '(min-width: 1100px) 58vw, 100vw', eager: true, size: 960, alt: ex.title ?? '', note: ex.note, capUpscale: true })}
+            ${frame(img, p, { sizes: '(min-width: 1100px) 58vw, 100vw', eager: true, size: 960, alt: ex.title ?? '', note: ex.external ? 'Изображение не встраивается' : ex.note, capUpscale: true })}
           </button>
         </figure>
         <aside class="wall-label" aria-label="Этикетка">
+          ${role ? html`<p class="wl-role">${role}</p>` : ''}
           <p class="wl-title">${ex.title}</p>
           ${ex.author ? html`<p class="wl-author">${ex.author}</p>` : ''}
           <p class="wl-facts">${[ex.year, ex.place].filter(Boolean).join(', ')}</p>
-          ${ex.note ? html`<p class="wl-note">${ex.note}</p>` : ''}
+          ${ex.note && ex.note !== role ? html`<p class="wl-note">${ex.note}</p>` : ''}
+          ${ex.why ? html`<p class="wl-why"><strong>Что здесь видно.</strong> ${ex.why}</p>` : ''}
           ${credit(img)}
+          ${ex.external ? html`<p class="credit"><a href="${safeUrl(ex.external.page)}" target="_blank" rel="noopener">Открыть изображение на странице файла</a></p>` : ''}
           <p class="wl-summary">${s.summary}</p>
-          ${p ? html`<div class="palette-strip" role="group" aria-label="Палитра стиля">
-            ${p.colors.map((c) => html`<button type="button" class="pal" style="--c:${c}" data-hex="${c}" title="Скопировать ${c}"><span class="visually-hidden">Скопировать цвет ${c}</span></button>`)}
-          </div>
-          <p class="pal-hint">${img ? 'Палитра посчитана по главной работе.' : 'Палитра эстетики.'} Нажмите на цвет, чтобы скопировать.</p>` : ''}
+          ${paletteBlock(s, img)}
         </aside>
       </div>
 
@@ -78,6 +128,7 @@ export default {
           <h2 class="side-title">Как узнать</h2>
           <ul class="traits">${s.traits.map((t) => html`<li>${t}</li>`)}</ul>
           ${s.names.length ? html`<h2 class="side-title">Ключевые имена</h2><p class="names">${s.names.join(', ')}</p>` : ''}
+          ${datesBlock(store, s)}
         </aside>
       </section>
 
@@ -86,7 +137,7 @@ export default {
         <div class="gallery-grid">
           ${s.gallery.map((g, i) => html`<figure class="art">
             <button class="work-zoom" type="button" data-gallery="${i}" ${g.img ? '' : 'disabled'} aria-label="Открыть крупно: ${g.title ?? ''}">${frame(g.img, p, { sizes: '(min-width: 900px) 30vw, 90vw', alt: g.title ?? '', capUpscale: true })}</button>
-            <figcaption><span class="g-title">${g.title}</span>${[g.author, g.year].filter(Boolean).length ? html`<span class="g-meta">${[g.author, g.year].filter(Boolean).join(', ')}</span>` : ''}</figcaption>
+            <figcaption>${roleLabel(g.role) ? html`<span class="wl-role">${roleLabel(g.role)}</span>` : ''}<span class="g-title">${g.title}</span>${[g.author, g.year].filter(Boolean).length ? html`<span class="g-meta">${[g.author, g.year].filter(Boolean).join(', ')}</span>` : ''}${g.why ? html`<span class="g-meta">${g.why}</span>` : ''}</figcaption>
             ${credit(g.img)}
           </figure>`)}
         </div>
@@ -94,16 +145,18 @@ export default {
 
       <section class="lineage">
         <h2 class="section-title">Родословная</h2>
-        ${line.length > 1 ? html`<p class="lineage-lead">Главная линия от истоков до этого стиля</p>
+        ${line.length > 1 ? html`<p class="lineage-lead">Линия по первому указанному предку — редакционная схема атласа. Связи без пометки «подтверждено» ещё не проверены по источникам.</p>
         <ol class="line-strip">
           ${line.map((a) => html`<li class="${a.id === s.id ? 'is-current' : ''}" style="--c:var(--era-${a.era})">
             <a href="#/s/${a.id}" ${a.id === s.id ? 'aria-current="page"' : ''}>${thumb(a, 64)}<span class="ls-name">${a.name}</span><span class="ls-dates">${fmtDates(a)}</span></a>
           </li>`)}
-        </ol>` : html`<p class="lineage-lead">Один из истоков: в атласе у этого стиля нет предшественников.</p>`}
+        </ol>` : s.origin === 'unknown'
+          ? html`<p class="lineage-lead">Происхождение не установлено: подтверждённых предшественников в атласе нет. Похожие по виду стили — в разделе «Визуальные сопоставления».</p>`
+          : html`<p class="lineage-lead">Один из независимых истоков в атласе: предшественников у этого стиля здесь нет.</p>`}
         <div class="ego">
           <div class="ego-col">
             <h3 class="ego-title">Откуда</h3>
-            ${s.parents.length ? html`<ul>${s.parents.map((r) => relCard(store, r, 'from'))}</ul>` : html`<p class="muted">Исток</p>`}
+            ${s.parents.length ? html`<ul>${s.parents.map((r) => relCard(store, r, 'from'))}</ul>` : html`<p class="muted">${s.origin === 'unknown' ? 'Не установлено' : 'Исток'}</p>`}
           </div>
           <div class="ego-center" aria-hidden="true"><span>${s.name}</span></div>
           <div class="ego-col">
@@ -114,8 +167,33 @@ export default {
         <a class="btn ghost" href="#/map?s=${s.id}">Показать на карте</a>
       </section>
 
+      ${s.comparisons.length ? html`<section class="compare">
+        <h2 class="section-title">Визуальные сопоставления</h2>
+        <p class="lineage-lead">Похожие по виду стили. Это сходство, а не заявление о происхождении.</p>
+        <ul class="cmp-list">
+          ${s.comparisons.map((c) => { const o = store.get(c.id); return o ? html`<li class="ego-item">
+            <a class="ego-link" href="#/s/${o.id}">${thumb(o, 44)}<span><span class="ego-name">${o.name}</span><span class="ego-dates">${fmtDates(o)}</span></span></a>
+            ${c.note ? html`<p class="ego-note">${c.note}</p>` : ''}
+          </li>` : ''; })}
+        </ul>
+      </section>` : ''}
+
+      ${evidence.length ? html`<section class="evidence">
+        <details>
+          <summary><span class="section-title">На чём основано</span><span class="ev-count">${evidence.length} ${plural(evidence.length, 'утверждение', 'утверждения', 'утверждений')} с источниками</span></summary>
+          <ul class="ev-list">
+            ${evidence.map((e) => html`<li>
+              <p class="ev-claim">${e.claim}</p>
+              <p class="ev-src"><a href="${safeUrl(e.src.url)}" target="_blank" rel="noopener">${e.src.title}</a>${e.src.publisher ? `, ${e.src.publisher}` : ''}${e.src.checked ? ` · проверено ${fmtDay(e.src.checked)}` : ''}</p>
+              ${e.src.note ? html`<p class="ev-note">${e.src.note}</p>` : ''}
+            </li>`)}
+          </ul>
+        </details>
+      </section>` : ''}
+
       <section class="study">
         <h2 class="section-title">Изучить дальше</h2>
+        <p class="lineage-lead">Материалы для самостоятельного чтения. Сами по себе они не подтверждают каждое утверждение карточки.</p>
         <ul class="links">
           ${s.links.map((l) => html`<li><a href="${safeUrl(l.url)}" target="_blank" rel="noopener">
             <span class="l-title">${l.title ?? l.src}</span>

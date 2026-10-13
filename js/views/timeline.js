@@ -1,8 +1,8 @@
 // Хронология: двенадцать глав-эпох, у каждой свой пигмент; внутри — стили по времени.
 import { html, mount } from '../html.js';
-import { fmtDates, fmtYear, RELATION } from '../format.js';
-import { frame } from '../ui/image.js';
-import { footer } from '../ui/common.js';
+import { fmtDates, fmtYear, RELATION } from '../format.js?v=audit';
+import { frame } from '../ui/image.js?v=audit';
+import { footer } from '../ui/common.js?v=audit';
 
 export default {
   render(root, ctx) {
@@ -45,10 +45,10 @@ export default {
                     <span class="e-sum">${s.summary}</span>
                   </span>
                 </a>
-                ${s.parents.length ? html`<p class="e-from">${s.parents.map((p, i) => {
+                ${s.parents.length ? html`<p class="e-from">${s.parents.every((p) => p.status !== 'verified') ? 'По версии атласа: ' : ''}${s.parents.map((p, i) => {
                   const par = store.get(p.id);
-                  return par ? html`${i ? ', ' : ''}${RELATION[p.type].from} <a href="#/s/${par.id}">${par.name}</a>` : '';
-                })}</p>` : ''}
+                  return par ? html`${i ? ', ' : ''}${RELATION[p.type].from} <a href="#/s/${par.id}">${par.name}</a>${p.status === 'verified' ? html` <span class="st st-verified" title="Связь подтверждена источником"><span class="visually-hidden">подтверждено</span></span>` : ''}` : '';
+                })}</p>` : s.origin === 'unknown' ? html`<p class="e-from">Происхождение не установлено</p>` : ''}
               </li>`)}
             </ol>` : html`<p class="chapter-empty">Стили этой эпохи появятся в атласе позже.</p>`}
           </section>`;

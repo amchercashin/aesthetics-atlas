@@ -31,7 +31,7 @@ function lev(a, b, max) {
 }
 
 const FIELDS = [
-  ['name', 3], ['orig', 3], ['aliases', 2.5], ['names', 1.6], ['traits', 0.7], ['summary', 0.4],
+  ['name', 3], ['orig', 3], ['aliases', 2.5], ['searchKeywords', 1.8], ['names', 1.6], ['traits', 0.7], ['summary', 0.4],
 ];
 
 export function buildIndex(styles) {

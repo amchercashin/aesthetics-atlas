@@ -181,6 +181,13 @@ a.era-tag:hover { color: var(--ink); text-decoration: underline; }
   border: 1px solid var(--rule-strong); border-radius: 4px; font-size: 10.5px; color: var(--ink-2);
   cursor: help;
 }
+.credit-note { display: block; margin-top: 2px; }
+
+/* Статус проверки связи: текст + форма, а не только цвет. */
+.st { white-space: nowrap; }
+.st.st-verified::before { content: "✓ "; }
+.st.st-unverified { color: var(--ink-3); }
+.st.st-unverified::before { content: "? "; }
 
 /* ---------- Поиск (диалог) ---------- */
 dialog { color: var(--ink); }

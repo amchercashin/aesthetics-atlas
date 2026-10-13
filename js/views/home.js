@@ -1,8 +1,8 @@
 // Главная: заголовок, поиск, лента эпох (вся история одной полосой), три входа и стиль дня.
 import { html, mount } from '../html.js';
-import { fmtDates, fmtYear, plural } from '../format.js';
-import { frame } from '../ui/image.js';
-import { footer, thumb } from '../ui/common.js';
+import { fmtDates, fmtYear, plural } from '../format.js?v=audit';
+import { frame } from '../ui/image.js?v=audit';
+import { footer, thumb } from '../ui/common.js?v=audit';
 import { createTimeScale, segmentWidths } from '../timescale.js';
 import { layoutRows } from '../layout.js';
 
@@ -43,7 +43,7 @@ export default {
     <section class="hero page">
       <h1 class="hero-title">Как люди придумывали красоту: от пещеры Ласко до уирдкора</h1>
       <div class="hero-side">
-        <p class="hero-lead">${n} ${plural(n, 'визуальный стиль', 'визуальных стиля', 'визуальных стилей')} за сорок тысяч лет. Для каждого — откуда он произошёл, как его узнать, главная работа и что почитать дальше.</p>
+        <p class="hero-lead">${n} ${plural(n, 'визуальный стиль', 'визуальных стиля', 'визуальных стилей')} — от трафаретов ладоней, которым не меньше 67 тысяч лет, до интернет-эстетик. Для каждого — откуда он, по версии атласа, произошёл, как его узнать, главная работа и что почитать дальше.</p>
         <button class="hero-search" type="button" data-open-search>
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4.5 4.5"/></svg>
           <span>Стиль, художник или год</span><kbd>/</kbd>
@@ -72,7 +72,7 @@ export default {
       <a class="way" href="#/map">
         <span class="way-visual way-map">${miniMap(store)}</span>
         <span class="way-title">Карта родословной</span>
-        <span class="way-text">Все стили на оси времени и связи между ними. Выберите любой — подсветится путь от истоков и все потомки.</span>
+        <span class="way-text">Все стили на оси времени и связи между ними. Выберите любой — подсветятся предки и потомки; у каждой связи указано, проверена ли она.</span>
       </a>
       <a class="way" href="#/timeline">
         <span class="way-visual way-pigments">
