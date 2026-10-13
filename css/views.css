@@ -26,11 +26,11 @@
 .frieze { border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); padding: 28px 0 0; background: color-mix(in oklab, var(--paper-3) 45%, var(--paper)); }
 .frieze-track {
   --fh: clamp(150px, 22vw, 250px);
-  display: flex; gap: clamp(18px, 2.4vw, 34px); align-items: flex-end;
+  display: flex; gap: clamp(18px, 2.4vw, 34px); align-items: flex-start;
   overflow-x: auto; overscroll-behavior-x: contain; scroll-snap-type: x proximity; scroll-padding-inline: var(--gutter);
   padding: 0 var(--gutter) 22px; scrollbar-width: thin;
 }
-.frieze-item { flex: none; display: grid; gap: 6px; text-decoration: none; scroll-snap-align: start; }
+.frieze-item { flex: none; display: grid; grid-template-rows: auto auto auto; align-content: start; gap: 6px; text-decoration: none; scroll-snap-align: start; }
 .frieze-item .art-frame { height: var(--fh); width: auto; max-width: calc(var(--fh) * 1.9); box-shadow: var(--shadow-art); transition: transform 0.35s var(--ease); }
 .frieze-item:hover .art-frame { transform: translateY(-4px); }
 .frieze-year { margin-top: 8px; padding-top: 8px; border-top: 3px solid var(--c); font-size: var(--t-xs); color: var(--ink-3); }
