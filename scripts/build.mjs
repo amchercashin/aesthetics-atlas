@@ -10,6 +10,7 @@ import { buildRecord, childrenOf, comparisonsOf, contextsOf } from './lib/record
 import { resolveFiles, resolveWiki, commonsCategories, commonsCategoriesExist, saveCache } from './lib/wikimedia.mjs';
 import { downloadThumb, paletteFromImage, paletteFromHexList, mapLimit } from './lib/palette.mjs';
 import { resolveLocalAssets } from './lib/local-images.mjs';
+import { worksOf, imageUsage } from './lib/works.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const args = new Set(process.argv.slice(2));
@@ -29,17 +30,16 @@ console.log(`Loaded ${styles.length} styles, ${eras.length} eras, ${sources.leng
 const { errors, warnings } = validate(styles, eras, sources);
 
 // 2. Картинки
-const shotsOf = (s) => [s.example, ...(s.gallery ?? []), ...(s.corpus ?? [])].filter(Boolean);
-const fileRefs = styles.flatMap((s) => shotsOf(s).map((g) => g.file)).filter(Boolean);
+const fileRefs = styles.flatMap((s) => worksOf(s).map((g) => g.file)).filter(Boolean);
 const media = await resolveFiles(fileRefs, opts);
-const assetRefs = styles.flatMap((s) => shotsOf(s).map((g) => g.asset)).filter(Boolean);
+const assetRefs = styles.flatMap((s) => worksOf(s).map((g) => g.asset)).filter(Boolean);
 try {
   for (const [ref, m] of await resolveLocalAssets(assetRefs, ROOT)) media.set(ref, m);
 } catch (e) {
   errors.push(`local illustrations: ${e.message}`);
 }
 for (const s of styles) {
-  for (const ref of shotsOf(s).map((g) => g.file).filter(Boolean)) {
+  for (const ref of worksOf(s).map((g) => g.file).filter(Boolean)) {
     const m = media.get(ref);
     if (!m || m.missing) errors.push(`[${s.id}] image not found on Wikimedia: "${ref}"`);
   }
@@ -120,15 +120,13 @@ saveCache();
 // 6. Отчёт
 for (const w of warnings) console.warn('  warn  ' + w);
 for (const e of errors) console.error('  ERROR ' + e);
-const shots = out.flatMap((s) => [s.example, ...s.gallery]);
-const imgs = shots.filter((g) => g.img).length;
-const fair = shots.filter((g) => g.img?.nonfree).length;
-const fairOpen = shots.filter((g) => g.img?.nonfree && !g.img.rights.basis).length;
-const reviewed = out.filter((s) => s.review.status !== 'legacy').length;
+const usage = imageUsage(out);
+const reviewed = out.filter((s) => s.review.status === 'reviewed').length;
+const partial = out.filter((s) => s.review.status === 'partial').length;
 const verifiedRel = out.reduce((n, s) => n + s.parents.filter((p) => p.status === 'verified').length, 0);
 const allRel = out.reduce((n, s) => n + s.parents.length, 0);
-console.log(`\n${out.length} styles · ${imgs} images (${fair} non-free, ${fairOpen} without recorded basis) · ${out.reduce((n, s) => n + s.links.length, 0)} links`);
-console.log(`${reviewed} reviewed cards · ${verifiedRel}/${allRel} verified relations · ${out.reduce((n, s) => n + s.comparisons.length, 0) / 2} comparisons · ${errors.length} errors · ${warnings.length} warnings`);
+console.log(`\n${out.length} styles · ${usage.embedded} embedded image placements (${usage.corpus} in corpora; ${usage.nonfree} non-free, ${usage.withoutBasis} without recorded basis) · ${out.reduce((n, s) => n + s.links.length, 0)} links`);
+console.log(`${reviewed} reviewed + ${partial} partial cards · ${verifiedRel}/${allRel} verified relations · ${out.reduce((n, s) => n + s.comparisons.length, 0) / 2} comparisons · ${errors.length} errors · ${warnings.length} warnings`);
 
 if (errors.length) { console.error('\nBuild failed — data/atlas.json not written.'); process.exit(1); }
 
