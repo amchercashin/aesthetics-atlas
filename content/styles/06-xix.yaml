@@ -1,7 +1,9 @@
 - id: neoclassicism
-  name: Неоклассицизм
+  name: Неоклассицизм XVIII — начала XIX века
   orig: Neoclassicism
-  aliases: [классицизм, Давид, Канова, ампир]
+  aliases:
+    - неоклассицизм
+    - неоклассицизм XVIII–XIX веков
   start: 1750
   end: 1830
   dates: ок. 1750 – 1830
@@ -35,6 +37,16 @@
   wiki: Neoclassicism
   links:
     - { title: "Neoclassicism", url: "https://www.theartstory.org/movement/neoclassicism/", src: "The Art Story", lang: en }
+  searchKeywords:
+    - Неоклассицизм
+    - классицизм
+    - Давид
+    - Канова
+    - ампир
+  scopeNote: >-
+    Европейский неоклассицизм примерно 1750–1830 годов. Не охватывает весь классицизм и позднейшие
+    неоклассические возрождения; ампир представлен отдельно.
+  dateKind: period
 
 - id: empire-style
   name: Ампир

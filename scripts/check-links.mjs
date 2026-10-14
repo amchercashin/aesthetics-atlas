@@ -32,6 +32,11 @@ async function check(url) {
     const r = await fetch(url, { headers: { 'User-Agent': UA, Accept: 'text/html' }, redirect: 'follow', signal: AbortSignal.timeout(20000) });
     // World History Encyclopedia отвечает 403 на несуществующие страницы.
     if (r.status === 403 && url.includes('worldhistory.org')) return '403 (нет страницы)';
+    // SiteGround возвращает 202 с переходом на CAPTCHA. Это не подтверждённая битая ссылка.
+    if (r.status === 202 && /text\/html/.test(r.headers.get('content-type') ?? '')) {
+      const body = await r.text();
+      if (body.includes('/.well-known/sgcaptcha/')) return 'challenge 202';
+    }
     // «Мягкий 404»: код 200, но в заголовке страницы — Not Found.
     if (r.status === 200 && /text\/html/.test(r.headers.get('content-type') ?? '')) {
       const title = /<title[^>]*>([^<]*)<\/title>/i.exec(await r.text())?.[1] ?? '';
@@ -45,7 +50,7 @@ const res = await mapLimit(links, 4, async (l) => ({ ...l, status: await check(l
 let bad = 0, unverifiable = 0;
 for (const r of res) {
   if (r.status === 200) continue;
-  if (r.status === 403 || r.status === 429 || String(r.status).startsWith('api')) { unverifiable++; console.log(`  ?  ${r.status} [${r.id}] ${r.url}`); }
+  if (r.status === 403 || r.status === 429 || /^(api|challenge)/.test(String(r.status))) { unverifiable++; console.log(`  ?  ${r.status} [${r.id}] ${r.url}`); }
   else { bad++; console.log(`  ✗  ${r.status} [${r.id}] ${r.url}`); }
 }
 console.log(`\n${res.length} links · ${bad} broken · ${unverifiable} unverifiable`);

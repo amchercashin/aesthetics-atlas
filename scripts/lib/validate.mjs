@@ -1,6 +1,7 @@
 // Структурная валидация контента (чистая функция, без сети).
 // Проверяет форму данных и согласованность графа. Историческую истинность и репрезентативность
 // изображений валидатор доказать не может — это работа редактора (см. docs/content-audit.md).
+import { isLocalAsset } from './local-images.mjs';
 export const DOMAINS = ['art', 'architecture', 'design', 'internet'];
 export const RELATIONS = ['evolved', 'influence', 'reaction', 'revival'];
 export const REL_STATUS = ['verified', 'unverified'];
@@ -46,6 +47,12 @@ export function relationDateIssue(parent, child, type, now = 2026) {
 }
 
 function checkImage(at, im, where, sourceIds, errors) {
+  if (im.asset != null) {
+    if (!isLocalAsset(im.asset)) errors.push(`${at} ${where}: invalid local asset path`);
+    if (im.file) errors.push(`${at} ${where}: choose file or asset, not both`);
+    if (!['illustration', 'reconstruction'].includes(im.role)) errors.push(`${at} ${where}: local illustration needs an explicit role`);
+    if (!im.author || !im.year || !im.whyRepresentative) errors.push(`${at} ${where}: local illustration needs author, year and whyRepresentative`);
+  }
   if (im.role != null && !IMAGE_ROLES.includes(im.role)) errors.push(`${at} ${where}: bad image role "${im.role}"`);
   if (im.rights != null) {
     if (typeof im.rights !== 'object') errors.push(`${at} ${where}: rights must be an object`);
@@ -128,7 +135,7 @@ export function validate(styles, eras, sources = []) {
     if (!Array.isArray(s.traits) || s.traits.length < 3) errors.push(`${at} needs ≥3 traits`);
     else if (s.traits.length > 6) warnings.push(`${at} more than 6 traits`);
 
-    const hasImage = typeof s.example?.file === 'string' && s.example.file.trim();
+    const hasImage = (typeof s.example?.file === 'string' && s.example.file.trim()) || isLocalAsset(s.example?.asset);
     const hasPalette = Array.isArray(s.palette) && s.palette.length >= 3 && s.palette.every((h) => HEX.test(h));
     if (!hasImage && !hasPalette) errors.push(`${at} needs an image or palette`);
     if (s.palette && !hasPalette) errors.push(`${at} palette must be ≥3 hex colors`);
@@ -138,7 +145,7 @@ export function validate(styles, eras, sources = []) {
     for (const id of asList(s.example?.sources)) usedSources.add(id);
 
     for (const g of s.gallery ?? []) {
-      if (!g.file) errors.push(`${at} gallery item without file`);
+      if (!g.file && !g.asset) errors.push(`${at} gallery item without file or asset`);
       checkImage(at, g, 'gallery', sourceIds, errors);
       for (const id of asList(g.sources)) usedSources.add(id);
     }

@@ -9,6 +9,7 @@ import { validate, ymd } from './lib/validate.mjs';
 import { buildRecord, childrenOf, comparisonsOf } from './lib/record.mjs';
 import { resolveFiles, resolveWiki, commonsCategories, commonsCategoriesExist, saveCache } from './lib/wikimedia.mjs';
 import { downloadThumb, paletteFromImage, paletteFromHexList, mapLimit } from './lib/palette.mjs';
+import { resolveLocalAssets } from './lib/local-images.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const args = new Set(process.argv.slice(2));
@@ -30,6 +31,12 @@ const { errors, warnings } = validate(styles, eras, sources);
 // 2. Картинки
 const fileRefs = styles.flatMap((s) => [s.example?.file, ...(s.gallery ?? []).map((g) => g.file)]).filter(Boolean);
 const media = await resolveFiles(fileRefs, opts);
+const assetRefs = styles.flatMap((s) => [s.example?.asset, ...(s.gallery ?? []).map((g) => g.asset)]).filter(Boolean);
+try {
+  for (const [ref, m] of await resolveLocalAssets(assetRefs, ROOT)) media.set(ref, m);
+} catch (e) {
+  errors.push(`local illustrations: ${e.message}`);
+}
 for (const s of styles) {
   for (const ref of [s.example?.file, ...(s.gallery ?? []).map((g) => g.file)].filter(Boolean)) {
     const m = media.get(ref);
@@ -66,9 +73,9 @@ const palettes = new Map();
 await mapLimit(styles, 3, async (s) => {
   try {
     if (Array.isArray(s.palette) && s.palette.length) { palettes.set(s.id, paletteFromHexList(s.palette)); return; }
-    const m = media.get(s.example?.file);
+    const m = media.get(s.example?.file ?? s.example?.asset);
     if (!m || m.missing) return;
-    const buf = await downloadThumb(m.thumbs[250] ?? m.url, opts);
+    const buf = m.local ? m.buffer : await downloadThumb(m.thumbs[250] ?? m.url, opts);
     palettes.set(s.id, await paletteFromImage(buf));
   } catch (e) {
     errors.push(`[${s.id}] palette failed: ${e.message}`);
@@ -80,6 +87,7 @@ const img = (ref) => {
   const m = ref && media.get(ref);
   if (!m || m.missing) return null;
   return {
+    ...(m.local ? { local: true } : {}),
     w: m.width, h: m.height, src: m.thumbs, page: m.page,
     artist: m.artist, artistUrl: m.artistUrl, license: m.license, licenseUrl: m.licenseUrl,
     credit: m.credit, nonfree: m.nonfree,

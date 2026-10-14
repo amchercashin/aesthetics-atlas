@@ -32,11 +32,20 @@
   names: [Ричард Эстес, Чак Клоуз, Ральф Гоингс, Джон Бедер, Рон Мьюик]
   example:
     file: John's Diner by John Baeder.jpg
-    title: Закусочная Джона
+    title: John’s Diner with John’s Chevelle
     author: Джон Бедер
+    year: 2007
+    sources:
+      - commons-hyperrealism-example
   wiki: Photorealism
   links:
     - { title: "Photorealism", url: "https://www.theartstory.org/movement/photorealism/", src: "The Art Story", lang: en }
+  review:
+    status: partial
+    date: "2026-10-14"
+    note: >-
+      Подпись конкретного изображения дополнена по странице файла; это не полная верификация истории
+      направления.
 
 - id: postmodern-architecture
   name: Постмодернизм в архитектуре
@@ -187,10 +196,21 @@
     author: Джейми Рид для Sex Pistols
     year: 1977
   gallery:
-    - { file: "UK and US zines.jpg", title: "Британские и американские зины" }
+    - file: UK and US zines.jpg
+      title: Британские и американские зины
+      year: 1994–2004
+      note: Поздние примеры продолжения DIY-культуры; не издания исходной волны 1976–1990 годов.
+      sources:
+        - commons-punk-zines
   wiki: { en: Punk visual art, ru: Панк }
   links:
     - { title: "Punk", url: "https://aesthetics.fandom.com/wiki/Punk", src: "Aesthetics Wiki", lang: en }
+  review:
+    status: partial
+    date: "2026-10-14"
+    note: >-
+      Уточнены дата и роль выбранной фотографии или галерейного примера; остальная история и связи не
+      полностью проверены.
 
 - id: graffiti-street-art
   name: Граффити и стрит-арт
@@ -318,8 +338,14 @@
   kind: movement
   kindNote: "Жанр научной фантастики и его визуальный язык в кино, иллюстрации и играх."
   parents:
-    - { id: punk-graphics, type: influence }
-    - { id: high-tech, type: influence }
+    - id: punk-graphics
+      type: influence
+    - id: high-tech
+      type: influence
+      status: unverified
+      note: >-
+        Открытый вопрос. Высокие технологии как тема не равны архитектурному хай-теку; конкретное влияние
+        направления на киберпанк требует источника.
   summary: >
     «Высокие технологии, низкая жизнь»: неоновый дождь, иероглифы на рекламе, мегакорпорации и импланты.
   description: |
@@ -339,10 +365,24 @@
     author: Ридли Скотт, художник Сид Мид
     year: 1982
   gallery:
-    - { file: "Hong Kong night street.jpg", title: "Ночная улица Гонконга" }
+    - file: Hong Kong night street.jpg
+      title: Ночная улица Гонконга
+      year: 2013 (фотография)
+      role: illustration
+      note: >-
+        Городская фотография для визуального сопоставления; не доказательство влияния этого кадра на фильм
+        1982 года.
+      sources:
+        - commons-hong-kong-night
   wiki: Cyberpunk
   links:
     - { title: "Cyberpunk", url: "https://aesthetics.fandom.com/wiki/Cyberpunk", src: "Aesthetics Wiki", lang: en }
+  review:
+    status: partial
+    date: "2026-10-14"
+    note: >-
+      Уточнены дата и роль выбранной фотографии или галерейного примера; остальная история и связи не
+      полностью проверены.
 
 - id: early-cgi
   name: Ранняя компьютерная графика
@@ -373,17 +413,27 @@
   names: [Мартин Ньюэлл, Тёрнер Уиттед, «Трон», Pixar]
   example:
     file: Utah teapot simple.png
-    title: Чайник Юта
-    author: Мартин Ньюэлл (модель 1975)
-    year: 1975
+    title: Современный рендер модели «Чайник Юта»
+    author: Dhatfield; модель — Мартин Ньюэлл
+    year: 2008 (модель — 1975)
+    role: illustration
+    whyRepresentative: Показывает форму классической тестовой модели, а не возможности рендера 1975 года.
+    sources:
+      - commons-utah-render
   wiki: Computer-generated imagery
   links:
     - { title: "Utah teapot", url: "https://en.wikipedia.org/wiki/Utah_teapot", src: "Wikipedia", lang: en }
+  review:
+    status: partial
+    date: "2026-10-14"
+    note: Дата конкретного рендера отделена от даты модели; исторический кадр для галереи ещё не подобран.
 
 - id: afrofuturism
   name: Афрофутуризм
   orig: Afrofuturism
-  aliases: [афрофутуризм, Сан Ра, космическая диаспора]
+  aliases:
+    - афрофутуризм
+    - afrofuturism
   start: 1970
   end: null
   dates: 1970-е – наши дни
@@ -411,9 +461,22 @@
     file: Sun Ra (1973 publicity photo - Impulse ABC Dunhill).jpg
     title: Сан Ра, рекламное фото
     year: 1973
+    role: portrait
+    whyRepresentative: >-
+      Сценический портрет Sun Ra: костюм с космическими и древнеегипетскими ассоциациями. Это портрет
+      музыканта, а не самостоятельное произведение изобразительного искусства.
+    sources:
+      - commons-sun-ra-1973
   wiki: Afrofuturism
   links:
     - { title: "Afrofuturism", url: "https://aesthetics.fandom.com/wiki/Afrofuturism", src: "Aesthetics Wiki", lang: en }
+  review:
+    status: partial
+    date: "2026-10-14"
+    note: Уточнена роль портрета; подбор самостоятельного художественного произведения остаётся открытым.
+  searchKeywords:
+    - Сан Ра
+    - космическая диаспора
 
 - id: new-wave-graphic
   name: Новая волна и гранж-типографика
@@ -537,5 +600,14 @@
     file: Parker Tiki Cat.jpg
     title: Тики-кот
     author: Old Man Parker
+    year: 2016
+    sources:
+      - commons-lowbrow-example
   wiki: Lowbrow (art movement)
   links: []
+  review:
+    status: partial
+    date: "2026-10-14"
+    note: >-
+      Подпись конкретного изображения дополнена по странице файла; это не полная верификация истории
+      направления.

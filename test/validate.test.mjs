@@ -41,6 +41,15 @@ test('either example.file or palette is required', () => {
   assert.deepEqual(r2.errors, []);
 });
 
+test('local illustrations need a safe path and an honest dated caption', () => {
+  const example = { asset: 'assets/illustrations/web-1-0.svg', title: 'Макет', author: 'Редакция', year: 2026, role: 'reconstruction', whyRepresentative: 'Таблицы и ссылки' };
+  assert.deepEqual(validate([root, base({ example })], eras).errors, []);
+  for (const over of [
+    { asset: '../outside.svg' }, { asset: 'https://example.com/a.svg' },
+    { file: 'X.jpg' }, { role: 'work' }, { author: null }, { year: null }, { whyRepresentative: null },
+  ]) assert.ok(validate([root, base({ example: { ...example, ...over } })], eras).errors.length, JSON.stringify(over));
+});
+
 test('bad relation type, unknown era, bad dates', () => {
   const r = validate([root, base({ parents: [{ id: 'root', type: 'magic' }], era: 'zz', start: 300, end: 100 })], eras);
   assert.ok(r.errors.some((e) => e.includes('relation type')));

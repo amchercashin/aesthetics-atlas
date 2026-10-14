@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="900" viewBox="0 0 1200 900" role="img" aria-labelledby="title desc">
+<title id="title">Схема веб-брутализма: открытая структура, системный шрифт и ссылки</title>
+<desc id="desc">Оригинальная редакционная иллюстрация атласа, 2026. Схема признаков, не исторический документ.</desc>
+<defs></defs>
+<rect x="0" y="0" width="1200" height="900" rx="0" fill="#eeeae1" />
+<rect x="52" y="52" width="1096" height="796" rx="0" fill="#fffdf5" stroke="#111" stroke-width="3"/>
+<text x="86" y="116"  font-size="30" fill="#111" font-family="monospace">INDEX / 001</text>
+<text x="1110" y="116" font-family="Arial, sans-serif" font-size="22" fill="#111" text-anchor="end">ОТКРЫТЫЙ АРХИВ</text>
+<path d="M52 146H1148" fill="none" stroke="#111" stroke-width="3"/>
+<text x="84" y="273"  font-size="92" fill="#111" font-family="serif" font-weight="bold">ЭТО СТРАНИЦА.</text>
+<text x="85" y="335" font-family="Arial, sans-serif" font-size="30" fill="#171717" >Без полировки. Содержание и структура на виду.</text>
+<rect x="85" y="383" width="657" height="247" rx="0" fill="#111" />
+<text x="112" y="445"  font-size="61" fill="#fff" font-family="monospace">001</text>
+<text x="112" y="515" font-family="Arial, sans-serif" font-size="33" fill="#fff" >ТЕКСТ / ИЗОБРАЖЕНИЕ</text>
+<text x="112" y="578"  font-size="28" fill="#fff" font-family="monospace">1200 × 900</text>
+<text x="795" y="427"  font-size="31" fill="#0000ee" text-decoration="underline" font-family="serif">[ Читать ]</text>
+<text x="795" y="510"  font-size="31" fill="#0000ee" text-decoration="underline" font-family="serif">[ Смотреть ]</text>
+<text x="795" y="593"  font-size="31" fill="#0000ee" text-decoration="underline" font-family="serif">[ Скачать ]</text>
+<path d="M85 678H1115" fill="none" stroke="#111" stroke-width="3"/>
+<text x="86" y="732"  font-size="30" fill="#0000ee" text-decoration="underline" font-family="serif">01. О проекте</text>
+<text x="570" y="732"  font-size="30" fill="#0000ee" text-decoration="underline" font-family="serif">02. Список материалов</text>
+<text x="86" y="802"  font-size="23" fill="#111" font-family="monospace">Все ссылки — обычные ссылки.</text>
+</svg>

@@ -10,6 +10,7 @@ export function placeholder(palette) {
 }
 
 export function srcset(img) {
+  if (img.local) return ''; // SVG масштабируется без набора растровых превью.
   const parts = WIDTHS.filter((w) => w < img.w).map((w) => `${img.src[w]} ${w}w`);
   if (img.w <= 1280) parts.push(`${img.src[1280] ?? img.src[960]} ${img.w}w`);
   return parts.join(', ');
@@ -44,6 +45,11 @@ const NONFREE_TITLE = 'Работа защищена авторским прав
 // Лицензия фотографии не распространяется на изображённое произведение.
 export function credit(img) {
   if (!img) return '';
+  if (img.local) {
+    const source = /^assets\/illustrations\/[a-z0-9-]+\.svg$/.test(img.page ?? '') ? img.page : '#/';
+    return html`<p class="credit">${img.artist}. Иллюстрация создана для атласа.
+      <a href="${source}" target="_blank" rel="noopener">SVG-исходник</a></p>`;
+  }
   const who = img.artist || 'автор не указан';
   const r = img.rights ?? {};
   return html`<p class="credit">

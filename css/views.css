@@ -172,12 +172,13 @@ body[data-view="style"] .room, body[data-view="style"] .site-footer {
   list-style: none; display: flex; gap: 0; overflow-x: auto; padding-bottom: 14px; margin-bottom: 36px;
   scrollbar-width: thin;
 }
-.line-strip li { flex: none; position: relative; padding-right: 34px; }
+.line-strip li { flex: none; position: relative; padding-right: 34px; width: 184px; }
+.ls-connection { display: block; min-height: 42px; width: 150px; color: var(--ink-2); font-size: var(--t-xs); line-height: 1.35; }
 .line-strip li:not(:last-child)::after {
-  content: ""; position: absolute; top: 32px; right: 6px; width: 22px; height: 1px; background: var(--ink-3);
+  content: ""; position: absolute; top: 74px; right: 6px; width: 22px; height: 1px; background: var(--ink-3);
 }
 .line-strip li:not(:last-child)::before {
-  content: ""; position: absolute; top: 29px; right: 6px; width: 6px; height: 6px;
+  content: ""; position: absolute; top: 71px; right: 6px; width: 6px; height: 6px;
   border-top: 1px solid var(--ink-3); border-right: 1px solid var(--ink-3); transform: rotate(45deg);
 }
 .line-strip a { display: grid; gap: 6px; width: 112px; text-decoration: none; }

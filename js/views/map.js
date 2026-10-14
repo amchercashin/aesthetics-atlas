@@ -8,8 +8,8 @@ import { html, mount, safeUrl } from '../html.js';
 import { fmtDates, fmtYear, RELATION, REL_STATUS, DOMAIN, KIND, KIND_FAMILY, plural } from '../format.js?v=audit';
 import { createTimeScale, segmentWidths, segmentTicks } from '../timescale.js';
 import { layoutGenealogy, routeBranches } from '../layout.js?v=sparse';
-import { frame, markLoaded } from '../ui/image.js?v=audit';
-import { eraTag, thumb } from '../ui/common.js?v=audit';
+import { frame, markLoaded } from '../ui/image.js?v=audit-p1p2';
+import { eraTag, thumb } from '../ui/common.js?v=audit-p1p2';
 import { replaceParams } from '../router.js';
 import { buildIndex, search } from '../search.js?v=audit';
 

@@ -1,7 +1,10 @@
 - id: vaporwave
   name: Вейпорвейв
   orig: Vaporwave
-  aliases: [vaporwave, вейпорвейв, вапорвейв, aesthetic, Ａｅｓｔｈｅｔｉｃ]
+  aliases:
+    - vaporwave
+    - вейпорвейв
+    - вапорвейв
   start: 2011
   end: null
   dates: 2011 – наши дни
@@ -39,10 +42,22 @@
     author: Macintosh Plus (Vektroid)
     year: 2011
   gallery:
-    - { file: "Vaporwave art example.png", title: "Пример вейпорвейв-коллажа", year: "2010-е" }
+    - file: Vaporwave art example.png
+      title: Пример вейпорвейв-коллажа
+      year: 2017
+      author: Ostarisk
+      sources:
+        - commons-vaporwave-collage
   wiki: Vaporwave
   links:
     - { title: "Vaporwave", url: "https://aesthetics.fandom.com/wiki/Vaporwave", src: "Aesthetics Wiki", lang: en }
+  searchKeywords:
+    - aesthetic
+    - Ａｅｓｔｈｅｔｉｃ
+  review:
+    status: partial
+    date: "2026-10-14"
+    note: Уточнена подпись коллажа; исторические связи остаются непроверенными.
 
 - id: synthwave
   name: Синтвейв (аутран)
@@ -76,14 +91,25 @@
     file: Synthwave cyberspace sunset (low res).jpg
     title: Закат в киберпространстве
     author: G. Casqueiro
+    year: 2019
+    sources:
+      - commons-synthwave-example
   wiki: Synthwave
   links:
     - { title: "Synthwave", url: "https://aesthetics.fandom.com/wiki/Synthwave", src: "Aesthetics Wiki", lang: en }
+  review:
+    status: partial
+    date: "2026-10-14"
+    note: >-
+      Подпись конкретного изображения дополнена по странице файла; это не полная верификация истории
+      направления.
 
 - id: corporate-memphis
   name: Корпоративный Мемфис
   orig: Corporate Memphis
-  aliases: [corporate memphis, Alegria, плоские человечки, «стиль Фейсбука»]
+  aliases:
+    - corporate memphis
+    - корпоративный мемфис
   start: 2017
   end: null
   dates: 2017 – наши дни
@@ -93,8 +119,14 @@
   tier: 2
   kind: trend
   parents:
-    - { id: flat-design, type: evolved }
-    - { id: memphis-design, type: revival }
+    - id: flat-design
+      type: evolved
+    - id: memphis-design
+      type: revival
+      status: unverified
+      note: >-
+        Открытый вопрос. Название Corporate Memphis и внешнее сходство не доказывают сознательного
+        возрождения группы Memphis; тип revival требует источника.
   summary: >
     Плоские человечки с крошечными головами и длинными фиолетовыми руками на сайтах всех стартапов мира.
   description: |
@@ -116,6 +148,10 @@
   wiki: Corporate Memphis
   links:
     - { title: "Corporate Memphis", url: "https://aesthetics.fandom.com/wiki/Corporate_Memphis", src: "Aesthetics Wiki", lang: en }
+  searchKeywords:
+    - Alegria
+    - плоские человечки
+    - «стиль Фейсбука»
 
 - id: cottagecore
   name: Коттеджкор
@@ -149,9 +185,21 @@
     file: Anne Hathaways Cottage 1 (5662418953).jpg
     title: Коттедж Энн Хэтэуэй
     place: Стратфорд-апон-Эйвон, Англия
+    year: 2011 (фотография)
+    role: illustration
+    note: Фотография старого коттеджа до указанной волны cottagecore; иллюстрирует её визуальные мотивы.
+    whyRepresentative: Сад, соломенная кровля и сельский дом соответствуют мотивам домашней пасторали.
+    sources:
+      - commons-hathaway-cottage
   wiki: Cottagecore
   links:
     - { title: "Cottagecore", url: "https://aesthetics.fandom.com/wiki/Cottagecore", src: "Aesthetics Wiki", lang: en }
+  review:
+    status: partial
+    date: "2026-10-14"
+    note: >-
+      Уточнены дата и роль выбранной фотографии или галерейного примера; остальная история и связи не
+      полностью проверены.
 
 - id: dark-academia
   name: Дарк-академия
@@ -183,11 +231,23 @@
   names: [Донна Тартт, «Общество мёртвых поэтов», Оксфорд]
   example:
     file: University of Glasgow Quadrangle.jpg
-    title: Галереи Университета Глазго
+    title: Внутренний двор Университета Глазго
     place: Глазго, Шотландия
+    year: 2015 (фотография)
+    role: illustration
+    note: Архитектурная фотография для сопоставления настроения, а не произведение интернет-эстетики.
+    whyRepresentative: Каменные аркады и университетский двор показывают один из архитектурных мотивов dark academia.
+    sources:
+      - commons-glasgow-quadrangle
   wiki: Dark academia
   links:
     - { title: "Dark Academia", url: "https://aesthetics.fandom.com/wiki/Dark_Academia", src: "Aesthetics Wiki", lang: en }
+  review:
+    status: partial
+    date: "2026-10-14"
+    note: >-
+      Уточнены дата и роль выбранной фотографии или галерейного примера; остальная история и связи не
+      полностью проверены.
 
 - id: kidcore
   name: Кидкор
@@ -220,8 +280,15 @@
   palette: ["#ff3b30", "#ffcc00", "#007aff", "#34c759", "#ff2d92"]
   paletteNote: Редакторская подборка по признакам из описания — основные цвета детских игрушек; не измерена по корпусу изображений.
   example:
-    title: Детская комната 90-х
-    note: Свободного изображения нет — показана редакторская подборка цветов.
+    asset: assets/illustrations/kidcore.svg
+    title: "Детские мотивы: кубики, радуга и бусы"
+    author: Редакция атласа
+    year: 2026
+    role: illustration
+    note: >-
+      Оригинальная схема, созданная для атласа в 2026 году; не исторический скриншот и не изображение
+      реального продукта.
+    whyRepresentative: Яркие основные цвета, игрушечные буквы, смайлик и бусы передают набор мотивов эстетики.
   links:
     - { title: "Kidcore", url: "https://aesthetics.fandom.com/wiki/Kidcore", src: "Aesthetics Wiki", lang: en }
     - { title: "Gen X Soft Club — соседняя эстетика, для сравнения", url: "https://cari.institute/aesthetics/gen-x-soft-club", src: "CARI Institute", lang: en }
@@ -290,16 +357,26 @@
   tier: 1
   kind: internet-aesthetic
   parents:
-    - { id: liminal-space, type: evolved }
-    - { id: web-1-0, type: revival }
-    - { id: surrealism, type: influence }
+    - id: liminal-space
+      type: evolved
+    - id: web-1-0
+      type: revival
+    - id: surrealism
+      type: influence
+      status: unverified
+      note: >-
+        Видна визуальная параллель с сюрреалистическими приёмами; документированное влияние исторического
+        движения на эту интернет-сцену пока не установлено.
   summary: >
     Тревожные «воспоминания, которых не было»: пустые комнаты, шумные фото низкого качества,
     глаза в небе и подписи вроде «ты здесь уже был».
-  description: |
+  description: >
     Уирдкор складывается из любительских снимков с плохой камеры, грубых коллажей в стиле
+
     ранних редакторов и коротких фраз, обращённых прямо к зрителю. Он играет с чувством
-    дезориентации и ложной памяти и близок к dreamcore и liminal space, но жёстче и тревожнее.
+
+    дезориентации и ложной памяти и близок к dreamcore и liminal space, их границы и эмоциональные регистры
+    пересекаются.
   traits:
     - Низкое качество, шум и пересвет старых камер
     - Пустые интерьеры, детские площадки, бассейны
@@ -322,34 +399,66 @@
   aliases: [dreamcore, дримкор, сновидческая эстетика]
   start: 2020
   end: null
-  dates: 2020 – наши дни
+  dates: 2020-е – наши дни
   era: internet
   domain: [internet]
   region: Интернет
   tier: 2
   kind: internet-aesthetic
   parents:
-    - { id: weirdcore, type: evolved }
-    - { id: surrealism, type: influence }
-  summary: >
-    Мягкая версия уирдкора: облака, пастельные поля, двери в небе и тихое ощущение сна наяву.
-  description: |
-    Дримкор отделился от уирдкора в 2020–2021 годах в TikTok. Здесь те же любительские снимки и коллажи,
-    но вместо угрозы — нежность и меланхолия: бесконечные лестницы, облака в комнате, поля, пастельный свет
-    и надписи о детстве. Это интернет-сюрреализм: сон, который снится сразу миллионам.
+    - id: weirdcore
+      type: evolved
+      status: unverified
+      note: >-
+        Открытый вопрос: пересечение образов и сообществ не устанавливает момент отделения dreamcore от
+        weirdcore или направление происхождения.
+    - id: surrealism
+      type: influence
+      status: unverified
+      note: >-
+        Видна визуальная параллель с сюрреалистическими приёмами; документированное влияние исторического
+        движения на эту интернет-сцену пока не установлено.
+  summary: >-
+    Сновидческие коллажи: знакомые пространства становятся невозможными, вызывая ностальгию, удивление или
+    тревогу.
+  description: >
+    Дримкор объединяет изображения, напоминающие логику сна: несоединимые пространства, облака в комнате,
+    двери в небе и знакомые предметы в странном окружении. Палитра может быть мягкой, но настроение не
+    ограничено спокойствием — встречаются тревога и дезориентация.
+
+
+    Границы с уирдкором и лиминальными пространствами размыты. Точная дата «отделения» от уирдкора не
+    подтверждена; сходство с сюрреалистическими приёмами само по себе не доказывает исторического влияния
+    движения.
   traits:
-    - Пастельные, мягкие тона
-    - Облака, небо, поля, вода
-    - Невозможные пространства и двери в никуда
-    - Ностальгия и спокойная меланхолия
+    - Сновидческие сочетания знакомых объектов
+    - Невозможные пространства и переходы
+    - Мягкие или контрастные цвета
+    - Ностальгия, удивление, меланхолия или тревога
   names: []
   example:
     file: Dreamcore (cropped).jpg
     title: Пример дримкор-изображения
     author: Crafts97
+    year: 2026
+    role: illustration
+    note: Современный пример Crafts97, 2026; не документ появления эстетики.
+    sources:
+      - commons-dreamcore
   wiki: Dreamcore
   links:
     - { title: "Dreamcore", url: "https://aesthetics.fandom.com/wiki/Dreamcore", src: "Aesthetics Wiki", lang: en }
+  dateKind: popularity
+  approx: true
+  dateNote: >-
+    Условный период заметности в интернете; дата возникновения термина и выделения отдельной сцены не
+    установлена.
+  review:
+    status: partial
+    date: "2026-10-14"
+    note: >-
+      Сверена подпись изображения; убраны неподтверждённые дата отделения и узкая эмоциональная рамка. Две
+      связи остаются открытыми.
 
 - id: glassmorphism
   name: Глассморфизм
@@ -478,8 +587,18 @@
   tier: 3
   kind: internet-aesthetic
   parents:
-    - { id: rococo, type: revival }
-    - { id: kidcore, type: influence }
+    - id: rococo
+      type: revival
+      status: unverified
+      note: >-
+        Открытый вопрос. Банты и пастель не устанавливают сознательного возрождения рококо; нужны
+        свидетельства участников или исследование.
+    - id: kidcore
+      type: influence
+      status: unverified
+      note: >-
+        Открытый вопрос. Пересечение отдельных мотивов не доказывает влияния kidcore на coquette;
+        направление связи остаётся открытым.
   summary: >
     Банты, кружево, жемчуг и бледно-розовый: рококо, пересобранное для TikTok.
   description: |
@@ -495,8 +614,15 @@
   palette: ["#f7d6e0", "#f2b5c9", "#fff4e6", "#e8c7a8", "#c97b93"]
   paletteNote: Редакторская подборка по признакам из описания — бледно-розовый, кремовый, жемчужный.
   example:
-    title: Банты и кружево
-    note: Свободного изображения нет — показана редакторская подборка цветов.
+    asset: assets/illustrations/coquette.svg
+    title: Бант, жемчуг и кружевной орнамент
+    author: Редакция атласа
+    year: 2026
+    role: illustration
+    note: >-
+      Оригинальная схема, созданная для атласа в 2026 году; не исторический скриншот и не изображение
+      реального продукта.
+    whyRepresentative: Пыльно-розовая лента, жемчужная нить и светлый орнамент показывают декоративные мотивы эстетики.
   wiki: Coquette aesthetic
   links:
     - { title: "Coquette", url: "https://aesthetics.fandom.com/wiki/Coquette", src: "Aesthetics Wiki", lang: en }
@@ -522,7 +648,7 @@
     Всё ярко-розовое: эстетика, которую фильм «Барби» 2023 года превратил в мировой маркетинговый взрыв.
   description: |
     Ещё до выхода фильма Греты Гервиг съёмки в розовых нарядах вызвали волну барбикора в моде и соцсетях.
-    Ярко-розовый (Pantone 219C), пластиковый блеск, кукольные интерьеры и ирония над гламуром захватили
+    Ярко-розовый, пластиковый блеск, кукольные интерьеры и ирония над гламуром захватили
     рекламу, бренды и интерьеры.
   traits:
     - Ярко-розовый, фуксия
@@ -531,11 +657,31 @@
     - Ирония над гламуром
   names: [Грета Гервиг, Сара Гринвуд, Mattel]
   example:
-    file: Interior of the Barbie Cafe.jpg
-    title: Кафе в стиле Барби
+    file: Margot Robbie (53012385004).jpg
+    title: Марго Робби на розовой дорожке премьеры «Барби»
+    year: 2023
+    place: Сидней, Pitt Street Mall
+    whyRepresentative: Розовый ансамбль, глянцевая юбка и кукольный образ на событии периода популярности барбикора.
+    note: Фотография Евы Ринальди от 30 июня 2023 года; авторство дизайна одежды здесь не атрибутируется.
+    sources:
+      - commons-barbie-premiere
   wiki: Barbiecore
   links:
     - { title: "Barbiecore", url: "https://aesthetics.fandom.com/wiki/Barbiecore", src: "Aesthetics Wiki", lang: en }
+  gallery:
+    - file: Interior of the Barbie Cafe.jpg
+      title: Кафе в стиле Барби
+      year: 2013 (фотография)
+      role: precursor
+      note: Брендированный интерьер до волны барбикора 2022–2024 годов.
+      sources:
+        - commons-barbie-cafe
+  review:
+    status: partial
+    date: "2026-10-14"
+    note: >-
+      Сверены событие и дата главной фотографии; кафе перенесено в предысторию, неподтверждённый номер
+      Pantone убран.
 
 - id: brat
   name: Брэт
@@ -554,8 +700,9 @@
   parents:
     - { id: web-brutalism, type: influence }
     - { id: punk-graphics, type: revival }
-  summary: >
-    Кислотно-лаймовый квадрат и слово «brat» размытым Arial: самая заразительная эстетика лета 2024 года.
+  summary: >-
+    Лаймовый фон и размытая строчная надпись: визуальная идентичность альбома Charli XCX и летней
+    интернет-волны 2024 года.
   description: |
     Обложка альбома Charli XCX «Brat» — лаймово-зелёный фон и надпись строчными буквами Arial, слегка размытая,
     — стала мемом «brat summer». Её нарочитая дешевизна высмеивает гладкий дизайн и стала мгновенно копируемым
@@ -565,15 +712,27 @@
     - Шрифт Arial, строчные, лёгкое размытие
     - Намеренная дешевизна и анти-дизайн
     - Мем как формат
-  names: [Charli XCX, Atlantic Records]
+  names:
+    - Charli XCX
+    - Atlantic Records
+    - Special Offer Inc.
+    - Imogene Strauss
   example:
     file: Charli XCX - Brat (album cover).png
     title: Обложка альбома «Brat»
-    author: Charli XCX
+    author: Special Offer Inc. для Charli XCX
     year: 2024
+    note: Креативная работа совместно с Charli XCX и Imogene Strauss.
+    sources:
+      - special-offer-brat
+      - developments-special-offer
   wiki: Brat (album)
   links:
     - { title: "Brat", url: "https://aesthetics.fandom.com/wiki/Brat", src: "Aesthetics Wiki", lang: en }
+  review:
+    status: partial
+    date: "2026-10-14"
+    note: Уточнено коллективное авторство дизайна обложки; связи и границы популярности не полностью проверены.
 
 - id: ai-aesthetic
   name: Нейросетевая эстетика
@@ -617,23 +776,40 @@
     author: Obvious (GAN)
     year: 2018
   gallery:
-    - { file: "\"Mona Lisa\" with DeepDream effect using VGG16 network trained on ImageNet.jpg", title: "«Мона Лиза» после DeepDream", year: "2015" }
+    - file: "\"Mona Lisa\" with DeepDream effect using VGG16 network trained on ImageNet.jpg"
+      title: «Мона Лиза» после DeepDream
+      year: 2021
+      author: PJ Finlay; код — Aleksa Gordić
+      note: 2021 — дата этого изображения по Commons; метод DeepDream появился в 2015 году.
+      sources:
+        - commons-deepdream-mona
   wiki: { en: Artificial intelligence visual art, ru: Искусственный интеллект в искусстве }
   links:
     - { title: "DeepDream", url: "https://en.wikipedia.org/wiki/DeepDream", src: "Wikipedia", lang: en }
+  review:
+    status: partial
+    date: "2026-10-14"
+    note: >-
+      Сверены авторство и дата конкретного DeepDream-примера; происхождение метода и остальные утверждения
+      требуют отдельной проверки.
 
 - id: alien-core
-  name: Элиенкор / Y3K
-  orig: Alien core
+  name: Элиенкор
+  orig: Aliencore / Alien core
   aliases: [alien core, alien-core, aliencore]
-  searchKeywords: [Y3K, инопланетная эстетика, опалесцентный, хром, Extra Celestial]
-  scopeNote: >
-    Редакционная группировка: alien core и соседний хромированный Y3K собраны здесь как близкие тренды
-    2024–2026 годов. Общего сообщества или манифеста у них нет, а рост поисковых запросов — данные одной
-    платформы, а не доказательство единого художественного движения.
+  searchKeywords:
+    - Y3K
+    - инопланетная эстетика
+    - опалесцентный
+    - хром
+    - Extra Celestial
+    - Элиенкор / Y3K
+  scopeNote: >-
+    Интернет-тренд с внеземными и биоморфными мотивами. Y3K — соседняя футуристическая эстетика,
+    сохранённая в поисковых словах, но не объявленная синонимом.
   start: 2024
   end: null
-  dates: 2024 – наши дни
+  dates: ок. 2024 – наши дни
   dateKind: popularity
   era: internet
   domain: [internet, design]
@@ -643,14 +819,18 @@
   parents:
     - { id: y2k-aesthetic, type: revival }
     - { id: ai-aesthetic, type: influence }
-  summary: >
-    Эстетика 2025–2026 годов: опалесцентные переливы, хром, жидкий металл, бледно-зелёная кожа
-    и формы, будто выращенные не на Земле.
-  description: |
-    Pinterest включил тему в прогноз трендов Pinterest Predicts 2026 (раздел «Extra Celestial»): по пересказу
-    nss magazine, запросы «alien core aesthetics» выросли на 80%, «opalescent» — на 115%. Визуально это
-    голографические поверхности, хром, биоморфные формы и макияж «как у пришельца» — ностальгия по будущему,
-    близкая хромированному Y3K.
+  summary: >-
+    Опалесцентные переливы, биоморфные формы и макияж с внеземными ассоциациями; один из мотивов прогноза
+    Pinterest на 2026 год.
+  description: >
+    В разделе Extra Celestial отчёта Pinterest Predicts 2026 показан рост запросов «alien core aesthetic»
+    на 80% и «opalescent» на 115%. Это нормализованные глобальные англоязычные поиски Pinterest за сентябрь
+    2024 — август 2025 в сравнении с сентябрём 2023 — августом 2024.
+
+
+    Эти проценты относятся к запросам на одной платформе, а не к доле людей или числу произведений.
+    Перламутр, необычные органические формы и внеземные ассоциации объединяют выбранные здесь визуальные
+    мотивы; близость к хромированному Y3K не делает названия взаимозаменяемыми.
   traits:
     - Опалесцентные, голографические переливы
     - Хром и эффект жидкого металла
@@ -660,11 +840,44 @@
   palette: ["#c9f5e9", "#b9a8ff", "#7fe8d0", "#efe9ff", "#3b3f5c"]
   paletteNote: Редакторская подборка по признакам из описания — опалесцентные, хромовые, бледно-зелёные и лиловые тона.
   evidence:
-    - { claim: "Pinterest Predicts 2026, раздел «Extra Celestial»: «alien core aesthetics» +80%, «opalescent» +115%", field: description, source: nss-pinterest-2026 }
+    - claim: >-
+        В Extra Celestial указаны alien core aesthetic +80% и opalescent +115%; периметр — глобальные
+        нормализованные англоязычные поиски Pinterest, сентябрь 2024 — август 2025 против предыдущих 12
+        месяцев.
+      field: description
+      source: pinterest-predicts-2026
   example:
-    title: Отчёт Pinterest Predicts 2026
-    note: Свободных изображений пока нет — показана редакторская подборка цветов.
+    asset: assets/illustrations/alien-core.svg
+    title: Опалесцентная биоморфная форма
+    author: Редакция атласа
+    year: 2026
+    role: illustration
+    note: >-
+      Оригинальная схема, созданная для атласа в 2026 году; не исторический скриншот и не изображение
+      реального продукта.
+    whyRepresentative: >-
+      Перламутровые переливы, органический силуэт и необычные пустоты показывают выбранные визуальные
+      признаки.
   links:
-    - { title: "Pinterest Predicts 2026 (обзор)", url: "https://axios.com/2025/12/09/2026-pinterest-trend-report", src: "Axios", lang: en }
-    - { title: "The aesthetics that will define 2026 according to Pinterest", url: "https://nssmag.com/en/lifestyle/43770/pinterest-predicts-2026-aesthetic-trends", src: "nss magazine", lang: en }
-    - { title: "Pinterest Predicts", url: "https://business.pinterest.com/pinterest-predicts/", src: "Pinterest", lang: en }
+    - title: "Pinterest Predicts 2026: Extra Celestial"
+      url: https://business.pinterest.com/pdf/pinterest-predicts/2026-trend-report/
+      src: Pinterest
+      lang: en
+    - title: Pinterest Predicts 2026 (обзор)
+      url: https://axios.com/2025/12/09/2026-pinterest-trend-report
+      src: Axios
+      lang: en
+    - title: Pinterest Predicts
+      url: https://business.pinterest.com/pinterest-predicts/
+      src: Pinterest
+      lang: en
+  approx: true
+  dateNote: >-
+    Начало интервала условное; Pinterest документирует рост поискового интереса в 2024–2025 годах, а не
+    дату рождения эстетики.
+  review:
+    status: partial
+    date: "2026-10-14"
+    note: >-
+      Первичный отчёт Pinterest открыт; уточнены запрос, проценты и период сравнения. Дата возникновения и
+      две исторические связи остаются непроверенными.

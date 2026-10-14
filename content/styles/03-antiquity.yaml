@@ -232,9 +232,11 @@
     - { title: "Gandhara Civilization", url: "https://www.worldhistory.org/Gandhara_Civilization/", src: "World History Encyclopedia", lang: en }
 
 - id: celtic-art
-  name: Кельтское искусство
+  name: Кельтское искусство латенской эпохи
   orig: Celtic (La Tène) art
-  aliases: [латенская культура, кельты, кельтский орнамент]
+  aliases:
+    - латенское искусство
+    - La Tène art
   start: -500
   end: 100
   dates: ок. 500 до н. э. – I век н. э.
@@ -266,3 +268,12 @@
   wiki: La Tène culture
   links:
     - { title: "Celtic Art", url: "https://www.worldhistory.org/Celtic_Art/", src: "World History Encyclopedia", lang: en }
+  searchKeywords:
+    - Кельтское искусство
+    - латенская культура
+    - кельты
+    - кельтский орнамент
+  scopeNote: >-
+    Раннее кельтское искусство латенской эпохи и близких островных памятников. Средневековая островная
+    книжная традиция вынесена в отдельную карточку.
+  dateKind: period

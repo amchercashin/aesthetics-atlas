@@ -71,7 +71,7 @@ export function paletteRecord(spec, computed, example) {
 }
 
 export function buildRecord(s, { links = [], palette = null, img = () => null, children = [], comparisons = [] } = {}) {
-  const example = imageRecord(s.example, img(s.example?.file));
+  const example = imageRecord(s.example, img(s.example?.file ?? s.example?.asset));
   return {
     id: s.id, name: s.name, orig: s.orig,
     kind: asList(s.kind), kindNote: str(s.kindNote), scopeNote: str(s.scopeNote),
@@ -87,7 +87,7 @@ export function buildRecord(s, { links = [], palette = null, img = () => null, c
     summary: String(s.summary).trim(), description: paragraphs(s.description),
     traits: s.traits ?? [], names: s.names ?? [],
     example,
-    gallery: (s.gallery ?? []).map((g) => imageRecord(g, img(g.file))),
+    gallery: (s.gallery ?? []).map((g) => imageRecord(g, img(g.file ?? g.asset))),
     palette: paletteRecord(s, palette, example),
     evidence: (s.evidence ?? []).map((e) => ({ claim: str(e.claim), field: str(e.field), source: e.source, note: str(e.note) })),
     review: s.review ? { status: s.review.status, date: ymd(s.review.date), note: str(s.review.note) } : { status: 'legacy', date: null, note: null },

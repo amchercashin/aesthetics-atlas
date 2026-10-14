@@ -2,8 +2,8 @@
 import { html, mount } from '../html.js';
 import { buildIndex, search, parseYear } from '../search.js?v=audit';
 import { fmtDates, fmtYear } from '../format.js?v=audit';
-import { thumb } from './common.js?v=audit';
-import { markLoaded } from './image.js?v=audit';
+import { thumb } from './common.js?v=audit-p1p2';
+import { markLoaded } from './image.js?v=audit-p1p2';
 
 export function initSearch(store) {
   const dlg = document.querySelector('.search-dialog');
