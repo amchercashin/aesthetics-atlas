@@ -107,9 +107,9 @@ export default {
               <label class="map-switch"><input type="checkbox" data-layer="authors"><span class="sw" aria-hidden="true"></span>Авторские языки</label>
               <label class="map-switch"><input type="checkbox" data-layer="compare"><span class="sw" aria-hidden="true"></span>Визуальные сопоставления</label>
               <label class="map-switch"><input type="checkbox" data-layer="contexts"><span class="sw" aria-hidden="true"></span>Школы и культурный контекст</label>
-              <label class="map-switch"><input type="checkbox" data-layer="verified"><span class="sw" aria-hidden="true"></span>Только связи с источником</label>
+              <label class="map-switch"><input type="checkbox" data-layer="verified" checked><span class="sw" aria-hidden="true"></span>Только связи с источником</label>
             </div>
-            <p class="lg-note">Вертикаль не означает иерархию: стили стоят рядом с главным предком, чтобы ветви были короткими. Большинство связей пока не сверены с источниками — это редакционная схема. Шкала времени неравномерная: каждой эпохе — место по числу стилей. Нажмите на линию — появится объяснение связи; на стиль — его связи крупным планом.</p>
+            <p class="lg-note">Вертикаль не означает иерархию: стили стоят рядом с главным предком, чтобы ветви были короткими. Большинство связей пока не сверены с источниками — это редакционная схема. По умолчанию гипотезы скрыты; переключатель «Только связи с источником» позволяет включить их. Шкала времени неравномерная: каждой эпохе — место по числу стилей. Нажмите на линию — появится объяснение связи; на стиль — его связи крупным планом.</p>
           </div>
         </div>
         <div class="zoom-ctrls">
@@ -179,7 +179,7 @@ export default {
     const nodeById = new Map();
     const axis = {};
     let raf = 0, selected = null, focusMode = 'near', hovered = null, mode = 'z0';
-    let showAll = false, showCmp = false, showContexts = false, showAuthors = false, verifiedOnly = false;
+    let showAll = false, showCmp = false, showContexts = false, showAuthors = false, verifiedOnly = true;
     const isAuthor = (s) => s.kind.includes('author-style');
     const authorHidden = (s) => isAuthor(s) && !showAuthors && s.id !== selected;
     let filter = { domain: '', family: '' };
@@ -341,17 +341,21 @@ export default {
     }
 
     function applyParams(params, first = false) {
-      if (params.get('links') === 'all') setLayer('all', true);
-      if (params.get('cmp') === '1') setLayer('compare', true);
-      setLayer('verified', params.get('rel') === 'verified');
+      setLayer('all', params.get('links') === 'all');
+      setLayer('compare', params.get('cmp') === '1');
+      setLayer('verified', params.get('rel') !== 'all');
       setLayer('authors', params.get('authors') === '1' || params.get('k') === 'authors');
       setLayer('contexts', params.get('contexts') === '1');
-      const d = params.get('d') ?? '', k = params.get('k') ?? '';
-      if ((DOMAIN[d] || KIND_FAMILY[k]) && (d !== filter.domain || k !== filter.family)) setFilter({ domain: DOMAIN[d] ? d : '', family: KIND_FAMILY[k] ? k : '' }, { animate: !first });
+      const d = DOMAIN[params.get('d')] ? params.get('d') : '';
+      const k = KIND_FAMILY[params.get('k')] ? params.get('k') : '';
+      if (d !== filter.domain || k !== filter.family) setFilter({ domain: d, family: k }, { animate: !first });
       const focus = store.resolve(params.get('s') ?? '');
       const eraI = store.eras.findIndex((e) => e.id === params.get('era'));
       if (focus && nodeById.has(focus)) select(focus, { animate: !first, mode: params.get('view') === 'line' ? 'line' : 'near' });
-      else if (eraI >= 0) zoomToEra(eraI, first ? 0 : 650);
+      else {
+        if (selected) clearSelection();
+        if (eraI >= 0) zoomToEra(eraI, first ? 0 : 650);
+      }
     }
 
     // ---------- отрисовка ----------
@@ -1138,7 +1142,7 @@ export default {
     const syncUrl = () => replaceParams('map', {
       s: selected ?? '', view: selected && focusMode === 'line' ? 'line' : '',
       d: filter.domain, k: filter.family,
-      cmp: showCmp ? '1' : '', rel: verifiedOnly ? 'verified' : '', links: showAll ? 'all' : '',
+      cmp: showCmp ? '1' : '', rel: verifiedOnly ? '' : 'all', links: showAll ? 'all' : '',
       authors: showAuthors ? '1' : '', contexts: showContexts ? '1' : '',
     });
     function setLayer(name, v) {
@@ -1451,10 +1455,7 @@ export default {
     return {
       update(next) {
         if (!sc) return;
-        const id = store.resolve(next.params.get('s') ?? '');
-        const eraI = store.eras.findIndex((e) => e.id === next.params.get('era'));
-        if (id && id !== selected && nodeById.has(id)) select(id);
-        else if (!id && eraI >= 0) zoomToEra(eraI);
+        applyParams(next.params);
       },
       destroy() {
         destroyed = true;
