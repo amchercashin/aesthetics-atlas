@@ -1064,3 +1064,230 @@
   sourceType: museum
   checked: '2026-10-14'
   note: Прочитан музейный материал о переносе рисунка с купеси, дорисовке, разделительных линиях и числах.
+
+# Региональные росписи, графика и текстиль: партия 1
+- id: sarmaya-mithila-exhibition
+  title: Crossing Borders with Mithila
+  publisher: Sarmaya / Mithila Museum, Japan
+  url: https://sarmaya.in/exhibitions/crossing-borders-with-mithila/
+  sourceType: museum
+  checked: '2026-10-14'
+  note: >-
+    Прочитаны вступление и подписи всей галереи, просмотрены пять выбранных репродукций. Даты и материалы не
+    перенесены с одной работы на соседнюю. Для двух работ дата и материалы в публикации не указаны. Автор
+    кураторских заметок и коллекционер Tokio Hasegawa не назван создателем картин.
+- id: vam-kalighat
+  title: Kalighat painting
+  publisher: Victoria and Albert Museum
+  url: https://www.vam.ac.uk/articles/kalighat-painting
+  sourceType: museum
+  checked: '2026-10-14'
+  note: >-
+    Прочитан музейный обзор с подписями самостоятельных произведений. Монтаж содержит разные работы с
+    отдельными инвентарными номерами; он не считается одним предметом или несколькими ракурсами одной вещи.
+    Точные материалы выбранных четырёх работ здесь не сообщены.
+- id: vam-kipling-popular-art
+  title: Lockwood Kipling’s collection of Indian popular art
+  publisher: Victoria and Albert Museum
+  url: https://www.vam.ac.uk/articles/lockwood-kiplings-collection-of-indian-popular-art
+  sourceType: museum
+  checked: '2026-10-14'
+  note: >-
+    Прочитан кураторский материал о составе коллекции, различиях региональных практик и роли Киплинга как
+    собирателя. Его имя не перенесено в авторство калигхатских рисунков.
+
+# Региональные росписи, графика и текстиль: партия 1
+- id: met-asante-kente-85576
+  title: Man’s kente, 1972.56.1, XIX век
+  publisher: The Metropolitan Museum of Art
+  url: https://www.metmuseum.org/art/collection/search/85576
+  sourceType: museum
+  checked: '2026-10-14'
+  note: >-
+    Прочитана предметная запись: Asante-Akan, Кумаси, хлопок и шёлк. Просмотрены общий вид на манекене и
+    отдельные детали того же полотна; они не считаются разными произведениями.
+- id: met-asante-kente-320678
+  title: Man’s kente, 2010.556, начало XX века
+  publisher: The Metropolitan Museum of Art
+  url: https://www.metmuseum.org/art/collection/search/320678
+  sourceType: museum
+  checked: '2026-10-14'
+  note: >-
+    Предмет атрибутирован Asante-Akan, материал — шёлк. Музей описывает рисунок sika futuru и структуру
+    переплетения. Изображение ограничено в использовании; дана ссылка.
+- id: met-asante-kente-894795
+  title: Royal man’s kente, 2023.329, около 1910–1940
+  publisher: The Metropolitan Museum of Art
+  url: https://www.metmuseum.org/art/collection/search/894795
+  sourceType: museum
+  checked: '2026-10-14'
+  note: >-
+    Использованы предметные дата, атрибуция и материал, а не противоречивая фраза о столетии в конце
+    кураторского текста. Доступное превью мало; тонкая структура по нему не анализировалась.
+- id: met-asante-wrapper-316800
+  title: Wrapper, 1993.384.2, XX век
+  publisher: The Metropolitan Museum of Art
+  url: https://www.metmuseum.org/art/collection/search/316800
+  sourceType: museum
+  checked: '2026-10-14'
+  note: >-
+    Предметная запись: Asante-Akan, Гана, rayon и хлопок. Дарители Bill и Gale Simmons не названы ткачами.
+    Просмотрено доступное превью.
+- id: met-african-textiles-2008
+  title: 'The Essential Art of African Textiles: Design Without End, 2008'
+  publisher: The Metropolitan Museum of Art
+  url: >-
+    https://resources.metmuseum.org/resources/metpublications/pdf/The_Essential_Art_of_African_Textiles_Design_Without_End.pdf
+  sourceType: catalog
+  checked: '2026-10-14'
+  note: >-
+    Музейный каталог прочитан выборочно в оригинальном сканированном PDF: печатные с. 36–40, 48–49 и
+    указатель. На с. 36–37 приведено полотно эве, которое не перенесено в корпус асанте; на с. 48–49 —
+    адинкра. Полное прочтение книги не заявлено.
+- id: commons-met-kente-full
+  title: Kente Cloth MET 1972.56.1.jpeg — сведения о файле
+  publisher: Wikimedia Commons / The Metropolitan Museum of Art
+  url: https://commons.wikimedia.org/wiki/File:Kente_Cloth_MET_1972.56.1.jpeg
+  sourceType: primary
+  checked: '2026-10-14'
+  note: >-
+    Файл сопоставлен с музейным номером 1972.56.1 и источником Met 85576. Commons указывает передачу Met и
+    CC0; это фотография с манекеном, а не схема. Общий вид имеет ширину 298 пикселей.
+- id: commons-met-kente-detail
+  title: Kente Cloth MET 1972.56.1 d1.jpg — деталь
+  publisher: Wikimedia Commons / The Metropolitan Museum of Art
+  url: https://commons.wikimedia.org/wiki/File:Kente_Cloth_MET_1972.56.1_d1.jpg
+  sourceType: primary
+  checked: '2026-10-14'
+  note: >-
+    Прочитано описание файла: та же вещь 1972.56.1, фотографическая деталь 728 × 546, передача Met, CC0.
+    Деталь не считается самостоятельным произведением.
+- id: met-bogolan-312395
+  title: Bògòlanfini, 1979.206.190, первая половина XX века
+  publisher: The Metropolitan Museum of Art
+  url: https://www.metmuseum.org/art/collection/search/312395
+  sourceType: museum
+  checked: '2026-10-14'
+  note: >-
+    Прочитаны текущая запись и кураторский текст о хлопчатых полосах и окрашивании. Предметная дата — первая
+    половина XX века; приобретение 1979 не является годом изготовления. Превью маленькое.
+- id: met-bogolan-318524
+  title: Wrapper (Bogolanfini), 2000.160.60, XX век
+  publisher: The Metropolitan Museum of Art
+  url: https://www.metmuseum.org/art/collection/search/318524
+  sourceType: museum
+  checked: '2026-10-14'
+  note: >-
+    Предметная запись называет хлопок, но не точный состав красителя этой вещи. Просмотрено ограниченное
+    изображение; разрешение на встраивание не заявлено.
+- id: cma-diarra-2016-48
+  title: Nakunte Diarra. Koumi Diosseni Kandian, 1987
+  publisher: Cleveland Museum of Art
+  url: https://www.clevelandart.org/art/2016.48
+  sourceType: museum
+  checked: '2026-10-14'
+  note: >-
+    Автор, 1987, хлопок и краситель. Музей описывает предназначенный для стены формат и обучение у тёти Sojo
+    Coulibaly. Предмет 2016.48 не датирован годом дарения.
+- id: cma-diarra-2016-49
+  title: Nakunte Diarra. Surakamuso Kunkoro Talan, 1988
+  publisher: Cleveland Museum of Art
+  url: https://www.clevelandart.org/art/2016.49
+  sourceType: museum
+  checked: '2026-10-14'
+  note: >-
+    Автор, 1988, хлопок и краситель; музей различает 12 сшитых полос и нанесение рисунка. Права на
+    произведение действуют; дана предметная ссылка.
+- id: tepapa-masi-muskets
+  title: Masi kesa, FE003272/1, 1890-е
+  publisher: Museum of New Zealand Te Papa Tongarewa
+  url: https://collections.tepapa.govt.nz/object/150726
+  sourceType: museum
+  checked: '2026-10-14'
+  note: >-
+    Прочитана предметная запись и описание трафаретного декора. Дата Production — 1890-е; коллекционирование в
+    тот же период описано отдельно. Просмотрена музейная репродукция.
+- id: tepapa-masi-imanueli
+  title: Kerela Imanueli. Ubi ni davodavo, FE011160
+  publisher: Museum of New Zealand Te Papa Tongarewa
+  url: https://collections.tepapa.govt.nz/object/337417
+  sourceType: museum
+  checked: '2026-10-14'
+  note: >-
+    Автор назван, дата изготовления не указана. Приобретение 1998 не перенесено в год произведения. Получатели
+    свадебного дара не названы художниками.
+- id: tepapa-masi-mixed
+  title: Masi, FE012791, дата не указана
+  publisher: Museum of New Zealand Te Papa Tongarewa
+  url: https://collections.tepapa.govt.nz/object/1396687
+  sourceType: museum
+  checked: '2026-10-14'
+  note: >-
+    Прочитаны запись и кураторский текст о сочетании трафарета и свободного рисунка. Имена дарителей и
+    владельца-миссионера не перенесены в авторство.
+- id: tepapa-masi-that-vase
+  title: Dame Robin White и Tamari Cabeikanacea. That Vase, 2019
+  publisher: Museum of New Zealand Te Papa Tongarewa
+  url: https://collections.tepapa.govt.nz/object/1887935
+  sourceType: museum
+  checked: '2026-10-14'
+  note: >-
+    Предмет 2020-0026-1: оба соавтора, 2019, Фиджи, лубяное полотно и чернила. Дата дара 2022 отличается от
+    даты работы. Просмотрена репродукция.
+- id: tepapa-masi-making-vase
+  title: The making of ‘That Vase’
+  publisher: Museum of New Zealand Te Papa Tongarewa
+  url: https://www.tepapa.govt.nz/digital-museum/explore-digital-museum/art/watch-robin-white-making-vase
+  sourceType: museum
+  checked: '2026-10-14'
+  note: >-
+    Прочитан музейный текст о работе в Лаутоке в 2019 году, соавторстве и применении draudrau. Полный просмотр
+    видео не заявлен.
+
+# Региональные росписи, графика и текстиль: партия 1
+- id: rusmuseum-gorodets-melnikov
+  title: А. В. Мельников. Донце прялки, 1870-е
+  publisher: Государственный Русский музей
+  url: https://rusmuseumvrm.ru/data/collections/folk_art/onir-2888/index.php
+  sourceType: museum
+  checked: '2026-10-14'
+  note: >-
+    Предмет ОНИ/Р-2888: дерево, роспись. Имя Антон Васильевич Мельников раскрыто самим музеем. Резные
+    предшественники не подставлены в корпус расписных вещей.
+- id: rusmuseum-gorodets-dontse-4987
+  title: Донце прялки, ОНИ/Р-4987, вторая половина XIX века
+  publisher: Государственный Русский музей
+  url: https://rusmuseumvrm.ru/data/collections/folk_art/onir-4987/index.php
+  sourceType: museum
+  checked: '2026-10-14'
+  note: >-
+    Дерево, роспись. Имя изготовителя не указано. Т. А. Маврина — собирательница этой вещи и художница, на
+    которую повлияло народное искусство, но не автор донца.
+- id: rusmuseum-gorodets-harvest
+  title: И. А. Мазин. «Праздник урожая», 1935
+  publisher: Государственный Русский музей
+  url: https://rusmuseumvrm.ru/data/collections/folk_art/oni-r-4282/index.php
+  sourceType: museum
+  checked: '2026-10-14'
+  note: >-
+    ОНИ/Р-4282: бумага, роспись. Инициалы автора сохранены без отождествления с однофамильцами. Это
+    самостоятельная композиция, а не фотография донца.
+- id: rusmuseum-gorodets-kryukov
+  title: Д. И. Крюков. Панно, 1938
+  publisher: Государственный Русский музей
+  url: https://rusmuseumvrm.ru/data/collections/folk_art/onir-1426/
+  sourceType: museum
+  checked: '2026-10-14'
+  note: >-
+    ОНИ/Р-1426: бумага, масло, стекло, полихромная роспись; д. Косково. Куратор рассматривает переход к новым
+    изделиям в 1930-е годы.
+- id: sergiev-posad-gorodets
+  title: Хохломская и городецкая роспись
+  publisher: Сергиево-Посадский государственный историко-художественный музей-заповедник
+  url: >-
+    https://sp-mz.ru/about/collections/russkoe-narodnoe-i-dekorativno-prikladnoe-iskusstvo-xvii-xxi-vv/hohlomskaya-i-gorodeckaya-rospis
+  sourceType: museum
+  checked: '2026-10-14'
+  note: >-
+    Прочитан кураторский обзор Н. В. Толстухиной о коллекции, разных авторах, ранней резьбе, росписи и
+    продолжении промысла в XX веке. Общий обзор не заменяет предметных атрибуций Русского музея.

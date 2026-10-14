@@ -149,6 +149,9 @@ export function validate(styles, eras, sources = []) {
 
     // Значение дат
     if (s.dateKind != null && !DATE_KINDS.includes(s.dateKind)) errors.push(`${at} bad dateKind "${s.dateKind}"`);
+    if (s.dateKind === 'corpus' && (!s.corpus?.length || typeof s.dates !== 'string' || !s.dates.trim() || typeof s.dateNote !== 'string' || !s.dateNote.trim())) {
+      errors.push(`${at} corpus dates need works, an explicit dates label and dateNote`);
+    }
     if (s.endKind != null && !END_KINDS.includes(s.endKind)) errors.push(`${at} bad endKind "${s.endKind}"`);
     if (s.endKind != null && s.end != null) errors.push(`${at} endKind only applies when end is null`);
     if (s.approx != null && typeof s.approx !== 'boolean') errors.push(`${at} approx must be boolean`);

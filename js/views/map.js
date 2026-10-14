@@ -5,7 +5,7 @@
 // Уровни: обзор → чтение → детали (миниатюры). Клик по стилю — крупный план ближайших связей,
 // с подписями типов связей и метками дальних родственников на краю экрана; полная родословная — по запросу.
 import { html, mount, safeUrl } from '../html.js';
-import { fmtDates, fmtYear, RELATION, REL_STATUS, CONTEXT, DOMAIN, KIND, KIND_FAMILY, plural } from '../format.js?v=author-pilot';
+import { fmtDates, fmtYear, RELATION, REL_STATUS, CONTEXT, DOMAIN, KIND, KIND_FAMILY, plural } from '../format.js?v=regional-01';
 import { createTimeScale, segmentWidths, segmentTicks } from '../timescale.js';
 import { layoutGenealogy, routeBranches } from '../layout.js?v=sparse';
 import { frame, markLoaded } from '../ui/image.js?v=author-pilot';

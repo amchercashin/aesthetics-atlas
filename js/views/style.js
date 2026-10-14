@@ -1,7 +1,7 @@
 // Зал стиля: стена тонируется палитрой, работа висит с этикеткой, ниже — текст, родословная, ссылки.
 // Статус проверки карточки и связей виден сразу; источники утверждений — под раскрытием.
 import { html, mount, safeUrl } from '../html.js';
-import { fmtDates, fmtYear, RELATION, DOMAIN, KIND, DATE_KIND, REL_STATUS, roleLabel, plural } from '../format.js?v=author-pilot';
+import { fmtDates, fmtYear, RELATION, DOMAIN, KIND, DATE_KIND, REL_STATUS, roleLabel, plural } from '../format.js?v=regional-01';
 import { frame, credit } from '../ui/image.js?v=author-pilot';
 import { eraTag, thumb, footer } from '../ui/common.js?v=author-pilot';
 import { toast } from '../ui/toast.js';

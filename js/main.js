@@ -2,7 +2,7 @@
 import { loadAtlas } from './store.js?v=author-pilot';
 import { parseHash } from './router.js';
 import { initTheme } from './theme.js';
-import { initSearch } from './ui/search-dialog.js?v=author-pilot';
+import { initSearch } from './ui/search-dialog.js?v=regional-01';
 import { initLightbox } from './ui/lightbox.js';
 import { initImageEvents, markLoaded } from './ui/image.js?v=author-pilot';
 import { html, mount } from './html.js';
@@ -32,7 +32,7 @@ async function route(base, { first = false } = {}) {
     current.instance.update({ ...base, ...r });
     return;
   }
-  const mod = await import(`./views/${r.view}.js?v=author-pilot`);
+  const mod = await import(`./views/${r.view}.js?v=regional-01`);
   if (seq !== routeSeq) return;
   const swap = () => {
     current?.instance?.destroy?.();

@@ -810,3 +810,1284 @@
       url: https://www.tepapa.govt.nz/digital-museum/explore-digital-museum/tapa-barkcloth-art-in-the-pacific
       src: Museum of New Zealand Te Papa Tongarewa
       lang: en
+- domain:
+    - art
+  tier: 2
+  dateKind: corpus
+  origin: unknown
+  parents: []
+  aliases:
+    - Мадхубани
+    - Madhubani
+    - Mithila
+  names:
+    - Ганга Деви
+    - Сита Деви
+    - Годавари Дутта
+  maturity: established
+  labelStatus: historical
+  id: mithila-painting
+  name: Живопись Митхилы
+  orig: Mithila / Madhubani painting
+  kind: tradition
+  start: 1990
+  end: 1990
+  dates: "корпус: 1990 и недатированные работы"
+  era: postmodern
+  region: Митхила, Бихар, Индия; музейный корпус, созданный также в Японии
+  medium:
+    - painting
+    - drawing
+  summary: >-
+    Контур, штриховое заполнение и орнаментальные обрамления соединяют фигуры, растения, животных и
+    повествовательные сцены.
+  description: >-
+    Эта карточка рассматривает живопись Митхилы через музейную выборку работ Ганги Деви, Ситы Деви и Годавари
+    Дутты. Линейное письмо и насыщенные цветовые поля сосуществуют внутри практики: её нельзя свести к одному
+    орнаменту или палитре.
+
+
+    У Ганги Деви дерево, животные и поезд складываются из тонких контуров и мелкого рисунка. Сита Деви строит
+    крупные фигуры цветными участками, а Годавари Дутта связывает фигуру с плотной линейной проработкой
+    деталей. Различия между авторами сохраняются внутри общей сравнительной карточки; отдельные авторские узлы
+    потребуют собственных исследований.
+  traits:
+    - Двойные и одинарные контуры задают границы фигур и орнаментальных участков
+    - Мелкие линии, штриховка и повторяющиеся элементы заполняют формы
+    - Фигуры и растения организуются плоскостно, без единой глубинной перспективы
+    - Рамки, полосы и внутренние узоры связывают изображение с границами поверхности
+  scopeNote: >-
+    Пять работ трёх авторов в совместной выставке Sarmaya и Mithila Museum: три работы Ганги Деви датированы
+    1990 годом, ещё две не датированы. Эта выборка не представляет все практики Митхилы, включая Непал и
+    ритуальную стенопись.
+  dateNote: >-
+    1990 — единственная сообщённая дата изготовления выбранных работ, а не начало или конец традиции.
+    Недатированные произведения Ситы Деви и Годавари Дутты не получили вымышленных лет. Материалы указаны
+    только там, где есть предметная подпись.
+  creators:
+    - name: Ганга Деви
+      orig: Ganga Devi
+      role: автор трёх датированных работ выбранного корпуса
+      sources:
+        - sarmaya-mithila-exhibition
+    - name: Сита Деви
+      orig: Sita Devi
+      role: автор Krishna and Radha
+      sources:
+        - sarmaya-mithila-exhibition
+    - name: Годавари Дутта
+      orig: Godawari Dutta
+      role: автор Shiva-Shakti
+      sources:
+        - sarmaya-mithila-exhibition
+  corpus:
+    - workId: mithila-ganga-tree
+      title: Tree of Surya Mukhi
+      author: Ганга Деви
+      year: 1990
+      medium: Сажа и другие природные пигменты на бетоне
+      sources:
+        - sarmaya-mithila-exhibition
+      reference: https://sarmaya.in/exhibitions/crossing-borders-with-mithila/
+      whyRepresentative: >-
+        Тонкий ветвящийся ствол, парные птицы и розетки оставляют широкое свободное поле; заполнение
+        сосредоточено внутри фигур.
+      place: Mithila Museum, Japan; выставка Sarmaya
+      rights:
+        embed: false
+        reviewed: "2026-10-14"
+        note: Репродукция доступна на предметной странице источника.
+    - workId: mithila-ganga-lion
+      title: Lion eating a young moon
+      author: Ганга Деви
+      year: 1990
+      medium: Сажа и другие природные пигменты на бумаге
+      sources:
+        - sarmaya-mithila-exhibition
+      reference: https://sarmaya.in/exhibitions/crossing-borders-with-mithila/
+      whyRepresentative: >-
+        Большая фигура животного и меньшие мотивы объединены линейным рисунком, узорной рамкой и мелким
+        заполнением поверхности.
+      place: Mithila Museum, Japan; выставка Sarmaya
+      rights:
+        embed: false
+        reviewed: "2026-10-14"
+        note: Репродукция доступна на предметной странице источника.
+    - workId: mithila-ganga-train
+      title: Train in India
+      author: Ганга Деви
+      year: 1990
+      medium: Материалы в публикации не указаны
+      sources:
+        - sarmaya-mithila-exhibition
+      reference: https://sarmaya.in/exhibitions/crossing-borders-with-mithila/
+      whyRepresentative: >-
+        Прямоугольные окна поезда повторяют ритм фигур и разделяют повествование на ячейки; орнаментальная
+        кайма охватывает всю сцену.
+      place: Mithila Museum, Japan; выставка Sarmaya
+      rights:
+        embed: false
+        reviewed: "2026-10-14"
+        note: Репродукция доступна на предметной странице источника.
+    - workId: mithila-sita-krishna
+      title: Krishna and Radha
+      author: Сита Деви
+      year: Дата в публикации не указана
+      medium: Материалы в публикации не указаны
+      sources:
+        - sarmaya-mithila-exhibition
+      reference: https://sarmaya.in/exhibitions/crossing-borders-with-mithila/
+      whyRepresentative: >-
+        Две вытянутые фигуры построены крупными красными, жёлтыми и тёмными участками; растительный узор
+        обрамляет их и заполняет одежду.
+      place: Mithila Museum, Japan; выставка Sarmaya
+      rights:
+        embed: false
+        reviewed: "2026-10-14"
+        note: Репродукция доступна на предметной странице источника.
+    - workId: mithila-godawari-shiva
+      title: Shiva-Shakti
+      author: Годавари Дутта
+      year: Дата в публикации не указана
+      medium: Материалы в публикации не указаны
+      sources:
+        - sarmaya-mithila-exhibition
+      reference: https://sarmaya.in/exhibitions/crossing-borders-with-mithila/
+      whyRepresentative: >-
+        Фронтальная многорукая фигура собрана тонким линейным рисунком; повторяющиеся штрихи и узорные детали
+        подчёркивают плоскость.
+      place: Mithila Museum, Japan; выставка Sarmaya
+      rights:
+        embed: false
+        reviewed: "2026-10-14"
+        note: Репродукция доступна на предметной странице источника.
+  compare:
+    - id: kalighat-painting
+      note: >-
+        В выбранных работах Митхилы орнамент и внутреннее заполнение имеют большую роль, чем в компактных
+        фигурах на свободном поле исторического Калигхата. Это наблюдение по двум корпусам, не универсальная
+        граница всех произведений.
+      sources:
+        - sarmaya-mithila-exhibition
+        - vam-kalighat
+  evidence:
+    - claim: >-
+        Совместная музейная выставка атрибутирует работы Ганге Деви, Сите Деви и Годавари Дутте; подписи не
+        сообщают дату каждого произведения.
+      field: corpus
+      source: sarmaya-mithila-exhibition
+  admission:
+    language: >-
+      Контур, повторяющееся внутреннее заполнение и орнаментальная рамка связывают разные сюжеты, при заметных
+      индивидуальных различиях.
+    corpus: >-
+      Пять самостоятельных изображений трёх авторов; три датированы 1990 годом. Бетонное произведение не
+      выдано за бумажный лист.
+    distinctness: >-
+      От Калигхата выборка отличается плотностью внутренней проработки и ролью обрамления. От книжной графики
+      Билибина выбранные самостоятельные композиции отличаются отсутствием заданной связи со свёрстанным
+      текстом страницы. Это сопоставление корпусов, а не утверждение о влиянии.
+    significance: >-
+      Sarmaya и Mithila Museum публикуют самостоятельную кураторскую выставку с произведениями нескольких
+      поколений мастеров и историей музейного признания.
+    sources:
+      - sarmaya-mithila-exhibition
+      - vam-kalighat
+  review:
+    status: partial
+    date: "2026-10-14"
+    note: >-
+      Просмотрены все пять репродукций и музейные подписи. Две работы не датированы, у трёх не указаны
+      материалы; эти сведения оставлены неизвестными. Корпус не обосновывает дату возникновения или полноту
+      региональной традиции.
+  example:
+    workId: mithila-ganga-tree
+    title: Tree of Surya Mukhi
+    author: Ганга Деви
+    year: 1990
+    medium: Сажа и другие природные пигменты на бетоне
+    sources:
+      - sarmaya-mithila-exhibition
+    reference: https://sarmaya.in/exhibitions/crossing-borders-with-mithila/
+    whyRepresentative: >-
+      Тонкий ветвящийся ствол, парные птицы и розетки оставляют широкое свободное поле; заполнение
+      сосредоточено внутри фигур.
+    place: Mithila Museum, Japan; выставка Sarmaya
+    rights:
+      embed: false
+      reviewed: "2026-10-14"
+      note: Репродукция доступна на предметной странице источника.
+  links:
+    - title: Crossing Borders with Mithila
+      url: https://sarmaya.in/exhibitions/crossing-borders-with-mithila/
+      src: Sarmaya / Mithila Museum, Japan
+      lang: en
+    - title: Kalighat painting
+      url: https://www.vam.ac.uk/articles/kalighat-painting
+      src: Victoria and Albert Museum
+      lang: en
+- domain:
+    - art
+  tier: 2
+  dateKind: corpus
+  origin: unknown
+  parents: []
+  aliases:
+    - Калигхат
+    - Kalighat
+    - Калигхатская живопись
+  names:
+    - Нибаран Чандра Гхош
+    - Канаи Лал Гхош
+    - Анвар Читракар
+  maturity: established
+  labelStatus: historical
+  id: kalighat-painting
+  name: Живопись Калигхата
+  orig: Kalighat painting
+  kind: school
+  start: 1860
+  end: 1929
+  approx: true
+  dates: "корпус: около 1860 — 1920-е"
+  era: xix
+  region: Калигхат, Калькутта (Колката), Бенгалия, Индия
+  medium:
+    - painting
+    - drawing
+  summary: >-
+    Выразительная линия, крупные силуэты и свободный фон делают религиозные и городские сцены компактными
+    самостоятельными изображениями.
+  description: >-
+    Выбранный корпус показывает городской визуальный язык Калигхата на четырёх работах XIX — начала XX века.
+    Контуры фигур, редкие предметные детали и свободное поле позволяют прочитать жест или сцену без
+    развёрнутого пейзажа. Цвет и степень завершённости меняются: линейный кот с рыбой не похож на насыщенную
+    цветом женскую фигуру.
+
+
+    Именная атрибуция сохраняется там, где её даёт музей. Собиратели и дарители не становятся авторами.
+    Современная работа Анвара Читракара приведена отдельно как продолжение практики; её дата не расширяет
+    исторический корпус автоматически.
+  traits:
+    - Крупные фигуры и предметы отделены от свободного фона
+    - Контур и изгиб силуэта несут основную выразительность
+    - Немного деталей выделяют жест, атрибут или социальную ситуацию
+    - Цветовые участки и тональные переходы подчиняются ясной форме; встречается и линейный рисунок
+  scopeNote: >-
+    Четыре самостоятельные работы V&A: женщина с павлином, женщина с розой, кот с рыбой и мужчина с ситаром.
+    Отдельно показан современный пример 2010 года. Все бенгальские патуа и все виды индийской популярной
+    графики к этой школе не приравниваются.
+  dateNote: >-
+    На оси расположены выбранные работы около 1860–1870, около 1870, около 1900 и 1920-х. Музейная коллекция
+    шире этого корпуса; даты не являются точным периодом существования всей практики.
+  creators:
+    - name: Нибаран Чандра Гхош
+      orig: Nibaran Chandra Ghosh
+      role: автор женщины с розой в музейной подписи
+      sources:
+        - vam-kalighat
+    - name: Канаи Лал Гхош
+      orig: Kanai Lal Ghosh
+      role: автор кота с рыбой в музейной подписи
+      sources:
+        - vam-kalighat
+    - name: Анвар Читракар
+      orig: Anwar Chitrakar
+      role: автор отдельного современного примера, 2010
+      sources:
+        - vam-kalighat
+  corpus:
+    - workId: kalighat-peacock-247
+      title: A lady holding a peacock, IS.247-1953
+      author: Автор не указан
+      year: около 1860–1870
+      medium: Работа на бумаге; точные материалы в подписи не указаны
+      sources:
+        - vam-kalighat
+      reference: https://www.vam.ac.uk/articles/kalighat-painting
+      whyRepresentative: >-
+        Наклон головы, изгиб руки и силуэт павлина выделены на незаполненном поле; крупные цветовые участки
+        держат фигуру.
+      place: Victoria and Albert Museum
+      rights:
+        embed: false
+        reviewed: "2026-10-14"
+        note: Репродукция доступна на предметной странице источника.
+    - workId: kalighat-rose-31
+      title: A woman putting a rose in her hair, IS.31-1952
+      author: Нибаран Чандра Гхош
+      year: около 1900
+      medium: Работа на бумаге; точные материалы в подписи не указаны
+      sources:
+        - vam-kalighat
+      reference: https://www.vam.ac.uk/articles/kalighat-painting
+      whyRepresentative: >-
+        Поднятая рука, наклон корпуса и крупная чёрная прядь задают движение; тональные переходы остаются
+        внутри ясного силуэта.
+      place: Victoria and Albert Museum
+      rights:
+        embed: false
+        reviewed: "2026-10-14"
+        note: Репродукция доступна на предметной странице источника.
+    - workId: kalighat-cat-45
+      title: A cat with a fish, IS.45-1952
+      author: Канаи Лал Гхош
+      year: 1920-е
+      medium: Линейный рисунок; точные материалы в подписи не указаны
+      sources:
+        - vam-kalighat
+      reference: https://www.vam.ac.uk/articles/kalighat-painting
+      whyRepresentative: >-
+        Изгиб спины, усы и рыба сведены к выразительному контуру; незаполненное поле делает линию особенно
+        заметной.
+      place: Victoria and Albert Museum
+      rights:
+        embed: false
+        reviewed: "2026-10-14"
+        note: Репродукция доступна на предметной странице источника.
+    - workId: kalighat-babu-8144
+      title: A babu seated on a chair, playing the sitar, 08144(IS)
+      author: Автор не указан
+      year: около 1870
+      medium: Работа на бумаге; точные материалы в подписи не указаны
+      sources:
+        - vam-kalighat
+      reference: https://www.vam.ac.uk/articles/kalighat-painting
+      whyRepresentative: >-
+        Стул, инструмент и фигура образуют компактную группу на свободном фоне; тёмный контур и тональные
+        переходы связывают её части.
+      place: Victoria and Albert Museum
+      rights:
+        embed: false
+        reviewed: "2026-10-14"
+        note: Репродукция доступна на предметной странице источника.
+  gallery:
+    - workId: kalighat-bribe-49
+      title: The policeman’s bribe, IS.49-2011
+      author: Анвар Читракар
+      year: 2010
+      medium: Точные материалы в подписи не указаны
+      sources:
+        - vam-kalighat
+      reference: https://www.vam.ac.uk/articles/kalighat-painting
+      whyRepresentative: >-
+        Современный пример с группой фигур и городской сценой; он показывает изменение композиционной
+        плотности за пределами исторического корпуса.
+      place: Victoria and Albert Museum
+      rights:
+        embed: false
+        reviewed: "2026-10-14"
+        note: Репродукция доступна на предметной странице источника.
+  compare: []
+  evidence:
+    - claim: >-
+        Музей различает исторические произведения и работы современных мастеров, называя даты и авторов
+        отдельных изображений.
+      field: scope
+      source: vam-kalighat
+    - claim: >-
+        Кураторский текст рассматривает Киплинга как собирателя популярного искусства разных индийских
+        центров.
+      field: authorship
+      source: vam-kipling-popular-art
+  admission:
+    language: >-
+      Сокращённая композиция, крупный выразительный контур и свободное поле повторяются при разных персонажах
+      и авторах.
+    corpus: >-
+      Четыре независимых произведения с инвентарными номерами; современная работа вынесена в дополнительный
+      пример.
+    distinctness: >-
+      От выбранной Митхилы отличается меньшей ролью сплошного орнаментального заполнения; от длинного
+      повествовательного свитка патуа — устройством самостоятельной компактной сцены. Эти различия описывают
+      проверенные примеры, а не исключают все пересечения.
+    significance: >-
+      V&A хранит и публикует коллекцию Калигхата и отдельное исследование популярного искусства в собрании
+      Киплинга.
+    sources:
+      - vam-kalighat
+      - vam-kipling-popular-art
+  review:
+    status: reviewed
+    date: "2026-10-14"
+    note: >-
+      Просмотрены четыре исторические композиции и современный пример в музейных монтажах и репродукциях.
+      Неуказанные материалы не угаданы. Каждый номер обозначает отдельное произведение; повторная публикация
+      изображения не увеличивает корпус.
+  example:
+    workId: kalighat-peacock-247
+    title: A lady holding a peacock, IS.247-1953
+    author: Автор не указан
+    year: около 1860–1870
+    medium: Работа на бумаге; точные материалы в подписи не указаны
+    sources:
+      - vam-kalighat
+    reference: https://www.vam.ac.uk/articles/kalighat-painting
+    whyRepresentative: >-
+      Наклон головы, изгиб руки и силуэт павлина выделены на незаполненном поле; крупные цветовые участки
+      держат фигуру.
+    place: Victoria and Albert Museum
+    rights:
+      embed: false
+      reviewed: "2026-10-14"
+      note: Репродукция доступна на предметной странице источника.
+  links:
+    - title: Kalighat painting
+      url: https://www.vam.ac.uk/articles/kalighat-painting
+      src: Victoria and Albert Museum
+      lang: en
+    - title: Lockwood Kipling’s collection of Indian popular art
+      url: https://www.vam.ac.uk/articles/lockwood-kiplings-collection-of-indian-popular-art
+      src: Victoria and Albert Museum
+      lang: en
+- domain:
+    - art
+  tier: 2
+  dateKind: corpus
+  origin: unknown
+  parents: []
+  aliases:
+    - Кенте
+    - Ашанти кенте
+    - Asante kente
+    - Ashanti kente
+  names: []
+  maturity: established
+  labelStatus: historical
+  id: asante-kente
+  name: Кенте асанте
+  orig: Asante kente
+  kind: tradition
+  start: 1800
+  end: 1999
+  approx: true
+  dates: "корпус: XIX–XX века"
+  era: xix
+  region: Асанте, Гана; Кумаси, Бонвире и связанные ткацкие центры
+  medium:
+    - textile
+  summary: >-
+    Сшитые ткацкие полосы образуют сложный ритм продольных линий, поперечных блоков и геометрического
+    заполнения.
+  description: >-
+    Четыре полотна из музейных записей асанте-акан показывают, как рисунок отдельной полосы складывается в
+    более крупную композицию. В одном предмете преобладают полосы, в другом — плотные небольшие мотивы;
+    материалы включают шёлк, хлопок и вискозное волокно.
+
+
+    Кенте не ограничивается асанте: музейный каталог отдельно рассматривает эве и историческое сближение
+    практик. Яркая геометрия сама по себе не позволяет уверенно выбрать культурную атрибуцию. В этот корпус
+    включены только предметы с определённой атрибуцией асанте-акан; спорный предмет «Asante-Akan or Ewe (?)»
+    оставлен вне него.
+  traits:
+    - Отдельно вытканные узкие полосы соединены в крупное полотно
+    - Продольные линии чередуются с поперечными геометрическими блоками
+    - Сдвиг и повторение мотивов связывают соседние полосы
+    - Рисунок меняется при драпировке, сохраняя структуру сшитых элементов
+  scopeNote: >-
+    Четыре музейных полотна асанте-акан XIX–XX веков. Общий вид и деталь 1972.56.1 — одна вещь. Кенте эве,
+    современные печатные имитации и все варианты ношения требуют отдельного рассмотрения.
+  dateNote: >-
+    1800 и 1999 — условные границы столетий в датировках корпуса, не точные годы изготовления и не начало или
+    конец кенте. Для двух предметов музей даёт более узкие интервалы. Метаданные происхождения не заменены
+    визуальным угадыванием.
+  corpus:
+    - workId: asante-kente-1972-56-1
+      title: Man’s kente, 1972.56.1
+      author: Мастер асанте-акан; имя не указано
+      year: XIX век
+      medium: Хлопок, шёлк
+      sources:
+        - met-asante-kente-85576
+        - commons-met-kente-full
+      whyRepresentative: >-
+        Драпировка показывает соединение полос и изменение ритма при сгибе; рисунок связывает продольные линии
+        с поперечными геометрическими блоками.
+      place: The Metropolitan Museum of Art
+      rights:
+        embed: true
+        reviewed: "2026-10-14"
+        basis: >-
+          В сведениях Commons указаны передача фотографии Met и CC0. Музей датирует вещь XIX веком; автор не
+          назван.
+        note: Лицензия относится к указанной репродукции, не ко всем изображениям традиции.
+      file: Kente Cloth MET 1972.56.1.jpeg
+    - workId: asante-kente-2010-556
+      title: Man’s kente, 2010.556
+      author: Мастер асанте-акан; имя не указано
+      year: начало XX века
+      medium: Шёлк
+      sources:
+        - met-asante-kente-320678
+      reference: https://www.metmuseum.org/art/collection/search/320678
+      whyRepresentative: >-
+        Плотное жёлтое поле разбито повторяющимися небольшими мотивами; боковые полосы ограничивают крупную
+        прямоугольную композицию.
+      place: The Metropolitan Museum of Art
+      rights:
+        embed: false
+        reviewed: "2026-10-14"
+        note: Репродукция доступна на предметной странице источника.
+    - workId: asante-kente-2023-329
+      title: Royal man’s kente, 2023.329
+      author: Мастер асанте-акан; имя не указано
+      year: около 1910–1940
+      medium: Шёлк, краситель
+      sources:
+        - met-asante-kente-894795
+      reference: https://www.metmuseum.org/art/collection/search/894795
+      whyRepresentative: >-
+        На небольшом превью различим общий полосатый ритм; сведения о рисунке и материале взяты из предметного
+        текста, не из догадки по пикселям.
+      place: The Metropolitan Museum of Art
+      rights:
+        embed: false
+        reviewed: "2026-10-14"
+        note: Репродукция доступна на предметной странице источника.
+    - workId: asante-kente-1993-384-2
+      title: Wrapper, 1993.384.2
+      author: Мастер асанте-акан; имя не указано
+      year: XX век
+      medium: Вискозное волокно (rayon), хлопок
+      sources:
+        - met-asante-wrapper-316800
+      reference: https://www.metmuseum.org/art/collection/search/316800
+      whyRepresentative: >-
+        Продольные полосы и короткие поперечные блоки образуют повторяющееся поле; отдельные участки выделены
+        меняющимся цветовым ритмом.
+      place: The Metropolitan Museum of Art
+      rights:
+        embed: false
+        reviewed: "2026-10-14"
+        note: Репродукция доступна на предметной странице источника.
+  example:
+    workId: asante-kente-1972-56-1
+    title: "Кенте 1972.56.1: фотографическая деталь"
+    author: Мастер асанте-акан; имя не указано
+    year: XIX век
+    medium: Хлопок, шёлк
+    sources:
+      - met-asante-kente-85576
+      - commons-met-kente-detail
+    whyRepresentative: Фрагмент позволяет рассмотреть встречу продольных цветных полос и поперечных геометрических блоков.
+    place: The Metropolitan Museum of Art
+    rights:
+      embed: true
+      reviewed: "2026-10-14"
+      basis: >-
+        В сведениях Commons указаны передача фотографии Met и CC0. Музей датирует вещь XIX веком; автор не
+        назван.
+      note: Лицензия относится к указанной репродукции, не ко всем изображениям традиции.
+    file: Kente Cloth MET 1972.56.1 d1.jpg
+    note: Деталь того же полотна, общий вид которого включён в корпус.
+  compare:
+    - id: bogolanfini
+      note: >-
+        Тканый полосовой рисунок кенте сопоставляется с нанесённым на готовую хлопчатую основу контрастным
+        рисунком боголанфини. Сходство геометрии не означает общей техники или происхождения.
+      sources:
+        - met-asante-kente-85576
+  evidence:
+    - claim: >-
+        Четыре выбранных предмета атрибутированы асанте-акан; 1972.56.1 датирован XIX веком и локализован в
+        Кумаси.
+      field: corpus
+      source: met-asante-kente-85576
+    - claim: >-
+        Каталог различает традиции асанте и эве; приведённый на с. 36–37 предмет относится к эве и не включён
+        в этот корпус.
+      field: scope
+      source: met-african-textiles-2008
+  admission:
+    language: Ритм сшитых полос и чередование продольного и поперечного рисунка создают узнаваемую тканую поверхность.
+    corpus: >-
+      Четыре самостоятельных предмета с различными музейными номерами и материалами. Дополнительная
+      фотографическая деталь не увеличивает их число.
+    distinctness: >-
+      От адинкры отличается тканым построением узора, а не штампованием готовой поверхности. От кенте эве не
+      отделяется одним цветом или наличием геометрии: учитываются музейная атрибуция и документированный
+      контекст.
+    significance: >-
+      Met публикует отдельные предметные и кураторские записи кенте; сравнительный музейный каталог
+      рассматривает асанте и эве как самостоятельные взаимодействующие практики.
+    sources:
+      - met-asante-kente-85576
+      - met-asante-kente-320678
+      - met-asante-kente-894795
+      - met-asante-wrapper-316800
+      - met-african-textiles-2008
+  review:
+    status: reviewed
+    date: "2026-10-14"
+    note: >-
+      Прочитаны четыре записи и соответствующие разделы музейного каталога; просмотрены четыре полотна. Для
+      двух предметов доступно только небольшое превью, поэтому анализ ограничен общей композицией. Встроена
+      только проверенная CC0-репродукция 1972.56.1.
+  links:
+    - title: Man’s kente, 1972.56.1, XIX век
+      url: https://www.metmuseum.org/art/collection/search/85576
+      src: The Metropolitan Museum of Art
+      lang: en
+    - title: Kente Cloth MET 1972.56.1.jpeg — сведения о файле
+      url: https://commons.wikimedia.org/wiki/File:Kente_Cloth_MET_1972.56.1.jpeg
+      src: Wikimedia Commons / The Metropolitan Museum of Art
+      lang: en
+    - title: Man’s kente, 2010.556, начало XX века
+      url: https://www.metmuseum.org/art/collection/search/320678
+      src: The Metropolitan Museum of Art
+      lang: en
+    - title: Royal man’s kente, 2023.329, около 1910–1940
+      url: https://www.metmuseum.org/art/collection/search/894795
+      src: The Metropolitan Museum of Art
+      lang: en
+    - title: Wrapper, 1993.384.2, XX век
+      url: https://www.metmuseum.org/art/collection/search/316800
+      src: The Metropolitan Museum of Art
+      lang: en
+    - title: "The Essential Art of African Textiles: Design Without End, 2008"
+      url: >-
+        https://resources.metmuseum.org/resources/metpublications/pdf/The_Essential_Art_of_African_Textiles_Design_Without_End.pdf
+      src: The Metropolitan Museum of Art
+      lang: en
+- domain:
+    - art
+  tier: 2
+  dateKind: corpus
+  origin: unknown
+  parents: []
+  aliases:
+    - Боголан
+    - Боголанфини
+    - Bogolanfini
+    - Bògòlanfini
+    - Mud cloth
+  names:
+    - Накунте Диарра
+  maturity: established
+  labelStatus: historical
+  id: bogolanfini
+  name: Боголанфини
+  orig: Bògòlanfini / bogolan
+  kind: tradition
+  start: 1900
+  end: 1999
+  approx: true
+  dates: "корпус: XX век, включая 1987–1988"
+  era: fin-de-siecle
+  region: Бамана, Мали; Беледугу и связанные центры
+  medium:
+    - textile
+    - painting
+  summary: >-
+    Светлые геометрические формы и тёмные поля организуют расписное хлопчатое полотно, соединяя внутренний
+    узор и разные по рисунку края.
+  description: >-
+    В выбранных боголанфини геометрический рисунок нанесён на готовую хлопчатую основу. Поэтому видимые полосы
+    ткани и орнаментальная композиция относятся к разным этапам работы. Музеи описывают окрашивание с
+    использованием растительных составов и ферментированной глины; точный состав каждого предмета не угадан по
+    его виду.
+
+
+    Два предмета неизвестных мастеров сопоставлены с двумя работами Накунте Диарры. Её выставочные полотна
+    продолжают традицию и меняют формат использования. Знаки имеют конкретные интерпретации у музейных
+    исследователей; карточка не превращает их в универсальный словарь для любого изделия.
+  traits:
+    - Светлые фигуры и линии читаются на тёмном поле
+    - Центральная композиция и краевые полосы могут иметь разные ритмы
+    - Повторение ромбов, крестов, линий и вложенных форм создаёт плотное поле
+    - Нанесённый рисунок соединяет поверхность из сшитых хлопчатых полос
+  scopeNote: >-
+    Четыре музейных предмета: первая половина XX века, неопределённый XX век и работы Накунте Диарры 1987 и
+    1988 годов. Не все современные изделия, продаваемые как mud cloth, включены в этот охват.
+  dateNote: >-
+    1900–1999 — рамка столетия для двух широких музейных датировок, а не даты возникновения и прекращения
+    боголанфини. Именные работы датированы точнее. Сведения о действующем авторском праве не подменяют
+    датировку вещи.
+  creators:
+    - name: Накунте Диарра
+      orig: Nakunte Diarra
+      role: автор двух выставочных полотен 1987 и 1988 годов
+      sources:
+        - cma-diarra-2016-48
+        - cma-diarra-2016-49
+  corpus:
+    - workId: bogolan-met-1979-206-190
+      title: Bògòlanfini, 1979.206.190
+      author: Мастер бамана; имя не указано
+      year: первая половина XX века
+      medium: Хлопок, краситель
+      sources:
+        - met-bogolan-312395
+      reference: https://www.metmuseum.org/art/collection/search/312395
+      whyRepresentative: >-
+        На доступном превью видны тёмное центральное поле, повторяющиеся светлые мотивы и обрамление; тонкие
+        детали здесь не анализируются.
+      place: The Metropolitan Museum of Art
+      rights:
+        embed: false
+        reviewed: "2026-10-14"
+        note: Репродукция доступна на предметной странице источника.
+    - workId: bogolan-met-2000-160-60
+      title: Wrapper (Bogolanfini), 2000.160.60
+      author: Мастер бамана; имя не указано
+      year: XX век
+      medium: Хлопок; состав красителя в предметном поле не указан
+      sources:
+        - met-bogolan-318524
+      reference: https://www.metmuseum.org/art/collection/search/318524
+      whyRepresentative: >-
+        Группы ромбов и линий образуют внутренние полосы; крупный зигзагообразный край отличается от
+        центрального заполнения.
+      place: The Metropolitan Museum of Art
+      rights:
+        embed: false
+        reviewed: "2026-10-14"
+        note: Репродукция доступна на предметной странице источника.
+    - workId: bogolan-diarra-1987
+      title: Koumi Diosseni Kandian (Koumi Diossé, The Long-Necked), 2016.48
+      author: Накунте Диарра
+      year: 1987
+      medium: Хлопок, краситель
+      sources:
+        - cma-diarra-2016-48
+      reference: https://www.clevelandart.org/art/2016.48
+      whyRepresentative: >-
+        Пересекающиеся широкие полосы делят поверхность на четыре поля с разными внутренними ритмами; малые
+        геометрические мотивы заполняют крупную схему.
+      place: Cleveland Museum of Art
+      rights:
+        embed: false
+        reviewed: "2026-10-14"
+        note: Репродукция доступна на предметной странице источника.
+    - workId: bogolan-diarra-1988
+      title: Surakamuso Kunkoro Talan (The Mauritanian Woman’s Head Pillow), 2016.49
+      author: Накунте Диарра
+      year: 1988
+      medium: Хлопок, краситель
+      sources:
+        - cma-diarra-2016-49
+      reference: https://www.clevelandart.org/art/2016.49
+      whyRepresentative: >-
+        Центральное поле повторяющихся крестообразных форм отделено от боковых полос; неровность ручной линии
+        сохраняется внутри регулярной сетки.
+      place: Cleveland Museum of Art
+      rights:
+        embed: false
+        reviewed: "2026-10-14"
+        note: Репродукция доступна на предметной странице источника.
+  example:
+    workId: bogolan-diarra-1988
+    title: Surakamuso Kunkoro Talan, 2016.49
+    author: Накунте Диарра
+    year: 1988
+    medium: Хлопок, краситель
+    sources:
+      - cma-diarra-2016-49
+    reference: https://www.clevelandart.org/art/2016.49
+    whyRepresentative: Чётко видны различия между центральным заполнением и боковыми полосами; музей называет автора и технику.
+    place: Cleveland Museum of Art
+    rights:
+      embed: false
+      reviewed: "2026-10-14"
+      note: Репродукция доступна на предметной странице источника.
+  compare: []
+  evidence:
+    - claim: Музей различает сшитую хлопчатую основу и нанесение рисунка с растительными составами и глиной.
+      field: traits
+      source: met-bogolan-312395
+    - claim: >-
+        Работа Диарры 1987 года предназначалась для стены; этот формат не выдан за единственную традиционную
+        функцию всех полотен.
+      field: scope
+      source: cma-diarra-2016-48
+  admission:
+    language: >-
+      Повторяются контраст светлых мотивов и тёмного поля, различение центра и краёв, плотный геометрический
+      ритм.
+    corpus: >-
+      Четыре самостоятельных музейных номера, включая двух неизвестных мастеров и две работы названного
+      автора.
+    distinctness: >-
+      От кенте отличается нанесением рисунка на уже изготовленную основу; от адинкры — процессом окрашивания и
+      построением светлых форм на тёмном поле, а не повторением оттисков. Материал и техника не определяются
+      одним сходством геометрии.
+    significance: >-
+      Met и Cleveland Museum of Art публикуют исторические предметы и именные работы Диарры с техническим и
+      художественным разбором.
+    sources:
+      - met-bogolan-312395
+      - met-bogolan-318524
+      - cma-diarra-2016-48
+      - cma-diarra-2016-49
+      - met-african-textiles-2008
+  review:
+    status: reviewed
+    date: "2026-10-14"
+    note: >-
+      Сверены указанные предметные записи, материалы и пределы датировок. Репродукции корпуса просмотрены;
+      формальные наблюдения относятся к выбранным примерам.
+  links:
+    - title: Bògòlanfini, 1979.206.190, первая половина XX века
+      url: https://www.metmuseum.org/art/collection/search/312395
+      src: The Metropolitan Museum of Art
+      lang: en
+    - title: Wrapper (Bogolanfini), 2000.160.60, XX век
+      url: https://www.metmuseum.org/art/collection/search/318524
+      src: The Metropolitan Museum of Art
+      lang: en
+    - title: Nakunte Diarra. Koumi Diosseni Kandian, 1987
+      url: https://www.clevelandart.org/art/2016.48
+      src: Cleveland Museum of Art
+      lang: en
+    - title: Nakunte Diarra. Surakamuso Kunkoro Talan, 1988
+      url: https://www.clevelandart.org/art/2016.49
+      src: Cleveland Museum of Art
+      lang: en
+    - title: "The Essential Art of African Textiles: Design Without End, 2008"
+      url: >-
+        https://resources.metmuseum.org/resources/metpublications/pdf/The_Essential_Art_of_African_Textiles_Design_Without_End.pdf
+      src: The Metropolitan Museum of Art
+      lang: en
+- domain:
+    - art
+  tier: 2
+  dateKind: corpus
+  origin: unknown
+  parents: []
+  aliases:
+    - Маси
+    - Masi kesa
+    - Маси-кеса
+    - Фиджийский тапа
+  names:
+    - Керела Имануэли
+    - Робин Уайт
+    - Тамари Кабеиканачеа
+  maturity: established
+  labelStatus: historical
+  id: fijian-masi
+  name: "Фиджийский маси: трафаретный декор"
+  orig: Fijian masi kesa and related decorated masi
+  kind: tradition
+  start: 1890
+  end: 2019
+  approx: true
+  dates: "корпус: 1890-е, 2019 и недатированные вещи"
+  era: fin-de-siecle
+  region: Фиджи; в современном корпусе — Лаутока
+  medium:
+    - textile
+    - decorative-arts
+    - painting
+  summary: >-
+    Повторяющиеся трафаретные мотивы, вложенные обрамления и контрастные поля соединяются на лубяном полотне;
+    современный декор допускает сюжетную сцену.
+  description: >-
+    Карточка сосредоточена на декорированном фиджийском маси с трафаретным рисунком и его сочетании со
+    свободным письмом. Она не приравнивает все виды маси к одному узору. Большие треугольники, рамки и полосы
+    организуют поверхность, внутри которой повторяются меньшие мотивы.
+
+
+    Четыре примера сохраняют различия назначения и авторства: историческая полоса с предметными мотивами,
+    свадебное полотно Керелы Имануэли, вещь со смешанным способом декора и современная совместная работа Робин
+    Уайт и Тамари Кабеиканачеа. В последней орнамент входит в изображение комнаты. Оба автора названы; техника
+    и местный контекст не растворены в одном известном имени.
+  traits:
+    - Трафаретный повтор даёт чёткий ритм мелких форм
+    - Вложенные рамки и крупные геометрические деления связывают центр и края
+    - Светлая лубяная основа соотносится с тёмными и коричневыми участками
+    - Трафарет может сочетаться со свободным рисунком и сюжетным изображением
+  scopeNote: >-
+    Четыре декорированных маси Te Papa, включая два недатированных предмета и работу 2019 года. Белые,
+    копчёные и прочие виды маси не описаны этим корпусом полностью.
+  dateNote: >-
+    1890-е и 2019 относятся к двум датированным работам корпуса. У FE011160 и FE012791 год изготовления не
+    указан. Ни 1998 (покупка), ни 2013 (дар) не выданы за год создания; происхождение всей традиции этими
+    датами не установлено.
+  creators:
+    - name: Керела Имануэли
+      orig: Kerela Imanueli
+      role: автор Ubi ni davodavo
+      sources:
+        - tepapa-masi-imanueli
+    - name: Робин Уайт
+      orig: Dame Robin White
+      role: соавтор That Vase
+      sources:
+        - tepapa-masi-that-vase
+        - tepapa-masi-making-vase
+    - name: Тамари Кабеиканачеа
+      orig: Tamari Cabeikanacea
+      role: соавтор That Vase
+      sources:
+        - tepapa-masi-that-vase
+        - tepapa-masi-making-vase
+  corpus:
+    - workId: masi-fe3272-1
+      title: Masi kesa, FE003272/1
+      author: Мастер не указан
+      year: 1890-е
+      medium: Лубяное полотно (tapa)
+      sources:
+        - tepapa-masi-muskets
+      reference: https://collections.tepapa.govt.nz/object/150726
+      whyRepresentative: >-
+        Длинная полоса организована рамкой и крупными треугольниками; между мелкими повторами включены
+        предметные мотивы.
+      place: Museum of New Zealand Te Papa Tongarewa
+      rights:
+        embed: false
+        reviewed: "2026-10-14"
+        note: Репродукция доступна на предметной странице источника.
+    - workId: masi-imanueli-fe11160
+      title: Ubi ni davodavo, FE011160
+      author: Керела Имануэли
+      year: Дата изготовления не указана
+      medium: Лубяное полотно (tapa)
+      sources:
+        - tepapa-masi-imanueli
+      reference: https://collections.tepapa.govt.nz/object/337417
+      whyRepresentative: >-
+        Вложенные полосы обрамляют два крупных встречных треугольника; круглые мотивы соотносятся с коричневым
+        и светлым полями.
+      place: Museum of New Zealand Te Papa Tongarewa
+      rights:
+        embed: false
+        reviewed: "2026-10-14"
+        note: Репродукция доступна на предметной странице источника.
+    - workId: masi-fe12791
+      title: Masi, FE012791
+      author: Мастер не указан
+      year: Дата изготовления не указана
+      medium: Лубяное полотно; трафарет и свободный рисунок
+      sources:
+        - tepapa-masi-mixed
+      reference: https://collections.tepapa.govt.nz/object/1396687
+      whyRepresentative: >-
+        Узкая полоса разделена на участки: густое тёмное заполнение чередуется с редкими свободно
+        расположенными формами.
+      place: Museum of New Zealand Te Papa Tongarewa
+      rights:
+        embed: false
+        reviewed: "2026-10-14"
+        note: Репродукция доступна на предметной странице источника.
+    - workId: masi-that-vase-2019
+      title: That Vase, 2020-0026-1
+      author: Робин Уайт; Тамари Кабеиканачеа
+      year: 2019
+      medium: Лубяное полотно, чернила
+      sources:
+        - tepapa-masi-that-vase
+      reference: https://collections.tepapa.govt.nz/object/1887935
+      whyRepresentative: >-
+        Комната, стол и окна вписаны в орнаментальные поля; повторяющиеся мотивы действуют и как обрамление, и
+        как элементы изображённого пространства.
+      place: Museum of New Zealand Te Papa Tongarewa
+      rights:
+        embed: false
+        reviewed: "2026-10-14"
+        note: Репродукция доступна на предметной странице источника.
+  compare:
+    - id: samoan-siapo
+      note: >-
+        Трафаретный декор маси сопоставляется со свободным рисунком и переносом орнамента в выбранном сиапо.
+        Варианты внутри традиций сохраняются; общий лубяной материал не превращён в историческую стрелку.
+      sources:
+        - tepapa-masi-muskets
+        - tepapa-siapo-825
+    - id: tongan-ngatu
+      note: >-
+        Различаются трафарет маси и описанные для нгату купеси с дорисовкой. Геометрические повторы и
+        предметные мотивы встречаются в обоих корпусах.
+      sources:
+        - tepapa-masi-muskets
+        - tepapa-decorating-ngatu
+  evidence:
+    - claim: Запись FE012791 прямо описывает сочетание трафаретного декора и свободного рисунка.
+      field: scope
+      source: tepapa-masi-mixed
+    - claim: В предметной атрибуции That Vase указаны оба автора, 2019 год и материалы bark cloth, ink.
+      field: authorship
+      source: tepapa-masi-that-vase
+  admission:
+    language: >-
+      Трафаретный повтор, крупные вложенные обрамления и светло-тёмные поля связывают разные по назначению
+      предметы.
+    corpus: >-
+      Четыре самостоятельных произведения; неизвестные даты двух вещей и соавторство современной работы
+      сохранены.
+    distinctness: >-
+      От выбранного сиапо отличается ролью трафарета; от нгату — способом переноса и организацией декора. Это
+      ограниченный охват маси-кеса и связанных расписных вещей, а не определение любого фиджийского полотна.
+    significance: >-
+      Te Papa публикует предметные и технические записи, историю свадебного полотна и документирование
+      современной совместной работы.
+    sources:
+      - tepapa-masi-muskets
+      - tepapa-masi-imanueli
+      - tepapa-masi-mixed
+      - tepapa-masi-that-vase
+      - tepapa-masi-making-vase
+  review:
+    status: partial
+    date: "2026-10-14"
+    note: >-
+      Просмотрены четыре репродукции и прочитаны предметные тексты. Две даты изготовления неизвестны;
+      современная сцена не выдана за неизменный исторический канон. Анализ видео ограничен сопровождающим
+      музейным текстом.
+  example:
+    workId: masi-fe3272-1
+    title: Masi kesa, FE003272/1
+    author: Мастер не указан
+    year: 1890-е
+    medium: Лубяное полотно (tapa)
+    sources:
+      - tepapa-masi-muskets
+    reference: https://collections.tepapa.govt.nz/object/150726
+    whyRepresentative: >-
+      Длинная полоса организована рамкой и крупными треугольниками; между мелкими повторами включены
+      предметные мотивы.
+    place: Museum of New Zealand Te Papa Tongarewa
+    rights:
+      embed: false
+      reviewed: "2026-10-14"
+      note: Репродукция доступна на предметной странице источника.
+  links:
+    - title: Masi kesa, FE003272/1, 1890-е
+      url: https://collections.tepapa.govt.nz/object/150726
+      src: Museum of New Zealand Te Papa Tongarewa
+      lang: en
+    - title: Kerela Imanueli. Ubi ni davodavo, FE011160
+      url: https://collections.tepapa.govt.nz/object/337417
+      src: Museum of New Zealand Te Papa Tongarewa
+      lang: en
+    - title: Masi, FE012791, дата не указана
+      url: https://collections.tepapa.govt.nz/object/1396687
+      src: Museum of New Zealand Te Papa Tongarewa
+      lang: en
+    - title: Dame Robin White и Tamari Cabeikanacea. That Vase, 2019
+      url: https://collections.tepapa.govt.nz/object/1887935
+      src: Museum of New Zealand Te Papa Tongarewa
+      lang: en
+    - title: The making of ‘That Vase’
+      url: https://www.tepapa.govt.nz/digital-museum/explore-digital-museum/art/watch-robin-white-making-vase
+      src: Museum of New Zealand Te Papa Tongarewa
+      lang: en
+- domain:
+    - art
+  tier: 2
+  dateKind: corpus
+  origin: unknown
+  parents: []
+  aliases:
+    - Городец
+    - Городецкая роспись
+    - Gorodets
+  names:
+    - Антон Васильевич Мельников
+    - И. А. Мазин
+    - Д. И. Крюков
+  maturity: established
+  labelStatus: historical
+  id: gorodets-painting
+  name: Городецкая роспись
+  orig: Gorodets painting
+  kind: tradition
+  start: 1850
+  end: 1938
+  approx: true
+  dates: "корпус: вторая половина XIX века — 1938"
+  era: xix
+  region: Городец и сёла по реке Узоле, Нижегородская область, Россия
+  medium:
+    - painting
+    - decorative-arts
+    - drawing
+  summary: >-
+    Сюжетные сцены, кони, птицы и крупные цветы собраны в плоскостные композиции с выразительными цветовыми
+    пятнами и тонкой прорисовкой.
+  description: >-
+    Выбранные вещи показывают роспись деревянных донец и её развитие в самостоятельные композиции на бумаге.
+    Персонажи, растения и цветочные группы делят поверхность на ясно читаемые поля. Светлые и тёмные линии
+    уточняют цветовое пятно, а рамка и полосы связывают рисунок с формой предмета.
+
+
+    Четыре работы не образуют неизменный набор сюжетов: от парных всадников и дерева композиция переходит к
+    многофигурному празднику и декоративному интерьеру. Крупные формы и ритм сохраняют связь между предметами
+    разных носителей. Раннюю резьбу и инкрустацию музей рассматривает отдельно; они не выданы за расписной
+    корпус.
+  traits:
+    - Крупные цветовые пятна уточняются светлыми и тёмными линиями
+    - Фигуры, цветы и птицы собраны в плоскостные группы
+    - Полосы, рамки и смена регистров делят поверхность
+    - Масштаб элементов подчинён ясности общей композиции, а не единой перспективе
+  scopeNote: >-
+    Два расписных донца XIX века и две композиции 1935–1938 годов. Скульптура, инкрустированные донца и вся
+    современная продукция Городца не описаны этим корпусом полностью.
+  dateNote: >-
+    1850 — условный нижний рубеж музейной датировки «вторая половина XIX века». Последняя работа корпуса
+    датирована 1938 годом; это не конец промысла. Историю продолжения XX века рассматривает независимый
+    музейный обзор.
+  creators:
+    - name: Антон Васильевич Мельников
+      role: автор донца 1870-х годов
+      sources:
+        - rusmuseum-gorodets-melnikov
+    - name: И. А. Мазин
+      role: автор композиции «Праздник урожая» в музейной атрибуции
+      sources:
+        - rusmuseum-gorodets-harvest
+    - name: Д. И. Крюков
+      role: автор панно 1938 года в музейной атрибуции
+      sources:
+        - rusmuseum-gorodets-kryukov
+  corpus:
+    - workId: gorodets-melnikov-2888
+      title: Донце прялки, ОНИ/Р-2888
+      author: Антон Васильевич Мельников
+      year: 1870-е
+      medium: Дерево, роспись
+      sources:
+        - rusmuseum-gorodets-melnikov
+      reference: https://rusmuseumvrm.ru/data/collections/folk_art/onir-2888/index.php
+      whyRepresentative: >-
+        Два всадника окружают цветущее дерево с птицей; крупная цветочная полоса отделяет верхнюю сцену от
+        нижнего участка.
+      place: Государственный Русский музей
+      rights:
+        embed: false
+        reviewed: "2026-10-14"
+        note: Репродукция доступна на предметной странице источника.
+    - workId: gorodets-dontse-4987
+      title: Донце прялки, ОНИ/Р-4987
+      author: Мастер не указан
+      year: вторая половина XIX века
+      medium: Дерево, роспись
+      sources:
+        - rusmuseum-gorodets-dontse-4987
+      reference: https://rusmuseumvrm.ru/data/collections/folk_art/onir-4987/index.php
+      whyRepresentative: >-
+        Парные всадники и птица собраны вокруг цветочной группы; тёмный конь внизу выделен отдельным
+        горизонтальным регистром.
+      place: Государственный Русский музей
+      rights:
+        embed: false
+        reviewed: "2026-10-14"
+        note: Репродукция доступна на предметной странице источника.
+    - workId: gorodets-harvest-4282
+      title: Композиция «Праздник урожая», ОНИ/Р-4282
+      author: И. А. Мазин
+      year: 1935
+      medium: Бумага, роспись
+      sources:
+        - rusmuseum-gorodets-harvest
+      reference: https://rusmuseumvrm.ru/data/collections/folk_art/oni-r-4282/index.php
+      whyRepresentative: >-
+        Плотная группа фигур занимает большую часть плоского поля; красные и чёрные участки, знамёна и надписи
+        организуют многофигурную сцену.
+      place: Государственный Русский музей
+      rights:
+        embed: false
+        reviewed: "2026-10-14"
+        note: Репродукция доступна на предметной странице источника.
+    - workId: gorodets-kryukov-1426
+      title: Панно, ОНИ/Р-1426
+      author: Д. И. Крюков
+      year: 1938
+      medium: Бумага, масло, стекло; полихромная роспись
+      sources:
+        - rusmuseum-gorodets-kryukov
+      reference: https://rusmuseumvrm.ru/data/collections/folk_art/onir-1426/
+      whyRepresentative: >-
+        Парные женские фигуры, птицы и центральный букет объединены интерьером; крупная рамка и занавес
+        образуют самостоятельный декоративный ритм.
+      place: Государственный Русский музей
+      rights:
+        embed: false
+        reviewed: "2026-10-14"
+        note: Репродукция доступна на предметной странице источника.
+  compare:
+    - id: khokhloma
+      note: >-
+        Сравниваются плоскостная сюжетная сцена и цветочные группы городецкой росписи с орнаментальным письмом
+        на округлой хохломской вещи. Соседство промыслов не превращено в доказательство происхождения.
+      sources:
+        - sergiev-posad-gorodets
+    - id: zhostovo-painting
+      note: >-
+        В городецком корпусе цветы входят в сюжетные и регистровые композиции; жостовский корпус сосредоточен
+        на мазковой цветочной живописи металлического подноса.
+      sources:
+        - rusmuseum-gorodets-melnikov
+  evidence:
+    - claim: Музей датирует донце Мельникова 1870-ми и прямо называет Антона Васильевича его автором.
+      field: authorship
+      source: rusmuseum-gorodets-melnikov
+    - claim: Т. А. Маврина названа собирательницей предмета ОНИ/Р-4987, а не его изготовителем.
+      field: authorship
+      source: rusmuseum-gorodets-dontse-4987
+    - claim: Предметное описание 1938 года рассматривает поиск новых изделий в городецком промысле.
+      field: scope
+      source: rusmuseum-gorodets-kryukov
+  admission:
+    language: >-
+      Повторяются ясные цветовые пятна, линейная разделка, плоскостные группы и организация полей рамками и
+      полосами.
+    corpus: "Четыре самостоятельных работы с разными номерами: два донца и две композиции на бумаге."
+    distinctness: >-
+      От Хохломы выбранный корпус отличается сюжетной композицией и плоским носителем; от Жостова — ролью
+      фигур, регистров и линейного уточнения цветового пятна. Общая тема цветов не объединяет эти практики.
+    significance: >-
+      Русский музей публикует предметные атрибуции, а Сергиево-Посадский музей отдельно рассматривает развитие
+      и коллекционирование городецкой росписи.
+    sources:
+      - rusmuseum-gorodets-melnikov
+      - rusmuseum-gorodets-dontse-4987
+      - rusmuseum-gorodets-harvest
+      - rusmuseum-gorodets-kryukov
+      - sergiev-posad-gorodets
+  example:
+    workId: gorodets-melnikov-2888
+    title: Донце прялки, ОНИ/Р-2888
+    author: Антон Васильевич Мельников
+    year: 1870-е
+    medium: Дерево, роспись
+    sources:
+      - rusmuseum-gorodets-melnikov
+    reference: https://rusmuseumvrm.ru/data/collections/folk_art/onir-2888/index.php
+    whyRepresentative: >-
+      Два всадника окружают цветущее дерево с птицей; крупная цветочная полоса отделяет верхнюю сцену от
+      нижнего участка.
+    place: Государственный Русский музей
+    rights:
+      embed: false
+      reviewed: "2026-10-14"
+      note: Репродукция доступна на предметной странице источника.
+  review:
+    status: reviewed
+    date: "2026-10-14"
+    note: >-
+      Сверены указанные предметные записи, материалы и пределы датировок. Репродукции корпуса просмотрены;
+      формальные наблюдения относятся к выбранным примерам.
+  links:
+    - title: А. В. Мельников. Донце прялки, 1870-е
+      url: https://rusmuseumvrm.ru/data/collections/folk_art/onir-2888/index.php
+      src: Государственный Русский музей
+      lang: ru
+    - title: Донце прялки, ОНИ/Р-4987, вторая половина XIX века
+      url: https://rusmuseumvrm.ru/data/collections/folk_art/onir-4987/index.php
+      src: Государственный Русский музей
+      lang: ru
+    - title: И. А. Мазин. «Праздник урожая», 1935
+      url: https://rusmuseumvrm.ru/data/collections/folk_art/oni-r-4282/index.php
+      src: Государственный Русский музей
+      lang: ru
+    - title: Д. И. Крюков. Панно, 1938
+      url: https://rusmuseumvrm.ru/data/collections/folk_art/onir-1426/
+      src: Государственный Русский музей
+      lang: ru
+    - title: Хохломская и городецкая роспись
+      url: >-
+        https://sp-mz.ru/about/collections/russkoe-narodnoe-i-dekorativno-prikladnoe-iskusstvo-xvii-xxi-vv/hohlomskaya-i-gorodeckaya-rospis
+      src: Сергиево-Посадский государственный историко-художественный музей-заповедник
+      lang: ru

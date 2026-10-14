@@ -2,43 +2,43 @@
 
 > Сгенерировано `scripts/coverage.mjs` из `data/atlas.json` (данные от 2026-10-14). Не редактировать вручную.
 
-Карточек: 169. Макрорегион выводится из свободного поля `region` грубыми правилами (`scripts/lib/regions.mjs`); карточка с несколькими регионами считается в каждом. «обз.» — сколько из них обзорных (`kind: overview`): одна обзорная карточка о цивилизации не равна нескольким самостоятельным традициям.
+Карточек: 175. Макрорегион выводится из свободного поля `region` грубыми правилами (`scripts/lib/regions.mjs`); карточка с несколькими регионами считается в каждом. «обз.» — сколько из них обзорных (`kind: overview`): одна обзорная карточка о цивилизации не равна нескольким самостоятельным традициям.
 
 ## Регион × эпоха
 
 | Регион | Первобытность | Древность | Античность | Средние века | Возрождение | 1750–1880 | 1880–1910 | Авангард | 1945–1970 | Постмодерн | Цифра | Интернет | Всего |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| Европа | 4 (обз. 2) | 2 | 6 (обз. 1) | 8 (обз. 2) | 12 | 16 | 10 | 19 (обз. 1) | 14 | 8 | 2 | 1 | 102 |
+| Европа | 4 (обз. 2) | 2 | 6 (обз. 1) | 8 (обз. 2) | 12 | 17 | 10 | 19 (обз. 1) | 14 | 8 | 2 | 1 | 103 |
 | Ближний Восток и Северная Африка | 2 (обз. 1) | 3 (обз. 2) | 2 | 2 (обз. 1) | · | · | · | · | · | · | · | · | 9 |
-| Африка южнее Сахары | · | · | · | · | · | · | · | · | · | 2 | · | · | 2 |
+| Африка южнее Сахары | · | · | · | · | · | 1 | 1 | · | · | 2 | · | · | 4 |
 | Центральная Азия и степь | 2 (обз. 1) | 1 | · | 1 | · | · | · | · | · | · | · | · | 4 |
-| Южная Азия | · | 1 (обз. 1) | 1 | 1 (обз. 1) | 1 | · | · | · | · | · | 1 | · | 5 |
-| Восточная Азия | 1 (обз. 1) | 1 (обз. 1) | · | 3 | 1 | 1 | · | · | 1 | 4 | 2 | · | 14 |
+| Южная Азия | · | 1 (обз. 1) | 1 | 1 (обз. 1) | 1 | 1 | · | · | · | 1 | 1 | · | 7 |
+| Восточная Азия | 1 (обз. 1) | 1 (обз. 1) | · | 3 | 1 | 1 | · | · | 1 | 5 | 2 | · | 15 |
 | Юго-Восточная Азия | 1 (обз. 1) | · | · | 1 | · | · | · | · | · | 1 | · | · | 3 |
 | Америка | · | 2 (обз. 2) | · | · | 2 | 2 | 2 | 6 | 13 | 12 | 5 | 1 | 45 |
-| Океания | 1 | · | · | · | · | · | 1 | 1 | 2 | · | · | 1 | 6 |
+| Океания | 1 | · | · | · | · | · | 2 | 1 | 2 | · | · | 1 | 7 |
 | Весь мир, интернет | 1 | · | · | · | · | · | · | 2 | 1 | 3 | 8 | 16 | 31 |
 
 ## Область × эпоха
 
 | Область | Первобытность | Древность | Античность | Средние века | Возрождение | 1750–1880 | 1880–1910 | Авангард | 1945–1970 | Постмодерн | Цифра | Интернет |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| Искусство | 5 (обз. 2) | 9 (обз. 6) | 7 (обз. 1) | 13 (обз. 2) | 12 | 13 | 11 | 16 (обз. 1) | 13 | 11 | 5 | 3 |
+| Искусство | 5 (обз. 2) | 9 (обз. 6) | 7 (обз. 1) | 13 (обз. 2) | 12 | 16 | 13 | 16 (обз. 1) | 13 | 12 | 5 | 3 |
 | Архитектура | 1 | 6 (обз. 5) | 2 (обз. 1) | 5 (обз. 2) | 6 | 4 | 3 | 8 | 6 | 3 | · | 1 |
 | Дизайн | 1 (обз. 1) | 1 | 1 | 4 (обз. 1) | 3 | 7 | 4 | 9 | 9 | 9 | 8 | 10 |
 | Интернет и цифра | · | · | · | · | · | · | · | · | 1 | 2 | 11 | 15 |
 
 ## Медиум
 
-Поле `medium` заполнено у 26 из 169 карточек (пилот), поэтому для остальных медиум пока заменяет область (`domain`).
+Поле `medium` заполнено у 32 из 175 карточек (пилот), поэтому для остальных медиум пока заменяет область (`domain`).
 
 | Медиум | Карточки |
 | --- | --- |
 | architecture | megaliths, mesoamerican-art, andean-art, high-renaissance, solarpunk |
 | ceramics | andean-art |
-| decorative-arts | khokhloma, zhostovo-painting, samoan-siapo, palekh-miniature, tongan-ngatu, esther-mahlangu |
+| decorative-arts | khokhloma, zhostovo-painting, gorodets-painting, samoan-siapo, fijian-masi, palekh-miniature, tongan-ngatu, esther-mahlangu |
 | digital-art | frutiger-aero, solarpunk, liminal-space |
-| drawing | carrolup-school, zverev-portrait-graphics, norshtein-animation, emily-kngwarray, shahzia-sikander |
+| drawing | gorodets-painting, kalighat-painting, carrolup-school, zverev-portrait-graphics, norshtein-animation, emily-kngwarray, shahzia-sikander, mithila-painting |
 | fashion | rei-kawakubo |
 | graphic-design | bilibin-illustration, new-wave-graphic, frutiger-aero |
 | illustration | bilibin-illustration, solarpunk |
@@ -46,12 +46,12 @@
 | manuscript | shahzia-sikander |
 | metalwork | andean-art |
 | moving-image | norshtein-animation, reko-rennie |
-| painting | paleolithic-cave-art, high-renaissance, zhostovo-painting, samoan-siapo, palekh-miniature, tongan-ngatu, carrolup-school, zverev-portrait-graphics, emily-kngwarray, pacita-abad, shahzia-sikander, esther-mahlangu, reko-rennie |
+| painting | paleolithic-cave-art, high-renaissance, zhostovo-painting, gorodets-painting, kalighat-painting, samoan-siapo, fijian-masi, bogolanfini, palekh-miniature, tongan-ngatu, carrolup-school, zverev-portrait-graphics, emily-kngwarray, pacita-abad, shahzia-sikander, mithila-painting, esther-mahlangu, reko-rennie |
 | photography | liminal-space |
 | print | hokusai-landscape-prints, bilibin-illustration |
 | rock-art | paleolithic-cave-art |
 | sculpture | mesoamerican-art, high-renaissance |
-| textile | andean-art, samoan-siapo, tongan-ngatu, rei-kawakubo, pacita-abad |
+| textile | andean-art, asante-kente, samoan-siapo, fijian-masi, bogolanfini, tongan-ngatu, rei-kawakubo, pacita-abad |
 | typography | new-wave-graphic |
 | ui | frutiger-aero, glassmorphism |
 
@@ -60,11 +60,11 @@
 | Тип | Первобытность | Древность | Античность | Средние века | Возрождение | 1750–1880 | 1880–1910 | Авангард | 1945–1970 | Постмодерн | Цифра | Интернет |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
 | overview | 2 | 6 | 1 | 2 | · | · | · | 1 | · | · | · | · |
-| tradition | 3 | 2 | 3 | 8 | 4 | 2 | 1 | 1 | · | · | · | · |
+| tradition | 3 | 2 | 3 | 8 | 4 | 4 | 3 | 1 | · | 1 | · | · |
 | technique | 1 | · | · | · | · | · | · | · | 1 | 3 | 1 | 1 |
 | period | · | 1 | 3 | 3 | 8 | 3 | 1 | 3 | 4 | · | 3 | · |
 | movement | · | · | · | · | 1 | 7 | 5 | 14 | 11 | 10 | 3 | · |
-| school | · | · | · | · | 1 | 4 | 4 | 3 | 3 | 1 | · | · |
+| school | · | · | · | · | 1 | 5 | 4 | 3 | 3 | 1 | · | · |
 | author-style | · | · | · | · | · | 1 | 1 | · | 2 | 4 | 1 | 1 |
 | design-system | · | · | · | · | · | · | · | · | · | · | 4 | 1 |
 | internet-aesthetic | · | · | · | · | · | · | · | · | · | · | 1 | 10 |
