@@ -1291,3 +1291,178 @@
   note: >-
     Прочитан кураторский обзор Н. В. Толстухиной о коллекции, разных авторах, ранней резьбе, росписи и
     продолжении промысла в XX веке. Общий обзор не заменяет предметных атрибуций Русского музея.
+
+# Региональные росписи, графика и росписи: партия 2
+- id: nypl-lubok-cat-1866
+  title: Похороны кота крысами и мышами, 1866
+  publisher: The New York Public Library
+  url: https://digitalcollections.nypl.org/items/6a809960-c641-012f-46fc-58d385a7bc34
+  sourceType: primary
+  checked: '2026-10-14'
+  note: >-
+    Прочитана предметная запись и IIIF-манифест. Date Issued 1866 относится к этому листу; она не датирует
+    возникновение сюжета. Литография, 33 × 42 см, Image ID 479510. Репродукция просмотрена. NYPL сообщает
+    статус public domain по праву США, а не универсальное разрешение для всех стран.
+- id: nypl-lubok-bear-1868
+  title: Свадьба медведя Мишки косолапого, 1868
+  publisher: The New York Public Library
+  url: https://digitalcollections.nypl.org/items/6a098e00-c641-012f-bcc6-58d385a7bc34
+  sourceType: primary
+  checked: '2026-10-14'
+  note: >-
+    Date Issued 1868, Москва, литография, 33 × 42 см, Image ID 479508. Художник не назван. Предмет не
+    отождествлён с другими версиями сюжета. Просмотрена репродукция из публичного IIIF-манифеста.
+- id: nypl-lubok-ilya-1868
+  title: Сильный храбрый богатырь Илья Муромец, 1868
+  publisher: The New York Public Library
+  url: https://digitalcollections.nypl.org/items/6e1ac700-c641-012f-80de-58d385a7bc34
+  sourceType: primary
+  checked: '2026-10-14'
+  note: >-
+    NYPL называет Ивана Александровича Голышева с ролью Lithographer. Год выпуска 1868; Москва, литография, 31
+    × 42 см, Image ID 479522. Роль литографа не расширена до единственного автора всех лубочных изображений.
+- id: rusmuseum-lubok-comfort
+  title: «Утоли моя печали», Гр.Луб.-2916, XIX век
+  publisher: Государственный Русский музей
+  url: https://rusmuseumvrm.ru/data/collections/engraving/gr.lub.-2916/index.php
+  sourceType: museum
+  checked: '2026-10-14'
+  note: >-
+    Прочитана запись: бумага, раскрашенная резцовая гравюра; неизвестный художник, предметное поле даты — XIX
+    век. Более узкая рубрика периода не подменяет эту датировку.
+- id: rusmuseum-lubok-judgement
+  title: Образ страшного суда, Гр.Луб.-3270, XVII–XIX
+  publisher: Государственный Русский музей
+  url: https://rusmuseumvrm.ru/data/collections/engraving/gr.lub.-3270/index.php
+  sourceType: museum
+  checked: '2026-10-14'
+  note: >-
+    В предметном поле стоит широкий интервал XVII–XIX, а в рубрике периода — XVII век. Расхождение сохранено,
+    точный год не выбран. Бумага, резцовая гравюра. П. Шилинговский указан в истории поступления, не как автор
+    листа.
+- id: rusmuseum-lubok-collection
+  title: 'Лубок: музейная типологическая подборка'
+  publisher: Государственный Русский музей
+  url: https://rusmuseumvrm.ru/reference/classifier/typology/lubok/index.php
+  sourceType: museum
+  checked: '2026-10-14'
+  note: >-
+    Коллекция включает религиозные, исторические и другие изображения, разные техники и мастерские. Термин не
+    принят как название одной неизменной манеры.
+
+# Региональные росписи, графика и росписи: партия 2
+- id: aaav-yangliuqing-theatre
+  title: 'Miglė Lebednykaitė. The Case of Peking Opera in Lithuania: The Collection of Chinese Woodblock Prints'
+  publisher: Acta Academiae Artium Vilnensis / Vilnius Academy of Arts
+  url: https://aaav.vda.lt/journal/article/download/52/52/74
+  sourceType: scholarly
+  checked: '2026-10-14'
+  note: >-
+    Оригинальный PDF, выпуск 96 (2020), с. 209–259: напрямую сверены подписи и пять репродукций на печатных с.
+    222, 233, 238; выборочно прочитаны абзацы о мастерской и атрибуции. Подписи, инвентарные номера и широкие
+    даты сохранены. На с. 236 дано Yixinghe huadian 义兴合画店; в подписях — Isinghe. Дата снимков 2019 не
+    перенесена на гравюры. Полное прочтение статьи не заявлено.
+- id: met-china-popular-prints
+  title: 'The Printed Image in China: Popular Prints'
+  publisher: The Metropolitan Museum of Art
+  url: https://www.metmuseum.org/exhibitions/listings/2012/printed-image-in-china
+  sourceType: museum
+  checked: '2026-10-14'
+  note: >-
+    Прочитан кураторский фрагмент о популярной графике и няньхуа, включая различение Янлюцина, Таохуау и
+    Мяньчжу. Он используется для границ темы, не вместо предметных атрибуций выбранных литовских листов.
+
+# Региональные росписи, графика и росписи: партия 2
+- id: yangzhou-cutpaper-museum
+  title: 'China Paper Cutting Museum: музейная коллекция и локальные школы'
+  publisher: China Paper Cutting Museum, Yangzhou / Google Arts & Culture
+  url: https://artsandculture.google.com/partner/china-paper-cutting-museum
+  sourceType: museum
+  checked: '2026-10-14'
+  note: >-
+    Прочитано представление музея, истории местной практики и разных авторов. Музей основан в 2007 году; эта
+    дата не принята за начало вырезания бумаги. Коллекция и предметные подписи опубликованы самим музеем на
+    Google Arts & Culture.
+- id: yangzhou-bao-jun-tianjin
+  title: Bao Jun. “Cut-paper Paintings” in Tianjin
+  publisher: China Paper Cutting Museum, Yangzhou / Google Arts & Culture
+  url: >-
+    https://artsandculture.google.com/asset/%E2%80%9Ccut-paper-paintings%E2%80%9D-by-bao-jun-in-tianjin/rAEgGs49qyf33w
+  sourceType: museum
+  checked: '2026-10-14'
+  note: >-
+    Карточка сообщает 1800; описание относит автора к правлениям Цзяцин и Даогуан. Это не точный подписанный
+    год отдельного листа. Тяньцзинь — место хранения серии, а не автоматически место её создания; описание
+    связывает Бао Цзюня с Янчжоу.
+- id: yangzhou-zhang-screen
+  title: Zhang Xiufang. Four-panel Decorative Screen, 2007
+  publisher: China Paper Cutting Museum, Yangzhou / Google Arts & Culture
+  url: https://artsandculture.google.com/asset/four-panel-decorative-screen/0wHFEaRZ7BJBQA
+  sourceType: museum
+  checked: '2026-10-14'
+  note: >-
+    Автор, 2007, Type: Paper Cutting. На доступной репродукции видна одна панель описанного четырёхчастного
+    набора. Комплект считается одним произведением; дата рождения автора 1943.12 не перенесена на работу.
+- id: yangzhou-zhang-cranes
+  title: Zhang Xiufang. Cranes Flying Around Clouds, 2007
+  publisher: China Paper Cutting Museum, Yangzhou / Google Arts & Culture
+  url: https://artsandculture.google.com/asset/cranes-flying-around-clouds/xAE3cvbs7dsIag
+  sourceType: museum
+  checked: '2026-10-14'
+  note: >-
+    Автор, 2007, Type: Paper Cutting. Просмотрена целая круглая композиция; тонкая сетка и крупные силуэты
+    различаются на музейной репродукции.
+- id: kemper-foshan-misery
+  title: The Years of Misery, WU 1999.19.02
+  publisher: Mildred Lane Kemper Art Museum, Washington University in St. Louis
+  url: >-
+    https://www.kemperartmuseum.wustl.edu/collection/search-results/wu-1999-19-02-anonymous-members-of-a-peoples-commune-in-fatshan-chinese-the-years-of-misery-from-the-series-the-east-is-red-20th-century
+  sourceType: museum
+  checked: '2026-10-14'
+  note: >-
+    Предметные поля прочитаны через веб-инструмент: Papercut mounted to paper, Anonymous Members of a People’s
+    Commune in Fatshan, XX век; кураторский текст уточняет производство около начала 1970-х. Прямая страница в
+    Chrome отвечает защитой; сама репродукция просмотрена по публичной ссылке изображения из этой записи.
+    Слово prints в описании не подменило явно указанный материал вырезки.
+
+# Региональные росписи, графика и росписи: партия 2
+- id: met-adinkra-687569
+  title: Adinkra prestige cloth, 2015.614.6, 1960-е
+  publisher: The Metropolitan Museum of Art
+  url: https://www.metmuseum.org/art/collection/search/687569
+  sourceType: museum
+  checked: '2026-10-14'
+  note: >-
+    Прочитаны предметная запись и кураторский текст; просмотрено полотно. Асанте-акан, Гана, хлопок, шерсть и
+    краситель. Узор нанесён штампами на готовую ткань; дата дара 2015 не подменяет изготовление в 1960-е.
+- id: bm-adinkra-1935-1005-2
+  title: Adinkra cloth, Af1935,1005.2
+  publisher: The British Museum
+  url: https://www.britishmuseum.org/collection/object/E_Af1935-1005-2
+  sourceType: museum
+  checked: '2026-10-14'
+  note: >-
+    Предметный текст прочитан в поисковом извлечении: production date 1934, Asante, хлопок, окраска и
+    штампование. В музейном каталоге Met/British Museum 2008 тот же предмет датирован первой четвертью XX
+    века. Разница оставлена явно; A. F. Kerr — собиратель и даритель, не автор ткани.
+- id: 89plus-glover-sankofa
+  title: Ablade Glover. Sankofa Adinkra symbol, запись проекта 2015
+  publisher: 89plus / Google Arts & Culture
+  url: >-
+    https://artsandculture.google.com/asset/sankofa-adinkra-symbol-drawn-by-artist-ablade-glover-ablade-glover-and-hans-ulrich-obrist/ZwHnWY3w7bKriw
+  sourceType: museum
+  checked: '2026-10-14'
+  note: >-
+    Прочитана первичная запись проекта, просмотрено изображение. Ink on paper, Accra, дата в цифровой записи
+    2015-07-31. Рисунок назван вкладом Гловера в проект Ханса Ульриха Обриста; Обрист не представлен как
+    рисовальщик знака.
+- id: wmf-adinkra-spread
+  title: The Spread of Adinkra
+  publisher: World Monuments Fund / Google Arts & Culture
+  url: https://artsandculture.google.com/story/the-spread-of-adinkra-world-monuments-fund/NQVBErEmnp6i8w?hl=en
+  sourceType: museum
+  checked: '2026-10-14'
+  note: >-
+    Прочитан материал о знаках, пословицах, ткани и архитектурных применениях. Он подтверждает более широкий
+    графический контекст, но не подменяет атрибуцию отдельных полотен. Значения отдельных знаков не превращены
+    в универсальную инструкцию чтения любой ткани.

@@ -1,0 +1,83 @@
+{
+  "title": "Региональная графика, бумага и росписи",
+  "status": "research-in-progress",
+  "baselineCommit": "af152b032b940be766e53c8cc9dace0e8bb416f5",
+  "baselineCards": 175,
+  "selectedTopics": 10,
+  "rule": "Рабочий отбор. Тема требует самостоятельного решения, корпуса и визуальной проверки; общий обзор не заменяет локальную традицию.",
+  "items": [
+    {
+      "id": "lubok",
+      "priority": "P1",
+      "proposedKind": "tradition",
+      "status": "prepared",
+      "productionCardId": "lubok",
+      "reviewStatus": "partial",
+      "corpusWorks": 5
+    },
+    {
+      "id": "warli-painting",
+      "priority": "P1",
+      "proposedKind": "tradition",
+      "status": "research-in-progress"
+    },
+    {
+      "id": "adinkra",
+      "priority": "P1",
+      "proposedKind": "tradition",
+      "status": "prepared",
+      "productionCardId": "adinkra",
+      "reviewStatus": "partial",
+      "corpusWorks": 3
+    },
+    {
+      "id": "ndebele-murals",
+      "priority": "P1",
+      "proposedKind": "tradition",
+      "status": "research-in-progress"
+    },
+    {
+      "id": "chinese-jianzhi",
+      "priority": "P2",
+      "proposedKind": "tradition",
+      "status": "prepared",
+      "productionCardId": "chinese-jianzhi",
+      "reviewStatus": "partial",
+      "corpusWorks": 4
+    },
+    {
+      "id": "yang-liuqing-nianhua",
+      "priority": "P2",
+      "proposedKind": "tradition",
+      "status": "prepared",
+      "productionCardId": "yang-liuqing-nianhua",
+      "reviewStatus": "partial",
+      "corpusWorks": 5
+    },
+    {
+      "id": "nianhua",
+      "priority": "P1",
+      "proposedKind": "tradition",
+      "status": "research-in-progress"
+    },
+    {
+      "id": "dong-ho-prints",
+      "priority": "P2",
+      "proposedKind": "tradition",
+      "status": "research-in-progress"
+    },
+    {
+      "id": "polish-wycinanki",
+      "priority": "P2",
+      "proposedKind": "tradition",
+      "status": "research-in-progress"
+    },
+    {
+      "id": "bengal-patachitra",
+      "priority": "P2",
+      "proposedKind": "tradition",
+      "status": "research-in-progress"
+    }
+  ],
+  "preparedCards": 4
+}

@@ -1,0 +1,909 @@
+- domain:
+    - art
+  tier: 2
+  dateKind: corpus
+  origin: unknown
+  parents: []
+  aliases:
+    - Лубок
+    - Русский лубок
+    - Народная картинка
+    - Lubok
+  names:
+    - Иван Александрович Голышев
+  maturity: established
+  labelStatus: historical
+  id: lubok
+  name: Русский печатный лубок
+  orig: Russian lubok / popular prints
+  kind: tradition
+  kindNote: Издательская и визуальная традиция с разными печатными техниками; не единая авторская манера.
+  start: 1600
+  end: 1899
+  approx: true
+  dates: "корпус: XIX век и лист с датировкой XVII–XIX"
+  era: renaissance
+  region: Россия; в двух записях NYPL указана Москва
+  medium:
+    - print
+    - illustration
+  summary: >-
+    Самостоятельные печатные листы соединяют образ, повествовательные сцены, заголовок и подписи; религиозные
+    и светские варианты используют разные техники.
+  description: >-
+    Лубок рассматривается здесь как традиция популярной печатной картинки. Выбранные вещи не сводятся к яркой
+    раскраске: три литографических листа NYPL монохромны, а музейные резцовые гравюры показывают другой способ
+    работы линии и цвета.
+
+
+    Изображение может занимать одно поле, делиться на сцены или включать множество регистров. Текст поясняет
+    персонажей и действия, а заголовок и рамка организуют самостоятельный лист. Сказочная, бытовая и
+    религиозная тематика не определяет единую палитру. Именная роль литографа Голышева сохраняется отдельно от
+    неизвестного авторства других изображений.
+  traits:
+    - Заголовок, подписи и изображение составляют самостоятельную листовую композицию
+    - События могут распределяться по сценам, регистрам и обрамлённым полям
+    - Контур, штрих и печатный текст задают различимые уровни изображения
+    - Монохромная печать и раскраска сосуществуют; одной обязательной палитры нет
+  scopeNote: >-
+    Пять листов: три литографии NYPL 1866–1868 годов и две резцовые гравюры Русского музея. Ранние
+    ксилографии, рисованный лубок и современное продолжение требуют расширения корпуса. Не каждая русская
+    гравюра включается в лубок только по языку подписи.
+  dateNote: >-
+    1600–1899 — условная рамка широкого предметного интервала «XVII–XIX» у одного листа, не доказанный период
+    существования традиции. У трёх литографий известен год выпуска, но не обязательно создания исходного
+    рисунка. Год альбома и годы поступления в музеи не перенесены на произведения.
+  creators:
+    - name: Иван Александрович Голышев
+      orig: I. A. Golyshev (Ivan Aleksandrovich)
+      role: литограф листа «Илья Муромец», 1868; роль по записи NYPL
+      sources:
+        - nypl-lubok-ilya-1868
+  corpus:
+    - workId: lubok-cat-nypl-479510
+      title: Похороны кота крысами и мышами
+      author: Автор не указан
+      year: 1866 — выпуск листа
+      medium: Литография
+      sources:
+        - nypl-lubok-cat-1866
+      reference: https://digitalcollections.nypl.org/items/6a809960-c641-012f-46fc-58d385a7bc34
+      whyRepresentative: >-
+        Процессия и отдельные группы животных объединены пейзажем; заголовок находится сверху, поясняющий
+        текст занимает широкое нижнее поле.
+      place: The New York Public Library
+      rights:
+        embed: false
+        reviewed: "2026-10-14"
+        note: Репродукция доступна на предметной странице источника.
+    - workId: lubok-bear-nypl-479508
+      title: Свадьба медведя Мишки косолапого
+      author: Автор не указан
+      year: 1868 — выпуск листа
+      medium: Литография
+      sources:
+        - nypl-lubok-bear-1868
+      reference: https://digitalcollections.nypl.org/items/6a098e00-c641-012f-bcc6-58d385a7bc34
+      whyRepresentative: >-
+        Многолюдное застолье животных занимает единое плотное поле; подробные подписи вынесены под
+        изображение.
+      place: The New York Public Library
+      rights:
+        embed: false
+        reviewed: "2026-10-14"
+        note: Репродукция доступна на предметной странице источника.
+    - workId: lubok-ilya-nypl-479522
+      title: Сильный храбрый богатырь Илья Муромец
+      author: Иван Александрович Голышев — литограф
+      year: 1868 — выпуск листа
+      medium: Литография
+      sources:
+        - nypl-lubok-ilya-1868
+      reference: https://digitalcollections.nypl.org/items/6e1ac700-c641-012f-80de-58d385a7bc34
+      whyRepresentative: >-
+        Несколько сцен разного размера заключены в орнаментальные очертания; центральный эпизод и боковые
+        фигуры читаются как составной рассказ.
+      place: The New York Public Library
+      rights:
+        embed: false
+        reviewed: "2026-10-14"
+        note: Репродукция доступна на предметной странице источника.
+    - workId: lubok-comfort-rm-2916
+      title: Икона Божией Матери «Утоли моя печали», Гр.Луб.-2916
+      author: Художник не указан
+      year: XIX век
+      medium: Бумага; резцовая гравюра с раскраской
+      sources:
+        - rusmuseum-lubok-comfort
+      reference: https://rusmuseumvrm.ru/data/collections/engraving/gr.lub.-2916/index.php
+      whyRepresentative: >-
+        Крупная поясная фигура отделена от текстового поля; отдельные цветные участки сосуществуют с тонким
+        печатным штрихом.
+      place: Государственный Русский музей
+      rights:
+        embed: false
+        reviewed: "2026-10-14"
+        note: Репродукция доступна на предметной странице источника.
+    - workId: lubok-judgement-rm-3270
+      title: Образ страшного суда, Гр.Луб.-3270
+      author: Художник не указан
+      year: XVII–XIX — предметная датировка музея
+      medium: Бумага; резцовая гравюра
+      sources:
+        - rusmuseum-lubok-judgement
+      reference: https://rusmuseumvrm.ru/data/collections/engraving/gr.lub.-3270/index.php
+      whyRepresentative: >-
+        Множество небольших фигур, регистров и надписей составляют плотную вертикальную схему. Этот предмет
+        показывает отличие духовного варианта от сюжетной литографической картинки.
+      place: Государственный Русский музей
+      rights:
+        embed: false
+        reviewed: "2026-10-14"
+        note: Репродукция доступна на предметной странице источника.
+  compare:
+    - id: bilibin-illustration
+      note: >-
+        Самостоятельные лубочные листы с заголовками и пояснениями сопоставляются с книжной композицией
+        Билибина. Это сравнение устройства изображений и текста; влияние конкретного листа не заявлено.
+    - id: hokusai-landscape-prints
+      note: >-
+        Сравниваются самостоятельные печатные листы: в выбранном лубке текст и многочастный рассказ заметнее,
+        чем в пейзажном корпусе Хокусая. Ни одна техника не приравнивается ко всей национальной графике.
+  evidence:
+    - claim: NYPL датирует три самостоятельных литографических листа выпусками 1866 и 1868 годов.
+      field: corpus
+      source: nypl-lubok-cat-1866
+    - claim: И. А. Голышев указан с ролью Lithographer у конкретного листа 1868 года.
+      field: authorship
+      source: nypl-lubok-ilya-1868
+    - claim: Рубрика «Лубок» Русского музея объединяет разные сюжеты и печатные техники.
+      field: scope
+      source: rusmuseum-lubok-collection
+    - claim: >-
+        У «Образа страшного суда» предметный интервал XVII–XIX шире рубрики периода; он оставлен без
+        искусственного уточнения.
+      field: dates
+      source: rusmuseum-lubok-judgement
+  admission:
+    language: >-
+      Повторяются самостоятельный лист, соединение изображения с подписью и повествовательное деление
+      поверхности; линия и цвет варьируются по технике.
+    corpus: >-
+      Пять различных предметных записей и композиций из двух собраний. Разные версии «Похорон кота» не
+      использованы для набора трёх работ.
+    distinctness: >-
+      От книжной графики Билибина выбранные листы отличаются самостоятельным листовым устройством и большим
+      пояснительным текстом. От пейзажной гравюры Хокусая — структурой рассказа и ролью подписей. Лубок не
+      объявлен единственной манерой русской народной графики.
+    significance: >-
+      Традиция выделена музейной типологией Русского музея и отдельным корпусом исторических популярных листов
+      NYPL.
+    sources:
+      - nypl-lubok-cat-1866
+      - nypl-lubok-bear-1868
+      - nypl-lubok-ilya-1868
+      - rusmuseum-lubok-comfort
+      - rusmuseum-lubok-judgement
+      - rusmuseum-lubok-collection
+  review:
+    status: partial
+    date: "2026-10-14"
+    note: >-
+      Просмотрены все пять репродукций и прочитаны предметные записи. Датировка одного листа остаётся широкой
+      и расходится с рубрикой периода; ранняя ксилография этим корпусом не представлена. Различены автор,
+      литограф, коллекционер и год выпуска.
+  example:
+    workId: lubok-cat-nypl-479510
+    title: Похороны кота крысами и мышами
+    author: Автор не указан
+    year: 1866 — выпуск листа
+    medium: Литография
+    sources:
+      - nypl-lubok-cat-1866
+    reference: https://digitalcollections.nypl.org/items/6a809960-c641-012f-46fc-58d385a7bc34
+    whyRepresentative: >-
+      Процессия и отдельные группы животных объединены пейзажем; заголовок находится сверху, поясняющий текст
+      занимает широкое нижнее поле.
+    place: The New York Public Library
+    rights:
+      embed: false
+      reviewed: "2026-10-14"
+      note: Репродукция доступна на предметной странице источника.
+  links:
+    - title: Похороны кота крысами и мышами, 1866
+      url: https://digitalcollections.nypl.org/items/6a809960-c641-012f-46fc-58d385a7bc34
+      src: The New York Public Library
+      lang: en
+    - title: Свадьба медведя Мишки косолапого, 1868
+      url: https://digitalcollections.nypl.org/items/6a098e00-c641-012f-bcc6-58d385a7bc34
+      src: The New York Public Library
+      lang: en
+    - title: Сильный храбрый богатырь Илья Муромец, 1868
+      url: https://digitalcollections.nypl.org/items/6e1ac700-c641-012f-80de-58d385a7bc34
+      src: The New York Public Library
+      lang: en
+    - title: «Утоли моя печали», Гр.Луб.-2916, XIX век
+      url: https://rusmuseumvrm.ru/data/collections/engraving/gr.lub.-2916/index.php
+      src: Государственный Русский музей
+      lang: ru
+    - title: Образ страшного суда, Гр.Луб.-3270, XVII–XIX
+      url: https://rusmuseumvrm.ru/data/collections/engraving/gr.lub.-3270/index.php
+      src: Государственный Русский музей
+      lang: ru
+    - title: "Лубок: музейная типологическая подборка"
+      url: https://rusmuseumvrm.ru/reference/classifier/typology/lubok/index.php
+      src: Государственный Русский музей
+      lang: ru
+- domain:
+    - art
+  tier: 2
+  dateKind: corpus
+  origin: unknown
+  parents: []
+  aliases:
+    - Янлюцин
+    - Янлюцинские няньхуа
+    - Yangliuqing
+    - Xichu nianhua
+    - 杨柳青年画
+  names:
+    - Мастерская Yixinghe / 义兴合画店
+  maturity: established
+  labelStatus: historical
+  id: yang-liuqing-nianhua
+  name: Янлюцинская театральная гравюра
+  orig: Yangliuqing xichu nianhua / 杨柳青戏出年画
+  kind: tradition
+  kindNote: Ограниченный театральный корпус внутри более широкой янлюцинской популярной графики.
+  start: 1875
+  end: 1925
+  approx: true
+  dates: "корпус: конец XIX — начало XX века"
+  era: fin-de-siecle
+  region: Янлюцин близ Тяньцзиня, Китай
+  medium:
+    - print
+    - illustration
+  summary: >-
+    Раскрашенные печатные листы переводят театральную сцену в ясное расположение фигур, выразительные жесты и
+    подробный костюм.
+  description: >-
+    Пять выбранных янлюцинских гравюр посвящены театральным сюжетам. Цветные фигуры, костюмные детали, жесты и
+    надписи организуют действие; архитектура и пейзаж могут обозначать место либо почти исчезать. Широкие
+    свободные участки не исключают подробной проработки одежды и лиц.
+
+
+    В исследовании четыре листа связаны с мастерской Yixinghe, название которой читается на оттисках; у пятого
+    мастерская не установлена. Название мастерской не становится именем одного художника. Театральная ветвь не
+    заменяет все янлюцинские благопожелательные картинки, изображения детей и домашних божеств; няньхуа в
+    целом — ещё более широкая тема.
+  traits:
+    - Контур и цветные участки подробно разделяют костюм и силуэт
+    - Театральные жесты, оружие и ленты организуют действие
+    - Фигуры могут занимать свободное поле или включаться в архитектурное окружение
+    - Заголовки и надписи входят в композицию и помогают читать сюжет
+  scopeNote: >-
+    Пять гравюр из двух литовских музейных собраний по одному предметному исследованию. Даты и атрибуции не
+    объявлены независимо перепроверенными музейными заключениями. Другие жанры Янлюцина и другие центры
+    няньхуа требуют отдельного корпуса.
+  dateNote: >-
+    1875–1925 — условное размещение приблизительного музейно-исследовательского интервала «конец XIX — начало
+    XX века», а не точные годы каждой работы. 2019 в подписях относится к фотографиям. Печатный выпуск статьи
+    обозначен 2020; это не дата произведений.
+  creators:
+    - name: Мастерская Yixinghe
+      orig: Yixinghe huadian / 义兴合画店; Isinghe в литовских подписях
+      role: >-
+        мастерская четырёх выбранных гравюр по прочитанным в исследовании оттискам названия; индивидуальные
+        авторы не названы
+      sources:
+        - aaav-yangliuqing-theatre
+  corpus:
+    - workId: ylq-ldm-g6195
+      title: Danao tiangong / 大闹天宫 — Переполох в Небесном дворце, LDM G-6195
+      author: Мастерская Yixinghe (义兴合画店; Isinghe в подписи статьи)
+      year: Конец XIX — начало XX века
+      medium: Бумага из древесной массы; раскрашенная ксилография
+      sources:
+        - aaav-yangliuqing-theatre
+      reference: https://aaav.vda.lt/journal/article/download/52/52/74#page=14
+      whyRepresentative: >-
+        Фигуры с длинными лентами и сложными костюмами распределены по двору; архитектура обрамляет действие,
+        а надпись расположена в верхнем поле.
+      place: Lietuvos dailės muziejus (LDM; название в публикации)
+      rights:
+        embed: false
+        reviewed: "2026-10-14"
+        note: >-
+          Репродукция опубликована в исследовании; дана ссылка на соответствующую страницу PDF, разрешение на
+          встраивание не заявлено.
+    - workId: ylq-ldm-g6181
+      title: Na Cai Tianhua / 拿蔡天化 — Поимка Цай Тяньхуа, LDM G-6181
+      author: Мастерская Yixinghe (Isinghe в подписи статьи)
+      year: Конец XIX — начало XX века
+      medium: Бумага; раскрашенная ксилография
+      sources:
+        - aaav-yangliuqing-theatre
+      reference: https://aaav.vda.lt/journal/article/download/52/52/74#page=14
+      whyRepresentative: >-
+        Герои расставлены на ступенях и между деревьями; красные и синие участки костюмов связывают фигуры с
+        более мягким пейзажным окружением.
+      place: Lietuvos dailės muziejus (LDM; название в публикации)
+      rights:
+        embed: false
+        reviewed: "2026-10-14"
+        note: >-
+          Репродукция опубликована в исследовании; дана ссылка на соответствующую страницу PDF, разрешение на
+          встраивание не заявлено.
+    - workId: ylq-cdm-tt5842
+      title: San xia wu yi zhuona Deng Che / 三侠五义捉拿鄧車, ČDM Tt-5842
+      author: Мастерская не установлена; янлюцинская атрибуция по исследованию
+      year: Конец XIX — начало XX века
+      medium: Бумага; раскрашенная ксилография
+      sources:
+        - aaav-yangliuqing-theatre
+      reference: https://aaav.vda.lt/journal/article/download/52/52/74#page=25
+      whyRepresentative: >-
+        Группа персонажей образует поперечную сцену на почти свободном поле; костюм, жест и надпись несут
+        большую часть повествования.
+      place: M. K. Čiurlionis National Museum of Art (ČDM)
+      rights:
+        embed: false
+        reviewed: "2026-10-14"
+        note: >-
+          Репродукция опубликована в исследовании; дана ссылка на соответствующую страницу PDF, разрешение на
+          встраивание не заявлено.
+    - workId: ylq-cdm-tt5844
+      title: Qu feng ming guan / 取凤鸣关 — Взятие перевала Фэнмин, ČDM Tt-5844
+      author: Мастерская Yixinghe (Isinghe в подписи статьи)
+      year: Конец XIX — начало XX века
+      medium: Бумага; раскрашенная ксилография
+      sources:
+        - aaav-yangliuqing-theatre
+      reference: https://aaav.vda.lt/journal/article/download/52/52/74#page=25
+      whyRepresentative: >-
+        Небольшая группа фигур с оружием организована активными диагоналями. Жесты и цветные участки выделены
+        на незаполненном фоне.
+      place: M. K. Čiurlionis National Museum of Art (ČDM)
+      rights:
+        embed: false
+        reviewed: "2026-10-14"
+        note: >-
+          Репродукция опубликована в исследовании; дана ссылка на соответствующую страницу PDF, разрешение на
+          встраивание не заявлено.
+    - workId: ylq-cdm-tt5843
+      title: Changshou shan dao wei yang cao / 長壽山盗違陽草, ČDM Tt-5843
+      author: Мастерская Yixinghe (Isinghe в подписи статьи)
+      year: Конец XIX — начало XX века
+      medium: Бумага; раскрашенная ксилография
+      sources:
+        - aaav-yangliuqing-theatre
+      reference: https://aaav.vda.lt/journal/article/download/52/52/74#page=30
+      whyRepresentative: >-
+        Арка пещеры и летящая птица обрамляют сцену; изгибы лент и разные позы связывают фигуры на свободном
+        поле.
+      place: M. K. Čiurlionis National Museum of Art (ČDM)
+      rights:
+        embed: false
+        reviewed: "2026-10-14"
+        note: >-
+          Репродукция опубликована в исследовании; дана ссылка на соответствующую страницу PDF, разрешение на
+          встраивание не заявлено.
+  example:
+    workId: ylq-cdm-tt5844
+    title: Qu feng ming guan / 取凤鸣关 — Взятие перевала Фэнмин, ČDM Tt-5844
+    author: Мастерская Yixinghe (Isinghe в подписи статьи)
+    year: Конец XIX — начало XX века
+    medium: Бумага; раскрашенная ксилография
+    sources:
+      - aaav-yangliuqing-theatre
+    reference: https://aaav.vda.lt/journal/article/download/52/52/74#page=25
+    whyRepresentative: >-
+      Небольшая группа фигур с оружием организована активными диагоналями. Жесты и цветные участки выделены на
+      незаполненном фоне.
+    place: M. K. Čiurlionis National Museum of Art (ČDM)
+    rights:
+      embed: false
+      reviewed: "2026-10-14"
+      note: >-
+        Репродукция опубликована в исследовании; дана ссылка на соответствующую страницу PDF, разрешение на
+        встраивание не заявлено.
+  compare:
+    - id: lubok
+      note: >-
+        Сопоставляются самостоятельные популярные печатные листы. В выбранном янлюцинском корпусе жест и
+        костюм сценических персонажей играют иную роль, чем развёрнутые подписи русских сюжетных листов.
+        Историческая передача приёмов не утверждается.
+    - id: kalighat-painting
+      note: >-
+        Оба корпуса используют выразительную фигуру и свободный фон; здесь костюм и ансамбль театральных
+        персонажей сопоставляются с компактной городской сценой Калигхата. Это ограниченное визуальное
+        сравнение.
+  evidence:
+    - claim: В подписях пяти разных музейных номеров приведена датировка «конец XIX — начало XX века».
+      field: corpus
+      source: aaav-yangliuqing-theatre
+    - claim: >-
+        В исследовании различаются четыре оттиска названия мастерской и атрибуция оставшихся листов к той же
+        среде как предположение. Мастерская Tt-5842 здесь оставлена неизвестной.
+      field: authorship
+      source: aaav-yangliuqing-theatre
+    - claim: Met различает популярные изображения разных центров; Янлюцин не приравнен ко всем няньхуа.
+      field: scope
+      source: met-china-popular-prints
+  admission:
+    language: >-
+      Повторяются ясный печатный контур, раскраска, выразительное размещение фигур и подробности театрального
+      костюма.
+    corpus: >-
+      Пять различных композиций с инвентарными номерами G-6195, G-6181, Tt-5842, Tt-5844, Tt-5843. Другой
+      вариант сюжета на соседней иллюстрации статьи не добавлен как шестой предмет.
+    distinctness: >-
+      Кураторский обзор Met отличает живописное исполнение Янлюцина от более сдержанной колористики Таохуау и
+      смелого яркого рисунка Мяньчжу. Конкретный театральный корпус показывает отдельный круг композиций; эти
+      характеристики не превращены в безусловные признаки любого листа.
+    significance: >-
+      Корпус исследован в рецензируемом издании на материале двух музейных собраний; Met отдельно
+      рассматривает Янлюцин как один из самостоятельных центров популярной графики.
+    sources:
+      - aaav-yangliuqing-theatre
+      - met-china-popular-prints
+  review:
+    status: partial
+    date: "2026-10-14"
+    note: >-
+      Просмотрены пять репродукций и сверены предметные подписи в оригинальном PDF. Атрибуции и широкие даты
+      опираются на это исследование; отдельные музейные записи ещё не сопоставлены. Неустановленная мастерская
+      пятого листа и предел театральной выборки сохранены.
+  links:
+    - title: "Miglė Lebednykaitė. The Case of Peking Opera in Lithuania: The Collection of Chinese Woodblock Prints"
+      url: https://aaav.vda.lt/journal/article/download/52/52/74
+      src: Acta Academiae Artium Vilnensis / Vilnius Academy of Arts
+      lang: en
+    - title: "The Printed Image in China: Popular Prints"
+      url: https://www.metmuseum.org/exhibitions/listings/2012/printed-image-in-china
+      src: The Metropolitan Museum of Art
+      lang: en
+- domain:
+    - art
+  tier: 2
+  dateKind: corpus
+  origin: unknown
+  parents: []
+  aliases:
+    - Цзяньчжи
+    - Цзяньчжи, китайская вырезная бумага
+    - Chinese paper cutting
+    - Jianzhi
+    - 剪纸
+    - 剪紙
+  names:
+    - Бао Цзюнь
+    - Чжан Сюфан
+    - Коллектив Фошань (Fatshan)
+  maturity: established
+  labelStatus: historical
+  id: chinese-jianzhi
+  name: "Китайское вырезание бумаги: обзор"
+  orig: Jiǎnzhǐ / 剪纸 / 剪紙 — Chinese paper cutting
+  kind: overview
+  kindNote: Навигационный обзор разных подходов; единого национального визуального стиля не заявляет.
+  start: 1800
+  end: 2007
+  approx: true
+  dates: "корпус: каталожное 1800, XX век и 2007"
+  era: xix
+  region: Китай; выбранный корпус — Янчжоу и Фошань, один комплект хранится в Тяньцзине
+  medium:
+    - decorative-arts
+    - drawing
+  summary: >-
+    Силуэт, ажурная линия, просвет и наклеенный фрагмент становятся разными способами построения изображения
+    из бумаги.
+  description: >-
+    Китайское вырезание бумаги объединяет разные местные, авторские и исторические практики. В этом обзоре
+    сопоставлены литературно-живописное сочетание вырезанных форм Бао Цзюня, тонкий ажур Чжан Сюфан и
+    политическое повествование коллектива Фошань. Они связаны способом работы с бумагой, но не одним набором
+    цветов или сюжетов.
+
+
+    Просвет и сохранённый участок могут образовывать орнамент, птицу, растение или многофигурную сцену.
+    Наклеивание и живопись расширяют возможности материала. Национальный обзор оставляет место для
+    самостоятельных карточек локальных школ и авторов; выбранные четыре работы не представляют все регионы и
+    сообщества Китая.
+  traits:
+    - Сохранённый силуэт и вырезанный просвет совместно образуют рисунок
+    - Тонкие ажурные линии могут сочетаться с крупными плотными участками
+    - Подложка, рамка и цвет бумаги влияют на читаемость формы
+    - Орнамент, отдельный мотив и многочастный рассказ используют разные композиционные схемы
+  scopeNote: >-
+    Четыре самостоятельные музейные позиции двух локальных контекстов: Бао Цзюнь, два произведения Чжан Сюфан
+    и одна вырезка Фошань. Четырёхчастная ширма посчитана одним комплектом, а не четырьмя работами. Другие
+    китайские школы и этнические практики требуют собственных корпусов.
+  dateNote: >-
+    1800 воспроизводит поле каталога, описание которого указывает более широкий исторический период. У вырезки
+    Фошань предметное поле даёт XX век, кураторский текст — начало 1970-х. 2007 у работ Чжан Сюфан взято из их
+    подписей, а не из года открытия музея. Даты не устанавливают происхождение техники.
+  creators:
+    - name: Бао Цзюнь
+      orig: Bao Jun
+      role: автор исторического комплекта по музейной атрибуции
+      sources:
+        - yangzhou-bao-jun-tianjin
+    - name: Чжан Сюфан
+      orig: Zhang Xiufang
+      role: автор двух отдельных произведений 2007 года
+      sources:
+        - yangzhou-zhang-screen
+        - yangzhou-zhang-cranes
+    - name: Анонимные участники коммуны Фошань
+      orig: Anonymous Members of a People’s Commune in Fatshan
+      role: коллективная атрибуция вырезки WU 1999.19.02
+      sources:
+        - kemper-foshan-misery
+  corpus:
+    - workId: jz-bao-jun-tianjin
+      title: “Cut-paper Paintings” by Bao Jun in Tianjin
+      author: Бао Цзюнь / Bao Jun
+      year: 1800 — поле музейной карточки; в описании более широкий период
+      medium: Вырезание, наклеивание и живопись; состав по музейному описанию
+      sources:
+        - yangzhou-bao-jun-tianjin
+      reference: >-
+        https://artsandculture.google.com/asset/%E2%80%9Ccut-paper-paintings%E2%80%9D-by-bao-jun-in-tianjin/rAEgGs49qyf33w
+      whyRepresentative: >-
+        Два изображения цветов и птиц расположены на светлых полях. Музей описывает сочетание вырезания,
+        наклеивания и живописи; микроскопическое устройство краёв по этой репродукции не устанавливается.
+      place: Tianjin Museum; публикация музея Янчжоу
+      rights:
+        embed: false
+        reviewed: "2026-10-14"
+        note: Репродукция доступна на предметной странице источника.
+    - workId: jz-zhang-screen-2007
+      title: Four-panel Decorative Screen
+      author: Чжан Сюфан / Zhang Xiufang
+      year: 2007
+      medium: Вырезная бумага; уточнения ниже
+      sources:
+        - yangzhou-zhang-screen
+      reference: https://artsandculture.google.com/asset/four-panel-decorative-screen/0wHFEaRZ7BJBQA
+      whyRepresentative: >-
+        Видимая вертикальная панель соединяет белые силуэты птиц и цветов с ажурными линиями на тёмном поле.
+        Весь набор учтён как одно произведение.
+      place: China Paper Cutting Museum, Yangzhou / Google Arts & Culture
+      rights:
+        embed: false
+        reviewed: "2026-10-14"
+        note: Репродукция доступна на предметной странице источника.
+    - workId: jz-zhang-cranes-2007
+      title: Cranes Flying Around Clouds
+      author: Чжан Сюфан / Zhang Xiufang
+      year: 2007
+      medium: Вырезная бумага; уточнения ниже
+      sources:
+        - yangzhou-zhang-cranes
+      reference: https://artsandculture.google.com/asset/cranes-flying-around-clouds/xAE3cvbs7dsIag
+      whyRepresentative: >-
+        Круглая композиция чередует плотные силуэты журавлей и тонкие непрерывные облачные линии; просветы так
+        же существенны, как оставшаяся бумага.
+      place: China Paper Cutting Museum, Yangzhou / Google Arts & Culture
+      rights:
+        embed: false
+        reviewed: "2026-10-14"
+        note: Репродукция доступна на предметной странице источника.
+    - workId: jz-foshan-misery
+      title: The Years of Misery, from The East is Red, WU 1999.19.02
+      author: Анонимные участники коммуны Фошань (Fatshan), по музейной записи
+      year: XX век; около начала 1970-х по кураторскому тексту
+      medium: Вырезная бумага, наклеенная на бумагу
+      sources:
+        - kemper-foshan-misery
+      reference: >-
+        https://www.kemperartmuseum.wustl.edu/collection/search-results/wu-1999-19-02-anonymous-members-of-a-peoples-commune-in-fatshan-chinese-the-years-of-misery-from-the-series-the-east-is-red-20th-century
+      whyRepresentative: >-
+        Красные силуэты и светлая подложка образуют многочастную повествовательную сцену с фигурами,
+        архитектурой и предметами; это иной формальный подход, чем ажурный орнамент.
+      place: Mildred Lane Kemper Art Museum
+      rights:
+        embed: false
+        reviewed: "2026-10-14"
+        note: Репродукция доступна на предметной странице источника.
+  example:
+    workId: jz-zhang-cranes-2007
+    title: Cranes Flying Around Clouds
+    author: Чжан Сюфан / Zhang Xiufang
+    year: 2007
+    medium: Вырезная бумага; уточнения ниже
+    sources:
+      - yangzhou-zhang-cranes
+    reference: https://artsandculture.google.com/asset/cranes-flying-around-clouds/xAE3cvbs7dsIag
+    whyRepresentative: >-
+      Круглая композиция чередует плотные силуэты журавлей и тонкие непрерывные облачные линии; просветы так
+      же существенны, как оставшаяся бумага.
+    place: China Paper Cutting Museum, Yangzhou / Google Arts & Culture
+    rights:
+      embed: false
+      reviewed: "2026-10-14"
+      note: Репродукция доступна на предметной странице источника.
+  compare:
+    - id: yang-liuqing-nianhua
+      note: >-
+        Вырезанные и наклеенные бумажные формы сопоставляются с контуром и раскраской печатного листа.
+        Сходство плоскостной композиции не означает одной технологии или общего направления.
+  evidence:
+    - claim: Две предметные карточки музея Янчжоу называют Чжан Сюфан и дату 2007.
+      field: authorship
+      source: yangzhou-zhang-screen
+    - claim: >-
+        Kemper определяет материал выбранной работы как вырезку, наклеенную на бумагу, и отдельно обсуждает
+        политический контекст серии.
+      field: corpus
+      source: kemper-foshan-misery
+    - claim: >-
+        Музей Янчжоу рассматривает локальную практику и нескольких авторов; год основания учреждения не принят
+        за дату возникновения вырезания бумаги.
+      field: scope
+      source: yangzhou-cutpaper-museum
+  admission:
+    language: >-
+      Обзор сопоставляет разные способы строить изображение сохранённой бумагой, просветом и наклеиванием. Он
+      не утверждает однородности всех китайских вырезок.
+    corpus: >-
+      Четыре независимые каталожные позиции, три авторские/коллективные атрибуции; наборы и панели не умножены
+      ради количества.
+    distinctness: >-
+      От печатных няньхуа отличается работа с вырезанным материалом; от линейного рисунка — физическая
+      организация просветов и фрагментов. Дальнейшее сравнение локальных школ должно опираться на отдельные
+      корпуса, а не на общую страну.
+    significance: >-
+      Локальный специализированный музей публикует исторические и современные работы; Kemper документирует
+      самостоятельную политическую адаптацию практики.
+    sources:
+      - yangzhou-cutpaper-museum
+      - yangzhou-bao-jun-tianjin
+      - yangzhou-zhang-screen
+      - yangzhou-zhang-cranes
+      - kemper-foshan-misery
+  review:
+    status: partial
+    date: "2026-10-14"
+    note: >-
+      Просмотрены четыре репродукции и прочитаны предметные поля. У Бао Цзюня дата приблизительна по
+      контексту; от ширмы показана одна панель. Подписи Kemper прочитаны веб-инструментом, изображение — по
+      публичной предметной ссылке. Полнота регионального охвата не заявлена.
+  links:
+    - title: Bao Jun. “Cut-paper Paintings” in Tianjin
+      url: >-
+        https://artsandculture.google.com/asset/%E2%80%9Ccut-paper-paintings%E2%80%9D-by-bao-jun-in-tianjin/rAEgGs49qyf33w
+      src: China Paper Cutting Museum, Yangzhou / Google Arts & Culture
+      lang: en
+    - title: Zhang Xiufang. Four-panel Decorative Screen, 2007
+      url: https://artsandculture.google.com/asset/four-panel-decorative-screen/0wHFEaRZ7BJBQA
+      src: China Paper Cutting Museum, Yangzhou / Google Arts & Culture
+      lang: en
+    - title: Zhang Xiufang. Cranes Flying Around Clouds, 2007
+      url: https://artsandculture.google.com/asset/cranes-flying-around-clouds/xAE3cvbs7dsIag
+      src: China Paper Cutting Museum, Yangzhou / Google Arts & Culture
+      lang: en
+    - title: The Years of Misery, WU 1999.19.02
+      url: >-
+        https://www.kemperartmuseum.wustl.edu/collection/search-results/wu-1999-19-02-anonymous-members-of-a-peoples-commune-in-fatshan-chinese-the-years-of-misery-from-the-series-the-east-is-red-20th-century
+      src: Mildred Lane Kemper Art Museum, Washington University in St. Louis
+      lang: en
+    - title: "China Paper Cutting Museum: музейная коллекция и локальные школы"
+      url: https://artsandculture.google.com/partner/china-paper-cutting-museum
+      src: China Paper Cutting Museum, Yangzhou / Google Arts & Culture
+      lang: en
+- domain:
+    - art
+  tier: 2
+  dateKind: corpus
+  origin: unknown
+  parents: []
+  aliases:
+    - Адинкра
+    - Adinkra
+    - Адинкра акан
+  names:
+    - Абладе Гловер
+    - Ханс Ульрих Обрист
+  maturity: established
+  labelStatus: historical
+  id: adinkra
+  name: "Адинкра: печатные ткани и графические знаки"
+  orig: Adinkra — Akan stamped textiles and graphic signs
+  kind: tradition
+  start: 1900
+  end: 2015
+  approx: true
+  dates: "корпус: XX век и запись проекта 2015"
+  era: fin-de-siecle
+  region: Акан, Гана; два полотна асанте и современная графическая адаптация в Аккре
+  medium:
+    - textile
+    - drawing
+  summary: >-
+    Именованные графические знаки повторяются в полях ткани и могут переходить в самостоятельный рисунок и
+    другие художественные среды.
+  description: >-
+    Адинкра объединяет графический словарь и практику его применения, а не один геометрический узор. В двух
+    выбранных полотнах знаки повторяются внутри размеченных полей на готовой ткани. Современный рисунок Абладе
+    Гловера выделяет один знак из такого орнаментального окружения.
+
+
+    Печатная ткань и отдельный рисунок — разные произведения и способы использования графического языка. Знаки
+    связаны с традиционным знанием и пословицами, однако значение конкретной композиции нельзя автоматически
+    получить из случайного интернет-словаря. Статус имени художника, автора проекта и неизвестного мастера
+    ткани сохраняется раздельно.
+  traits:
+    - Отдельные узнаваемые знаки могут повторяться внутри ограниченного поля
+    - Прямые линии и бордюры организуют ткань в группы мотивов
+    - На готовой ткани оттиск знака отличается от рисунка, созданного переплетением нитей
+    - Графический знак может существовать отдельно от текстильного раппорта
+  scopeNote: >-
+    Два музейных полотна и современный рисунок одного знака. Архитектурные, ювелирные и цифровые применения не
+    представлены этим корпусом полностью. Рисунок Гловера не заменяет все адинкра, а весь фон его фотографии
+    не считается отдельной атрибутированной тканью.
+  dateNote: >-
+    У Af1935,1005.2 сохранены обе опубликованные датировки — 1934 и первая четверть XX века. Нижняя координата
+    1900 условна. Дата 2015-07-31 относится к записи современного проекта, а не к изобретению знака Sankofa
+    или всей адинкры. Даты происхождения практики не установлены этим корпусом.
+  creators:
+    - name: Абладе Гловер
+      orig: Ablade Glover
+      role: автор выбранного современного рисунка Sankofa
+      sources:
+        - 89plus-glover-sankofa
+    - name: Ханс Ульрих Обрист
+      orig: Hans Ulrich Obrist
+      role: инициатор проекта Protest against the disappearance of handwriting; не автор рисунка Гловера
+      sources:
+        - 89plus-glover-sankofa
+  corpus:
+    - workId: adinkra-bm-af1935-1005-2
+      title: Полотно адинкра, Af1935,1005.2
+      author: Мастер асанте; имя не указано
+      year: 1934 — предметная запись; I четверть XX века — каталог 2008
+      medium: Хлопок; окраска индиго и нанесение пигмента по каталогу 2008
+      sources:
+        - bm-adinkra-1935-1005-2
+        - met-african-textiles-2008
+      reference: >-
+        https://resources.metmuseum.org/resources/metpublications/pdf/The_Essential_Art_of_African_Textiles_Design_Without_End.pdf#page=50
+      whyRepresentative: >-
+        На опубликованной детали видны обрамлённые поля с повторением круговых, решётчатых и криволинейных
+        знаков. Анализ ограничен видимой частью полотна.
+      place: The British Museum
+      rights:
+        embed: false
+        reviewed: "2026-10-14"
+        note: >-
+          Просмотрена фотографическая деталь на печатной с. 49 музейного каталога 2008. Она не считается
+          отдельным произведением.
+    - workId: adinkra-met-2015-614-6
+      title: Adinkra prestige cloth, 2015.614.6
+      author: Мастер асанте-акан; имя не указано
+      year: 1960-е
+      medium: Хлопок, шерсть, краситель
+      sources:
+        - met-adinkra-687569
+      reference: https://www.metmuseum.org/art/collection/search/687569
+      whyRepresentative: >-
+        На жёлтом фоне повторяются разные чёрные знаки в прямоугольных полях; узкие разноцветные полосы
+        отделяют группы этих полей.
+      place: The Metropolitan Museum of Art
+      rights:
+        embed: false
+        reviewed: "2026-10-14"
+        note: Репродукция доступна на предметной странице источника.
+    - workId: adinkra-glover-sankofa
+      title: Sankofa Adinkra symbol drawn by artist Ablade Glover
+      author: Абладе Гловер — рисунок; Ханс Ульрих Обрист — проект
+      year: 2015-07-31 — дата цифровой записи проекта
+      medium: Чернила на бумаге
+      sources:
+        - 89plus-glover-sankofa
+      reference: >-
+        https://artsandculture.google.com/asset/sankofa-adinkra-symbol-drawn-by-artist-ablade-glover-ablade-glover-and-hans-ulrich-obrist/ZwHnWY3w7bKriw
+      whyRepresentative: >-
+        Отдельный знак с парными завитками подписан своим именем; фотография показывает рисунок на листке
+        поверх орнаментальной ткани. Фон не посчитан дополнительной работой.
+      place: 89plus
+      rights:
+        embed: false
+        reviewed: "2026-10-14"
+        note: Репродукция доступна на предметной странице источника.
+  example:
+    workId: adinkra-met-2015-614-6
+    title: Adinkra prestige cloth, 2015.614.6
+    author: Мастер асанте-акан; имя не указано
+    year: 1960-е
+    medium: Хлопок, шерсть, краситель
+    sources:
+      - met-adinkra-687569
+    reference: https://www.metmuseum.org/art/collection/search/687569
+    whyRepresentative: >-
+      На жёлтом фоне повторяются разные чёрные знаки в прямоугольных полях; узкие разноцветные полосы отделяют
+      группы этих полей.
+    place: The Metropolitan Museum of Art
+    rights:
+      embed: false
+      reviewed: "2026-10-14"
+      note: Репродукция доступна на предметной странице источника.
+  compare:
+    - id: asante-kente
+      note: >-
+        Повторение оттисков на готовой ткани сопоставляется с тканым построением рисунка кенте. Общая
+        география и геометрия не делают техники одинаковыми.
+      sources:
+        - met-adinkra-687569
+    - id: bogolanfini
+      note: >-
+        Сравниваются штампованный графический словарь адинкры и окрашивание поверхности боголанфини. Сходные
+        сетки и светло-тёмные контрасты не являются доказательством общего происхождения.
+  evidence:
+    - claim: Met описывает нанесение знаков штампами на готовые панели ткани.
+      field: traits
+      source: met-adinkra-687569
+    - claim: >-
+        Датировка предметной страницы Af1935,1005.2 отличается от даты подписи музейного каталога 2008; обе
+        оставлены в карточке.
+      field: dates
+      source: bm-adinkra-1935-1005-2
+    - claim: Запись 89plus называет Гловера автором вклада в проект Обриста и сообщает материал ink on paper.
+      field: authorship
+      source: 89plus-glover-sankofa
+    - claim: WMF рассматривает переходы адинкры между тканью и другими художественными средами.
+      field: scope
+      source: wmf-adinkra-spread
+  admission:
+    language: >-
+      Именованные знаки и их повторение внутри размеченной поверхности связывают текстильные и графические
+      применения.
+    corpus: >-
+      Три самостоятельные работы: два разных музейных номера и рисунок в отдельной первичной записи проекта.
+      Деталь ткани и её целое не посчитаны двумя вещами.
+    distinctness: >-
+      От кенте отличается способом нанесения узора на готовую основу; от боголанфини — штампованием отдельных
+      знаков и их графическим словарём. Признаки относятся к выбранным вариантам, не ко всем геометрическим
+      тканям Африки.
+    significance: >-
+      Практика документирована предметами Met и British Museum, исследованием WMF и самостоятельной
+      современной работой признанного художника в проекте 89plus.
+    sources:
+      - met-adinkra-687569
+      - bm-adinkra-1935-1005-2
+      - 89plus-glover-sankofa
+      - wmf-adinkra-spread
+      - met-african-textiles-2008
+  review:
+    status: partial
+    date: "2026-10-14"
+    note: >-
+      Просмотрены ткань Met, опубликованная деталь British Museum и рисунок Гловера. Две даты исторической
+      ткани расходятся; предметная запись BM прочитана через поисковое извлечение. Знак не объявлен
+      универсальной манерой всей живописи Гловера или всех тканей акан.
+  links:
+    - title: Adinkra cloth, Af1935,1005.2
+      url: https://www.britishmuseum.org/collection/object/E_Af1935-1005-2
+      src: The British Museum
+      lang: en
+    - title: "The Essential Art of African Textiles: Design Without End, 2008"
+      url: >-
+        https://resources.metmuseum.org/resources/metpublications/pdf/The_Essential_Art_of_African_Textiles_Design_Without_End.pdf
+      src: The Metropolitan Museum of Art
+      lang: en
+    - title: Adinkra prestige cloth, 2015.614.6, 1960-е
+      url: https://www.metmuseum.org/art/collection/search/687569
+      src: The Metropolitan Museum of Art
+      lang: en
+    - title: Ablade Glover. Sankofa Adinkra symbol, запись проекта 2015
+      url: >-
+        https://artsandculture.google.com/asset/sankofa-adinkra-symbol-drawn-by-artist-ablade-glover-ablade-glover-and-hans-ulrich-obrist/ZwHnWY3w7bKriw
+      src: 89plus / Google Arts & Culture
+      lang: en
+    - title: The Spread of Adinkra
+      url: >-
+        https://artsandculture.google.com/story/the-spread-of-adinkra-world-monuments-fund/NQVBErEmnp6i8w?hl=en
+      src: World Monuments Fund / Google Arts & Culture
+      lang: en
