@@ -104,7 +104,7 @@ export default {
     <article class="room">
       <header class="room-head">
         <div class="room-meta">
-          ${eraTag(store, s.era)}
+          ${s.dateKind === 'corpus' ? '' : eraTag(store, s.era)}
           <span>${fmtDates(s)}</span>
           ${s.region && s.region !== 'Интернет' ? html`<span>${s.region}</span>` : ''}
           <span>${s.domain.map((d) => DOMAIN[d]).join(', ')}</span>

@@ -1091,7 +1091,7 @@ export default {
         <button class="icon-btn mp-close" type="button" data-close-panel aria-label="Закрыть и вернуться к прежнему виду"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
         ${s.example.external?.reference ? html`<div class="mp-reference"><p class="mp-kind">Основная работа</p><p>${s.example.title}</p><a href="${safeUrl(s.example.external.page)}" target="_blank" rel="noopener">Посмотреть репродукцию ↗</a></div>` : html`<a class="mp-art" href="#/s/${s.id}">${frame(s.example.img, s.palette, { ratio: '16 / 10', sizes: '380px', alt: '', note: s.example.img ? '' : s.palette?.source === 'editorial' ? 'Редакторская подборка цветов' : '' })}</a>`}
         <div class="mp-body">
-          <p class="mp-meta">${eraTag(store, s.era, { link: false })}${s.kind[0] ? html`<span class="mp-kind">${KIND[s.kind[0]].toLowerCase()}</span>` : ''}</p>
+          <p class="mp-meta">${s.dateKind === 'corpus' ? '' : eraTag(store, s.era, { link: false })}${s.kind[0] ? html`<span class="mp-kind">${KIND[s.kind[0]].toLowerCase()}</span>` : ''}</p>
           <h2 class="mp-name">${s.name}</h2>
           <p class="mp-orig">${s.orig}, ${fmtDates(s)}</p>
           <p class="mp-sum">${s.summary}</p>
