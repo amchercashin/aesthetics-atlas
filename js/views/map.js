@@ -1,12 +1,13 @@
 // Карта родословной. Время — по горизонтали; по вертикали — родословное древо: потомок стоит рядом
-// с главным предком, ветви расходятся вверх и вниз. Каждый стиль — точка, подпись и тонкая линия жизни;
-// ветви древа обходят подписи и на пересечениях проходят «над» чужими линиями (подложка цвета бумаги).
+// с главным предком, ветви расходятся вверх и вниз. Каждый стиль — точка зарождения, подпись и ствол
+// до последнего потомка; длительность видна только у выбранного стиля (и в датах подписи).
+// Ветви древа обходят подписи и на пересечениях проходят «над» чужими линиями (подложка цвета бумаги).
 // Уровни: обзор → чтение → детали (миниатюры). Клик по стилю — крупный план ближайших связей,
 // с подписями типов связей и метками дальних родственников на краю экрана; полная родословная — по запросу.
 import { html, mount, safeUrl } from '../html.js';
 import { fmtDates, fmtYear, RELATION, REL_STATUS, DOMAIN, KIND, KIND_FAMILY, plural } from '../format.js?v=audit';
 import { createTimeScale, segmentWidths, segmentTicks } from '../timescale.js';
-import { layoutGenealogy, routeBranches } from '../layout.js?v=tree';
+import { layoutGenealogy, routeBranches } from '../layout.js?v=sparse';
 import { frame, markLoaded } from '../ui/image.js?v=audit';
 import { eraTag, thumb } from '../ui/common.js?v=audit';
 import { replaceParams } from '../router.js';
@@ -17,6 +18,9 @@ const AXIS_H = 30;      // строка делений шкалы внутри S
 const ROW = 44;         // высота строки при рабочем масштабе
 const PAD = 26;         // поля сверху и снизу полотна (в координатах раскладки)
 const K_DETAIL = 1;     // масштаб, при котором строки раскрыты полностью
+const OV_K = 0.2;       // просторный обзор (вид по умолчанию): раскладка оставляет место под все подписи
+const SY_OV = 0.8;      // высота строки на просторном обзоре — доля рабочей
+const Z2_K = 0.42;      // с этого масштаба — крупный план: миниатюры и даты под названием
 const FONT = { 1: '600 16px Spectral', 2: '500 14px "Golos Text"', 3: '400 13px "Golos Text"' };
 const FONT_PX = { 1: 16, 2: 14, 3: 13 };
 const DATE_FONT = '400 11px "Golos Text"';
@@ -86,7 +90,8 @@ export default {
           <div class="map-pop map-legend-pop" hidden>
             <p class="lg-title">Как читать карту</p>
             <ul>
-              <li><svg viewBox="0 0 40 14" aria-hidden="true"><circle cx="5" cy="7" r="4" fill="var(--era-xix)"/><path d="M10 7h22M32 4v6" class="life-legend"/></svg>Точка — начало стиля, тонкая линия — сколько он жил, цвет — эпоха</li>
+              <li><svg viewBox="0 0 40 14" aria-hidden="true"><circle cx="5" cy="7" r="4" fill="var(--era-xix)"/><path d="M10 7h24" class="edge lg"/></svg>Точка — начало стиля, цвет — эпоха; линия от точки — ствол, от которого отходят потомки</li>
+              <li><svg viewBox="0 0 40 14" aria-hidden="true"><path d="M4 7h32" class="dur-legend"/></svg>Длительность — у выбранного стиля и в датах подписи</li>
               <li><svg viewBox="0 0 40 14" aria-hidden="true"><path d="M4 2v5q0 5 5 5h27" class="edge lg rel-evolved"/></svg>Развитие — ветвь от предка</li>
               <li><svg viewBox="0 0 40 14" aria-hidden="true"><path d="M2 7h36" class="edge lg rel-influence"/></svg>Влияние</li>
               <li><svg viewBox="0 0 40 14" aria-hidden="true"><path d="M2 7h36" class="edge lg rel-reaction" stroke-dasharray="6 4"/></svg>Реакция, спор с предшественником</li>
@@ -116,17 +121,23 @@ export default {
           </button>`)}
           <div class="era-nav-window" aria-hidden="true"></div>
         </div>
-        <div class="minimap" role="img" aria-label="Обзор всей карты: нажмите или тяните, чтобы перейти">
-          <canvas></canvas><div class="mm-frame" aria-hidden="true"></div>
-        </div>
       </nav>
       <div class="map-stage" tabindex="0" aria-label="Карта родословной стилей. Стрелки — двигать, плюс и минус — масштаб, Tab — по стилям.">
         <svg class="map-svg z0">
           <defs>${[11, 13, 15].map((r) => html`<clipPath id="clip-${r}"><circle cx="0" cy="0" r="${r}"/></clipPath>`)}</defs>
-          <g class="m-eras"></g><g class="m-life"></g><g class="m-cmp"></g><g class="m-edges"></g><g class="m-edge-hits"></g><g class="m-plates"></g>
+          <g class="m-eras"></g><g class="m-dur"></g><g class="m-life"></g><g class="m-cmp"></g><g class="m-edges"></g><g class="m-edge-hits"></g><g class="m-plates"></g>
           <g class="m-nodes"></g><g class="m-labels"></g><g class="m-stubs"></g><g class="m-sel"></g><g class="m-elabels"></g><g class="m-axis"></g>
         </svg>
         <div class="map-offscreen" aria-label="Связи за краем экрана"></div>
+        <div class="mm-box">
+          <div class="minimap" role="img" aria-label="Миникарта: вся карта, рамка — видимая часть. Нажмите или тяните, чтобы перейти">
+            <canvas></canvas><div class="mm-frame" aria-hidden="true"></div>
+          </div>
+          <button class="mm-toggle" type="button" aria-expanded="true" aria-label="Свернуть миникарту" title="Свернуть миникарту">
+            <svg class="mm-ic-hide" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M7 12h10"/></svg>
+            <svg class="mm-ic-show" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 6.5 9 4l6 2.5L20.5 4v13.5L15 20l-6-2.5L3.5 20z"/><path d="M9 4v13.5M15 6.5V20"/></svg>
+          </button>
+        </div>
         <div class="map-tip" hidden></div>
         <div class="map-edge-pop" role="dialog" aria-label="Связь" hidden></div>
         <aside class="map-panel" hidden aria-live="polite"></aside>
@@ -138,7 +149,7 @@ export default {
     const q = (s) => root.querySelector(s);
     const stage = q('.map-stage');
     const svg = q('.map-svg');
-    const G = Object.fromEntries(['eras', 'life', 'cmp', 'edges', 'edge-hits', 'plates', 'nodes', 'labels', 'stubs', 'sel', 'elabels', 'axis'].map((k) => [k, svg.querySelector(`.m-${k}`)]));
+    const G = Object.fromEntries(['eras', 'dur', 'life', 'cmp', 'edges', 'edge-hits', 'plates', 'nodes', 'labels', 'stubs', 'sel', 'elabels', 'axis'].map((k) => [k, svg.querySelector(`.m-${k}`)]));
     const tip = q('.map-tip');
     const edgePop = q('.map-edge-pop');
     const panel = q('.map-panel');
@@ -147,6 +158,8 @@ export default {
     const navTrack = q('.era-nav-track');
     const navWin = q('.era-nav-window');
     const navSegs = [...root.querySelectorAll('.en-seg')];
+    const mmBox = q('.mm-box');
+    const mmToggle = q('.mm-toggle');
     const mm = q('.minimap');
     const mmCanvas = mm.querySelector('canvas');
     const mmFrame = mm.querySelector('.mm-frame');
@@ -168,11 +181,15 @@ export default {
     const LABEL_PAD = window.innerWidth < 760 ? 110 : 170;
     const isNarrow = () => vw < 760;
 
+    // Высота строк зависит от масштаба: «Вся история» вписывает всё по высоте, просторный обзор
+    // держит строки читаемыми (SY_OV), рабочий масштаб раскрывает их полностью.
+    const kOv = () => Math.max(OV_K, k0 * 1.05);
     function syOf(k) {
-      const fitY = Math.min(1, syFit);
-      if (k0 >= K_DETAIL) return fitY;
-      const p = clamp(Math.log(k / k0) / Math.log(K_DETAIL / k0), 0, 1);
-      return Math.pow(fitY, 1 - p);
+      if (k >= K_DETAIL) return 1;
+      const ko = kOv(), fitY = Math.min(SY_OV, syFit);
+      if (k >= ko) return SY_OV * Math.pow(1 / SY_OV, Math.log(k / ko) / Math.log(K_DETAIL / ko));
+      const p = clamp(Math.log(k / k0) / Math.log(ko / k0), 0, 1);
+      return fitY * Math.pow(SY_OV / fitY, p);
     }
     const X = (year) => sc.x(year) * t.k + t.tx;
     const XR = (xr) => xr * t.k + t.tx;           // координата раскладки → экран
@@ -200,9 +217,12 @@ export default {
         id: s.id, start: s.start, end: s.end, tier: s.tier,
         width: R.z2[s.tier] + 8 + Math.max(meta.get(s.id).w, meta.get(s.id).wd),
         parents: s.parents.map((p) => p.id),
+        // На просторном обзоре подпись того же размера, а масштаб мельче: строка держит место под неё.
+        reach: ((s.tier === 1 ? 11 : R.z1[s.tier]) + 7 + meta.get(s.id).w + 12) / OV_K,
       }));
-      const lay = layoutGenealogy(layNodes, sc.x, { now: store.now, dot: 16, gap: 22, tail: 28 });
-      const routes = routeBranches(layNodes, sc.x, lay, { now: store.now, dot: 16, scale: 0.7 });
+      const lay = layoutGenealogy(layNodes, sc.x, { now: store.now, dot: 16, gap: 22, tail: 28, longGap: LONG });
+      // Коридоры ищутся при масштабе обзора: свободный там — свободен и при любом более крупном.
+      const routes = routeBranches(layNodes, sc.x, lay, { now: store.now, dot: 16, scale: OV_K, extent: (n) => n.reach });
       contentRefH = PAD * 2 + lay.count * ROW;
       // Вес линии (как в OneZoom): сколько стилей выросло из неё по главной линии родства.
       const kidsOf = new Map(store.styles.map((s) => [s.id, []]));
@@ -233,7 +253,8 @@ export default {
 
       // Стили: линия жизни, точка, подпись (имя и даты)
       for (const s of store.styles) {
-        const life = el('path', { class: `life t${s.tier}`, stroke: `var(--era-${s.era})`, 'data-id': s.id, style: `--w:${weight(s.id).toFixed(2)}` }, G.life);
+        // Ствол: от точки зарождения до последнего потомка, толщина — вес родословной.
+        const life = el('path', { class: `life t${s.tier}`, 'data-id': s.id, style: `--w:${weight(s.id).toFixed(2)}` }, G.life);
         const g = el('g', { class: `node t${s.tier}`, tabindex: '0', role: 'button', 'aria-label': `${s.name}, ${fmtDates(s)}`, 'data-id': s.id }, G.nodes);
         el('circle', { class: 'hit', r: 18 }, g);
         const dot = el('circle', { class: 'dot', fill: `var(--era-${s.era})` }, g);
@@ -246,7 +267,7 @@ export default {
         const dates = el('tspan', { class: 'l-dates' }, text);
         dates.textContent = fmtDates(s);
         const m = meta.get(s.id);
-        const n = { s, row: lay.pos.get(s.id), g, dot, ring, text, name, dates, life, plate, img: null, w: m.w, wd: m.wd, x: 0, y: 0, r: 4, labelOn: false, landmark: landmarks.has(s.id) };
+        const n = { s, row: lay.pos.get(s.id), g, dot, ring, text, name, dates, life, plate, img: null, w: m.w, wd: m.wd, wt: weight(s.id), x: 0, y: 0, r: 4, labelOn: false, landmark: landmarks.has(s.id) };
         if (n.landmark) g.classList.add('landmark');
         nodes.push(n);
         nodeById.set(s.id, n);
@@ -267,6 +288,7 @@ export default {
         if (stubText) stubText.textContent = `← ${par.s.name}`;
         edges.push({ par, ch, type: p.type, primary, g, casing, path, hit, rel: p, jx: primary ? routes.get(s.id)?.jx ?? null : null, drawn: false, long, stubText });
       });
+      for (const n of nodes) n.kidEdges = edges.filter((e) => e.par === n && e.primary);
       // У предка — парная метка для всех его «далёких» потомков: куда ведёт оборванная линия.
       for (const n of nodes) {
         const far = edges.filter((e) => e.par === n && e.long && e.primary);
@@ -287,6 +309,8 @@ export default {
         cmps.push({ a, b, path, hit, note: c.note, sources: c.sources });
       }
       // Годы выбранного стиля — у концов его линии жизни
+      axis.durHover = el('path', { class: 'dur hover' }, G.dur);
+      axis.durSel = el('path', { class: 'dur' }, G.dur);
       axis.selStart = el('text', { class: 'sel-year' }, G.sel);
       axis.selEnd = el('text', { class: 'sel-year end' }, G.sel);
 
@@ -297,7 +321,7 @@ export default {
       q('.map-loading').remove();
       resize();
       drawMinimap();
-      fit(false);
+      overview(false);
       applyParams(ctx.params, true);
     }
 
@@ -321,7 +345,7 @@ export default {
       if (!sc) return;
       const sy = syOf(t.k);
       const rowH = ROW * sy;
-      const m = rowH < 17 ? 'z0' : rowH < 31 ? 'z1' : 'z2';
+      const m = rowH < 17 ? 'z0' : rowH < 31 || t.k < Z2_K ? 'z1' : 'z2';
       if (m !== mode) { svg.classList.remove(mode); svg.classList.add(m); mode = m; }
 
       store.eras.forEach((e, i) => {
@@ -344,10 +368,6 @@ export default {
         const tabOff = off || x < 0 || x > vw - panelWidth() || y < AXIS_H || y > vh - sheetHeight();
         if (n.tabOff !== tabOff) { n.tabOff = tabOff; n.g.setAttribute('tabindex', tabOff ? '-1' : '0'); }
         if (off) { n.text.style.display = 'none'; n.plate.style.display = 'none'; n.labelOn = false; n.lbox = null; continue; }
-        // Линия жизни: от точки до конца стиля; у завершённых — короткая засечка.
-        const lx0 = x + n.r + 1;
-        const tick = n.s.end != null ? `M${x2.toFixed(1)},${(y - 3.5).toFixed(1)}V${(y + 3.5).toFixed(1)}` : '';
-        n.life.setAttribute('d', x2 > lx0 + 2 ? `M${lx0.toFixed(1)},${y.toFixed(1)}H${x2.toFixed(1)}${tick}` : '');
         n.g.setAttribute('transform', `translate(${x.toFixed(1)},${y.toFixed(1)})`);
         n.dot.setAttribute('r', n.r);
         n.ring.setAttribute('r', n.r + 1);
@@ -362,17 +382,18 @@ export default {
             for (const [k, v] of Object.entries({ x: -r, y: -r, width: r * 2, height: r * 2, 'clip-path': `url(#clip-${r})` })) n.img.setAttribute(k, v);
           }
         }
-        const lx = x + n.r + 7;
-        n.name.setAttribute('x', lx.toFixed(1));
-        n.name.setAttribute('y', (y + (m === 'z2' ? -1 : FONT_PX[n.s.tier] * 0.36)).toFixed(1));
-        n.dates.setAttribute('x', lx.toFixed(1));
-        n.dates.setAttribute('y', (y + 14).toFixed(1));
         visible.push(n);
       }
 
       // Подписи: по приоритету, без наложений друг на друга и на точки. Сетка — чтобы и 600 стилей не тормозили.
+      // На просторном обзоре место под каждую подпись оставила раскладка; мельче — побеждает приоритет.
       const occ = grid();
       for (const n of visible) occ.add([n.x - n.r - 1, n.x + n.r + 1, n.y - n.r - 1, n.y + n.r + 1, n.s.id]);
+      // Подпись целиком в видимой области и не под миникартой — иначе не показываем: обрезанное
+      // название хуже отсутствующего (сдвиньте карту — оно появится).
+      const view = viewRect();
+      occ.add([mmBox.offsetLeft - 4, mmBox.offsetLeft + mmBox.offsetWidth + 4, mmBox.offsetTop - 4, mmBox.offsetTop + mmBox.offsetHeight + 4, '']);
+      const inView = (b) => b[0] >= view.x0 + 4 && b[1] <= view.x1 - 4 && b[2] >= AXIS_H && b[3] <= view.y1;
       const allowTier = m === 'z0' ? 2 : 3;
       const focusSet = svg.classList.contains('has-selection');
       visible.sort((a, b) => prio(b) - prio(a));
@@ -381,19 +402,9 @@ export default {
         const lit = n.g.classList.contains('lit');
         const fh = FONT_PX[n.s.tier];
         const w = m === 'z2' ? Math.max(n.w, n.wd) : n.w;
-        // Прямоугольник подписи — от базовой линии шрифта: с надстрочными и подстрочными элементами.
-        const base = n.y + (m === 'z2' ? -1 : fh * 0.36);
-        // У правого края подпись переворачивается налево от точки, чтобы название не обрезалось.
-        const flip = n.x + n.r + 9 + w > vw - 6 && n.x - n.r - 9 - w > 4;
-        const a = flip ? n.x - n.r - 9 - w : n.x + n.r + 5, b = flip ? n.x - n.r - 5 : n.x + n.r + 9 + w;
-        if (flip !== !!n.flipped) {
-          n.flipped = flip;
-          n.text.setAttribute('text-anchor', flip ? 'end' : 'start');
-        }
-        if (flip) { const lx = (n.x - n.r - 7).toFixed(1); n.name.setAttribute('x', lx); n.dates.setAttribute('x', lx); }
-        const c = base - fh * 0.95, d = m === 'z2' ? n.y + 17 : base + fh * 0.3;
+        const spot = spotOf(n, m, w, fh);
         let show = forced || (focusSet ? lit : n.s.tier <= allowTier || n.g.classList.contains('near'));
-        if (show && !forced) show = !occ.hit([a, b, c, d], n.s.id);
+        if (show && !forced) show = inView(spot.box) && !occ.hit(spot.box, n.s.id);
         // Ориентир без подписи — не ориентир: в тесноте он становится обычной точкой.
         if (n.landmark && m !== 'z2') {
           const asThumb = show && !!n.img;
@@ -403,11 +414,17 @@ export default {
         n.text.style.display = show ? '' : 'none';
         n.plate.style.display = show ? '' : 'none';
         n.labelOn = show;
-        n.lbox = show ? [a, b, c, d] : null;
+        n.lbox = show ? spot.box : null;
+        n.lpos = show ? (spot.anchor === 'end' ? 'l' : 'r') : null;
         if (show) {
+          const [a, b, c, d] = spot.box;
           occ.add([a, b, c, d, n.s.id]);
+          if (spot.anchor !== (n.anchor ?? 'start')) { n.anchor = spot.anchor; n.text.setAttribute('text-anchor', spot.anchor); }
+          const tx = spot.tx.toFixed(1);
+          n.name.setAttribute('x', tx); n.name.setAttribute('y', spot.base.toFixed(1));
+          n.dates.setAttribute('x', tx); n.dates.setAttribute('y', (spot.base + 15).toFixed(1));
           n.plate.setAttribute('x', (a - 1).toFixed(1)); n.plate.setAttribute('width', (b - a - 1).toFixed(1));
-          n.plate.setAttribute('y', (c + 1).toFixed(1)); n.plate.setAttribute('height', (d - c - 1).toFixed(1));
+          n.plate.setAttribute('y', (c - 1).toFixed(1)); n.plate.setAttribute('height', (d - c + 3).toFixed(1));
         }
       }
       drawEdges();
@@ -417,8 +434,23 @@ export default {
       drawMinimapFrame();
     }
 
+    // Подпись — справа от точки на своей строке. У правого края экрана — слева, чтобы не обрезалась.
+    // Прямоугольник подписи — от базовой линии шрифта: с надстрочными и подстрочными элементами.
+    function spotOf(n, m, w, fh) {
+      const { x, y, r } = n;
+      const base = y + (m === 'z2' ? -1 : fh * 0.36);
+      const place = (anchor, tx) => {
+        const a = anchor === 'end' ? tx - w - 2 : tx - 2, b = anchor === 'end' ? tx + 2 : tx + w + 2;
+        return { anchor, tx, base, box: [a, b, base - fh * 0.95, m === 'z2' ? base + 18 : base + fh * 0.3] };
+      };
+      const right = place('start', x + r + 7);
+      if (right.box[1] > vw - 6) { const left = place('end', x - r - 7); if (left.box[0] > 4) return left; }
+      return right;
+    }
+
     function prio(n) {
-      let p = (4 - n.s.tier) * 1000 - n.s.start / 100000;
+      // Внутри уровня важнее стиль, из которого выросло больше: как крупный город на карте.
+      let p = (4 - n.s.tier) * 1000 + n.wt * 10 - n.s.start / 100000;
       if (n.s.id === selected || n.s.id === hovered) p += 1e6;
       if (n.g.classList.contains('is-related') || n.g.classList.contains('on-line')) p += 5e5;
       else if (n.g.classList.contains('lit') || n.g.classList.contains('near')) p += 2e5;
@@ -462,7 +494,7 @@ export default {
       const p = e.par, c = e.ch;
       const xc = X(c.s.start) - c.r - 1, yc = c.y, yp = p.y;
       const xps = X(p.s.start), xpe = X(p.s.end ?? store.now);
-      if (Math.abs(yc - yp) < 0.5) return `M${Math.min(xpe, xc).toFixed(1)},${yp.toFixed(1)}H${xc.toFixed(1)}`;
+      if (Math.abs(yc - yp) < 0.5) { e.trunkTo = Math.min(xpe, xc); return `M${Math.min(xpe, xc).toFixed(1)},${yp.toFixed(1)}H${xc.toFixed(1)}`; }
       let jx = e.jx != null ? XR(e.jx) : xc - 10;
       jx = clamp(jx, xps, xc - 2);
       const dir = yc > yp ? 1 : -1;
@@ -474,11 +506,12 @@ export default {
       } else if (jx - xps < p.r + 1) {
         jx = xps;
         d = `M${xps.toFixed(1)},${(yp + dir * (p.r + 1)).toFixed(1)}`;
-      } else if (p.lbox && jx > p.lbox[0] && jx < p.lbox[1]) {
+      } else if (p.lbox && jx > p.lbox[0] && jx < p.lbox[1] && ((dir > 0 ? p.lbox[3] : p.lbox[2]) - yp) * dir > 0) {
         // Ветвь выходит из-под подписи предка: начинаем у края подписи, а не сквозь текст.
         d = `M${jx.toFixed(1)},${(dir > 0 ? p.lbox[3] : p.lbox[2]).toFixed(1)}`;
       } else d = `M${jx.toFixed(1)},${yp.toFixed(1)}`;
       d += `V${(yc - dir * rad).toFixed(1)}Q${jx.toFixed(1)},${yc.toFixed(1)} ${(jx + rad).toFixed(1)},${yc.toFixed(1)}H${xc.toFixed(1)}`;
+      e.trunkTo = Math.min(jx, xpe);
       return d;
     }
     // Оборванная далёкая связь: короткий отросток с кружком на входе в потомка и отросток у предка.
@@ -487,15 +520,34 @@ export default {
       const xc = X(c.s.start) - c.r - 1, yc = c.y;
       const xpe = X(p.s.end ?? store.now), yp = p.y;
       const L = 22, o = 2.4;
-      const into = `M${(xc - L - o).toFixed(1)},${yc.toFixed(1)}a${o},${o} 0 1,0 ${2 * o},0a${o},${o} 0 1,0 ${-2 * o},0M${(xc - L + o).toFixed(1)},${yc.toFixed(1)}H${xc.toFixed(1)}`;
-      if (!e.primary) return into;
-      const out = `M${(xpe + 2).toFixed(1)},${yp.toFixed(1)}h${L - 6}l-3,-3m3,3l-3,3`;
-      return `${into}${out}`;
+      return `M${(xc - L - o).toFixed(1)},${yc.toFixed(1)}a${o},${o} 0 1,0 ${2 * o},0a${o},${o} 0 1,0 ${-2 * o},0M${(xc - L + o).toFixed(1)},${yc.toFixed(1)}H${xc.toFixed(1)}`;
+    }
+    // Стволы: от точки зарождения до места, где от строки отходит последняя ветвь (не дальше конца
+    // жизни стиля — дальше ветвь идёт своим штрихом). Если есть далёкие потомки — стрелка «→».
+    function drawTrunks() {
+      for (const n of nodes) {
+        if (n.g.style.display === 'none') { n.life.setAttribute('d', ''); n.outX = null; continue; }
+        let end = -Infinity, far = false;
+        for (const e of n.kidEdges) {
+          if (!e.drawn) continue;
+          if (e.stub) far = true; else if (e.trunkTo != null) end = Math.max(end, e.trunkTo);
+        }
+        const x0 = n.x + n.r + 1;
+        let d = end > x0 + 2 ? `M${x0.toFixed(1)},${n.y.toFixed(1)}H${end.toFixed(1)}` : '';
+        n.outX = null;
+        if (far) {
+          const labelEnd = n.lpos === 'r' ? n.lbox[1] : n.x + n.r + 2;
+          const ox = Math.max(end, labelEnd) + 4;
+          n.outX = ox;
+          d += `M${ox.toFixed(1)},${n.y.toFixed(1)}h16l-3,-3m3,3l-3,3`;
+        }
+        n.life.setAttribute('d', d);
+      }
     }
     function drawStubLabels() {
       const show = mode === 'z2' && !svg.classList.contains('has-selection');
       const occ = grid();
-      for (const n of nodes) if (n.labelOn) { const w = mode === 'z2' ? Math.max(n.w, n.wd) : n.w; occ.add([n.x + n.r + 5, n.x + n.r + 9 + w, n.y - 16, n.y + 18, n.s.id]); }
+      for (const n of nodes) if (n.lbox) occ.add([...n.lbox, n.s.id]);
       for (const e of edges) {
         if (!e.stubText) continue;
         const on = show && e.stub && e.drawn && e.ch.g.style.display !== 'none';
@@ -512,10 +564,10 @@ export default {
         if (!n.outText) continue;
         const xpe = X(n.s.end ?? store.now);
         let vis = false;
-        if (show && n.g.style.display !== 'none' && edges.some((e) => e.par === n && e.stub)) {
-          const x0 = xpe + 2, w = n.outText.getComputedTextLength?.() || 120;
-          const box = [x0 - 2, x0 + w + 2, n.y - 18, n.y - 4];
-          if (!occ.hit(box)) { occ.add(box); vis = true; n.outText.setAttribute('x', x0.toFixed(1)); n.outText.setAttribute('y', (n.y - 7).toFixed(1)); }
+        if (show && n.outX != null) {
+          const x0 = n.outX + 20, w = n.outText.getComputedTextLength?.() || 120;
+          const box = [x0 - 2, x0 + w + 2, n.y - 8, n.y + 6];
+          if (!occ.hit(box)) { occ.add(box); vis = true; n.outText.setAttribute('x', x0.toFixed(1)); n.outText.setAttribute('y', (n.y + 4).toFixed(1)); }
         }
         n.outText.style.display = vis ? '' : 'none';
       }
@@ -551,6 +603,7 @@ export default {
         e.path.setAttribute('d', d); e.casing.setAttribute('d', d); e.hit.setAttribute('d', d);
         e.drawn = true;
       }
+      drawTrunks();
       drawStubLabels();
       for (const c of cmps) {
         const near = !!hovered && (c.a.s.id === hovered || c.b.s.id === hovered);
@@ -566,8 +619,18 @@ export default {
     }
 
     // Крупный план: подписи типов связей словами и годы выбранного стиля.
+    // Длительность — только у выбранного и наведённого стиля: полоса цвета эпохи от начала до конца.
+    function durPath(n) {
+      const x0 = X(n.s.start), x1 = X(n.s.end ?? store.now);
+      return x1 > x0 + 2 ? `M${x0.toFixed(1)},${n.y.toFixed(1)}H${x1.toFixed(1)}` : '';
+    }
     function drawSelection() {
       const n = selected && nodeById.get(selected);
+      const h = hovered && hovered !== selected && nodeById.get(hovered);
+      axis.durSel.setAttribute('d', n && n.g.style.display !== 'none' ? durPath(n) : '');
+      if (n) axis.durSel.setAttribute('stroke', `var(--era-${n.s.era})`);
+      axis.durHover.setAttribute('d', h && h.g.style.display !== 'none' ? durPath(h) : '');
+      if (h) axis.durHover.setAttribute('stroke', `var(--era-${h.s.era})`);
       const showYears = !!n && n.g.style.display !== 'none';
       axis.selStart.style.display = showYears ? '' : 'none';
       axis.selEnd.style.display = showYears && n.s.end != null ? '' : 'none';
@@ -626,11 +689,29 @@ export default {
         const arrow = ['→', '↘', '↓', '↙', '←', '↖', '↑', '↗'][((Math.round(ang / (Math.PI / 4)) % 8) + 8) % 8];
         items.push({ o, word: r.word, arrow, x: cx + dx * tt, y: clamp(cy + dy * tt, rect.y0 + 22, rect.y1 - 22), left: dx < 0 });
       }
+      // Метка не закрывает подписи и точки на экране, другие метки и миникарту: ищем ближайшее
+      // свободное место по вертикали у того же края.
+      const mmTop = mmBox.offsetTop - 22, mmRight = mmBox.offsetLeft + mmBox.offsetWidth + 8;
+      const busy = [];
+      for (const n of nodes) {
+        if (n.g.style.display === 'none') continue;
+        if (n.lbox) busy.push(n.lbox);
+        if (n.s.id === selected || n.g.classList.contains('lit')) busy.push([n.x - n.r - 3, n.x + n.r + 3, n.y - n.r - 3, n.y + n.r + 3]);
+      }
+      const hit = (b) => busy.some((o) => b[0] < o[1] && o[0] < b[1] && b[2] < o[3] && o[2] < b[3]);
       items.sort((a, b) => a.y - b.y);
-      const placed = [];
       for (const it of items) {
-        for (const p of placed) if (p.left === it.left && Math.abs(p.x - it.x) < 220 && Math.abs(p.y - it.y) < 40) it.y = p.y + 40;
-        placed.push(it);
+        const w = Math.min(230, 48 + Math.max(it.word.length * 6.2, it.o.s.name.length * 8));
+        const [x0, x1] = it.left ? [it.x, it.x + w] : [it.x - w, it.x];
+        const lo = rect.y0 + 22, hi = x0 < mmRight ? Math.min(rect.y1 - 22, mmTop) : rect.y1 - 22;
+        const box = (y) => [x0 - 4, x1 + 4, y - 22, y + 22];
+        let best = clamp(it.y, lo, hi);
+        for (let d = 0; d <= 240; d += 6) {
+          const c = [best + d, best - d].find((y) => y >= lo && y <= hi && !hit(box(y)));
+          if (c != null) { best = c; break; }
+        }
+        it.y = best;
+        busy.push(box(best));
       }
       chips.replaceChildren(...items.map((it) => {
         const b = document.createElement('button');
@@ -658,7 +739,12 @@ export default {
       const s = segs[i];
       return s.start + clamp(f * n - i, 0, 1) * (s.end - s.start);
     };
+    // Кнопка «Вся история» на общем виде становится «Обзор» — возврат к просторному виду в один клик.
+    const atFit = () => Math.abs(t.k - k0) < k0 * 0.03;
+    const fitBtn = q('[data-zoom="fit"]');
     function drawNav() {
+      const fitLabel = atFit() ? 'Обзор' : 'Вся история';
+      if (fitBtn.textContent !== fitLabel) fitBtn.textContent = fitLabel;
       const y0 = sc.invert((0 - t.tx) / t.k), y1 = sc.invert((vw - panelWidth() - t.tx) / t.k);
       const a = navPos(y0), b = navPos(y1);
       const W = navSegs.length ? navSegs[navSegs.length - 1].offsetLeft + navSegs[navSegs.length - 1].offsetWidth - navSegs[0].offsetLeft : 0;
@@ -677,8 +763,9 @@ export default {
     let mmW = 0, mmH = 0;
     function drawMinimap() {
       const dpr = window.devicePixelRatio || 1;
-      // Миникарта живёт в строке навигатора эпох: не закрывает полотно.
-      mmW = mm.clientWidth || 140; mmH = mm.clientHeight || 50;
+      // Миникарта — отдельное окошко в углу полотна, как в играх. Свёрнута — не рисуется.
+      if (mmBox.classList.contains('collapsed')) { mmW = 0; return; }
+      mmW = mm.clientWidth || 240; mmH = mm.clientHeight || 100;
       mmCanvas.width = mmW * dpr; mmCanvas.height = mmH * dpr;
       mmCanvas.style.width = `${mmW}px`; mmCanvas.style.height = `${mmH}px`;
       const c = mmCanvas.getContext('2d');
@@ -690,8 +777,17 @@ export default {
         const seg = sc.segments[i];
         c.fillStyle = cs.getPropertyValue(`--era-${e.id}`).trim() || '#888';
         c.globalAlpha = 0.09; c.fillRect(mx(seg.x0), 0, mx(seg.x1) - mx(seg.x0), mmH);
-        c.globalAlpha = 0.9; c.fillRect(mx(seg.x0), 0, Math.max(1, mx(seg.x1) - mx(seg.x0) - 1), 2);
+        c.globalAlpha = 0.9; c.fillRect(mx(seg.x0), 0, Math.max(1, mx(seg.x1) - mx(seg.x0) - 1), 3);
       });
+      // Очертания древа: главные ветви тонкими линиями — по ним видно, где «материки» карты.
+      c.globalAlpha = 0.28; c.strokeStyle = cs.getPropertyValue('--ink-2').trim() || '#666'; c.lineWidth = 0.8;
+      c.beginPath();
+      for (const e of edges) {
+        if (!e.primary || e.long) continue;
+        const px = mx(sc.x(e.par.s.start)), py = my(yRef(e.par)), cx = mx(sc.x(e.ch.s.start)), cy = my(yRef(e.ch));
+        c.moveTo(px, py); c.lineTo(Math.max(px, cx - 2), py); c.lineTo(Math.max(px, cx - 2), cy); c.lineTo(cx, cy);
+      }
+      c.stroke();
       for (const n of nodes) {
         const out = n.g.classList.contains('out');
         c.globalAlpha = out ? 0.2 : 0.9;
@@ -713,6 +809,7 @@ export default {
       mmFrame.style.height = `${Math.max(6, fy1 - fy0).toFixed(1)}px`;
     }
     function minimapGo(e) {
+      dismissHint();
       const r = mmCanvas.getBoundingClientRect();
       const xr = clamp((e.clientX - r.left) / r.width, 0, 1) * sc.total;
       const yr = clamp((e.clientY - r.top) / r.height, 0, 1) * contentRefH;
@@ -766,6 +863,16 @@ export default {
       computeFit();
       animateTo(k0, 40, 0, animate ? 600 : 0);
     }
+    // Просторный обзор — вид по умолчанию: начало истории слева, по вертикали — середина того,
+    // что попало в кадр. Дальше по карте ведут перетаскивание, навигатор эпох и миникарта.
+    function overview(animate = true) {
+      computeFit();
+      const k = kOv(), sy = syOf(k), rect = viewRect(), tx = 40;
+      const xr1 = (rect.x1 - tx) / k;
+      const ys = nodes.filter((n) => sc.x(n.s.start) <= xr1).map(yRef);
+      const yc = ys.length ? ys.reduce((a, b) => a + b, 0) / ys.length : contentRefH / 2;
+      animateTo(k, tx, (rect.y1 - rect.y0) / 2 - yc * sy, animate ? 600 : 0);
+    }
     // Вписать прямоугольник раскладки [x0..x1] × [y0..y1] в видимую область.
     // fitY: false — не ужимать масштаб ради высоты (рабочий вид, вертикаль листается);
     // тогда по вертикали центрируется «центр тяжести» yFocus.
@@ -790,6 +897,7 @@ export default {
       animateTo(k, tx, ty, ms);
     }
     function zoomToEra(i, ms = 650) {
+      if (ms) dismissHint();
       const seg = sc.segments[i];
       const ys = nodes.filter((n) => n.s.start >= seg.start && n.s.start < seg.end).map(yRef);
       const y0 = ys.length ? Math.min(...ys) - ROW : 0, y1 = ys.length ? Math.max(...ys) + ROW : contentRefH;
@@ -1051,10 +1159,13 @@ export default {
     // ---------- события полотна ----------
     const pointers = new Map();
     let drag = null, pinch = null, moved = false;
-    const uiTarget = (e) => e.target.closest?.('.map-panel, .map-tip, .map-edge-pop, .map-offscreen');
+    const uiTarget = (e) => e.target.closest?.('.map-panel, .map-tip, .map-edge-pop, .map-offscreen, .mm-box');
 
+    // Подсказка нужна до первого движения по карте, дальше она только закрывает подписи.
+    const dismissHint = () => hint.classList.add('is-gone');
     on(stage, 'pointerdown', (e) => {
       if (uiTarget(e)) return;
+      dismissHint();
       hideEdgeInfo();
       try { stage.setPointerCapture?.(e.pointerId); } catch { /* указатель уже отпущен */ }
       pointers.set(e.pointerId, { x: e.clientX, y: e.clientY });
@@ -1120,6 +1231,7 @@ export default {
       if (e.target.closest('.map-panel')) return;
       e.preventDefault();
       hideTip();
+      dismissHint();
       const rect = stage.getBoundingClientRect();
       if (e.ctrlKey || e.metaKey) zoomAt(e.clientX - rect.left, e.clientY - rect.top, Math.exp(-e.deltaY * (e.deltaMode ? 0.05 : 0.0025)));
       else {
@@ -1167,6 +1279,19 @@ export default {
     on(mm, 'pointermove', (e) => { if (mmDrag) minimapGo(e); });
     on(mm, 'pointerup', () => { mmDrag = false; });
     on(mm, 'pointercancel', () => { mmDrag = false; });
+    const setMinimap = (open) => {
+      mmBox.classList.toggle('collapsed', !open);
+      mmToggle.setAttribute('aria-expanded', String(open));
+      const label = open ? 'Свернуть миникарту' : 'Показать миникарту';
+      mmToggle.setAttribute('aria-label', label); mmToggle.title = label;
+      try { localStorage.setItem('atlas.minimap', open ? '1' : '0'); } catch { /* хранилище недоступно — не страшно */ }
+      if (sc) { drawMinimap(); drawMinimapFrame(); }
+      schedule();
+    };
+    let mmOpen = true;
+    try { mmOpen = localStorage.getItem('atlas.minimap') !== '0'; } catch { /* по умолчанию открыта */ }
+    setMinimap(mmOpen);
+    on(mmToggle, 'click', () => setMinimap(mmBox.classList.contains('collapsed')));
 
     // ---------- шкала эпох ----------
     let navDrag = null, navUserUntil = 0;
@@ -1243,10 +1368,13 @@ export default {
     on(root, 'click', (e) => {
       const z = e.target.closest('[data-zoom]');
       if (z) {
-        if (z.dataset.zoom === 'fit') { if (selected) clearSelection(); fit(); }
+        if (z.dataset.zoom === 'fit') { if (selected) clearSelection(); if (atFit()) overview(); else fit(); }
         else {
           const f = z.dataset.zoom === 'in' ? 1.7 : 1 / 1.7;
-          const k2 = clamp(t.k * f, Math.min(k0 * 0.9, t.k), 5);
+          let k2 = clamp(t.k * f, Math.min(k0 * 0.9, t.k), 5);
+          // Масштаб обзора — остановка по пути: на нём все подписи на месте.
+          const ko = kOv();
+          if ((t.k < ko * 0.98 && k2 > ko) || (t.k > ko * 1.02 && k2 < ko)) k2 = ko;
           const s1 = syOf(t.k), s2 = syOf(k2);
           const cy = (vh - AXIS_H) / 2;
           animateTo(k2, vw / 2 - ((vw / 2 - t.tx) * k2) / t.k, cy - ((cy - t.ty) * s2) / s1, 380);
@@ -1266,7 +1394,7 @@ export default {
 
     hint.textContent = window.innerWidth < 760
       ? 'Нажмите на эпоху сверху или на стиль. Щипок — масштаб.'
-      : 'Нажмите на эпоху сверху или прокрутите с Ctrl/⌘, чтобы приблизить. Нажмите на стиль — его связи крупным планом.';
+      : 'Тяните карту или крутите колёсико, чтобы двигаться; Ctrl/⌘ и колёсико — масштаб. Нажмите на стиль — его связи крупным планом.';
 
     const ro = new ResizeObserver(() => resize());
     ro.observe(stage);

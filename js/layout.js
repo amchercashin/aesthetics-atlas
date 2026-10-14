@@ -76,7 +76,12 @@ export function layoutLanes(nodes, x, { lanes, laneOf, now = 2026, dot = 14, gap
 // фильтры, наведение и слой сопоставлений её не меняют.
 //   nodes: { id, start, end, tier, width, parents: [id, …] }
 //   width — ширина подписи в px при рабочем масштабе (k = 1).
-export function layoutGenealogy(nodes, x, { now = 2026, dot = 16, gap = 22, tail = 26, passes = 6, center = 0.08 } = {}) {
+//   Строка занята точкой, подписью и стволом — до места, где от него отходит последний близкий
+//   потомок. Длительность стиля строку не занимает: на карте её нет.
+//   longGap — разрыв (px), после которого связь рисуется отростками и не занимает строку предка.
+//   reach (у узла, необязательно) — сколько px строки занять от точки: место под подпись на обзоре,
+//   где масштаб мельче рабочего, а подпись того же размера.
+export function layoutGenealogy(nodes, x, { now = 2026, dot = 16, gap = 22, tail = 26, passes = 6, center = 0.08, longGap = Infinity } = {}) {
   const byId = new Map(nodes.map((n) => [n.id, n]));
   const cmp = (a, b) => a.start - b.start || a.tier - b.tier || (a.id < b.id ? -1 : a.id > b.id ? 1 : 0);
   const primary = (n) => (n.parents?.[0] && byId.has(n.parents[0]) && n.parents[0] !== n.id ? n.parents[0] : null);
@@ -86,12 +91,14 @@ export function layoutGenealogy(nodes, x, { now = 2026, dot = 16, gap = 22, tail
   for (const k of kids.values()) k.sort(cmp);
   roots.sort(cmp);
 
-  // Занятый интервал: точка, подпись и линия жизни плюс «хвост», чтобы чужой стиль на той же строке
-  // не выглядел продолжением линии.
+  // Занятый интервал: точка, подпись и ствол плюс «хвост», чтобы чужой стиль на той же строке
+  // не выглядел продолжением ствола.
   const intervals = new Map();
   for (const n of nodes) {
     const xs = x(n.start), xe = x(n.end ?? now);
-    intervals.set(n.id, [xs - dot, Math.max(xs + dot + n.width + gap, xe + tail)]);
+    let end = xs;
+    for (const k of kids.get(n.id)) { const xk = x(k.start); if (xk - xe <= longGap) end = Math.max(end, xk - dot); }
+    intervals.set(n.id, [xs - dot, Math.max(xs + dot + n.width + gap, end + tail, xs + (n.reach ?? 0))]);
   }
 
   // Обход в ширину; циклы и висячие ссылки не ломают обход.
@@ -171,15 +178,17 @@ export function layoutGenealogy(nodes, x, { now = 2026, dot = 16, gap = 22, tail
 // других стилей (в координатах рабочего масштаба). Возвращает Map(childId → { jx, cost }).
 //   scale — наименьший масштаб камеры, при котором коридоры должны оставаться чистыми:
 //   подписи имеют постоянный размер в пикселях, поэтому при отдалении занимают больше времени.
-export function routeBranches(nodes, x, lay, { now = 2026, dot = 16, labelGap = 8, step = 4, near = 240, scale = 1 } = {}) {
+// extent(n) — сколько px строки справа от точки занимает подпись (по умолчанию — подпись при масштабе scale).
+export function routeBranches(nodes, x, lay, { now = 2026, dot = 16, labelGap = 8, step = 4, near = 240, scale = 1, extent = null } = {}) {
   const byId = new Map(nodes.map((n) => [n.id, n]));
+  const ext = extent ?? ((n) => (dot + labelGap + n.width) / scale);
   // Препятствия по строкам: точка + подпись каждого стиля.
   const boxes = new Map();
   for (const n of nodes) {
     const r = lay.pos.get(n.id);
     const xs = x(n.start);
     if (!boxes.has(r)) boxes.set(r, []);
-    boxes.get(r).push([xs - dot / scale, xs + (dot + labelGap + n.width) / scale, n.id]);
+    boxes.get(r).push([xs - dot / scale, xs + ext(n), n.id]);
   }
   const hitPoint = (r, px, skip) => (boxes.get(r) ?? []).some(([a, b, id]) => !skip.has(id) && px > a && px < b);
   const hitSpan = (r, a0, a1, skip) => (boxes.get(r) ?? []).some(([a, b, id]) => !skip.has(id) && a0 < b && a < a1);
@@ -205,7 +214,7 @@ export function routeBranches(nodes, x, lay, { now = 2026, dot = 16, labelGap = 
       for (let r = lo + 1; r < hi; r++) if (hitPoint(r, jx, skip)) c++;
       if (hitSpan(rc, jx, xc - dot, skip)) c++;                    // горизонталь к потомку
       if (jx > xpe && hitSpan(rp, xpe, jx, skip)) c++;              // продолжение после конца предка
-      if (jx > xps && jx < xps + (dot + labelGap + p.width) / scale && jx !== xps) c += 0.5; // ветвь из-под подписи предка
+      if (jx > xps && jx < xps + ext(p) && jx !== xps) c += 0.5; // ветвь из-под подписи предка
       const score = c * 10000 + (right - jx);
       if (!best || score < best.score) best = { jx, cost: c, score };
       if (c === 0) break;

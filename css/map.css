@@ -83,17 +83,20 @@ body[data-view="map"] .site-footer { display: none; }
 .map-svg { position: absolute; inset: 0; }
 .era-line { stroke: var(--rule); stroke-width: 1; }
 
-.axis-bg { fill: color-mix(in oklab, var(--paper) 94%, transparent); }
+.axis-bg { fill: var(--paper); }
 .axis-line { stroke: var(--rule-strong); }
 .axis-strip { opacity: 0.85; }
 .axis-start { font-size: 11px; fill: var(--ink-2); font-weight: 500; }
 .tick { stroke: var(--rule-strong); }
 .tick-label { font-size: 11px; fill: var(--ink-3); text-anchor: middle; }
 
-/* Линии жизни: тихие, цвета эпохи; это длительность, а не связь. */
-.life { fill: none; stroke-width: calc(1.4px + var(--w, 0) * 0.55px); stroke-opacity: calc(0.22 + var(--w, 0) * 0.035); stroke-linecap: butt; transition: stroke-opacity 0.25s; }
-.z0 .life { stroke-width: calc(1px + var(--w, 0) * 0.42px); stroke-opacity: calc(0.16 + var(--w, 0) * 0.04); }
-.life-legend { fill: none; stroke: var(--era-xix); stroke-width: 2.4; stroke-opacity: 0.45; }
+/* Стволы: от точки зарождения до последнего потомка; чернила, толщина — вес родословной. */
+.life { fill: none; stroke: var(--ink-2); stroke-width: calc(1.1px + var(--w, 0) * 0.32px); stroke-opacity: 0.55; stroke-linecap: round; transition: stroke-opacity 0.25s; }
+.z0 .life { stroke-width: calc(0.8px + var(--w, 0) * 0.26px); stroke-opacity: 0.42; }
+/* Длительность выбранного стиля: полоса цвета эпохи под точкой и стволом. */
+.dur { fill: none; stroke-width: 6; stroke-opacity: 0.55; stroke-linecap: round; pointer-events: none; }
+.dur.hover { stroke-opacity: 0.3; }
+.dur-legend { fill: none; stroke: var(--era-xix); stroke-width: 6; stroke-opacity: 0.55; stroke-linecap: round; }
 
 /* Ветви и связи: чернила; тип — штрихом и словом, статус — толщиной. Подложка цвета бумаги
    делает пересечения «мостиками», чтобы они не выглядели узлами. */
@@ -161,14 +164,14 @@ body[data-view="map"] .site-footer { display: none; }
 
 /* Наведение: стиль и его прямые связи */
 .has-hover .node:not(.near), .has-hover .label:not(.near) { opacity: 0.28; }
-.has-hover .life:not(.near) { stroke-opacity: 0.1; }
+.has-hover .life:not(.near) { stroke-opacity: 0.08; }
 .has-hover .edge-g:not(.near) .edge { stroke-opacity: 0.08; }
 
 /* Выбор: крупный план связей или вся родословная */
 .has-selection .node:not(.lit), .has-selection .label:not(.lit) { opacity: 0.16; }
-.has-selection .life:not(.lit) { stroke-opacity: 0.07; }
-.has-selection .life.lit { stroke-opacity: 0.5; }
-.has-selection .life.is-selected { stroke-opacity: 0.95; stroke-width: 3.2; }
+.has-selection .life:not(.lit) { stroke-opacity: 0.06; }
+.has-selection .life.lit { stroke-opacity: 0.55; }
+.has-selection .life.is-selected { stroke: var(--ink); stroke-opacity: 0.9; }
 .has-selection .edge-g .edge { stroke-opacity: 0.06; }
 .has-selection .edge-g:not(.hl) .case { display: none; }
 .has-selection .edge-g.hl .edge { stroke: var(--ink); stroke-opacity: 0.9; stroke-width: 2; }
@@ -200,13 +203,27 @@ body[data-view="map"] .site-footer { display: none; }
 .oc-rel { font-size: 10.5px; color: var(--ink-3); }
 .oc-name { font-family: var(--serif); font-size: var(--t-sm); color: var(--ink); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 
-/* Миникарта */
+/* Миникарта — отдельное окошко в углу полотна, как в играх: вся карта и рамка видимой части. */
+.mm-box { position: absolute; left: 14px; bottom: 14px; z-index: 4; display: flex; align-items: flex-start; gap: 4px; }
 .minimap {
-  position: relative; flex: none; width: 150px; align-self: stretch; cursor: crosshair; touch-action: none;
-  background: var(--paper-2); border: 1px solid var(--rule); border-radius: 0 0 6px 6px; border-top: 3px solid var(--ink-3); overflow: hidden;
+  position: relative; width: 248px; height: 104px; cursor: crosshair; touch-action: none; overflow: hidden;
+  background: color-mix(in oklab, var(--paper-2) 92%, transparent); border: 1px solid var(--rule); border-radius: 10px;
+  box-shadow: 0 10px 28px -14px color-mix(in oklab, var(--ink) 45%, transparent), 0 1px 2px color-mix(in oklab, var(--ink) 8%, transparent);
+  -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px);
 }
 .minimap canvas { position: absolute; inset: 0; display: block; }
-.mm-frame { position: absolute; left: 0; top: 0; border: 1.5px solid var(--ink); border-radius: 3px; background: color-mix(in oklab, var(--ink) 6%, transparent); pointer-events: none; }
+.mm-frame { position: absolute; left: 0; top: 0; border: 1.5px solid var(--ink); border-radius: 3px; background: color-mix(in oklab, var(--ink) 7%, transparent); pointer-events: none; }
+.mm-toggle {
+  display: grid; place-items: center; width: 24px; height: 24px; padding: 0; border-radius: 7px; cursor: pointer;
+  background: var(--paper-2); border: 1px solid var(--rule); color: var(--ink-2);
+}
+.mm-toggle svg { width: 16px; height: 16px; }
+.mm-toggle:hover { color: var(--ink); border-color: var(--ink-3); }
+.mm-ic-show { display: none; }
+.mm-box.collapsed .minimap, .mm-box.collapsed .mm-ic-hide { display: none; }
+.mm-box.collapsed .mm-ic-show { display: block; }
+.mm-box.collapsed .mm-toggle { width: 38px; height: 38px; border-radius: 10px; box-shadow: 0 6px 18px -10px color-mix(in oklab, var(--ink) 45%, transparent); }
+.mm-box.collapsed .mm-toggle svg { width: 20px; height: 20px; }
 
 /* Подсказка */
 .map-tip {
@@ -272,7 +289,7 @@ body[data-view="map"] .site-footer { display: none; }
 .mp-open { margin-top: 16px; justify-content: center; }
 
 .map-loading { position: absolute; inset: 0; display: grid; place-items: center; font-family: var(--serif); font-size: var(--t-xl); color: var(--ink-3); }
-.map-hint { position: absolute; left: 12px; bottom: 10px; font-size: var(--t-xs); color: var(--ink-3); pointer-events: none; background: color-mix(in oklab, var(--paper) 85%, transparent); padding: 4px 9px; border-radius: 6px; }
+.map-hint { position: absolute; left: 304px; bottom: 14px; font-size: var(--t-xs); color: var(--ink-3); pointer-events: none; background: color-mix(in oklab, var(--paper) 85%, transparent); padding: 4px 9px; border-radius: 6px; }
 
 @media (max-width: 900px) {
   .map-switch { font-size: var(--t-xs); }
@@ -289,7 +306,8 @@ body[data-view="map"] .site-footer { display: none; }
   .lg-all { display: inline-flex; }
   .map-filter-btn .mfb-label { max-width: 96px; overflow: hidden; text-overflow: ellipsis; }
   .map-filter-pop { position: fixed; left: 8px; right: 8px; top: calc(var(--header-h) + 58px); width: auto; max-height: 68dvh; overflow-y: auto; }
-  .minimap { display: none; }
+  .minimap { width: 136px; height: 60px; }
+  .mm-box { left: 10px; bottom: 10px; }
   .map-hint { display: none; }
 
   /* Легенда нужна и на телефоне: в ней слои и объяснение статусов связей. */
@@ -301,3 +319,8 @@ body[data-view="map"] .site-footer { display: none; }
   @keyframes sheet-in { from { opacity: 0; transform: translateY(24px); } }
 }
 .map-stage:has(.map-panel:not([hidden])) .map-hint { display: none; }
+.map-stage:has(.mm-box.collapsed) .map-hint { left: 62px; }
+.map-hint { transition: opacity .4s ease; }
+.map-hint.is-gone { opacity: 0; }
+@media (min-width: 761px) and (max-height: 820px) { .minimap { width: 208px; height: 84px; } .map-hint { left: 264px; } }
+@media (max-width: 760px) { .map-stage:has(.map-panel:not([hidden])) .mm-box { display: none; } }

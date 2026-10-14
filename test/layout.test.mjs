@@ -131,3 +131,38 @@ test('genealogy layout scales to ~650 styles quickly', () => {
   assert.equal(lay.pos.size, big.length);
   assert.ok(ms < 3000, `${ms} ms`);
 });
+
+test('genealogy layout: duration does not occupy a row, the trunk runs to the last close child', () => {
+  const nodes = [
+    { id: 'p', start: 0, end: 100, tier: 1, width: 30, parents: [] },
+    { id: 'c', start: 40, end: 60, tier: 2, width: 30, parents: ['p'] },
+    { id: 'far', start: 900, end: 950, tier: 3, width: 30, parents: ['p'] },
+    { id: 'lone', start: 0, end: 1000, tier: 3, width: 30, parents: [] },
+  ];
+  const x = (y) => y * 10;
+  const lay = layoutGenealogy(nodes, x, { now: 2000, dot: 16, gap: 22, tail: 26 });
+  // Без потомков строка занята только точкой и подписью, а не всей жизнью стиля.
+  assert.equal(lay.intervals.get('lone')[1], x(0) + 16 + 30 + 22);
+  // Ствол держит строку до последнего близкого потомка.
+  assert.ok(lay.intervals.get('p')[1] >= x(900) - 16);
+  // Далёкий потомок (разрыв после конца предка больше longGap — отросток) строку предка не держит.
+  const short = layoutGenealogy(nodes, x, { now: 2000, dot: 16, gap: 22, tail: 26, longGap: 3000 });
+  assert.ok(short.intervals.get('p')[1] < x(900) - 16);
+});
+
+test('genealogy layout: reach keeps room for every label at the overview scale', () => {
+  const k = 0.2;
+  const nodes = realNodes.map((n) => ({ ...n, reach: (n.width + 20) / k }));
+  const lay = layoutGenealogy(nodes, scReal.x, { now: 2027, longGap: 1200 });
+  const byRow = new Map();
+  for (const n of nodes) { const r = lay.pos.get(n.id); byRow.set(r, [...(byRow.get(r) ?? []), n]); }
+  for (const row of byRow.values()) {
+    row.sort((a, b) => scReal.x(a.start) - scReal.x(b.start));
+    for (let i = 1; i < row.length; i++) {
+      const a = row[i - 1], b = row[i];
+      // На экране при масштабе k подпись a (ширина width + 20) кончается раньше точки b.
+      assert.ok((scReal.x(b.start) - scReal.x(a.start)) * k >= a.width + 20, `${a.id} → ${b.id}`);
+    }
+  }
+  assert.ok(lay.count < 45, `rows ${lay.count}`);
+});
