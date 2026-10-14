@@ -11,10 +11,19 @@ export function parseHash(hash = location.hash) {
   return { view: 'notfound', params };
 }
 
-// Обновить параметры текущего адреса без новой записи в истории и без перерисовки вида.
-export function replaceParams(view, params) {
+const hashOf = (view, params) => {
   const q = new URLSearchParams(params);
   for (const [k, v] of [...q]) if (v === '' || v == null) q.delete(k);
   const s = q.toString();
-  history.replaceState(null, '', `#/${view}${s ? '?' + s : ''}`);
+  return `#/${view}${s ? '?' + s : ''}`;
+};
+
+// Обновить параметры текущего адреса без новой записи в истории и без перерисовки вида.
+export function replaceParams(view, params) {
+  history.replaceState(history.state, '', hashOf(view, params));
+}
+
+// Новая запись в истории: каждый шаг по карте отменяется кнопкой «Назад».
+export function pushParams(view, params, state = null) {
+  history.pushState(state, '', hashOf(view, params));
 }

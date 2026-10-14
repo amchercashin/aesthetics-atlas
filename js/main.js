@@ -1,6 +1,6 @@
 // Точка входа: данные, тема, поиск, роутинг между видами.
-import { loadAtlas } from './store.js?v=audit';
-import { parseHash } from './router.js';
+import { loadAtlas } from './store.js?v=map4';
+import { parseHash } from './router.js?v=map4';
 import { initTheme } from './theme.js';
 import { initSearch } from './ui/search-dialog.js?v=audit';
 import { initLightbox } from './ui/lightbox.js';
@@ -32,7 +32,7 @@ async function route(base, { first = false } = {}) {
     current.instance.update({ ...base, ...r });
     return;
   }
-  const mod = await import(`./views/${r.view}.js?v=sparse`);
+  const mod = await import(`./views/${r.view}.js?v=map4`);
   if (seq !== routeSeq) return;
   const swap = () => {
     current?.instance?.destroy?.();
