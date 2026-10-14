@@ -118,9 +118,13 @@ export default {
 
       <div class="room-hang">
         <figure class="room-work">
-          <button class="work-zoom" type="button" ${img ? '' : 'disabled'} aria-label="Открыть работу крупно">
+          ${ex.external?.reference ? html`<div class="reference-work">
+            <p class="reference-note">Репродукция — у источника</p>
+            <p class="reference-title">${ex.title}</p>
+            <a class="btn" href="${safeUrl(ex.external.page)}" target="_blank" rel="noopener">Посмотреть работу ↗</a>
+          </div>` : html`<button class="work-zoom" type="button" ${img ? '' : 'disabled'} aria-label="Открыть работу крупно">
             ${frame(img, p, { sizes: '(min-width: 1100px) 58vw, 100vw', eager: true, size: 960, alt: ex.title ?? '', note: ex.external ? 'Репродукция — у источника' : ex.note, capUpscale: true })}
-          </button>
+          </button>`}
         </figure>
         <aside class="wall-label" aria-label="Этикетка">
           ${role ? html`<p class="wl-role">${role}</p>` : ''}

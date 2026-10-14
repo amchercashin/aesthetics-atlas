@@ -111,6 +111,12 @@ body[data-view="style"] .room, body[data-view="style"] .site-footer {
   align-items: start; margin-top: clamp(28px, 4vw, 56px);
 }
 .room-work { margin: 0; }
+.reference-work {
+  min-height: 240px; padding: clamp(24px, 4vw, 48px); border: 1px solid var(--rule); background: var(--paper-2);
+  display: grid; align-content: center; justify-items: start; gap: 16px;
+}
+.reference-title { font-family: var(--serif); font-size: var(--t-2xl); line-height: 1.2; }
+.reference-note { color: var(--ink-3); font-size: var(--t-sm); }
 .work-zoom { display: block; width: 100%; padding: 0; border: 0; background: none; cursor: zoom-in; text-align: left; }
 .work-zoom:disabled { cursor: default; }
 .room-work .art-frame { box-shadow: var(--shadow-art); max-height: 78vh; }
@@ -239,14 +245,15 @@ body[data-view="style"] .room, body[data-view="style"] .site-footer {
 .l-src { color: var(--ink-3); font-size: var(--t-sm); white-space: nowrap; }
 .links svg { width: 16px; height: 16px; color: var(--ink-3); align-self: center; }
 
-.room-pager { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: clamp(56px, 8vw, 112px); padding-top: 22px; border-top: 1px solid var(--rule-strong); }
+.room-pager { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 16px; margin-top: clamp(56px, 8vw, 112px); padding-top: 22px; border-top: 1px solid var(--rule-strong); }
 .room-pager a { display: flex; align-items: center; gap: 14px; text-decoration: none; }
+.room-pager a, .room-pager a > span { min-width: 0; }
 .pager-next { justify-content: flex-end; text-align: right; }
 .room-pager svg { width: 26px; height: 26px; flex: none; color: var(--ink-3); transition: transform 0.25s var(--ease); }
 .pager-prev:hover svg { transform: translateX(-4px); }
 .pager-next:hover svg { transform: translateX(4px); }
 .pg-label { display: block; font-size: var(--t-xs); color: var(--ink-3); }
-.pg-name { display: block; font-family: var(--serif); font-size: var(--t-2xl); line-height: 1.15; }
+.pg-name { display: block; font-family: var(--serif); font-size: var(--t-2xl); line-height: 1.15; overflow-wrap: anywhere; }
 
 @media (max-width: 1000px) {
   .room-hang, .room-body { grid-template-columns: 1fr; }
