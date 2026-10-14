@@ -464,6 +464,15 @@
       url: https://www.metmuseum.org/exhibitions/listings/2012/printed-image-in-china
       src: The Metropolitan Museum of Art
       lang: en
+  contexts:
+    - id: nianhua
+      type: related-context
+      status: verified
+      note: >-
+        Региональный театральный корпус относится к более широкому жанру няньхуа по исследованию. Это
+        навигация между масштабами описания, не историческое влияние или единый стиль всех центров.
+      sources:
+        - aaav-yangliuqing-theatre
 - domain:
     - art
   tier: 2
@@ -1837,4 +1846,482 @@
       url: >-
         https://artsandculture.google.com/story/living-heritage-trails-of-palghar-banglanatak/zwUhIYx8QUgYuA?hl=en
       src: Banglanatak / Google Arts & Culture
+      lang: en
+- domain:
+    - art
+  tier: 2
+  dateKind: corpus
+  origin: unknown
+  parents: []
+  aliases:
+    - Няньхуа
+    - Няньхуа, новогодняя народная картинка
+    - Nianhua
+    - 年画
+    - 年畫
+  names:
+    - Мастерская Дин
+    - Ху Мингуй
+    - Ли Фанфу
+    - Yixinghe
+  maturity: established
+  labelStatus: editorial-scope-title
+  id: nianhua
+  name: "Няньхуа: региональные новогодние картинки Китая"
+  orig: 年画 / 年畫 / nianhua
+  kind: overview
+  kindNote: Обзор жанра и нескольких региональных практик; не единый национальный визуальный стиль.
+  start: 1700
+  end: 1999
+  approx: true
+  dates: "корпус: XVIII век; конец XIX — начало XX; два комплекта [19--?]"
+  era: renaissance
+  region: "Китай: Суджоу / Таохуау, Янлюцин / Тяньцзинь, Мяньчжу / Сычуань"
+  medium:
+    - print
+    - illustration
+  summary: >-
+    Обзор новогодней печатной картинки объединяет парные образы, благопожелательные цветы и театральный
+    рассказ, сохраняя различия мастерских и мест.
+  description: >-
+    Няньхуа — полезное жанровое соседство региональных практик, а не название одной манеры. В выбранном
+    корпусе парные фигуры Мяньчжу, цветочный лист Суджоу и многофигурная театральная сцена Янлюцина
+    различаются масштабом фигур, заполнением поля, рисунком и цветом. Общий обзор помогает находить эти
+    различия, не заменяя самостоятельные местные узлы.
+
+
+    Парный комплект дверных божеств или детей учитывается как один ансамбль. Тонкая цветочная композиция не
+    подгоняется под обязательную ярко-красную палитру; музей называет её новогоднее использование
+    предположительным. Китайские популярные гравюры шире жанра няньхуа: язык надписи, техника ксилографии или
+    китайский сюжет сами по себе не включают лист в этот обзор.
+  traits:
+    - >-
+      В выбранных вещах встречаются парные фигуры, одиночная благопожелательная композиция и многофигурная
+      сцена
+    - Печатный контур, цвет и надписи организуют лист по-разному в разных мастерских
+    - Симметричная пара и повествовательное поле — разные композиционные решения
+    - "От тонкой цветочной графики до насыщенных плоскостей костюма: единой обязательной палитры нет"
+  scopeNote: >-
+    Четыре композиции из трёх региональных контекстов: два парных комплекта HKBU, корзина цветов British
+    Museum и один уже представленный янлюцинский лист. Последний также представлен в янлюцинской карточке и не
+    увеличивает число самостоятельных предметов. Другие центры и собственные корпуса Таохуау и Мяньчжу требуют
+    продолжения. Для пары 李芳福 региональное чтение опирается на вводный текст коллекции; разночтение имени 李方福
+    / 李芳福 не разрешено.
+  dateNote: >-
+    1700–1999 — условная рамка выбранного корпуса: 1700–1799 у цветочного листа, конец XIX — начало XX у
+    театрального и [19--?] у двух парных комплектов. Предположительная столетняя датировка не превращена в
+    точный год. Это не период возникновения или завершения няньхуа; copyright сайта 2022 не перенесён на
+    работы.
+  creators:
+    - name: Мастерская Дин
+      orig: Ding Workshop
+      role: Designed by — рисунок корзины цветов; печать в Суджоу
+      sources:
+        - bm-ding-flower-basket
+    - name: Ху Мингуй
+      orig: 胡明貴
+      role: автор парных дверных божеств; издатель 绵竹胡氏画坊
+      sources:
+        - hkbu-hu-double-whips
+    - name: Ли Фанфу
+      orig: 李芳福
+      role: автор пары 金瓜童子 по предметной записи; вводное 李方福 оставлено как неразрешённое разночтение
+      sources:
+        - hkbu-li-gourd-boys
+        - hkbu-mianzhu-collection
+  corpus:
+    - workId: nianhua-hkbu-hu-double-whips
+      title: 双扬鞭 — парные дверные божества
+      author: Ху Мингуй (胡明貴); издатель 绵竹胡氏画坊
+      year: "[19--?] — предположительно XX век; точный год неизвестен"
+      medium: Цветная ксилография; парный комплект из двух листов
+      sources:
+        - hkbu-hu-double-whips
+      reference: https://bcc.lib.hkbu.edu.hk/artcollection/j218-3-h47e/
+      whyRepresentative: >-
+        Две крупные фигуры развёрнуты друг к другу; красные и синие участки костюмов, плотные детали
+        вооружения и белое поле удерживают симметричную пару. Комплект считается одной работой.
+      place: HKBU Library
+      rights:
+        embed: false
+        reviewed: "2026-10-14"
+        note: Репродукция доступна на предметной странице источника.
+    - workId: nianhua-bm-ding-1906-1128-0-3
+      title: Корзина цветов, 1906,1128,0.3
+      author: Мастерская Дин — автор рисунка (Designed by Ding Workshop)
+      year: 1700–1799
+      medium: Бумага; цветная ксилография
+      sources:
+        - bm-ding-flower-basket
+      reference: >-
+        https://artsandculture.google.com/asset/ding-family-of-the-jinchang-pavillion-a-basket-of-flowers-a-colour-woodblock-print/xAEZUSvFMC7yyQ
+      whyRepresentative: >-
+        Тонкие ветви и цветы поднимаются из центральной корзины, слева помещён стихотворный текст. Сдержанный
+        цвет и свободное поле отличаются от насыщенных парных фигур; новогоднее применение конкретного листа
+        предположено музеем.
+      place: British Museum
+      rights:
+        embed: false
+        reviewed: "2026-10-14"
+        note: Репродукция доступна на предметной странице источника.
+    - workId: ylq-ldm-g6195
+      title: Danao tiangong / 大闹天宫 — Переполох в Небесном дворце, LDM G-6195
+      author: Мастерская Yixinghe (义兴合画店; Isinghe в подписи статьи)
+      year: Конец XIX — начало XX века
+      medium: Бумага из древесной массы; раскрашенная ксилография
+      sources:
+        - aaav-yangliuqing-theatre
+      reference: https://aaav.vda.lt/journal/article/download/52/52/74#page=14
+      whyRepresentative: >-
+        Фигуры с длинными лентами и сложными костюмами распределены по двору; архитектура обрамляет действие,
+        а надпись расположена в верхнем поле. Тот же предмет также включён в самостоятельный янлюцинский
+        корпус; повторная карточная позиция не является новой работой.
+      place: Lietuvos dailės muziejus (LDM; название в публикации)
+      rights:
+        embed: false
+        reviewed: "2026-10-14"
+        note: >-
+          Репродукция опубликована в исследовании; дана ссылка на соответствующую страницу PDF, разрешение на
+          встраивание не заявлено.
+    - workId: nianhua-hkbu-li-gourd-boys
+      title: 金瓜童子 — парные изображения детей с тыквами
+      author: Ли Фанфу (李芳福 — написание предметной записи)
+      year: "[19--?] — предположительно XX век; точный год неизвестен"
+      medium: Цветная ксилография; парный комплект из двух листов
+      sources:
+        - hkbu-li-gourd-boys
+      reference: https://bcc.lib.hkbu.edu.hk/artcollection/j218-3-l40e/
+      whyRepresentative: >-
+        Два ребёнка с веерами образуют зеркальную пару среди тыкв и бабочек; крупные цветовые участки и
+        изгибающиеся контуры читаются на свободном белом поле. Два листа не посчитаны двумя независимыми
+        работами.
+      place: HKBU Library
+      rights:
+        embed: false
+        reviewed: "2026-10-14"
+        note: Репродукция доступна на предметной странице источника.
+  compare:
+    - id: chinese-jianzhi
+      note: >-
+        Печатный лист с контуром и цветом сопоставляется с вырезанием и ажуром бумаги. Оба обзора сохраняют
+        местные различия; общее праздничное использование не означает одной техники или манеры.
+    - id: lubok
+      note: >-
+        Сравниваются жанровые традиции популярной листовой картинки и сочетание текста с изображением. Сходная
+        функция не доказывает общего происхождения; выбранные вещи показывают различные способы устройства
+        листа.
+  evidence:
+    - claim: >-
+        The Met отличает новогодние няньхуа как особую категорию внутри более широкого круга китайских
+        популярных гравюр.
+      field: scope
+      source: met-china-popular-prints
+    - claim: Исследование прямо относит рассмотренные театральные листы к няньхуа и различает региональные центры.
+      field: scope
+      source: aaav-yangliuqing-theatre
+    - claim: Предметная запись дверной пары называет 胡明貴, издателя Мяньчжу и два листа с датировкой [19--?].
+      field: corpus
+      source: hkbu-hu-double-whips
+    - claim: Музей датирует цветочную гравюру 1700–1799 и описывает её новогоднее применение как предположение.
+      field: dates
+      source: bm-ding-flower-basket
+    - claim: "Вводный текст коллекции и предметная запись расходятся в написании одного имени: 李方福 и 李芳福."
+      field: authorship
+      source: hkbu-mianzhu-collection
+  admission:
+    language: >-
+      Обзор намеренно показывает несколько композиционных и печатных языков, а не заявляет единую национальную
+      манеру.
+    corpus: >-
+      Четыре самостоятельных композиции в четырёх позициях обзора; два парных комплекта считаются каждый одной
+      работой. Один янлюцинский предмет повторяется между двумя карточками.
+    distinctness: >-
+      От обзора цзяньчжи отличается печатной организацией листа; от русского лубка — конкретными региональными
+      корпусами, системой парных благопожелательных образов и письменной средой. Это сравнение, не утверждение
+      всеобщих стилевых правил или влияния.
+    significance: >-
+      Жанр выделяют музейная экспозиция The Met, предметные коллекции HKBU и British Museum и исследование
+      театрального корпуса. Обзор нужен для навигации между местными узлами.
+    sources:
+      - met-china-popular-prints
+      - aaav-yangliuqing-theatre
+      - hkbu-mianzhu-collection
+      - hkbu-hu-double-whips
+      - hkbu-li-gourd-boys
+      - bm-ding-flower-basket
+  review:
+    status: partial
+    date: "2026-10-14"
+    note: >-
+      Просмотрены четыре композиции и предметные записи. У одного листа новогодняя функция предположительна;
+      два комплекта датированы [19--?]. Разночтение имени не разрешено, один предмет повторно используется.
+      Обзор не исчерпывает региональные школы.
+  example:
+    workId: nianhua-hkbu-hu-double-whips
+    title: 双扬鞭 — парные дверные божества
+    author: Ху Мингуй (胡明貴); издатель 绵竹胡氏画坊
+    year: "[19--?] — предположительно XX век; точный год неизвестен"
+    medium: Цветная ксилография; парный комплект из двух листов
+    sources:
+      - hkbu-hu-double-whips
+    reference: https://bcc.lib.hkbu.edu.hk/artcollection/j218-3-h47e/
+    whyRepresentative: >-
+      Две крупные фигуры развёрнуты друг к другу; красные и синие участки костюмов, плотные детали вооружения
+      и белое поле удерживают симметричную пару. Комплект считается одной работой.
+    place: HKBU Library
+    rights:
+      embed: false
+      reviewed: "2026-10-14"
+      note: Репродукция доступна на предметной странице источника.
+  links:
+    - title: 双扬鞭 / Flipping with double whips
+      url: https://bcc.lib.hkbu.edu.hk/artcollection/j218-3-h47e/
+      src: Hong Kong Baptist University Library
+      lang: en
+    - title: "Ding family: A basket of flowers, 1906,1128,0.3"
+      url: >-
+        https://artsandculture.google.com/asset/ding-family-of-the-jinchang-pavillion-a-basket-of-flowers-a-colour-woodblock-print/xAEZUSvFMC7yyQ
+      src: British Museum / Google Arts & Culture
+      lang: en
+    - title: "Miglė Lebednykaitė. The Case of Peking Opera in Lithuania: The Collection of Chinese Woodblock Prints"
+      url: https://aaav.vda.lt/journal/article/download/52/52/74
+      src: Acta Academiae Artium Vilnensis / Vilnius Academy of Arts
+      lang: en
+    - title: 金瓜童子 / A pair of servant boys with gourd
+      url: https://bcc.lib.hkbu.edu.hk/artcollection/j218-3-l40e/
+      src: Hong Kong Baptist University Library
+      lang: en
+    - title: "The Printed Image in China: Popular Prints"
+      url: https://www.metmuseum.org/exhibitions/listings/2012/printed-image-in-china
+      src: The Metropolitan Museum of Art
+      lang: en
+    - title: "New Year woodblock prints and paintings: вводный текст коллекции"
+      url: https://bcc.lib.hkbu.edu.hk/artcollection/collection/chinese-new-year-print/
+      src: Hong Kong Baptist University Library
+      lang: en
+- domain:
+    - art
+  tier: 2
+  dateKind: corpus
+  origin: unknown
+  parents: []
+  aliases:
+    - Донгхо
+    - Донг Хо
+    - Dong Ho
+    - Đông Hồ
+    - Tranh Đông Hồ
+  names:
+    - Nguyen Thi Oanh
+    - Nguyen Dang San
+  maturity: established
+  labelStatus: historical
+  id: dong-ho-prints
+  name: Печатные картинки Донгхо
+  orig: Dong Ho prints / tranh Đông Hồ
+  kind: tradition
+  kindNote: Локальная традиция цветной печатной картинки; не название всей вьетнамской графики.
+  start: 1960
+  end: 2010
+  approx: true
+  dates: "корпус: 1960-е и оттиски 2010; одна вещь не датирована"
+  era: postwar
+  region: "Вьетнам: деревня Донгхо, север страны"
+  medium:
+    - print
+  summary: >-
+    Локальная цветная печать соединяет выразительный контур, плоские участки цвета и надписи: от животных и
+    праздничных сцен до быта и общественных сюжетов.
+  description: >-
+    Четыре выбранные композиции показывают работу тёмного контура, локального цвета и текста. «Мышиная
+    свадьба» строится двумя горизонтальными последовательностями, «Модернизация» — вокруг велосипеда и двух
+    фигур, а лист Nguyen Dang San использует вертикальную иерархию группы с флагом. Такой корпус не сводит
+    Донгхо к одной праздничной теме.
+
+
+    Музей Фукуоки описывает традиционную печать на бумаге Dó с раковинным покрытием и нанесением чёрного
+    контура после цветных прогонов. Это описание практики не подменяет предметную запись: у двух конкретных
+    оттисков названы только бумага и ксилография, а точный состав листа Nguyen Thi Oanh не сообщён. В корпусе
+    сохранены имена известных авторов и анонимность других работ.
+  traits:
+    - Выразительный тёмный контур разделяет плоские цветные участки
+    - Фигуры, предметы и надписи собраны в ясное ограниченное поле
+    - >-
+      Горизонтальные процессии сосуществуют с центральной бытовой сценой и вертикальной общественной
+      композицией
+    - Животные, быт и политические сюжеты используют одну локальную печатную среду, не задавая единой темы
+  scopeNote: >-
+    Четыре разные композиции: Nguyen Thi Oanh, анонимный мастер, анонимный бытовой лист и Nguyen Dang San.
+    Дракон представлен только деталью. Корпус ограничен музейными листами; не охватывает всю историю Донгхо и
+    не объединяет её с Хангчонг или всей вьетнамской графикой.
+  dateNote: >-
+    1960–2010 — условная рамка датированных музейных оттисков: «1960-е» у Dragon Dance и печать 2010 у двух
+    листов Фукуоки. Исходные дизайны этих двух листов не датированы; год приобретения 2018 не является годом
+    создания. «Мышиная свадьба» остаётся без даты; дар 2022 и выставка 2024 её не уточняют. Происхождение
+    традиции этим корпусом не датируется.
+  creators:
+    - name: Nguyen Thi Oanh
+      orig: Nguyen Thi Oanh
+      role: автор The Marriage of a Mouse по музейной подписи
+      sources:
+        - faam-dongho-collection-2024
+    - name: Nguyen Dang San
+      orig: Nguyen Dang San
+      role: автор листа 2957 по предметной записи; год исходного дизайна неизвестен
+      sources:
+        - faam-dongho-peace-2957
+  corpus:
+    - workId: dongho-faam-oanh-mouse-marriage
+      title: The Marriage of a Mouse — Мышиная свадьба
+      author: Nguyen Thi Oanh — написание музейной подписи
+      year: Дата неизвестна
+      medium: Цветная печатная картинка Донгхо; точный состав материала этого оттиска не сообщён
+      sources:
+        - faam-dongho-collection-2024
+      reference: https://faam.city.fukuoka.lg.jp/en/exhibition/20238/
+      whyRepresentative: >-
+        Тёмный контур и цветные участки удерживают две горизонтальные последовательности: мышей с дарами перед
+        котом и свадебную процессию. Надписи встроены в свободные участки листа.
+      place: Fukuoka Asian Art Museum
+      rights:
+        embed: false
+        reviewed: "2026-10-14"
+        note: Музейная репродукция просмотрена; право встраивания не установлено, дана ссылка на источник.
+    - workId: dongho-lnma-dragon-dance-1960s
+      title: Dragon Dance — Танец дракона, опубликованная деталь
+      author: Неизвестный мастер деревни Донгхо
+      year: 1960-е
+      medium: Бумага; цветная ксилография
+      sources:
+        - lnma-dongho-dragon-1960s
+      reference: https://lnmm.gov.lv/en/art-museum-riga-bourse/exhibitions/art-of-viet-nam-562
+      whyRepresentative: >-
+        Опубликованная деталь показывает плотный тёмный контур и повторяющиеся цветные узоры тела дракона на
+        тёплом поле. Полную композицию листа по этому фрагменту не восстанавливаем.
+      place: Latvian National Museum of Art
+      rights:
+        embed: false
+        reviewed: "2026-10-14"
+        note: Музейная репродукция просмотрена; право встраивания не установлено, дана ссылка на источник.
+    - workId: dongho-faam-2973
+      title: Modernization (Hunter and Bicycle Rider), 2973
+      author: Автор неизвестен — по предметной записи
+      year: 2010 — оттиск; дата исходного дизайна неизвестна
+      medium: Бумага; ксилография, 19,4 × 26,6 см
+      sources:
+        - faam-dongho-modernization-2973
+      reference: https://jmapps.ne.jp/faam_en/det.html?data_id=6041
+      whyRepresentative: >-
+        Велосипед и две крупные фигуры занимают центр, рядом собака и цветочный мотив. Надпись и тонкая рамка
+        ограничивают плоское цветное поле; бытовая сцена отличается от регистров мышиной процессии.
+      place: Fukuoka Asian Art Museum
+      rights:
+        embed: false
+        reviewed: "2026-10-14"
+        note: Музейная репродукция просмотрена; право встраивания не установлено, дана ссылка на источник.
+    - workId: dongho-faam-2957
+      title: Peace, Education for the Populace, in Memorial of September 8, 2957
+      author: Nguyen Dang San — написание предметной записи
+      year: 2010 — оттиск; дата исходного дизайна неизвестна
+      medium: Бумага; ксилография, 26,4 × 17,3 см
+      sources:
+        - faam-dongho-peace-2957
+      reference: https://jmapps.ne.jp/faam_en/det.html?data_id=6025
+      whyRepresentative: >-
+        Вертикальная композиция объединяет крупную верхнюю фигуру с флагом, группу людей и надписи. Чёткий
+        контур и отдельные цветовые участки используются для общественно-политического сюжета.
+      place: Fukuoka Asian Art Museum
+      rights:
+        embed: false
+        reviewed: "2026-10-14"
+        note: Музейная репродукция просмотрена; право встраивания не установлено, дана ссылка на источник.
+  compare:
+    - id: nianhua
+      note: >-
+        Сопоставляются цветная печатная картинка, роль надписей и праздничные сюжеты. Няньхуа — обзор
+        нескольких региональных практик, Донгхо — отдельная местная традиция; историческое влияние конкретных
+        мастерских этим сравнением не доказано.
+    - id: lubok
+      note: >-
+        Сравниваются самостоятельные печатные листы и рассказ через фигуры с подписью. Выбранный Донгхо
+        использует контур и локальные цветные участки иначе, чем монохромные литографии и резцовые гравюры
+        русского корпуса; это различие примеров, не правило для всех вещей.
+  evidence:
+    - claim: >-
+        Музей Фукуоки описывает деревню Донгхо, бумагу Dó, покрытие с раковинным порошком и печать чёрного
+        контура после цветов.
+      field: technique
+      source: faam-dongho-collection-2024
+    - claim: Музейная подпись называет Nguyen Thi Oanh автором The Marriage of a Mouse; дата неизвестна.
+      field: authorship
+      source: faam-dongho-collection-2024
+    - claim: В записи 2973 отдельно указаны неизвестная дата исходного дизайна, печать 2010 и приобретение 2018.
+      field: dates
+      source: faam-dongho-modernization-2973
+    - claim: В записи 2957 назван Nguyen Dang San; печать 2010 не датирует неизвестный исходный дизайн.
+      field: authorship
+      source: faam-dongho-peace-2957
+    - claim: LNMA подписывает опубликованную деталь Dragon Dance как работу неизвестного мастера Донгхо 1960-х.
+      field: corpus
+      source: lnma-dongho-dragon-1960s
+  admission:
+    language: >-
+      В выбранных работах повторяются выразительный контур, локальный цвет, ограниченное поле и включение
+      надписей; схема сцены меняется вместе с сюжетом.
+    corpus: >-
+      Четыре различные композиции, одна из которых доступна только в виде детали. Два оттиска с известными
+      годами печати имеют разные названия, авторство и изображения; разные фотографии одной вещи не
+      добавлялись.
+    distinctness: >-
+      От многорегионального обзора няньхуа отличается конкретным локальным кругом и документированной печатной
+      практикой; от выбранного русского лубка — работой локального цвета и контура. Эти различия проверены на
+      ограниченных корпусах, общего предка не назначено.
+    significance: >-
+      Локальная традиция выделена отдельным жанром в коллекции Фукуоки и предметной выставкой LNMA; названы
+      конкретные авторы и сохранены анонимные вещи.
+    sources:
+      - faam-dongho-collection-2024
+      - faam-dongho-modernization-2973
+      - faam-dongho-peace-2957
+      - lnma-dongho-dragon-1960s
+  review:
+    status: partial
+    date: "2026-10-14"
+    note: >-
+      Прочитаны музейные тексты и просмотрены четыре репродукции с проверкой подписей. Дракон доступен
+      деталью, одна вещь не датирована. У двух оттисков известен год печати, но не дата исходной композиции.
+      Корпус не исчерпывает историю традиции.
+  example:
+    workId: dongho-faam-oanh-mouse-marriage
+    title: The Marriage of a Mouse — Мышиная свадьба
+    author: Nguyen Thi Oanh — написание музейной подписи
+    year: Дата неизвестна
+    medium: Цветная печатная картинка Донгхо; точный состав материала этого оттиска не сообщён
+    sources:
+      - faam-dongho-collection-2024
+    reference: https://faam.city.fukuoka.lg.jp/en/exhibition/20238/
+    whyRepresentative: >-
+      Тёмный контур и цветные участки удерживают две горизонтальные последовательности: мышей с дарами перед
+      котом и свадебную процессию. Надписи встроены в свободные участки листа.
+    place: Fukuoka Asian Art Museum
+    rights:
+      embed: false
+      reviewed: "2026-10-14"
+      note: Музейная репродукция просмотрена; право встраивания не установлено, дана ссылка на источник.
+  links:
+    - title: "New Collection Exhibition: Dong Ho Print from the Cynthea J. Bogel Collection"
+      url: https://faam.city.fukuoka.lg.jp/en/exhibition/20238/
+      src: Fukuoka Asian Art Museum
+      lang: en
+    - title: "Art of Viet Nam: Dragon Dance, detail"
+      url: https://lnmm.gov.lv/en/art-museum-riga-bourse/exhibitions/art-of-viet-nam-562
+      src: Latvian National Museum of Art / Art Museum RIGA BOURSE
+      lang: en
+    - title: Modernization (Hunter and Bicycle Rider), 2973
+      url: https://jmapps.ne.jp/faam_en/det.html?data_id=6041
+      src: Fukuoka Asian Art Museum
+      lang: en
+    - title: Peace, Education for the Populace, in Memorial of September 8, 2957
+      url: https://jmapps.ne.jp/faam_en/det.html?data_id=6025
+      src: Fukuoka Asian Art Museum
       lang: en

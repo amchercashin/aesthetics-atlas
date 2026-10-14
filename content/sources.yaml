@@ -1643,3 +1643,82 @@
     Прочитан материал о Ганджаде, Бапугаоне и других местных практиках Пальгхара. Он поддерживает контекст
     действующих художников и участия женщин, а не происхождение всех приёмов или единую дату начала варли.
     Туристические и рекламные формулировки не использованы как художественные критерии.
+
+# Региональная графика, бумага и росписи: партия 2
+- id: hkbu-mianzhu-collection
+  title: 'New Year woodblock prints and paintings: вводный текст коллекции'
+  publisher: Hong Kong Baptist University Library
+  url: https://bcc.lib.hkbu.edu.hk/artcollection/collection/chinese-new-year-print/
+  sourceType: primary
+  checked: '2026-10-14'
+  note: >-
+    Коллекция описывает приобретение работ у мастерских Мяньчжу. В общем перечне есть и Янлюцин; регион
+    каждого предмета требует отдельного основания. Вводный текст пишет 李方福, предметная запись — 李芳福;
+    разночтение не исправлено автоматически.
+- id: hkbu-hu-double-whips
+  title: 双扬鞭 / Flipping with double whips
+  publisher: Hong Kong Baptist University Library
+  url: https://bcc.lib.hkbu.edu.hk/artcollection/j218-3-h47e/
+  sourceType: primary
+  checked: '2026-10-14'
+  note: >-
+    胡明貴; издатель 绵竹胡氏画坊. Два листа составляют одну парную композицию. Год [19--?] не уточнён; copyright 2022
+    сайта не датирует оттиск. Репродукция просмотрена.
+- id: hkbu-li-gourd-boys
+  title: 金瓜童子 / A pair of servant boys with gourd
+  publisher: Hong Kong Baptist University Library
+  url: https://bcc.lib.hkbu.edu.hk/artcollection/j218-3-l40e/
+  sourceType: primary
+  checked: '2026-10-14'
+  note: >-
+    Автор 李芳福 по предметной записи, дата [19--?]. Два листа составляют одну пару. Разночтение имени с вводным
+    текстом коллекции сохранено; биография и дата рождения не перенесены на предмет. Репродукция просмотрена.
+- id: bm-ding-flower-basket
+  title: 'Ding family: A basket of flowers, 1906,1128,0.3'
+  publisher: British Museum / Google Arts & Culture
+  url: >-
+    https://artsandculture.google.com/asset/ding-family-of-the-jinchang-pavillion-a-basket-of-flowers-a-colour-woodblock-print/xAEZUSvFMC7yyQ
+  sourceType: museum
+  checked: '2026-10-14'
+  note: >-
+    1700–1799; designed by Ding Workshop, printed in Suzhou. Связь с китайским Новым годом музей обозначает
+    предположительно (presumably), а не как доказанное использование конкретного листа. Полная репродукция
+    просмотрена.
+- id: faam-dongho-collection-2024
+  title: 'New Collection Exhibition: Dong Ho Print from the Cynthea J. Bogel Collection'
+  publisher: Fukuoka Asian Art Museum
+  url: https://faam.city.fukuoka.lg.jp/en/exhibition/20238/
+  sourceType: museum
+  checked: '2026-10-14'
+  note: >-
+    Описание бумаги Dó, раковинного покрытия и последовательности цветной печати. Подпись Nguyen Thi Oanh, The
+    Marriage of a Mouse, unknown проверена по data-caption соответствующего изображения IMG_4759; файл F07
+    относится к Guang Renqian и исключён. Дар 2022 и выставка 2024 не являются датами оттиска.
+- id: faam-dongho-modernization-2973
+  title: Modernization (Hunter and Bicycle Rider), 2973
+  publisher: Fukuoka Asian Art Museum
+  url: https://jmapps.ne.jp/faam_en/det.html?data_id=6041
+  sourceType: museum
+  checked: '2026-10-14'
+  note: >-
+    Автор неизвестен; производство исходного дизайна не датировано, отпечатано в 2010, приобретено в 2018.
+    Бумага, ксилография, 19,4 × 26,6 см. Репродукция полностью загружена и просмотрена на предметной странице.
+- id: faam-dongho-peace-2957
+  title: Peace, Education for the Populace, in Memorial of September 8, 2957
+  publisher: Fukuoka Asian Art Museum
+  url: https://jmapps.ne.jp/faam_en/det.html?data_id=6025
+  sourceType: museum
+  checked: '2026-10-14'
+  note: >-
+    Nguyen Dang San по предметной записи; исходный дизайн не датирован, отпечатано в 2010, приобретено в 2018.
+    Бумага, ксилография, 26,4 × 17,3 см. Репродукция полностью загружена и просмотрена на предметной странице.
+- id: lnma-dongho-dragon-1960s
+  title: 'Art of Viet Nam: Dragon Dance, detail'
+  publisher: Latvian National Museum of Art / Art Museum RIGA BOURSE
+  url: https://lnmm.gov.lv/en/art-museum-riga-bourse/exhibitions/art-of-viet-nam-562
+  sourceType: museum
+  checked: '2026-10-14'
+  note: >-
+    Подпись: неизвестный мастер Донгхо, Вьетнам, 1960-е, бумага, цветная ксилография. Просмотрена
+    опубликованная деталь, не весь лист. Выставка 2025–2026 и дипломатический дар 2024 не датируют этот
+    оттиск; общий текст о китайском влиянии на наследие Вьетнама не доказывает отдельную генеалогию Донгхо.

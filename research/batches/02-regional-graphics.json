@@ -1,6 +1,6 @@
 {
   "title": "Региональная графика, бумага и росписи",
-  "status": "research-in-progress",
+  "status": "prepared-not-published",
   "baselineCommit": "af152b032b940be766e53c8cc9dace0e8bb416f5",
   "baselineCards": 175,
   "selectedTopics": 10,
@@ -66,15 +66,22 @@
       "id": "nianhua",
       "priority": "P1",
       "proposedKind": "tradition",
-      "status": "research-in-progress",
-      "researchNote": "Широкий жанр не объединяется с региональным янлюцинским узлом. Найден предметный маршрут Taohuawu / Ding family в British Museum / Google Arts; нужны просмотр разных листов и проверка других региональных центров, включая Мяньчжу. Ссылку готового янлюцинского корпуса можно переиспользовать с явным указанием повторного предмета."
+      "status": "prepared",
+      "researchNote": "Четыре позиции, три новых для этой партии предмета и один повторно используемый янлюцинский лист с тем же workId. Парные комплекты считаются по одному. Даты [19--?], предположительная новогодняя функция корзины цветов и разночтение имени сохранены.",
+      "productionCardId": "nianhua",
+      "reviewStatus": "partial",
+      "corpusWorks": 4,
+      "verifiedKind": "overview"
     },
     {
       "id": "dong-ho-prints",
       "priority": "P2",
       "proposedKind": "tradition",
-      "status": "research-in-progress",
-      "researchNote": "Прочитаны LNMA Art of Viet Nam (деталь Dragon Dance, 1960-е), FAAM New Collection Exhibition (Nguyen Thi Oanh, The Marriage of a Mouse, дата неизвестна) и APJ W1325299 (2973: изготовление дизайна неизвестно, оттиск 2010, приобретение 2018). Нужны сами репродукции и привязка к подписям; APJ содержит метаданные без изображения. Ни выставка, ни дар 2022/2024, ни UNESCO не заменяют дату оттиска."
+      "status": "prepared",
+      "researchNote": "Четыре композиции просмотрены: деталь Dragon Dance, IMG_4759 с точной подписью Nguyen Thi Oanh, разные оттиски 2973 и 2957 2010 года. Даты исходных дизайнов и одной вещи неизвестны. ROOTS не включён без проверенного изображения; F07 принадлежит другой работе.",
+      "productionCardId": "dong-ho-prints",
+      "reviewStatus": "partial",
+      "corpusWorks": 4
     },
     {
       "id": "polish-wycinanki",
@@ -98,6 +105,6 @@
       "researchNote": "Четыре полных свитка трёх названных художников, 2010–2014; предметные даты, материалы и приобретение различены. Проверка статических изображений не заменяет просмотр песенного исполнения или исторический корпус."
     }
   ],
-  "preparedCards": 8,
+  "preparedCards": 10,
   "integrationBaseCommit": "05291690c50777123bb9ab7a440d27075cb061e0"
 }
