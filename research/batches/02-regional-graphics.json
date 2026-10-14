@@ -19,7 +19,11 @@
       "id": "warli-painting",
       "priority": "P1",
       "proposedKind": "tradition",
-      "status": "research-in-progress"
+      "status": "prepared",
+      "productionCardId": "warli-painting",
+      "reviewStatus": "partial",
+      "corpusWorks": 4,
+      "researchNote": "Три самостоятельные музейные/выставочные работы и одна композиция в процессе. Не смешаны Балу Ладке и Балу Маше, год Fishnet 2009 и фото 2025. Даты и материалы части росписей, имена двух женщин и полнота домашнего/ритуального корпуса остаются открытыми."
     },
     {
       "id": "adinkra",
@@ -34,7 +38,11 @@
       "id": "ndebele-murals",
       "priority": "P1",
       "proposedKind": "tradition",
-      "status": "research-in-progress"
+      "status": "prepared",
+      "productionCardId": "ndebele-murals",
+      "reviewStatus": "partial",
+      "corpusWorks": 3,
+      "researchNote": "Три архитектурные работы просмотрены. Даты публикации фотографии и снимка отделены от создания стены; авторы двух фрагментов и назначение ансамбля Ботшабело не уточнены. Муральные холсты VMFA не включены как стены. Добавлен контекст авторской практики Малангу."
     },
     {
       "id": "chinese-jianzhi",
@@ -58,26 +66,38 @@
       "id": "nianhua",
       "priority": "P1",
       "proposedKind": "tradition",
-      "status": "research-in-progress"
+      "status": "research-in-progress",
+      "researchNote": "Широкий жанр не объединяется с региональным янлюцинским узлом. Найден предметный маршрут Taohuawu / Ding family в British Museum / Google Arts; нужны просмотр разных листов и проверка других региональных центров, включая Мяньчжу. Ссылку готового янлюцинского корпуса можно переиспользовать с явным указанием повторного предмета."
     },
     {
       "id": "dong-ho-prints",
       "priority": "P2",
       "proposedKind": "tradition",
-      "status": "research-in-progress"
+      "status": "research-in-progress",
+      "researchNote": "Прочитаны LNMA Art of Viet Nam (деталь Dragon Dance, 1960-е), FAAM New Collection Exhibition (Nguyen Thi Oanh, The Marriage of a Mouse, дата неизвестна) и APJ W1325299 (2973: изготовление дизайна неизвестно, оттиск 2010, приобретение 2018). Нужны сами репродукции и привязка к подписям; APJ содержит метаданные без изображения. Ни выставка, ни дар 2022/2024, ни UNESCO не заменяют дату оттиска."
     },
     {
       "id": "polish-wycinanki",
       "priority": "P2",
       "proposedKind": "tradition",
-      "status": "research-in-progress"
+      "status": "prepared",
+      "productionCardId": "polish-wycinanki",
+      "reviewStatus": "partial",
+      "corpusWorks": 4,
+      "verifiedKind": "overview",
+      "researchNote": "Обзор Ловича и Курпе: три разных предмета одного музейного разворота и круглая вырезка Рапперсвиля. Два дополнительных номера из общих заметок не посчитаны корпусом. Krystyna Lis? и отсутствие даты сохранены; новые региональные узлы требуют собственных корпусов."
     },
     {
       "id": "bengal-patachitra",
       "priority": "P2",
       "proposedKind": "tradition",
-      "status": "research-in-progress"
+      "status": "prepared",
+      "productionCardId": "bengal-patachitra",
+      "reviewStatus": "reviewed",
+      "corpusWorks": 4,
+      "researchNote": "Четыре полных свитка трёх названных художников, 2010–2014; предметные даты, материалы и приобретение различены. Проверка статических изображений не заменяет просмотр песенного исполнения или исторический корпус."
     }
   ],
-  "preparedCards": 4
+  "preparedCards": 8,
+  "integrationBaseCommit": "05291690c50777123bb9ab7a440d27075cb061e0"
 }

@@ -1375,6 +1375,16 @@
       - mahlangu-bmw-1991
       - espacio-mahlangu-2016
       - iziko-mahlangu-retrospective
+  contexts:
+    - id: ndebele-murals
+      type: member-of
+      status: verified
+      note: >-
+        Музейный текст связывает визуальный язык Малангу с передаваемой в семье практикой ндебеле и описывает
+        её работу на новых поверхностях. Принадлежность к этой среде не означает авторства всей коллективной
+        традиции.
+      sources:
+        - serpentine-mahlangu-mural-2024
 - id: reko-rennie
   name: Знаки и публичная видимость у Реко Ренни
   orig: "Reko Rennie: signs, camouflage and moving image"

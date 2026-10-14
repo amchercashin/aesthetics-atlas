@@ -482,7 +482,7 @@
     - Чжан Сюфан
     - Коллектив Фошань (Fatshan)
   maturity: established
-  labelStatus: historical
+  labelStatus: editorial-scope-title
   id: chinese-jianzhi
   name: "Китайское вырезание бумаги: обзор"
   orig: Jiǎnzhǐ / 剪纸 / 剪紙 — Chinese paper cutting
@@ -496,7 +496,6 @@
   region: Китай; выбранный корпус — Янчжоу и Фошань, один комплект хранится в Тяньцзине
   medium:
     - decorative-arts
-    - drawing
   summary: >-
     Силуэт, ажурная линия, просвет и наклеенный фрагмент становятся разными способами построения изображения
     из бумаги.
@@ -906,4 +905,936 @@
       url: >-
         https://artsandculture.google.com/story/the-spread-of-adinkra-world-monuments-fund/NQVBErEmnp6i8w?hl=en
       src: World Monuments Fund / Google Arts & Culture
+      lang: en
+- domain:
+    - art
+  tier: 2
+  dateKind: corpus
+  origin: unknown
+  parents: []
+  aliases:
+    - Роспись ндебеле
+    - "Ндебеле: настенная роспись"
+    - Ndebele murals
+    - amaNdebele wall painting
+  names:
+    - Эстер Малангу
+  maturity: established
+  labelStatus: historical
+  id: ndebele-murals
+  name: Настенная роспись ндебеле в ЮАР и её адаптации
+  orig: South African Ndebele wall painting
+  kind: tradition
+  kindNote: >-
+    Традиция оформления архитектурной поверхности; отдельная авторская практика Малангу представлена своей
+    карточкой.
+  start: 1991
+  end: 2024
+  approx: true
+  dates: "корпус: не позднее 1991 — 2024; две даты относятся к фотодокументации"
+  era: digital
+  region: "Южная Африка (ЮАР): Ботшабело и дом Малангу; место показа современной адаптации — Лондон, Великобритания"
+  medium:
+    - painting
+    - architecture
+    - decorative-arts
+  summary: >-
+    Геометрические поля и контрастные бордюры организуют стены, ограды и другие архитектурные поверхности;
+    современные проекты переносят эти решения на выставочные панели.
+  description: >-
+    Выбранный корпус соединяет фрагмент стены неизвестного мастера в Ботшабело, фотографию домашнего ансамбля
+    Малангу и её публичный проект на деревянных панелях. Наблюдаемые связи — крупные геометрические поля,
+    вложенные границы и согласование рисунка с архитектурной поверхностью. У старой чёрно-белой фотографии
+    нельзя восстановить исходную палитру.
+
+
+    Женская передача навыков и индивидуальные решения художниц имеют значение для этой практики. Современная
+    работа Малангу расширяет круг поверхностей и зрителей, но не представляет собой единоличное авторство всей
+    традиции. Росписи ндебеле ЮАР не объединены здесь со всеми украшенными домами Африки или с отдельными
+    практиками ндебеле Зимбабве.
+  traits:
+    - Крупные геометрические поля ограничены контрастными линиями
+    - Диагонали, треугольники и ступенчатые формы могут сочетаться с прямоугольными модулями
+    - Масштаб и направление рисунка связаны со стеной, оградой или сборной панелью
+    - В цветных примерах чёрные и белые бордюры разделяют разные цветовые поля
+  scopeNote: >-
+    Три самостоятельные архитектурные работы по документированным изображениям: неизвестный мастер Ботшабело,
+    домашний ансамбль с неуточнённым исполнителем и один публичный мурал Малангу. Корпус не охватывает всех
+    центров и поколений ндебеле. Два музейных холста VMFA и BMW Art Car не включены как дополнительные стены.
+  dateNote: >-
+    1991 — верхняя граница существования первой стены по году журнала, а не установленный год её росписи; 19
+    мая 2014 — дата снимка второй. 2024 — дата публичного произведения. Нижняя координата карты условно
+    привязана к журнальному свидетельству. Эти числа не датируют происхождение или прекращение традиции.
+  creators:
+    - name: Эстер Малангу
+      orig: Esther Mahlangu
+      role: >-
+        автор Umuntu ngumuntu ngabantu, 2024; исполнитель двух других фрагментов по этим подписям не
+        устанавливается
+      sources:
+        - serpentine-mahlangu-mural-2024
+  corpus:
+    - workId: ndebele-botshabelo-courtyard-loubser
+      title: Стена внутреннего двора со ступенью, Ботшабело
+      author: Автор росписи не указан
+      year: "Не позднее 1991: год публикации фотографии; дата выполнения неизвестна"
+      medium: >-
+        В подписи стены со ступенью названы сажа, зола, известь и коровий навоз; красочный слой отдельно не
+        описан
+      sources:
+        - staffrider-mural-art-1991
+      reference: https://sahistory.org.za/sites/default/files/archive-files3/stv9n491.pdf#page=61
+      whyRepresentative: >-
+        На чёрно-белой фотографии светлые диагонали делят тёмную поверхность на крупные треугольные поля.
+        Нижняя горизонталь связана со ступенью; исходные цвета по этому снимку не определяются.
+      place: Ботшабело, ЮАР
+      rights:
+        embed: false
+        reviewed: "2026-10-14"
+        note: Репродукция доступна на предметной странице источника.
+      note: >-
+        Фотография Аннет Лубсер. Стена рассматривается по опубликованному фрагменту; жилое или музейное
+        назначение ансамбля подпись отдельно не сообщает.
+    - workId: ndebele-mahlangu-home-photo-2014
+      title: Роспись дома Эстер Малангу, фрагмент на фотографии 19 мая 2014
+      author: Исполнитель конкретного фрагмента в подписи не указан
+      year: "Не позднее 19 мая 2014: дата фотографии; дата росписи неизвестна"
+      medium: Настенная роспись; состав красок этой стены не указан
+      sources:
+        - vmfa-mahlangu-home-2014
+      reference: https://www.vmfa.museum/press/important-ndebele-artist-esther-mahlangu-to-paint-at-vmfa
+      whyRepresentative: >-
+        Чёрные и белые границы отделяют розовые, голубые, зелёные и жёлтые поля; диагонали, зубчатый мотив и
+        вложенные формы продолжаются за фигурой хозяйки.
+      place: Дом Эстер Малангу, ЮАР
+      rights:
+        embed: false
+        reviewed: "2026-10-14"
+        note: Репродукция доступна на предметной странице источника.
+      note: >-
+        Фото Richard B. Woodward. Присутствие художницы и расположение у её дома не заменяют отдельную
+        атрибуцию каждого фрагмента росписи.
+    - workId: ndebele-mahlangu-serpentine-2024
+      title: Umuntu ngumuntu ngabantu
+      author: Эстер Малангу
+      year: "2024"
+      medium: Живопись на шестнадцати деревянных панелях; один публичный мурал
+      sources:
+        - serpentine-mahlangu-mural-2024
+      reference: https://www.serpentinegalleries.org/whats-on/dr-esther-mahlangu-umuntu-ngumuntu-ngabantu/
+      whyRepresentative: >-
+        Крупное центральное поле окружено меньшими прямоугольными модулями. Чёрные и белые бордюры связывают
+        ступенчатые формы, треугольники и цветные вставки в одну фронтальную композицию.
+      place: Serpentine North Garden, Лондон
+      rights:
+        embed: false
+        reviewed: "2026-10-14"
+        note: Репродукция доступна на предметной странице источника.
+      note: >-
+        Архитектурная выставочная адаптация, а не часть жилого дома. Все шестнадцать панелей и разные
+        фотографии проекта посчитаны одной работой.
+  example:
+    workId: ndebele-mahlangu-serpentine-2024
+    title: Umuntu ngumuntu ngabantu
+    author: Эстер Малангу
+    year: "2024"
+    medium: Живопись на шестнадцати деревянных панелях; один публичный мурал
+    sources:
+      - serpentine-mahlangu-mural-2024
+    reference: https://www.serpentinegalleries.org/whats-on/dr-esther-mahlangu-umuntu-ngumuntu-ngabantu/
+    whyRepresentative: >-
+      Крупное центральное поле окружено меньшими прямоугольными модулями. Чёрные и белые бордюры связывают
+      ступенчатые формы, треугольники и цветные вставки в одну фронтальную композицию.
+    place: Serpentine North Garden, Лондон
+    rights:
+      embed: false
+      reviewed: "2026-10-14"
+      note: Репродукция доступна на предметной странице источника.
+    note: >-
+      Архитектурная выставочная адаптация, а не часть жилого дома. Все шестнадцать панелей и разные фотографии
+      проекта посчитаны одной работой.
+  compare:
+    - id: de-stijl
+      note: >-
+        Сопоставляются разграниченные цветовые плоскости. В выбранных росписях ндебеле заметны диагонали,
+        ступенчатые формы и многоцветные вставки; это формальное сравнение, а не утверждение о происхождении.
+    - id: gorodets-painting
+      note: >-
+        В обоих корпусах цвет и контрастные границы организуют декоративную поверхность. Здесь сравнивается
+        архитектурная геометрия с предметной и повествовательной росписью Городца; общего происхождения
+        карточка не заявляет.
+  evidence:
+    - claim: >-
+        Staffrider публикует архитектурную стену неизвестного мастера в Ботшабело; год выпуска журнала не
+        является датой изготовления.
+      field: corpus
+      source: staffrider-mural-art-1991
+    - claim: Подпись VMFA датирует фотографию дома 19 мая 2014; живописные заказы самого музея описаны как холсты.
+      field: dates
+      source: vmfa-mahlangu-home-2014
+    - claim: Serpentine называет автора, год и шестнадцать деревянных панелей единого публичного мурала.
+      field: authorship
+      source: serpentine-mahlangu-mural-2024
+    - claim: >-
+        Serpentine описывает передачу навыков от матери и бабушки Малангу; этот авторский пример не подменяет
+        коллективную традицию.
+      field: scope
+      source: serpentine-mahlangu-mural-2024
+  admission:
+    language: >-
+      В выбранных архитектурных поверхностях повторяются крупные поля, контрастные границы и согласование
+      рисунка с формой стены или панели.
+    corpus: >-
+      Три самостоятельных объекта в трёх публикациях. Виды одного мурала и его шестнадцать панелей не
+      увеличивают число произведений.
+    distinctness: >-
+      От ортогонального сопоставления с де Стейл отличаются диагональная организация и набор мотивов выбранных
+      стен; от городецкой росписи — архитектурный масштаб и геометрическое членение вместо предметных сцен.
+      Это сравнение ограниченных корпусов.
+    significance: >-
+      Архитектурная практика обсуждается в южноафриканской культурной публикации и в музейных текстах;
+      современный публичный проект документирован принимающей институцией. Неизвестное имя домашнего мастера
+      не исключает работу из рассмотрения.
+    sources:
+      - staffrider-mural-art-1991
+      - vmfa-mahlangu-home-2014
+      - serpentine-mahlangu-mural-2024
+  review:
+    status: partial
+    date: "2026-10-14"
+    note: >-
+      Все три опубликованных изображения просмотрены. Две даты относятся к документированию, авторы двух
+      фрагментов не установлены; назначение ансамбля Ботшабело и ранняя хронология остаются открытыми. Один
+      снимок монохромен, второй показывает часть домашней стены. Новая карточка не объявляет эти три работы
+      исчерпывающим корпусом ндебеле.
+  links:
+    - title: "Annette Loubser. Contemporary Mural Art: Urban Dislocation and Indifference. Staffrider 9(4), 1991"
+      url: https://sahistory.org.za/sites/default/files/archive-files3/stv9n491.pdf
+      src: Congress of South African Writers / South African History Archive
+      lang: en
+    - title: Эстер Малангу у росписей своего дома, фотография 19 мая 2014
+      url: https://www.vmfa.museum/press/important-ndebele-artist-esther-mahlangu-to-paint-at-vmfa
+      src: Virginia Museum of Fine Arts
+      lang: en
+    - title: Esther Mahlangu. Umuntu ngumuntu ngabantu, 2024
+      url: https://www.serpentinegalleries.org/whats-on/dr-esther-mahlangu-umuntu-ngumuntu-ngabantu/
+      src: Serpentine Galleries
+      lang: en
+- domain:
+    - art
+  tier: 2
+  dateKind: corpus
+  origin: unknown
+  parents: []
+  aliases:
+    - Польские вырезки из бумаги
+    - Польская выцинанка
+    - Wycinanki
+    - Łowicz paper cutouts
+    - Kurpie paper cutouts
+  names:
+    - Janina Strycharska-Wawrykowicz
+    - Stanisława Bakuła
+    - Elżbieta Żaczek
+    - Krystyna Lis?
+  maturity: established
+  labelStatus: editorial-scope-title
+  id: polish-wycinanki
+  name: "Польские выцинанки: Лович и Курпе"
+  orig: Wycinanki — Łowicz i Kurpie
+  kind: overview
+  kindNote: >-
+    Обзор двух местных практик вырезания бумаги; многоцветная аппликация и одноцветный ажур не объявляются
+    единым национальным стилем.
+  start: 1940
+  end: 1960
+  approx: true
+  dates: "корпус: середина XX века; одна работа без даты"
+  era: postwar
+  region: "Польша: Лович, Злакув-Боровы и Стшалки в регионе Курпе"
+  medium:
+    - decorative-arts
+  summary: >-
+    Вырезанные силуэты и просветы образуют орнаментальные и повествовательные композиции; цвет может
+    создаваться многослойной аппликацией или уступать место чёрному ажуру.
+  description: >-
+    Обзор сопоставляет три музейные работы середины XX века и недатированную круглую ловичскую вырезку. Две
+    повествовательные композиции и круглый орнамент используют многоцветные вставки, а работа Бакулы строит
+    сцену из чёрных силуэтов и просветов. Различаются формат, плотность вырезанного рисунка и способы
+    соединения фигур.
+
+
+    Региональные названия полезны для навигации, но не заменяют автора и историю вещи. Объединение мастеров
+    описывает у Бакулы разные типы выцинанок, в том числе многоцветные; поэтому один чёрный лист не становится
+    правилом для всех Курпе. Отдельные местные традиции и авторские корпуса требуют дальнейшего расширения.
+  traits:
+    - Сохранённая бумажная форма и вырезанный просвет совместно образуют изображение
+    - Цвет может создаваться наложением вырезанных частей на общую основу
+    - Зеркальная или радиальная орнаментальная схема сосуществует с протяжённым повествовательным фризом
+    - Узкие перемычки и повторяющиеся силуэты могут связывать людей, растения и постройки
+  scopeNote: >-
+    Четыре самостоятельные вещи: две работы региона Лович из каталога Варшавы, повествовательная вырезка
+    Бакулы из Курпе и круглая ловичская вырезка музея Рапперсвиля. Это обзор сопоставимых практик, не
+    исчерпывающий каталог всех польских регионов. Альтернативные музейные номера и отдельные фотографии одного
+    предмета не увеличивают корпус.
+  dateNote: >-
+    1940–1960 — условные координаты для подписей «середина XX века» и «1950-е». У круглой работы дата
+    отсутствует и в эти границы не подставляется. Издание каталога 2021 и загрузка файла в каталог сайта 2025
+    не датируют ни произведения, ни возникновение выцинанок.
+  creators:
+    - name: Janina Strycharska-Wawrykowicz
+      role: автор Karuzela, PME 10509
+      sources:
+        - warsaw-childhood-wycinanki-2021
+    - name: Stanisława Bakuła
+      role: автор 1 Maja, PME 16916; мастерица региона Курпе
+      sources:
+        - warsaw-childhood-wycinanki-2021
+        - stl-stanislawa-bakula
+    - name: Elżbieta Żaczek
+      role: автор Wesele, PME 10574
+      sources:
+        - warsaw-childhood-wycinanki-2021
+    - name: Krystyna Lis?
+      role: предполагаемый автор круглой вырезки; вопросительный знак музейной записи сохранён
+      sources:
+        - rapperswil-wycinanka-lis
+  corpus:
+    - workId: wycinanki-pme-10509
+      title: Karuzela / «Карусель», PME 10509
+      author: Janina Strycharska-Wawrykowicz
+      year: Середина XX века
+      medium: Глянцевая бумага, бумажная основа
+      sources:
+        - warsaw-childhood-wycinanki-2021
+      reference: >-
+        https://ethnomuseum.pl/wp-content/uploads/2025/12/Dziecinstwo_Childhood_katalog_rozkladowki1.pdf#page=266
+      whyRepresentative: >-
+        Навес карусели образует крупный веер над всадниками; отдельный нижний ряд фигур и орнаментальный
+        бордюр организуют лист по горизонтальным зонам. Многоцветные детали сочетаются с вырезанными
+        силуэтами.
+      place: Лович, Польша
+      rights:
+        embed: false
+        reviewed: "2026-10-14"
+        note: Встроенная репродукция не используется; ссылка ведёт к музейному развороту с подписями.
+      note: >-
+        Каталог 2021, илл. 413; выбран один воспроизведённый предмет. Фотограф Edward Koprowski не является
+        автором вырезки.
+    - workId: wycinanki-pme-16916
+      title: 1 Maja / «Первое мая», PME 16916
+      author: Stanisława Bakuła
+      year: 1950-е
+      medium: Глянцевая бумага
+      sources:
+        - warsaw-childhood-wycinanki-2021
+      reference: >-
+        https://ethnomuseum.pl/wp-content/uploads/2025/12/Dziecinstwo_Childhood_katalog_rozkladowki1.pdf#page=266
+      whyRepresentative: >-
+        Чёрные силуэты собраны в несколько ярусов: поезд, шествие, дома и деревья. Узкие перемычки и общий
+        внешний контур объединяют повествовательную сцену.
+      place: Стшалки, регион Курпе, Польша
+      rights:
+        embed: false
+        reviewed: "2026-10-14"
+        note: Встроенная репродукция не используется; ссылка ведёт к музейному развороту с подписями.
+      note: >-
+        Каталог 2021, илл. 414; выбран один воспроизведённый предмет. PME 17241 из общей заметки не добавлен
+        вторым экземпляром.
+    - workId: wycinanki-pme-10574
+      title: Wesele / «Свадьба», PME 10574
+      author: Elżbieta Żaczek
+      year: 1950-е
+      medium: Глянцевая бумага, картон
+      sources:
+        - warsaw-childhood-wycinanki-2021
+      reference: >-
+        https://ethnomuseum.pl/wp-content/uploads/2025/12/Dziecinstwo_Childhood_katalog_rozkladowki1.pdf#page=266
+      whyRepresentative: >-
+        Удлинённая горизонтальная композиция связывает танцующие пары, музыкантов и деревья. Цветные детали
+        костюмов наложены на силуэтные фигуры и повторяются вдоль полосы.
+      place: Злакув-Боровы, регион Лович, Польша
+      rights:
+        embed: false
+        reviewed: "2026-10-14"
+        note: Встроенная репродукция не используется; ссылка ведёт к музейному развороту с подписями.
+      note: >-
+        Каталог 2021, илл. 415; выбран один воспроизведённый предмет. PME 18101 из общей музейной заметки не
+        добавлен вторым экземпляром.
+    - workId: wycinanki-rapperswil-lis-round
+      title: Wycinanka łowicka / Круглая ловичская выцинанка
+      author: Krystyna Lis? — музейная атрибуция с вопросительным знаком
+      year: Дата не указана
+      medium: Вырезанная бумага; многослойная аппликация на чёрной основе и белом картоне
+      sources:
+        - rapperswil-wycinanka-lis
+      reference: https://artsandculture.google.com/asset/wycinanka-%C5%82owicka-krystyna-lis/ZgEt5fn7HzmdYg?hl=pl
+      whyRepresentative: >-
+        Два петуха и растительные завитки образуют зеркальную композицию внутри ажурного круга. Яркие цветовые
+        вставки наложены на общий чёрный рисунок.
+      place: Muzeum Polskie w Rapperswilu
+      rights:
+        embed: false
+        reviewed: "2026-10-14"
+        note: Репродукция доступна на предметной странице источника.
+  example:
+    workId: wycinanki-pme-10574
+    title: Wesele / «Свадьба», PME 10574
+    author: Elżbieta Żaczek
+    year: 1950-е
+    medium: Глянцевая бумага, картон
+    sources:
+      - warsaw-childhood-wycinanki-2021
+    reference: >-
+      https://ethnomuseum.pl/wp-content/uploads/2025/12/Dziecinstwo_Childhood_katalog_rozkladowki1.pdf#page=266
+    whyRepresentative: >-
+      Удлинённая горизонтальная композиция связывает танцующие пары, музыкантов и деревья. Цветные детали
+      костюмов наложены на силуэтные фигуры и повторяются вдоль полосы.
+    place: Злакув-Боровы, регион Лович, Польша
+    rights:
+      embed: false
+      reviewed: "2026-10-14"
+      note: Встроенная репродукция не используется; ссылка ведёт к музейному развороту с подписями.
+    note: >-
+      Каталог 2021, илл. 415; выбран один воспроизведённый предмет. PME 18101 из общей музейной заметки не
+      добавлен вторым экземпляром.
+  compare:
+    - id: chinese-jianzhi
+      note: >-
+        Сопоставляются вырезанный силуэт, ажур и цветные вставки в двух ограниченных обзорах местных практик.
+        Общая работа с бумагой не доказывает единого происхождения или одинакового языка всех регионов.
+    - id: lubok
+      note: >-
+        Лубочный лист строится печатным изображением, а в показанных выцинанках сам контур бумаги и просвет
+        формируют рисунок. Повествовательная тема сама по себе не делает эти способы одинаковыми.
+  evidence:
+    - claim: >-
+        Музейный разворот воспроизводит три разных предмета с авторами, датами и инвентарными номерами;
+        примечания раскрывают места и материалы.
+      field: corpus
+      source: warsaw-childhood-wycinanki-2021
+    - claim: >-
+        Рапперсвильская запись сохраняет неопределённую атрибуцию Krystyna Lis? и описывает наложение цветных
+        частей на чёрную основу.
+      field: authorship
+      source: rapperswil-wycinanka-lis
+    - claim: >-
+        Объединение народных мастеров документирует регион Курпе и разнообразие практики Бакулы, включая
+        многоцветные варианты.
+      field: scope
+      source: stl-stanislawa-bakula
+  admission:
+    language: >-
+      Обзор показывает разные способы вырезания и аппликации; общего неизменного польского орнамента из этих
+      четырёх вещей не выводится.
+    corpus: >-
+      Четыре независимые композиции с музейными подписями. Три предмета одного разворота различаются
+      изображениями и номерами; они не являются тремя видами одной работы.
+    distinctness: >-
+      Навигационный узел позволяет сравнить местные форматы и авторские решения с китайским вырезанием бумаги
+      и печатным лубком. Конкретный просвет и бумажная форма отличают показанные работы от печатного
+      воспроизведения силуэта.
+    significance: >-
+      Вещи сохраняются и подробно описаны местным государственным музеем и польским музеем диаспоры;
+      объединение народных мастеров документирует передачу и авторскую вариативность практики.
+    sources:
+      - warsaw-childhood-wycinanki-2021
+      - rapperswil-wycinanka-lis
+      - stl-stanislawa-bakula
+  review:
+    status: partial
+    date: "2026-10-14"
+    note: >-
+      Все четыре репродукции просмотрены; подписи трёх вещей сверены с музейными заметками. Атрибуция Krystyna
+      Lis? остаётся неопределённой, дата этой вещи отсутствует. Обзор охватывает два местных контекста и не
+      заменяет дальнейшие карточки регионов и мастеров.
+  links:
+    - title: "Dzieciństwo / Childhood. Каталог собрания, 2021: выцинанки"
+      url: https://ethnomuseum.pl/wp-content/uploads/2025/12/Dziecinstwo_Childhood_katalog_rozkladowki1.pdf
+      src: Państwowe Muzeum Etnograficzne w Warszawie
+      lang: en
+    - title: Wycinanka łowicka — Krystyna Lis?
+      url: https://artsandculture.google.com/asset/wycinanka-%C5%82owicka-krystyna-lis/ZgEt5fn7HzmdYg?hl=pl
+      src: Muzeum Polskie w Rapperswilu / Google Arts & Culture
+      lang: en
+    - title: "Stanisława Bakuła: регион Курпе, работа с выцинанками"
+      url: https://zgstl.pl/tworcy_ludowi/stanislawa-bakula-1925-1989/
+      src: Stowarzyszenie Twórców Ludowych
+      lang: en
+- domain:
+    - art
+  tier: 2
+  dateKind: corpus
+  origin: unknown
+  parents: []
+  aliases:
+    - Патачитра Бенгалии
+    - Бенгальские расписные свитки
+    - Bengal Patachitra
+    - West Bengal scroll painting
+  names:
+    - Манту Читракар
+    - Джаба Читракар
+    - Монимала Читракар
+  maturity: established
+  labelStatus: historical
+  id: bengal-patachitra
+  name: Бенгальская патачитра
+  orig: Patachitra / pat — West Bengal scroll painting
+  kind: tradition
+  start: 2010
+  end: 2014
+  dates: "корпус: 2010–2014"
+  era: digital
+  region: Индия, Западная Бенгалия; корпус современных свитков патуа
+  medium:
+    - painting
+  summary: >-
+    Расписной свиток организует рассказ вдоль длинной полосы; художники патуа соединяют изображение с песенным
+    повествованием и обращаются как к мифам, так и к современным событиям.
+  description: >-
+    В четырёх выбранных свитках цветные контурные фигуры образуют последовательности по вертикали. Манту
+    Читракар и Джаба Читракар используют отдельные поля эпизодов, а в работе о Дурге и Ганге
+    последовательность становится более текучей. Монимала Читракар связывает плотное центральное изображение с
+    цепочками круглых сцен на полях.
+
+
+    Музейные и местные первичные тексты описывают разворачивание свитка с песенным рассказом. Здесь проверены
+    статические репродукции и предметные подписи; темп, мелодия и взаимодействие конкретного исполнения со
+    зрителем не исследованы. Бенгальская практика не объединена с другими традициями, которые также называют
+    patachitra, в частности с практиками Одиши.
+  traits:
+    - Несколько сцен организуются вдоль длинного узкого свитка
+    - Контурные фигуры и плоские цветные участки сохраняют читаемость небольшого эпизода
+    - Бордюр и повтор мотивов могут связывать разные повествовательные поля
+    - >-
+      Прямоугольные разделители, свободная последовательность и круговые сцены дают разные способы построения
+      рассказа
+  scopeNote: >-
+    Четыре самостоятельных свитка трёх современных художников Западной Бенгалии в предметных записях QAGOMA.
+    Печатные книги по мотивам свитков, отдельные кадры одного свитка и исторические экземпляры в корпус не
+    добавлены. Живая песенная практика подтверждается текстами, но не анализом исполнения в этой проверке.
+  dateNote: >-
+    2010–2014 — даты выбранных произведений. 2001 и 2012 в названиях событий, приобретения 2015–2016 и
+    выставка APT8 2015–2016 имеют другие значения. Корпус не устанавливает начало, непрерывность или конец
+    всей традиции.
+  creators:
+    - name: Манту Читракар
+      orig: Mantu Chitrakar
+      role: автор The Gujarat Earthquake, 2012
+      sources:
+        - qagoma-mantu-gujarat-2012
+    - name: Джаба Читракар
+      orig: Jaba Chitrakar
+      role: автор двух выбранных свитков 2010 и 2013
+      sources:
+        - qagoma-jaba-durga-ganga-2010
+        - qagoma-jaba-nirbhaya-2013
+    - name: Монимала Читракар
+      orig: Monimala Chitrakar
+      role: автор Santhal Story of Origin, 2014
+      sources:
+        - qagoma-monimala-santhal-2014
+  corpus:
+    - workId: bengal-mantu-gujarat-2012
+      title: The Gujarat Earthquake / Землетрясение в Гуджарате
+      author: Манту Читракар
+      year: "2012"
+      medium: Натуральные краски на фабричной бумаге с тканевой подложкой
+      sources:
+        - qagoma-mantu-gujarat-2012
+      reference: https://artsandculture.google.com/asset/the-gujarat-earthquake-mantu-chitrakar/LgFogX8rBOX6Qg
+      whyRepresentative: >-
+        Небольшие повествовательные сцены следуют одна под другой в выделенных горизонтальных полях. Контур,
+        цветовые пятна и орнаментальные разделители связывают бытовые и чрезвычайные события в длинную
+        вертикаль.
+      place: Собрание Queensland Art Gallery
+      rights:
+        embed: false
+        reviewed: "2026-10-14"
+        note: Репродукция доступна на предметной странице источника.
+    - workId: bengal-jaba-durga-ganga-2010
+      title: The fight between Goddess Durga and Goddess Ganga / Борьба Дурги и Ганги
+      author: Джаба Читракар
+      year: "2010"
+      medium: Натуральные краски на фабричной бумаге с тканевой подложкой
+      sources:
+        - qagoma-jaba-durga-ganga-2010
+      reference: >-
+        https://artsandculture.google.com/asset/the-fight-between-goddess-durga-and-goddess-ganga-jaba-chitrakar/9AHooVbb7MYcrQ?hl=en
+      whyRepresentative: >-
+        Фигуры повторяются вдоль голубой извивающейся полосы; общая последовательность строится без одинаковых
+        прямоугольных рамок для каждого эпизода. Растительный бордюр объединяет всю длину.
+      place: Собрание Queensland Art Gallery
+      rights:
+        embed: false
+        reviewed: "2026-10-14"
+        note: Репродукция доступна на предметной странице источника.
+    - workId: bengal-monimala-santhal-2014
+      title: Santhal Story of Origin / Рассказ о происхождении санталов
+      author: Монимала Читракар
+      year: "2014"
+      medium: Натуральные краски на фабричной бумаге с тканевой подложкой
+      sources:
+        - qagoma-monimala-santhal-2014
+      reference: >-
+        https://artsandculture.google.com/asset/santhal-story-of-origin-monimala-chitrakar/JwHOdG4gGO82vw?hl=en
+      whyRepresentative: >-
+        Плотное центральное поле заполнено рядами маленьких фигур, а по краям идут круглые сцены. Общий бордюр
+        и повтор цветных контуров связывают несколько масштабов изображения.
+      place: Собрание Queensland Art Gallery
+      rights:
+        embed: false
+        reviewed: "2026-10-14"
+        note: Репродукция доступна на предметной странице источника.
+    - workId: bengal-jaba-nirbhaya-2013
+      title: "Nirbhaya — Delhi rape case / Нирбхая: дело в Дели"
+      author: Джаба Читракар
+      year: "2013"
+      medium: Натуральные краски на фабричной бумаге с тканевой подложкой
+      sources:
+        - qagoma-jaba-nirbhaya-2013
+      reference: https://artsandculture.google.com/asset/nirbhaya-delhi-rape-case-jaba-chitrakar/pQHpn0hf-5Axsw?hl=en
+      whyRepresentative: >-
+        Последовательность разделена растительными полосами на сцены с людьми, транспортом и архитектурой. В
+        отдельных полях диагональные формы меняют ритм горизонтальных рядов.
+      place: Собрание Queensland Art Gallery
+      rights:
+        embed: false
+        reviewed: "2026-10-14"
+        note: Репродукция доступна на предметной странице источника.
+  example:
+    workId: bengal-jaba-durga-ganga-2010
+    title: The fight between Goddess Durga and Goddess Ganga / Борьба Дурги и Ганги
+    author: Джаба Читракар
+    year: "2010"
+    medium: Натуральные краски на фабричной бумаге с тканевой подложкой
+    sources:
+      - qagoma-jaba-durga-ganga-2010
+    reference: >-
+      https://artsandculture.google.com/asset/the-fight-between-goddess-durga-and-goddess-ganga-jaba-chitrakar/9AHooVbb7MYcrQ?hl=en
+    whyRepresentative: >-
+      Фигуры повторяются вдоль голубой извивающейся полосы; общая последовательность строится без одинаковых
+      прямоугольных рамок для каждого эпизода. Растительный бордюр объединяет всю длину.
+    place: Собрание Queensland Art Gallery
+    rights:
+      embed: false
+      reviewed: "2026-10-14"
+      note: Репродукция доступна на предметной странице источника.
+  compare:
+    - id: kalighat-painting
+      note: >-
+        Сопоставляются контурные фигуры двух бенгальских корпусов. Для показанных свитков существенно
+        последовательное разворачивание рассказа; отдельный лист Калигхата организован иначе. Это сравнение не
+        заменяет исследования исторических связей.
+    - id: mithila-painting
+      note: >-
+        Сравниваются плотность фигур, цвет и бордюры. У этих свитков длинный формат и смена эпизодов задают
+        конкретный способ повествования; сходные орнаментальные поля сами по себе не доказывают родство.
+  evidence:
+    - claim: >-
+        Предметная запись Манту Читракара сообщает 2012 и натуральные краски на фабричной бумаге с тканевой
+        подложкой.
+      field: corpus
+      source: qagoma-mantu-gujarat-2012
+    - claim: Куратор описывает свободную последовательность в свитке Дурги и Ганги.
+      field: traits
+      source: qagoma-jaba-durga-ganga-2010
+    - claim: Тема Santhal в музейном заголовке относится к истории, рассказанной свитком.
+      field: scope
+      source: qagoma-monimala-santhal-2014
+    - claim: Запись Nirbhaya датирует работу 2013, отдельно от сюжета 2012 и приобретения 2016.
+      field: dates
+      source: qagoma-jaba-nirbhaya-2013
+    - claim: Материал Banglanatak описывает соединение расписного свитка с песней Pater Gaan.
+      field: context
+      source: banglanatak-swarna-colour-process
+  admission:
+    language: >-
+      Контурная фигура, плоский цвет и продольная организация сцен повторяются при заметных индивидуальных
+      различиях построения свитка.
+    corpus: >-
+      Четыре самостоятельных свитка с четырьмя предметными записями и тремя названными художниками; отдельные
+      фрагменты одного свитка не увеличивают число работ.
+    distinctness: >-
+      Последовательность вдоль разворачиваемой полосы и связь с песенным рассказом сохраняют смысл, который
+      теряется в общем обзоре индийской живописи. Соседние корпуса Калигхата и Митхилы позволяют сравнить
+      формат и организацию сцены.
+    significance: >-
+      Самостоятельные предметные записи и кураторское представление трёх художников сочетаются с материалом
+      местной организации о действующей практике патуа. Западная музейная коллекция не является единственным
+      свидетельством продолжения традиции.
+    sources:
+      - qagoma-mantu-gujarat-2012
+      - qagoma-jaba-durga-ganga-2010
+      - qagoma-monimala-santhal-2014
+      - qagoma-jaba-nirbhaya-2013
+      - banglanatak-swarna-colour-process
+  review:
+    status: reviewed
+    date: "2026-10-14"
+    note: >-
+      Прочитаны четыре предметные записи, все четыре целых свитка просмотрены в опубликованных репродукциях;
+      различены даты сюжета, работы, выставки и приобретения. Формальный анализ относится к этим статическим
+      изображениям; исполнение песен и историческая полнота корпуса не заявлены.
+  links:
+    - title: Mantu Chitrakar. The Gujarat Earthquake, 2012
+      url: https://artsandculture.google.com/asset/the-gujarat-earthquake-mantu-chitrakar/LgFogX8rBOX6Qg
+      src: Queensland Art Gallery & Gallery of Modern Art / Google Arts & Culture
+      lang: en
+    - title: Jaba Chitrakar. The fight between Goddess Durga and Goddess Ganga, 2010
+      url: >-
+        https://artsandculture.google.com/asset/the-fight-between-goddess-durga-and-goddess-ganga-jaba-chitrakar/9AHooVbb7MYcrQ?hl=en
+      src: Queensland Art Gallery & Gallery of Modern Art / Google Arts & Culture
+      lang: en
+    - title: Monimala Chitrakar. Santhal Story of Origin, 2014
+      url: >-
+        https://artsandculture.google.com/asset/santhal-story-of-origin-monimala-chitrakar/JwHOdG4gGO82vw?hl=en
+      src: Queensland Art Gallery & Gallery of Modern Art / Google Arts & Culture
+      lang: en
+    - title: Jaba Chitrakar. Nirbhaya — Delhi rape case, 2013
+      url: https://artsandculture.google.com/asset/nirbhaya-delhi-rape-case-jaba-chitrakar/pQHpn0hf-5Axsw?hl=en
+      src: Queensland Art Gallery & Gallery of Modern Art / Google Arts & Culture
+      lang: en
+    - title: "Swarna Chitrakar. Colour Making Process: Raw Materials for Natural Colour, 2018"
+      url: https://artsandculture.google.com/asset/colour-making-process-0098/iQHdRxaL8FYtaQ
+      src: Banglanatak / Google Arts & Culture
+      lang: en
+- domain:
+    - art
+  tier: 2
+  dateKind: corpus
+  origin: unknown
+  parents: []
+  aliases:
+    - Варли
+    - "Варли: живопись"
+    - Warli painting
+    - Varli painting
+  names:
+    - Дживья Сома Маше
+    - Раджеш Чайтья Вангад
+    - Балу Ладке
+  maturity: established
+  labelStatus: historical
+  id: warli-painting
+  name: Живопись варли
+  orig: Warli / Varli painting
+  kind: tradition
+  start: 1990
+  end: 2025
+  approx: true
+  dates: "корпус: около 1990 и 2009; две росписи без даты, документирование до 2025"
+  era: digital
+  region: Индия, Махараштра; современные работы художников варли и музейная роспись в Нью-Дели
+  medium:
+    - painting
+    - decorative-arts
+  summary: >-
+    Небольшие геометризированные фигуры, тонкая линия и ритмические группы организуют сцены людей, животных и
+    деревьев на ткани и архитектурной поверхности.
+  description: >-
+    В выбранных примерах пространство заполнено множеством маленьких фигур. Парные треугольные формы, линейные
+    конечности, круговые группы и повторяющиеся растительные мотивы позволяют собирать протяжённую сцену без
+    объёмной моделировки. Корпус показывает как белый рисунок на коричневой основе, так и более тёмный рисунок
+    на светлой стене.
+
+
+    Две работы Маше сопоставлены с ансамблем двух других художников и с документированным совместным процессом
+    двух женщин. Музейные и выставочные произведения не заменяют все домашние и ритуальные практики варли. По
+    статическим изображениям не выводятся правила всех церемоний, универсальная символика фигур или точная
+    древняя дата возникновения традиции.
+  traits:
+    - Малые геометризированные фигуры соединяются тонкими линиями
+    - Повтор небольших форм организует круги, спирали и протяжённые ряды
+    - Люди, животные, деревья и архитектура могут сосуществовать в едином поле
+    - Контраст линии и основы важен для читаемости; направление светло-тёмного контраста может различаться
+  scopeNote: >-
+    Три самостоятельных музейных или выставочных произведения и фрагмент четвёртой композиции в процессе
+    создания. Портрет Маше и фотографии одного ансамбля не увеличивают корпус. Домашние и ритуальные варианты
+    требуют дальнейшего локального исследования; имена двух художниц на фотографии не установлены.
+  dateNote: >-
+    Около 1990 и 2009 — даты произведений. У росписи Crafts Museum дата отсутствует; 2025 относится к
+    выставочной фотографии Fishnet и записи отдельного рабочего процесса. Координаты карты ограничивают это
+    документированное сопоставление, а не время существования варли.
+  creators:
+    - name: Дживья Сома Маше
+      orig: Jivya Soma Mashe
+      role: автор двух выбранных работ около 1990 и 2009
+      sources:
+        - map-mashe-warli-1990
+        - cartier-mashe-fishnet-2009
+    - name: Раджеш Чайтья Вангад
+      orig: Rajesh Chaitya Vangad
+      role: соавтор росписи Crafts Museum
+      sources:
+        - crafts-museum-vangad-ladke-warli
+    - name: Балу Ладке
+      orig: Balu Ladke
+      role: соавтор росписи Crafts Museum; не отождествляется с Балу Маше
+      sources:
+        - crafts-museum-vangad-ladke-warli
+  corpus:
+    - workId: warli-map-mashe-c1990
+      title: Untitled Warli painting / Живопись варли без названия
+      author: Дживья Сома Маше
+      year: Около 1990
+      medium: Натуральные пигменты на ткани
+      sources:
+        - map-mashe-warli-1990
+      reference: https://artsandculture.google.com/asset/untitled-warli-painting-jivya-soma-mashe/qgF8F8jGsjAQRw
+      whyRepresentative: >-
+        Множество небольших фигур образует плотную спираль вокруг музыканта. Линейные деревья, дома и животные
+        заполняют пространство вокруг неё; белый рисунок контрастирует с коричневой основой.
+      place: Museum of Art & Photography, Бангалор
+      rights:
+        embed: false
+        reviewed: "2026-10-14"
+        note: Репродукция доступна на предметной странице источника.
+    - workId: warli-crafts-vangad-ladke-wall
+      title: Warli Painting / Роспись внешних стен Crafts Museum
+      author: Раджеш Чайтья Вангад и Балу Ладке
+      year: Дата не указана
+      medium: Настенная роспись; точные материалы не указаны
+      sources:
+        - crafts-museum-vangad-ladke-warli
+      reference: https://artsandculture.google.com/asset/warli-painting/SAEoZ6eEemZUXQ?hl=en
+      whyRepresentative: >-
+        Несколько архитектурных полей заполнены тонкими фигурами, деревьями, круговыми группами и большой
+        сетью. Светлая основа и более тёмный рисунок показывают вариант, отличный от белой линии на коричневом
+        фоне.
+      place: National Crafts Museum, Нью-Дели
+      rights:
+        embed: false
+        reviewed: "2026-10-14"
+        note: Репродукция доступна на предметной странице источника.
+      note: Два художника названы соавторами одного ансамбля; отдельные поля и снимки не увеличивают число работ.
+    - workId: warli-cartier-fishnet-2009
+      title: Fishnet / Рыболовная сеть
+      author: Дживья Сома Маше
+      year: "2009"
+      medium: Материалы этой работы страница не уточняет
+      sources:
+        - cartier-mashe-fishnet-2009
+      reference: https://www.fondationcartier.com/en/collection/artists/jivya-soma-mashe
+      whyRepresentative: >-
+        Крупная конусообразная сеть собрана из множества тонких светлых линий; её масштаб резко отличается от
+        мелких фигур на поверхности. Нижний участок на выставочной фотографии частично закрыт посетительницей.
+      place: Fondation Cartier pour l’art contemporain
+      rights:
+        embed: false
+        reviewed: "2026-10-14"
+        note: Репродукция доступна на предметной странице источника.
+      note: >-
+        Год произведения взят из подписи 2009; вид выставки подписан 2025. Это не портрет художника и не новая
+        работа 2025 года.
+    - workId: warli-wedding-process-document-2025
+      title: Свадебная композиция в процессе создания
+      author: Две художницы; имена не сообщены
+      year: Дата выполнения не уточнена; фотодокументация 2025
+      medium: Роспись архитектурной поверхности; состав материалов не указан
+      sources:
+        - banglanatak-warli-wedding-process
+      reference: https://artsandculture.google.com/asset/a-wedding-depiction-underway/nAH2uae7bg856g?hl=en
+      whyRepresentative: >-
+        На фотографии светлые фигурные ряды и орнаментальные полосы окружают крупные вложенные диагональные
+        границы. Видны руки двух художниц, продолжающих один рисунок.
+      place: Махараштра, Индия
+      rights:
+        embed: false
+        reviewed: "2026-10-14"
+        note: Репродукция доступна на предметной странице источника.
+      note: >-
+        Дополнительная композиция показана в работе и фрагментарно. Организация Banglanatak документирует
+        процесс, а не названа автором росписи.
+  example:
+    workId: warli-map-mashe-c1990
+    title: Untitled Warli painting / Живопись варли без названия
+    author: Дживья Сома Маше
+    year: Около 1990
+    medium: Натуральные пигменты на ткани
+    sources:
+      - map-mashe-warli-1990
+    reference: https://artsandculture.google.com/asset/untitled-warli-painting-jivya-soma-mashe/qgF8F8jGsjAQRw
+    whyRepresentative: >-
+      Множество небольших фигур образует плотную спираль вокруг музыканта. Линейные деревья, дома и животные
+      заполняют пространство вокруг неё; белый рисунок контрастирует с коричневой основой.
+    place: Museum of Art & Photography, Бангалор
+    rights:
+      embed: false
+      reviewed: "2026-10-14"
+      note: Репродукция доступна на предметной странице источника.
+  compare:
+    - id: mithila-painting
+      note: >-
+        Сопоставляются небольшие фигуры, контур и организация заполненной поверхности. В показанных работах
+        варли особенно заметен ритм тонких линейных групп; различия выбранных корпусов не являются
+        универсальными правилами для всех мастеров.
+    - id: kalighat-painting
+      note: >-
+        Плотные группы мелких геометризированных фигур сравниваются с организацией отдельных листов Калигхата
+        вокруг более крупных фигур. Это формальное сопоставление, а не историческая генеалогия.
+  evidence:
+    - claim: MAP сообщает дату около 1990 и натуральные пигменты на ткани для конкретной работы Маше.
+      field: corpus
+      source: map-mashe-warli-1990
+    - claim: Crafts Museum называет двух соавторов и место росписи; дата не сообщается.
+      field: authorship
+      source: crafts-museum-vangad-ladke-warli
+    - claim: В подписи Fondation Cartier Fishnet датирован 2009, тогда как вид выставки относится к 2025.
+      field: dates
+      source: cartier-mashe-fishnet-2009
+    - claim: Первичная фотозапись показывает двух неназванных женщин, работающих над одной композицией.
+      field: authorship
+      source: banglanatak-warli-wedding-process
+    - claim: Местный материал Banglanatak рассматривает варли как продолжающуюся практику Пальгхара.
+      field: context
+      source: banglanatak-palghar-living-heritage
+  admission:
+    language: >-
+      Повторяемая маломасштабная фигура и тонкая линия связывают круговые группы, протяжённые ряды и
+      фигуративную среду при различиях основы и направления контраста.
+    corpus: >-
+      Три самостоятельные музейные или выставочные работы и дополнительная фрагментарная композиция в
+      процессе. Два произведения Маше различаются; портрет художника не используется вместо произведения.
+    distinctness: >-
+      Сравнение с Митхилой и Калигхатом показывает конкретную роль малого геометризированного силуэта и
+      ритмических групп. Полезность узла не сводится к коричнево-белой палитре или общей индийской географии.
+    significance: >-
+      Предметное сохранение в индийских музеях и выставочная история Маше сопоставлены с местной документацией
+      действующих художников; персональное признание одного мастера не заменяет коллективную практику.
+    sources:
+      - map-mashe-warli-1990
+      - crafts-museum-vangad-ladke-warli
+      - cartier-mashe-fishnet-2009
+      - banglanatak-warli-wedding-process
+      - banglanatak-palghar-living-heritage
+  review:
+    status: partial
+    date: "2026-10-14"
+    note: >-
+      Просмотрены три самостоятельных произведения и фрагмент четвёртой композиции в работе. Выставочный вид
+      Fishnet частично закрыт посетительницей; дата росписи Crafts Museum и имена двух женщин не сообщены.
+      Ранние датировки, точная рецептура красок каждого примера и полнота ритуального корпуса не установлены.
+  links:
+    - title: Jivya Soma Mashe. Untitled Warli painting, около 1990
+      url: https://artsandculture.google.com/asset/untitled-warli-painting-jivya-soma-mashe/qgF8F8jGsjAQRw
+      src: Museum of Art & Photography / Google Arts & Culture
+      lang: en
+    - title: Rajesh Chaitya Vangad, Balu Ladke. Warli Painting
+      url: https://artsandculture.google.com/asset/warli-painting/SAEoZ6eEemZUXQ?hl=en
+      src: National Crafts Museum, New Delhi / Google Arts & Culture
+      lang: en
+    - title: "Jivya Soma Mashe. Fishnet, 2009: опубликованный выставочный вид"
+      url: https://www.fondationcartier.com/en/collection/artists/jivya-soma-mashe
+      src: Fondation Cartier pour l’art contemporain
+      lang: en
+    - title: A Wedding Depiction Underway, фотодокументация 2025
+      url: https://artsandculture.google.com/asset/a-wedding-depiction-underway/nAH2uae7bg856g?hl=en
+      src: Banglanatak / Google Arts & Culture
+      lang: en
+    - title: Living Heritage Trails of Palghar
+      url: >-
+        https://artsandculture.google.com/story/living-heritage-trails-of-palghar-banglanatak/zwUhIYx8QUgYuA?hl=en
+      src: Banglanatak / Google Arts & Culture
       lang: en

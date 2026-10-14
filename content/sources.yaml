@@ -1292,7 +1292,7 @@
     Прочитан кураторский обзор Н. В. Толстухиной о коллекции, разных авторах, ранней резьбе, росписи и
     продолжении промысла в XX веке. Общий обзор не заменяет предметных атрибуций Русского музея.
 
-# Региональные росписи, графика и росписи: партия 2
+# Региональная графика, бумага и росписи: партия 2
 - id: nypl-lubok-cat-1866
   title: Похороны кота крысами и мышами, 1866
   publisher: The New York Public Library
@@ -1350,7 +1350,7 @@
     Коллекция включает религиозные, исторические и другие изображения, разные техники и мастерские. Термин не
     принят как название одной неизменной манеры.
 
-# Региональные росписи, графика и росписи: партия 2
+# Региональная графика, бумага и росписи: партия 2
 - id: aaav-yangliuqing-theatre
   title: 'Miglė Lebednykaitė. The Case of Peking Opera in Lithuania: The Collection of Chinese Woodblock Prints'
   publisher: Acta Academiae Artium Vilnensis / Vilnius Academy of Arts
@@ -1372,7 +1372,7 @@
     Прочитан кураторский фрагмент о популярной графике и няньхуа, включая различение Янлюцина, Таохуау и
     Мяньчжу. Он используется для границ темы, не вместо предметных атрибуций выбранных литовских листов.
 
-# Региональные росписи, графика и росписи: партия 2
+# Региональная графика, бумага и росписи: партия 2
 - id: yangzhou-cutpaper-museum
   title: 'China Paper Cutting Museum: музейная коллекция и локальные школы'
   publisher: China Paper Cutting Museum, Yangzhou / Google Arts & Culture
@@ -1425,7 +1425,7 @@
     Chrome отвечает защитой; сама репродукция просмотрена по публичной ссылке изображения из этой записи.
     Слово prints в описании не подменило явно указанный материал вырезки.
 
-# Региональные росписи, графика и росписи: партия 2
+# Региональная графика, бумага и росписи: партия 2
 - id: met-adinkra-687569
   title: Adinkra prestige cloth, 2015.614.6, 1960-е
   publisher: The Metropolitan Museum of Art
@@ -1466,3 +1466,180 @@
     Прочитан материал о знаках, пословицах, ткани и архитектурных применениях. Он подтверждает более широкий
     графический контекст, но не подменяет атрибуцию отдельных полотен. Значения отдельных знаков не превращены
     в универсальную инструкцию чтения любой ткани.
+
+# Региональная графика, бумага и росписи: партия 2
+- id: staffrider-mural-art-1991
+  title: 'Annette Loubser. Contemporary Mural Art: Urban Dislocation and Indifference. Staffrider 9(4), 1991'
+  publisher: Congress of South African Writers / South African History Online
+  url: https://sahistory.org.za/sites/default/files/archive-files3/stv9n491.pdf
+  sourceType: press
+  checked: '2026-10-14'
+  note: >-
+    Прочитана статья на PDF-с. 56–61 и подпись фотографии на PDF-с. 61; изображение стены просмотрено. Подпись
+    называет Ботшабело, неизвестного автора и материалы стены со ступенью. Год журнала не является датой
+    изготовления стены или росписи. Назначение ансамбля (жилое или музейное) эта подпись отдельно не уточняет.
+    Обобщения статьи 1991 года о всей истории южноафриканского искусства не перенесены в карточку.
+- id: vmfa-mahlangu-home-2014
+  title: Эстер Малангу у росписей своего дома, фотография 19 мая 2014
+  publisher: Virginia Museum of Fine Arts
+  url: https://www.vmfa.museum/press/important-ndebele-artist-esther-mahlangu-to-paint-at-vmfa
+  sourceType: museum
+  checked: '2026-10-14'
+  note: >-
+    Прочитана музейная публикация от 18 августа 2014 и просмотрена фотография Richard B. Woodward с датой 19
+    мая 2014. Дата относится к снимку, исполнитель и год конкретной домашней росписи в подписи отдельно не
+    названы. Два заказа VMFA на холсте не подменяют настенную работу дома.
+- id: serpentine-mahlangu-mural-2024
+  title: Esther Mahlangu. Umuntu ngumuntu ngabantu, 2024
+  publisher: Serpentine Galleries
+  url: https://www.serpentinegalleries.org/whats-on/dr-esther-mahlangu-umuntu-ngumuntu-ngabantu/
+  sourceType: museum
+  checked: '2026-10-14'
+  note: >-
+    Прочитаны описание проекта, авторство и подпись; просмотрена фотография George Darrell. Шестнадцать
+    деревянных панелей образуют один публичный мурал. Описание домашней работы с природными материалами и
+    акриловой живописи на холсте не выдаётся за точный состав красок именно этого проекта. Дата 2024 относится
+    к произведению, даты показа не являются сроком существования традиции.
+
+# Региональная графика, бумага и росписи: партия 2
+- id: warsaw-childhood-wycinanki-2021
+  title: 'Dzieciństwo / Childhood. Каталог собрания, 2021: выцинанки'
+  publisher: Państwowe Muzeum Etnograficzne w Warszawie
+  url: https://ethnomuseum.pl/wp-content/uploads/2025/12/Dziecinstwo_Childhood_katalog_rozkladowki1.pdf
+  sourceType: catalog
+  checked: '2026-10-14'
+  note: >-
+    Прочитаны выходные сведения каталога 2021, подписи трёх репродукций на PDF-с. 266 (печатные с. 528–529,
+    илл. 413–415) и примечания 195, 200, 204 на PDF-с. 280–281. Все три изображения просмотрены. В каждой
+    подписи различаются мастерица и фотограф. Две пары музейных номеров из примечаний не посчитаны
+    дополнительными произведениями: выбраны именно три воспроизведённые вещи. Дата 2025 в пути файла не
+    заменяет год издания 2021.
+- id: rapperswil-wycinanka-lis
+  title: Wycinanka łowicka — Krystyna Lis?
+  publisher: Muzeum Polskie w Rapperswilu / Google Arts & Culture
+  url: https://artsandculture.google.com/asset/wycinanka-%C5%82owicka-krystyna-lis/ZgEt5fn7HzmdYg?hl=pl
+  sourceType: museum
+  checked: '2026-10-14'
+  note: >-
+    Прочитана музейная запись и просмотрена круглая многоцветная вырезка с двумя петухами. Вопросительный знак
+    в имени Krystyna Lis? сохранён; дата не сообщается. Круглая композиция состоит из наложенных цветных
+    частей на связной чёрной основе. Общая характеристика регионов не использована как универсальное правило
+    для каждой вещи.
+- id: stl-stanislawa-bakula
+  title: 'Stanisława Bakuła: регион Курпе, работа с выцинанками'
+  publisher: Stowarzyszenie Twórców Ludowych
+  url: https://zgstl.pl/tworcy_ludowi/stanislawa-bakula-1925-1989/
+  sourceType: community
+  checked: '2026-10-14'
+  note: >-
+    Прочитана биографическая статья Katarzyna Kraczoń, основанная в том числе на архиве объединения мастеров.
+    Подтверждены регион Курпе и работа Бакулы с разными типами вырезок, включая повествовательные и
+    многоцветные варианты. Текст не поддерживает правило «все выцинанки Курпе одноцветны»; даты отдельных
+    работ берутся из музейного каталога.
+
+# Региональная графика, бумага и росписи: партия 2
+- id: qagoma-mantu-gujarat-2012
+  title: Mantu Chitrakar. The Gujarat Earthquake, 2012
+  publisher: Queensland Art Gallery & Gallery of Modern Art / Google Arts & Culture
+  url: https://artsandculture.google.com/asset/the-gujarat-earthquake-mantu-chitrakar/LgFogX8rBOX6Qg
+  sourceType: museum
+  checked: '2026-10-14'
+  note: >-
+    Прочитана предметная запись, просмотрен целый свиток в опубликованной репродукции. Указаны 2012, 352,5 ×
+    56 см и natural colour on mill-made paper with fabric backing. 2001 — год события сюжета, приобретение
+    2015 — отдельная дата. Числа потерь из исторического вступления не заимствованы как проверенная
+    статистика.
+- id: qagoma-jaba-durga-ganga-2010
+  title: Jaba Chitrakar. The fight between Goddess Durga and Goddess Ganga, 2010
+  publisher: Queensland Art Gallery & Gallery of Modern Art / Google Arts & Culture
+  url: >-
+    https://artsandculture.google.com/asset/the-fight-between-goddess-durga-and-goddess-ganga-jaba-chitrakar/9AHooVbb7MYcrQ?hl=en
+  sourceType: museum
+  checked: '2026-10-14'
+  note: >-
+    Прочитана предметная запись и просмотрен целый свиток. Указаны 2010, 344 × 56 см, натуральные краски на
+    фабричной бумаге с тканевой подложкой. Куратор выделяет более свободный ход последовательности вместо
+    постоянного разделения на кадры. Приобретение и выставка 2015–2016 не подменяют год произведения.
+- id: qagoma-monimala-santhal-2014
+  title: Monimala Chitrakar. Santhal Story of Origin, 2014
+  publisher: Queensland Art Gallery & Gallery of Modern Art / Google Arts & Culture
+  url: https://artsandculture.google.com/asset/santhal-story-of-origin-monimala-chitrakar/JwHOdG4gGO82vw?hl=en
+  sourceType: museum
+  checked: '2026-10-14'
+  note: >-
+    Прочитана предметная запись и просмотрен целый свиток. Указаны 2014, 275,5 × 56 см и натуральные краски на
+    фабричной бумаге с тканевой подложкой. Санталы / Santhal — тема рассказа, из которой не выводится
+    этническая принадлежность автора. Дата приобретения 2015 отделена от изготовления.
+- id: qagoma-jaba-nirbhaya-2013
+  title: Jaba Chitrakar. Nirbhaya — Delhi rape case, 2013
+  publisher: Queensland Art Gallery & Gallery of Modern Art / Google Arts & Culture
+  url: https://artsandculture.google.com/asset/nirbhaya-delhi-rape-case-jaba-chitrakar/pQHpn0hf-5Axsw?hl=en
+  sourceType: museum
+  checked: '2026-10-14'
+  note: >-
+    Прочитана предметная запись, просмотрен целый свиток. Указаны 2013, 278 × 55,9 см и натуральные краски на
+    фабричной бумаге с тканевой подложкой. 2012 — год события, приобретение 2016 — отдельная дата; они не
+    заменяют 2013 в подписи произведения.
+- id: banglanatak-swarna-colour-process
+  title: 'Swarna Chitrakar. Colour Making Process: Raw Materials for Natural Colour, 2018'
+  publisher: Banglanatak / Google Arts & Culture
+  url: https://artsandculture.google.com/asset/colour-making-process-0098/iQHdRxaL8FYtaQ
+  sourceType: community
+  checked: '2026-10-14'
+  note: >-
+    Прочитана первичная запись о материалах и практике Сварны Читракар в Paschim Medinipur. Текст связывает
+    бенгальские свитки с рассказом и песней Pater Gaan. Он поддерживает контекст живой практики, но не
+    заменяет материалы четырёх конкретных предметов QAGOMA и не доказывает древнейшую мировую хронологию.
+
+# Региональная графика, бумага и росписи: партия 2
+- id: map-mashe-warli-1990
+  title: Jivya Soma Mashe. Untitled Warli painting, около 1990
+  publisher: Museum of Art & Photography / Google Arts & Culture
+  url: https://artsandculture.google.com/asset/untitled-warli-painting-jivya-soma-mashe/qgF8F8jGsjAQRw
+  sourceType: museum
+  checked: '2026-10-14'
+  note: >-
+    Прочитана предметная запись и просмотрено произведение целиком. Указаны около 1990, 63,5 × 91,5 см,
+    natural pigments on cloth. Биографические годы не используются как даты возникновения варли.
+- id: crafts-museum-vangad-ladke-warli
+  title: Rajesh Chaitya Vangad, Balu Ladke. Warli Painting
+  publisher: National Crafts Museum, New Delhi / Google Arts & Culture
+  url: https://artsandculture.google.com/asset/warli-painting/SAEoZ6eEemZUXQ?hl=en
+  sourceType: museum
+  checked: '2026-10-14'
+  note: >-
+    Прочитана музейная запись и просмотрена опубликованная фотография росписи. Указаны два соавтора и внешние
+    стены Crafts Museum; дата и точные материалы не сообщены. Изображения нескольких полей не считаются
+    отдельными произведениями. Вангад и Ладке не отождествляются с другими художниками на основании сходства
+    имён.
+- id: cartier-mashe-fishnet-2009
+  title: 'Jivya Soma Mashe. Fishnet, 2009: опубликованный выставочный вид'
+  publisher: Fondation Cartier pour l’art contemporain
+  url: https://www.fondationcartier.com/en/collection/artists/jivya-soma-mashe
+  sourceType: museum
+  checked: '2026-10-14'
+  note: >-
+    Прочитан текст и подпись Fishnet, 2009; просмотрена соответствующая фотография выставки. В alt она названа
+    видом выставки 2025: год фотографии не заменяет год картины. Посетительница закрывает часть нижней
+    композиции. Материалы отдельной работы не уточнены; общие или очень ранние датировки традиции из вводного
+    текста не перенесены в карточку.
+- id: banglanatak-warli-wedding-process
+  title: A Wedding Depiction Underway, фотодокументация 2025
+  publisher: Banglanatak / Google Arts & Culture
+  url: https://artsandculture.google.com/asset/a-wedding-depiction-underway/nAH2uae7bg856g?hl=en
+  sourceType: community
+  checked: '2026-10-14'
+  note: >-
+    Прочитана первичная запись и просмотрена фотография двух женщин, работающих над одной композицией. Имена
+    художниц не сообщены. 2025 относится к цифровой записи фотографии. Видимая архитектурная поверхность и
+    процесс нанесения линий не дают точной рецептуры материалов и даты завершения росписи.
+- id: banglanatak-palghar-living-heritage
+  title: Living Heritage Trails of Palghar
+  publisher: Banglanatak / Google Arts & Culture
+  url: https://artsandculture.google.com/story/living-heritage-trails-of-palghar-banglanatak/zwUhIYx8QUgYuA?hl=en
+  sourceType: community
+  checked: '2026-10-14'
+  note: >-
+    Прочитан материал о Ганджаде, Бапугаоне и других местных практиках Пальгхара. Он поддерживает контекст
+    действующих художников и участия женщин, а не происхождение всех приёмов или единую дату начала варли.
+    Туристические и рекламные формулировки не использованы как художественные критерии.
