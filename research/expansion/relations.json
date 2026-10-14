@@ -1,0 +1,1075 @@
+{
+  "meta": {
+    "repository": "https://github.com/amchercashin/aesthetics-atlas",
+    "baselineCommit": "d3f619b3ca715386a1e271e193e3a5276440adb6",
+    "checked": "2026-10-14",
+    "baselineCards": 153,
+    "previousCandidates": 180,
+    "newCandidates": 377,
+    "totalCandidates": 557,
+    "previousBaselineCommit": "2808e826adc645ca0b7cc1068b43318c9ef990c8",
+    "authorStyleCandidates": 194,
+    "priorities": {
+      "P1": 118,
+      "P2": 418,
+      "R": 21
+    },
+    "completeness": "Расширенная исследовательская карта, не исчерпывающая перепись всех визуальных культур.",
+    "productionReadyCards": 0,
+    "baselineIncludesUnreviewedData": true,
+    "newKind": "author-style",
+    "taskScope": "Подготовка каталога и задания, без внедрения в production.",
+    "sourceRule": "Границы поддержки см. sources[].supports; research-route не является прочитанным источником."
+  },
+  "historicalCandidates": [
+    {
+      "fromId": "goryeo-celadon",
+      "toId": "buncheong",
+      "type": "evolved",
+      "status": "unverified",
+      "note": "S04 прямо описывает развитие пунчхон из селадона Корё. Повторно сверить формулировку готовых карточек.",
+      "sourceCandidates": [
+        "S04"
+      ],
+      "instruction": "Проверить направление и точный scope. Только после подтверждения добавить в parents целевой карточки."
+    },
+    {
+      "fromId": "academism",
+      "toId": "bengal-school",
+      "type": "reaction",
+      "status": "unverified",
+      "note": "S13 описывает отказ от европейских академических эстетических норм.",
+      "sourceCandidates": [
+        "S13"
+      ],
+      "instruction": "Проверить направление и точный scope. Только после подтверждения добавить в parents целевой карточки."
+    },
+    {
+      "fromId": "old-russian-icons",
+      "toId": "palekh-miniature",
+      "type": "influence",
+      "status": "unverified",
+      "note": "Обучение иконописцев и перенос приёмов в миниатюру; нужна история мастерской.",
+      "sourceCandidates": [],
+      "instruction": "Проверить направление и точный scope. Только после подтверждения добавить в parents целевой карточки."
+    },
+    {
+      "fromId": "old-russian-icons",
+      "toId": "mstyora-miniature",
+      "type": "influence",
+      "status": "unverified",
+      "note": "Иконописная подготовка отдельных мастеров; не вся Мстёра равна Палеху.",
+      "sourceCandidates": [],
+      "instruction": "Проверить направление и точный scope. Только после подтверждения добавить в parents целевой карточки."
+    },
+    {
+      "fromId": "old-russian-icons",
+      "toId": "kholui-miniature",
+      "type": "influence",
+      "status": "unverified",
+      "note": "Проверить истории холуйских мастерских.",
+      "sourceCandidates": [],
+      "instruction": "Проверить направление и точный scope. Только после подтверждения добавить в parents целевой карточки."
+    },
+    {
+      "fromId": "lubok",
+      "toId": "russian-neo-primitivism",
+      "type": "influence",
+      "status": "unverified",
+      "note": "Проверить тексты и произведения Гончаровой и Ларионова.",
+      "sourceCandidates": [],
+      "instruction": "Проверить направление и точный scope. Только после подтверждения добавить в parents целевой карточки."
+    },
+    {
+      "fromId": "old-russian-icons",
+      "toId": "russian-neo-primitivism",
+      "type": "influence",
+      "status": "unverified",
+      "note": "Уточнить, какие композиционные и пластические приёмы переосмыслены.",
+      "sourceCandidates": [],
+      "instruction": "Проверить направление и точный scope. Только после подтверждения добавить в parents целевой карточки."
+    },
+    {
+      "fromId": "russian-north-wood",
+      "toId": "russian-revival",
+      "type": "revival",
+      "status": "unverified",
+      "note": "Нужны конкретный проект и его прототип; не все направления русского стиля.",
+      "sourceCandidates": [],
+      "instruction": "Проверить направление и точный scope. Только после подтверждения добавить в parents целевой карточки."
+    },
+    {
+      "fromId": "russian-north-wood",
+      "toId": "neo-russian-style",
+      "type": "influence",
+      "status": "unverified",
+      "note": "Изучить переработку деревянной архитектуры в Абрамцеве.",
+      "sourceCandidates": [
+        "S02"
+      ],
+      "instruction": "Проверить направление и точный scope. Только после подтверждения добавить в parents целевой карточки."
+    },
+    {
+      "fromId": "socialist-realism",
+      "toId": "sots-art",
+      "type": "reaction",
+      "status": "unverified",
+      "note": "Подтвердить по авторским текстам Комара и Меламида и музейным каталогам.",
+      "sourceCandidates": [],
+      "instruction": "Проверить направление и точный scope. Только после подтверждения добавить в parents целевой карточки."
+    },
+    {
+      "fromId": "pop-art",
+      "toId": "sots-art",
+      "type": "influence",
+      "status": "unverified",
+      "note": "Отдельный источник на международную связь, не только формальное сходство.",
+      "sourceCandidates": [],
+      "instruction": "Проверить направление и точный scope. Только после подтверждения добавить в parents целевой карточки."
+    },
+    {
+      "fromId": "conceptual-art",
+      "toId": "moscow-conceptualism",
+      "type": "influence",
+      "status": "unverified",
+      "note": "Уточнить конкретный обмен и отличить локальную сцену от общей категории.",
+      "sourceCandidates": [],
+      "instruction": "Проверить направление и точный scope. Только после подтверждения добавить в parents целевой карточки."
+    },
+    {
+      "fromId": "socialist-realism",
+      "toId": "severe-style",
+      "type": "reaction",
+      "status": "unverified",
+      "note": "Проверить, что реакция на парадный канон не описывается как выход за всю систему.",
+      "sourceCandidates": [],
+      "instruction": "Проверить направление и точный scope. Только после подтверждения добавить в parents целевой карточки."
+    },
+    {
+      "fromId": "chinese-blue-white",
+      "toId": "iznik-ceramics",
+      "type": "influence",
+      "status": "unverified",
+      "note": "Проверить рецепцию конкретных китайских сосудов и местные преобразования.",
+      "sourceCandidates": [],
+      "instruction": "Проверить направление и точный scope. Только после подтверждения добавить в parents целевой карточки."
+    },
+    {
+      "fromId": "chinese-blue-white",
+      "toId": "chinoiserie",
+      "type": "influence",
+      "status": "unverified",
+      "note": "Подтвердить товарный и художественный обмен; не делать Китай потомком шинуазри.",
+      "sourceCandidates": [],
+      "instruction": "Проверить направление и точный scope. Только после подтверждения добавить в parents целевой карточки."
+    },
+    {
+      "fromId": "chinese-calligraphy",
+      "toId": "xieyi",
+      "type": "influence",
+      "status": "unverified",
+      "note": "Подтвердить по теории и авторскому корпусу; широкие категории могут потребовать context вместо parent.",
+      "sourceCandidates": [],
+      "instruction": "Проверить направление и точный scope. Только после подтверждения добавить в parents целевой карточки."
+    },
+    {
+      "fromId": "yamato-e",
+      "toId": "rinpa",
+      "type": "influence",
+      "status": "unverified",
+      "note": "Уточнить связи Сотацу и поздних мастеров с повествовательной живописью.",
+      "sourceCandidates": [],
+      "instruction": "Проверить направление и точный scope. Только после подтверждения добавить в parents целевой карточки."
+    },
+    {
+      "fromId": "mughal-miniature",
+      "toId": "bengal-school",
+      "type": "influence",
+      "status": "unverified",
+      "note": "Нужна конкретная история обращения Тагора к миниатюре.",
+      "sourceCandidates": [],
+      "instruction": "Проверить направление и точный scope. Только после подтверждения добавить в parents целевой карточки."
+    },
+    {
+      "fromId": "nihonga",
+      "toId": "bengal-school",
+      "type": "influence",
+      "status": "unverified",
+      "note": "Нужны документы встреч и обменов; не выводить из простого сходства техники.",
+      "sourceCandidates": [],
+      "instruction": "Проверить направление и точный scope. Только после подтверждения добавить в parents целевой карточки."
+    },
+    {
+      "fromId": "mughal-miniature",
+      "toId": "pakistani-neo-miniature",
+      "type": "influence",
+      "status": "unverified",
+      "note": "Проверить учебные традиции NCA и работы отдельных художников.",
+      "sourceCandidates": [],
+      "instruction": "Проверить направление и точный scope. Только после подтверждения добавить в parents целевой карточки."
+    },
+    {
+      "fromId": "persian-miniature",
+      "toId": "pakistani-neo-miniature",
+      "type": "influence",
+      "status": "unverified",
+      "note": "Уточнить прямое обращение к персидским образцам у выбранных авторов.",
+      "sourceCandidates": [],
+      "instruction": "Проверить направление и точный scope. Только после подтверждения добавить в parents целевой карточки."
+    },
+    {
+      "fromId": "wayang-visual-art",
+      "toId": "balinese-kamasan",
+      "type": "influence",
+      "status": "unverified",
+      "note": "Подтвердить перенос иконографии и условностей фигуры.",
+      "sourceCandidates": [
+        "S44"
+      ],
+      "instruction": "Проверить направление и точный scope. Только после подтверждения добавить в parents целевой карточки."
+    },
+    {
+      "fromId": "arabic-calligraphy",
+      "toId": "hurufiyya",
+      "type": "influence",
+      "status": "unverified",
+      "note": "Буква как материал модернизма; учитывать разные системы письма и локальные программы.",
+      "sourceCandidates": [],
+      "instruction": "Проверить направление и точный scope. Только после подтверждения добавить в parents целевой карточки."
+    },
+    {
+      "fromId": "arabic-calligraphy",
+      "toId": "saqqakhaneh",
+      "type": "influence",
+      "status": "unverified",
+      "note": "Проверить scope: персидская письменная и религиозная культура не сводится к арабскому языку.",
+      "sourceCandidates": [
+        "S19"
+      ],
+      "instruction": "Проверить направление и точный scope. Только после подтверждения добавить в parents целевой карточки."
+    },
+    {
+      "fromId": "uli-art",
+      "toId": "nsukka-school",
+      "type": "influence",
+      "status": "unverified",
+      "note": "S26 связывает Нсукку с uli; оригинал недоступен, пока не verified.",
+      "sourceCandidates": [
+        "S26"
+      ],
+      "instruction": "Проверить направление и точный scope. Только после подтверждения добавить в parents целевой карточки."
+    },
+    {
+      "fromId": "bauhaus",
+      "toId": "casablanca-school",
+      "type": "influence",
+      "status": "unverified",
+      "note": "Проверить педагогическую историю; не подменять местные основания европейской родословной.",
+      "sourceCandidates": [
+        "S37"
+      ],
+      "instruction": "Проверить направление и точный scope. Только после подтверждения добавить в parents целевой карточки."
+    },
+    {
+      "fromId": "graffiti-street-art",
+      "toId": "calligraffiti",
+      "type": "influence",
+      "status": "unverified",
+      "note": "Проверить авторские описания и разные линии практики.",
+      "sourceCandidates": [],
+      "instruction": "Проверить направление и точный scope. Только после подтверждения добавить в parents целевой карточки."
+    },
+    {
+      "fromId": "arabic-calligraphy",
+      "toId": "calligraffiti",
+      "type": "influence",
+      "status": "unverified",
+      "note": "Ограничить применимость теми авторами, которые работают с арабским письмом.",
+      "sourceCandidates": [],
+      "instruction": "Проверить направление и точный scope. Только после подтверждения добавить в parents целевой карточки."
+    },
+    {
+      "fromId": "constructivism",
+      "toId": "new-vision-photography",
+      "type": "influence",
+      "status": "unverified",
+      "note": "Проверить фотографию Родченко и локальную конструктивистскую программу.",
+      "sourceCandidates": [],
+      "instruction": "Проверить направление и точный scope. Только после подтверждения добавить в parents целевой карточки."
+    },
+    {
+      "fromId": "bauhaus",
+      "toId": "new-vision-photography",
+      "type": "influence",
+      "status": "unverified",
+      "note": "Проверить фотограммы и педагогические работы Мохой-Надя.",
+      "sourceCandidates": [],
+      "instruction": "Проверить направление и точный scope. Только после подтверждения добавить в parents целевой карточки."
+    },
+    {
+      "fromId": "minoan-art",
+      "toId": "mycenaean-art",
+      "type": "influence",
+      "status": "unverified",
+      "note": "Археологически подтверждённые контакты нужны для конкретного медиума.",
+      "sourceCandidates": [],
+      "instruction": "Проверить направление и точный scope. Только после подтверждения добавить в parents целевой карточки."
+    },
+    {
+      "fromId": "etruscan-art",
+      "toId": "ancient-rome",
+      "type": "influence",
+      "status": "unverified",
+      "note": "Конкретная архитектурная или скульптурная традиция, не тотальное происхождение.",
+      "sourceCandidates": [],
+      "instruction": "Проверить направление и точный scope. Только после подтверждения добавить в parents целевой карточки."
+    },
+    {
+      "fromId": "germanic-animal-style",
+      "toId": "viking-art",
+      "type": "influence",
+      "status": "unverified",
+      "note": "Нужны промежуточные скандинавские стили, не просто хронология.",
+      "sourceCandidates": [],
+      "instruction": "Проверить направление и точный scope. Только после подтверждения добавить в parents целевой карточки."
+    },
+    {
+      "fromId": "ndebele-murals",
+      "toId": "esther-mahlangu",
+      "type": "influence",
+      "status": "unverified",
+      "note": "Переосмысление настенной традиции в авторском корпусе; не равенство традиции и автора.",
+      "sourceCandidates": [
+        "N03"
+      ],
+      "instruction": "Проверить точный корпус, направление и источник; не импортировать как подтверждённую связь."
+    },
+    {
+      "fromId": "persian-miniature",
+      "toId": "shahzia-sikander",
+      "type": "influence",
+      "status": "unverified",
+      "note": "Проверить конкретные рукописные традиции, обучение и границы выбранного периода.",
+      "sourceCandidates": [
+        "N04"
+      ],
+      "instruction": "Проверить точный корпус, направление и источник; не импортировать как подтверждённую связь."
+    },
+    {
+      "fromId": "mughal-miniature",
+      "toId": "shahzia-sikander",
+      "type": "influence",
+      "status": "unverified",
+      "note": "Отделить документированную работу с традицией от общего визуального сходства.",
+      "sourceCandidates": [
+        "N04"
+      ],
+      "instruction": "Проверить точный корпус, направление и источник; не импортировать как подтверждённую связь."
+    },
+    {
+      "fromId": "graffiti-street-art",
+      "toId": "reko-rennie",
+      "type": "influence",
+      "status": "unverified",
+      "note": "NGV описывает городской и каллиграфический контекст; уточнить конкретные приёмы.",
+      "sourceCandidates": [
+        "N06"
+      ],
+      "instruction": "Проверить точный корпус, направление и источник; не импортировать как подтверждённую связь."
+    },
+    {
+      "fromId": "suprematism",
+      "toId": "zaha-hadid-architecture",
+      "type": "influence",
+      "status": "unverified",
+      "note": "Проверить графику раннего периода и авторские свидетельства; не распространять на все проекты.",
+      "sourceCandidates": [],
+      "instruction": "Проверить точный корпус, направление и источник; не импортировать как подтверждённую связь."
+    },
+    {
+      "fromId": "old-russian-icons",
+      "toId": "bilibin-illustration",
+      "type": "influence",
+      "status": "unverified",
+      "note": "Нужен источник о конкретных заимствованиях; сходство рамок не доказывает путь влияния.",
+      "sourceCandidates": [
+        "N01"
+      ],
+      "instruction": "Проверить точный корпус, направление и источник; не импортировать как подтверждённую связь."
+    },
+    {
+      "fromId": "lubok",
+      "toId": "bilibin-illustration",
+      "type": "influence",
+      "status": "unverified",
+      "note": "Проверить приёмы книжной графики и конкретный корпус.",
+      "sourceCandidates": [
+        "N01"
+      ],
+      "instruction": "Проверить точный корпус, направление и источник; не импортировать как подтверждённую связь."
+    },
+    {
+      "fromId": "neo-russian-style",
+      "toId": "bilibin-illustration",
+      "type": "influence",
+      "status": "unverified",
+      "note": "Возможны общий контекст или принадлежность вместо направленного влияния.",
+      "sourceCandidates": [
+        "N01"
+      ],
+      "instruction": "Проверить точный корпус, направление и источник; не импортировать как подтверждённую связь."
+    },
+    {
+      "fromId": "art-nouveau",
+      "toId": "yoshitaka-amano-illustration",
+      "type": "influence",
+      "status": "unverified",
+      "note": "Кандидат по сопоставлению; требуется независимое подтверждение заимствования.",
+      "sourceCandidates": [],
+      "instruction": "Проверить точный корпус, направление и источник; не импортировать как подтверждённую связь."
+    },
+    {
+      "fromId": "cubism",
+      "toId": "precisionism",
+      "type": "influence",
+      "status": "unverified",
+      "note": "Нужен источник о конкретных представителях и формальных преобразованиях.",
+      "sourceCandidates": [],
+      "instruction": "Проверить точный корпус, направление и источник; не импортировать как подтверждённую связь."
+    },
+    {
+      "fromId": "indonesian-batik",
+      "toId": "pacita-abad",
+      "type": "influence",
+      "status": "unverified",
+      "note": "Walker упоминает знакомство с батиком; подтвердить, к каким сериям это относится.",
+      "sourceCandidates": [
+        "N13"
+      ],
+      "instruction": "Проверить точный корпус, направление и источник; не импортировать как подтверждённую связь."
+    },
+    {
+      "fromId": "bauhaus",
+      "toId": "tropical-modernism",
+      "type": "influence",
+      "status": "unverified",
+      "note": "Конкретизировать перенос модернистских принципов и местные преобразования, не сводить историю к европейскому импорту.",
+      "sourceCandidates": [
+        "N19"
+      ],
+      "instruction": "Проверить точный корпус, направление и источник; не импортировать как подтверждённую связь."
+    }
+  ],
+  "comparisonCandidates": [
+    {
+      "a": "lubok",
+      "b": "nianhua",
+      "note": "Народная печатная картинка: надпись, яркая плоскость, бытовые и благопожелательные сюжеты.",
+      "status": "editorial-proposal",
+      "genealogy": false
+    },
+    {
+      "a": "lubok",
+      "b": "dong-ho-prints",
+      "note": "Общий формат массового печатного изображения при разных культурных функциях.",
+      "status": "editorial-proposal",
+      "genealogy": false
+    },
+    {
+      "a": "lubok",
+      "b": "cordel-woodcuts",
+      "note": "Печатная графика и повествовательное сопровождение; независимые локальные истории.",
+      "status": "editorial-proposal",
+      "genealogy": false
+    },
+    {
+      "a": "gorodets-painting",
+      "b": "petrykivka",
+      "note": "Растительный декоративный язык; различия композиции и мазка.",
+      "status": "editorial-proposal",
+      "genealogy": false
+    },
+    {
+      "a": "khokhloma",
+      "b": "mezen-painting",
+      "note": "Ограниченная палитра и разные способы организации поверхности.",
+      "status": "editorial-proposal",
+      "genealogy": false
+    },
+    {
+      "a": "palekh-miniature",
+      "b": "fedoskino-miniature",
+      "note": "Лаковый предмет, но разные живописные материалы и построение фигуры.",
+      "status": "editorial-proposal",
+      "genealogy": false
+    },
+    {
+      "a": "gzhel-ceramics",
+      "b": "chinese-blue-white",
+      "note": "Кобальтовый рисунок на белой керамике; история заимствований отдельно.",
+      "status": "editorial-proposal",
+      "genealogy": false
+    },
+    {
+      "a": "central-asian-ikat",
+      "b": "indonesian-batik",
+      "note": "Орнаментальная ткань: окрашивание нитей против резервирования готового полотна.",
+      "status": "editorial-proposal",
+      "genealogy": false
+    },
+    {
+      "a": "adire",
+      "b": "indonesian-batik",
+      "note": "Разные локальные способы резервного окрашивания.",
+      "status": "editorial-proposal",
+      "genealogy": false
+    },
+    {
+      "a": "pakistani-truck-art",
+      "b": "matatu-art",
+      "note": "Декор транспортного средства как публичный носитель изображений.",
+      "status": "editorial-proposal",
+      "genealogy": false
+    },
+    {
+      "a": "pakistani-truck-art",
+      "b": "dhaka-rickshaw-art",
+      "note": "Родственные функции, но разные ремесленные и городские истории.",
+      "status": "editorial-proposal",
+      "genealogy": false
+    },
+    {
+      "a": "chicha-posters",
+      "b": "psychedelic-art",
+      "note": "Интенсивный цвет и выразительная типографика; происхождение не следует из сходства.",
+      "status": "editorial-proposal",
+      "genealogy": false
+    },
+    {
+      "a": "shamate",
+      "b": "punk-graphics",
+      "note": "Субкультурная демонстративность; одинаковая функция не доказывает прямое наследование.",
+      "status": "editorial-proposal",
+      "genealogy": false
+    },
+    {
+      "a": "dansaekhwa",
+      "b": "minimalism",
+      "note": "Сдержанный цвет при разных исторических и материальных программах.",
+      "status": "editorial-proposal",
+      "genealogy": false
+    },
+    {
+      "a": "mono-ha",
+      "b": "arte-povera",
+      "note": "Природные и промышленные материалы, разные сцены и аргументы.",
+      "status": "editorial-proposal",
+      "genealogy": false
+    },
+    {
+      "a": "saqqakhaneh",
+      "b": "pop-art",
+      "note": "Переосмысление массовых образов, различие локальных источников.",
+      "status": "editorial-proposal",
+      "genealogy": false
+    },
+    {
+      "a": "chinese-political-pop",
+      "b": "sots-art",
+      "note": "Сопоставление способов обращения с политическим знаком.",
+      "status": "editorial-proposal",
+      "genealogy": false
+    },
+    {
+      "a": "maori-whakairo",
+      "b": "celtic-art",
+      "note": "Криволинейный орнамент без утверждения исторической связи.",
+      "status": "editorial-proposal",
+      "genealogy": false
+    },
+    {
+      "a": "samoan-siapo",
+      "b": "tongan-ngatu",
+      "note": "Лубяной материал; различия в изготовлении, композиции и применении.",
+      "status": "editorial-proposal",
+      "genealogy": false
+    },
+    {
+      "a": "niuean-hiapo",
+      "b": "fijian-masi",
+      "note": "Лубяной материал и разные локальные графические системы.",
+      "status": "editorial-proposal",
+      "genealogy": false
+    },
+    {
+      "a": "rapa-nui-sculpture",
+      "b": "megaliths",
+      "note": "Монументальность и камень без общей генеалогии.",
+      "status": "editorial-proposal",
+      "genealogy": false
+    },
+    {
+      "a": "shipibo-kene",
+      "b": "op-art",
+      "note": "Плотная линейная организация; смысл и история принципиально самостоятельны.",
+      "status": "editorial-proposal",
+      "genealogy": false
+    },
+    {
+      "a": "soviet-modernism",
+      "b": "post-soviet-doomer",
+      "note": "Архитектурная среда и её поздняя фотографическая рецепция; это не наследование движения.",
+      "status": "editorial-proposal",
+      "genealogy": false
+    },
+    {
+      "a": "bilibin-illustration",
+      "b": "yuri-vasnetsov-illustration",
+      "note": "Два разных способа строить сказочную книгу: контурная рамка и живописная декоративность.",
+      "genealogy": false,
+      "status": "unverified"
+    },
+    {
+      "a": "bilibin-illustration",
+      "b": "kinuko-craft-illustration",
+      "note": "Книжная фантастика и орнамент; проверить различия материала и композиции.",
+      "genealogy": false,
+      "status": "unverified"
+    },
+    {
+      "a": "zverev-portrait-graphics",
+      "b": "schiele-drawing",
+      "note": "Экспрессивная фигура и линия; визуальное сопоставление не устанавливает влияние.",
+      "genealogy": false,
+      "status": "unverified"
+    },
+    {
+      "a": "khokhloma",
+      "b": "ndebele-murals",
+      "note": "Разные культурные и материальные системы декоративной поверхности.",
+      "genealogy": false,
+      "status": "unverified"
+    },
+    {
+      "a": "esther-mahlangu",
+      "b": "reko-rennie",
+      "note": "Разные авторские преобразования локальных орнаментальных практик; общей генеалогии не предполагается.",
+      "genealogy": false,
+      "status": "unverified"
+    },
+    {
+      "a": "el-anatsui-metal-textiles",
+      "b": "pacita-abad",
+      "note": "Между живописью, поверхностью и текстильной логикой; материалы различны.",
+      "genealogy": false,
+      "status": "unverified"
+    },
+    {
+      "a": "hokusai-landscape-prints",
+      "b": "hiroshige-landscape-prints",
+      "note": "Различия в масштабе, композиции и атмосферности пейзажа.",
+      "genealogy": false,
+      "status": "unverified"
+    },
+    {
+      "a": "jamini-roy-painting",
+      "b": "bengal-patachitra",
+      "note": "Сначала сравнить формальные признаки, затем отдельно исследовать исторические контакты.",
+      "genealogy": false,
+      "status": "unverified"
+    },
+    {
+      "a": "shahzia-sikander",
+      "b": "imran-qureshi",
+      "note": "Разные преобразования миниатюрной традиции.",
+      "genealogy": false,
+      "status": "unverified"
+    },
+    {
+      "a": "palauan-bai-painting",
+      "b": "toraja-tongkonan",
+      "note": "Повествовательный декор общественных и жилых сооружений в разных культурах.",
+      "genealogy": false,
+      "status": "unverified"
+    },
+    {
+      "a": "tahitian-tifaifai",
+      "b": "cook-islands-tivaevae",
+      "note": "Сравнить историю техник и локальные различия, не выводить одну традицию из другой без источника.",
+      "genealogy": false,
+      "status": "unverified"
+    },
+    {
+      "a": "carrolup-school",
+      "b": "hermannsburg-school",
+      "note": "Разные исторические и институциональные условия пейзажных практик.",
+      "genealogy": false,
+      "status": "unverified"
+    },
+    {
+      "a": "emily-kngwarray",
+      "b": "agnes-martin-grids",
+      "note": "Совпадение отдельных форм не равно одинаковому культурному смыслу или влиянию.",
+      "genealogy": false,
+      "status": "unverified"
+    },
+    {
+      "a": "yoshitaka-amano-illustration",
+      "b": "moebius-graphic-worlds",
+      "note": "Фантастическая среда и контур; проверить различия композиции и цвета.",
+      "genealogy": false,
+      "status": "unverified"
+    },
+    {
+      "a": "norshtein-animation",
+      "b": "reiniger-animation",
+      "note": "Разная работа со слоями и силуэтом в плоской покадровой анимации.",
+      "genealogy": false,
+      "status": "unverified"
+    },
+    {
+      "a": "mary-blair-color-design",
+      "b": "eyvind-earle-backgrounds",
+      "note": "Два авторских языка внутри коллективного анимационного производства.",
+      "genealogy": false,
+      "status": "unverified"
+    },
+    {
+      "a": "rei-kawakubo",
+      "b": "iris-van-herpen",
+      "note": "Различные способы преобразования тела и силуэта.",
+      "genealogy": false,
+      "status": "unverified"
+    },
+    {
+      "a": "polissky-land-art",
+      "b": "bodys-isek-kingelez",
+      "note": "Воображаемое сооружение: ландшафтный масштаб и модель.",
+      "genealogy": false,
+      "status": "unverified"
+    },
+    {
+      "a": "aes-f-digital-tableaux",
+      "b": "shirin-neshat-photo",
+      "note": "Постановка и многофигурная композиция; темы и технологии проверять отдельно.",
+      "genealogy": false,
+      "status": "unverified"
+    },
+    {
+      "a": "refik-anadol-data",
+      "b": "ryoji-ikeda",
+      "note": "Разные визуальные способы представления данных; технология не определяет единый стиль.",
+      "genealogy": false,
+      "status": "unverified"
+    },
+    {
+      "a": "pokras-lampas-calligraphy",
+      "b": "reza-abedini-posters",
+      "note": "Сравнивать графическую организацию письма при сохранении различий языков и контекстов.",
+      "genealogy": false,
+      "status": "unverified"
+    },
+    {
+      "a": "warhol-serial-images",
+      "b": "lichtenstein-comic-painting",
+      "note": "Разные способы переработки тиражного изображения внутри поп-арта.",
+      "genealogy": false,
+      "status": "unverified"
+    },
+    {
+      "a": "van-gogh-late-painting",
+      "b": "saryan-color",
+      "note": "Выразительность цвета и мазка; историческое влияние требует отдельного доказательства.",
+      "genealogy": false,
+      "status": "unverified"
+    },
+    {
+      "a": "prymachenko-imagery",
+      "b": "jangarh-singh-shyam",
+      "note": "Авторские образные системы; не смешивать разные сообщества под ярлыком наивного искусства.",
+      "genealogy": false,
+      "status": "unverified"
+    },
+    {
+      "a": "rosemaling",
+      "b": "gorodets-painting",
+      "note": "Различные локальные системы цветочного декоративного рисунка.",
+      "genealogy": false,
+      "status": "unverified"
+    }
+  ],
+  "contextCandidates": [
+    {
+      "fromId": "bilibin-illustration",
+      "toId": "mir-iskusstva",
+      "type": "context-member",
+      "status": "unverified",
+      "note": "Предложение редакционного размещения; уточнить период и применимость к выбранному корпусу.",
+      "instruction": "Контекстная связь не является parents/influence. Проверить принадлежность по источнику."
+    },
+    {
+      "fromId": "bakst-stage-design",
+      "toId": "mir-iskusstva",
+      "type": "context-member",
+      "status": "unverified",
+      "note": "Предложение редакционного размещения; уточнить период и применимость к выбранному корпусу.",
+      "instruction": "Контекстная связь не является parents/influence. Проверить принадлежность по источнику."
+    },
+    {
+      "fromId": "zverev-portrait-graphics",
+      "toId": "russian-nonconformism",
+      "type": "context-member",
+      "status": "unverified",
+      "note": "Предложение редакционного размещения; уточнить период и применимость к выбранному корпусу.",
+      "instruction": "Контекстная связь не является parents/influence. Проверить принадлежность по источнику."
+    },
+    {
+      "fromId": "vrubel-painting",
+      "toId": "symbolism",
+      "type": "context-member",
+      "status": "unverified",
+      "note": "Предложение редакционного размещения; уточнить период и применимость к выбранному корпусу.",
+      "instruction": "Контекстная связь не является parents/influence. Проверить принадлежность по источнику."
+    },
+    {
+      "fromId": "hilma-af-klint",
+      "toId": "abstract-art",
+      "type": "context-member",
+      "status": "unverified",
+      "note": "Предложение редакционного размещения; уточнить период и применимость к выбранному корпусу.",
+      "instruction": "Контекстная связь не является parents/influence. Проверить принадлежность по источнику."
+    },
+    {
+      "fromId": "van-gogh-late-painting",
+      "toId": "post-impressionism",
+      "type": "context-member",
+      "status": "unverified",
+      "note": "Предложение редакционного размещения; уточнить период и применимость к выбранному корпусу.",
+      "instruction": "Контекстная связь не является parents/influence. Проверить принадлежность по источнику."
+    },
+    {
+      "fromId": "matisse-cut-outs",
+      "toId": "collage",
+      "type": "uses-technique",
+      "status": "unverified",
+      "note": "Предложение редакционного размещения; уточнить период и применимость к выбранному корпусу.",
+      "instruction": "Контекстная связь не является parents/influence. Проверить принадлежность по источнику."
+    },
+    {
+      "fromId": "hokusai-landscape-prints",
+      "toId": "ukiyo-e",
+      "type": "context-member",
+      "status": "unverified",
+      "note": "Предложение редакционного размещения; уточнить период и применимость к выбранному корпусу.",
+      "instruction": "Контекстная связь не является parents/influence. Проверить принадлежность по источнику."
+    },
+    {
+      "fromId": "hiroshige-landscape-prints",
+      "toId": "ukiyo-e",
+      "type": "context-member",
+      "status": "unverified",
+      "note": "Предложение редакционного размещения; уточнить период и применимость к выбранному корпусу.",
+      "instruction": "Контекстная связь не является parents/influence. Проверить принадлежность по источнику."
+    },
+    {
+      "fromId": "beardsley-graphics",
+      "toId": "art-nouveau",
+      "type": "context-member",
+      "status": "unverified",
+      "note": "Предложение редакционного размещения; уточнить период и применимость к выбранному корпусу.",
+      "instruction": "Контекстная связь не является parents/influence. Проверить принадлежность по источнику."
+    },
+    {
+      "fromId": "jamini-roy-painting",
+      "toId": "bengal-school",
+      "type": "context-overlap",
+      "status": "unverified",
+      "note": "Предложение редакционного размещения; уточнить период и применимость к выбранному корпусу.",
+      "instruction": "Контекстная связь не является parents/influence. Проверить принадлежность по источнику."
+    },
+    {
+      "fromId": "shahzia-sikander",
+      "toId": "pakistani-neo-miniature",
+      "type": "context-member",
+      "status": "unverified",
+      "note": "Предложение редакционного размещения; уточнить период и применимость к выбранному корпусу.",
+      "instruction": "Контекстная связь не является parents/influence. Проверить принадлежность по источнику."
+    },
+    {
+      "fromId": "jangarh-singh-shyam",
+      "toId": "gond-pardhan",
+      "type": "context-member",
+      "status": "unverified",
+      "note": "Предложение редакционного размещения; уточнить период и применимость к выбранному корпусу.",
+      "instruction": "Контекстная связь не является parents/influence. Проверить принадлежность по источнику."
+    },
+    {
+      "fromId": "cheong-soo-pieng",
+      "toId": "nanyang-art",
+      "type": "context-member",
+      "status": "unverified",
+      "note": "Предложение редакционного размещения; уточнить период и применимость к выбранному корпусу.",
+      "instruction": "Контекстная связь не является parents/influence. Проверить принадлежность по источнику."
+    },
+    {
+      "fromId": "georgette-chen",
+      "toId": "nanyang-art",
+      "type": "context-member",
+      "status": "unverified",
+      "note": "Предложение редакционного размещения; уточнить период и применимость к выбранному корпусу.",
+      "instruction": "Контекстная связь не является parents/influence. Проверить принадлежность по источнику."
+    },
+    {
+      "fromId": "ibrahim-el-salahi",
+      "toId": "khartoum-school",
+      "type": "context-member",
+      "status": "unverified",
+      "note": "Предложение редакционного размещения; уточнить период и применимость к выбранному корпусу.",
+      "instruction": "Контекстная связь не является parents/influence. Проверить принадлежность по источнику."
+    },
+    {
+      "fromId": "emily-kngwarray",
+      "toId": "utopia-painting",
+      "type": "context-member",
+      "status": "unverified",
+      "note": "Предложение редакционного размещения; уточнить период и применимость к выбранному корпусу.",
+      "instruction": "Контекстная связь не является parents/influence. Проверить принадлежность по источнику."
+    },
+    {
+      "fromId": "alick-tipoti",
+      "toId": "torres-strait-printmaking",
+      "type": "context-member",
+      "status": "unverified",
+      "note": "Предложение редакционного размещения; уточнить период и применимость к выбранному корпусу.",
+      "instruction": "Контекстная связь не является parents/influence. Проверить принадлежность по источнику."
+    },
+    {
+      "fromId": "albert-namatjira",
+      "toId": "hermannsburg-school",
+      "type": "context-member",
+      "status": "unverified",
+      "note": "Предложение редакционного размещения; уточнить период и применимость к выбранному корпусу.",
+      "instruction": "Контекстная связь не является parents/influence. Проверить принадлежность по источнику."
+    },
+    {
+      "fromId": "norval-morrisseau",
+      "toId": "woodland-school",
+      "type": "context-member",
+      "status": "unverified",
+      "note": "Предложение редакционного размещения; уточнить период и применимость к выбранному корпусу.",
+      "instruction": "Контекстная связь не является parents/influence. Проверить принадлежность по источнику."
+    },
+    {
+      "fromId": "kenojuak-ashevak",
+      "toId": "inuit-printmaking",
+      "type": "context-member",
+      "status": "unverified",
+      "note": "Предложение редакционного размещения; уточнить период и применимость к выбранному корпусу.",
+      "instruction": "Контекстная связь не является parents/influence. Проверить принадлежность по источнику."
+    },
+    {
+      "fromId": "tarsila-do-amaral",
+      "toId": "brazilian-anthropophagy",
+      "type": "context-member",
+      "status": "unverified",
+      "note": "Предложение редакционного размещения; уточнить период и применимость к выбранному корпусу.",
+      "instruction": "Контекстная связь не является parents/influence. Проверить принадлежность по источнику."
+    },
+    {
+      "fromId": "warhol-serial-images",
+      "toId": "pop-art",
+      "type": "context-member",
+      "status": "unverified",
+      "note": "Предложение редакционного размещения; уточнить период и применимость к выбранному корпусу.",
+      "instruction": "Контекстная связь не является parents/influence. Проверить принадлежность по источнику."
+    },
+    {
+      "fromId": "lichtenstein-comic-painting",
+      "toId": "pop-art",
+      "type": "context-member",
+      "status": "unverified",
+      "note": "Предложение редакционного размещения; уточнить период и применимость к выбранному корпусу.",
+      "instruction": "Контекстная связь не является parents/influence. Проверить принадлежность по источнику."
+    },
+    {
+      "fromId": "rei-kawakubo",
+      "toId": "deconstructive-fashion",
+      "type": "context-overlap",
+      "status": "unverified",
+      "note": "Предложение редакционного размещения; уточнить период и применимость к выбранному корпусу.",
+      "instruction": "Контекстная связь не является parents/influence. Проверить принадлежность по источнику."
+    },
+    {
+      "fromId": "reiniger-animation",
+      "toId": "silhouette-animation",
+      "type": "uses-technique",
+      "status": "unverified",
+      "note": "Предложение редакционного размещения; уточнить период и применимость к выбранному корпусу.",
+      "instruction": "Контекстная связь не является parents/influence. Проверить принадлежность по источнику."
+    },
+    {
+      "fromId": "norshtein-animation",
+      "toId": "stop-motion-animation",
+      "type": "uses-technique",
+      "status": "unverified",
+      "note": "Предложение редакционного размещения; уточнить период и применимость к выбранному корпусу.",
+      "instruction": "Контекстная связь не является parents/influence. Проверить принадлежность по источнику."
+    },
+    {
+      "fromId": "miyazaki-visual-worlds",
+      "toId": "japanese-animation",
+      "type": "context-member",
+      "status": "unverified",
+      "note": "Предложение редакционного размещения; уточнить период и применимость к выбранному корпусу.",
+      "instruction": "Контекстная связь не является parents/influence. Проверить принадлежность по источнику."
+    },
+    {
+      "fromId": "refik-anadol-data",
+      "toId": "computer-art",
+      "type": "context-member",
+      "status": "unverified",
+      "note": "Предложение редакционного размещения; уточнить период и применимость к выбранному корпусу.",
+      "instruction": "Контекстная связь не является parents/influence. Проверить принадлежность по источнику."
+    },
+    {
+      "fromId": "vera-molnar",
+      "toId": "computer-art",
+      "type": "context-member",
+      "status": "unverified",
+      "note": "Предложение редакционного размещения; уточнить период и применимость к выбранному корпусу.",
+      "instruction": "Контекстная связь не является parents/influence. Проверить принадлежность по источнику."
+    },
+    {
+      "fromId": "banksy-stencils",
+      "toId": "stencil-street-art",
+      "type": "uses-technique",
+      "status": "unverified",
+      "note": "Предложение редакционного размещения; уточнить период и применимость к выбранному корпусу.",
+      "instruction": "Контекстная связь не является parents/influence. Проверить принадлежность по источнику."
+    },
+    {
+      "fromId": "polissky-land-art",
+      "toId": "land-art",
+      "type": "context-member",
+      "status": "unverified",
+      "note": "Предложение редакционного размещения; уточнить период и применимость к выбранному корпусу.",
+      "instruction": "Контекстная связь не является parents/influence. Проверить принадлежность по источнику."
+    },
+    {
+      "fromId": "aes-f-digital-tableaux",
+      "toId": "staged-photography",
+      "type": "uses-technique",
+      "status": "unverified",
+      "note": "Предложение редакционного размещения; уточнить период и применимость к выбранному корпусу.",
+      "instruction": "Контекстная связь не является parents/influence. Проверить принадлежность по источнику."
+    },
+    {
+      "fromId": "favorsky-wood-engraving",
+      "toId": "wood-engraving",
+      "type": "uses-technique",
+      "status": "unverified",
+      "note": "Предложение редакционного размещения; уточнить период и применимость к выбранному корпусу.",
+      "instruction": "Контекстная связь не является parents/influence. Проверить принадлежность по источнику."
+    }
+  ]
+}
