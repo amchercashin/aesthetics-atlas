@@ -5,6 +5,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import yaml from 'js-yaml';
+import { validateNebulae, resolveNebulae } from './lib/nebulae.mjs';
 import { validate, ymd } from './lib/validate.mjs';
 import { buildRecord, childrenOf, comparisonsOf } from './lib/record.mjs';
 import { resolveFiles, resolveWiki, commonsCategories, commonsCategoriesExist, saveCache } from './lib/wikimedia.mjs';
@@ -18,6 +19,7 @@ const readYaml = (p) => yaml.load(fs.readFileSync(p, 'utf8'));
 const eras = readYaml(path.join(ROOT, 'content/eras.yaml'));
 const resources = readYaml(path.join(ROOT, 'content/resources.yaml')) ?? [];
 const sources = readYaml(path.join(ROOT, 'content/sources.yaml')) ?? [];
+const nebulaDoc = readYaml(path.join(ROOT, 'content/nebulae.yaml')) ?? { nebulae: [], free: [] };
 const styleDir = path.join(ROOT, 'content/styles');
 const styles = fs.readdirSync(styleDir).filter((f) => f.endsWith('.yaml')).sort()
   .flatMap((f) => (readYaml(path.join(styleDir, f)) ?? []).map((s) => ({ ...s, _file: f })));
@@ -26,6 +28,8 @@ console.log(`Loaded ${styles.length} styles, ${eras.length} eras, ${sources.leng
 
 // 1. Структура и граф
 const { errors, warnings } = validate(styles, eras, sources);
+const nb = validateNebulae(nebulaDoc, styles);
+errors.push(...nb.errors); warnings.push(...nb.warnings);
 
 // 2. Картинки
 const fileRefs = styles.flatMap((s) => [s.example?.file, ...(s.gallery ?? []).map((g) => g.file)]).filter(Boolean);
@@ -103,6 +107,8 @@ const out = styles.map((s) => {
 });
 out.sort((a, b) => a.start - b.start || a.tier - b.tier || a.name.localeCompare(b.name, 'ru'));
 out.forEach((s, i) => { s.order = i; });
+const { nebulae, byStyle } = resolveNebulae(nebulaDoc, out);
+for (const s of out) { const a = byStyle.get(s.id); s.nebula = a?.nebula ?? null; s.part = a?.part ?? null; }
 
 saveCache();
 
@@ -126,6 +132,7 @@ const atlas = {
   builtAt: new Date().toISOString().slice(0, 10),
   eras: eras.map((e) => ({ ...e, intro: String(e.intro ?? '').trim() })),
   resources,
+  nebulae,
   sources: sources.map(({ id, title, url, publisher, sourceType, published, checked, note }) => ({
     id, title, url, publisher: publisher ?? null, sourceType, published: ymd(published),
     checked: ymd(checked), note: note ?? null,
