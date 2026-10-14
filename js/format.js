@@ -35,6 +35,7 @@ export const KIND = {
   'design-system': 'Дизайн-подход',
   'internet-aesthetic': 'Интернет-эстетика',
   trend: 'Тренд',
+  'author-style': 'Авторский визуальный язык',
 };
 export const KIND_DESC = {
   overview: 'обзор цивилизации, региона или эпохи, объединяющий несколько самостоятельных традиций',
@@ -46,6 +47,7 @@ export const KIND_DESC = {
   'design-system': 'дизайн-подход или система интерфейса',
   'internet-aesthetic': 'эстетика, сложившаяся и названная в интернет-сообществах',
   trend: 'короткая волна моды, рекламы и соцсетей',
+  'author-style': 'различимый язык ограниченного корпуса работ автора, мастерской или коллектива',
 };
 // Семейства для фильтра каталога: история искусства и дизайна, техники, интернет-тренды.
 export const KIND_FAMILY = {
@@ -53,7 +55,15 @@ export const KIND_FAMILY = {
   movements: { label: 'Движения и школы', kinds: ['movement', 'school'] },
   methods: { label: 'Техники и дизайн-подходы', kinds: ['technique', 'design-system'] },
   online: { label: 'Интернет-эстетики и тренды', kinds: ['internet-aesthetic', 'trend'] },
+  authors: { label: 'Авторские языки', kinds: ['author-style'] },
 };
+export const CONTEXT = {
+  'member-of': { label: 'школа или среда', out: 'В контексте', in: 'Практика в этом контексте' },
+  'uses-technique': { label: 'применение техники', out: 'Применяет', in: 'Техника в практике' },
+  'related-context': { label: 'культурный контекст', out: 'Связанная практика', in: 'Связанная практика' },
+};
+export const LABEL = { historical: 'Историческое название', 'self-designation': 'Самоназвание', 'editorial-scope-title': 'Редакционное название выбранного корпуса' };
+export const MATURITY = { established: 'Сложившаяся практика', emerging: 'Формирующаяся практика', contested: 'Границы практики обсуждаются' };
 export const DATE_KIND = {
   archaeological: 'по археологическим датировкам',
   period: 'периодизация историков',

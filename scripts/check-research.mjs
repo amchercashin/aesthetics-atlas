@@ -17,8 +17,9 @@ const ids = new Set(catalog.items.map((item) => item.id));
 const production = new Map(cards.map((card) => [card.id, card]));
 const known = new Set([...ids, ...production.keys()]);
 const sourceIds = new Set(sources.map((source) => source.id));
+const cardSourceIds = new Set(yaml.load(fs.readFileSync(path.join(root, 'content/sources.yaml'), 'utf8')).map((source) => source.id));
 const kinds = new Set(['overview', 'tradition', 'period', 'movement', 'school', 'technique', 'design-system', 'internet-aesthetic', 'trend', 'author-style']);
-const decisions = new Set(['candidate', 'published', 'merged', 'deferred', 'rejected']);
+const decisions = new Set(['candidate', 'prepared', 'published', 'merged', 'deferred', 'rejected']);
 const decisionCounts = {};
 
 check(ids.size === catalog.items.length, 'Duplicate candidate IDs');
@@ -38,9 +39,11 @@ for (const item of catalog.items) {
   const decision = item.admissionDecision;
   check(decisions.has(decision), `${at} Unknown admission decision`);
   decisionCounts[decision] = (decisionCounts[decision] ?? 0) + 1;
-  if (decision === 'published' || decision === 'merged') {
+  if (['prepared', 'published', 'merged'].includes(decision)) {
     check(production.has(item.productionCardId), `${at} Missing productionCardId`);
     check(Boolean(item.decisionNote && /^\d{4}-\d{2}-\d{2}$/.test(item.decisionDate ?? '')), `${at} Decision needs reason and date`);
+    check(Array.isArray(item.verificationSources) && item.verificationSources.length > 0, `${at} Decision needs checked card sources`);
+    for (const id of item.verificationSources ?? []) check(cardSourceIds.has(id), `${at} Unknown verification source ${id}`);
   } else if (decision === 'candidate') {
     check(!production.has(item.id), `${at} ID now exists in production: record publication or merge explicitly`);
     check(item.reviewStatus === 'proposal-not-publishable', `${at} Candidate must not claim publication readiness`);

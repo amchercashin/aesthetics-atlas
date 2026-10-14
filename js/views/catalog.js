@@ -1,8 +1,8 @@
 // Каталог: «шпалерная» сетка работ (строки выравниваются по ширине), фильтры по областям и эпохам.
 import { html, mount } from '../html.js';
-import { fmtDates, DOMAIN, KIND, KIND_FAMILY, plural } from '../format.js?v=audit';
-import { frame, markLoaded } from '../ui/image.js?v=audit-p1p2';
-import { footer } from '../ui/common.js?v=audit-p1p2';
+import { fmtDates, DOMAIN, KIND, KIND_FAMILY, plural } from '../format.js?v=author-pilot';
+import { frame, markLoaded } from '../ui/image.js?v=author-pilot';
+import { footer } from '../ui/common.js?v=author-pilot';
 import { replaceParams } from '../router.js';
 
 // Карточка попадает в семейство по основному типу (первому в списке kind).
@@ -67,7 +67,7 @@ export default {
       mount(grid, html`${list.map((s) => {
         const ar = clampAr(s.example.img);
         return html`<a class="tile" href="#/s/${s.id}" style="--ar:${ar.toFixed(3)}">
-          ${frame(s.example.img, s.palette, { ratio: ar.toFixed(3), sizes: `${Math.round(ar * 240)}px`, alt: '', size: ar > 1.3 ? 960 : 500 })}
+          ${frame(s.example.img, s.palette, { ratio: ar.toFixed(3), sizes: `${Math.round(ar * 240)}px`, alt: '', size: ar > 1.3 ? 960 : 500, note: s.example.external ? 'Репродукция — у источника' : '' })}
           <span class="tile-cap"><span class="swatch" style="--c:var(--era-${s.era})"></span><span class="tile-name">${s.name}</span><span class="tile-dates">${s.kind[0] ? `${KIND[s.kind[0]]}, ` : ''}${fmtDates(s)}</span></span>
         </a>`;
       })}`);

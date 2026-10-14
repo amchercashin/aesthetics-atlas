@@ -5,14 +5,17 @@ import { isLocalAsset } from './local-images.mjs';
 export const DOMAINS = ['art', 'architecture', 'design', 'internet'];
 export const RELATIONS = ['evolved', 'influence', 'reaction', 'revival'];
 export const REL_STATUS = ['verified', 'unverified'];
-export const KINDS = ['overview', 'tradition', 'period', 'movement', 'school', 'technique', 'design-system', 'internet-aesthetic', 'trend'];
+export const KINDS = ['overview', 'tradition', 'period', 'movement', 'school', 'technique', 'design-system', 'internet-aesthetic', 'trend', 'author-style'];
+export const CONTEXT_TYPES = ['member-of', 'uses-technique', 'related-context'];
+export const LABEL_STATUS = ['historical', 'self-designation', 'editorial-scope-title'];
+export const MATURITY = ['established', 'emerging', 'contested', 'not-assessed'];
 export const DATE_KINDS = ['archaeological', 'period', 'institution', 'practice', 'popularity'];
 export const END_KINDS = ['ongoing', 'unknown'];
 export const IMAGE_ROLES = ['work', 'precursor', 'revival', 'reconstruction', 'illustration', 'portrait'];
 export const MEDIUMS = [
   'painting', 'sculpture', 'architecture', 'graphic-design', 'typography', 'illustration', 'photography',
   'product-design', 'interior', 'decorative-arts', 'ceramics', 'textile', 'metalwork', 'manuscript', 'print',
-  'ui', 'web', 'digital-art', 'installation', 'moving-image', 'rock-art',
+  'ui', 'web', 'digital-art', 'installation', 'moving-image', 'rock-art', 'drawing', 'fashion',
 ];
 export const SOURCE_TYPES = ['museum', 'scholarly', 'primary', 'official', 'encyclopedia', 'community', 'press', 'catalog'];
 export const REVIEW_STATUS = ['reviewed', 'partial'];
@@ -47,6 +50,11 @@ export function relationDateIssue(parent, child, type, now = 2026) {
 }
 
 function checkImage(at, im, where, sourceIds, errors) {
+  if (im.reference != null) {
+    if (!/^https:\/\//.test(im.reference)) errors.push(`${at} ${where}: reference must be https`);
+    if (im.file || im.asset) errors.push(`${at} ${where}: choose reference or embedded image`);
+    if (!asList(im.sources).length) errors.push(`${at} ${where}: external reference needs caption sources`);
+  }
   if (im.asset != null) {
     if (!isLocalAsset(im.asset)) errors.push(`${at} ${where}: invalid local asset path`);
     if (im.file) errors.push(`${at} ${where}: choose file or asset, not both`);
@@ -108,6 +116,36 @@ export function validate(styles, eras, sources = []) {
     if (s.kindNote != null && !s.kind) errors.push(`${at} kindNote without kind`);
     for (const m of asList(s.medium)) if (!MEDIUMS.includes(m)) errors.push(`${at} bad medium "${m}"`);
     for (const f of ['aliases', 'searchKeywords', 'formerIds']) if (s[f] != null && !Array.isArray(s[f])) errors.push(`${at} ${f} must be a list`);
+    if (s.labelStatus != null && !LABEL_STATUS.includes(s.labelStatus)) errors.push(`${at} bad labelStatus`);
+    if (s.maturity != null && !MATURITY.includes(s.maturity)) errors.push(`${at} bad maturity`);
+    for (const creator of s.creators ?? []) {
+      if (!creator.name || !creator.role) errors.push(`${at} creator needs name and role`);
+      if (!asList(creator.sources).length) errors.push(`${at} creator needs attribution sources`);
+      if (creator.aliases != null && !Array.isArray(creator.aliases)) errors.push(`${at} creator aliases must be a list`);
+      for (const id of asList(creator.sources)) useSource(at, id, 'creator');
+    }
+    if (asList(s.kind).includes('author-style')) {
+      if (!s.scopeNote) errors.push(`${at} author style needs a bounded scopeNote`);
+      if (!s.creators?.length) errors.push(`${at} author style needs creators and their roles`);
+      if (!s.labelStatus) errors.push(`${at} author style needs labelStatus`);
+      if (!Array.isArray(s.corpus) || s.corpus.length < 3) errors.push(`${at} author style needs ≥3 independent corpus works`);
+      for (const field of ['language', 'corpus', 'distinctness', 'significance']) {
+        if (typeof s.admission?.[field] !== 'string' || !s.admission[field].trim()) errors.push(`${at} author style needs admission.${field}`);
+      }
+      if (!asList(s.admission?.sources).length) errors.push(`${at} author style needs sources for admission`);
+    }
+    for (const id of asList(s.admission?.sources)) useSource(at, id, 'admission');
+    const corpusKeys = new Set();
+    for (const work of s.corpus ?? []) {
+      if (!work.title || !work.author || work.year == null || !work.whyRepresentative) errors.push(`${at} corpus work needs title, author, date and visual argument`);
+      if (!work.file && !work.asset && !work.reference) errors.push(`${at} corpus work needs an image or external reference`);
+      if (!asList(work.sources).length) errors.push(`${at} corpus work needs attribution sources`);
+      const key = work.workId ?? work.reference ?? work.file ?? work.asset;
+      if (corpusKeys.has(key)) errors.push(`${at} corpus repeats the same work/reference`);
+      corpusKeys.add(key);
+      checkImage(at, work, 'corpus', sourceIds, errors);
+      for (const id of asList(work.sources)) useSource(at, id, 'corpus');
+    }
 
     // Значение дат
     if (s.dateKind != null && !DATE_KINDS.includes(s.dateKind)) errors.push(`${at} bad dateKind "${s.dateKind}"`);
@@ -137,7 +175,8 @@ export function validate(styles, eras, sources = []) {
 
     const hasImage = (typeof s.example?.file === 'string' && s.example.file.trim()) || isLocalAsset(s.example?.asset);
     const hasPalette = Array.isArray(s.palette) && s.palette.length >= 3 && s.palette.every((h) => HEX.test(h));
-    if (!hasImage && !hasPalette) errors.push(`${at} needs an image or palette`);
+    const hasReference = /^https:\/\//.test(s.example?.reference ?? '');
+    if (!hasImage && !hasPalette && !hasReference) errors.push(`${at} needs an image, palette or sourced external reference`);
     if (s.palette && !hasPalette) errors.push(`${at} palette must be ≥3 hex colors`);
     if (hasPalette && !hasImage && !s.paletteNote) warnings.push(`${at} editorial palette without paletteNote`);
     if (!s.example?.title) errors.push(`${at} example.title required (the most famous work)`);
@@ -145,11 +184,22 @@ export function validate(styles, eras, sources = []) {
     for (const id of asList(s.example?.sources)) usedSources.add(id);
 
     for (const g of s.gallery ?? []) {
-      if (!g.file && !g.asset) errors.push(`${at} gallery item without file or asset`);
+      if (!g.file && !g.asset && !g.reference) errors.push(`${at} gallery item without file, asset or reference`);
       checkImage(at, g, 'gallery', sourceIds, errors);
       for (const id of asList(g.sources)) usedSources.add(id);
     }
     for (const l of s.links ?? []) if (!/^https:\/\//.test(l.url ?? '')) errors.push(`${at} link must be https: ${l.url}`);
+    const contextSeen = new Set();
+    for (const c of s.contexts ?? []) {
+      const key = `${c.id}:${c.type}`;
+      if (!CONTEXT_TYPES.includes(c.type)) errors.push(`${at} bad context type ${c.type}`);
+      if (!REL_STATUS.includes(c.status)) errors.push(`${at} context needs explicit status`);
+      if (!c.note) errors.push(`${at} context needs a scope note`);
+      if (c.status === 'verified' && !asList(c.sources).length) errors.push(`${at} verified context needs sources`);
+      if (c.id === s.id || contextSeen.has(key)) errors.push(`${at} repeated/self context ${key}`);
+      contextSeen.add(key);
+      for (const id of asList(c.sources)) useSource(at, id, 'context');
+    }
 
     // Генеалогия
     if (!Array.isArray(s.parents)) errors.push(`${at} parents must be an array`);
@@ -175,6 +225,7 @@ export function validate(styles, eras, sources = []) {
   // Старые адреса не должны совпадать с действующими id.
   const former = new Map();
   for (const s of styles) {
+    for (const c of s.contexts ?? []) if (!byId.has(c.id)) errors.push(`[${s.id}] unknown context ${c.id}`);
     for (const f of s.formerIds ?? []) {
       if (byId.has(f)) errors.push(`[${s.id}] formerId "${f}" is still an active id`);
       if (former.has(f)) errors.push(`[${s.id}] formerId "${f}" also claimed by "${former.get(f)}"`);

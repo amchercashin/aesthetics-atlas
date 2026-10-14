@@ -1,5 +1,5 @@
 // Данные атласа и навигация по графу родословной.
-import { NOW } from './format.js?v=audit';
+import { NOW } from './format.js?v=author-pilot';
 
 export async function loadAtlas(url = 'data/atlas.json') {
   const res = await fetch(url, { cache: 'no-cache' });

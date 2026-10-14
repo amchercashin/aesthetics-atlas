@@ -6,7 +6,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import yaml from 'js-yaml';
 import { validate, ymd } from './lib/validate.mjs';
-import { buildRecord, childrenOf, comparisonsOf } from './lib/record.mjs';
+import { buildRecord, childrenOf, comparisonsOf, contextsOf } from './lib/record.mjs';
 import { resolveFiles, resolveWiki, commonsCategories, commonsCategoriesExist, saveCache } from './lib/wikimedia.mjs';
 import { downloadThumb, paletteFromImage, paletteFromHexList, mapLimit } from './lib/palette.mjs';
 import { resolveLocalAssets } from './lib/local-images.mjs';
@@ -29,16 +29,17 @@ console.log(`Loaded ${styles.length} styles, ${eras.length} eras, ${sources.leng
 const { errors, warnings } = validate(styles, eras, sources);
 
 // 2. Картинки
-const fileRefs = styles.flatMap((s) => [s.example?.file, ...(s.gallery ?? []).map((g) => g.file)]).filter(Boolean);
+const shotsOf = (s) => [s.example, ...(s.gallery ?? []), ...(s.corpus ?? [])].filter(Boolean);
+const fileRefs = styles.flatMap((s) => shotsOf(s).map((g) => g.file)).filter(Boolean);
 const media = await resolveFiles(fileRefs, opts);
-const assetRefs = styles.flatMap((s) => [s.example?.asset, ...(s.gallery ?? []).map((g) => g.asset)]).filter(Boolean);
+const assetRefs = styles.flatMap((s) => shotsOf(s).map((g) => g.asset)).filter(Boolean);
 try {
   for (const [ref, m] of await resolveLocalAssets(assetRefs, ROOT)) media.set(ref, m);
 } catch (e) {
   errors.push(`local illustrations: ${e.message}`);
 }
 for (const s of styles) {
-  for (const ref of [s.example?.file, ...(s.gallery ?? []).map((g) => g.file)].filter(Boolean)) {
+  for (const ref of shotsOf(s).map((g) => g.file).filter(Boolean)) {
     const m = media.get(ref);
     if (!m || m.missing) errors.push(`[${s.id}] image not found on Wikimedia: "${ref}"`);
   }
@@ -96,6 +97,7 @@ const img = (ref) => {
 
 const children = childrenOf(styles);
 const comparisons = comparisonsOf(styles);
+const contexts = contextsOf(styles);
 
 const out = styles.map((s) => {
   const links = [...wikiLinks(s), ...(s.links ?? []).map((l) => ({ title: l.title ?? null, url: l.url, src: l.src, lang: l.lang ?? 'en' }))];
@@ -103,10 +105,11 @@ const out = styles.map((s) => {
   // Это ссылки для самостоятельного чтения, а не подтверждение текста: источники утверждений — в evidence.
   const need = links.some((l) => l.src === 'Википедия') ? 3 : 2;
   if (links.length < need) errors.push(`[${s.id}] needs ≥${need} links (has ${links.length})`);
-  if (!palettes.has(s.id)) errors.push(`[${s.id}] no palette`);
+  if (!palettes.has(s.id) && !s.example?.reference) errors.push(`[${s.id}] no palette`);
   return buildRecord(s, {
     links, img, palette: palettes.get(s.id) ?? null,
     children: children.get(s.id) ?? [], comparisons: comparisons.get(s.id) ?? [],
+    contexts: contexts.get(s.id) ?? [],
   });
 });
 out.sort((a, b) => a.start - b.start || a.tier - b.tier || a.name.localeCompare(b.name, 'ru'));
