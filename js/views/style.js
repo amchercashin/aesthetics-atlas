@@ -168,12 +168,12 @@ export default {
         <h2 class="section-title">Цепочка связей</h2>
         ${line.length > 1 ? html`<p class="lineage-lead">Один из редакционных маршрутов по атласу, по первой связи каждой карточки. Для переходов показаны тип и степень проверки: влияние, реакция и возрождение не означают прямого происхождения.</p>
         ${lineageStrip(line, s.id)}` : s.origin === 'unknown'
-          ? html`<p class="lineage-lead">Подтверждённый предшественник в атласе не установлен.${s.comparisons.length ? ' Похожие по виду стили — в разделе «Визуальные сопоставления».' : ''}</p>`
+          ? html`<p class="lineage-lead">Связи происхождения пока не представлены на карте.${s.comparisons.length ? ' Похожие по виду стили — в разделе «Визуальные сопоставления».' : ''}</p>`
           : html`<p class="lineage-lead">Один из независимых истоков в атласе: предшественников у этого стиля здесь нет.</p>`}
         <div class="ego">
           <div class="ego-col">
             <h3 class="ego-title">Откуда</h3>
-            ${s.parents.length ? html`<ul>${s.parents.map((r) => relCard(store, r, 'from'))}</ul>` : html`<p class="muted">${s.origin === 'unknown' ? 'Не установлено' : 'Исток'}</p>`}
+            ${s.parents.length ? html`<ul>${s.parents.map((r) => relCard(store, r, 'from'))}</ul>` : html`<p class="muted">${s.origin === 'unknown' ? 'Связи пока не показаны' : 'Исток'}</p>`}
           </div>
           <div class="ego-center" aria-hidden="true"><span>${s.name}</span></div>
           <div class="ego-col">

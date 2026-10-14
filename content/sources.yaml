@@ -903,3 +903,164 @@
     Просмотрены обложка и описание файла: 1902; источник RARUSS rare-book page. Используется как
     дополнительный пример оформления книги, а не отдельное доказательство повторяемости внутренней
     иллюстрации.
+
+# Региональные росписи, графика и текстиль: партия 1
+- id: rusmuseum-zhostovo-1880s
+  title: Поднос, Р-3794, 1880-е
+  publisher: Государственный Русский музей
+  url: https://rusmuseumvrm.ru/data/collections/folk_art/r_3794/index.php
+  sourceType: museum
+  checked: '2026-10-14'
+  note: >-
+    Прочитана предметная запись и кураторский текст: Московская губерния, 1880-е; металл, масло, бронза, лак.
+    Автор предмета не назван. Текст относит поднос на белом фоне к Жостову, описывает переход к металлу в
+    1830-е и значение тагильских подносов. Имя основателя промысла в историческом тексте не является
+    атрибуцией этого предмета.
+- id: rusmuseum-zhostovo-rus
+  title: Н. П. Антипов. «Русь», Р-4070, 1976
+  publisher: Государственный Русский музей
+  url: https://rusmuseumvrm.ru/data/collections/folk_art/r_4070/index.php
+  sourceType: museum
+  checked: '2026-10-14'
+  note: >-
+    Именная атрибуция, Жостово, 1976; металл, масло, лак. Куратор рассматривает эмоциональную выразительность
+    большого подноса-панно.
+- id: rusmuseum-zhostovo-radiant
+  title: Н. Н. Гончарова. Поднос «Лучезарный», 1989
+  publisher: Государственный Русский музей
+  url: https://rusmuseumvrm.ru/data/collections/folk_art/onir-4922/index.php
+  sourceType: museum
+  checked: '2026-10-14'
+  note: >-
+    В предметной записи указаны Н. Н. Гончарова, 1989, металл, масло, перламутр, поталь и лак. Инициалы
+    сохранены без биографического расширения и без отождествления с однофамильцами.
+- id: rusmuseum-zhostovo-dandelions
+  title: Б. В. Графов. «Одуванчики-близнецы», 1990
+  publisher: Государственный Русский музей
+  url: https://rusmuseumvrm.ru/data/collections/folk_art/onir-4923/index.php
+  sourceType: museum
+  checked: '2026-10-14'
+  note: >-
+    Поднос-панно: автор Б. В. Графов, 1990, металл, масло, золотой порошок, лак. Предмет отличён от фотографий
+    других подносов с похожими названиями.
+- id: damuseum-metal-painting
+  title: Художественная роспись по металлу
+  publisher: Всероссийский музей декоративного искусства
+  url: https://damuseum.ru/catalog/metal-and-stone/khudozhestvennaya-rospis-po-metallu/
+  sourceType: museum
+  checked: '2026-10-14'
+  note: >-
+    Прочитан обзор коллекции: Жостово и другие центры исторической Троицкой волости; корпус жостовских
+    мастеров XX века. Музей различает роспись Жостова, Нижнего Тагила, Красноярска и Кемерова.
+
+# Региональные росписи, графика и текстиль: партия 1
+- id: rusmuseum-palekh-troika
+  title: И. И. Голиков. Баул «Тройка», 1926
+  publisher: Государственный Русский музей
+  url: https://rusmuseumvrm.ru/data/collections/folk_art/oni-r-1778/index.php
+  sourceType: museum
+  checked: '2026-10-14'
+  note: 'Предмет ОНИ/Р-1778: папье-маше, темпера, золото, лак. Прочитана запись, просмотрена репродукция.'
+- id: rusmuseum-palekh-koshba
+  title: И. В. Маркичев. «Косьба», 1926
+  publisher: Государственный Русский музей
+  url: https://rusmuseumvrm.ru/data/collections/folk_art/oni-r-1796/index.php
+  sourceType: museum
+  checked: '2026-10-14'
+  note: >-
+    Предмет ОНИ/Р-1796. Кураторский текст описывает местную иконописную основу, использование федоскинского
+    опыта папье-маше и артель 1924 года. Дата артели не перенесена на начало всей традиции.
+- id: rusmuseum-palekh-pushkin
+  title: Р. А. Смирнова. «Сказки Пушкина», 1994
+  publisher: Государственный Русский музей
+  url: https://rusmuseumvrm.ru/data/collections/folk_art/onir-5212/index.php
+  sourceType: museum
+  checked: '2026-10-14'
+  note: 'ОНИ/Р-5212: папье-маше, темпера, золото, лак. Разные стороны одного ларчика считаются одним произведением.'
+- id: rusmuseum-palekh-library
+  title: Е. Ф. Щаницына. «Библиотека Ивана IV», 1985
+  publisher: Государственный Русский музей
+  url: https://rusmuseumvrm.ru/data/collections/folk_art/oni-r-4953/index.php
+  sourceType: museum
+  checked: '2026-10-14'
+  note: >-
+    ОНИ/Р-4953: папье-маше, темпера, лак, роспись, золочение. Музейное название не подтверждает историческую
+    реальность изображённого легендарного собрания.
+- id: tepapa-siapo-825
+  title: Siapo mamanu, FE000825, 1890-е
+  publisher: Museum of New Zealand Te Papa Tongarewa
+  url: https://collections.tepapa.govt.nz/object/162815
+  sourceType: museum
+  checked: '2026-10-14'
+  note: >-
+    Прочитана предметная запись и кураторский текст; автор не назван. Музей различает свободное письмо mamanu
+    и перенос рельефного рисунка. Репродукция просмотрена.
+- id: tepapa-siapo-11611
+  title: Siapo mamanu, FE011611, 1896
+  publisher: Museum of New Zealand Te Papa Tongarewa
+  url: https://collections.tepapa.govt.nz/object/531805
+  sourceType: museum
+  checked: '2026-10-14'
+  note: >-
+    Использована текущая предметная датировка 1896, подтверждённая примечанием издания 2025 года; старые
+    альтернативные подписи изображений не выданы за актуальную атрибуцию. Дарители не названы художниками.
+- id: tepapa-siapo-1425
+  title: Siapo mamanu, FE001425, 1900-е
+  publisher: Museum of New Zealand Te Papa Tongarewa
+  url: https://collections.tepapa.govt.nz/object/165412
+  sourceType: museum
+  checked: '2026-10-14'
+  note: Автор не указан; tapa, bark cloth, dye. Год дарения 1917 не является датой изготовления.
+- id: tepapa-siapo-elei-11577
+  title: Siapo elei, FE011577, 2000
+  publisher: Museum of New Zealand Te Papa Tongarewa
+  url: https://collections.tepapa.govt.nz/object/492398
+  sourceType: museum
+  checked: '2026-10-14'
+  note: >-
+    Использовано имя Fa'amuli Salu из поля Production. Подпись изображения содержит другое написание —
+    Moli-Salu, Va'amuli; варианты не объединены в проверенную биографическую запись. Репродукция доступна;
+    права ограничены.
+- id: tepapa-pacific-tapa
+  title: 'Tapa: Barkcloth art in the Pacific'
+  publisher: Museum of New Zealand Te Papa Tongarewa
+  url: https://www.tepapa.govt.nz/digital-museum/explore-digital-museum/tapa-barkcloth-art-in-the-pacific
+  sourceType: museum
+  checked: '2026-10-14'
+  note: >-
+    Прочитан обзор локальных названий и живых практик. Общий материал не превращён в единую островную
+    стилистику или доказанную генеалогию.
+- id: tepapa-ngatu-aircraft
+  title: Ngatu, FE008723, около 1940-х
+  publisher: Museum of New Zealand Te Papa Tongarewa
+  url: https://collections.tepapa.govt.nz/object/83327
+  sourceType: museum
+  checked: '2026-10-14'
+  note: >-
+    Прочитаны запись и кураторский текст; самолёт соотнесён музеем с P-38 Lightning. Неуверенность о
+    размещении эскадрильи в Тонга сохранена; это не установленный факт истории предмета.
+- id: tepapa-ngatu-trophies
+  title: Ngatu, FE008724, 1932?
+  publisher: Museum of New Zealand Te Papa Tongarewa
+  url: https://collections.tepapa.govt.nz/object/83325
+  sourceType: museum
+  checked: '2026-10-14'
+  note: >-
+    В предметном поле Production указан вопросительный знак. Он сохранён, несмотря на более определённую фразу
+    в кураторском тексте. Изображение проверено отдельно после отложенной загрузки на странице.
+- id: tepapa-ngatu-electricity
+  title: Ngatu, FE010244, 1991
+  publisher: Museum of New Zealand Te Papa Tongarewa
+  url: https://collections.tepapa.govt.nz/object/76128
+  sourceType: museum
+  checked: '2026-10-14'
+  note: >-
+    Запись связывает полотно с установкой электричества в деревне в 1991 году. Покупка музеем в 1993 году —
+    отдельная дата. Прочитан текст о купеси и дорисовке.
+- id: tepapa-decorating-ngatu
+  title: Decorating ngatu
+  publisher: Museum of New Zealand Te Papa Tongarewa
+  url: https://collections.tepapa.govt.nz/topic/1114
+  sourceType: museum
+  checked: '2026-10-14'
+  note: Прочитан музейный материал о переносе рисунка с купеси, дорисовке, разделительных линиях и числах.

@@ -1,0 +1,812 @@
+- domain:
+    - art
+  tier: 2
+  dateKind: practice
+  origin: unknown
+  parents: []
+  aliases:
+    - Жостово
+    - Жостовская роспись
+    - Zhostovo
+  names:
+    - Н. П. Антипов
+    - Н. Н. Гончарова
+    - Б. В. Графов
+  maturity: established
+  labelStatus: historical
+  id: zhostovo-painting
+  name: Жостовская роспись подносов
+  orig: Жостовская роспись / Zhostovo tray painting
+  kind: tradition
+  start: 1830
+  end: null
+  endKind: ongoing
+  approx: true
+  dates: с XIX века
+  era: xix
+  region: Жостово и мастерские исторической Троицкой волости, Подмосковье, Россия
+  medium:
+    - decorative-arts
+    - painting
+  summary: >-
+    Мазковая цветочная живопись на металлических подносах соединяет объём лепестков, свободное поле и
+    орнаментальное обрамление.
+  description: >-
+    В жостовской росписи цветы образуют самостоятельную композицию на поле подноса, а рисунок борта связывает
+    её с формой вещи. Цвет фона меняется: в выбранном корпусе есть белое и тёмные поля. Масляная живопись
+    передаёт объём лепестков и листьев, тогда как тонкий орнамент обрамления подчёркивает плоскость
+    металлической поверхности.
+
+
+    Русский музей относит переход жостовских подносов к металлу к 1830-м годам и отдельно описывает роль
+    тагильского подносного промысла. Это история конкретных технических и художественных связей. Четыре
+    предмета 1880-х — 1990 года показывают вариативность внутри традиции: компактный букет, распределённые
+    группы цветов, светло-золотистую композицию и крупные соцветия одуванчиков. Коллективный промысел
+    сохраняет именное авторство отдельных работ.
+  traits:
+    - Мазковое построение объёма цветка и листа с переходами тона
+    - Букеты и отдельные цветочные группы соотносятся со свободным полем
+    - Орнамент борта повторяет очертания подноса и обрамляет живопись
+    - Цветные, светлые и тёмные фоны допускают разные композиционные решения
+  corpus:
+    - workId: zh-tray-3794
+      title: Поднос на белом фоне, Р-3794
+      author: Мастер не указан; Московская губерния
+      year: 1880-е
+      medium: Металл, масло, бронза, лак; роспись
+      sources:
+        - rusmuseum-zhostovo-1880s
+      reference: https://rusmuseumvrm.ru/data/collections/folk_art/r_3794/index.php
+      whyRepresentative: >-
+        Букет на светлом поле обрамлён самостоятельным орнаментом борта. Этот предмет показывает, что чёрный
+        фон не является обязательным признаком.
+      place: Русский музей
+      rights:
+        embed: false
+        reviewed: "2026-10-14"
+        note: Репродукция доступна на предметной странице источника.
+    - workId: zh-rus-4070
+      title: «Русь», Р-4070
+      author: Н. П. Антипов
+      year: 1976
+      medium: Металл, масло, лак; роспись
+      sources:
+        - rusmuseum-zhostovo-rus
+      reference: https://rusmuseumvrm.ru/data/collections/folk_art/r_4070/index.php
+      whyRepresentative: >-
+        Крупный центральный букет и меньшие группы цветов распределены по фигурному полю; изгибы стеблей
+        соотносятся с очертанием подноса.
+      place: Русский музей
+      rights:
+        embed: false
+        reviewed: "2026-10-14"
+        note: Репродукция доступна на предметной странице источника.
+    - workId: zh-radiant-4922
+      title: Поднос «Лучезарный», ОНИ/Р-4922
+      author: Н. Н. Гончарова
+      year: 1989
+      medium: Металл, масло, перламутр, поталь, лак; роспись
+      sources:
+        - rusmuseum-zhostovo-radiant
+      reference: https://rusmuseumvrm.ru/data/collections/folk_art/onir-4922/index.php
+      whyRepresentative: >-
+        Светлые и золотистые лепестки выделены на тёмном поле; бордюр повторяет сложный контур металлической
+        формы.
+      place: Русский музей
+      rights:
+        embed: false
+        reviewed: "2026-10-14"
+        note: Репродукция доступна на предметной странице источника.
+    - workId: zh-dandelions-4923
+      title: Поднос-панно «Одуванчики-близнецы», ОНИ/Р-4923
+      author: Б. В. Графов
+      year: 1990
+      medium: Металл, масло, золотой порошок, лак; роспись
+      sources:
+        - rusmuseum-zhostovo-dandelions
+      reference: https://rusmuseumvrm.ru/data/collections/folk_art/onir-4923/index.php
+      whyRepresentative: >-
+        Жёлтые цветы и пушистые округлые головки заполняют круглое поле. Композиция отличается от привычного
+        компактного букета роз.
+      place: Русский музей
+      rights:
+        embed: false
+        reviewed: "2026-10-14"
+        note: Репродукция доступна на предметной странице источника.
+  dateNote: >-
+    1830 — приблизительная отметка документированного музеем перехода к металлическим подносам. Она не
+    означает точный год возникновения всей росписи и более ранних изделий из папье-маше.
+  scopeNote: >-
+    Цветочная роспись металлических подносов на четырёх музейных предметах 1880-х, 1976, 1989 и 1990 годов.
+    Ранние сюжетные изделия из папье-маше не заменяются этим корпусом.
+  creators:
+    - name: Н. П. Антипов
+      role: автор подноса «Русь» в музейной атрибуции
+      sources:
+        - rusmuseum-zhostovo-rus
+    - name: Н. Н. Гончарова
+      role: автор подноса «Лучезарный» в музейной атрибуции
+      sources:
+        - rusmuseum-zhostovo-radiant
+    - name: Б. В. Графов
+      role: автор подноса-панно «Одуванчики-близнецы» в музейной атрибуции
+      sources:
+        - rusmuseum-zhostovo-dandelions
+  evidence:
+    - claim: >-
+        Предмет Р-3794 датирован 1880-ми; музей прямо рассматривает его белый фон как вариант жостовской
+        росписи.
+      field: corpus
+      source: rusmuseum-zhostovo-1880s
+    - claim: >-
+        Переход к металлическим подносам отнесён музеем к 1830-м; описано знакомство с тагильским подносным
+        промыслом.
+      field: dates
+      source: rusmuseum-zhostovo-1880s
+    - claim: >-
+        Всероссийский музей декоративного искусства сохраняет произведения нескольких жостовских мастеров и
+        различает региональные центры росписи по металлу.
+      field: admission
+      source: damuseum-metal-painting
+  compare:
+    - id: khokhloma
+      note: >-
+        Сопоставление двух традиций декоративной росписи: мазковый объём цветов и орнамент металлического
+        подноса сравниваются с травным письмом и золотистой поверхностью деревянной вещи. Историческое
+        происхождение одной от другой не заявлено.
+      sources: []
+  admission:
+    language: >-
+      Повторяются объёмные цветочные формы, свободное поле и обрамление, согласованное с металлическим
+      носителем.
+    corpus: >-
+      Сопоставлены четыре самостоятельных подноса разных десятилетий; у трёх предметные записи называют
+      авторов.
+    distinctness: >-
+      Хохлома описывает другую технологию и орнаментальную организацию деревянной вещи. Палехская миниатюра
+      строит повествовательные сцены на небольших лаковых предметах; общий лак и цветовое сочетание не
+      объединяют эти практики в один стиль.
+    significance: >-
+      Традиция представлена самостоятельными предметными и кураторскими разделами Русского музея и
+      Всероссийского музея декоративного искусства.
+    sources:
+      - rusmuseum-zhostovo-1880s
+      - rusmuseum-zhostovo-rus
+      - rusmuseum-zhostovo-radiant
+      - rusmuseum-zhostovo-dandelions
+      - damuseum-metal-painting
+  example:
+    workId: zh-tray-3794
+    title: Поднос на белом фоне, Р-3794
+    author: Мастер не указан; Московская губерния
+    year: 1880-е
+    medium: Металл, масло, бронза, лак; роспись
+    sources:
+      - rusmuseum-zhostovo-1880s
+    reference: https://rusmuseumvrm.ru/data/collections/folk_art/r_3794/index.php
+    whyRepresentative: >-
+      Букет на светлом поле обрамлён самостоятельным орнаментом борта. Этот предмет показывает, что чёрный фон
+      не является обязательным признаком.
+    place: Русский музей
+    rights:
+      embed: false
+      reviewed: "2026-10-14"
+      note: Репродукция доступна на предметной странице источника.
+  review:
+    status: reviewed
+    date: "2026-10-14"
+    note: >-
+      Сверены указанные предметные записи, материалы и пределы датировок. Репродукции корпуса просмотрены;
+      формальные наблюдения относятся к выбранным примерам.
+  links:
+    - title: Поднос, Р-3794, 1880-е
+      url: https://rusmuseumvrm.ru/data/collections/folk_art/r_3794/index.php
+      src: Государственный Русский музей
+      lang: ru
+    - title: Н. П. Антипов. «Русь», Р-4070, 1976
+      url: https://rusmuseumvrm.ru/data/collections/folk_art/r_4070/index.php
+      src: Государственный Русский музей
+      lang: ru
+    - title: Н. Н. Гончарова. Поднос «Лучезарный», 1989
+      url: https://rusmuseumvrm.ru/data/collections/folk_art/onir-4922/index.php
+      src: Государственный Русский музей
+      lang: ru
+    - title: Б. В. Графов. «Одуванчики-близнецы», 1990
+      url: https://rusmuseumvrm.ru/data/collections/folk_art/onir-4923/index.php
+      src: Государственный Русский музей
+      lang: ru
+    - title: Художественная роспись по металлу
+      url: https://damuseum.ru/catalog/metal-and-stone/khudozhestvennaya-rospis-po-metallu/
+      src: Всероссийский музей декоративного искусства
+      lang: ru
+- domain:
+    - art
+  tier: 2
+  dateKind: practice
+  origin: null
+  parents:
+    - id: old-russian-icons
+      type: influence
+      status: verified
+      note: >-
+        Русский музей связывает палехскую миниатюру с местной иконописью и работой бывших иконописцев. Стрелка
+        обозначает преемственность приёмов; обзор древнерусской иконописи не заменяет отдельного исследования
+        палехских икон XVIII–XIX веков.
+      sources:
+        - rusmuseum-palekh-koshba
+  aliases:
+    - Палех
+    - Palekh
+  names:
+    - И. И. Голиков
+    - И. В. Маркичев
+    - Е. Ф. Щаницына
+    - Р. А. Смирнова
+  maturity: established
+  labelStatus: historical
+  id: palekh-miniature
+  name: Палехская лаковая миниатюра
+  orig: Palekh lacquer miniature
+  kind: school
+  start: 1920
+  end: null
+  endKind: ongoing
+  approx: true
+  dates: с 1920-х годов
+  era: avant-garde
+  region: Палех, Ивановская область, Россия
+  medium:
+    - painting
+    - decorative-arts
+  summary: >-
+    Темперные повествования на лаковых предметах: тонкая линия, вытянутые фигуры, насыщенные цветовые поля и
+    золочёные детали.
+  description: >-
+    Палехская миниатюра переносит приёмы местной иконописи в светские сцены на вещах из папье-маше. Музей
+    отдельно отмечает опыт Федоскина в изготовлении таких предметов; техника носителя и язык изображения имеют
+    разные связи.
+
+
+    В выбранных работах сюжет организован силуэтами, ритмом фигур и тонкими линиями. Чёрный лак может
+    оставаться открытым полем или почти уступать место пейзажу и многочастной сцене. У ларчика Смирновой
+    повествование продолжается на стенках; это один предмет, а не несколько независимых работ.
+  traits:
+    - Тонкие контуры, вытянутые фигуры и ритмически связанные жесты
+    - Насыщенные цветовые участки и золотистая прорисовка на лаковой поверхности
+    - Повествование приспосабливается к овальной, прямоугольной либо объёмной форме
+    - Несколько сцен могут объединяться архитектурой, пейзажем и орнаментальной рамкой
+  scopeNote: >-
+    Четыре предмета четырёх мастеров, 1926, 1985 и 1994 годов. Палехская иконопись, сценография и все
+    остальные центры лаковой миниатюры требуют отдельного рассмотрения.
+  dateNote: >-
+    1920 — приблизительная отметка становления светской лаковой миниатюры; музей относит его к 1920–1930-м.
+    Артель основана в 1924 году. Даты не обозначают начало местной иконописи.
+  creators:
+    - name: И. И. Голиков
+      role: автор баула «Тройка»
+      sources:
+        - rusmuseum-palekh-troika
+    - name: И. В. Маркичев
+      role: автор шкатулки «Косьба»
+      sources:
+        - rusmuseum-palekh-koshba
+    - name: Р. А. Смирнова
+      role: автор ларчика «Сказки Пушкина»
+      sources:
+        - rusmuseum-palekh-pushkin
+    - name: Е. Ф. Щаницына
+      role: автор шкатулки «Библиотека Ивана IV»
+      sources:
+        - rusmuseum-palekh-library
+  corpus:
+    - workId: palekh-troika-1778
+      title: Баул «Тройка», ОНИ/Р-1778
+      author: И. И. Голиков
+      year: 1926
+      medium: Папье-маше, темпера, золото, лак
+      sources:
+        - rusmuseum-palekh-troika
+      reference: https://rusmuseumvrm.ru/data/collections/folk_art/oni-r-1778/index.php
+      whyRepresentative: >-
+        Оранжевые лошади вытянуты в один движущийся силуэт; тонкие светлые линии продолжают движение на чёрном
+        овальном поле.
+      place: Государственный Русский музей
+      rights:
+        embed: false
+        reviewed: "2026-10-14"
+        note: Репродукция доступна на предметной странице источника.
+    - workId: palekh-koshba-1796
+      title: Шкатулка «Косьба», ОНИ/Р-1796
+      author: И. В. Маркичев
+      year: 1926
+      medium: Папье-маше, темпера, лак; полихромная роспись
+      sources:
+        - rusmuseum-palekh-koshba
+      reference: https://rusmuseumvrm.ru/data/collections/folk_art/oni-r-1796/index.php
+      whyRepresentative: >-
+        Красная фигура выделена на зелёном поле; деревья и строения собраны в условный пейзаж, а чёрный лак
+        виден в верхней части.
+      place: Государственный Русский музей
+      rights:
+        embed: false
+        reviewed: "2026-10-14"
+        note: Репродукция доступна на предметной странице источника.
+    - workId: palekh-pushkin-5212
+      title: Ларчик «Сказки Пушкина», ОНИ/Р-5212
+      author: Р. А. Смирнова
+      year: 1994
+      medium: Папье-маше, темпера, золото, лак; миниатюрная живопись
+      sources:
+        - rusmuseum-palekh-pushkin
+      reference: https://rusmuseumvrm.ru/data/collections/folk_art/onir-5212/index.php
+      whyRepresentative: >-
+        Группы персонажей занимают крышку и стенки; тонкий золотистый бордюр связывает изображения с гранями
+        вещи.
+      place: Государственный Русский музей
+      rights:
+        embed: false
+        reviewed: "2026-10-14"
+        note: Репродукция доступна на предметной странице источника.
+    - workId: palekh-library-4953
+      title: Шкатулка «Библиотека Ивана IV», ОНИ/Р-4953
+      author: Е. Ф. Щаницына
+      year: 1985
+      medium: Папье-маше, темпера, лак; роспись, золочение
+      sources:
+        - rusmuseum-palekh-library
+      reference: https://rusmuseumvrm.ru/data/collections/folk_art/oni-r-4953/index.php
+      whyRepresentative: >-
+        Архитектурные ячейки собирают множество сцен, а повторение красного и золотистого удерживает их на
+        общем чёрном поле.
+      place: Государственный Русский музей
+      rights:
+        embed: false
+        reviewed: "2026-10-14"
+        note: Репродукция доступна на предметной странице источника.
+  compare:
+    - id: bilibin-illustration
+      note: >-
+        Сопоставляются повествовательная линия и рамка; книжная страница и расписной лаковый предмет
+        по-разному организуют сцену. Личное влияние не утверждается.
+    - id: zhostovo-painting
+      note: >-
+        Сравнение темперного сюжетного изображения на папье-маше с цветочной масляной росписью металлического
+        подноса.
+  evidence:
+    - claim: >-
+        Музей относит становление палехской светской миниатюры к 1920–1930-м и различает его с основанием
+        артели в 1924 году.
+      field: dates
+      source: rusmuseum-palekh-koshba
+    - claim: Ларчик «Сказки Пушкина» атрибутирован Р. А. Смирновой и датирован 1994 годом.
+      field: corpus
+      source: rusmuseum-palekh-pushkin
+  admission:
+    language: >-
+      Повторяются тонкая линия, условное пространство, выразительные фигуры и орнаментальное объединение сцены
+      с предметом.
+    corpus: Четыре самостоятельных лаковых предмета четырёх мастеров, включая ранние и поздние работы.
+    distinctness: >-
+      От книжной графики Билибина отличается устройством многогранной вещи и темперной поверхностью; от
+      Жостова — сюжетной сценой и другим носителем. Федоскинский опыт изготовления папье-маше не делает все
+      лаковые школы одним стилем.
+    significance: >-
+      Русский музей сохраняет и публикует ранние и поздние произведения с именной атрибуцией и отдельным
+      кураторским описанием школы.
+    sources:
+      - rusmuseum-palekh-troika
+      - rusmuseum-palekh-koshba
+      - rusmuseum-palekh-pushkin
+      - rusmuseum-palekh-library
+  example:
+    workId: palekh-troika-1778
+    title: Баул «Тройка», ОНИ/Р-1778
+    author: И. И. Голиков
+    year: 1926
+    medium: Папье-маше, темпера, золото, лак
+    sources:
+      - rusmuseum-palekh-troika
+    reference: https://rusmuseumvrm.ru/data/collections/folk_art/oni-r-1778/index.php
+    whyRepresentative: >-
+      Оранжевые лошади вытянуты в один движущийся силуэт; тонкие светлые линии продолжают движение на чёрном
+      овальном поле.
+    place: Государственный Русский музей
+    rights:
+      embed: false
+      reviewed: "2026-10-14"
+      note: Репродукция доступна на предметной странице источника.
+  review:
+    status: reviewed
+    date: "2026-10-14"
+    note: >-
+      Сверены указанные предметные записи, материалы и пределы датировок. Репродукции корпуса просмотрены;
+      формальные наблюдения относятся к выбранным примерам.
+  links:
+    - title: И. И. Голиков. Баул «Тройка», 1926
+      url: https://rusmuseumvrm.ru/data/collections/folk_art/oni-r-1778/index.php
+      src: Государственный Русский музей
+      lang: ru
+    - title: И. В. Маркичев. «Косьба», 1926
+      url: https://rusmuseumvrm.ru/data/collections/folk_art/oni-r-1796/index.php
+      src: Государственный Русский музей
+      lang: ru
+    - title: Р. А. Смирнова. «Сказки Пушкина», 1994
+      url: https://rusmuseumvrm.ru/data/collections/folk_art/onir-5212/index.php
+      src: Государственный Русский музей
+      lang: ru
+    - title: Е. Ф. Щаницына. «Библиотека Ивана IV», 1985
+      url: https://rusmuseumvrm.ru/data/collections/folk_art/oni-r-4953/index.php
+      src: Государственный Русский музей
+      lang: ru
+- domain:
+    - art
+  tier: 2
+  dateKind: corpus
+  origin: unknown
+  parents: []
+  aliases:
+    - Сиапо
+    - Siapo mamanu
+    - Siapo elei
+    - Самоанский тапа
+  names:
+    - Fa'amuli Salu
+  maturity: established
+  labelStatus: historical
+  id: samoan-siapo
+  name: Декор самоанского сиапо
+  orig: "Sāmoan siapo: mamanu and elei"
+  kind: tradition
+  start: 1890
+  end: 2000
+  approx: true
+  dates: "корпус: 1890-е — 2000"
+  era: fin-de-siecle
+  region: Самоа; самоанские сообщества Тихого океана
+  medium:
+    - textile
+    - decorative-arts
+    - painting
+  summary: >-
+    Орнамент на лубяном полотне соединяет сетки, полосы, растительные силуэты и контраст коричневого рисунка
+    со светлой основой.
+  description: >-
+    Сиапо — самоанская практика декорирования лубяного полотна. Внутри неё различаются свободное письмо mamanu
+    и декор с переносом рисунка elei. Полотно получают из внутреннего слоя коры; его нельзя описывать как
+    ткань с переплетением нитей.
+
+
+    Три исторических предмета и работа 2000 года показывают разные способы деления поверхности: множество
+    небольших ячеек, сплошной треугольный ритм, крупные чередующиеся клетки и вытянутые орнаментальные полосы.
+    Название карточки сохраняет местную практику; общая технология tapa не отменяет различий с Тонга и Фиджи.
+  traits:
+    - Светлая лубяная основа остаётся активной частью рисунка
+    - Прямоугольные сетки и полосы объединяют повторяющиеся геометрические и растительные формы
+    - Тёмные и красновато-коричневые пятна чередуются с незаполненными участками
+    - Свободный рисунок и перенос орнамента дают разные решения внутри сиапо
+  scopeNote: >-
+    Четыре музейных сиапо: три mamanu 1890-х — 1900-х и один elei 2000 года. Это ограниченный сравнительный
+    корпус, а не полный канон всех самоанских островов и поколений.
+  dateNote: >-
+    На оси отмечен просмотренный корпус. 1890-е не являются датой возникновения сиапо. Работа 2000 года не
+    обозначает прекращение практики. Музейный обзор описывает её современное продолжение.
+  creators:
+    - name: Fa'amuli Salu
+      role: >-
+        автор siapo elei 2000 года в поле Production музейной записи; написание в подписи изображения
+        отличается
+      sources:
+        - tepapa-siapo-elei-11577
+  corpus:
+    - workId: siapo-fe825
+      title: Siapo mamanu, FE000825
+      author: Мастер не указан
+      year: 1890-е
+      medium: Лубяное полотно, пигмент; свободное рисование и роспись
+      sources:
+        - tepapa-siapo-825
+      reference: https://collections.tepapa.govt.nz/object/162815
+      whyRepresentative: >-
+        Крупные звёздчатые формы чередуются с узкими геометрическими полосами; заметны разные коричневые тона
+        на светлой основе.
+      place: Museum of New Zealand Te Papa Tongarewa
+      rights:
+        embed: false
+        reviewed: "2026-10-14"
+        note: Репродукция доступна на предметной странице источника.
+    - workId: siapo-fe11611
+      title: Siapo mamanu, FE011611
+      author: Мастер не указан
+      year: 1896
+      medium: Лубяное полотно (tapa)
+      sources:
+        - tepapa-siapo-11611
+      reference: https://collections.tepapa.govt.nz/object/531805
+      whyRepresentative: >-
+        Повторяющиеся светлые и тёмные треугольники строят плотное поле; надпись и дата включены в
+        орнаментальную поверхность.
+      place: Museum of New Zealand Te Papa Tongarewa
+      rights:
+        embed: false
+        reviewed: "2026-10-14"
+        note: Репродукция доступна на предметной странице источника.
+    - workId: siapo-fe1425
+      title: Siapo mamanu, FE001425
+      author: Мастер не указан
+      year: 1900-е
+      medium: Лубяное полотно (tapa), краситель
+      sources:
+        - tepapa-siapo-1425
+      reference: https://collections.tepapa.govt.nz/object/165412
+      whyRepresentative: >-
+        Шахматные клетки чередуются с растительными силуэтами; единая геометрическая кайма удерживает
+        вытянутую композицию.
+      place: Museum of New Zealand Te Papa Tongarewa
+      rights:
+        embed: false
+        reviewed: "2026-10-14"
+        note: Репродукция доступна на предметной странице источника.
+    - workId: siapo-elei-fe11577
+      title: Siapo elei, FE011577
+      author: Fa'amuli Salu — по полю Production
+      year: 2000
+      medium: Лубяное полотно (tapa); точный состав красителя в записи не указан
+      sources:
+        - tepapa-siapo-elei-11577
+      reference: https://collections.tepapa.govt.nz/object/492398
+      whyRepresentative: Продольные полосы с круглыми розетками чередуются с треугольными сетками и крупными силуэтами листьев.
+      place: Museum of New Zealand Te Papa Tongarewa
+      rights:
+        embed: false
+        reviewed: "2026-10-14"
+        note: Репродукция доступна на предметной странице источника.
+  compare:
+    - id: tongan-ngatu
+      note: >-
+        Оба корпуса работают с лубяным полотном и повторением, но просмотренные ngatu используют иную
+        модульную организацию и документированные событийные мотивы. Общий материал не доказывает
+        происхождение одного от другого.
+      sources:
+        - tepapa-pacific-tapa
+  evidence:
+    - claim: >-
+        Предметная запись FE000825 различает свободное письмо и перенос рисунка с рельефной доски; практика не
+        сводится к одному приёму.
+      field: scope
+      source: tepapa-siapo-825
+    - claim: Музей датирует FE011611 1896 годом и описывает включённые в предмет надписи.
+      field: corpus
+      source: tepapa-siapo-11611
+    - claim: Обзор Te Papa называет сиапо, нгату и маси как локальные практики и представляет современных мастеров.
+      field: admission
+      source: tepapa-pacific-tapa
+  admission:
+    language: >-
+      Проверяемые признаки — разделение плоскости на сетки и полосы, чередование светлой основы и коричневого
+      орнамента, ритм геометрических и растительных форм.
+    corpus: Четыре самостоятельных полотна с разными регистрационными номерами; в корпус включены mamanu и elei.
+    distinctness: >-
+      От нгату выбранный корпус отличается организацией орнаментальных ячеек; от фиджийского маси его отделяет
+      самостоятельная самоанская практика. Локальные названия не сведены к единому «полинезийскому узору».
+    significance: Te Papa публикует предметные записи, исторические сведения и материалы о современной практике сиапо.
+    sources:
+      - tepapa-siapo-825
+      - tepapa-siapo-11611
+      - tepapa-siapo-1425
+      - tepapa-siapo-elei-11577
+      - tepapa-pacific-tapa
+  review:
+    status: partial
+    date: "2026-10-14"
+    note: >-
+      Просмотрены четыре репродукции и записи. В записи siapo elei написание имени в Production отличается от
+      подписи изображения; сохранена предметная атрибуция без объединения вариантов. Раннее происхождение и
+      общая хронология не установлены этим корпусом.
+  example:
+    workId: siapo-fe825
+    title: Siapo mamanu, FE000825
+    author: Мастер не указан
+    year: 1890-е
+    medium: Лубяное полотно, пигмент; свободное рисование и роспись
+    sources:
+      - tepapa-siapo-825
+    reference: https://collections.tepapa.govt.nz/object/162815
+    whyRepresentative: >-
+      Крупные звёздчатые формы чередуются с узкими геометрическими полосами; заметны разные коричневые тона на
+      светлой основе.
+    place: Museum of New Zealand Te Papa Tongarewa
+    rights:
+      embed: false
+      reviewed: "2026-10-14"
+      note: Репродукция доступна на предметной странице источника.
+  links:
+    - title: Siapo mamanu, FE000825, 1890-е
+      url: https://collections.tepapa.govt.nz/object/162815
+      src: Museum of New Zealand Te Papa Tongarewa
+      lang: en
+    - title: Siapo mamanu, FE011611, 1896
+      url: https://collections.tepapa.govt.nz/object/531805
+      src: Museum of New Zealand Te Papa Tongarewa
+      lang: en
+    - title: Siapo mamanu, FE001425, 1900-е
+      url: https://collections.tepapa.govt.nz/object/165412
+      src: Museum of New Zealand Te Papa Tongarewa
+      lang: en
+    - title: Siapo elei, FE011577, 2000
+      url: https://collections.tepapa.govt.nz/object/492398
+      src: Museum of New Zealand Te Papa Tongarewa
+      lang: en
+    - title: "Tapa: Barkcloth art in the Pacific"
+      url: https://www.tepapa.govt.nz/digital-museum/explore-digital-museum/tapa-barkcloth-art-in-the-pacific
+      src: Museum of New Zealand Te Papa Tongarewa
+      lang: en
+- domain:
+    - art
+  tier: 2
+  dateKind: corpus
+  origin: unknown
+  parents: []
+  aliases:
+    - Нгату
+    - Ngatu
+    - Тонганский тапа
+  names: []
+  maturity: established
+  labelStatus: historical
+  id: tongan-ngatu
+  name: Декор тонганского нгату
+  orig: Tongan ngatu
+  kind: tradition
+  start: 1930
+  end: 1991
+  approx: true
+  dates: "корпус: 1932? — 1991"
+  era: avant-garde
+  region: Тонга; тонганские сообщества Тихого океана
+  medium:
+    - textile
+    - decorative-arts
+    - painting
+  summary: >-
+    Модульный декор лубяного полотна объединяет растирание по купеси, ручную дорисовку и мотивы общественных
+    событий.
+  description: >-
+    На нгату повторяющиеся модули и ручная дорисовка организуют большую поверхность лубяного полотна. В
+    выбранных музейных предметах встречаются растения и животные, спортивные трофеи, самолёт и электрические
+    фонари. Событийные изображения входят в живую практику и не требуют объяснения как неизменные древние
+    знаки.
+
+
+    Фрагмент большого полотна сохраняет собственный ритм столбцов и рамок. Общий приём изготовления лубяной
+    основы связывает нгату с другими практиками tapa, но не делает их одним визуальным языком.
+  traits:
+    - Повторяющиеся ячейки и вертикальные полосы организуют крупное полотно
+    - Растирание по рельефным купеси сочетается с ручной дорисовкой
+    - Коричневые пятна, линии и силуэты читаются на светлой основе
+    - Изображения современных предметов и событий включаются в устойчивую модульную композицию
+  scopeNote: >-
+    Три самостоятельных музейных нгату: 1932?, около 1940-х и 1991 год. Мотивы, наблюдаемые здесь, не
+    объявлены универсальным словарём всех тонганских полотен.
+  dateNote: >-
+    Координата 1930 приблизительно размещает самый ранний предмет выбранного корпуса, датированный музеем
+    «1932?». Истоки нгату здесь не датированы; 1991 — последняя работа корпуса, а не конец практики.
+  corpus:
+    - workId: ngatu-fe8723
+      title: Ngatu с изображением самолёта, FE008723
+      author: Мастер не указан
+      year: около 1940-х
+      medium: Лубяное полотно, краситель
+      sources:
+        - tepapa-ngatu-aircraft
+      reference: https://collections.tepapa.govt.nz/object/83327
+      whyRepresentative: Самолёт, деревья, птицы и геральдические формы размещены в повторяющихся ячейках, разделённых линиями.
+      place: Museum of New Zealand Te Papa Tongarewa
+      rights:
+        embed: false
+        reviewed: "2026-10-14"
+        note: Репродукция доступна на предметной странице источника.
+    - workId: ngatu-fe8724
+      title: Ngatu со спортивными трофеями, FE008724
+      author: Мастер не указан
+      year: 1932?
+      medium: Лубяное полотно (tapa)
+      sources:
+        - tepapa-ngatu-trophies
+      reference: https://collections.tepapa.govt.nz/object/83325
+      whyRepresentative: >-
+        Кубки, щиты и мелкие точечные мотивы собраны в сетку; крупные фигуративные элементы не разрушают
+        повторение модулей.
+      place: Museum of New Zealand Te Papa Tongarewa
+      rights:
+        embed: false
+        reviewed: "2026-10-14"
+        note: Репродукция доступна на предметной странице источника.
+    - workId: ngatu-fe10244
+      title: Ngatu в честь появления электричества, FE010244
+      author: Мастер не указан
+      year: 1991
+      medium: Лубяное полотно (tapa)
+      sources:
+        - tepapa-ngatu-electricity
+      reference: https://collections.tepapa.govt.nz/object/76128
+      whyRepresentative: >-
+        Пять столбцов светлых и тёмных ячеек объединяют фонари, птиц и другие силуэты; краевые поля задают
+        рамку.
+      place: Museum of New Zealand Te Papa Tongarewa
+      rights:
+        embed: false
+        reviewed: "2026-10-14"
+        note: Репродукция доступна на предметной странице источника.
+  compare: []
+  evidence:
+    - claim: Музей описывает купеси, растирание через полотно и последующую ручную дорисовку.
+      field: traits
+      source: tepapa-decorating-ngatu
+    - claim: FE008724 имеет предметную датировку «1932?»; вопросительный знак сохранён.
+      field: dates
+      source: tepapa-ngatu-trophies
+    - claim: >-
+        Текст FE010244 связывает создание с установкой электричества в 1991 году и описывает современное
+        церемониальное употребление.
+      field: corpus
+      source: tepapa-ngatu-electricity
+  admission:
+    language: Модульная сетка, ритм столбцов, растирание и дорисовка связывают разные мотивы в узнаваемую поверхность.
+    corpus: >-
+      Три разных регистрационных номера и три самостоятельных полотна; фотографические ракурсы не увеличивают
+      их число.
+    distinctness: >-
+      От сиапо выбранные предметы отличают организация столбцов и событийные мотивы. От фиджийского маси нгату
+      отделяет тонганский контекст изготовления и использования; общий материал не является достаточной
+      классификацией.
+    significance: >-
+      Музейные предметные записи и материалы Te Papa документируют художественную, церемониальную и
+      общественную роль нгату.
+    sources:
+      - tepapa-pacific-tapa
+      - tepapa-ngatu-aircraft
+      - tepapa-ngatu-trophies
+      - tepapa-ngatu-electricity
+      - tepapa-decorating-ngatu
+  example:
+    workId: ngatu-fe8723
+    title: Ngatu с изображением самолёта, FE008723
+    author: Мастер не указан
+    year: около 1940-х
+    medium: Лубяное полотно, краситель
+    sources:
+      - tepapa-ngatu-aircraft
+    reference: https://collections.tepapa.govt.nz/object/83327
+    whyRepresentative: Самолёт, деревья, птицы и геральдические формы размещены в повторяющихся ячейках, разделённых линиями.
+    place: Museum of New Zealand Te Papa Tongarewa
+    rights:
+      embed: false
+      reviewed: "2026-10-14"
+      note: Репродукция доступна на предметной странице источника.
+  review:
+    status: reviewed
+    date: "2026-10-14"
+    note: >-
+      Сверены указанные предметные записи, материалы и пределы датировок. Репродукции корпуса просмотрены;
+      формальные наблюдения относятся к выбранным примерам.
+  links:
+    - title: Ngatu, FE008723, около 1940-х
+      url: https://collections.tepapa.govt.nz/object/83327
+      src: Museum of New Zealand Te Papa Tongarewa
+      lang: en
+    - title: Ngatu, FE008724, 1932?
+      url: https://collections.tepapa.govt.nz/object/83325
+      src: Museum of New Zealand Te Papa Tongarewa
+      lang: en
+    - title: Ngatu, FE010244, 1991
+      url: https://collections.tepapa.govt.nz/object/76128
+      src: Museum of New Zealand Te Papa Tongarewa
+      lang: en
+    - title: Decorating ngatu
+      url: https://collections.tepapa.govt.nz/topic/1114
+      src: Museum of New Zealand Te Papa Tongarewa
+      lang: en
+    - title: "Tapa: Barkcloth art in the Pacific"
+      url: https://www.tepapa.govt.nz/digital-museum/explore-digital-museum/tapa-barkcloth-art-in-the-pacific
+      src: Museum of New Zealand Te Papa Tongarewa
+      lang: en

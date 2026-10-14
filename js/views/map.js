@@ -1099,7 +1099,7 @@ export default {
             <button class="chip" type="button" data-focus-mode="near" aria-pressed="${focusMode === 'near'}">Ближайшие связи <span class="count">${nRel}</span></button>
             <button class="chip" type="button" data-focus-mode="line" aria-pressed="${focusMode === 'line'}">Вся родословная</button>
           </div>
-          ${s.origin === 'unknown' ? html`<p class="mp-origin">Происхождение не установлено.</p>` : ''}
+          ${s.origin === 'unknown' ? html`<p class="mp-origin">Связи происхождения пока не представлены на карте.</p>` : ''}
           ${relList(s, 'parents', 'from')}
           ${relList(s, 'children', 'to')}
           ${cmpList(s)}
@@ -1194,7 +1194,7 @@ export default {
       const from = s.parents.slice(0, 2).map((p) => store.get(p.id)?.name).filter(Boolean);
       const to = s.children.length;
       mount(tip, html`${thumb(s, 72)}<span class="tip-text"><span class="tip-name">${s.name}</span><span class="tip-dates">${fmtDates(s)}</span><span class="tip-sum">${s.summary}</span>
-        <span class="tip-rel">${from.length ? `из: ${from.join(', ')}` : s.origin === 'unknown' ? 'происхождение не установлено' : 'исток'}${to ? ` · ${to} ${plural(to, 'потомок', 'потомка', 'потомков')}` : ''}</span></span>`);
+        <span class="tip-rel">${from.length ? `из: ${from.join(', ')}` : s.origin === 'unknown' ? 'связи происхождения пока не показаны' : 'исток'}${to ? ` · ${to} ${plural(to, 'потомок', 'потомка', 'потомков')}` : ''}</span></span>`);
       markLoaded(tip);
       tip.hidden = false;
       const tw = tip.offsetWidth, th = tip.offsetHeight;

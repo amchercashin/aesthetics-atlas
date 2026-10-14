@@ -1,0 +1,119 @@
+{
+  "title": "Региональные росписи, графика и текстиль",
+  "status": "research-in-progress",
+  "baselineCommit": "bb0cad8",
+  "baselineCards": 165,
+  "selectedTopics": 16,
+  "rule": "Состав рабочий; подготовленная карточка требует корпуса, визуальной сверки и решения в каноническом каталоге. Присутствие здесь не означает принятие темы.",
+  "items": [
+    {
+      "id": "lubok",
+      "priority": "P1",
+      "proposedKind": "tradition",
+      "status": "research-in-progress"
+    },
+    {
+      "id": "gorodets-painting",
+      "priority": "P1",
+      "proposedKind": "tradition",
+      "status": "research-in-progress"
+    },
+    {
+      "id": "zhostovo-painting",
+      "priority": "P2",
+      "proposedKind": "tradition",
+      "status": "prepared",
+      "productionCardId": "zhostovo-painting",
+      "reviewStatus": "reviewed",
+      "corpusWorks": 4
+    },
+    {
+      "id": "palekh-miniature",
+      "priority": "P1",
+      "proposedKind": "school",
+      "status": "prepared",
+      "productionCardId": "palekh-miniature",
+      "reviewStatus": "reviewed",
+      "corpusWorks": 4
+    },
+    {
+      "id": "mithila-painting",
+      "priority": "P2",
+      "proposedKind": "tradition",
+      "status": "research-in-progress"
+    },
+    {
+      "id": "warli-painting",
+      "priority": "P1",
+      "proposedKind": "tradition",
+      "status": "research-in-progress"
+    },
+    {
+      "id": "kalighat-painting",
+      "priority": "P2",
+      "proposedKind": "school",
+      "status": "research-in-progress"
+    },
+    {
+      "id": "asante-kente",
+      "priority": "P1",
+      "proposedKind": "tradition",
+      "status": "research-in-progress"
+    },
+    {
+      "id": "bogolanfini",
+      "priority": "P2",
+      "proposedKind": "tradition",
+      "status": "research-in-progress"
+    },
+    {
+      "id": "ndebele-murals",
+      "priority": "P1",
+      "proposedKind": "tradition",
+      "status": "research-in-progress"
+    },
+    {
+      "id": "samoan-siapo",
+      "priority": "P1",
+      "proposedKind": "tradition",
+      "status": "prepared",
+      "productionCardId": "samoan-siapo",
+      "reviewStatus": "partial",
+      "corpusWorks": 4
+    },
+    {
+      "id": "tongan-ngatu",
+      "priority": "P2",
+      "proposedKind": "tradition",
+      "status": "prepared",
+      "productionCardId": "tongan-ngatu",
+      "reviewStatus": "reviewed",
+      "corpusWorks": 3
+    },
+    {
+      "id": "fijian-masi",
+      "priority": "P2",
+      "proposedKind": "tradition",
+      "status": "research-in-progress"
+    },
+    {
+      "id": "chinese-jianzhi",
+      "priority": "P2",
+      "proposedKind": "tradition",
+      "status": "research-in-progress"
+    },
+    {
+      "id": "adinkra",
+      "priority": "P1",
+      "proposedKind": "tradition",
+      "status": "research-in-progress"
+    },
+    {
+      "id": "yang-liuqing-nianhua",
+      "priority": "P2",
+      "proposedKind": "tradition",
+      "status": "research-in-progress"
+    }
+  ],
+  "preparedCards": 4
+}
