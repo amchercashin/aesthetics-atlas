@@ -64,5 +64,25 @@ for (const p of edgePaths) {
     names.forEach((ns, i) => { if (!seen.has(i) && ns.some((c) => x > c.x0 && x < c.x1 && y > c.y0 && y < c.y1)) { seen.add(i); visibleLineThroughName++; } });
   }
 }
-return { names: names.length, nameOverLabel, nameOverName, dotOverName, visibleLineThroughName, collisions, labels: labels.length, edgesDrawn: drawn, labelOverLabel: ll, lineThroughText: hits, ofThemUnderPlate: hidden, visibleThroughText: hits - hidden };
+// Мобильные эпохи живут в HTML поверх SVG: их геометрия проверяется отдельно.
+const eras = [...document.querySelectorAll('.me-label')].filter((e) => e.getClientRects().length).map((e) => {
+  const r = e.getBoundingClientRect(); return { x0: r.left, y0: r.top, x1: r.right, y1: r.bottom };
+});
+let eraOverEra = 0, eraOverName = 0, eraOverLabel = 0, eraMaskMismatch = 0;
+for (const [i, b] of eras.entries()) {
+  eraOverEra += eras.slice(i + 1).filter((c) => hit2(b, c)).length;
+  eraOverName += names.filter((ns) => ns.some((c) => hit2(b, c))).length;
+  eraOverLabel += labels.filter((c) => hit2(b, c)).length;
+}
+const eraMasks = [...document.querySelectorAll('#map-region-mask rect[fill="black"]')].slice(-eras.length);
+const matrix = document.querySelector('.map-svg')?.getScreenCTM();
+for (const [i, b] of eras.entries()) {
+  const r = eraMasks[i];
+  if (!r || !matrix) { eraMaskMismatch++; continue; }
+  const a = new DOMPoint(r.x.baseVal.value, r.y.baseVal.value).matrixTransform(matrix);
+  const z = new DOMPoint(r.x.baseVal.value + r.width.baseVal.value, r.y.baseVal.value + r.height.baseVal.value).matrixTransform(matrix);
+  if (Math.abs(Math.min(a.x, z.x) - b.x0 + 4) > 0.6 || Math.abs(Math.max(a.x, z.x) - b.x1 - 4) > 0.6 ||
+      Math.abs(Math.min(a.y, z.y) - b.y0 + 4) > 0.6 || Math.abs(Math.max(a.y, z.y) - b.y1 - 4) > 0.6) eraMaskMismatch++;
+}
+return { names: names.length, nameOverLabel, nameOverName, dotOverName, visibleLineThroughName, collisions, labels: labels.length, edgesDrawn: drawn, labelOverLabel: ll, lineThroughText: hits, ofThemUnderPlate: hidden, visibleThroughText: hits - hidden, eraLabels: eras.length, eraOverEra, eraOverName, eraOverLabel, eraMaskMismatch };
 })();
