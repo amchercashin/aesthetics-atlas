@@ -94,6 +94,22 @@ body[data-view="map"] .site-footer { display: none; }
   position: absolute; top: 0; bottom: 0; left: 0; width: 0; pointer-events: none;
   border: 2px solid var(--accent); border-radius: 6px; box-shadow: 0 0 0 3px color-mix(in oklab, var(--accent) 14%, transparent);
 }
+.era-nav[hidden], .map-era-labels[hidden], .me-label[hidden] { display: none; }
+.map-time-vertical { grid-template-rows: auto 1fr; }
+/* Отдельные плашки поверх карты, без сплошной боковой панели. */
+.map-era-labels { position: absolute; inset: 0; z-index: 2; pointer-events: none; }
+.me-label {
+  position: absolute; right: 38px; transform: translateY(-50%); height: var(--era-label-h, 24px);
+  display: flex; align-items: center; padding: 0 7px; max-width: 112px; border: 1px solid var(--rule); border-right: 2px solid var(--c);
+  border-radius: 5px; background: color-mix(in srgb, var(--paper) 88%, transparent);
+  backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px);
+  color: var(--ink-2); font: 500 10.5px/14px var(--sans); white-space: nowrap;
+  cursor: pointer; pointer-events: auto;
+}
+.me-label:hover { background: var(--paper-2); color: var(--ink); }
+.me-label:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.me-leaders { position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden; }
+.me-leaders path { fill: none; stroke-width: 1; opacity: 0.6; }
 
 /* ---------- Полотно ---------- */
 .map-stage { position: relative; overflow: hidden; touch-action: none; cursor: grab; user-select: none; -webkit-user-select: none; outline-offset: -3px; }
