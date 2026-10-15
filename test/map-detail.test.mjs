@@ -21,7 +21,7 @@ test('parts have their own readable scale before individual cards and branches',
   assert.equal(d.nodes + d.labels + d.edges, 0);
 });
 
-test('card labels replace the wash while a stable coast preserves orientation at maximum zoom', () => {
+test('card labels replace engraving while stable geography preserves orientation at maximum zoom', () => {
   for (const k of [0.268, 0.42, 1, 2, 5]) {
     const d = mapDetail(k, 0.04, 0.2);
     assert.equal(d.labels, 1);

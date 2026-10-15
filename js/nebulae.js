@@ -527,15 +527,14 @@ function draw(ctx, cam) {
   const mix = cam.detail?.partMix ?? sstep(0.62, 0.95, cam.kx), alpha = cam.detail?.regions ?? 1;
   if (alpha > 0) drawWash(ctx, cam, mix, alpha);
   else { clearTimeout(timer); lastCam = null; }
-  // Только внешний берег: без растянутой заливки и линий глубины. Прозрачность
-  // не падает с дальнейшим приближением, толщина остаётся экранной.
+  // Вблизи остаются лёгкий цвет моря и внешний берег, без линий глубины.
+  // Их насыщенность не падает с дальнейшим приближением, толщина берега экранная.
   const coast = cam.detail?.coast ?? 0;
   if (coast > 0) {
     const { kx, ky, ox, oy, dpr } = cam;
     const x0 = -ox / kx, x1 = (cam.w - ox) / kx, y0 = (cam.axis - oy) / ky, y1 = (cam.h - oy) / ky;
     ctx.save();
     ctx.setTransform(dpr, 0, 0, dpr, dpr * ox, dpr * oy);
-    ctx.globalAlpha = coast * (P.dark ? 0.42 : 0.36);
     ctx.lineWidth = 0.85; ctx.lineJoin = 'round';
     const key = `${kx.toFixed(4)}|${ky.toFixed(4)}`;
     for (const r of nebRegs) {
@@ -544,6 +543,9 @@ function draw(ctx, cam) {
         const path = new Path2D(); path.addPath(r.paths[0], new DOMMatrix([kx, 0, 0, ky, 0, 0]));
         r.coast = { key, path };
       }
+      ctx.globalAlpha = coast * (P.dark ? 0.075 : 0.045);
+      ctx.fillStyle = css(r.col); ctx.fill(r.coast.path, 'evenodd');
+      ctx.globalAlpha = coast * (P.dark ? 0.42 : 0.36);
       ctx.strokeStyle = r.line; ctx.stroke(r.coast.path);
     }
     ctx.restore();
