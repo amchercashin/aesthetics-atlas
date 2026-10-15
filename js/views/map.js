@@ -14,13 +14,13 @@ import { replaceParams, pushParams } from '../router.js?v=map4';
 import { pushStep, toParam, parseTrail } from '../trail.js?v=map4';
 import { stepTarget } from '../graphnav.js?v=chain-author-map4';
 import { createGutterLens } from '../lens.js?v=map4';
-import { initNebulae, drawNebulae, drawNebulaNames, disposeNebulae, setNebulaDirtyHandler, nebulaRegion, nebulaRegionAt, nebulaShore } from '../nebulae.js?v=semantic-zoom-6';
+import { initNebulae, drawNebulae, drawNebulaNames, disposeNebulae, setNebulaDirtyHandler, nebulaRegion, nebulaRegionAt, nebulaShore } from '../nebulae.js?v=semantic-zoom-7';
 import { buildIndex, search } from '../search.js?v=author-pilot';
 import { fitLabelText } from '../map-labels.js?v=focus-fit-1';
 import { LINK_MODES, readLinkSettings, historicalLinkVisible } from '../map-links.js?v=link-modes-1';
-import { mapDetail, aggregateMapLinks } from '../map-detail.js?v=semantic-zoom-6';
-import { summaryCurve } from '../map-summary.js?v=semantic-zoom-6';
-import { layoutEraLabels } from '../map-eras.js?v=semantic-zoom-6';
+import { mapDetail, aggregateMapLinks } from '../map-detail.js?v=semantic-zoom-7';
+import { summaryCurve } from '../map-summary.js?v=semantic-zoom-7';
+import { layoutEraLabels } from '../map-eras.js?v=semantic-zoom-7';
 
 const NS = 'http://www.w3.org/2000/svg';
 const AXIS_H = 30;      // строка делений шкалы внутри SVG
@@ -202,7 +202,7 @@ export default {
     const eraLabels = q('.map-era-labels');
     const eraButtons = [...eraLabels.querySelectorAll('.me-label')];
     const eraLeaders = q('.me-leaders');
-    let eraBoxes = [], eraWidths = [];
+    let eraBoxes = [];
     const mmBox = q('.mm-box');
     const mmToggle = q('.mm-toggle');
     const mm = q('.minimap');
@@ -483,6 +483,7 @@ export default {
 
     // ---------- отрисовка ----------
     const schedule = () => { if (!raf) raf = requestAnimationFrame(draw); };
+    for (const event of ['loadingdone', 'loadingerror']) on(document.fonts, event, schedule);
 
     function draw() {
       raf = 0;
@@ -1113,10 +1114,6 @@ export default {
       eraBoxes = [];
       eraLeaders.replaceChildren();
       if (!rot) return;
-      if (!eraWidths.length) {
-        eraButtons.forEach((btn) => { btn.hidden = false; });
-        eraWidths = eraButtons.map((btn) => btn.offsetWidth);
-      }
       const level = q('.map-levels');
       const bottom = Math.min(ph - panelWidth() - 6, level.offsetHeight ? level.offsetTop - 8 : ph - 6);
       const top = trailNav.hidden ? 6 : trailNav.offsetTop + trailNav.offsetHeight + 8;
@@ -1130,12 +1127,17 @@ export default {
       eraButtons.forEach((btn, i) => {
         const l = byId.get(i);
         btn.hidden = !l;
-        if (!l) return;
-        btn.style.top = `${l.y.toFixed(2)}px`;
-        const right = pw - AXIS_H - 8;
-        eraBoxes.push([right - eraWidths[i], l.y - height / 2, right, l.y + height / 2]);
-        el('path', { d: `M${right},${l.y.toFixed(2)}L${pw - AXIS_H},${l.anchor.toFixed(2)}`, style: `stroke:var(--era-${store.eras[i].id})` }, eraLeaders);
+        if (l) btn.style.top = `${l.y.toFixed(2)}px`;
       });
+      // Один пакет измерений после записи позиций. Поздний веб-шрифт может
+      // изменить ширину плашки без resize: препятствие должно совпадать с ней.
+      const widths = eraButtons.map((btn) => btn.hidden ? 0 : btn.getBoundingClientRect().width);
+      for (const l of labels) {
+        const i = l.id;
+        const right = pw - AXIS_H - 8;
+        eraBoxes.push([right - widths[i], l.y - height / 2, right, l.y + height / 2]);
+        el('path', { d: `M${right},${l.y.toFixed(2)}L${pw - AXIS_H},${l.anchor.toFixed(2)}`, style: `stroke:var(--era-${store.eras[i].id})` }, eraLeaders);
+      }
     }
     function drawNav() {
       const fitLabel = atFit() ? 'Части' : 'Вся история';
@@ -1358,7 +1360,6 @@ export default {
       q('.map-view').classList.toggle('map-time-vertical', rot);
       eraNav.hidden = rot;
       eraLabels.hidden = !rot;
-      eraWidths = [];
       vw = rot ? ph : pw; vh = rot ? pw : ph;
       stage.classList.toggle('rot', rot);
       for (const el2 of [svg, nebCanvas]) {
@@ -1984,6 +1985,9 @@ export default {
     const ro = new ResizeObserver(() => resize());
     ro.observe(stage);
     cleanups.push(() => ro.disconnect());
+    const eraRo = new ResizeObserver(schedule);
+    eraButtons.forEach((btn) => eraRo.observe(btn));
+    cleanups.push(() => eraRo.disconnect());
 
     build();
 
