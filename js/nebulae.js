@@ -482,7 +482,7 @@ function strokeSet(ctx, regs, w, cam, t2, far) {
   if (w < 0.01) return;
   const { kx, ky, ox, oy } = cam, x0 = -ox / kx, y0 = (cam.axis - oy) / ky, x1 = (cam.w - ox) / kx, y1 = (cam.h - oy) / ky;
   const lv = far ? LV_FAR : LV_MID, NL = lv.length, dark = P.dark;
-  const coastW = (far ? 1.05 : 1.1) * (1 - 0.25 * t2), coastA = (dark ? 0.85 : 0.82) * (1 - 0.45 * t2);
+  const coastW = far ? 0.95 : 0.85, coastA = dark ? 0.66 : 0.6;
   for (const r of regs) {
     const b = r.box; if (b[2] < x0 || b[0] > x1 || b[3] < y0 || b[1] > y1) continue;
     const sp = screenPaths(r, kx, ky), small = r.area < MIN_AREA;
@@ -490,42 +490,38 @@ function strokeSet(ctx, regs, w, cam, t2, far) {
     const wa = w * (1 - t2);
     if (wa > 0.01 && !small) {
       ctx.lineWidth = 0.6;
-      for (let n = 0; n < NL; n++) { ctx.globalAlpha = wa * (0.06 + 0.5 * Math.pow(1 - n / NL, 1.5)) * (dark ? 0.9 : 1); ctx.stroke(sp.paths[n + 1]); }
-      ctx.globalAlpha = wa * 0.5; ctx.lineWidth = 0.9; ctx.setLineDash([0.01, 3.2]); ctx.lineCap = 'round';
-      ctx.stroke(sp.deep); ctx.setLineDash([]); ctx.lineCap = 'butt';
+      for (let n = 0; n < NL; n += 2) { ctx.globalAlpha = wa * (0.04 + 0.26 * Math.pow(1 - n / NL, 1.5)); ctx.stroke(sp.paths[n + 1]); }
     }
     ctx.globalAlpha = w * coastA; ctx.lineWidth = coastW; ctx.stroke(sp.paths[0]);
   }
 }
 // Отмывка и линии при камере cam в контекст c (размер cam.w × cam.h, начало — левый верх).
-function paint(c, cam) {
-  const { kx, ky, ox, oy, dpr } = cam, t1 = sstep(0.62, 0.95, kx), t2 = sstep(1.45, 2.05, kx);
+function paint(c, cam, far) {
+  const { kx, ky, ox, oy, dpr } = cam;
   c.save();
   c.setTransform(dpr * kx, 0, 0, dpr * ky, dpr * ox, dpr * oy);
   c.imageSmoothingEnabled = true;
-  const wa = 1 - 0.62 * t2;
   if (P.dark) c.globalCompositeOperation = 'screen';
-  if (t1 < 0.99) { c.globalAlpha = wa * (1 - t1); c.drawImage(washFar, OX - CS / 2, OY - CS / 2, NX * CS, NY * CS); }
-  if (t1 > 0.01) { c.globalAlpha = wa * t1; c.drawImage(washMid, OX - CS / 2, OY - CS / 2, NX * CS, NY * CS); }
+  c.drawImage(far ? washFar : washMid, OX - CS / 2, OY - CS / 2, NX * CS, NY * CS);
   c.restore();
   c.save();
   c.setTransform(dpr, 0, 0, dpr, dpr * ox, dpr * oy);
   c.lineJoin = 'round';
-  strokeSet(c, nebRegs, 1 - t1, cam, t2, true);
-  strokeSet(c, partRegs, t1, cam, t2, false);
+  strokeSet(c, far ? nebRegs : partRegs, 1, cam, 0, far);
   c.restore();
 }
 function renderLayer(cam) {
   const mx = cam.w * MARGIN, my = cam.h * MARGIN, w = cam.w + 2 * mx, h = cam.h + 2 * my;
-  const cv = cache?.cv ?? document.createElement('canvas');
-  cv.width = Math.round(w * cam.dpr); cv.height = Math.round(h * cam.dpr);
-  const c = cv.getContext('2d');
-  cache = { cv, kx: cam.kx, ky: cam.ky, ox: cam.ox, oy: cam.oy, mx, my, w, h, dpr: cam.dpr, key: scaleKey(cam),
+  const canvases = cache?.canvases ?? [document.createElement('canvas'), document.createElement('canvas')];
+  cache = { canvases, kx: cam.kx, ky: cam.ky, ox: cam.ox, oy: cam.oy, mx, my, w, h, dpr: cam.dpr, key: scaleKey(cam),
     u0: (-mx - cam.ox) / cam.kx, u1: (w - mx - cam.ox) / cam.kx, v0: (-my - cam.oy) / cam.ky, v1: (h - my - cam.oy) / cam.ky };
-  paint(c, { ...cam, ox: cam.ox + mx, oy: cam.oy + my, w, h, axis: 0 });
+  canvases.forEach((cv, i) => {
+    cv.width = Math.round(w * cam.dpr); cv.height = Math.round(h * cam.dpr);
+    paint(cv.getContext('2d'), { ...cam, ox: cam.ox + mx, oy: cam.oy + my, w, h, axis: 0 }, i === 0);
+  });
 }
 function draw(ctx, cam) {
-  if (!washFar) return;
+  if (!washFar || cam.detail?.regions === 0) return;
   lastCam = cam;
   // При отдалении/перемещении в кадр входят новые территории. Старый
   // битмап их не содержит: нельзя оставлять там пустоту до остановки камеры.
@@ -536,7 +532,13 @@ function draw(ctx, cam) {
   }
   if (!cache) return;
   const r = blitRect(cache, cam);
-  ctx.drawImage(cache.cv, r.x, r.y, r.w, r.h);
+  const mix = cam.detail?.partMix ?? sstep(0.62, 0.95, cam.kx), alpha = cam.detail?.regions ?? 1;
+  ctx.save();
+  cache.canvases.forEach((cv, i) => {
+    ctx.globalAlpha = alpha * (i === 0 ? 1 - mix : mix);
+    if (ctx.globalAlpha > 0) ctx.drawImage(cv, r.x, r.y, r.w, r.h);
+  });
+  ctx.restore();
 }
 const MAX_ANG = 0.22;   // наклон названия на экране, рад
 
@@ -563,18 +565,18 @@ const MAX_ANG = 0.22;   // наклон названия на экране, ра
   // Возвращает рамки поставленных названий ([x0, y0, x1, y1]) — чтобы подписи стилей их обходили.
   function names(g, v) {
     if (!washFar) return [];
-    const k = v.kx, t1 = sstep(0.62, 0.95, k), t2 = sstep(1.45, 2.05, k);
-    if (t2 > 0.6) return [];   // на рабочем масштабе названия частей пересекали бы ветви древа
+    const k = v.kx, t1 = v.detail?.partMix ?? sstep(0.62, 0.95, k), t2 = sstep(1.45, 2.05, k);
+    if (v.detail ? v.detail.seaNames + v.detail.partNames < 0.02 : t2 > 0.6) return [];
     // hard — с запасом между названиями; tight — без запаса: на него переходим, если иначе названию не нашлось места.
     const hard = new BoxIdx(v.w, v.h), tight = new BoxIdx(v.w, v.h), soft = new BoxIdx(v.w, v.h);
     // Запасной вариант уплотняет названия областей, сохраняя отступ от подписей стилей.
     for (const b of v.labelBoxes || []) { const padded = [b[0] - 6, b[1] - 4, b[2] + 6, b[3] + 4]; hard.add(padded); tight.add(padded); }
-    for (const b of v.dotBoxes || []) soft.add(b);
+    for (const b of v.dotBoxes || []) { hard.add(b); tight.add(b); }
     for (const b of v.reserved || []) { hard.add(b); tight.add(b); }
     const defs = v.svg('defs', {}, g);
     const sets = [];
     // Два набора названий не показываются вместе: перетекание — в узком окне t1 ∈ [0.4, 0.6].
-    const fFar = Math.min(1, Math.max(0, (0.6 - t1) / 0.2)), fPart = Math.min(1, Math.max(0, (t1 - 0.4) / 0.2));
+    const fFar = v.detail?.seaNames ?? Math.min(1, Math.max(0, (0.6 - t1) / 0.2)), fPart = v.detail?.partNames ?? Math.min(1, Math.max(0, (t1 - 0.4) / 0.2));
     if (fFar > 0.02) sets.push({ regs: nebRegs, op: fFar, far: true });
     if (fPart > 0.02) sets.push({ regs: partRegs, op: fPart * (1 - 0.35 * t2), far: false });
     if (sets.length === 2 && t1 > 0.5) sets.reverse();
@@ -584,12 +586,13 @@ const MAX_ANG = 0.22;   // наклон названия на экране, ра
       const regs = set.regs.slice().sort((a, b) => b.area - a.area);
       for (const r of regs) {
         const b = r.box, [sx0, sy0] = v.toScreen(b[0], b[1]), [sx1, sy1] = v.toScreen(b[2], b[3]);
-        if (sx1 < 0 || sx0 > v.w || sy1 < v.axis || sy0 > v.h) continue;
+        if (Math.max(sx0, sx1) < 0 || Math.min(sx0, sx1) > v.w || Math.max(sy0, sy1) < v.axis || Math.min(sy0, sy1) > v.h) continue;
         if (r.area < MIN_AREA) continue;
         const best = placeName(r, v, set.far, hard, soft, t2) || placeName(r, v, set.far, tight, soft, t2);
         if (!best) continue;
         for (const bx of best.boxes) { hard.add([bx[0] - 5, bx[1] - 3, bx[2] + 5, bx[3] + 3]); tight.add(bx); placed.push(bx); }
         renderName(g, defs, v, r, best, set.op * (set.far ? 1 : 0.95), uid++, set.far);
+        v.onName?.({ kind: r.kind, id: r.id, name: r.name, members: r.members, x: best.cx, y: best.cy, boxes: best.boxes });
       }
     }
     return placed;
@@ -597,7 +600,7 @@ const MAX_ANG = 0.22;   // наклон названия на экране, ра
   function placeName(r, v, far, hard, soft, t2) {
     const areaS = r.area * v.kx * v.ky;
     // кегль по протяжённости области
-    let fs = far ? Math.max(10.5, Math.min(19, Math.sqrt(areaS) / 8.5)) : Math.max(10.5, Math.min(14.5, Math.sqrt(areaS) / 8.5));
+    let fs = far ? Math.max(12, Math.min(v.narrow ? 15 : 19, Math.sqrt(areaS) / 8.5)) : Math.max(11.5, Math.min(14.5, Math.sqrt(areaS) / 8.5));
     if (!far && t2 > 0) fs = Math.max(10.5, fs - 1.5 * t2);
     const cands = [];
     const pushBasin = (bs, pri) => {
@@ -622,8 +625,9 @@ const MAX_ANG = 0.22;   // наклон названия на экране, ра
     // подпись видимой части области (если главный бассейн за кадром)
     const vis = visibleAxis(r, v);
     const inside = (x, y) => {
-      const i = Math.round(((x - v.ox) / v.kx - OX) / CS) - r.bx0;
-      const j = Math.round(((y - v.oy) / v.ky - OY) / CS) - r.by0;
+      const [ux, uy] = v.toMap ? v.toMap(x, y) : [(x - v.ox) / v.kx, (y - v.oy) / v.ky];
+      const i = Math.round((ux - OX) / CS) - r.bx0;
+      const j = Math.round((uy - OY) / CS) - r.by0;
       return i >= 0 && j >= 0 && i < r.bw && j < r.bh && !!r.M[j * r.bw + i];
     };
     let bestC = null, bestCost = 1e9;
@@ -645,8 +649,8 @@ const MAX_ANG = 0.22;   // наклон названия на экране, ра
     const offs = [[0, 0], [0, -1], [0, 1], [-0.22, 0], [0.22, 0], [0, -2], [0, 2], [-0.22, -1], [0.22, 1], [0.22, -1], [-0.22, 1], [-0.4, 0], [0.4, 0]];
     for (const c of cands) {
       const bs = c.bs, [cx, cy] = v.toScreen(bs.cx, bs.cy), Ls = screenLength(bs.L, bs.ang, v.kx, v.ky);
-      const ang = Math.max(-MAX_ANG, Math.min(MAX_ANG, screenAngle(bs.ang, v.kx, v.ky)));
-      const sa = Ls / bs.L, sp = Math.hypot(Math.sin(bs.ang) * v.kx, Math.cos(bs.ang) * v.ky), curv = bs.curv * sp / (sa * sa);
+      const ang = Math.max(-MAX_ANG, Math.min(MAX_ANG, v.screenAngle ? v.screenAngle(bs.ang) : screenAngle(bs.ang, v.kx, v.ky)));
+      const sa = Ls / bs.L, sp = Math.hypot(Math.sin(bs.ang) * v.kx, Math.cos(bs.ang) * v.ky), curv = v.narrow ? 0 : bs.curv * sp / (sa * sa);
       const ux = Math.cos(ang), uy = Math.sin(ang), step = c.fs * 1.18 * c.lines.length * 0.8;
       for (let oi = 0; oi < offs.length; oi++) {
         const [au, an] = offs[oi];
@@ -697,6 +701,12 @@ const MAX_ANG = 0.22;   // наклон названия на экране, ра
     const { c, cx, cy, ang, curv } = best, fs = c.fs, lh = fs * 1.18, nL = c.lines.length;
     const ux = Math.cos(ang), uy = Math.sin(ang), nx = -uy, ny = ux;
     const t = v.svg('text', { 'text-anchor': 'middle', style: `font:italic ${far ? 500 : 500} ${fs.toFixed(1)}px Spectral, Georgia, serif;letter-spacing:${c.ls.toFixed(2)}px;fill:${r.ink};fill-opacity:${(op * (far ? 0.92 : 0.9)).toFixed(3)};paint-order:stroke;stroke:${P.paper};stroke-opacity:${(op * 0.55).toFixed(3)};stroke-width:${far ? 3.2 : 2.6}px;stroke-linejoin:round` }, null);
+    t.classList.add('region-name');
+    t.dataset.region = `${r.kind}:${r.id}`;
+    t.setAttribute('role', 'button'); t.setAttribute('tabindex', op > 0.2 ? '0' : '-1');
+    t.setAttribute('aria-hidden', String(op < 0.15));
+    if (op < 0.15) t.style.pointerEvents = 'none';
+    t.setAttribute('aria-label', `${r.name}. Карточек: ${r.members.length}. Приблизить`);
     for (let li = 0; li < nL; li++) {
       const ln = c.lines[li], wid = ln.w * fs / 100 + c.ls * ln.n, T2 = wid / 2 + 40;
       // базовая линия ниже оси на полвысоты строчных/прописных букв
@@ -717,6 +727,22 @@ export { init as initNebulae, draw as drawNebulae, names as drawNebulaNames };
 export const keepNonEmpty = (groups) => groups.filter((g) => g.idx.length);
 export function disposeNebulae() { initVersion++; washFar = washMid = null; nebRegs = []; partRegs = []; cache = null; clearTimeout(timer); lastCam = null; }
 export const nebulaStats = () => ({ ...dbg });
+
+export function nebulaRegion(key) {
+  const [kind, id] = key.split(':');
+  const r = (kind === 'neb' ? nebRegs : partRegs).find((r) => r.id === Number(id));
+  return r && { key, kind, name: r.name, members: r.members.slice(), box: r.box.slice() };
+}
+
+// Попадание в область проверяется по маске, а не её широкому прямоугольнику.
+export function nebulaRegionAt(x, y, cam, parts = false) {
+  const ux = (x - cam.ox) / cam.kx, uy = (y - cam.oy) / cam.ky;
+  for (const r of parts ? partRegs : nebRegs) {
+    const i = Math.round((ux - OX) / CS) - r.bx0, j = Math.round((uy - OY) / CS) - r.by0;
+    if (i >= 0 && j >= 0 && i < r.bw && j < r.bh && r.M[j * r.bw + i]) return `${r.kind}:${r.id}`;
+  }
+  return null;
+}
 
 // ---------- камера сайта: анизотропная (по x и y масштабы разные) ----------
 export const screenAngle = (ang, kx, ky) => Math.atan2(Math.sin(ang) * ky, Math.cos(ang) * kx);

@@ -2,7 +2,7 @@
 // с главным предком, ветви расходятся вверх и вниз. Каждый стиль — точка зарождения, подпись и ствол
 // до последнего потомка; длительность видна только у выбранного стиля (и в датах подписи).
 // Ветви древа обходят подписи и на пересечениях проходят «над» чужими линиями (подложка цвета бумаги).
-// Уровни: обзор → чтение → детали (миниатюры). Клик по стилю — крупный план ближайших связей,
+// Уровни: моря → части → эстетики → связи и детали. Клик по стилю — крупный план ближайших связей,
 // с подписями типов связей и метками дальних родственников на краю экрана; полная родословная — по запросу.
 import { html, mount, safeUrl } from '../html.js';
 import { fmtDates, fmtYear, RELATION, REL_STATUS, CONTEXT, DOMAIN, KIND, KIND_FAMILY, plural } from '../format.js?v=regional-01';
@@ -14,16 +14,18 @@ import { replaceParams, pushParams } from '../router.js?v=map4';
 import { pushStep, toParam, parseTrail } from '../trail.js?v=map4';
 import { stepTarget } from '../graphnav.js?v=chain-author-map4';
 import { createGutterLens } from '../lens.js?v=map4';
-import { initNebulae, drawNebulae, drawNebulaNames, disposeNebulae, setNebulaDirtyHandler } from '../nebulae.js?v=seas-audit-1';
+import { initNebulae, drawNebulae, drawNebulaNames, disposeNebulae, setNebulaDirtyHandler, nebulaRegion, nebulaRegionAt } from '../nebulae.js?v=semantic-zoom-1';
 import { buildIndex, search } from '../search.js?v=author-pilot';
-import { styleLabelOpacity, fitLabelText } from '../map-labels.js?v=focus-fit-1';
+import { fitLabelText } from '../map-labels.js?v=focus-fit-1';
 import { LINK_MODES, readLinkSettings, historicalLinkVisible } from '../map-links.js?v=link-modes-1';
+import { mapDetail, aggregateMapLinks } from '../map-detail.js?v=semantic-zoom-1';
 
 const NS = 'http://www.w3.org/2000/svg';
 const AXIS_H = 30;      // строка делений шкалы внутри SVG
 const ROW = 44;         // высота строки при рабочем масштабе
 const PAD = 26;         // поля сверху и снизу полотна (в координатах раскладки)
 const K_DETAIL = 1;     // масштаб, при котором строки раскрыты полностью
+const MAX_K = 2;        // дальше растёт только пустое расстояние между датами
 const OV_K = 0.2;       // просторный обзор (вид по умолчанию): раскладка оставляет место под все подписи
 const SY_OV = 0.8;      // высота строки на просторном обзоре — доля рабочей
 const Z2_K = 0.42;      // с этого масштаба — крупный план: миниатюры и даты под названием
@@ -57,7 +59,7 @@ function grid(cell = 96) {
 export default {
   render(root, ctx) {
     const { store } = ctx;
-    document.title = 'Карта родословной — Атлас эстетик';
+    document.title = 'Карта эстетик — Атлас эстетик';
     const famCount = (k) => store.styles.filter((s) => KIND_FAMILY[k].kinds.includes(s.kind[0])).length;
 
     mount(root, html`
@@ -113,7 +115,7 @@ export default {
             <div class="lg-layers" role="group" aria-label="Слои карты">
               <label class="map-switch"><input type="checkbox" data-layer="verified"><span class="sw" aria-hidden="true"></span>Только подтверждённые связи</label>
             </div>
-            <p class="lg-note">Моря делятся на части при приближении. Их соседство и расстояния не означают географическую или культурную близость; состав групп не доказывает происхождение. Подпись области может охватывать несколько островов. Вертикаль не означает иерархию: стили стоят рядом с главным предком, чтобы ветви были короткими. «Основные» показывает дерево по первым указанным предкам, «Все связи» добавляет остальные связи, культурный контекст и визуальные сопоставления. «Без связей» оставляет области и карточки. Авторские карточки показаны всегда. Большинство исторических связей пока не сверены с источниками — это редакционная схема; при желании можно оставить только подтверждённые связи. Шкала времени неравномерная: каждой эпохе — место по числу стилей. На «Всей истории» подписи стилей исчезают; при приближении проявляются плавно. Наведите на точку или выберите её, чтобы прочесть название. Нажмите на линию — появится объяснение связи; на стиль — его связи крупным планом.</p>
+            <p class="lg-note">На дальнем плане читаются моря: отдельные точки и ветви скрыты, пунктир объединяет связи карточек из разных морей. Нажмите на него, чтобы увидеть конкретные связи, типы и источники. При приближении появляются части, затем эстетики; береговые контуры уходят до крупного плана. Нажмите на море или его название, чтобы приблизить область. В списке доступны все моря и карточки вне них. Соседство и расстояния не означают географическую или культурную близость; состав групп не доказывает происхождение. «Основные» показывает ветви по первым указанным предкам, «Все связи» добавляет остальные связи, контекст и визуальные сопоставления; на дальнем плане показывается только несколько сводных линий. «Без связей» отключает также сводки и маршрут. Авторские карточки доступны на тех же уровнях, что и остальные. Большинство исторических связей пока остаются редакционными гипотезами. Фильтр «Только подтверждённые» независим от режима линий. Время идёт слева направо, на узком экране — сверху вниз; текст остаётся горизонтальным. Шкала времени неравномерная: каждой эпохе отведено место по числу стилей. Перетаскивание двигает карту; Ctrl/⌘ с колёсиком или щипок меняет масштаб.</p>
           </div>
         </div>
         <div class="zoom-ctrls">
@@ -130,11 +132,11 @@ export default {
           <div class="era-nav-window" aria-hidden="true"></div>
         </div>
       </nav>
-      <div class="map-stage" tabindex="0" aria-label="Карта родословной стилей. Стрелки — двигать, плюс и минус — масштаб, Tab — по стилям.">
+      <div class="map-stage" tabindex="0" aria-label="Карта эстетик: моря, части и карточки. Стрелки — двигать, плюс и минус — масштаб, Tab — по областям и стилям.">
         <canvas class="map-neb" aria-hidden="true"></canvas>
         <svg class="map-svg z0">
           <defs>${[11, 13, 15].map((r) => html`<clipPath id="clip-${r}"><circle cx="0" cy="0" r="${r}"/></clipPath>`)}</defs>
-          <g class="m-eras"></g><g class="m-dur"></g><g class="m-life"></g><g class="m-cmp"></g><g class="m-contexts"></g><g class="m-edges"></g><g class="m-edge-hits"></g><g class="m-trail"></g><g class="m-nebnames"></g><g class="m-plates"></g>
+          <g class="m-eras"></g><g class="m-summary"></g><g class="m-summary-hits"></g><g class="m-dur"></g><g class="m-life"></g><g class="m-cmp"></g><g class="m-contexts"></g><g class="m-edges"></g><g class="m-edge-hits"></g><g class="m-trail"></g><g class="m-nebnames"></g><g class="m-plates"></g>
           <g class="m-nodes"></g><g class="m-labels"></g><g class="m-stubs"></g><g class="m-sel"></g><g class="m-elabels"></g><g class="m-axis"></g>
         </svg>
         <div class="map-offscreen" aria-label="Связи за краем экрана"></div>
@@ -151,6 +153,18 @@ export default {
         <div class="map-edge-pop" role="dialog" aria-label="Связь" hidden></div>
         <aside class="map-panel" hidden aria-live="polite"></aside>
         <p class="map-loading">Строим карту…</p>
+        <nav class="map-levels" aria-label="Подробность карты">
+          <button type="button" data-detail="seas">Моря</button><span aria-hidden="true">›</span>
+          <button type="button" data-detail="parts">Части</button><span aria-hidden="true">›</span>
+          <button type="button" data-detail="styles">Эстетики</button>
+          <button type="button" class="map-browse" data-browse aria-expanded="false" aria-label="Список морей и карточек">☰</button>
+        </nav>
+        <section class="map-directory" hidden aria-label="Моря и карточки">
+          <div class="md-head"><strong>Моря эстетик</strong><button type="button" class="icon-btn" data-browse-close aria-label="Закрыть список">×</button></div>
+          <p>Выберите область, чтобы рассмотреть её части и карточки.</p>
+          <div class="md-list">${store.nebulae.map((n, i) => html`<button type="button" data-region="neb:${i}"><i style="--c:${n.color}"></i><span>${n.name}</span><small>${store.styles.filter((s) => s.nebula === n.id).length}</small></button>`)}</div>
+          <details><summary>Карточки вне морей</summary><div class="md-list">${store.styles.filter((s) => !s.nebula).map((s) => html`<button type="button" data-select="${s.id}">${s.name}</button>`)}</div></details>
+        </section>
         <p class="map-hint"></p>
         <nav class="map-trail" aria-label="Маршрут" hidden></nav>
       </div>
@@ -159,7 +173,12 @@ export default {
     const q = (s) => root.querySelector(s);
     const stage = q('.map-stage');
     const svg = q('.map-svg');
-    const G = Object.fromEntries(['eras', 'dur', 'life', 'cmp', 'contexts', 'edges', 'edge-hits', 'trail', 'nebnames', 'plates', 'nodes', 'labels', 'stubs', 'sel', 'elabels', 'axis'].map((k) => [k, svg.querySelector(`.m-${k}`)]));
+    const G = Object.fromEntries(['eras', 'summary', 'summary-hits', 'dur', 'life', 'cmp', 'contexts', 'edges', 'edge-hits', 'trail', 'nebnames', 'plates', 'nodes', 'labels', 'stubs', 'sel', 'elabels', 'axis'].map((k) => [k, svg.querySelector(`.m-${k}`)]));
+    const summaryMask = el('mask', { id: 'map-summary-mask', maskUnits: 'userSpaceOnUse', maskContentUnits: 'userSpaceOnUse' }, svg.querySelector('defs'));
+    G.summary.setAttribute('mask', 'url(#map-summary-mask)'); G['summary-hits'].setAttribute('mask', 'url(#map-summary-mask)');
+    const regionMask = el('mask', { id: 'map-region-mask', maskUnits: 'userSpaceOnUse', maskContentUnits: 'userSpaceOnUse' }, svg.querySelector('defs'));
+    for (const g of [G.edges, G['edge-hits'], G.cmp, G.contexts, G.life, G.trail, G.dur]) g.setAttribute('mask', 'url(#map-region-mask)');
+    const directory = q('.map-directory');
     const tip = q('.map-tip');
     const edgePop = q('.map-edge-pop');
     const panel = q('.map-panel');
@@ -193,6 +212,8 @@ export default {
     const axis = {};
     let raf = 0, selected = null, focusMode = 'near', hovered = null, mode = 'z0';
     let linkMode = 'main', verifiedOnly = false;
+    let detail = mapDetail(0, 0, OV_K), aggregateLinks = [], summaryRecords = [], regionHover = null;
+    const regionNames = new Map();
     let filter = { domain: '', family: '' };
     let camBeforeFocus = null, camBeforeFilter = null;
     let trail = [];        // маршрут по стилям; источник правды — параметр trail в адресе
@@ -206,8 +227,9 @@ export default {
     let labelMeasure;
     let nebBuildVersion = 0;
     const nebOn = ctx.params?.get('neb') !== '0';
+    q('.map-levels').hidden = !nebOn;
     const LABEL_PAD = window.innerWidth < 760 ? 110 : 170;
-    const isNarrow = () => pw < 760;
+    const isNarrow = () => pw <= 760;
     // Экранные координаты ↔ виртуальные (x_в = y_э, y_в = pw − x_э) и сдвиги.
     const toV = (cx, cy) => { const r = stage.getBoundingClientRect(), x = cx - r.left, y = cy - r.top; return rot ? { x: y, y: pw - x } : { x, y }; };
     const toP = (x, y) => (rot ? { x: pw - y, y: x } : { x, y });
@@ -368,10 +390,10 @@ export default {
       svg.dataset.comparisons = String(cmps.length);
       svg.dataset.contexts = String(contextEdges.length);
       svg.dataset.rows = String(lay.count);
-      q('.map-loading').remove();
+      if (!nebOn) q('.map-loading').remove();
       resize();
       drawMinimap();
-      overview(false);
+      if (nebOn) fit(false); else overview(false);
       applyParams(ctx.params, true);
       buildNebulae();
     }
@@ -411,13 +433,25 @@ export default {
       svg.dataset.nebulaBuild = String(version);
       window.__nebInit = performance.now() - t0;
       neb.ready = true;
+      q('.map-loading')?.remove();
       schedule();
     }
     const nebulaCam = () => {
       const kx = t.k / OV_K, ky = syOf(t.k) / SY_OV;
-      return { kx, ky, ox: t.tx - NEB_PADX * kx, oy: AXIS_H + t.ty - NEB_PADY * ky, w: vw, h: vh, axis: AXIS_H, dpr: nebDpr,
+      return { kx, ky, ox: t.tx - NEB_PADX * kx, oy: AXIS_H + t.ty - NEB_PADY * ky, w: vw, h: vh, axis: AXIS_H, dpr: nebDpr, detail,
         toScreen: (ux, uy) => [t.tx + (ux - NEB_PADX) * kx, AXIS_H + t.ty + (uy - NEB_PADY) * ky], svg: el };
     };
+    // На телефоне время идёт сверху вниз, но текст читается горизонтально.
+    const nameCam = () => {
+      const c = nebulaCam();
+      if (!rot) return c;
+      return { ...c, w: pw, h: ph, axis: 0, narrow: true,
+        toScreen: (ux, uy) => { const [x, y] = c.toScreen(ux, uy); return [pw - y, x]; },
+        toMap: (x, y) => [(y - c.ox) / c.kx, (pw - x - c.oy) / c.ky],
+        screenAngle: () => 0 };
+    };
+    const toNameBox = (b) => rot ? [pw - b[3], b[0], pw - b[1], b[2]] : b;
+    const fromNameBox = (b) => rot ? [b[1], pw - b[2], b[3], pw - b[0]] : b;
 
     function applyParams(params, first = false) {
       const settings = readLinkSettings(params);
@@ -440,6 +474,22 @@ export default {
     function draw() {
       raf = 0;
       if (!sc) return;
+      const focusedRegion = document.activeElement?.classList.contains('region-name') ? document.activeElement.dataset.region : null;
+      const focusedSummary = document.activeElement?.classList.contains('summary-hit') ? document.activeElement.dataset.key : null;
+      for (const g of [G.labels, G.plates, G.nebnames, G.summary, G['summary-hits']]) {
+        if (rot) g.setAttribute('transform', `matrix(0,-1,1,0,0,${pw})`); else g.removeAttribute('transform');
+      }
+      detail = mapDetail(t.k, k0, kOv(), nebOn);
+      svg.dataset.detail = JSON.stringify(detail);
+      G.nodes.setAttribute('aria-hidden', String(detail.nodes === 0 && !selected && !hovered));
+      G.labels.setAttribute('aria-hidden', String(detail.labels === 0 && !selected && !hovered));
+      svg.dataset.level = detail.level;
+      stage.dataset.level = detail.level;
+      const quietMini = detail.nodes < 0.5;
+      if (mmBox.classList.contains('is-quiet') !== quietMini) { mmBox.classList.toggle('is-quiet', quietMini); drawMinimap(); }
+      for (const btn of root.querySelectorAll('[data-detail]')) {
+        if (btn.dataset.detail === detail.level) btn.setAttribute('aria-current', 'step'); else btn.removeAttribute('aria-current');
+      }
       lens = lensNow() ? createGutterLens({ total: sc.total, k: t.k, tx: t.tx, width: vw - panelWidth() }) : IDENT;
       const sy = syOf(t.k);
       const rowH = ROW * sy;
@@ -477,16 +527,22 @@ export default {
         const hitR = n.zone === 'C' ? 18 : 4;     // у сжатых точек круг попадания маленький: соседи стоят вплотную
         if (n.hitR !== hitR) { n.hitR = hitR; n.g.firstChild.setAttribute('r', hitR); }
         const off = x2 < -40 || x > vw + 40 || y < AXIS_H - 30 || y > vh + 30;
-        n.g.style.display = off ? 'none' : '';
+        const emphasized = n.g.classList.contains(selected ? 'lit' : 'near') || n.s.id === selected || n.s.id === hovered;
+        n.alpha = emphasized ? 1 : n.zone !== 'C' ? 0 : detail.nodes;
+        n.g.style.setProperty('--node-zoom', n.alpha);
+        n.g.style.pointerEvents = n.alpha < 0.15 ? 'none' : '';
+        n.g.style.display = off || n.alpha === 0 ? 'none' : '';
+        n.g.setAttribute('aria-hidden', String(off || n.alpha < 0.15));
         n.life.style.display = off ? 'none' : '';
+        n.life.style.opacity = emphasized ? 1 : detail.edges;
         // С клавиатуры обходятся только стили на экране: Tab не уводит камеру в другой конец истории.
-        const tabOff = off || n.zone !== 'C' || x < 0 || x > vw - panelWidth() || y < AXIS_H || y > vh - sheetHeight();
+        const tabOff = off || n.alpha < 0.15 || n.zone !== 'C' || x < 0 || x > vw - panelWidth() || y < AXIS_H || y > vh - sheetHeight();
         if (n.tabOff !== tabOff) { n.tabOff = tabOff; n.g.setAttribute('tabindex', tabOff ? '-1' : '0'); }
         if (off) { n.text.style.display = 'none'; n.plate.style.display = 'none'; n.labelOn = false; n.lbox = null; continue; }
         n.g.setAttribute('transform', `translate(${x.toFixed(1)},${y.toFixed(1)})`);
         n.dot.setAttribute('r', n.r);
         n.ring.setAttribute('r', n.r + 1);
-        if ((m === 'z2' || n.landmark) && n.s.example.img) {
+        if (n.alpha > 0.15 && (m === 'z2' || n.landmark) && n.s.example.img) {
           const r = m === 'z2' ? R.z2[n.s.tier] : 11;
           if (!n.img) {
             n.img = el('image', { href: n.s.example.img.src[250], preserveAspectRatio: 'xMidYMid slice', class: 'thumb-img' });
@@ -503,23 +559,36 @@ export default {
       // Подписи: по приоритету, без наложений друг на друга и на точки. Сетка — чтобы и 600 стилей не тормозили.
       // На просторном обзоре место под каждую подпись оставила раскладка; мельче — побеждает приоритет.
       const occ = grid();
-      for (const n of visible) occ.add([n.x - n.r - 1, n.x + n.r + 1, n.y - n.r - 1, n.y + n.r + 1, n.s.id]);
+      for (const n of visible) if (n.alpha > 0.15) occ.add([n.x - n.r - 1, n.x + n.r + 1, n.y - n.r - 1, n.y + n.r + 1, n.s.id]);
       // Подпись целиком в видимой области и не под миникартой — иначе не показываем: обрезанное
       // название хуже отсутствующего (сдвиньте карту — оно появится).
       const view = viewRect();
       occ.add([mmBox.offsetLeft - 4, mmBox.offsetLeft + mmBox.offsetWidth + 4, mmBox.offsetTop - 4, mmBox.offsetTop + mmBox.offsetHeight + 4, '']);
+      const levelRect = q('.map-levels').getBoundingClientRect();
+      if (levelRect.width) {
+        const a = toV(levelRect.left, levelRect.top), b = toV(levelRect.right, levelRect.bottom);
+        occ.add([Math.min(a.x, b.x) - 5, Math.max(a.x, b.x) + 5, Math.min(a.y, b.y) - 5, Math.max(a.y, b.y) + 5, '']);
+      }
       // На «Всей истории» названия туманностей важнее подписей стилей: ставятся первыми, подписи их обходят.
-      const nebNamesFirst = neb.ready && nebOn && nebulaCam().kx < 0.7;
+      const nebNamesFirst = neb.ready && nebOn && detail.labels < 0.65;
       G.nebnames.replaceChildren();
+      regionNames.clear();
       const placeNebNames = (labelBoxes) => {
         const reserved = [[mmBox.offsetLeft - 4, mmBox.offsetTop - 4, mmBox.offsetLeft + mmBox.offsetWidth + 4, mmBox.offsetTop + mmBox.offsetHeight + 4]];
         if (panelWidth()) reserved.push([vw - panelWidth(), AXIS_H, vw, vh]);
         if (lens.hasL) reserved.push([0, AXIS_H, lens.gutter, vh]);
         if (lens.hasR) reserved.push([lens.width - lens.gutter, AXIS_H, lens.width, vh]);
+        const levelRect = q('.map-levels').getBoundingClientRect();
+        if (levelRect.width) {
+          const a = toV(levelRect.left, levelRect.top), b = toV(levelRect.right, levelRect.bottom);
+          reserved.push([Math.min(a.x, b.x) - 5, Math.min(a.y, b.y) - 5, Math.max(a.x, b.x) + 5, Math.max(a.y, b.y) + 5]);
+        }
+        if (rot) reserved.push([0, 0, vw, AXIS_H]);
         return drawNebulaNames(G.nebnames, {
-          ...nebulaCam(), labelBoxes, reserved,
-          dotBoxes: visible.map((n) => [n.x - n.r - 1, n.y - n.r - 1, n.x + n.r + 1, n.y + n.r + 1]),
-        });
+          ...nameCam(), labelBoxes: labelBoxes.map(toNameBox), reserved: reserved.map(toNameBox),
+          dotBoxes: visible.filter((n) => n.alpha > 0.15).map((n) => toNameBox([n.x - n.r - 1, n.y - n.r - 1, n.x + n.r + 1, n.y + n.r + 1])),
+          onName: (r) => regionNames.set(`${r.kind}:${r.id}`, r),
+        }).map(fromNameBox);
       };
       if (nebNamesFirst) {
         // Выбранная/наведённая подпись сохраняется даже на дальнем плане.
@@ -533,7 +602,7 @@ export default {
       const inView = (b) => b[0] >= view.x0 + 4 && b[1] <= view.x1 - 4 && b[2] >= AXIS_H && b[3] <= view.y1;
       const allowTier = m === 'z0' ? 2 : 3;
       const focusSet = svg.classList.contains('has-selection');
-      const labelAlpha = styleLabelOpacity(t.k, k0, kOv());
+      const labelAlpha = detail.labels;
       svg.dataset.labelOpacity = labelAlpha.toFixed(4);
       svg.style.setProperty('--context-alpha', (0.22 + 0.13 * labelAlpha).toFixed(3));
       visible.sort((a, b) => prio(b) - prio(a));
@@ -572,11 +641,14 @@ export default {
           const tx = spot.tx.toFixed(1);
           n.name.setAttribute('x', tx); n.name.setAttribute('y', spot.base.toFixed(1));
           n.dates.setAttribute('x', tx); n.dates.setAttribute('y', (spot.base + 15).toFixed(1));
-          n.plate.setAttribute('x', (a - 1).toFixed(1)); n.plate.setAttribute('width', (b - a - 1).toFixed(1));
-          n.plate.setAttribute('y', (c - 1).toFixed(1)); n.plate.setAttribute('height', (d - c + 3).toFixed(1));
+          const pb = spot.renderBox ?? spot.box;
+          n.plate.setAttribute('x', (pb[0] - 1).toFixed(1)); n.plate.setAttribute('width', (pb[1] - pb[0] - 1).toFixed(1));
+          n.plate.setAttribute('y', (pb[2] - 1).toFixed(1)); n.plate.setAttribute('height', (pb[3] - pb[2] + 3).toFixed(1));
         }
       }
       if (neb.ready && nebOn && !nebNamesFirst) placeNebNames(visible.filter((n) => n.lbox).map((n) => [n.lbox[0], n.lbox[2], n.lbox[1], n.lbox[3]]));
+      updateRegionMasks();
+      drawSummary();
       if (nebT0) window.__mapPerf.push(performance.now() - nebT0);
       drawEdges();
       drawTrail();
@@ -584,12 +656,87 @@ export default {
       drawOffscreen();
       drawNav();
       drawMinimapFrame();
+      if (focusedRegion) [...G.nebnames.querySelectorAll('.region-name')].find((n) => n.dataset.region === focusedRegion)?.focus({ preventScroll: true });
+      if (focusedSummary) [...G['summary-hits'].children].find((n) => n.dataset.key === focusedSummary)?.focus({ preventScroll: true });
+    }
+
+    function updateRegionMasks() {
+      for (const [mask, w, h, project] of [[summaryMask, pw, ph, (b) => b], [regionMask, vw, vh, fromNameBox]]) {
+        mask.replaceChildren();
+        for (const [k, value] of Object.entries({ x: 0, y: 0, width: w, height: h })) mask.setAttribute(k, value);
+        el('rect', { x: 0, y: 0, width: w, height: h, fill: 'white' }, mask);
+        for (const r of regionNames.values()) {
+          const bs = r.boxes.map(project);
+          const x = Math.min(...bs.map((b) => b[0])) - 5, y = Math.min(...bs.map((b) => b[1])) - 4;
+          el('rect', { x, y, width: Math.max(...bs.map((b) => b[2])) - x + 5, height: Math.max(...bs.map((b) => b[3])) - y + 4, fill: 'black' }, mask);
+        }
+      }
+    }
+    function drawSummary() {
+      G.summary.replaceChildren(); G['summary-hits'].replaceChildren();
+      aggregateLinks = [];
+      if (!neb.ready || !nebOn || detail.aggregates < 0.15 || linkMode === 'none' || selected) return;
+      const records = [
+        ...edges.map((e) => ({ from: e.par.s.id, to: e.ch.s.id, kind: 'history', primary: e.primary, status: e.rel.status, info: { edge: e } })),
+        ...cmps.map((c) => ({ from: c.a.s.id, to: c.b.s.id, kind: 'comparison', info: { cmp: c } })),
+        ...contextEdges.map((c) => ({ from: c.a.s.id, to: c.b.s.id, kind: 'context', status: c.status, info: { context: c } })),
+      ].filter((r) => !nodeById.get(r.from).g.classList.contains('out') && !nodeById.get(r.to).g.classList.contains('out'));
+      const seaKeys = new Map(store.nebulae.map((s, i) => [s.id, `neb:${i}`]));
+      const groups = aggregateMapLinks(records, (id) => seaKeys.get(nodeById.get(id).s.nebula), { mode: linkMode, verifiedOnly });
+      const named = groups.filter((g) => regionNames.has(g.a) && regionNames.has(g.b));
+      aggregateLinks = (regionHover ? named.filter((g) => g.a === regionHover || g.b === regionHover) : named.filter((g) => verifiedOnly || g.records.length >= 2)).slice(0, linkMode === 'all' ? 10 : 6);
+      for (const [i, g] of aggregateLinks.entries()) {
+        const a = regionNames.get(g.a), b = regionNames.get(g.b);
+        const dx = b.x - a.x, dy = b.y - a.y, len = Math.hypot(dx, dy), bend = Math.min(70, len * 0.18);
+        if (len < 30) continue;
+        const cx = (a.x + b.x) / 2 - dy / len * bend, cy = (a.y + b.y) / 2 + dx / len * bend;
+        const d = `M${a.x.toFixed(1)},${a.y.toFixed(1)}Q${cx.toFixed(1)},${cy.toFixed(1)} ${b.x.toFixed(1)},${b.y.toFixed(1)}`;
+        el('path', { class: 'summary-line', d, 'stroke-width': Math.min(2.6, 0.65 + Math.log2(g.records.length + 1) * 0.35), opacity: detail.aggregates * (regionHover ? 0.62 : 0.24) }, G.summary);
+        const count = `${g.records.length} ${plural(g.records.length, 'связь карточек', 'связи карточек', 'связей карточек')}`;
+        const h = el('path', { class: 'summary-hit', d, 'data-summary': i, 'data-key': `${g.a}/${g.b}`, role: 'button', tabindex: 0, 'aria-label': `${a.name} и ${b.name}: ${count}. Открыть список` }, G['summary-hits']);
+        el('title', {}, h).textContent = `${count} · ${a.name} / ${b.name}`;
+      }
+    }
+
+    function focusRegion(key) {
+      const r = nebulaRegion(key);
+      if (!r) return;
+      directory.hidden = true; q('[data-browse]').setAttribute('aria-expanded', 'false');
+      hideTip(); hideEdgeInfo(); regionHover = null;
+      if (selected) clearSelection();
+      const members = r.members.map((i) => nodes[i]);
+      const xs = members.map((n) => sc.x(n.s.start)), ys = members.map(yRef);
+      const anchor = Math.max(kOv(), k0 * 2.2);
+      fitBox(Math.min(...xs) - 90, Math.max(...xs) + 240, Math.min(...ys) - 55, Math.max(...ys) + 55,
+        { kMin: anchor * (r.kind === 'neb' ? 0.83 : 1.7), kMax: r.kind === 'neb' ? anchor * 1.7 : 1.15 });
+    }
+
+    function showSummaryInfo(group, px, py) {
+      if (!group) return;
+      summaryRecords = group.records;
+      mount(edgePop, html`<p class="ep-head">${nebulaRegion(group.a)?.name} · ${nebulaRegion(group.b)?.name}</p>
+        <p class="ep-kind">${group.records.length} ${plural(group.records.length, 'связь карточек', 'связи карточек', 'связей карточек')}</p>
+        <p class="ep-note">Это сводка связей отдельных эстетик. Моря — области навигации, а не исторические предки. Откройте связь, чтобы увидеть её тип и источник.</p>
+        <div class="summary-records">${group.records.map((r, i) => html`<button type="button" data-summary-record="${i}">${store.get(r.from).name} ${r.kind === 'comparison' ? '↔' : '→'} ${store.get(r.to).name}<small>${r.kind === 'history' ? RELATION[r.info.edge.type].label : r.kind === 'comparison' ? 'Визуальное сходство' : 'Контекст'} · ${r.kind === 'comparison' ? 'редакционное сопоставление' : REL_STATUS[r.status]}</small></button>`)}</div>`);
+      placeEdgeInfo(px, py);
     }
 
     // Подпись — справа от точки на своей строке. У правого края экрана — слева, чтобы не обрезалась.
     // Прямоугольник подписи — от базовой линии шрифта: с надстрочными и подстрочными элементами.
     function spotOf(n, m, w, fh, forced = false) {
       const { x, y, r } = n;
+      if (rot) {
+        const p = toP(x, y), gap = r + 7, right = pw - AXIS_H - 8 - p.x - gap, left = p.x - gap - 8;
+        const side = right >= w || right >= left ? 'start' : 'end', room = Math.max(0, side === 'start' ? right : left);
+        const font = n.s.id === selected ? FONT[n.s.tier].replace(/^\d+/, '700') : FONT[n.s.tier];
+        const name = fitLabelText(n.s.name, room, (s) => labelMeasure(font, s));
+        const dates = fitLabelText(n.fullDates, room, (s) => labelMeasure(DATE_FONT, s));
+        const width = Math.max(name.width, m === 'z2' ? dates.width : 0);
+        const tx = side === 'start' ? p.x + gap : p.x - gap, base = p.y + (m === 'z2' ? -1 : fh * 0.36);
+        const pb = [side === 'start' ? tx - 2 : tx - width - 2, side === 'start' ? tx + width + 2 : tx + 2,
+          base - n.ascent - 2, m === 'z2' ? base + 15 + n.dateDescent + 2 : base + n.descent + 2];
+        return { anchor: side, tx, base, name: name.text, dates: dates.text, renderBox: pb, box: [pb[2], pb[3], pw - pb[1], pw - pb[0]] };
+      }
       const view = viewRect();
       let name = n.s.name, dates = n.fullDates;
       if (forced) {
@@ -748,7 +895,8 @@ export default {
 
     // Маршрут: трек по связям между пройденными стилями (по ветви или дуге; без связи — пунктир напрямую).
     function drawTrail() {
-      if (linkMode === 'none') { trailPath.setAttribute('d', ''); return; }
+      G.trail.style.opacity = selected ? 1 : detail.edges;
+      if (linkMode === 'none' || (!selected && detail.edges === 0)) { trailPath.setAttribute('d', ''); return; }
       let d = '';
       for (let i = 1; i < trail.length; i++) {
         const a = nodeById.get(trail[i - 1]), b = nodeById.get(trail[i]);
@@ -772,7 +920,10 @@ export default {
         const near = !!hovered && (p.s.id === hovered || c.s.id === hovered);
         e.g.classList.toggle('near', near);
         const out = e.g.classList.contains('out');
-        const want = historicalLinkVisible({ mode: linkMode, primary: e.primary, highlighted: lit || near, verifiedOnly, status: e.rel.status, filtered: out && !lit });
+        const alpha = lit || near ? 1 : detail.edges;
+        e.g.style.opacity = alpha;
+        e.hit.style.pointerEvents = alpha < 0.15 ? 'none' : '';
+        const want = alpha > 0 && (lit || near || (p.zone === 'C' && c.zone === 'C')) && historicalLinkVisible({ mode: linkMode, primary: e.primary, highlighted: lit || near, verifiedOnly, status: e.rel.status, filtered: out && !lit });
         const xa = Math.min(X(p.s.start), X(c.s.start)), xb = Math.max(X(p.s.start), X(c.s.start));
         const offscreen = xb < -60 || xa > vw + 60 || Math.max(p.y, c.y) < AXIS_H - 40 || Math.min(p.y, c.y) > vh + 40;
         if (!want || offscreen) {
@@ -790,10 +941,12 @@ export default {
       for (const c of [...cmps, ...contextEdges]) {
         const near = !!hovered && (c.a.s.id === hovered || c.b.s.id === hovered);
         const sel = !!selected && (c.a.s.id === selected || c.b.s.id === selected);
+        const alpha = sel || near ? 1 : detail.edges;
+        c.path.style.opacity = alpha; c.hit.style.pointerEvents = alpha < 0.15 ? 'none' : '';
         const offA = c.a.g.style.display === 'none', offB = c.b.g.style.display === 'none';
         c.path.classList.toggle('near', near || sel);
         const enabled = linkMode === 'all';
-        const hidden = linkMode === 'none' || (c.context && verifiedOnly && c.status !== 'verified');
+        const hidden = alpha === 0 || linkMode === 'none' || (!(sel || near) && (c.a.zone !== 'C' || c.b.zone !== 'C')) || (c.context && verifiedOnly && c.status !== 'verified');
         if (hidden || !(enabled || near || sel) || (offA && offB && !sel)) { c.path.setAttribute('d', ''); c.hit.setAttribute('d', ''); continue; }
         const [l, r] = c.a.x <= c.b.x ? [c.a, c.b] : [c.b, c.a];
         const mx = (l.x + r.x) / 2, lift = Math.min(70, Math.abs(r.x - l.x) * 0.15 + 14);
@@ -811,11 +964,11 @@ export default {
     function drawSelection() {
       const n = selected && nodeById.get(selected);
       const h = hovered && hovered !== selected && nodeById.get(hovered);
-      axis.durSel.setAttribute('d', n && n.g.style.display !== 'none' ? durPath(n) : '');
+      axis.durSel.setAttribute('d', detail.level === 'styles' && n && n.g.style.display !== 'none' ? durPath(n) : '');
       if (n) axis.durSel.setAttribute('stroke', `var(--era-${n.s.era})`);
-      axis.durHover.setAttribute('d', h && h.g.style.display !== 'none' ? durPath(h) : '');
+      axis.durHover.setAttribute('d', detail.level === 'styles' && h && h.g.style.display !== 'none' ? durPath(h) : '');
       if (h) axis.durHover.setAttribute('stroke', `var(--era-${h.s.era})`);
-      const showYears = !!n && n.g.style.display !== 'none';
+      const showYears = detail.level === 'styles' && !!n && n.g.style.display !== 'none';
       axis.selStart.style.display = showYears ? '' : 'none';
       axis.selEnd.style.display = showYears && n.s.end != null ? '' : 'none';
       if (showYears) {
@@ -827,7 +980,7 @@ export default {
         }
       }
       const labels = [];
-      if (selected && focusMode === 'near') {
+      if (detail.level === 'styles' && selected && focusMode === 'near') {
         for (const e of edges) if (e.g.classList.contains('hl') && e.drawn) labels.push({ text: `${RELATION[e.type].label}${e.rel.status === 'verified' ? ' ✓' : ''}`, path: e.path });
         for (const c of cmps) if (c.path.classList.contains('near') && c.path.getAttribute('d')) labels.push({ text: 'сходство', path: c.path });
         for (const c of contextEdges) if (c.path.classList.contains('near') && c.path.getAttribute('d')) labels.push({ text: CONTEXT[c.type]?.label ?? 'контекст', path: c.path });
@@ -929,7 +1082,7 @@ export default {
     const atFit = () => Math.abs(t.k - k0) < k0 * 0.03;
     const fitBtn = q('[data-zoom="fit"]');
     function drawNav() {
-      const fitLabel = atFit() ? 'Обзор' : 'Вся история';
+      const fitLabel = atFit() ? 'Части' : 'Вся история';
       if (fitBtn.textContent !== fitLabel) fitBtn.textContent = fitLabel;
       const y0 = sc.invert((0 - t.tx) / t.k), y1 = sc.invert((vw - panelWidth() - t.tx) / t.k);
       const a = navPos(y0), b = navPos(y1);
@@ -950,7 +1103,7 @@ export default {
     function drawMinimap() {
       const dpr = window.devicePixelRatio || 1;
       // Миникарта — отдельное окошко в углу полотна, как в играх. Свёрнута — не рисуется.
-      if (mmBox.classList.contains('collapsed')) { mmW = 0; return; }
+      if (mmBox.classList.contains('collapsed') || mmBox.classList.contains('is-quiet')) { mmW = 0; return; }
       mmW = mm.clientWidth || 240; mmH = mm.clientHeight || 100;
       mmCanvas.width = mmW * dpr; mmCanvas.height = mmH * dpr;
       mmCanvas.style.width = `${mmW}px`; mmCanvas.style.height = `${mmH}px`;
@@ -1015,12 +1168,15 @@ export default {
       const avail = vh - AXIS_H - sheetHeight();
       t.ty = h <= avail ? clamp(t.ty, 0, avail - h) : clamp(t.ty, avail - h, 0);
     }
-    function zoomAt(px, py, factor) {
-      const k2 = clamp(t.k * factor, Math.min(k0 * 0.9, t.k), 5);
+    function zoomAt(px, py, factor, animate = false) {
+      cancelAnimationFrame(anim); clearTimeout(flightTimer);
+      const k2 = clamp(t.k * factor, Math.min(k0 * 0.9, t.k), MAX_K);
       const s1 = syOf(t.k), s2 = syOf(k2);
-      t.tx = px - ((px - t.tx) * k2) / t.k;
+      const tx = px - ((px - t.tx) * k2) / t.k;
       const yy = py - AXIS_H;
-      t.ty = yy - ((yy - t.ty) * s2) / s1;
+      const ty = yy - ((yy - t.ty) * s2) / s1;
+      if (animate) { animateTo(k2, tx, ty, 500); return; }
+      t.tx = tx; t.ty = ty;
       t.k = k2;
       clampT(); schedule();
     }
@@ -1043,7 +1199,7 @@ export default {
     }
     function computeFit() {
       const rect = viewRect();
-      k0 = Math.max(24, rect.x1 - rect.x0 - 80 - LABEL_PAD) / sc.total;
+      k0 = Math.max(24, rect.x1 - rect.x0 - 100) / sc.total;
       syFit = Math.max(24, rect.y1 - rect.y0 - 16) / contentRefH;
     }
     function fit(animate = true) {
@@ -1054,7 +1210,7 @@ export default {
     // что попало в кадр. Дальше по карте ведут перетаскивание, навигатор эпох и миникарта.
     function overview(animate = true) {
       computeFit();
-      const k = kOv(), sy = syOf(k), rect = viewRect(), tx = 40;
+      const k = Math.max(kOv(), k0 * 2.2) * 0.83, sy = syOf(k), rect = viewRect(), tx = 40;
       const xr1 = (rect.x1 - tx) / k;
       const ys = nodes.filter((n) => sc.x(n.s.start) <= xr1).map(yRef);
       const yc = ys.length ? ys.reduce((a, b) => a + b, 0) / ys.length : contentRefH / 2;
@@ -1090,7 +1246,7 @@ export default {
       const ys = nodes.filter((n) => n.s.start >= seg.start && n.s.start < seg.end).map(yRef);
       const y0 = ys.length ? Math.min(...ys) - ROW : 0, y1 = ys.length ? Math.max(...ys) + ROW : contentRefH;
       const yFocus = ys.length ? ys.reduce((a, b) => a + b, 0) / ys.length : contentRefH / 2;
-      fitBox(seg.x0, seg.x1, y0, y1, { kMin: isNarrow() ? 0.5 : 0.72, kMax: 3, ms, fitY: false, yFocus });
+      fitBox(seg.x0, seg.x1, y0, y1, { kMin: isNarrow() ? 0.5 : 0.72, kMax: MAX_K, ms, fitY: false, yFocus });
     }
     // Крупный план: выбранный стиль и ближайшие связи в рабочем масштабе. Если родственники далеко,
     // камера держит выбранный стиль читаемым, а дальние концы показывают метки на краю экрана.
@@ -1327,6 +1483,9 @@ export default {
           ${sourceLinks(r.sources)}
           <p class="ep-go"><button class="chip" type="button" data-select="${e.par.s.id}">← ${e.par.s.name}</button><button class="chip" type="button" data-select="${e.ch.s.id}">${e.ch.s.name} →</button></p>`);
       }
+      placeEdgeInfo(px, py);
+    }
+    function placeEdgeInfo(px, py) {
       edgePop.hidden = false;
       const w = edgePop.offsetWidth, h = edgePop.offsetHeight;
       const left = clamp(px + 12, 8, pw - w - 8), top = py + 14 + h > ph - 8 ? Math.max(rot ? 4 : AXIS_H + 4, py - h - 14) : py + 14;
@@ -1380,7 +1539,7 @@ export default {
       syncUrl();
       if (active && hits.length) {
         const xs = hits.map((n) => sc.x(n.s.start)), ys = hits.map(yRef);
-        fitBox(Math.min(...xs), Math.max(...xs), Math.min(...ys) - ROW, Math.max(...ys) + ROW, { ms: animate ? 650 : 0, kMax: 1.1 });
+        fitBox(Math.min(...xs), Math.max(...xs), Math.min(...ys) - ROW, Math.max(...ys) + ROW, { ms: animate ? 650 : 0, kMin: Math.max(kOv(), k0 * 2.2) * 1.5, kMax: 1.1 });
       } else if (!active && camBeforeFilter) {
         const c = camBeforeFilter; camBeforeFilter = null;
         animateTo(c.k, c.tx, c.ty, animate ? 550 : 0);
@@ -1412,18 +1571,24 @@ export default {
     // ---------- события полотна ----------
     const pointers = new Map();
     let drag = null, pinch = null, moved = false;
-    const uiTarget = (e) => e.target.closest?.('.map-panel, .map-tip, .map-edge-pop, .map-offscreen, .mm-box, .map-trail');
+    const uiTarget = (e) => e.target.closest?.('.map-panel, .map-tip, .map-edge-pop, .map-offscreen, .mm-box, .map-trail, .map-levels, .map-directory');
 
     // Подсказка нужна до первого движения по карте, дальше она только закрывает подписи.
     const dismissHint = () => hint.classList.add('is-gone');
     on(stage, 'pointerdown', (e) => {
       if (uiTarget(e)) return;
+      cancelAnimationFrame(anim); clearTimeout(flightTimer);
       dismissHint();
       hideEdgeInfo();
       try { stage.setPointerCapture?.(e.pointerId); } catch { /* указатель уже отпущен */ }
       pointers.set(e.pointerId, { x: e.clientX, y: e.clientY });
       moved = false;
-      if (pointers.size === 1) drag = { x: e.clientX, y: e.clientY, tx: t.tx, ty: t.ty, node: e.target.closest('.node, .label'), edge: e.target.closest('.edge-hit') };
+      if (pointers.size === 1) {
+        const rect = stage.getBoundingClientRect(), x = e.clientX - rect.left, y = e.clientY - rect.top;
+        const name = [...regionNames].find(([, r]) => r.boxes.some((b) => x >= b[0] && x <= b[2] && y >= b[1] && y <= b[3]));
+        const region = e.target.closest('.region-name')?.dataset.region ?? name?.[0];
+        drag = { x: e.clientX, y: e.clientY, tx: t.tx, ty: t.ty, node: e.target.closest('.node, .label'), edge: region ? null : e.target.closest('.edge-hit'), summary: region ? null : e.target.closest('.summary-hit'), region };
+      }
       if (pointers.size === 2) {
         const [a, b] = [...pointers.values()];
         const c0 = toV((a.x + b.x) / 2, (a.y + b.y) / 2);
@@ -1434,6 +1599,12 @@ export default {
     on(stage, 'pointermove', (e) => {
       if (!pointers.has(e.pointerId)) {
         if (uiTarget(e)) return;
+        if (e.target.closest('.summary-hit')) return;
+        if (neb.ready && detail.nodes < 0.15 && e.pointerType === 'mouse') {
+          const pt = toV(e.clientX, e.clientY);
+          const next = nebulaRegionAt(pt.x, pt.y, nebulaCam(), detail.level === 'parts');
+          if (next !== regionHover) { regionHover = next; schedule(); }
+        } else if (regionHover) { regionHover = null; schedule(); }
         const nodeEl = e.target.closest('.node, .label');
         if (nodeEl && e.pointerType === 'mouse') {
           const id = nodeEl.dataset.id;
@@ -1448,7 +1619,7 @@ export default {
       if (pinch && pointers.size >= 2) {
         const [a, b] = [...pointers.values()];
         const dist = Math.hypot(a.x - b.x, a.y - b.y);
-        const k2 = clamp(pinch.k * (dist / pinch.d), Math.min(k0 * 0.9, pinch.k), 5);
+        const k2 = clamp(pinch.k * (dist / pinch.d), Math.min(k0 * 0.9, pinch.k), MAX_K);
         const c1 = toV((a.x + b.x) / 2, (a.y + b.y) / 2), cx = c1.x, cy = c1.y - AXIS_H;
         const s1 = syOf(pinch.k), s2 = syOf(k2);
         t.tx = cx - ((pinch.cx - pinch.tx) * k2) / pinch.k;
@@ -1473,16 +1644,22 @@ export default {
           const info = drag.edge.dataset.context != null ? { context: contextEdges[+drag.edge.dataset.context] }
             : drag.edge.dataset.cmp != null ? { cmp: cmps[+drag.edge.dataset.cmp] } : { edge: edges[+drag.edge.dataset.edge] };
           showEdgeInfo(info, e.clientX - rect.left, e.clientY - rect.top);
+        } else if (drag.summary) showSummaryInfo(aggregateLinks[+drag.summary.dataset.summary], e.clientX - rect.left, e.clientY - rect.top);
+        else if (drag.region) focusRegion(drag.region);
+        else if (neb.ready && detail.nodes < 0.15) {
+          const pt = toV(e.clientX, e.clientY), key = nebulaRegionAt(pt.x, pt.y, nebulaCam(), detail.level === 'parts');
+          if (key) focusRegion(key); else clearSelection();
         } else clearSelection();
       }
       if (!pointers.size) drag = null;
     };
     on(stage, 'pointerup', end);
     on(stage, 'pointercancel', end);
-    on(stage, 'pointerleave', (e) => { if (e.pointerType === 'mouse' && !pointers.size) { hideTip(); setHover(null); } });
+    on(stage, 'pointerleave', (e) => { if (e.pointerType === 'mouse' && !pointers.size) { hideTip(); setHover(null); if (regionHover) { regionHover = null; schedule(); } } });
 
     on(stage, 'wheel', (e) => {
-      if (e.target.closest('.map-panel')) return;
+      if (e.target.closest('.map-panel, .map-directory, .map-edge-pop')) return;
+      cancelAnimationFrame(anim); clearTimeout(flightTimer);
       e.preventDefault();
       hideTip();
       dismissHint();
@@ -1500,13 +1677,21 @@ export default {
     on(stage, 'dblclick', (e) => {
       if (uiTarget(e) || e.target.closest('.node, .label')) return;
       const pv = toV(e.clientX, e.clientY), px = pv.x, py = pv.y - AXIS_H;
-      const k2 = Math.min(5, t.k * 2.2);
+      const k2 = Math.min(MAX_K, t.k * 2.2);
       const s1 = syOf(t.k), s2 = syOf(k2);
       animateTo(k2, px - ((px - t.tx) * k2) / t.k, py - ((py - t.ty) * s2) / s1, 450);
     });
 
     on(stage, 'keydown', (e) => {
+      if (e.key === 'Escape' && !directory.hidden) { e.preventDefault(); directory.hidden = true; q('[data-browse]').setAttribute('aria-expanded', 'false'); q('[data-browse]').focus(); return; }
       const nodeEl = e.target.closest?.('.node');
+      const regionEl = e.target.closest?.('.region-name'), summaryEl = e.target.closest?.('.summary-hit');
+      if ((regionEl || summaryEl) && (e.key === 'Enter' || e.key === ' ')) {
+        e.preventDefault();
+        if (regionEl) focusRegion(regionEl.dataset.region);
+        else { const b = summaryEl.getBoundingClientRect(), r = stage.getBoundingClientRect(); showSummaryInfo(aggregateLinks[+summaryEl.dataset.summary], b.x - r.x, b.y - r.y); }
+        return;
+      }
       if (nodeEl && (e.key === 'Enter' || e.key === ' ')) { e.preventDefault(); select(nodeEl.dataset.id); return; }
       if ((e.metaKey || e.altKey) && e.key.startsWith('Arrow')) return;   // Cmd/Alt+← — «Назад» браузера
       if (uiTarget(e)) { if (e.key === 'Escape' && selected) goBack(); return; }
@@ -1627,6 +1812,19 @@ export default {
     for (const box of root.querySelectorAll('[data-layer]')) on(box, 'change', (e) => { setLayer(box.dataset.layer, e.target.checked); syncUrl(); });
 
     on(root, 'click', (e) => {
+      if (e.target.closest('[data-browse]')) { directory.hidden = !directory.hidden; q('[data-browse]').setAttribute('aria-expanded', String(!directory.hidden)); return; }
+      if (e.target.closest('[data-browse-close]')) { directory.hidden = true; q('[data-browse]').setAttribute('aria-expanded', 'false'); return; }
+      const region = e.target.closest('button[data-region]');
+      if (region) { focusRegion(region.dataset.region); return; }
+      const record = e.target.closest('[data-summary-record]');
+      if (record) { const r = stage.getBoundingClientRect(); showEdgeInfo(summaryRecords[+record.dataset.summaryRecord].info, e.clientX - r.x, e.clientY - r.y); return; }
+      const level = e.target.closest('[data-detail]');
+      if (level) {
+        if (selected) clearSelection();
+        if (level.dataset.detail === 'seas') fit();
+        else { const k = Math.max(kOv(), k0 * 2.2) * (level.dataset.detail === 'parts' ? 0.83 : 1.7); zoomAt(vw / 2, vh / 2, k / t.k, true); }
+        return;
+      }
       const links = e.target.closest('button[data-link-mode]');
       if (links) { setLinkMode(links.dataset.linkMode); syncUrl(); return; }
       if (e.target.closest('[data-trail-clear]')) { trail = selected ? [selected] : []; syncUrl(); schedule(); return; }
@@ -1635,7 +1833,7 @@ export default {
         if (z.dataset.zoom === 'fit') { if (selected) clearSelection(); if (atFit()) overview(); else fit(); }
         else {
           const f = z.dataset.zoom === 'in' ? 1.7 : 1 / 1.7;
-          let k2 = clamp(t.k * f, Math.min(k0 * 0.9, t.k), 5);
+          let k2 = clamp(t.k * f, Math.min(k0 * 0.9, t.k), MAX_K);
           // Масштаб обзора — остановка по пути: на нём все подписи на месте.
           const ko = kOv();
           if ((t.k < ko * 0.98 && k2 > ko) || (t.k > ko * 1.02 && k2 < ko)) k2 = ko;
@@ -1645,7 +1843,7 @@ export default {
         }
       }
       const sel = e.target.closest('[data-select]');
-      if (sel) select(sel.dataset.select);
+      if (sel) { directory.hidden = true; q('[data-browse]').setAttribute('aria-expanded', 'false'); select(sel.dataset.select); }
       const fm = e.target.closest('[data-focus-mode]');
       if (fm && selected) select(selected, { mode: fm.dataset.focusMode });
       if (e.target.closest('[data-close-panel]')) clearSelection({ restore: true });
@@ -1656,9 +1854,7 @@ export default {
       if (e.target.closest('[data-f-reset]')) { setFilter({ domain: '', family: '' }); togglePop(pops.find((p) => p.wrap.classList.contains('map-filter-wrap')), false); }
     });
 
-    hint.textContent = window.innerWidth < 760
-      ? 'Нажмите на эпоху сверху или на стиль. Щипок — масштаб.'
-      : 'Тяните карту или крутите колёсико, чтобы двигаться; Ctrl/⌘ и колёсико — масштаб. Нажмите на стиль — его связи крупным планом.';
+    hint.textContent = 'Нажмите на море, чтобы рассмотреть его. Ctrl/⌘ + колесо — масштаб.';
 
     const ro = new ResizeObserver(() => resize());
     ro.observe(stage);
