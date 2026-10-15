@@ -67,6 +67,8 @@ test('macro-region rules: spread vs origin, multi-region and nothing unclassifie
   assert.deepEqual(macroRegions('Филиппины; США'), ['se-asia', 'americas']);
   assert.deepEqual(macroRegions('Польша: Лович и Курпе'), ['europe']);
   assert.deepEqual(macroRegions('Вьетнам: деревня Донгхо, север страны'), ['se-asia']);
+  assert.deepEqual(macroRegions('Иле-Ифе, йоруба, Нигерия'), ['africa']);
+  assert.deepEqual(macroRegions('Изник, Османская Анатолия; современная Турция'), ['mena']);
   assert.deepEqual(macroRegions('Интернет'), ['global']);
   for (const s of styles) assert.ok(!macroRegions(s.region).includes('unknown'), `[${s.id}] ${s.region}`);
 });

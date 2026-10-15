@@ -1722,3 +1722,334 @@
     Подпись: неизвестный мастер Донгхо, Вьетнам, 1960-е, бумага, цветная ксилография. Просмотрена
     опубликованная деталь, не весь лист. Выставка 2025–2026 и дипломатический дар 2024 не датируют этот
     оттиск; общий текст о китайском влиянии на наследие Вьетнама не доказывает отдельную генеалогию Донгхо.
+
+- id: rm-mezen-fedotov
+  title: Н. Федотов. Прялка, 1901, Р-3389
+  publisher: Государственный Русский музей
+  url: https://rusmuseumvrm.ru/data/collections/folk_art/oni-r-3389/index.php
+  sourceType: museum
+  checked: "2026-10-15"
+  note: >-
+    Дерево, роспись; 1901. Музей описывает палащельский центр с середины XIX века до 1930-х. Имя автора
+    на странице сокращено до Н. Федотова.
+- id: met-chola-parvati
+  title: Standing Parvati, 57.51.3
+  publisher: The Metropolitan Museum of Art
+  url: https://www.metmuseum.org/art/collection/search/39325
+  sourceType: museum
+  checked: "2026-10-15"
+  note: Около первой четверти X века; Тамилнад; медный сплав.
+- id: met-chola-nataraja
+  title: Shiva as Lord of Dance (Nataraja), 1987.80.1
+  publisher: The Metropolitan Museum of Art
+  url: https://www.metmuseum.org/art/collection/search/39328
+  sourceType: museum
+  checked: "2026-10-15"
+  note: Около конца XI века; Тамилнад; медный сплав.
+- id: met-chola-shiva-parvati
+  title: Standing Shiva and Parvati, 2000.284.5
+  publisher: The Metropolitan Museum of Art
+  url: https://www.metmuseum.org/art/collection/search/39252
+  sourceType: museum
+  checked: "2026-10-15"
+  note: XIII век, период Чола; медный сплав. Парная композиция считается одной работой.
+- id: ngma-jamini-roy-tour
+  title: "Explore the Life and Work: Jamini Roy"
+  publisher: National Gallery of Modern Art, India
+  url: https://www.ngmaindia.gov.in/virtual-tour-of-modern-art-1.asp
+  sourceType: museum
+  checked: "2026-10-15"
+  note: >-
+    Предметные подписи 63, 79 и 107; даты этих трёх работ не приведены. Текст к Yashoda and Krishna,
+    3134, прямо связывает поиски середины 1920-х с Калигхатом; это не автоматическая датировка остальных
+    предметов.
+- id: blanton-xu-sky
+  title: "Xu Bing: Book from the Sky"
+  publisher: Blanton Museum of Art
+  url: https://blantonmuseum.org/exhibition/xu-bing-book-from-the-sky/
+  sourceType: museum
+  checked: "2026-10-15"
+  note: >-
+    Музейный проект и репродукция инсталляции; вымышленные знаки, деревянный набор, книги и свитки. Дата
+    выставки 2016–2017 не является временем создания проекта.
+- id: xu-classroom-1994
+  title: Square Word Calligraphy Classroom
+  publisher: Xu Bing Studio
+  url: https://www.xubing.com/en/work/details/204?type=year&year=1996
+  sourceType: primary
+  checked: "2026-10-15"
+  note: >-
+    1994–1996; мультимедийная инсталляция с учебными материалами. Материалы и даты — первичная
+    документация студии, внешнее признание подтверждается музеями.
+- id: smithsonian-xu-word-play
+  title: "Word Play: Monkeys Grasp for the Moon"
+  publisher: Smithsonian National Museum of Asian Art
+  url: https://asia-archive.si.edu/word-play/
+  sourceType: museum
+  checked: "2026-10-15"
+  note: >-
+    Инсталляция 2001 года, 21 деревянное лакированное звено со словами «обезьяна» на разных языках. Дата
+    музейной заметки 2016 не датирует произведение.
+- id: xu-sky-creation
+  title: "Creation: Book from the Sky"
+  publisher: Xu Bing Studio
+  url: https://www.xubing.com/en/database/writing/289
+  sourceType: primary
+  checked: "2026-10-15"
+  note: >-
+    Авторский текст о создании Book from the Sky в 1987–1991. Самоописание не заменяет независимый
+    музейный контекст.
+- id: bm-ife-brass
+  title: The Ife Head, Af1939,34.1
+  publisher: British Museum
+  url: https://www.britishmuseum.org/collection/object/E_Af1939-34-1
+  sourceType: museum
+  checked: "2026-10-15"
+  note: >-
+    Вероятно XIV — начало XV века; латунь, литьё по утрачиваемой модели. Идентификация и функция не
+    установлены окончательно. Предметная запись прочитана через поисковое извлечение; прямое открытие
+    даёт 403.
+- id: bm-ife-terracotta
+  title: Terracotta head, Af1934,0716.1
+  publisher: British Museum
+  url: https://www.britishmuseum.org/collection/object/E_Af1934-0716-1
+  sourceType: museum
+  checked: "2026-10-15"
+  note: >-
+    XII–XV века; терракота, следы краски. Происхождение из Iwinrin Grove предположительно и обсуждается
+    музеем. Полная предметная запись доступна в поисковом извлечении; прямое открытие даёт 403.
+- id: met-ife-horse
+  title: Horse head, L.2026.23.1
+  publisher: The Metropolitan Museum of Art
+  url: https://www.metmuseum.org/art/collection/search/935750
+  sourceType: museum
+  checked: "2026-10-15"
+  note: >-
+    XII–XV века; терракота, Иле-Ифе. Музейная страница указывает временное предоставление Friends of
+    Nigeria’s Cultural Heritage / Myriad USA, а не собственность Met.
+- id: met-anatsui-earth
+  title: Between Earth and Heaven, 2007.96
+  publisher: The Metropolitan Museum of Art
+  url: https://www.metmuseum.org/art/collection/search/319872
+  sourceType: museum
+  checked: "2026-10-15"
+  note: >-
+    2006; алюминий, медная проволока; Нсукка. Музей прямо сопоставляет структуру и драпировку с кенте
+    акан и эве; запись включает слова автора о меняемой развеске.
+- id: met-anatsui-dusasa
+  title: Dusasa II, 2008.121
+  publisher: The Metropolitan Museum of Art
+  url: https://www.metmuseum.org/art/collection/search/495553
+  sourceType: museum
+  checked: "2026-10-15"
+  note: >-
+    2007; алюминий, медная проволока, пластиковые диски. Музей описывает работу команды помощников; 2008
+    — приобретение, не создание.
+- id: lacma-anatsui-scroll
+  title: Fading Scroll, M.2008.110
+  publisher: Los Angeles County Museum of Art
+  url: https://collections.lacma.org/object/140524
+  sourceType: museum
+  checked: "2026-10-15"
+  note: >-
+    2007; алюминиевые укупорки алкогольных бутылок и медная проволока. Совместное приобретение LACMA и
+    Fowler Museum. Фотографии деталей не считаются отдельными произведениями.
+- id: trg-anatsui-guide
+  title: "El Anatsui: illustrated exhibition guide"
+  publisher: Talbot Rice Gallery, University of Edinburgh
+  url: >-
+    https://www.trg.ed.ac.uk/sites/default/files/2024-08/TRG%20A5%20Illustrated%20Event%20Guide%20El%20Anatsui_0.pdf
+  sourceType: museum
+  checked: "2026-10-15"
+  note: >-
+    В разделе о Woman’s Cloth и Man’s Cloth прямо названы узкополосные ткани эве и асанте как источник
+    способа сборки. Источник поддерживает конкретный текстильный контекст, а не происхождение всех работ
+    из одной традиции.
+- id: tepapa-moko-panel
+  title: Tā Moko panel, ME004211
+  publisher: Museum of New Zealand Te Papa Tongarewa
+  url: https://collections.tepapa.govt.nz/object/158009
+  sourceType: museum
+  checked: "2026-10-15"
+  note: >-
+    Тене Вайтере, 1896–1899, Ротоити; дерево, краска, pāua. Дата в заголовке фотографии 1899 и заказ
+    1896 не сведены к одному выдуманному году.
+- id: tepapa-waka-huia
+  title: Wakahuia (treasure box), WE000946
+  publisher: Museum of New Zealand Te Papa Tongarewa
+  url: https://collections.tepapa.govt.nz/object/448890
+  sourceType: museum
+  checked: "2026-10-15"
+  note: >-
+    1800–1900; мастер неизвестен. Музей различает waka huia и papa hou и объясняет резьбу на нижней
+    поверхности, подвешивание и ракушечные вставки.
+- id: tepapa-titokowaru
+  title: Poupou (carved panel) Titokowaru, ME002589
+  publisher: Museum of New Zealand Te Papa Tongarewa
+  url: https://collections.tepapa.govt.nz/object/138173
+  sourceType: museum
+  checked: "2026-10-15"
+  note: >-
+    Мастер неизвестен; около 1880; дерево, pāua, краска. Предметная запись не даёт определённой
+    атрибуции резчику.
+- id: toi-maori-whakairo
+  title: "Whakairo: carving"
+  publisher: Toi Māori Aotearoa
+  url: https://maoriart.org.nz/whakairo/
+  sourceType: community
+  checked: "2026-10-15"
+  note: >-
+    Материал объединения маорийских художников о передаче и развитии whakairo; подтверждает живую и
+    разнообразную практику, не единый неизменный стиль.
+- id: cairns-tipoti-kobupa
+  title: Kobupa thoerapiese, 1999.36
+  publisher: Cairns Art Gallery
+  url: https://www.cairnsartgallery.com.au/collections/kobupa-thoerapiese
+  sourceType: museum
+  checked: "2026-10-15"
+  note: >-
+    1999; линогравюра, экземпляр 6/98. Ссылка на главное изображение в CSS страницы относительная и
+    сломана; изображение того же инвентарного номера доступно в музейном списке связанных работ.
+- id: cairns-tipoti-soll
+  title: Soll, 2001.28
+  publisher: Cairns Art Gallery
+  url: https://www.cairnsartgallery.com.au/collections/soll
+  sourceType: museum
+  checked: "2026-10-15"
+  note: >-
+    2000; раскрашенная линогравюра, 2/98. 2001 — приобретение/музейный номер, не дата создания.
+    Сломанные относительные ссылки сайта нормализованы до настоящего предметного URL.
+- id: cairns-tipoti-gubau
+  title: Gubau Aimai Mabiag, 2006.33
+  publisher: Cairns Art Gallery
+  url: https://www.cairnsartgallery.com.au/collections/gubau-aimai-mabiag
+  sourceType: museum
+  checked: "2026-10-15"
+  note: >-
+    2006; раскрашенная линогравюра, 31 × 31 см, 13/50. Это не панорамная работа Gubau Aimai Mabaigul из
+    QAGOMA, также датированная 2006.
+- id: qag-tipoti-artwork
+  title: "Alick Tipoti: artwork"
+  publisher: Queensland Art Gallery
+  url: https://www.visualarts.qld.gov.au/content/fortitude_standard0.asp?name=AlickTipoti_Artwork
+  sourceType: museum
+  checked: "2026-10-15"
+  note: >-
+    Архивная образовательная страница: построение композиции от основных фигур к заполняющим мотивам,
+    рассказы старших и остров Баду. Изображения архивного сайта не служат основанием переносить чужие
+    даты на корпус Cairns.
+- id: qag-torres-time-tides
+  title: "Time and Tides: Art in the Torres Strait Islands"
+  publisher: QAGOMA
+  url: https://www.qagoma.qld.gov.au/exhibition/time-and-tides
+  sourceType: museum
+  checked: "2026-10-15"
+  note: >-
+    Коллекционная выставка 2017–2018. Музей описывает развитие современной печатной графики с 1990-х и
+    называет Типоти, Мисси и Робинсона; дата выставки не равна началу практики.
+- id: nga-missi-sugu
+  title: Sugu Ah Mabud, 2000.588
+  publisher: National Gallery of Australia / Australian Prints + Printmaking
+  url: https://www.printsandprintmaking.gov.au/impressions/31234/
+  sourceType: museum
+  checked: "2026-10-15"
+  note: >-
+    2000, авторская проба; чёрная линогравюра с ручной раскраской, Kubin Village, Moa Island. Варианты
+    названия и музейное написание Missy / подпись MISSI сохранены. Дата этого экземпляра не заменена
+    датой другого оттиска QAGOMA.
+- id: sunshine-robinson-fisherman
+  title: "Brian Robinson: Fisherman’s Still Life with Air Jordan 4’s"
+  publisher: Sunshine Coast Art Collection / Gallery
+  url: >-
+    https://gallery.sunshinecoast.qld.gov.au/art-prizes/sunshine-coast-national-art-prize/previous-winners/2021-winners/residency-brian-robinson
+  sourceType: museum
+  checked: "2026-10-15"
+  note: >-
+    Произведение 2020, линогравюра, 67 × 97 см. Страница относится к резиденции 2021; это не год
+    создания работы.
+- id: met-iznik-birds
+  title: Dish Depicting Two Birds among Flowering Plants, 59.69.1
+  publisher: The Metropolitan Museum of Art
+  url: https://www.metmuseum.org/art/collection/search/451490
+  sourceType: museum
+  checked: "2026-10-15"
+  note: >-
+    Около 1575–1590; Изник, Турция; кварцевая керамическая масса, полихромная подглазурная роспись.
+    Музейный аудиотекст описывает развитие палитры и мотивов.
+- id: met-iznik-kaleido
+  title: Dish with Kaleidoscope Design, 1991.172
+  publisher: The Metropolitan Museum of Art
+  url: https://www.metmuseum.org/art/collection/search/453324
+  sourceType: museum
+  checked: "2026-10-15"
+  note: >-
+    Около 1580–1585; Изник; музей отдельно объясняет китайские истоки мотивов и османскую переработку.
+    Это не влияние обзорного древнекитайского искусства как единого узла.
+- id: met-iznik-ship
+  title: Dish with Sailing-Ship Design, 66.4.4
+  publisher: The Metropolitan Museum of Art
+  url: https://www.metmuseum.org/art/collection/search/451835
+  sourceType: museum
+  checked: "2026-10-15"
+  note: >-
+    XVII век; Изник; полихромная роспись под прозрачной глазурью. Географию и династический контекст не
+    подменяют современные границы общего исламского искусства.
+- id: ngma-modern-collection
+  title: "Collection: modern Indian art"
+  publisher: National Gallery of Modern Art, India
+  url: https://www.ngmaindia.gov.in/collections.asp
+  sourceType: museum
+  checked: "2026-10-15"
+  note: >-
+    Музейный обзор собрания называет Джамини Роя среди ведущих художников индийского модернизма;
+    подтверждает институциональный контекст, не даты трёх работ. Текст прочитан в поисковом извлечении;
+    прямой парсер отдаёт сокращённую оболочку страницы.
+- id: kruglova-mezen-1964
+  title: О. В. Круглова. Мезенская роспись по дереву (1964), с. 118–123
+  publisher: Советская этнография / Институт этнологии и антропологии РАН
+  url: https://eo.iea.ras.ru/wp-content/uploads/1964/03/eoarchive_1964_3_118_kruglova.pdf
+  sourceType: scholarly
+  checked: "2026-10-15"
+  note: >-
+    Материалы экспедиции 1961: рис. 3 и текст на с. 121 описывают прялку М. А. Новикова с надписью 1898;
+    рис. 2, с. 120 — деталь отдельной прялки Е. М. Аксёнова 1921. Репродукции просмотрены. Монохромный
+    скан и деталь не заменяют полного цветного вида.
+
+- id: commons-chola-parvati
+  title: MET DT239.jpg
+  publisher: Met / Wikimedia Commons
+  url: https://commons.wikimedia.org/wiki/File:MET_DT239.jpg
+  sourceType: primary
+  checked: "2026-10-15"
+  note: >-
+    CC0 1.0; музейная фотография и древняя скульптура. Источник подтверждает лицензию фотографии и
+    соответствие предметному номеру, а не всю историю стиля.
+- id: commons-ife-sailko
+  title: Arte yoruba, nigeria, testa da ife, 12-15mo secolo.JPG
+  publisher: Sailko / Wikimedia Commons
+  url: https://commons.wikimedia.org/wiki/File:Arte_yoruba%2C_nigeria%2C_testa_da_ife%2C_12-15mo_secolo.JPG
+  sourceType: primary
+  checked: "2026-10-15"
+  note: >-
+    Фотография Sailko — CC BY-SA 3.0; изображённая скульптура XIV–XV веков. Источник подтверждает
+    лицензию фотографии и соответствие предметному номеру, а не всю историю стиля.
+- id: commons-iznik-birds
+  title: Dish Depicting Two Birds among Flowering Plants MET DP131621.jpg
+  publisher: Met / Wikimedia Commons
+  url: >-
+    https://commons.wikimedia.org/wiki/File:Dish_Depicting_Two_Birds_among_Flowering_Plants_MET_DP131621.jpg
+  sourceType: primary
+  checked: "2026-10-15"
+  note: >-
+    CC0 1.0; музейная фотография и керамическое произведение XVI века. Источник подтверждает лицензию
+    фотографии и соответствие предметному номеру, а не всю историю стиля.
+- id: xu-sky-project
+  title: "Book from the Sky: project record"
+  publisher: Xu Bing Studio
+  url: https://www.xubing.com/en/work/details/206?classID=10&type=class#206
+  sourceType: primary
+  checked: "2026-10-15"
+  note: >-
+    1987–1991; печатные книги и свитки с вымышленными знаками. Просмотрены изображения именно раздела
+    data-title=206, включая вид Blanton 2016. Страница содержит также другие проекты; первые изображения
+    всей страницы относятся не обязательно к этому произведению.

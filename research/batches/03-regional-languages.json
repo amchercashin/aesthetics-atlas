@@ -1,0 +1,169 @@
+{
+  "title": "Региональные традиции и авторские языки: партия 03",
+  "status": "prepared-not-published",
+  "baselineCommit": "aa7277fb701ebf9e4644c0efc7c16625563cd1e1",
+  "baselineCards": 185,
+  "selectedTopics": 10,
+  "rule": "Корпус — самостоятельные предметы или проекты. Обзор не подменяет локальные языки. Море не является историческим родителем.",
+  "items": [
+    {
+      "id": "mezen-painting",
+      "priority": "P1",
+      "proposedKind": "tradition",
+      "verifiedKind": "tradition",
+      "status": "prepared",
+      "productionCardId": "mezen-painting",
+      "reviewStatus": "partial",
+      "corpusWorks": 3,
+      "verificationSources": [
+        "rm-mezen-fedotov",
+        "kruglova-mezen-1964"
+      ],
+      "researchNote": "Включены три самостоятельных предмета; у Аксёнова просмотрена только деталь, у Новикова — лопасть. Неудачные маршруты через Корелы и РЭМ не использованы как визуальные доказательства."
+    },
+    {
+      "id": "chola-bronzes",
+      "priority": "P1",
+      "proposedKind": "tradition",
+      "verifiedKind": "tradition",
+      "status": "prepared",
+      "productionCardId": "chola-bronzes",
+      "reviewStatus": "partial",
+      "corpusWorks": 3,
+      "verificationSources": [
+        "met-chola-parvati",
+        "met-chola-nataraja",
+        "met-chola-shiva-parvati",
+        "commons-chola-parvati"
+      ]
+    },
+    {
+      "id": "jamini-roy-painting",
+      "priority": "P1",
+      "proposedKind": "author-style",
+      "verifiedKind": "author-style",
+      "status": "prepared",
+      "productionCardId": "jamini-roy-painting",
+      "reviewStatus": "partial",
+      "corpusWorks": 3,
+      "verificationSources": [
+        "ngma-jamini-roy-tour",
+        "ngma-modern-collection"
+      ]
+    },
+    {
+      "id": "xu-bing-writing-systems",
+      "priority": "P1",
+      "proposedKind": "author-style",
+      "verifiedKind": "author-style",
+      "status": "prepared",
+      "productionCardId": "xu-bing-writing-systems",
+      "reviewStatus": "partial",
+      "corpusWorks": 3,
+      "verificationSources": [
+        "blanton-xu-sky",
+        "xu-classroom-1994",
+        "smithsonian-xu-word-play",
+        "xu-sky-creation",
+        "xu-sky-project"
+      ]
+    },
+    {
+      "id": "ife-sculpture",
+      "priority": "P1",
+      "proposedKind": "tradition",
+      "verifiedKind": "tradition",
+      "status": "prepared",
+      "productionCardId": "ife-sculpture",
+      "reviewStatus": "partial",
+      "corpusWorks": 3,
+      "verificationSources": [
+        "bm-ife-brass",
+        "bm-ife-terracotta",
+        "met-ife-horse",
+        "commons-ife-sailko"
+      ]
+    },
+    {
+      "id": "el-anatsui-metal-textiles",
+      "priority": "P1",
+      "proposedKind": "author-style",
+      "verifiedKind": "author-style",
+      "status": "prepared",
+      "productionCardId": "el-anatsui-metal-textiles",
+      "reviewStatus": "partial",
+      "corpusWorks": 3,
+      "verificationSources": [
+        "met-anatsui-earth",
+        "met-anatsui-dusasa",
+        "lacma-anatsui-scroll",
+        "trg-anatsui-guide"
+      ]
+    },
+    {
+      "id": "maori-whakairo",
+      "priority": "P1",
+      "proposedKind": "tradition",
+      "verifiedKind": "overview",
+      "status": "prepared",
+      "productionCardId": "maori-whakairo",
+      "reviewStatus": "partial",
+      "corpusWorks": 3,
+      "verificationSources": [
+        "tepapa-waka-huia",
+        "tepapa-titokowaru",
+        "tepapa-moko-panel",
+        "toi-maori-whakairo"
+      ]
+    },
+    {
+      "id": "torres-strait-printmaking",
+      "priority": "P1",
+      "proposedKind": "tradition",
+      "verifiedKind": "overview",
+      "status": "prepared",
+      "productionCardId": "torres-strait-printmaking",
+      "reviewStatus": "partial",
+      "corpusWorks": 3,
+      "verificationSources": [
+        "cairns-tipoti-kobupa",
+        "nga-missi-sugu",
+        "sunshine-robinson-fisherman",
+        "qag-torres-time-tides"
+      ]
+    },
+    {
+      "id": "alick-tipoti",
+      "priority": "P1",
+      "proposedKind": "author-style",
+      "verifiedKind": "author-style",
+      "status": "prepared",
+      "productionCardId": "alick-tipoti",
+      "reviewStatus": "partial",
+      "corpusWorks": 3,
+      "verificationSources": [
+        "cairns-tipoti-kobupa",
+        "cairns-tipoti-soll",
+        "cairns-tipoti-gubau",
+        "qag-tipoti-artwork",
+        "qag-torres-time-tides"
+      ]
+    },
+    {
+      "id": "iznik-ceramics",
+      "priority": "P1",
+      "proposedKind": "tradition",
+      "verifiedKind": "tradition",
+      "status": "prepared",
+      "productionCardId": "iznik-ceramics",
+      "reviewStatus": "partial",
+      "corpusWorks": 3,
+      "verificationSources": [
+        "met-iznik-birds",
+        "met-iznik-kaleido",
+        "met-iznik-ship",
+        "commons-iznik-birds"
+      ]
+    }
+  ]
+}

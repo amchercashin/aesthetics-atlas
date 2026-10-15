@@ -57,6 +57,10 @@ nebulae:
           - wabi-sabi
           - ukiyo-e
           - hokusai-landscape-prints
+      - id: pismo-syuya-bina
+        name: Письмо как изображение у Сюй Бина
+        styles:
+          - xu-bing-writing-systems
   - id: srednevekove
     name: Рим, Средневековье и исламский мир
     color: '#378ADD'
@@ -74,6 +78,10 @@ nebulae:
           - islamic-art
           - persian-miniature
           - mughal-miniature
+      - id: iznikskaya-keramika
+        name: Керамика Изника
+        styles:
+          - iznik-ceramics
       - id: gotika
         name: Романика и готика
         styles:
@@ -371,6 +379,10 @@ nebulae:
         name: Печатный лубок
         styles:
           - lubok
+      - id: mezenskie-pryalki
+        name: Мезенские прялки
+        styles:
+          - mezen-painting
   - id: zhivopis-indii
     name: Живопись Индии
     color: '#8D6EAA'
@@ -391,6 +403,10 @@ nebulae:
         name: Бенгальская патачитра
         styles:
           - bengal-patachitra
+      - id: dzhamini-roy
+        name: Темперная фигурация Роя
+        styles:
+          - jamini-roy-painting
   - id: tekstil-i-rospisi-afriki
     name: Текстиль и росписи Африки
     color: '#0B827E'
@@ -409,6 +425,10 @@ nebulae:
         styles:
           - ndebele-murals
           - esther-mahlangu
+      - id: metallicheskie-polotna
+        name: Металлические полотна Эль Анацуи
+        styles:
+          - el-anatsui-metal-textiles
   - id: polotna-iz-kory-okeanii
     name: Полотна из коры Океании
     color: '#3C829A'
@@ -450,6 +470,42 @@ nebulae:
         name: Донгхо
         styles:
           - dong-ho-prints
+  - id: bronzy-yuzhnoy-indii
+    name: Бронзовая пластика Южной Индии
+    color: '#A67B35'
+    parts:
+      - id: bronzy-chola
+        name: Бронзы Чола
+        styles:
+          - chola-bronzes
+  - id: skulptura-ife
+    name: Скульптура Ифе
+    color: '#95633D'
+    parts:
+      - id: metall-i-terrakota-ife
+        name: Металл и терракота Ифе
+        styles:
+          - ife-sculpture
+  - id: rezba-maori
+    name: Резьба по дереву маори
+    color: '#AF563C'
+    parts:
+      - id: paneli-i-sosudy-maori
+        name: Панели и сосуды
+        styles:
+          - maori-whakairo
+  - id: grafika-torresova-proliva
+    name: Графика Торресова пролива
+    color: '#207D8B'
+    parts:
+      - id: grafika-ostrovov-obzor
+        name: Три авторские практики
+        styles:
+          - torres-strait-printmaking
+      - id: linogravyury-tipoti
+        name: Линогравюры Типоти
+        styles:
+          - alick-tipoti
 free:
   - aboriginal-art
   - mesoamerican-art
