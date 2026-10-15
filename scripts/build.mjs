@@ -7,7 +7,7 @@ import { fileURLToPath } from 'node:url';
 import yaml from 'js-yaml';
 import { validateNebulae, resolveNebulae } from './lib/nebulae.mjs';
 import { validate, ymd } from './lib/validate.mjs';
-import { buildRecord, childrenOf, comparisonsOf } from './lib/record.mjs';
+import { buildRecord, childrenOf, comparisonsOf, contextsOf } from './lib/record.mjs';
 import { resolveFiles, resolveWiki, commonsCategories, commonsCategoriesExist, saveCache } from './lib/wikimedia.mjs';
 import { downloadThumb, paletteFromImage, paletteFromHexList, mapLimit } from './lib/palette.mjs';
 import { resolveLocalAssets } from './lib/local-images.mjs';
@@ -101,6 +101,7 @@ const img = (ref) => {
 
 const children = childrenOf(styles);
 const comparisons = comparisonsOf(styles);
+const contexts = contextsOf(styles);
 
 const out = styles.map((s) => {
   const links = [...wikiLinks(s), ...(s.links ?? []).map((l) => ({ title: l.title ?? null, url: l.url, src: l.src, lang: l.lang ?? 'en' }))];
@@ -108,10 +109,11 @@ const out = styles.map((s) => {
   // Это ссылки для самостоятельного чтения, а не подтверждение текста: источники утверждений — в evidence.
   const need = links.some((l) => l.src === 'Википедия') ? 3 : 2;
   if (links.length < need) errors.push(`[${s.id}] needs ≥${need} links (has ${links.length})`);
-  if (!palettes.has(s.id)) errors.push(`[${s.id}] no palette`);
+  if (!palettes.has(s.id) && !s.example?.reference) errors.push(`[${s.id}] no palette`);
   return buildRecord(s, {
     links, img, palette: palettes.get(s.id) ?? null,
     children: children.get(s.id) ?? [], comparisons: comparisons.get(s.id) ?? [],
+    contexts: contexts.get(s.id) ?? [],
   });
 });
 out.sort((a, b) => a.start - b.start || a.tier - b.tier || a.name.localeCompare(b.name, 'ru'));

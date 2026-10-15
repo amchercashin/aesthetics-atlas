@@ -1,11 +1,12 @@
 // Зал стиля: стена тонируется палитрой, работа висит с этикеткой, ниже — текст, родословная, ссылки.
 // Статус проверки карточки и связей виден сразу; источники утверждений — под раскрытием.
 import { html, mount, safeUrl } from '../html.js';
-import { fmtDates, fmtYear, RELATION, DOMAIN, KIND, DATE_KIND, REL_STATUS, roleLabel, plural } from '../format.js?v=audit';
-import { frame, credit } from '../ui/image.js?v=audit-p1p2';
-import { eraTag, thumb, footer } from '../ui/common.js?v=audit-p1p2';
+import { fmtDates, fmtYear, RELATION, DOMAIN, KIND, DATE_KIND, REL_STATUS, roleLabel, plural } from '../format.js?v=author-pilot';
+import { frame, credit } from '../ui/image.js?v=author-pilot';
+import { eraTag, thumb, footer } from '../ui/common.js?v=author-pilot';
 import { toast } from '../ui/toast.js';
 import notfound from './notfound.js';
+import { authorshipSection, corpusSection, contextSection } from '../ui/corpus.js';
 
 const ARROW_L = html`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>`;
 const ARROW_R = html`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>`;
@@ -118,7 +119,7 @@ export default {
       <div class="room-hang">
         <figure class="room-work">
           <button class="work-zoom" type="button" ${img ? '' : 'disabled'} aria-label="Открыть работу крупно">
-            ${frame(img, p, { sizes: '(min-width: 1100px) 58vw, 100vw', eager: true, size: 960, alt: ex.title ?? '', note: ex.external ? 'Изображение не встраивается' : ex.note, capUpscale: true })}
+            ${frame(img, p, { sizes: '(min-width: 1100px) 58vw, 100vw', eager: true, size: 960, alt: ex.title ?? '', note: ex.external ? 'Репродукция — у источника' : ex.note, capUpscale: true })}
           </button>
         </figure>
         <aside class="wall-label" aria-label="Этикетка">
@@ -130,7 +131,7 @@ export default {
           ${ex.why ? html`<p class="wl-why"><strong>Что здесь видно.</strong> ${ex.why}</p>` : ''}
           ${sourceLinks(store, ex.sources)}
           ${credit(img)}
-          ${ex.external ? html`<p class="credit"><a href="${safeUrl(ex.external.page)}" target="_blank" rel="noopener">Открыть изображение на странице файла</a></p>` : ''}
+          ${ex.external ? html`<p class="credit"><a href="${safeUrl(ex.external.page)}" target="_blank" rel="noopener">${ex.external.reference ? 'Посмотреть работу у источника' : 'Открыть изображение на странице файла'}</a></p>` : ''}
           <p class="wl-summary">${s.summary}</p>
           ${paletteBlock(s, img)}
         </aside>
@@ -146,6 +147,10 @@ export default {
         </aside>
       </section>
 
+      ${authorshipSection(store, s)}
+      ${corpusSection(store, s)}
+      ${contextSection(store, s)}
+
       ${s.gallery.length ? html`<section class="room-gallery">
         <h2 class="section-title">Ещё примеры</h2>
         <div class="gallery-grid">
@@ -154,7 +159,7 @@ export default {
             <figcaption>${roleLabel(g.role) ? html`<span class="wl-role">${roleLabel(g.role)}</span>` : ''}<span class="g-title">${g.title}</span>${[g.author, g.year, g.place].filter(Boolean).length ? html`<span class="g-meta">${[g.author, g.year, g.place].filter(Boolean).join(', ')}</span>` : ''}${g.note ? html`<span class="g-meta">${g.note}</span>` : ''}${g.why ? html`<span class="g-meta">${g.why}</span>` : ''}</figcaption>
             ${sourceLinks(store, g.sources)}
             ${credit(g.img)}
-            ${g.external ? html`<p class="credit"><a href="${safeUrl(g.external.page)}" target="_blank" rel="noopener">Открыть изображение на странице файла</a></p>` : ''}
+            ${g.external ? html`<p class="credit"><a href="${safeUrl(g.external.page)}" target="_blank" rel="noopener">${g.external.reference ? 'Посмотреть работу у источника' : 'Открыть изображение на странице файла'}</a></p>` : ''}
           </figure>`)}
         </div>
       </section>` : ''}

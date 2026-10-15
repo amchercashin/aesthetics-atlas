@@ -31,6 +31,17 @@ export function comparisonsOf(styles) {
   return out;
 }
 
+// Context is navigable in both directions, but never participates in historical ancestry.
+export function contextsOf(styles) {
+  const out = new Map(styles.map((s) => [s.id, []]));
+  for (const s of styles) for (const c of s.contexts ?? []) {
+    const rec = { type: c.type, status: c.status, note: str(c.note), sources: asList(c.sources) };
+    out.get(s.id)?.push({ ...rec, id: c.id, direction: 'out' });
+    out.get(c.id)?.push({ ...rec, id: s.id, direction: 'in' });
+  }
+  return out;
+}
+
 // Права: лицензия фотографии не распространяется на изображённое произведение — это отдельная пометка.
 function rightsOf(spec, img) {
   return {
@@ -46,8 +57,13 @@ export function imageRecord(spec = {}, img = null) {
   const rec = {
     title: str(spec.title), author: str(spec.author), year: spec.year ?? null, place: str(spec.place),
     note: str(spec.note), role: spec.role ?? 'work', why: str(spec.whyRepresentative), sources: asList(spec.sources),
-    img: null, external: null,
+    medium: str(spec.medium), workId: str(spec.workId), img: null, external: null,
   };
+  if (spec.reference) {
+    rec.external = { page: spec.reference, reference: true, license: null, nonfree: null,
+      rights: { status: 'reference', basis: str(spec.rights?.basis), reviewed: ymd(spec.rights?.reviewed), note: str(spec.rights?.note) } };
+    return rec;
+  }
   if (!img) return rec;
   const rights = rightsOf(spec, img);
   if (spec.rights?.embed === false) {
@@ -70,12 +86,15 @@ export function paletteRecord(spec, computed, example) {
   };
 }
 
-export function buildRecord(s, { links = [], palette = null, img = () => null, children = [], comparisons = [] } = {}) {
+export function buildRecord(s, { links = [], palette = null, img = () => null, children = [], comparisons = [], contexts = null } = {}) {
   const example = imageRecord(s.example, img(s.example?.file ?? s.example?.asset));
   return {
     id: s.id, name: s.name, orig: s.orig,
     kind: asList(s.kind), kindNote: str(s.kindNote), scopeNote: str(s.scopeNote),
     aliases: s.aliases ?? [], searchKeywords: s.searchKeywords ?? [], formerIds: s.formerIds ?? [],
+    labelStatus: str(s.labelStatus), maturity: s.maturity ?? 'not-assessed',
+    creators: (s.creators ?? []).map((c) => ({ name: str(c.name), orig: str(c.orig), role: str(c.role), aliases: asList(c.aliases), sources: asList(c.sources) })),
+    admission: s.admission ? { ...Object.fromEntries(['language', 'corpus', 'distinctness', 'significance'].map((k) => [k, str(s.admission[k])])), sources: asList(s.admission.sources) } : null,
     start: s.start, end: s.end ?? null, dates: s.dates ?? null,
     dateKind: s.dateKind ?? null, approx: !!s.approx, dateNote: str(s.dateNote),
     endKind: s.end == null ? s.endKind ?? 'ongoing' : null,
@@ -84,10 +103,12 @@ export function buildRecord(s, { links = [], palette = null, img = () => null, c
     era: s.era, domain: s.domain, medium: asList(s.medium), region: s.region ?? null, tier: s.tier,
     root: !!s.root, origin: s.origin ?? null, row: s.row ?? null,
     parents: (s.parents ?? []).map(relation), children, comparisons,
+    contexts: contexts ?? (s.contexts ?? []).map((c) => ({ ...relation(c), direction: 'out' })),
     summary: String(s.summary).trim(), description: paragraphs(s.description),
     traits: s.traits ?? [], names: s.names ?? [],
     example,
     gallery: (s.gallery ?? []).map((g) => imageRecord(g, img(g.file ?? g.asset))),
+    corpus: (s.corpus ?? []).map((w) => imageRecord(w, img(w.file ?? w.asset))),
     palette: paletteRecord(s, palette, example),
     evidence: (s.evidence ?? []).map((e) => ({ claim: str(e.claim), field: str(e.field), source: e.source, note: str(e.note) })),
     review: s.review ? { status: s.review.status, date: ymd(s.review.date), note: str(s.review.note) } : { status: 'legacy', date: null, note: null },

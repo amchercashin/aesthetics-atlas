@@ -39,6 +39,13 @@ test('a bad color is an error', () => {
   assert.match(validateNebulae(d, styles).errors.join('\n'), /color must be #rrggbb/);
 });
 
+test('both levels need a usable label and identifier', () => {
+  const d = doc();
+  d.nebulae[0].parts[0].name = '';
+  delete d.nebulae[0].parts[1].id;
+  assert.equal(validateNebulae(d, styles).errors.filter((e) => e.includes('part needs id and name')).length, 2);
+});
+
 test('closestPart weighs links by type, in both directions', () => {
   const partOf = new Map([['a', 'p1'], ['d', 'p2']]);
   assert.equal(closestPart('b', styles, partOf), 'p1');   // родитель a (развитие 1) и потомок d (развитие 1): ничья → по id

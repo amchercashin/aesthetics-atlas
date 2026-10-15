@@ -529,3 +529,377 @@
   sourceType: catalog
   checked: '2026-10-14'
   note: Ostarisk, 2017 по описанию файла.
+
+# Источники пилота авторских и локальных карточек
+- id: rusmuseum-khokhloma-bowl
+  title: Чаша, ОНИ/Р-1293
+  publisher: Государственный Русский музей
+  url: https://rusmuseumvrm.ru/data/collections/folk_art/onir-1293/index.php
+  sourceType: museum
+  checked: '2026-10-14'
+  note: >-
+    Предмет XIX века из Семёновского уезда; материалы и техника. Кураторский текст описывает известность
+    промысла с XVII века, грунт с оловянным порошком и изменение колорита старой олифы. Точный год
+    происхождения не установлен.
+- id: rusmuseum-khokhloma-ladle
+  title: С. С. Юзиков. Ковш, ОНИ/Р-2376
+  publisher: Государственный Русский музей
+  url: https://rusmuseumvrm.ru/data/collections/folk_art/onir-2376/index.php
+  sourceType: museum
+  checked: '2026-10-14'
+  note: Автор, Семёнов, 1920–1930-е, дерево и хохломская роспись.
+- id: rusmuseum-khokhloma-dish
+  title: Декоративное блюдо, Р-3479
+  publisher: Государственный Русский музей
+  url: https://rusmuseumvrm.ru/data/collections/folk_art/r_3479/index.php
+  sourceType: museum
+  checked: '2026-10-14'
+  note: >-
+    Прочитана предметная запись: Н. И. Иванова и Н. П. Сальникова, Семёнов, 1969; дерево, токарная работа,
+    хохломская роспись. Описание кудрины и фонового письма; разделение операций между соавторами не указано.
+- id: ngv-kngwarray-after-rain
+  title: Emily Kam Kngwarray. After rain, 1990
+  publisher: National Gallery of Victoria
+  url: https://www.ngv.vic.gov.au/explore/collection/work/2650/
+  sourceType: museum
+  checked: '2026-10-14'
+  note: >-
+    Акриловая живопись на холсте, 1990. Кураторский текст связывает изображение с Country, ростом растений
+    после дождя, anwerlarr и awely; это пояснение конкретной работы, не универсальная расшифровка орнамента.
+- id: ngv-kngwarray-awely
+  title: 'Emily Kam Kngwarray. Body paint: Awely, 1993'
+  publisher: National Gallery of Victoria
+  url: https://www.ngv.vic.gov.au/explore/collection/work/1813/
+  sourceType: museum
+  checked: '2026-10-14'
+  note: >-
+    Автор, 1993, синтетическая полимерная краска на бумаге; место исполнения Mulga Bore; поступление 1994 года
+    не подменяет дату работы.
+- id: ngv-kngwarray-big-yam
+  title: Emily Kam Kngwarray. Anwerlarr anganenty, 1995
+  publisher: National Gallery of Victoria
+  url: https://www.ngv.vic.gov.au/explore/collection/work/57498/
+  sourceType: museum
+  checked: '2026-10-14'
+  note: >-
+    Автор, материал, дата и линейный язык Big yam Dreaming. Текст связывает позднюю живопись с батиком
+    1977–1988 и переходом к холсту в 1988–1989; значения относятся к Alhalker и практике автора.
+- id: az-zverev-portrait-1958
+  title: Анатолий Зверев. Портрет, 1958
+  publisher: Музей AZ
+  url: https://museum-az.com/art_co/portret/
+  sourceType: museum
+  checked: '2026-10-14'
+  note: 'Предметная запись и репродукция: 1958, бумага, гуашь, 64,5 × 43,5 см. Имя модели в записи не указано.'
+- id: az-zverev-portrait-corpus
+  title: 'Прекрасные создания. Девушка: картины-вдохновение'
+  publisher: Музей AZ
+  url: https://museum-az.com/materials/master-klass-prekrasnye-sozdaniya-devushka/
+  sourceType: museum
+  checked: '2026-10-14'
+  note: >-
+    Опубликованы три подписанные репродукции Зверева из собрания AZ: женские портреты 1966 и 1967 годов и
+    портрет Саши Бахмутской 1964 года. Материалы этих трёх работ не сообщены; материалы учебного мастер-класса
+    к ним не относятся.
+- id: risd-sikander-labels
+  title: 'Shahzia Sikander: Extraordinary Realities — exhibition labels'
+  publisher: RISD Museum
+  url: https://risdmuseum.org/sites/default/files/museumplus/345744.pdf
+  sourceType: museum
+  checked: '2026-10-14'
+  note: >-
+    Кураторское введение о первых пятнадцати годах практики, обучении рукописной живописи в Лахоре и работе в
+    США. Использованы введение и сопоставление с Safavid- и Mughal-традициями.
+- id: cincinnati-sikander-audio
+  title: 'Shahzia Sikander: Collective Behavior — audio exhibition'
+  publisher: Cincinnati Art Museum
+  url: >-
+    https://www.cincinnatiartmuseum.org/art/exhibitions/exhibition-archive/2025/shahzia-sikander-collective-behavior/audio-exhibition/
+  sourceType: museum
+  checked: '2026-10-14'
+  note: >-
+    Датировки, материалы и репродукции The Scroll (1989–1990), Perilous Order (1989–1997) и Usurpia (2002).
+    Использована актуальная датировка Perilous Order; в ранних каталогах встречаются другие границы.
+- id: curtin-carrolup-overview
+  title: The Carrolup Artworks
+  publisher: John Curtin Gallery / Curtin University
+  url: https://www.curtin.edu.au/jcg/carrolup-centre/overview/
+  sourceType: museum
+  checked: '2026-10-14'
+  note: >-
+    Историческая среда работ детей Карролап, насильственное разлучение с семьями, роль преподавателей Noel и
+    Lily White, возвращение коллекции и участие представителей сообществ. Не определяет единый стиль всех
+    нунгар.
+- id: carrolup-documented-works
+  title: 'The Carrolup Story: Art'
+  publisher: 'Aboriginal Child Artists of Carrolup: Healing Trauma'
+  url: https://www.carrolup.info/gallery/art/
+  sourceType: community
+  checked: '2026-10-14'
+  note: >-
+    Именные подписи, годы, материалы и собрания работ Рейнольда Харта, Парнелла Демпстера, Барри Лу и других.
+    Выбраны три независимые работы 1949–1950 годов; просмотрены их репродукции.
+
+# Проверенные предметные записи оставшейся части пилота
+- id: met-kawakubo-1983
+  title: Rei Kawakubo / Comme des Garçons. Dress, 1983–1984
+  publisher: The Metropolitan Museum of Art
+  url: https://www.metmuseum.org/art/collection/search/675696
+  sourceType: museum
+  checked: '2026-10-14'
+  note: >-
+    Шерстяное платье осень/зима 1983–1984, коллекция Gloves, Skirts, Quilted Bag Coats; музей описывает
+    асимметричные складки и увеличение объёма.
+- id: met-kawakubo-1997
+  title: Rei Kawakubo / Comme des Garçons. Dress, 1997
+  publisher: The Metropolitan Museum of Art
+  url: https://www.metmuseum.org/art/collection/search/80949
+  sourceType: museum
+  checked: '2026-10-14'
+  note: >-
+    Платье весна/лето 1997; нейлон, полиуретан, пух. Музей называет Orimono Kenkyu Sha и Hiroshi Matsushita в
+    связи с заказом клетчатой ткани. Не приписывает им дизайн всех коллекций.
+- id: met-kawakubo-2015
+  title: Rei Kawakubo / Comme des Garçons. Ensemble, 2015–2016
+  publisher: The Metropolitan Museum of Art
+  url: https://www.metmuseum.org/art/collection/search/701396
+  sourceType: museum
+  checked: '2026-10-14'
+  note: >-
+    Ансамбль осень/зима 2015–2016, Ceremony of Separation; полиэстер, нейлон, хлопок, шёлк, ПВХ. Описание
+    слоёв кружева и сетки с миниатюрными предметами одежды.
+- id: met-kawakubo-galleries
+  title: 'Rei Kawakubo / Comme des Garçons: Art of the In-Between — galleries'
+  publisher: The Metropolitan Museum of Art
+  url: https://www.metmuseum.org/exhibitions/listings/2017/rei-kawakubo/exhibition-galleries
+  sourceType: museum
+  checked: '2026-10-14'
+  note: >-
+    Кураторская структура выставки 2017 года сопоставляет несколько способов преобразования одежды и тела.
+    Название авторской карточки — редакционный охват, не название нового движения.
+- id: walker-abad-bacongo
+  title: Pacita Abad. Bacongo VIII, 1988
+  publisher: Walker Art Center
+  url: https://www.walkerart.org/collections/artwork/bacongo-viii/
+  sourceType: museum
+  checked: '2026-10-14'
+  note: >-
+    Предметная запись 2022.86: акрил, раковины каури, пластиковые пуговицы и зеркала, пришитые к
+    шелкографически запечатанному холсту с набивкой.
+- id: walker-abad-liberty
+  title: Pacita Abad. L.A. Liberty, 1992
+  publisher: Walker Art Center
+  url: https://www.walkerart.org/collections/artwork/l-a-liberty/
+  sourceType: museum
+  checked: '2026-10-14'
+  note: >-
+    Предметная запись 2022.87: акрил, хлопковая пряжа, пластиковые пуговицы, зеркала, золотая нить,
+    расписанная ткань на прошитом холсте с набивкой.
+- id: walker-abad-textiles
+  title: Textiles in Pacita Abad’s 100 Years of Freedom
+  publisher: Walker Art Center / Clarissa M. Esguerra
+  url: https://www.walkerart.org/reader/textiles-in-pacita-abads-100-years-of-freedom/
+  sourceType: museum
+  checked: '2026-10-14'
+  note: >-
+    Куратор LACMA анализирует текстильный коллаж и происхождение тканей в работе 1998 года. Заголовок содержит
+    From Batanes to Jolo, подпись сокращает название; обе формы относятся к одному произведению.
+- id: walker-abad-retrospective
+  title: Pacita Abad — retrospective, 2023
+  publisher: Walker Art Center
+  url: https://www.walkerart.org/whats-on/pacita-abad/
+  sourceType: museum
+  checked: '2026-10-14'
+  note: >-
+    Обзор 32-летней карьеры и более 100 работ. Объясняет trapunto как прошивание и набивку холста; описание
+    всей ретроспективы не означает единство всех медиумов автора.
+- id: mahlangu-bmw-1991
+  title: BMW Art Car, 1991
+  publisher: Esther Mahlangu — official artist site
+  url: https://www.esthermahlangu.com/bmw-projects/bmw-art-car-1991
+  sourceType: primary
+  checked: '2026-10-14'
+  note: >-
+    Документация росписи BMW 525i геометрическими мотивами. Источник автора подтверждает проект; внешнее
+    музейное признание и коллективная традиция рассмотрены отдельно Iziko.
+- id: espacio-mahlangu-2016
+  title: Esther Mahlangu. Untitled, 2016
+  publisher: El Espacio 23
+  url: https://elespacio23.org/portfolio_page/mahlangu-untitled-2016/
+  sourceType: catalog
+  checked: '2026-10-14'
+  note: >-
+    Именная предметная запись: Untitled, 2016, acrylic on canvas; опубликована репродукция прямоугольного
+    холста.
+- id: iziko-mahlangu-retrospective
+  title: 'Then I Knew I Was Good at Painting: Esther Mahlangu'
+  publisher: Iziko Museums of South Africa
+  url: >-
+    https://www.iziko.org.za/news/iziko-museums-of-south-africa-presentsthen-i-knew-i-was-good-at-painting-esthermahlangu-a-retrospective/
+  sourceType: museum
+  checked: '2026-10-14'
+  note: >-
+    Прочитан обзор ретроспективы 2024 года, более 100 работ, переход от росписи стен к другим поверхностям.
+    Для круглого Ndebele Abstract (2023) использованы подпись и репродукция этого материала. Размер в подписи
+    и имени файла различается, поэтому размеры не воспроизводятся.
+- id: ngv-rennie-regalia
+  title: Reko Rennie. Regalia, 2013
+  publisher: National Gallery of Victoria
+  url: https://www.ngv.vic.gov.au/explore/collection/work/108708/
+  sourceType: museum
+  checked: '2026-10-14'
+  note: >-
+    Неоновая работа 2013 года: непрозрачная полимерная смола, неон, электрические компоненты. Авторское
+    пояснение различает корону, ромб и флаг и связывает их с конкретным личным и культурным контекстом.
+- id: agsa-rennie-oa-rr
+  title: 'Reko Rennie: OA_RR'
+  publisher: Art Gallery of South Australia
+  url: >-
+    https://www.agsa.sa.gov.au/education/resources-educators/resources-educators-themed/photography/moving-image/reko-rennie/
+  sourceType: museum
+  checked: '2026-10-14'
+  note: >-
+    Музейный разбор OA_RR, яркого камуфляжа, автомобиля и Kamilaroi Country; опубликован кадр. Различает
+    триканальное видео и расписанный автомобиль.
+- id: ngv-rennie-initiation
+  title: Initiation OA_RR, 2021
+  publisher: National Gallery of Victoria
+  url: https://www.ngv.vic.gov.au/exhibition/initiation-oa_rr/
+  sourceType: museum
+  checked: '2026-10-14'
+  note: >-
+    Триканальное видео со звуком, показанное в 2021 году; Holden Monaro 1973 года — носитель в работе, не год
+    создания видео. Новая партитура Deborah Cheetham, Yorta Yorta.
+- id: ngv-rennie-labels
+  title: REKOSPECTIVE — exhibition labels
+  publisher: National Gallery of Victoria
+  url: https://www.ngv.vic.gov.au/wp-content/uploads/2025/06/RekoRennie_Labels_WEB_FA.pdf
+  sourceType: museum
+  checked: '2026-10-14'
+  note: >-
+    Предметные подписи: Regalia (2013), OA_RR (видео 2017, с. 45; автомобиль 2016–2017, с. 72). Эти объекты
+    различены; общая публикация 2024 года сокращает датировку OA_RR до 2016.
+- id: met-hokusai-wave
+  title: Hokusai. Under the Wave off Kanagawa
+  publisher: The Metropolitan Museum of Art
+  url: https://www.metmuseum.org/art/collection/search/45434
+  sourceType: museum
+  checked: '2026-10-14'
+  note: >-
+    Конкретный оттиск из Thirty-six Views of Mount Fuji, около 1830–1832: цветная ксилография, чернила и цвет
+    на бумаге. Изображение в музейной записи public domain.
+- id: met-hokusai-kajikazawa
+  title: Hokusai. Kajikazawa in Kai Province
+  publisher: The Metropolitan Museum of Art
+  url: https://www.metmuseum.org/art/collection/search/56727
+  sourceType: museum
+  checked: '2026-10-14'
+  note: 'Конкретный оттиск около 1830–1832: цветная ксилография. Просмотрена репродукция из этой предметной записи.'
+- id: chiba-hokusai-red-fuji
+  title: Fine Wind, Clear Weather
+  publisher: Chiba City Museum of Art
+  url: https://www.ccma-net.jp/collection/works/4965/
+  sourceType: museum
+  checked: '2026-10-14'
+  note: >-
+    Оттиск 2943002, около 1831–1833. Японская и английская музейные подписи объясняют ограничение цветов,
+    ранний вариант печати и роль мастерства печатника в градации тона. Этот оттиск не подменяется другим
+    вариантом Red Fuji.
+- id: animator-norstein-heron
+  title: Цапля и журавль, 1974 — фильмография и роли
+  publisher: Аниматор.ру
+  url: https://animator.ru/db/?fid=2670&p=show_film
+  sourceType: catalog
+  checked: '2026-10-14'
+  note: >-
+    Профессиональный каталог российской анимации: режиссёр и аниматор Юрий Норштейн, художник-постановщик
+    Франческа Ярбусова, оператор Александр Жуковский. Опубликован кадр.
+- id: animator-norstein-hedgehog
+  title: Ёжик в тумане, 1975 — фильмография и роли
+  publisher: Аниматор.ру
+  url: https://animator.ru/db/?fid=2684&p=show_film
+  sourceType: catalog
+  checked: '2026-10-14'
+  note: >-
+    Перекладки, Союзмультфильм, 1975; режиссёр и аниматор Юрий Норштейн, художник-постановщик Франческа
+    Ярбусова, оператор Александр Жуковский. Опубликован кадр.
+- id: animator-norstein-tales
+  title: Сказка сказок, 1979 — фильмография и роли
+  publisher: Аниматор.ру
+  url: https://animator.ru/db/?fid=2842&p=show_film
+  sourceType: catalog
+  checked: '2026-10-14'
+  note: >-
+    Рисованный фильм и перекладки, 1979: режиссёр и аниматор Юрий Норштейн, художник-постановщик Франческа
+    Ярбусова; оператор Игорь Скидан-Босин. Это другая операторская атрибуция, чем в фильмах 1974 и 1975 годов.
+- id: momi-norstein-program
+  title: 'Tale of Tales: The Films of Yuri Norstein'
+  publisher: Museum of the Moving Image
+  url: https://movingimage.org/event/the-films-of-yuri-norstein/2026-01-30/
+  sourceType: museum
+  checked: '2026-10-14'
+  note: >-
+    Кураторская программа охватывает 1968–1979 годы и рассматривает перекладочную анимацию. Текст был доступен
+    в поисковом представлении; прямой браузерный доступ ограничен Cloudflare. Даты и производственные роли
+    подтверждены отдельными записями Аниматор.ру.
+- id: curtin-carrolup-transfer
+  title: Stolen Generation artwork to transfer to Western Australia
+  publisher: Curtin University
+  url: https://www.curtin.edu.au/news/stolen-generation-artwork-to-transfer-to-western-australia/
+  sourceType: museum
+  checked: '2026-10-14'
+  note: >-
+    Прочитан материал о передаче 119 работ, первоначально опубликованный 9 мая 2013 года: рисунки и картины
+    созданы в 1945–1951 годах. Это даты художественного корпуса, не основания учреждения.
+
+# Книжная графика Билибина: музейная интерпретация и репродукции
+- id: gtg-bilibin-book-design
+  title: И. Я. Билибин — иллюстратор русских сказок
+  publisher: Государственная Третьяковская галерея
+  url: https://www.tretyakovgallery.ru/events/o/i-ya-bilibin-illyustrator-russkikh-skazok/
+  sourceType: museum
+  checked: '2026-10-14'
+  note: >-
+    Кураторское описание книги как единого организма из иллюстраций, заставок, буквиц и орнаментов.
+    Перечислены Царевна-лягушка, Василиса Прекрасная и Белая уточка. Доступен текст поискового представления;
+    прямой браузерный запрос завершался таймаутом.
+- id: commons-bilibin-frog-1901
+  title: Оцифрованная иллюстрация к «Царевне-лягушке»
+  publisher: Wikimedia Commons / Ivan Bilibin
+  url: >-
+    https://commons.wikimedia.org/wiki/File:Ivan_Bilibin_-_illustration-for-the-russian-fairy-story-the-frog-princess-1901-1.jpg
+  sourceType: catalog
+  checked: '2026-10-14'
+  note: >-
+    Просмотрены файл и описание: дата рисунка 1901, источник репродукции WikiArt. Это вторичная предметная
+    метаинформация, а не датировка печатного издания.
+- id: commons-bilibin-vasilisa-1900
+  title: Оцифрованная иллюстрация к «Василисе Прекрасной»
+  publisher: Wikimedia Commons / Ivan Bilibin
+  url: >-
+    https://commons.wikimedia.org/wiki/File:Ivan_Bilibin_-_illustration-for-the-fairy-tale-vasilisa-the-beautiful-1900-21.jpg
+  sourceType: catalog
+  checked: '2026-10-14'
+  note: >-
+    Просмотрены файл и описание: дата рисунка 1900; изображён всадник в лесу. Дата рисунка не приравнивается к
+    дате книжного издания; первичное местонахождение рисунка не установлено.
+- id: commons-bilibin-white-duck-scan
+  title: '«Белая уточка»: оцифрованная книжная страница'
+  publisher: Wikimedia Commons / Ivan Bilibin
+  url: https://commons.wikimedia.org/wiki/File:Билибин_img573.jpg
+  sourceType: primary
+  checked: '2026-10-14'
+  note: >-
+    Просмотрена полная страница 7: заглавие Белая Уточка, иллюстрация, буквица, текст и бордюры. На рисунке
+    читается подпись с 1902 годом. Год этого печатного оттиска и исходный экземпляр не установлены; маршрут
+    исходного скана в описании устарел.
+- id: commons-bilibin-vasilisa-cover
+  title: '«Василиса Прекрасная»: обложка'
+  publisher: Wikimedia Commons / Ivan Bilibin
+  url: https://commons.wikimedia.org/wiki/File:Vasilisa_the_Beautiful_(Bilibin)_-_cover.jpg
+  sourceType: catalog
+  checked: '2026-10-14'
+  note: >-
+    Просмотрены обложка и описание файла: 1902; источник RARUSS rare-book page. Используется как
+    дополнительный пример оформления книги, а не отдельное доказательство повторяемости внутренней
+    иллюстрации.

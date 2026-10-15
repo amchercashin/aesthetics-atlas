@@ -1,9 +1,9 @@
 // Командная палитра поиска: «/» или ⌘K, стрелки, Enter, Esc.
 import { html, mount } from '../html.js';
-import { buildIndex, search, parseYear } from '../search.js?v=audit';
-import { fmtDates, fmtYear } from '../format.js?v=audit';
-import { thumb } from './common.js?v=audit-p1p2';
-import { markLoaded } from './image.js?v=audit-p1p2';
+import { buildIndex, search, parseYear } from '../search.js?v=author-pilot';
+import { fmtDates, fmtYear } from '../format.js?v=author-pilot';
+import { thumb } from './common.js?v=author-pilot';
+import { markLoaded } from './image.js?v=author-pilot';
 
 export function initSearch(store) {
   const dlg = document.querySelector('.search-dialog');

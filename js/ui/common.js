@@ -1,7 +1,7 @@
 // Мелкие общие куски разметки.
 import { html } from '../html.js';
-import { fmtDates, plural } from '../format.js?v=audit';
-import { frame } from './image.js?v=audit-p1p2';
+import { fmtDates, plural } from '../format.js?v=author-pilot';
+import { frame } from './image.js?v=author-pilot';
 
 export function eraTag(store, eraId, { link = true } = {}) {
   const e = store.era(eraId);

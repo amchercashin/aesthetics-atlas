@@ -5,18 +5,18 @@
 // Уровни: обзор → чтение → детали (миниатюры). Клик по стилю — крупный план ближайших связей,
 // с подписями типов связей и метками дальних родственников на краю экрана; полная родословная — по запросу.
 import { html, mount, safeUrl } from '../html.js';
-import { fmtDates, fmtYear, RELATION, REL_STATUS, DOMAIN, KIND, KIND_FAMILY, plural } from '../format.js?v=audit';
+import { fmtDates, fmtYear, RELATION, REL_STATUS, CONTEXT, DOMAIN, KIND, KIND_FAMILY, plural } from '../format.js?v=author-pilot';
 import { createTimeScale, segmentWidths, segmentTicks } from '../timescale.js';
 import { layoutGenealogy, routeBranches } from '../layout.js?v=sparse';
-import { frame, markLoaded } from '../ui/image.js?v=audit-p1p2';
-import { eraTag, thumb } from '../ui/common.js?v=audit-p1p2';
+import { frame, markLoaded } from '../ui/image.js?v=author-pilot';
+import { eraTag, thumb } from '../ui/common.js?v=author-pilot';
 import { replaceParams, pushParams } from '../router.js?v=map4';
 import { pushStep, toParam, parseTrail } from '../trail.js?v=map4';
-import { stepTarget } from '../graphnav.js?v=map4';
+import { stepTarget } from '../graphnav.js?v=chain-author-map4';
 import { pickAmbient } from '../ambient.js?v=map4';
 import { createGutterLens } from '../lens.js?v=map4';
-import { initNebulae, drawNebulae, drawNebulaNames, disposeNebulae, setNebulaDirtyHandler } from '../nebulae.js?v=map4';
-import { buildIndex, search } from '../search.js?v=audit';
+import { initNebulae, drawNebulae, drawNebulaNames, disposeNebulae, setNebulaDirtyHandler } from '../nebulae.js?v=chain-author-map4';
+import { buildIndex, search } from '../search.js?v=author-pilot';
 
 const NS = 'http://www.w3.org/2000/svg';
 const AXIS_H = 30;      // строка делений шкалы внутри SVG
@@ -90,6 +90,7 @@ export default {
           </div>
         </div>
         <label class="map-switch map-all-switch"><input type="checkbox" data-layer="all"><span class="sw" aria-hidden="true"></span>Все связи</label>
+        <label class="map-switch map-authors-switch"><input type="checkbox" data-layer="authors"><span class="sw" aria-hidden="true"></span>Авторские языки</label>
         <div class="map-pop-wrap map-legend-wrap">
           <button class="icon-btn" type="button" data-legend aria-expanded="false" aria-label="Как читать карту">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9.6 9.3a2.5 2.5 0 1 1 3.3 2.4c-.6.2-.9.7-.9 1.3v.5M12 16.6v.3"/></svg>
@@ -106,13 +107,16 @@ export default {
               <li><svg viewBox="0 0 40 14" aria-hidden="true"><path d="M2 7h36" class="edge lg weight"/></svg>Толщина — сколько стилей выросло из этой линии</li>
               <li><svg viewBox="0 0 40 14" aria-hidden="true"><path d="M2 4h36" class="edge lg st-verified"/><path d="M2 11h36" class="edge lg st-unverified"/></svg>Тёмная — подтверждена источником, светлая — гипотеза редакции</li>
               <li><svg viewBox="0 0 40 14" aria-hidden="true"><path d="M2 7h36" class="edge cmp"/></svg>Визуальное сопоставление — сходство, а не происхождение</li>
+              <li><svg viewBox="0 0 40 14" aria-hidden="true"><path d="M2 7h36" class="edge context"/></svg>Контекст — школа, среда или техника</li>
             </ul>
             <div class="lg-layers" role="group" aria-label="Слои карты">
               <label class="map-switch lg-all"><input type="checkbox" data-layer="all"><span class="sw" aria-hidden="true"></span>Все связи сразу</label>
+              <label class="map-switch"><input type="checkbox" data-layer="authors"><span class="sw" aria-hidden="true"></span>Авторские языки</label>
               <label class="map-switch"><input type="checkbox" data-layer="compare"><span class="sw" aria-hidden="true"></span>Визуальные сопоставления</label>
-              <label class="map-switch"><input type="checkbox" data-layer="verified"><span class="sw" aria-hidden="true"></span>Только связи с источником</label>
+              <label class="map-switch"><input type="checkbox" data-layer="contexts"><span class="sw" aria-hidden="true"></span>Школы и культурный контекст</label>
+              <label class="map-switch"><input type="checkbox" data-layer="verified" checked><span class="sw" aria-hidden="true"></span>Только связи с источником</label>
             </div>
-            <p class="lg-note">Вертикаль не означает иерархию: стили стоят рядом с главным предком, чтобы ветви были короткими. Большинство связей пока не сверены с источниками — это редакционная схема. Шкала времени неравномерная: каждой эпохе — место по числу стилей. Нажмите на линию — появится объяснение связи; на стиль — его связи крупным планом.</p>
+            <p class="lg-note">Вертикаль не означает иерархию: стили стоят рядом с главным предком, чтобы ветви были короткими. Большинство связей пока не сверены с источниками — это редакционная схема. По умолчанию гипотезы скрыты; переключатель «Только связи с источником» позволяет включить их. Шкала времени неравномерная: каждой эпохе — место по числу стилей. Нажмите на линию — появится объяснение связи; на стиль — его связи крупным планом.</p>
           </div>
         </div>
         <div class="zoom-ctrls">
@@ -133,7 +137,7 @@ export default {
         <canvas class="map-neb" aria-hidden="true"></canvas>
         <svg class="map-svg z0">
           <defs>${[11, 13, 15].map((r) => html`<clipPath id="clip-${r}"><circle cx="0" cy="0" r="${r}"/></clipPath>`)}</defs>
-          <g class="m-eras"></g><g class="m-dur"></g><g class="m-life"></g><g class="m-cmp"></g><g class="m-edges"></g><g class="m-edge-hits"></g><g class="m-trail"></g><g class="m-nebnames"></g><g class="m-plates"></g>
+          <g class="m-eras"></g><g class="m-dur"></g><g class="m-life"></g><g class="m-cmp"></g><g class="m-contexts"></g><g class="m-edges"></g><g class="m-edge-hits"></g><g class="m-trail"></g><g class="m-nebnames"></g><g class="m-plates"></g>
           <g class="m-nodes"></g><g class="m-labels"></g><g class="m-stubs"></g><g class="m-sel"></g><g class="m-elabels"></g><g class="m-axis"></g>
         </svg>
         <div class="map-offscreen" aria-label="Связи за краем экрана"></div>
@@ -158,7 +162,7 @@ export default {
     const q = (s) => root.querySelector(s);
     const stage = q('.map-stage');
     const svg = q('.map-svg');
-    const G = Object.fromEntries(['eras', 'dur', 'life', 'cmp', 'edges', 'edge-hits', 'trail', 'nebnames', 'plates', 'nodes', 'labels', 'stubs', 'sel', 'elabels', 'axis'].map((k) => [k, svg.querySelector(`.m-${k}`)]));
+    const G = Object.fromEntries(['eras', 'dur', 'life', 'cmp', 'contexts', 'edges', 'edge-hits', 'trail', 'nebnames', 'plates', 'nodes', 'labels', 'stubs', 'sel', 'elabels', 'axis'].map((k) => [k, svg.querySelector(`.m-${k}`)]));
     const tip = q('.map-tip');
     const edgePop = q('.map-edge-pop');
     const panel = q('.map-panel');
@@ -187,11 +191,13 @@ export default {
     // как раньше, в «виртуальной» альбомной сцене vw × vh; pw × ph — настоящий размер, rot — повёрнута ли сцена.
     let vw = 0, vh = 0, pw = 0, ph = 0, rot = false, sc, k0 = 0.1, syFit = 0.5, contentRefH = 0;
     const rotateOn = ctx.params?.get('rot') !== '0';
-    const nodes = [], edges = [], cmps = [];
+    const nodes = [], edges = [], cmps = [], contextEdges = [];
     const nodeById = new Map();
     const axis = {};
     let raf = 0, selected = null, focusMode = 'near', hovered = null, mode = 'z0';
-    let showAll = false, showCmp = false, verifiedOnly = false;
+    let showAll = false, showCmp = false, showContexts = false, showAuthors = false, verifiedOnly = true;
+    const isAuthor = (s) => s.kind.includes('author-style');
+    const authorHidden = (s) => isAuthor(s) && !showAuthors && s.id !== selected;
     let filter = { domain: '', family: '' };
     let camBeforeFocus = null, camBeforeFilter = null;
     let trail = [];        // маршрут по стилям; источник правды — параметр trail в адресе
@@ -202,6 +208,7 @@ export default {
     let lens = IDENT;
     let primaryOf = null, nebDpr = 1, nebTimer = 0;   // туманности: главный предок по id, DPR слоя, пауза перед пересборкой
     const neb = { ready: false };
+    let nebBuildVersion = 0;
     const nebOn = ctx.params?.get('neb') !== '0';
     const LABEL_PAD = window.innerWidth < 760 ? 110 : 170;
     const isNarrow = () => pw < 760;
@@ -339,6 +346,14 @@ export default {
         const hit = el('path', { class: 'edge-hit cmp-hit', 'data-cmp': cmps.length }, G['edge-hits']);
         cmps.push({ a, b, path, hit, note: c.note, sources: c.sources });
       }
+      for (const s of store.styles) for (const c of s.contexts ?? []) {
+        if (c.direction !== 'out') continue;
+        const a = nodeById.get(s.id), b = nodeById.get(c.id);
+        if (!a || !b) continue;
+        const path = el('path', { class: `edge context st-${c.status}`, 'data-from': s.id, 'data-to': c.id }, G.contexts);
+        const hit = el('path', { class: 'edge-hit context-hit', 'data-context': contextEdges.length }, G['edge-hits']);
+        contextEdges.push({ a, b, path, hit, type: c.type, status: c.status, note: c.note, sources: c.sources, context: true });
+      }
       // Годы выбранного стиля — у концов его линии жизни
       axis.durHover = el('path', { class: 'dur hover' }, G.dur);
       axis.durSel = el('path', { class: 'dur' }, G.dur);
@@ -348,6 +363,7 @@ export default {
       svg.dataset.nodes = String(nodes.length);
       svg.dataset.edges = String(edges.length);
       svg.dataset.comparisons = String(cmps.length);
+      svg.dataset.contexts = String(contextEdges.length);
       svg.dataset.rows = String(lay.count);
       q('.map-loading').remove();
       resize();
@@ -358,12 +374,16 @@ export default {
     }
 
     // Туманности. Обзорные единицы прототипа: x = PADX + sc.x·OV_K, y = PADY + yRef·SY_OV.
+    function rebuildNeb() { clearTimeout(nebTimer); nebTimer = setTimeout(buildNebulae, 120); }
     async function buildNebulae() {
+      clearTimeout(nebTimer);
       if (!nebOn || !store.nebulae.length) return;
+      const version = ++nebBuildVersion;
+      const nebNodes = nodes.filter((n) => !authorHidden(n.s));
       const css = getComputedStyle(document.documentElement);
       const colors = { paper: css.getPropertyValue('--paper').trim(), ink: css.getPropertyValue('--ink').trim() };
       const theme = css.colorScheme.includes('dark') ? 'dark' : 'light';
-      const idx = new Map(nodes.map((n, i) => [n.s.id, i]));
+      const idx = new Map(nebNodes.map((n, i) => [n.s.id, i]));
       // id части в слое — её номер (так устроены поля стилей: part = номер части)
       const partList = store.nebulae.flatMap((n, ni) => n.parts.map((p) => ({ key: p.id, name: p.name, nebula: ni })));
       const parts = partList.map((p, i) => ({ id: i, name: p.name, nebula: p.nebula }));
@@ -372,7 +392,7 @@ export default {
       const A = {
         W: NEB_PADX * 2 + sc.total * OV_K, H: NEB_PADY * 2 + contentRefH * SY_OV,
         nebulae: store.nebulae.map((n) => ({ name: n.name, color: n.color })), parts,
-        styles: nodes.map((n) => ({
+        styles: nebNodes.map((n) => ({
           x: NEB_PADX + sc.x(n.s.start) * OV_K, y: NEB_PADY + yRef(n) * SY_OV, tier: n.s.tier,
           nebula: nebIdx.get(n.s.nebula) ?? -1, part: partIdx.get(n.s.part) ?? -1,
           palette: n.s.palette?.colors?.length ? n.s.palette.colors : ['#888780'], accent: n.s.palette?.accent ?? null,
@@ -382,8 +402,9 @@ export default {
       };
       neb.ready = false;
       const t0 = performance.now();
-      await initNebulae(A, { theme, colors });
-      if (destroyed) return;
+      const ready = await initNebulae(A, { theme, colors });
+      if (!ready || destroyed || version !== nebBuildVersion) return;
+      svg.dataset.nebulaMembers = String(nebNodes.length);
       window.__nebInit = performance.now() - t0;
       neb.ready = true;
       schedule();
@@ -395,15 +416,19 @@ export default {
     };
 
     function applyParams(params, first = false) {
-      if (params.get('links') === 'all') setLayer('all', true);
-      if (params.get('cmp') === '1') setLayer('compare', true);
-      if (params.get('rel') === 'verified') setLayer('verified', true);
-      const d = params.get('d') ?? '', k = params.get('k') ?? '';
-      if ((DOMAIN[d] || KIND_FAMILY[k]) && (d !== filter.domain || k !== filter.family)) setFilter({ domain: DOMAIN[d] ? d : '', family: KIND_FAMILY[k] ? k : '' }, { animate: !first });
+      setLayer('all', params.get('links') === 'all');
+      setLayer('compare', params.get('cmp') === '1');
+      setLayer('verified', params.get('rel') !== 'all');
+      setLayer('authors', params.get('authors') === '1' || params.get('k') === 'authors');
+      setLayer('contexts', params.get('contexts') === '1');
+      const d = DOMAIN[params.get('d')] ? params.get('d') : '';
+      const k = KIND_FAMILY[params.get('k')] ? params.get('k') : '';
+      if (d !== filter.domain || k !== filter.family) setFilter({ domain: d, family: k }, { animate: !first });
       const focus = store.resolve(params.get('s') ?? '');
       const eraI = store.eras.findIndex((e) => e.id === params.get('era'));
       trail = parseTrail(params.get('trail'), (x) => nodeById.has(x));
       if (focus && nodeById.has(focus)) select(focus, { animate: !first, mode: params.get('view') === 'line' ? 'line' : 'near', nav: 'url' });
+      else if (selected) clearSelection({ restore: true, nav: 'url' });
       else if (eraI >= 0) zoomToEra(eraI, first ? 0 : 650);
     }
 
@@ -449,7 +474,7 @@ export default {
         n.g.classList.toggle('gutter', n.zone !== 'C');
         const hitR = n.zone === 'C' ? 18 : 4;     // у сжатых точек круг попадания маленький: соседи стоят вплотную
         if (n.hitR !== hitR) { n.hitR = hitR; n.g.firstChild.setAttribute('r', hitR); }
-        const off = x2 < -40 || x > vw + 40 || y < AXIS_H - 30 || y > vh + 30;
+        const off = authorHidden(n.s) || x2 < -40 || x > vw + 40 || y < AXIS_H - 30 || y > vh + 30;
         n.g.style.display = off ? 'none' : '';
         n.life.style.display = off ? 'none' : '';
         // С клавиатуры обходятся только стили на экране: Tab не уводит камеру в другой конец истории.
@@ -721,7 +746,7 @@ export default {
         const near = !!hovered && (p.s.id === hovered || c.s.id === hovered);
         e.g.classList.toggle('near', near);
         const out = e.g.classList.contains('out');
-        const hidden = (verifiedOnly && e.rel.status !== 'verified') || (focusNear && !lit && !e.primary);
+        const hidden = authorHidden(p.s) || authorHidden(c.s) || (verifiedOnly && e.rel.status !== 'verified') || (focusNear && !lit && !e.primary);
         const want = !hidden && (e.primary || showAll || lit || near || verifiedOnly || amb) && !(out && !lit);
         const xa = Math.min(X(p.s.start), X(c.s.start)), xb = Math.max(X(p.s.start), X(c.s.start));
         const offscreen = xb < -60 || xa > vw + 60 || Math.max(p.y, c.y) < AXIS_H - 40 || Math.min(p.y, c.y) > vh + 40;
@@ -738,12 +763,14 @@ export default {
       }
       drawTrunks();
       drawStubLabels();
-      for (const c of cmps) {
+      for (const c of [...cmps, ...contextEdges]) {
         const near = !!hovered && (c.a.s.id === hovered || c.b.s.id === hovered);
         const sel = !!selected && (c.a.s.id === selected || c.b.s.id === selected);
         const offA = c.a.g.style.display === 'none', offB = c.b.g.style.display === 'none';
         c.path.classList.toggle('near', near || sel);
-        if (!(showCmp || near || sel) || (offA && offB && !sel)) { c.path.setAttribute('d', ''); c.hit.setAttribute('d', ''); continue; }
+        const enabled = c.context ? showContexts : showCmp;
+        const hidden = authorHidden(c.a.s) || authorHidden(c.b.s) || (c.context && verifiedOnly && c.status !== 'verified');
+        if (hidden || !(enabled || near || sel) || (offA && offB && !sel)) { c.path.setAttribute('d', ''); c.hit.setAttribute('d', ''); continue; }
         const [l, r] = c.a.x <= c.b.x ? [c.a, c.b] : [c.b, c.a];
         const mx = (l.x + r.x) / 2, lift = Math.min(70, Math.abs(r.x - l.x) * 0.15 + 14);
         const d = `M${l.x.toFixed(1)},${l.y.toFixed(1)}Q${mx.toFixed(1)},${(Math.min(l.y, r.y) - lift).toFixed(1)} ${r.x.toFixed(1)},${r.y.toFixed(1)}`;
@@ -779,6 +806,7 @@ export default {
       if (selected && focusMode === 'near') {
         for (const e of edges) if (e.g.classList.contains('hl') && e.drawn) labels.push({ text: `${RELATION[e.type].label}${e.rel.status === 'verified' ? ' ✓' : ''}`, path: e.path });
         for (const c of cmps) if (c.path.classList.contains('near') && c.path.getAttribute('d')) labels.push({ text: 'сходство', path: c.path });
+        for (const c of contextEdges) if (c.path.classList.contains('near') && c.path.getAttribute('d')) labels.push({ text: CONTEXT[c.type]?.label ?? 'контекст', path: c.path });
       }
       const pool = G.elabels;
       while (pool.children.length < labels.length) el('text', { class: 'elabel' }, pool);
@@ -806,11 +834,12 @@ export default {
         ...s.parents.map((r) => ({ id: r.id, word: RELATION[r.type].from })),
         ...s.children.map((r) => ({ id: r.id, word: RELATION[r.type].to })),
         ...s.comparisons.map((r) => ({ id: r.id, word: 'похож на' })),
+        ...(s.contexts ?? []).filter((r) => !verifiedOnly || r.status === 'verified').map((r) => ({ id: r.id, word: CONTEXT[r.type]?.[r.direction] ?? CONTEXT[r.type]?.label })),
       ];
       const items = [];
       for (const r of rels) {
         const o = nodeById.get(r.id);
-        if (!o) continue;
+        if (!o || authorHidden(o.s)) continue;
         if (o.zone === 'C' && o.x > rect.x0 + 4 && o.x < rect.x1 - 4 && o.y > rect.y0 + 4 && o.y < rect.y1 - 4) continue;
         // Точка выхода луча «выбранный → родственник» на рамке видимой области.
         const cx = clamp(sel.x, rect.x0 + 40, rect.x1 - 40), cy = clamp(sel.y, rect.y0 + 30, rect.y1 - 30);
@@ -916,12 +945,13 @@ export default {
       c.globalAlpha = 0.28; c.strokeStyle = cs.getPropertyValue('--ink-2').trim() || '#666'; c.lineWidth = 0.8;
       c.beginPath();
       for (const e of edges) {
-        if (!e.primary || e.long) continue;
+        if (!e.primary || e.long || authorHidden(e.par.s) || authorHidden(e.ch.s) || (verifiedOnly && e.rel.status !== 'verified')) continue;
         const px = mx(sc.x(e.par.s.start)), py = my(yRef(e.par)), cx = mx(sc.x(e.ch.s.start)), cy = my(yRef(e.ch));
         c.moveTo(px, py); c.lineTo(Math.max(px, cx - 2), py); c.lineTo(Math.max(px, cx - 2), cy); c.lineTo(cx, cy);
       }
       c.stroke();
       for (const n of nodes) {
+        if (authorHidden(n.s)) continue;
         const out = n.g.classList.contains('out');
         c.globalAlpha = out ? 0.2 : 0.9;
         c.fillStyle = store.nebula(n.s.id)?.color ?? (cs.getPropertyValue('--ink-3').trim() || '#555');
@@ -1043,7 +1073,7 @@ export default {
     function focusCamera(id, ms = 650) {
       const s = store.get(id);
       const n = nodeById.get(id);
-      const rel = [...s.parents, ...s.children, ...s.comparisons].map((r) => nodeById.get(r.id)).filter(Boolean);
+      const rel = [...s.parents, ...s.children, ...s.comparisons, ...(s.contexts ?? []).filter((r) => !verifiedOnly || r.status === 'verified')].map((r) => nodeById.get(r.id)).filter((n) => n && !authorHidden(n.s));
       const rect = viewRect();
       const availW = Math.max(120, rect.x1 - rect.x0 - 80 - (lensNow() ? 112 : 0) - (isNarrow() ? 60 : 220));
       const kRead = isNarrow() ? 0.6 : 0.72;
@@ -1112,7 +1142,7 @@ export default {
       if (hovered === id) return;
       hovered = id;
       const s = id ? store.get(id) : null;
-      const near = s ? new Set([id, ...s.parents.map((p) => p.id), ...s.children.map((c) => c.id), ...s.comparisons.map((c) => c.id)]) : null;
+      const near = s ? new Set([id, ...s.parents.map((p) => p.id), ...s.children.map((c) => c.id), ...s.comparisons.map((c) => c.id), ...(s.contexts ?? []).filter((r) => !verifiedOnly || r.status === 'verified').map((c) => c.id)]) : null;
       svg.classList.toggle('has-hover', !!id && !selected);
       for (const n of nodes) { const v = !!near && near.has(n.s.id); n.g.classList.toggle('near', v); n.text.classList.toggle('near', v); n.life.classList.toggle('near', v); n.plate.classList.toggle('near', v); }
       schedule();
@@ -1128,7 +1158,8 @@ export default {
       setHover(null);
       hideTip(); hideEdgeInfo();
       const s = store.get(id);
-      const relIds = new Set([...s.parents.map((r) => r.id), ...s.children.map((r) => r.id), ...s.comparisons.map((r) => r.id)]);
+      if (isAuthor(s)) setLayer('authors', true);
+      const relIds = new Set([...s.parents.map((r) => r.id), ...s.children.map((r) => r.id), ...s.comparisons.map((r) => r.id), ...(s.contexts ?? []).map((r) => r.id)]);
       const anc = store.ancestors(id), desc = store.descendants(id);
       const lit = m === 'near' ? new Set([id, ...relIds]) : new Set([id, ...anc, ...desc]);
       const line = m === 'line' ? store.mainLine(id).map((x) => x.id) : [];
@@ -1186,6 +1217,7 @@ export default {
       for (const n of nodes) for (const x of [n.g, n.text, n.life, n.plate]) x.classList.remove('lit', 'is-selected', 'on-line', 'is-related');
       for (const e of edges) { e.g.classList.remove('hl', 'main', 'desc'); e.path.style.transitionDelay = '0ms'; }
       panel.hidden = true;
+      drawMinimap();
       trail = [];
       syncUrl({ push: nav === 'push' && (history.state?.mapStep ?? 0) > 0 });   // иначе «Назад» после снятия выбора ничего не делает
       if (restore && camBeforeFocus) { const c = camBeforeFocus; animateTo(c.k, c.tx, c.ty, 550); }
@@ -1213,15 +1245,22 @@ export default {
         ${s.comparisons.map((c) => { const o = store.get(c.id); return o ? html`<li><button type="button" class="mp-node" data-select="${o.id}"><span class="swatch" style="--c:var(--era-${o.era})"></span><span><span class="mp-node-rel">сопоставление, не происхождение</span>${o.name}</span></button>${c.note ? html`<p class="mp-rel-note">${c.note}</p>` : ''}</li>` : ''; })}
       </ul></div>`;
     }
+    function contextList(s) {
+      if (!s.contexts?.length) return '';
+      return html`<div class="mp-rel"><h3>Школы и контекст</h3><ul>${s.contexts.map((c) => {
+        const other = store.get(c.id);
+        return other ? html`<li><button type="button" class="mp-node" data-select="${other.id}"><span class="swatch" style="--c:var(--era-${other.era})"></span><span><span class="mp-node-rel">${CONTEXT[c.type]?.[c.direction]} · ${REL_STATUS[c.status]}</span>${other.name}</span></button><p class="mp-rel-note">${c.note}</p></li>` : '';
+      })}</ul></div>`;
+    }
     function sourceLinks(ids) {
       const list = (ids ?? []).map((id) => store.source(id)).filter(Boolean);
       return list.length ? html`<p class="ep-src">Источник: ${list.map((src, i) => html`${i ? ', ' : ''}<a href="${safeUrl(src.url)}" target="_blank" rel="noopener">${src.publisher ?? src.title}</a>`)}</p>` : '';
     }
     function openPanel(s) {
-      const nRel = s.parents.length + s.children.length + s.comparisons.length;
+      const nRel = s.parents.length + s.children.length + s.comparisons.length + (s.contexts?.length ?? 0);
       mount(panel, html`
         <button class="icon-btn mp-close" type="button" data-close-panel aria-label="Закрыть и вернуться к прежнему виду"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
-        <a class="mp-art" href="#/s/${s.id}">${frame(s.example.img, s.palette, { ratio: '16 / 10', sizes: '380px', alt: '', note: s.example.img ? '' : s.palette?.source === 'editorial' ? 'Редакторская подборка цветов' : '' })}</a>
+        ${s.example.external?.reference ? html`<div class="mp-reference"><p class="mp-kind">Основная работа</p><p>${s.example.title}</p><a href="${safeUrl(s.example.external.page)}" target="_blank" rel="noopener">Посмотреть репродукцию ↗</a></div>` : html`<a class="mp-art" href="#/s/${s.id}">${frame(s.example.img, s.palette, { ratio: '16 / 10', sizes: '380px', alt: '', note: s.example.img ? '' : s.palette?.source === 'editorial' ? 'Редакторская подборка цветов' : '' })}</a>`}
         <div class="mp-body">
           <p class="mp-meta">${eraTag(store, s.era, { link: false })}${s.kind[0] ? html`<span class="mp-kind">${KIND[s.kind[0]].toLowerCase()}</span>` : ''}</p>
           <h2 class="mp-name">${s.name}</h2>
@@ -1235,6 +1274,7 @@ export default {
           ${relList(s, 'parents', 'from')}
           ${relList(s, 'children', 'to')}
           ${cmpList(s)}
+          ${contextList(s)}
           <a class="btn mp-open" href="#/s/${s.id}">Открыть зал</a>
         </div>`);
       panel.hidden = false;
@@ -1243,7 +1283,12 @@ export default {
 
     // Объяснение связи по клику на линию.
     function showEdgeInfo(info, px, py) {
-      if (info.cmp) {
+      if (info.context) {
+        const c = info.context;
+        mount(edgePop, html`<p class="ep-head"><span>${c.a.s.name}</span> · <span>${c.b.s.name}</span></p>
+          <p class="ep-kind">${CONTEXT[c.type]?.label} · ${REL_STATUS[c.status]}</p><p class="ep-note">${c.note}</p>${sourceLinks(c.sources)}
+          <p class="ep-go"><button class="chip" type="button" data-select="${c.a.s.id}">${c.a.s.name}</button><button class="chip" type="button" data-select="${c.b.s.id}">${c.b.s.name}</button></p>`);
+      } else if (info.cmp) {
         const c = info.cmp;
         mount(edgePop, html`<p class="ep-head"><span>${c.a.s.name}</span> ↔ <span>${c.b.s.name}</span></p>
           <p class="ep-kind">Визуальное сопоставление · не заявление о происхождении</p>
@@ -1270,7 +1315,8 @@ export default {
       const params = {
         s: selected ?? '', view: selected && focusMode === 'line' ? 'line' : '',
         d: filter.domain, k: filter.family,
-        cmp: showCmp ? '1' : '', rel: verifiedOnly ? 'verified' : '', links: showAll ? 'all' : '',
+        cmp: showCmp ? '1' : '', rel: verifiedOnly ? '' : 'all', links: showAll ? 'all' : '',
+        authors: showAuthors ? '1' : '', contexts: showContexts ? '1' : '',
         trail: selected && trail.length > 1 ? toParam(trail) : '',
       };
       if (push) pushParams('map', params, { mapStep: (history.state?.mapStep ?? 0) + 1 });
@@ -1279,7 +1325,15 @@ export default {
     function setLayer(name, v) {
       if (name === 'all') { showAll = v; svg.classList.toggle('show-all', v); }
       if (name === 'compare') { showCmp = v; svg.classList.toggle('show-cmp', v); }
-      if (name === 'verified') { verifiedOnly = v; svg.classList.toggle('verified-only', v); }
+      if (name === 'verified') { verifiedOnly = v; svg.classList.toggle('verified-only', v); drawMinimap(); }
+      if (name === 'authors') {
+        const changed = showAuthors !== v;
+        showAuthors = v;
+        if (changed && sc) rebuildNeb(); svg.classList.toggle('show-authors', v);
+        if (!v && filter.family === 'authors') setFilter({ domain: filter.domain, family: '' }, { animate: false });
+        drawMinimap();
+      }
+      if (name === 'contexts') { showContexts = v; svg.classList.toggle('show-contexts', v); }
       root.querySelectorAll(`[data-layer="${name}"]`).forEach((b) => { b.checked = v; });
       schedule();
     }
@@ -1288,6 +1342,7 @@ export default {
     function setFilter(next, { animate = true } = {}) {
       const was = filter.domain || filter.family;
       filter = next;
+      if (filter.family === 'authors') setLayer('authors', true);
       const active = !!(filter.domain || filter.family);
       if (active && !was) camBeforeFilter = camera();
       svg.classList.toggle('has-filter', active);
@@ -1391,7 +1446,8 @@ export default {
         const rect = stage.getBoundingClientRect();
         if (drag.node) select(drag.node.dataset.id);
         else if (drag.edge) {
-          const info = drag.edge.dataset.cmp != null ? { cmp: cmps[+drag.edge.dataset.cmp] } : { edge: edges[+drag.edge.dataset.edge] };
+          const info = drag.edge.dataset.context != null ? { context: contextEdges[+drag.edge.dataset.context] }
+            : drag.edge.dataset.cmp != null ? { cmp: cmps[+drag.edge.dataset.cmp] } : { edge: edges[+drag.edge.dataset.edge] };
           showEdgeInfo(info, e.clientX - rect.left, e.clientY - rect.top);
         } else clearSelection();
       }
@@ -1432,7 +1488,7 @@ export default {
       if (uiTarget(e)) { if (e.key === 'Escape' && selected) goBack(); return; }
       if (selected && e.key.startsWith('Arrow')) {
         e.preventDefault();
-        const to = stepTarget(store, (x) => nodeById.get(x)?.row ?? 0, selected, e.key);
+        const to = stepTarget(store, (x) => nodeById.get(x)?.row ?? 0, selected, e.key, (s) => !authorHidden(s));
         if (to) select(to, { mode: focusMode });
         return;
       }
@@ -1585,7 +1641,6 @@ export default {
     build();
 
     setNebulaDirtyHandler(schedule);
-    const rebuildNeb = () => { clearTimeout(nebTimer); nebTimer = setTimeout(buildNebulae, 120); };
     const themeObs = new MutationObserver(rebuildNeb);
     themeObs.observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
     on(window.matchMedia('(prefers-color-scheme: dark)'), 'change', rebuildNeb);
@@ -1596,12 +1651,7 @@ export default {
     return {
       update(next) {
         if (!sc) return;
-        const id = store.resolve(next.params.get('s') ?? '');
-        const eraI = store.eras.findIndex((e) => e.id === next.params.get('era'));
-        trail = parseTrail(next.params.get('trail'), (x) => nodeById.has(x));
-        if (id && nodeById.has(id) && id !== selected) select(id, { nav: 'url' });
-        else if (!id && selected) clearSelection({ restore: true, nav: 'url' });
-        else if (!id && eraI >= 0) zoomToEra(eraI);
+        applyParams(next.params);
       },
       destroy() {
         destroyed = true;

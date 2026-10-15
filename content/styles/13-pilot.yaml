@@ -1,0 +1,2161 @@
+- id: khokhloma
+  name: Хохломская роспись
+  orig: Khokhloma painting
+  kind: tradition
+  start: 1650
+  end: null
+  era: renaissance
+  domain:
+    - art
+  medium:
+    - decorative-arts
+  region: "Нижегородское Заволжье, Россия: Семёнов, Сёмино и связанные мастерские"
+  tier: 2
+  dateKind: practice
+  origin: unknown
+  parents: []
+  summary: >-
+    Роспись деревянных предметов, в которой золотистая поверхность, травный орнамент и форма вещи образуют
+    общую композицию.
+  description: >-
+    Хохлома — традиция художественной обработки дерева с несколькими центрами и поколениями мастеров. В
+    собрании Русского музея она представлена предметами разных размеров и назначения. Музей описывает
+    технологию грунта с металлическим порошком и прозрачного покрытия; золотистый вид не означает, что предмет
+    покрыт настоящим золотом.
+
+
+    Сравнение чаши XIX века, ковша 1920–1930-х и блюда 1969 года показывает изменения внутри традиции. Декор
+    может быть редким или плотным, геометрически расчленённым или свободно растительным. Старые покрытия
+    темнеют, поэтому одинаковая современная палитра не должна становиться тестом подлинности. Ключевы связь
+    рисунка с объёмом и система орнаментального письма.
+  traits:
+    - Золотистая поверхность в сочетании с красным, чёрным и меняющимися оттенками старого покрытия
+    - Травные побеги, ягоды, листья и завитки, согласованные с формой вещи
+    - Чередование заполненных и свободных полей; центральные геометрические либо растительные композиции
+    - Декор проходит по округлой поверхности, не превращаясь в отдельную станковую картину
+  corpus:
+    - workId: kh-bowl-1293
+      title: Чаша, ОНИ/Р-1293
+      author: Мастер не указан; Семёновский уезд
+      year: XIX век
+      medium: Дерево, масло, лак; точение и полихромная роспись
+      reference: https://rusmuseumvrm.ru/data/collections/folk_art/onir-1293/index.php
+      sources:
+        - rusmuseum-khokhloma-bowl
+      whyRepresentative: >-
+        Травный узор следует округлой форме; на дне выделено геометрическое центральное поле. Потемневший
+        колорит связан в музейном тексте со старой олифой.
+      place: Русский музей
+      rights:
+        embed: false
+        reviewed: "2026-10-14"
+        note: В атласе дана ссылка на репродукцию у источника.
+    - workId: kh-ladle-2376
+      title: Ковш, ОНИ/Р-2376
+      author: Семён Степанович Юзиков
+      year: 1920–1930-е
+      medium: Дерево, хохломская роспись
+      reference: https://rusmuseumvrm.ru/data/collections/folk_art/onir-2376/index.php
+      sources:
+        - rusmuseum-khokhloma-ladle
+      whyRepresentative: Птичья форма ручки соединена с плоским орнаментом на объёме, а узор переходит с чаши на ручку.
+      place: Русский музей
+      rights:
+        embed: false
+        reviewed: "2026-10-14"
+        note: В атласе дана ссылка на репродукцию у источника.
+    - workId: kh-dish-3479
+      title: Декоративное блюдо, Р-3479
+      author: Н. И. Иванова; Н. П. Сальникова
+      year: 1969
+      medium: Дерево; токарная работа, хохломская роспись
+      reference: https://rusmuseumvrm.ru/data/collections/folk_art/r_3479/index.php
+      sources:
+        - rusmuseum-khokhloma-dish
+      whyRepresentative: >-
+        Крупная птица, красные ягоды и завитки организованы на чёрном поле; золотистое письмо сохраняет силуэт
+        предмета.
+      place: Русский музей
+      rights:
+        embed: false
+        reviewed: "2026-10-14"
+        note: В атласе дана ссылка на репродукцию у источника.
+  example:
+    workId: kh-bowl-1293
+    title: Чаша, ОНИ/Р-1293
+    author: Мастер не указан; Семёновский уезд
+    year: XIX век
+    medium: Дерево, масло, лак; точение и полихромная роспись
+    reference: https://rusmuseumvrm.ru/data/collections/folk_art/onir-1293/index.php
+    sources:
+      - rusmuseum-khokhloma-bowl
+    whyRepresentative: >-
+      Травный узор следует округлой форме; на дне выделено геометрическое центральное поле. Потемневший
+      колорит связан в музейном тексте со старой олифой.
+    place: Русский музей
+    rights:
+      embed: false
+      reviewed: "2026-10-14"
+      note: В атласе дана ссылка на репродукцию у источника.
+  names:
+    - Семён Юзиков
+    - Н. И. Иванова
+    - Н. П. Сальникова
+  links:
+    - title: Чаша, ОНИ/Р-1293
+      url: https://rusmuseumvrm.ru/data/collections/folk_art/onir-1293/index.php
+      src: Государственный Русский музей
+      lang: ru
+    - title: С. С. Юзиков. Ковш, ОНИ/Р-2376
+      url: https://rusmuseumvrm.ru/data/collections/folk_art/onir-2376/index.php
+      src: Государственный Русский музей
+      lang: ru
+    - title: Декоративное блюдо, Р-3479
+      url: https://rusmuseumvrm.ru/data/collections/folk_art/r_3479/index.php
+      src: Государственный Русский музей
+      lang: ru
+  evidence:
+    - claim: >-
+        Русский музей относит известность промысла к XVII веку; его самые ранние собственные предметы — ко
+        второй половине XIX века.
+      field: dates
+      source: rusmuseum-khokhloma-bowl
+    - claim: Ковш атрибутирован С. С. Юзикову и датирован 1920–1930-ми.
+      field: corpus
+      source: rusmuseum-khokhloma-ladle
+    - claim: Блюдо 1969 года атрибутировано Н. И. Ивановой и Н. П. Сальниковой.
+      field: corpus
+      source: rusmuseum-khokhloma-dish
+  review:
+    status: reviewed
+    date: "2026-10-14"
+    note: >-
+      Сверены указанный корпус, атрибуции и пределы текста; репродукции корпуса просмотрены. Историческая
+      генеалогия не утверждается.
+  maturity: established
+  labelStatus: historical
+  dates: с XVII века; традиция продолжается
+  approx: true
+  dateNote: >-
+    1650 — условная точка внутри XVII века для навигации, а не установленный год возникновения. Корпус этой
+    карточки охватывает XIX–XX века.
+  scopeNote: >-
+    Традиция росписи деревянных предметов; выбранный музейный корпус показывает разные поколения и виды
+    письма. Локальные мастерские и авторские практики могут получать отдельные карточки.
+  creators:
+    - name: Семён Степанович Юзиков
+      role: автор ковша 1920–1930-х по музейной атрибуции
+      sources:
+        - rusmuseum-khokhloma-ladle
+    - name: Н. И. Иванова; Н. П. Сальникова
+      role: соавторы блюда 1969 года; разделение операций в предметной записи не указано
+      sources:
+        - rusmuseum-khokhloma-dish
+  admission:
+    language: >-
+      Связь золотистого покрытия, травного письма и формы деревянной вещи сохраняется в предметах разного
+      назначения.
+    corpus: Три самостоятельных музейных предмета XIX века, 1920–1930-х и 1969 года; для двух известны мастера.
+    distinctness: >-
+      Документированная система обработки и росписи дерева выделяет традицию внутри декоративного искусства.
+      Книжный орнамент Билибина и индивидуальные геометрические композиции Малангу не заменяют её корпус и
+      технологию.
+    significance: >-
+      Русский музей хранит и интерпретирует предметы разных поколений; сохраняются коллективный характер
+      традиции и именное авторство отдельных вещей.
+    sources:
+      - rusmuseum-khokhloma-bowl
+      - rusmuseum-khokhloma-ladle
+      - rusmuseum-khokhloma-dish
+- id: emily-kngwarray
+  name: Живопись Эмили Кам Кнгваррей
+  orig: Painting by Emily Kam Kngwarray
+  kind: author-style
+  start: 1988
+  end: 1996
+  era: postwar
+  domain:
+    - art
+  medium:
+    - painting
+    - drawing
+  region: Alhalker / Alhalkere, регион Утопия, Северная территория, Австралия; Anmatyerr
+  tier: 3
+  dateKind: practice
+  origin: unknown
+  parents: []
+  summary: >-
+    Ритмические живописные поля, в которых точечные слои, полосы и переплетения линий связаны с Country и
+    личной практикой автора.
+  description: >-
+    Кнгваррей пришла к живописи на холсте в 1988–1989 годах после работы с батиком. Её живописный корпус
+    включает разные этапы: цветовые скопления точек, полосовые решения и широкие линейные сети. Эти варианты
+    следует сравнивать внутри конкретных работ, сохраняя различия между ними.
+
+
+    NGV связывает After rain и Big yam Dreaming с Alhalker и anwerlarr, а поздние линии — также с практиками
+    awely. Культурный смысл берётся из этого предметного пояснения. Визуально объединяют выбранные работы
+    охват всей поверхности, нерегулярное повторение и меняющаяся плотность ритма; разные этапы не сводятся к
+    одной точечной технике.
+  traits:
+    - Ритм охватывает поверхность целиком, без обязательного центрального мотива
+    - Повторение строится точками, полосами или переплетающимися линиями в разных этапах
+    - Плотность и интервалы важнее академической перспективы и моделировки предметов
+    - Форма жеста и его нерегулярность сохраняются даже при многократном повторении
+  corpus:
+    - workId: em-after-rain
+      title: After rain / После дождя
+      author: Эмили Кам Кнгваррей
+      year: 1990
+      medium: Синтетическая полимерная краска на холсте
+      reference: https://www.ngv.vic.gov.au/explore/collection/work/2650/
+      sources:
+        - ngv-kngwarray-after-rain
+      whyRepresentative: Плотное точечное поле меняет цвет и ритм по всей поверхности; под ним читается линейная структура.
+      place: National Gallery of Victoria
+      rights:
+        embed: false
+        reviewed: "2026-10-14"
+        note: В атласе дана ссылка на репродукцию у источника.
+    - workId: em-awely-1993
+      title: "Body paint: Awely"
+      author: Эмили Кам Кнгваррей
+      year: 1993
+      medium: Синтетическая полимерная краска на бумаге
+      reference: https://www.ngv.vic.gov.au/explore/collection/work/1813/
+      sources:
+        - ngv-kngwarray-awely
+      whyRepresentative: Неровные чёрные полосы и белые интервалы превращают повторение линии в основной ритм.
+      place: National Gallery of Victoria
+      rights:
+        embed: false
+        reviewed: "2026-10-14"
+        note: В атласе дана ссылка на репродукцию у источника.
+    - workId: em-big-yam
+      title: Anwerlarr anganenty / Big yam Dreaming
+      author: Эмили Кам Кнгваррей
+      year: 1995
+      medium: Синтетическая полимерная краска на холсте
+      reference: https://www.ngv.vic.gov.au/explore/collection/work/57498/
+      sources:
+        - ngv-kngwarray-big-yam
+      whyRepresentative: Сеть белых линий занимает широкий тёмный холст; сгущения и разрежения работают без единого центра.
+      place: National Gallery of Victoria
+      rights:
+        embed: false
+        reviewed: "2026-10-14"
+        note: В атласе дана ссылка на репродукцию у источника.
+  example:
+    workId: em-after-rain
+    title: After rain / После дождя
+    author: Эмили Кам Кнгваррей
+    year: 1990
+    medium: Синтетическая полимерная краска на холсте
+    reference: https://www.ngv.vic.gov.au/explore/collection/work/2650/
+    sources:
+      - ngv-kngwarray-after-rain
+    whyRepresentative: Плотное точечное поле меняет цвет и ритм по всей поверхности; под ним читается линейная структура.
+    place: National Gallery of Victoria
+    rights:
+      embed: false
+      reviewed: "2026-10-14"
+      note: В атласе дана ссылка на репродукцию у источника.
+  names:
+    - Эмили Кам Кнгваррей
+  links:
+    - title: Emily Kam Kngwarray. After rain, 1990
+      url: https://www.ngv.vic.gov.au/explore/collection/work/2650/
+      src: National Gallery of Victoria
+      lang: en
+    - title: "Emily Kam Kngwarray. Body paint: Awely, 1993"
+      url: https://www.ngv.vic.gov.au/explore/collection/work/1813/
+      src: National Gallery of Victoria
+      lang: en
+    - title: Emily Kam Kngwarray. Anwerlarr anganenty, 1995
+      url: https://www.ngv.vic.gov.au/explore/collection/work/57498/
+      src: National Gallery of Victoria
+      lang: en
+  evidence:
+    - claim: Переход к холсту датируется 1988–1989 годами после батиков 1977–1988.
+      field: dates
+      source: ngv-kngwarray-big-yam
+    - claim: After rain датирована 1990 годом и связана куратором с Country после дождя.
+      field: corpus
+      source: ngv-kngwarray-after-rain
+    - claim: "Body paint: Awely — работа на бумаге 1993 года."
+      field: corpus
+      source: ngv-kngwarray-awely
+  review:
+    status: reviewed
+    date: "2026-10-14"
+    note: >-
+      Сверены указанный корпус, атрибуции и пределы текста; репродукции корпуса просмотрены. Историческая
+      генеалогия не утверждается.
+  maturity: established
+  labelStatus: editorial-scope-title
+  scopeNote: >-
+    Живопись на холсте и бумаге 1988–1996 годов, с различением точечных, полосовых и линейных этапов. Ранние
+    батики рассматриваются как контекст, а не как весь охват карточки.
+  dateNote: Даты относятся к выбранной живописной практике; материал и годы каждой работы указаны отдельно.
+  aliases:
+    - Эмили Кнгваррей
+    - Эмили Каме Кнгваррей
+    - Emily Kame Kngwarreye
+  creators:
+    - name: Эмили Кам Кнгваррей
+      orig: Emily Kam Kngwarray
+      aliases:
+        - Emily Kame Kngwarreye
+      role: художница; автор работ выбранного корпуса
+      sources:
+        - ngv-kngwarray-after-rain
+        - ngv-kngwarray-awely
+        - ngv-kngwarray-big-yam
+  contexts:
+    - id: aboriginal-art
+      type: related-context
+      status: verified
+      note: >-
+        Авторская практика Anmatyerr связана с Alhalker и региональной средой Утопии. Обзор коренных
+        художественных практик Австралии не задаёт для неё единой техники.
+      sources:
+        - ngv-kngwarray-big-yam
+  admission:
+    language: Охват поверхности, нерегулярное повторение и развитие плотности жеста связывают различающиеся этапы.
+    corpus: "Сопоставлены After rain (1990), Body paint: Awely (1993) и Big yam Dreaming (1995)."
+    distinctness: >-
+      Карточка выделяет конкретную авторскую практику внутри широкого обзора искусства коренных народов
+      Австралии. Формальное сравнение с color-field или абстрактным экспрессионизмом требует сохранения
+      культурных различий.
+    significance: >-
+      Работы хранятся в NGV и снабжены предметными исследованиями; это документированное сохранение и
+      интерпретация авторского наследия.
+    sources:
+      - ngv-kngwarray-after-rain
+      - ngv-kngwarray-awely
+      - ngv-kngwarray-big-yam
+- id: zverev-portrait-graphics
+  name: Экспрессивные портреты Анатолия Зверева
+  orig: Expressive portraits by Anatoly Zverev
+  kind: author-style
+  start: 1958
+  end: 1967
+  era: postwar
+  domain:
+    - art
+  medium:
+    - painting
+    - drawing
+  region: Москва, СССР / Россия
+  tier: 3
+  dateKind: practice
+  origin: unknown
+  parents: []
+  summary: >-
+    Портретный образ собирается стремительной линией, открытым пятном и несколькими выразительными акцентами
+    лица.
+  description: >-
+    В выбранном портретном корпусе Зверев меняет соотношение цвета и линии: от насыщенной гуаши до почти
+    монохромного рисунка. Повторяется способ выделять взгляд, рот и поворот головы, оставляя контур
+    прерывистым, а фон — свободным.
+
+
+    Корпус ограничен тремя музейно атрибутированными портретами 1958–1967 годов. Его собственная тема —
+    устройство портретного образа, а не вся биография художника. Разница материалов и степени заполнения листа
+    помогает увидеть устойчивый приём внутри вариаций. Материалы учебного мастер-класса Музея AZ не
+    использованы как сведения о технике оригиналов.
+  traits:
+    - Прерывистая линия и открытые участки контура
+    - Акцент на глазах и рте при свободной моделировке лица
+    - Цветовое пятно может выходить за границу изображённой формы
+    - Неровный ритм штриха и сохранение незаполненной поверхности
+  corpus:
+    - workId: zv-portrait-1958
+      title: Портрет
+      author: Анатолий Зверев
+      year: 1958
+      medium: Бумага, гуашь
+      reference: https://museum-az.com/art_co/portret/
+      sources:
+        - az-zverev-portrait-1958
+      whyRepresentative: Лицо возникает среди открытых цветовых пятен; глаза и рот удерживают образ при незавершённом контуре.
+      place: Музей AZ
+      rights:
+        embed: false
+        reviewed: "2026-10-14"
+        note: В атласе дана ссылка на репродукцию у источника.
+    - workId: zv-female-1967
+      title: Женский портрет
+      author: Анатолий Зверев
+      year: 1967
+      medium: Материал в использованной музейной публикации не указан
+      reference: https://museum-az.com/materials/master-klass-prekrasnye-sozdaniya-devushka/
+      sources:
+        - az-zverev-portrait-corpus
+      whyRepresentative: Свободные чёрные линии оставляют большие участки белого поля и собирают лицо несколькими акцентами.
+      place: Музей AZ
+      rights:
+        embed: false
+        reviewed: "2026-10-14"
+        note: В атласе дана ссылка на репродукцию у источника.
+    - workId: zv-sasha-1964
+      title: Портрет девочки (Саша Бахмутская)
+      author: Анатолий Зверев
+      year: 1964
+      medium: Материал в использованной музейной публикации не указан
+      reference: https://museum-az.com/materials/master-klass-prekrasnye-sozdaniya-devushka/
+      sources:
+        - az-zverev-portrait-corpus
+      whyRepresentative: Неровная линия волос и плеч сочетается с цветовым пятном; взгляд остаётся композиционным якорем.
+      place: Музей AZ
+      rights:
+        embed: false
+        reviewed: "2026-10-14"
+        note: В атласе дана ссылка на репродукцию у источника.
+  example:
+    workId: zv-portrait-1958
+    title: Портрет
+    author: Анатолий Зверев
+    year: 1958
+    medium: Бумага, гуашь
+    reference: https://museum-az.com/art_co/portret/
+    sources:
+      - az-zverev-portrait-1958
+    whyRepresentative: Лицо возникает среди открытых цветовых пятен; глаза и рот удерживают образ при незавершённом контуре.
+    place: Музей AZ
+    rights:
+      embed: false
+      reviewed: "2026-10-14"
+      note: В атласе дана ссылка на репродукцию у источника.
+  names:
+    - Анатолий Зверев
+  links:
+    - title: Анатолий Зверев. Портрет, 1958
+      url: https://museum-az.com/art_co/portret/
+      src: Музей AZ
+      lang: en
+    - title: "Прекрасные создания. Девушка: картины-вдохновение"
+      url: https://museum-az.com/materials/master-klass-prekrasnye-sozdaniya-devushka/
+      src: Музей AZ
+      lang: en
+  evidence:
+    - claim: Портрет 1958 года выполнен гуашью на бумаге; музей не указывает модель.
+      field: corpus
+      source: az-zverev-portrait-1958
+    - claim: Музей AZ публикует женский портрет 1967 года и портрет Саши Бахмутской 1964 года с именными подписями.
+      field: corpus
+      source: az-zverev-portrait-corpus
+  review:
+    status: reviewed
+    date: "2026-10-14"
+    note: >-
+      Сверены указанный корпус, атрибуции и пределы текста; репродукции корпуса просмотрены. Историческая
+      генеалогия не утверждается.
+  maturity: established
+  labelStatus: editorial-scope-title
+  scopeNote: >-
+    Выбранный портретный корпус 1958–1967 годов: рисунок и живопись рассматриваются совместно по устройству
+    образа. Абстракции, пейзажи и поздние периоды требуют отдельного исследования.
+  dateNote: >-
+    Границы дат показывают выбранный корпус и не являются датами жизни художника или всей его портретной
+    практики.
+  aliases:
+    - Анатолий Зверев
+    - Anatoly Zverev
+  creators:
+    - name: Анатолий Тимофеевич Зверев
+      orig: Anatoly Zverev
+      aliases:
+        - Анатолий Зверев
+      role: автор портретов
+      sources:
+        - az-zverev-portrait-1958
+        - az-zverev-portrait-corpus
+  compare:
+    - id: expressionism
+      note: >-
+        Сравнение экспрессивной линии и деформации. Авторский корпус здесь ограничен устройством портрета и не
+        приписывается всему историческому экспрессионизму.
+  admission:
+    language: Взгляд и несколько лицевых акцентов удерживают образ при открытом контуре и свободном пятне.
+    corpus: Сопоставлены три разных портрета 1958, 1964 и 1967 годов.
+    distinctness: >-
+      Карточка показывает конкретный способ портретного рисунка, который теряется в широком обзоре
+      экспрессионизма или советского неофициального искусства.
+    significance: >-
+      Атрибутированный корпус сохраняется в Музее AZ и используется в его образовательной работе; отдельный
+      узел позволяет изучать произведения, а не только имя художника.
+    sources:
+      - az-zverev-portrait-1958
+      - az-zverev-portrait-corpus
+- id: shahzia-sikander
+  name: Миниатюры и работы на бумаге Шахзии Сикандер
+  orig: Manuscript-based works on paper by Shahzia Sikander
+  kind: author-style
+  start: 1989
+  end: 2002
+  era: digital
+  domain:
+    - art
+  medium:
+    - painting
+    - drawing
+    - manuscript
+  region: Лахор, Пакистан; Провиденс, Хьюстон и Нью-Йорк, США
+  tier: 3
+  dateKind: practice
+  origin: unknown
+  parents: []
+  summary: >-
+    Рукописная страница становится пространством разрывов, повторяющихся фигур, изменённых рамок и
+    неоднозначного чтения.
+  description: >-
+    Сикандер училась исторической рукописной живописи в Лахоре, а затем развивала практику в США. Выбранный
+    корпус 1989–2002 годов сохраняет работу на бумаге и обращение к устройству страницы, одновременно меняя
+    масштаб, порядок чтения и отношения между центром и полями.
+
+
+    В The Scroll архитектура организует длинное повествовательное пространство; в Perilous Order портрет
+    прерывают другие фигуры и точечная сетка; в Usurpia насыщенная рамка окружает разреженное центральное
+    поле. Это три разных композиционных решения одного ограниченного исследовательского корпуса. Поздние
+    анимация, мозаика и общественная скульптура остаются отдельными возможными направлениями разбора.
+  traits:
+    - Изменение соотношения центрального изображения, рамки и полей
+    - Перекрывающиеся фигуры и несовпадающие масштабы внутри одной страницы
+    - Точное письмо соседствует с разреженным полем, повтором или разрывом
+    - Повествование разворачивается через несколько точек зрения и состояний фигуры
+  corpus:
+    - workId: si-scroll
+      title: The Scroll / Свиток
+      author: Шахзия Сикандер
+      year: 1989–1990
+      medium: Растительные краски, сухой пигмент, акварель и чай на wasli
+      reference: >-
+        https://www.cincinnatiartmuseum.org/art/exhibitions/exhibition-archive/2025/shahzia-sikander-collective-behavior/audio-exhibition/
+      sources:
+        - cincinnati-sikander-audio
+      whyRepresentative: >-
+        Вытянутая домашняя сцена разбита на взаимопроникающие пространства; повторение фигуры направляет
+        чтение вдоль листа.
+      place: Собрание художницы
+      rights:
+        embed: false
+        reviewed: "2026-10-14"
+        note: В атласе дана ссылка на репродукцию у источника.
+    - workId: si-perilous-order
+      title: Perilous Order
+      author: Шахзия Сикандер
+      year: 1989–1997
+      medium: Прозрачная и кроющая акварель, чай, уголь на мраморированной основе
+      reference: >-
+        https://www.cincinnatiartmuseum.org/art/exhibitions/exhibition-archive/2025/shahzia-sikander-collective-behavior/audio-exhibition/
+      sources:
+        - cincinnati-sikander-audio
+      whyRepresentative: Овальный портрет, парящие фигуры и точечное поле сталкивают несколько масштабов и уровней изображения.
+      place: Whitney Museum of American Art
+      rights:
+        embed: false
+        reviewed: "2026-10-14"
+        note: В атласе дана ссылка на репродукцию у источника.
+    - workId: si-usurpia
+      title: Usurpia
+      author: Шахзия Сикандер
+      year: 2002
+      medium: Акварель и сухой пигмент на wasli
+      reference: >-
+        https://www.cincinnatiartmuseum.org/art/exhibitions/exhibition-archive/2025/shahzia-sikander-collective-behavior/audio-exhibition/
+      sources:
+        - cincinnati-sikander-audio
+      whyRepresentative: >-
+        Почти пустое центральное поле отделено от насыщенных фигурных полей рамки; привычная иерархия страницы
+        меняется.
+      place: Собрание Ану и Арджуна Аггарвал
+      rights:
+        embed: false
+        reviewed: "2026-10-14"
+        note: В атласе дана ссылка на репродукцию у источника.
+  example:
+    workId: si-scroll
+    title: The Scroll / Свиток
+    author: Шахзия Сикандер
+    year: 1989–1990
+    medium: Растительные краски, сухой пигмент, акварель и чай на wasli
+    reference: >-
+      https://www.cincinnatiartmuseum.org/art/exhibitions/exhibition-archive/2025/shahzia-sikander-collective-behavior/audio-exhibition/
+    sources:
+      - cincinnati-sikander-audio
+    whyRepresentative: >-
+      Вытянутая домашняя сцена разбита на взаимопроникающие пространства; повторение фигуры направляет чтение
+      вдоль листа.
+    place: Собрание художницы
+    rights:
+      embed: false
+      reviewed: "2026-10-14"
+      note: В атласе дана ссылка на репродукцию у источника.
+  names:
+    - Шахзия Сикандер
+  links:
+    - title: "Shahzia Sikander: Collective Behavior — audio exhibition"
+      url: >-
+        https://www.cincinnatiartmuseum.org/art/exhibitions/exhibition-archive/2025/shahzia-sikander-collective-behavior/audio-exhibition/
+      src: Cincinnati Art Museum
+      lang: en
+    - title: "Shahzia Sikander: Extraordinary Realities — exhibition labels"
+      url: https://risdmuseum.org/sites/default/files/museumplus/345744.pdf
+      src: RISD Museum
+      lang: en
+  evidence:
+    - claim: RISD описывает обучение в Лахоре и первые пятнадцать лет развития личного языка в Пакистане и США.
+      field: scope
+      source: risd-sikander-labels
+    - claim: >-
+        Использованы датировки The Scroll (1989–1990), Perilous Order (1989–1997) и Usurpia (2002) из
+        актуальных музейных подписей.
+      field: corpus
+      source: cincinnati-sikander-audio
+  review:
+    status: reviewed
+    date: "2026-10-14"
+    note: >-
+      Сверены указанный корпус, атрибуции и пределы текста; репродукции корпуса просмотрены. Историческая
+      генеалогия не утверждается.
+  maturity: established
+  labelStatus: editorial-scope-title
+  scopeNote: >-
+    Работы на бумаге 1989–2002 годов, перерабатывающие формат рукописной живописи. Поздние экранные, мозаичные
+    и скульптурные практики сюда не включены.
+  dateNote: >-
+    Даты относятся к выбранному корпусу. Для Perilous Order приняты границы 1989–1997 из современной музейной
+    записи; они отличаются от части ранних каталогов.
+  aliases:
+    - Шахзия Сикандер
+    - Shahzia Sikander
+  creators:
+    - name: Шахзия Сикандер
+      orig: Shahzia Sikander
+      role: автор работ на бумаге выбранного корпуса
+      sources:
+        - risd-sikander-labels
+        - cincinnati-sikander-audio
+  contexts:
+    - id: persian-miniature
+      type: related-context
+      status: verified
+      note: >-
+        Исторические рукописные традиции — предмет обучения, цитирования и преобразования; источник описывает
+        конкретные Safavid-сопоставления, а не тождество практик.
+      sources:
+        - risd-sikander-labels
+    - id: mughal-miniature
+      type: related-context
+      status: verified
+      note: >-
+        Могольская рукописная живопись входит в исследуемый исторический репертуар; современный корпус меняет
+        устройство и чтение страницы.
+      sources:
+        - risd-sikander-labels
+  admission:
+    language: >-
+      Повторяемые рамки, фигуры и нарушения композиционного порядка образуют различимый способ работы со
+      страницей.
+    corpus: Три независимые работы охватывают 1989–2002 годы и разные композиционные форматы.
+    distinctness: >-
+      Авторский узел позволяет сопоставлять конкретные переработки страницы отдельно от обзоров персидской и
+      могольской миниатюры.
+    significance: >-
+      Корпус исследован RISD и Cincinnati Art Museum; Perilous Order находится в Whitney. Это независимая
+      музейная история сохранения и интерпретации.
+    sources:
+      - risd-sikander-labels
+      - cincinnati-sikander-audio
+- id: carrolup-school
+  name: Карролапская школа рисунка
+  orig: Carrolup child artists
+  kind: school
+  start: 1945
+  end: 1951
+  era: postwar
+  domain:
+    - art
+  medium:
+    - drawing
+    - painting
+  region: Карролап, земли нунгар, Западная Австралия; дети нунгар и других коренных сообществ
+  tier: 2
+  dateKind: practice
+  origin: unknown
+  parents: []
+  summary: >-
+    Пейзажные рисунки детей Карролап соединяют выразительный цвет земли, тёмные силуэты деревьев и ритм фигур
+    и животных.
+  description: >-
+    Работы созданы детьми, насильственно разлучёнными с семьями и помещёнными в поселение Карролап. История
+    коллекции включает преподавание Noel и Lily White, зарубежные показы, утрату местонахождения части работ и
+    последующее возвращение собрания. Эту среду важно сохранять рядом с формальным сравнением.
+
+
+    В выбранных рисунках 1949–1950 годов тёмные стволы и силуэты выделены на светлом либо тёплом поле, а
+    диагонали земли и воды связывают передний и дальний планы. Рейнольд Харт, Парнелл Демпстер и Барри Лу
+    решают эти задачи по-разному. Карточка описывает конкретную историческую школу, сохраняя именное авторство
+    и различия между работами.
+  traits:
+    - Контраст тёмных деревьев и фигур со светлым или тёплым пейзажным полем
+    - Ритм стволов, силуэтов животных и человеческих фигур
+    - Диагонали склона, берега или дороги организуют глубину
+    - Пастель, акварель и тушь дают разные способы сочетать плоскость и пространство
+  corpus:
+    - workId: ca-native-corroboree
+      title: A Native Corroboree
+      author: Рейнольд Харт
+      year: 1949
+      medium: Пастель на бумаге
+      reference: https://www.carrolup.info/gallery/art/
+      sources:
+        - carrolup-documented-works
+      whyRepresentative: Тёмные деревья обрамляют действие; фигуры и ряды стволов создают ритм на нескольких планах.
+      place: Herbert Mayer Collection, John Curtin Gallery
+      rights:
+        embed: false
+        reviewed: "2026-10-14"
+        note: В атласе дана ссылка на репродукцию у источника.
+    - workId: ca-down-to-drink
+      title: Down to Drink
+      author: Парнелл Демпстер
+      year: 1949
+      medium: Пастель на бумаге
+      reference: https://www.carrolup.info/gallery/art/
+      sources:
+        - carrolup-documented-works
+      whyRepresentative: Оранжевый склон и тёмные стволы направляют взгляд к воде; силуэты животных связывают планы.
+      place: Herbert Mayer Collection, John Curtin Gallery
+      rights:
+        embed: false
+        reviewed: "2026-10-14"
+        note: В атласе дана ссылка на репродукцию у источника.
+    - workId: ca-bounding-home
+      title: Bounding for Home
+      author: Барри Лу
+      year: 1950
+      medium: Акварель и чёрная тушь на бумаге
+      reference: https://www.carrolup.info/gallery/art/
+      sources:
+        - carrolup-documented-works
+      whyRepresentative: >-
+        Силуэты кенгуру читаются на светлом поле; дальний горизонт и близкое дерево задают пространственный
+        масштаб.
+      place: Herbert Mayer Collection, John Curtin Gallery
+      rights:
+        embed: false
+        reviewed: "2026-10-14"
+        note: В атласе дана ссылка на репродукцию у источника.
+  example:
+    workId: ca-native-corroboree
+    title: A Native Corroboree
+    author: Рейнольд Харт
+    year: 1949
+    medium: Пастель на бумаге
+    reference: https://www.carrolup.info/gallery/art/
+    sources:
+      - carrolup-documented-works
+    whyRepresentative: Тёмные деревья обрамляют действие; фигуры и ряды стволов создают ритм на нескольких планах.
+    place: Herbert Mayer Collection, John Curtin Gallery
+    rights:
+      embed: false
+      reviewed: "2026-10-14"
+      note: В атласе дана ссылка на репродукцию у источника.
+  names:
+    - Рейнольд Харт
+    - Парнелл Демпстер
+    - Барри Лу
+  links:
+    - title: "The Carrolup Story: Art"
+      url: https://www.carrolup.info/gallery/art/
+      src: "Aboriginal Child Artists of Carrolup: Healing Trauma"
+      lang: en
+    - title: The Carrolup Artworks
+      url: https://www.curtin.edu.au/jcg/carrolup-centre/overview/
+      src: John Curtin Gallery / Curtin University
+      lang: en
+    - title: Stolen Generation artwork to transfer to Western Australia
+      url: https://www.curtin.edu.au/news/stolen-generation-artwork-to-transfer-to-western-australia/
+      src: Curtin University
+      lang: en
+  evidence:
+    - claim: Curtin описывает корпус работ детей Карролап и участие преподавателей Noel и Lily White.
+      field: scope
+      source: curtin-carrolup-overview
+    - claim: >-
+        Галерея документирует отдельные работы Харта 1949 года, Демпстера 1949 года и Лу 1950 года с
+        материалами и собранием.
+      field: corpus
+      source: carrolup-documented-works
+    - claim: Передаваемый корпус рисунков и картин датирован Curtin 1945–1951 годами.
+      field: dates
+      source: curtin-carrolup-transfer
+  review:
+    status: reviewed
+    date: "2026-10-14"
+    note: >-
+      Сверены указанный корпус, атрибуции и пределы текста; репродукции корпуса просмотрены. Историческая
+      генеалогия не утверждается.
+  maturity: established
+  labelStatus: historical
+  dateNote: >-
+    1945–1951 — документированный исторический корпус Карролап; выбранные три работы датированы 1949–1950
+    годами.
+  scopeNote: >-
+    Рисунки детей в Карролап 1940-х — начала 1950-х. Последующая самостоятельная практика бывших учеников и
+    все художественные практики нунгар требуют отдельного охвата.
+  aliases:
+    - Карролуп
+    - Carrolup School
+    - Carrolup child artists
+  creators:
+    - name: Рейнольд Харт
+      orig: Reynold Hart
+      role: автор A Native Corroboree
+      sources:
+        - carrolup-documented-works
+    - name: Парнелл Демпстер
+      orig: Parnell Dempster
+      role: автор Down to Drink
+      sources:
+        - carrolup-documented-works
+    - name: Барри Лу
+      orig: Barry Loo
+      role: автор Bounding for Home
+      sources:
+        - carrolup-documented-works
+  contexts:
+    - id: aboriginal-art
+      type: related-context
+      status: verified
+      note: >-
+        Локальная историческая среда на землях нунгар; школа не подменяет многообразие художественных практик
+        коренных народов Австралии.
+      sources:
+        - curtin-carrolup-overview
+  admission:
+    language: >-
+      В трёх работах повторяются тёмные силуэты, цветовые поля пейзажа, ритм деревьев и направляющие
+      диагонали.
+    corpus: >-
+      Три самостоятельные работы трёх названных детей-художников, с годами и материалами в документации
+      сообщества.
+    distinctness: >-
+      Конкретная историческая школа уже обзора искусства коренных народов Австралии. Пейзажная организация
+      этих рисунков отличается от сопоставленного поля линий и точек Кнгваррей и от публичных эмблем Ренни;
+      общая география не создаёт единого формального стиля.
+    significance: >-
+      Корпус документирован сообществом и John Curtin Gallery; его сохранение и возвращение описаны Curtin как
+      часть истории региона.
+    sources:
+      - curtin-carrolup-overview
+      - carrolup-documented-works
+      - curtin-carrolup-transfer
+- id: rei-kawakubo
+  name: Преобразование силуэта у Рэй Кавакубо
+  orig: Rei Kawakubo / Comme des Garçons
+  kind: author-style
+  start: 1983
+  end: 2016
+  era: postmodern
+  domain:
+    - design
+    - art
+  medium:
+    - fashion
+    - textile
+  region: Токио, Япония; коллекции представлены в Париже
+  tier: 3
+  dateKind: practice
+  origin: unknown
+  parents: []
+  summary: Одежда меняет очертания и пропорции тела через асимметрию, набивку и многослойный объём.
+  description: >-
+    Три музейных предмета из разных коллекций показывают несколько способов построить непривычный силуэт. В
+    платье 1983–1984 годов это асимметричные складки и свободный крой, в работе 1997 года — набивка под
+    клетчатой тканью, в ансамбле 2015–2016 годов — многослойная оболочка. Общий вопрос этого корпуса —
+    отношение между телом и формой одежды.
+
+
+    Карточка ограничена этими конструктивными решениями. Она не сводит Comme des Garçons к чёрному цвету и не
+    описывает все линии марки. Музей отдельно указывает дизайнера и дом моды; для ткани платья 1997 года
+    названы изготовитель и дизайнер текстиля.
+  traits:
+    - Смещение привычных пропорций тела с помощью конструкции одежды
+    - Асимметричные складки и дополнительные объёмы
+    - Контраст облегающей поверхности и выступающей набивки
+    - Слоистая оболочка может скрывать анатомический контур
+  corpus:
+    - workId: kw-dress-1983
+      title: "Dress: Gloves, Skirts, Quilted Bag Coats"
+      author: Рэй Кавакубо; Comme des Garçons
+      year: осень/зима 1983–1984
+      medium: Шерсть
+      reference: https://www.metmuseum.org/art/collection/search/675696
+      sources:
+        - met-kawakubo-1983
+      whyRepresentative: Асимметричные складки и свободный объём смещают привычную конструкцию платья.
+      place: The Met, 2015.60
+      rights:
+        embed: false
+        reviewed: "2026-10-14"
+        note: В атласе дана ссылка на репродукцию у источника.
+    - workId: kw-dress-1997
+      title: "Dress: Body Meets Dress, Dress Meets Body"
+      author: Рэй Кавакубо; Comme des Garçons
+      year: весна/лето 1997
+      medium: Нейлон, полиуретан, пух
+      reference: https://www.metmuseum.org/art/collection/search/80949
+      sources:
+        - met-kawakubo-1997
+      whyRepresentative: "Клетчатая облегающая ткань подчёркивает выступы набивки: одежда меняет видимый контур тела."
+      place: The Met, 1998.516.1a, b
+      rights:
+        embed: false
+        reviewed: "2026-10-14"
+        note: В атласе дана ссылка на репродукцию у источника.
+    - workId: kw-ensemble-2015
+      title: "Ensemble: Ceremony of Separation"
+      author: Рэй Кавакубо; Comme des Garçons
+      year: осень/зима 2015–2016
+      medium: Полиэстер, нейлон, хлопок, шёлк, ПВХ
+      reference: https://www.metmuseum.org/art/collection/search/701396
+      sources:
+        - met-kawakubo-2015
+      whyRepresentative: Слои чёрного кружева и сетки скрывают фигуру и собирают самостоятельный округлый объём.
+      place: The Met, 2015.636a–d
+      rights:
+        embed: false
+        reviewed: "2026-10-14"
+        note: В атласе дана ссылка на репродукцию у источника.
+  example:
+    workId: kw-dress-1983
+    title: "Dress: Gloves, Skirts, Quilted Bag Coats"
+    author: Рэй Кавакубо; Comme des Garçons
+    year: осень/зима 1983–1984
+    medium: Шерсть
+    reference: https://www.metmuseum.org/art/collection/search/675696
+    sources:
+      - met-kawakubo-1983
+    whyRepresentative: Асимметричные складки и свободный объём смещают привычную конструкцию платья.
+    place: The Met, 2015.60
+    rights:
+      embed: false
+      reviewed: "2026-10-14"
+      note: В атласе дана ссылка на репродукцию у источника.
+  names:
+    - Рэй Кавакубо
+  links:
+    - title: Rei Kawakubo / Comme des Garçons. Dress, 1983–1984
+      url: https://www.metmuseum.org/art/collection/search/675696
+      src: The Metropolitan Museum of Art
+      lang: en
+    - title: Rei Kawakubo / Comme des Garçons. Dress, 1997
+      url: https://www.metmuseum.org/art/collection/search/80949
+      src: The Metropolitan Museum of Art
+      lang: en
+    - title: Rei Kawakubo / Comme des Garçons. Ensemble, 2015–2016
+      url: https://www.metmuseum.org/art/collection/search/701396
+      src: The Metropolitan Museum of Art
+      lang: en
+    - title: "Rei Kawakubo / Comme des Garçons: Art of the In-Between — galleries"
+      url: https://www.metmuseum.org/exhibitions/listings/2017/rei-kawakubo/exhibition-galleries
+      src: The Metropolitan Museum of Art
+      lang: en
+  evidence:
+    - claim: Шерстяное платье коллекции 1983–1984 атрибутировано Рэй Кавакубо и Comme des Garçons.
+      field: corpus
+      source: met-kawakubo-1983
+    - claim: >-
+        Для платья 1997 года Met отдельно описывает заказ клетчатой ткани у Orimono Kenkyu Sha и Hiroshi
+        Matsushita.
+      field: creators
+      source: met-kawakubo-1997
+    - claim: Выставка Met рассматривает преобразования одежды и тела через несколько кураторских разделов.
+      field: admission
+      source: met-kawakubo-galleries
+    - claim: Ансамбль Ceremony of Separation датирован сезоном осень/зима 2015–2016.
+      field: corpus
+      source: met-kawakubo-2015
+  review:
+    status: reviewed
+    date: "2026-10-14"
+    note: >-
+      Сверены указанный корпус, атрибуции и пределы текста; репродукции корпуса просмотрены. Историческая
+      генеалогия не утверждается.
+  maturity: established
+  labelStatus: editorial-scope-title
+  scopeNote: >-
+    Сопоставление конструкции силуэта в трёх коллекциях 1983–2016 годов. Другие линии марки, парфюмерия и вся
+    история японской моды в этот охват не входят.
+  dateNote: >-
+    Границы выбранного корпуса коллекций, включая зимний сезон 2015–2016; не даты основания марки или жизни
+    автора.
+  aliases:
+    - Рей Кавакубо
+    - Рэй Кавакубо
+    - Comme des Garçons
+    - Rei Kawakubo
+  creators:
+    - name: Рэй Кавакубо
+      orig: Rei Kawakubo
+      role: дизайнер трёх выбранных предметов одежды
+      sources:
+        - met-kawakubo-1983
+        - met-kawakubo-1997
+        - met-kawakubo-2015
+    - name: Comme des Garçons
+      role: >-
+        дом моды, указанный в атрибуции предметов; индивидуальные производственные роли полностью не
+        перечислены
+      sources:
+        - met-kawakubo-1983
+        - met-kawakubo-1997
+        - met-kawakubo-2015
+    - name: Хироси Мацусита / Orimono Kenkyu Sha
+      orig: Hiroshi Matsushita / Orimono Kenkyu Sha
+      role: дизайнер ткани и компания, получившие заказ клетчатой ткани для платья 1997 года
+      sources:
+        - met-kawakubo-1997
+  admission:
+    language: Повторяется изменение силуэта через складки, набивку и самостоятельный объём ткани.
+    corpus: Три самостоятельных предмета из трёх коллекций, разделённых десятилетиями.
+    distinctness: >-
+      Этот узел описывает конкретные предметы и конструкцию одежды. Архитектурный деконструктивизм и общий
+      минимализм не заменяют его; сходство названий не доказывает принадлежность к ним.
+    significance: Предметы сохранены и интерпретированы Met; автору и дому посвящена отдельная музейная выставка.
+    sources:
+      - met-kawakubo-1983
+      - met-kawakubo-1997
+      - met-kawakubo-2015
+      - met-kawakubo-galleries
+- id: pacita-abad
+  name: Расписанные текстильные поверхности Паситы Абад
+  orig: "Pacita Abad: trapunto and textile collage"
+  kind: author-style
+  start: 1988
+  end: 1998
+  era: postmodern
+  domain:
+    - art
+  medium:
+    - painting
+    - textile
+  region: >-
+    Филиппины, Юго-Восточная Азия; США и международная практика художницы; ткани из разных мест и семейного
+    собрания
+  tier: 3
+  dateKind: practice
+  origin: unknown
+  parents: []
+  summary: >-
+    Живопись, шитьё и собранные ткани образуют плотную цветовую поверхность с заметным рельефом и повтором
+    деталей.
+  description: >-
+    Выбранный корпус соединяет две картины с набивкой и текстильный коллаж. В Bacongo VIII и L.A. Liberty
+    фигура строится вместе с системой линий, швов и прикреплённых деталей. В 100 Years of Freedom фигура
+    уступает место повтору длинных тканевых полос. Цвет и материальная фактура участвуют в композиции
+    одновременно.
+
+
+    Trapunto здесь обозначает конкретный способ прошивать и набивать холст, описанный Walker. Эта техника не
+    объясняет автоматически происхождение каждого узора. Статья Клариссы Эсгерры прослеживает несколько
+    источников тканей в коллаже 1998 года; многообразие материала следует сохранять, а не сводить к одному
+    национальному орнаменту.
+  traits:
+    - Насыщенные цветовые поля дробятся на небольшие орнаментальные участки
+    - Швы, набивка и прикреплённые детали создают видимый рельеф поверхности
+    - Линии и повтор деталей объединяют фигуру с фоном
+    - Разные ткани сохраняют собственный рисунок внутри общей композиции
+  corpus:
+    - workId: pa-bacongo-viii
+      title: Bacongo VIII
+      author: Пасита Абад
+      year: 1988
+      medium: Акрил, каури, пластиковые пуговицы, зеркала; шелкография и набивка холста
+      reference: https://www.walkerart.org/collections/artwork/bacongo-viii/
+      sources:
+        - walker-abad-bacongo
+      whyRepresentative: >-
+        Маскообразная фигура заполняет вертикальный формат; повтор линий, кружков и нашитых предметов
+        связывает изображение с поверхностью.
+      place: Walker Art Center, 2022.86
+      rights:
+        embed: false
+        reviewed: "2026-10-14"
+        note: В атласе дана ссылка на репродукцию у источника.
+    - workId: pa-la-liberty
+      title: L.A. Liberty
+      author: Пасита Абад
+      year: 1992
+      medium: Акрил, пряжа, пуговицы, зеркала, золотая нить, расписанная ткань; прошитый холст с набивкой
+      reference: https://www.walkerart.org/collections/artwork/l-a-liberty/
+      sources:
+        - walker-abad-liberty
+      whyRepresentative: >-
+        Фигура и лучистый фон собраны из насыщенных цветовых участков; швы и прикреплённые элементы сохраняют
+        самостоятельную фактуру.
+      place: Walker Art Center, 2022.87
+      rights:
+        embed: false
+        reviewed: "2026-10-14"
+        note: В атласе дана ссылка на репродукцию у источника.
+    - workId: pa-freedom-1998
+      title: "100 Years of Freedom: From Batanes to Jolo"
+      author: Пасита Абад
+      year: 1998
+      medium: Коллаж из собранных тканей; полный технический состав в выбранной статье не указан
+      reference: https://www.walkerart.org/reader/textiles-in-pacita-abads-100-years-of-freedom/
+      sources:
+        - walker-abad-textiles
+      whyRepresentative: >-
+        Длинные сужающиеся полосы из разных тканей превращают отдельные фрагменты орнамента в общую
+        ритмическую композицию.
+      rights:
+        embed: false
+        reviewed: "2026-10-14"
+        note: В атласе дана ссылка на репродукцию у источника.
+  example:
+    workId: pa-bacongo-viii
+    title: Bacongo VIII
+    author: Пасита Абад
+    year: 1988
+    medium: Акрил, каури, пластиковые пуговицы, зеркала; шелкография и набивка холста
+    reference: https://www.walkerart.org/collections/artwork/bacongo-viii/
+    sources:
+      - walker-abad-bacongo
+    whyRepresentative: >-
+      Маскообразная фигура заполняет вертикальный формат; повтор линий, кружков и нашитых предметов связывает
+      изображение с поверхностью.
+    place: Walker Art Center, 2022.86
+    rights:
+      embed: false
+      reviewed: "2026-10-14"
+      note: В атласе дана ссылка на репродукцию у источника.
+  names:
+    - Пасита Абад
+  links:
+    - title: Pacita Abad. Bacongo VIII, 1988
+      url: https://www.walkerart.org/collections/artwork/bacongo-viii/
+      src: Walker Art Center
+      lang: en
+    - title: Pacita Abad. L.A. Liberty, 1992
+      url: https://www.walkerart.org/collections/artwork/l-a-liberty/
+      src: Walker Art Center
+      lang: en
+    - title: Textiles in Pacita Abad’s 100 Years of Freedom
+      url: https://www.walkerart.org/reader/textiles-in-pacita-abads-100-years-of-freedom/
+      src: Walker Art Center / Clarissa M. Esguerra
+      lang: en
+    - title: Pacita Abad — retrospective, 2023
+      url: https://www.walkerart.org/whats-on/pacita-abad/
+      src: Walker Art Center
+      lang: en
+  evidence:
+    - claim: >-
+        Walker различает trapunto и другие медиумы в ретроспективе Абад; техника включает прошивание и набивку
+        холста.
+      field: medium
+      source: walker-abad-retrospective
+    - claim: Bacongo VIII датирована 1988 годом; запись подробно перечисляет материалы.
+      field: corpus
+      source: walker-abad-bacongo
+    - claim: Эсгерра рассматривает происхождение тканей и композицию произведения 100 Years of Freedom 1998 года.
+      field: corpus
+      source: walker-abad-textiles
+    - claim: L.A. Liberty датирована 1992 годом; запись подробно перечисляет материалы.
+      field: corpus
+      source: walker-abad-liberty
+  review:
+    status: reviewed
+    date: "2026-10-14"
+    note: >-
+      Сверены указанный корпус, атрибуции и пределы текста; репродукции корпуса просмотрены. Историческая
+      генеалогия не утверждается.
+  maturity: established
+  labelStatus: editorial-scope-title
+  scopeNote: >-
+    Расписанные поверхности и текстильный коллаж на примере трёх работ 1988–1998 годов. Другие периоды,
+    керамика и весь корпус костюмов требуют отдельного анализа.
+  dateNote: Даты трёх сопоставленных работ, не начало и конец всей практики Абад.
+  aliases:
+    - Пасита Абад
+    - Пачита Абад
+    - Pacita Abad
+    - trapunto
+  creators:
+    - name: Пасита Абад
+      orig: Pacita Abad
+      role: >-
+        автор трёх произведений; имена изготовителей отдельных собранных тканей в этих предметных записях не
+        перечислены
+      sources:
+        - walker-abad-bacongo
+        - walker-abad-liberty
+        - walker-abad-textiles
+  admission:
+    language: Повторяется соединение живописного цветового поля с физически собранной орнаментальной поверхностью.
+    corpus: Сопоставлены три самостоятельные работы, включая фигуративные картины и нефигуративный коллаж.
+    distinctness: >-
+      Авторский узел уже обзора филиппинского искусства и не совпадает с отдельной техникой trapunto: коллаж
+      1998 года показывает другую организацию материала.
+    significance: >-
+      Корпус хранится и исследуется Walker; текстильная структура отдельно рассмотрена куратором LACMA в
+      музейной публикации.
+    sources:
+      - walker-abad-bacongo
+      - walker-abad-liberty
+      - walker-abad-textiles
+      - walker-abad-retrospective
+- id: esther-mahlangu
+  name: Геометрические композиции Эстер Малангу
+  orig: Esther Mahlangu
+  kind: author-style
+  start: 1991
+  end: 2023
+  era: postmodern
+  domain:
+    - art
+  medium:
+    - painting
+    - decorative-arts
+  region: Ндебеле, Мпумаланга, Южная Африка; международные проекты
+  tier: 3
+  dateKind: practice
+  origin: unknown
+  parents: []
+  summary: >-
+    Геометрические поля с чёрно-белыми контурами переносятся между кузовом, прямоугольным холстом и круглой
+    поверхностью.
+  description: >-
+    Эстер Малангу развивает личную практику в связи с коллективной традицией настенной росписи ндебеле.
+    Музейная ретроспектива Iziko рассматривает её переход к другим поверхностям. Авторская карточка описывает
+    выбранные композиции Малангу, сохраняя различие между именем художницы и традицией многих женщин-мастериц.
+
+
+    В трёх примерах цветные участки отделены чёрными и белыми линиями, а ступенчатые фигуры и треугольные
+    пояса организуют поверхность. Кузов, прямоугольник и круг задают разные границы рисунка. Изображение
+    автомобиля показывает именно роспись Малангу; конструкция автомобиля относится к другому производственному
+    авторству.
+  traits:
+    - Чёткое разделение чёрных, белых и насыщенных цветных полей
+    - Ступенчатые фигуры, треугольники и многополосные бордюры
+    - Баланс центральной композиции и повторяющегося обрамления
+    - Геометрическая система перестраивается под форму конкретной поверхности
+  corpus:
+    - workId: ma-bmw-1991
+      title: "BMW Art Car: BMW 525i"
+      author: Эстер Малангу — роспись; BMW — автомобиль
+      year: 1991
+      medium: Расписанный автомобиль; полный состав красок в выбранной записи не указан
+      reference: https://www.esthermahlangu.com/bmw-projects/bmw-art-car-1991
+      sources:
+        - mahlangu-bmw-1991
+      whyRepresentative: >-
+        Чёрно-белые контуры и цветные геометрические поля распределены по кузову и согласованы с его
+        членением.
+      rights:
+        embed: false
+        reviewed: "2026-10-14"
+        note: В атласе дана ссылка на репродукцию у источника.
+    - workId: ma-untitled-2016
+      title: Untitled
+      author: Эстер Малангу
+      year: 2016
+      medium: Акрил на холсте
+      reference: https://elespacio23.org/portfolio_page/mahlangu-untitled-2016/
+      sources:
+        - espacio-mahlangu-2016
+      whyRepresentative: >-
+        Ступенчатая центральная фигура окружена бордюрами из треугольников; чёрный контур удерживает яркие и
+        светлые поля.
+      place: El Espacio 23
+      rights:
+        embed: false
+        reviewed: "2026-10-14"
+        note: В атласе дана ссылка на репродукцию у источника.
+    - workId: ma-ndebele-2023
+      title: Ndebele Abstract — круглый холст из публикации Iziko
+      author: Эстер Малангу
+      year: 2023
+      medium: Акрил на холсте
+      reference: >-
+        https://www.iziko.org.za/news/iziko-museums-of-south-africa-presentsthen-i-knew-i-was-good-at-painting-esthermahlangu-a-retrospective/
+      sources:
+        - iziko-mahlangu-retrospective
+      whyRepresentative: >-
+        Орнаментальная система приспособлена к кругу: центральная звезда, вложенные поля и повторяющийся
+        наружный пояс.
+      rights:
+        embed: false
+        reviewed: "2026-10-14"
+        note: В атласе дана ссылка на репродукцию у источника.
+  example:
+    workId: ma-bmw-1991
+    title: "BMW Art Car: BMW 525i"
+    author: Эстер Малангу — роспись; BMW — автомобиль
+    year: 1991
+    medium: Расписанный автомобиль; полный состав красок в выбранной записи не указан
+    reference: https://www.esthermahlangu.com/bmw-projects/bmw-art-car-1991
+    sources:
+      - mahlangu-bmw-1991
+    whyRepresentative: Чёрно-белые контуры и цветные геометрические поля распределены по кузову и согласованы с его членением.
+    rights:
+      embed: false
+      reviewed: "2026-10-14"
+      note: В атласе дана ссылка на репродукцию у источника.
+  names:
+    - Эстер Малангу
+  links:
+    - title: BMW Art Car, 1991
+      url: https://www.esthermahlangu.com/bmw-projects/bmw-art-car-1991
+      src: Esther Mahlangu — official artist site
+      lang: en
+    - title: Esther Mahlangu. Untitled, 2016
+      url: https://elespacio23.org/portfolio_page/mahlangu-untitled-2016/
+      src: El Espacio 23
+      lang: en
+    - title: "Then I Knew I Was Good at Painting: Esther Mahlangu"
+      url: >-
+        https://www.iziko.org.za/news/iziko-museums-of-south-africa-presentsthen-i-knew-i-was-good-at-painting-esthermahlangu-a-retrospective/
+      src: Iziko Museums of South Africa
+      lang: en
+  evidence:
+    - claim: >-
+        Iziko рассматривает индивидуальный путь Малангу в связи с росписью ндебеле и документирует круглое
+        Ndebele Abstract 2023 года.
+      field: scope
+      source: iziko-mahlangu-retrospective
+    - claim: Проект BMW Art Car датирован 1991 годом и атрибутирован художнице на её официальном сайте.
+      field: corpus
+      source: mahlangu-bmw-1991
+    - claim: El Espacio 23 публикует Untitled 2016 года и указывает акрил и холст.
+      field: corpus
+      source: espacio-mahlangu-2016
+  review:
+    status: reviewed
+    date: "2026-10-14"
+    note: >-
+      Сверены указанный корпус, атрибуции и пределы текста; репродукции корпуса просмотрены. Историческая
+      генеалогия не утверждается.
+  maturity: established
+  labelStatus: editorial-scope-title
+  scopeNote: >-
+    Три композиции 1991–2023 годов на разных поверхностях. Это ограниченный авторский узел; коллективной
+    росписи ндебеле требуется отдельная карточка.
+  dateNote: Даты выбранного корпуса. Начало многолетней практики не приравнивается к заказу BMW 1991 года.
+  aliases:
+    - Эстер Махлангу
+    - Эстер Малангу
+    - Esther Mahlangu
+  creators:
+    - name: Эстер Малангу
+      orig: Esther Mahlangu
+      role: автор росписи и двух композиций на холсте
+      sources:
+        - mahlangu-bmw-1991
+        - espacio-mahlangu-2016
+        - iziko-mahlangu-retrospective
+    - name: BMW
+      role: изготовитель автомобиля-носителя проекта 1991 года; не автор геометрической росписи
+      sources:
+        - mahlangu-bmw-1991
+  admission:
+    language: Одна система контуров и геометрических полей узнаётся на трёх существенно разных поверхностях.
+    corpus: Корпус состоит из самостоятельного проекта 1991 года и двух работ 2016 и 2023 годов.
+    distinctness: >-
+      Именной узел уже коллективной росписи ндебеле; формальное сходство с геометрической абстракцией не
+      отменяет этого контекста и не доказывает европейское происхождение.
+    significance: >-
+      Масштабная ретроспектива национального музея Iziko и сохранение работ в коллекциях дают независимое
+      основание выделить авторский корпус.
+    sources:
+      - mahlangu-bmw-1991
+      - espacio-mahlangu-2016
+      - iziko-mahlangu-retrospective
+- id: reko-rennie
+  name: Знаки и публичная видимость у Реко Ренни
+  orig: "Reko Rennie: signs, camouflage and moving image"
+  kind: author-style
+  start: 2013
+  end: 2021
+  era: internet
+  domain:
+    - art
+  medium:
+    - installation
+    - painting
+    - moving-image
+  region: Мельбурн и Kamilaroi Country, Новый Южный Уэльс, Австралия
+  tier: 3
+  dateKind: practice
+  origin: unknown
+  parents: []
+  summary: >-
+    Лаконичные эмблемы, яркая окраска и переработанный камуфляж делают личную и культурную принадлежность
+    публично видимой.
+  description: >-
+    Реко Ренни соединяет опыт граффити с конкретными знаками своей связи с Kamilaroi/Gamilaroi. В пояснении к
+    Regalia он отдельно описывает корону, ромб и флаг; эти значения принадлежат данному высказыванию
+    художника. Они не образуют универсального словаря всех коренных народов Австралии.
+
+
+    Корпус сопоставляет неоновую эмблему и два видео с автомобилями. Здесь меняются носитель и масштаб:
+    отдельный световой контур, ярко расписанный предмет, движение в ландшафте. AGSA объясняет, как броская
+    окраска меняет обычную функцию камуфляжа. Это соединение знака, поверхности и публичного присутствия
+    задаёт границы авторской карточки.
+  traits:
+    - Сокращение сложного высказывания до контрастного узнаваемого знака
+    - Яркий розовый и светящиеся контуры усиливают заметность
+    - Камуфляж превращается из средства сокрытия в средство привлечь взгляд
+    - Знак переносится с плоскости и неона на предмет и экранное пространство
+  corpus:
+    - workId: rr-regalia-2013
+      title: Regalia
+      author: Реко Ренни
+      year: 2013
+      medium: Непрозрачная синтетическая полимерная смола, неон, электрические компоненты
+      reference: https://www.ngv.vic.gov.au/explore/collection/work/108708/
+      sources:
+        - ngv-rennie-regalia
+      whyRepresentative: Три изолированных светящихся знака — корона, ромб и флаг — читаются как лаконичная эмблема.
+      place: NGV, 2015.178.a–c
+      rights:
+        embed: false
+        reviewed: "2026-10-14"
+        note: В атласе дана ссылка на репродукцию у источника.
+    - workId: rr-oa-rr-film
+      title: OA_RR — видео
+      author: Реко Ренни
+      year: 2017
+      medium: Триканальное цифровое видео со звуком; кадр из музейного материала
+      reference: >-
+        https://www.agsa.sa.gov.au/education/resources-educators/resources-educators-themed/photography/moving-image/reko-rennie/
+      sources:
+        - agsa-rennie-oa-rr
+        - ngv-rennie-labels
+      whyRepresentative: >-
+        На опубликованном кадре автомобиль движется в пыльном ландшафте. Музей объясняет яркий камуфляж как
+        утверждение видимости, а не сокрытие.
+      place: Art Gallery of South Australia
+      rights:
+        embed: false
+        reviewed: "2026-10-14"
+        note: В атласе дана ссылка на репродукцию у источника.
+      note: >-
+        Для видео принята предметная датировка NGV 2017. Автомобиль OA_RR датирован отдельно, 2016–2017;
+        встречается и сокращённая датировка проекта 2016.
+    - workId: rr-initiation-film
+      title: Initiation OA_RR
+      author: Реко Ренни; партитура Деборы Читэм
+      year: 2021
+      medium: Триканальное видео со звуком
+      reference: https://www.ngv.vic.gov.au/exhibition/initiation-oa_rr/
+      sources:
+        - ngv-rennie-initiation
+      whyRepresentative: >-
+        Розовый автомобиль с контрастными полосами помещён в городской пейзаж: окраска предмета становится
+        видимым знаком присутствия.
+      rights:
+        embed: false
+        reviewed: "2026-10-14"
+        note: В атласе дана ссылка на репродукцию у источника.
+  example:
+    workId: rr-regalia-2013
+    title: Regalia
+    author: Реко Ренни
+    year: 2013
+    medium: Непрозрачная синтетическая полимерная смола, неон, электрические компоненты
+    reference: https://www.ngv.vic.gov.au/explore/collection/work/108708/
+    sources:
+      - ngv-rennie-regalia
+    whyRepresentative: Три изолированных светящихся знака — корона, ромб и флаг — читаются как лаконичная эмблема.
+    place: NGV, 2015.178.a–c
+    rights:
+      embed: false
+      reviewed: "2026-10-14"
+      note: В атласе дана ссылка на репродукцию у источника.
+  names:
+    - Реко Ренни
+  links:
+    - title: Reko Rennie. Regalia, 2013
+      url: https://www.ngv.vic.gov.au/explore/collection/work/108708/
+      src: National Gallery of Victoria
+      lang: en
+    - title: "Reko Rennie: OA_RR"
+      url: >-
+        https://www.agsa.sa.gov.au/education/resources-educators/resources-educators-themed/photography/moving-image/reko-rennie/
+      src: Art Gallery of South Australia
+      lang: en
+    - title: Initiation OA_RR, 2021
+      url: https://www.ngv.vic.gov.au/exhibition/initiation-oa_rr/
+      src: National Gallery of Victoria
+      lang: en
+    - title: REKOSPECTIVE — exhibition labels
+      url: https://www.ngv.vic.gov.au/wp-content/uploads/2025/06/RekoRennie_Labels_WEB_FA.pdf
+      src: National Gallery of Victoria
+      lang: en
+  evidence:
+    - claim: Значения трёх знаков Regalia сформулированы автором в музейной записи NGV.
+      field: scope
+      source: ngv-rennie-regalia
+    - claim: AGSA рассматривает камуфляж и движение автомобиля как части OA_RR.
+      field: corpus
+      source: agsa-rennie-oa-rr
+    - claim: Предметная подпись NGV датирует видео OA_RR 2017 годом и отдельно указывает автомобиль 2016–2017.
+      field: dates
+      source: ngv-rennie-labels
+    - claim: NGV называет Дебору Читэм автором новой партитуры Initiation OA_RR 2021 года.
+      field: creators
+      source: ngv-rennie-initiation
+  review:
+    status: reviewed
+    date: "2026-10-14"
+    note: >-
+      Сверены предметные записи, роли и датировки; просмотрены Regalia и опубликованные кадры двух видео.
+      Полный покадровый анализ видео не выполнялся; историческое влияние не утверждается.
+  maturity: established
+  labelStatus: editorial-scope-title
+  scopeNote: >-
+    Знаки, окрашенные предметы и видео в трёх работах 2013–2021 годов. Портреты и все другие серии художника в
+    этот корпус не включены.
+  dateNote: >-
+    Даты выбранных произведений; 2013 не объявлен началом карьеры. Видео OA_RR и его автомобиль имеют
+    отдельные музейные датировки.
+  aliases:
+    - Реко Ренни
+    - Reko Rennie
+  creators:
+    - name: Реко Ренни
+      orig: Reko Rennie
+      role: автор выбранных визуальных работ
+      sources:
+        - ngv-rennie-regalia
+        - agsa-rennie-oa-rr
+        - ngv-rennie-initiation
+    - name: Дебора Читэм
+      orig: Deborah Cheetham
+      role: композитор и исполнитель партитуры Initiation OA_RR; Yorta Yorta
+      sources:
+        - ngv-rennie-initiation
+  contexts:
+    - id: graffiti-street-art
+      type: related-context
+      status: verified
+      note: >-
+        NGV и AGSA прямо связывают практику Ренни с его опытом граффити. Это контекст развития языка; он не
+        заменяет принадлежность к Kamilaroi.
+      sources:
+        - ngv-rennie-regalia
+        - ngv-rennie-initiation
+    - id: aboriginal-art
+      type: related-context
+      status: verified
+      note: >-
+        Авторская практика связана с конкретным сообществом Kamilaroi/Gamilaroi и городской средой; обзор
+        искусства коренных народов не является названием единого формального стиля.
+      sources:
+        - ngv-rennie-regalia
+        - agsa-rennie-oa-rr
+  admission:
+    language: Повторяется превращение поверхности или контура в броский знак видимого присутствия.
+    corpus: Сопоставлены неоновая эмблема и два самостоятельных видео, с раздельными предметными датами.
+    distinctness: >-
+      Именной узел отделяет этот выбор знаков и носителей от общего граффити и от неоднородного обзора
+      искусства коренных народов Австралии.
+    significance: >-
+      Практика независимо исследуется NGV и AGSA; источники сохраняют конкретные произведения и объясняют их
+      связь с сообществом.
+    sources:
+      - ngv-rennie-regalia
+      - agsa-rennie-oa-rr
+      - ngv-rennie-initiation
+      - ngv-rennie-labels
+  searchKeywords:
+    - Kamilaroi
+    - Gamilaroi
+- id: hokusai-landscape-prints
+  name: "Пейзажные гравюры Хокусая: виды Фудзи"
+  orig: 葛飾北斎 — 冨嶽三十六景 / Katsushika Hokusai
+  kind: author-style
+  start: 1830
+  end: 1833
+  era: xix
+  domain:
+    - art
+  medium:
+    - print
+  region: Эдо, Япония; печатное производство укиё-э
+  tier: 3
+  dateKind: practice
+  origin: unknown
+  parents: []
+  summary: >-
+    Фудзи становится постоянной точкой сравнения в композициях с крупным передним планом, резкими диагоналями
+    и меняющимся масштабом.
+  description: >-
+    Три листа серии «Тридцать шесть видов Фудзи» показывают разные способы организовать пейзаж вокруг одной
+    горы. Волна занимает передний план, рыболовная сцена связывает берег с далью, а «Попутный ветер, ясная
+    погода» приближает саму Фудзи. Повтор мотива позволяет увидеть различия кадрирования и масштаба.
+
+
+    Авторская атрибуция рисунка не отменяет коллективного производства гравюры. В выбранных записях имена
+    резчиков и печатников не сообщены. Музей Тибы отдельно подчёркивает роль печатника в градации цвета и
+    различия между оттисками. Подписи относятся к конкретным музейным экземплярам; оттенки одного снимка не
+    объявляются обязательной палитрой серии.
+  traits:
+    - Крупный передний план сопоставлен с малой дальней Фудзи
+    - Дуги и диагонали связывают фигуры, воду, берег и гору
+    - Ограниченные цветовые поля сочетаются с градациями печатного тона
+    - Повтор одной горы позволяет резко менять кадрирование и пространственный масштаб
+  corpus:
+    - workId: ho-wave-met
+      title: Под волной у Канагавы — Kanagawa oki nami ura
+      author: Кацусика Хокусай — рисунок; резчик и печатник в выбранной записи не названы
+      year: около 1830–1832
+      medium: Цветная ксилография; чернила и цвет на бумаге
+      reference: https://www.metmuseum.org/art/collection/search/45434
+      sources:
+        - met-hokusai-wave
+      whyRepresentative: >-
+        Дуга волны окружает малую дальнюю Фудзи; крупный передний план и мелкие лодки создают резкий перепад
+        масштаба.
+      place: The Met
+      rights:
+        embed: false
+        reviewed: "2026-10-14"
+        note: В атласе дана ссылка на репродукцию у источника.
+    - workId: ho-kajikazawa-met
+      title: Кадзикадзава в провинции Каи — Kōshū Kajikazawa
+      author: Кацусика Хокусай — рисунок; печатные мастера не названы
+      year: около 1830–1832
+      medium: Цветная ксилография; чернила и цвет на бумаге
+      reference: https://www.metmuseum.org/art/collection/search/56727
+      sources:
+        - met-hokusai-kajikazawa
+      whyRepresentative: Диагональ берега и изгиб удилища связывают рыбака с треугольной горой вдалеке.
+      place: The Met
+      rights:
+        embed: false
+        reviewed: "2026-10-14"
+        note: В атласе дана ссылка на репродукцию у источника.
+    - workId: ho-fine-wind-chiba
+      title: Попутный ветер, ясная погода — Gaifū kaisei
+      author: Кацусика Хокусай — рисунок; печатные мастера не названы
+      year: около 1831–1833
+      medium: Горизонтальная многоцветная ксилография, nishiki-e
+      reference: https://www.ccma-net.jp/collection/works/4965/
+      sources:
+        - chiba-hokusai-red-fuji
+      whyRepresentative: >-
+        Большой силуэт горы и пояс облаков заменяют сложный сюжет; ограничение цветов и градации тона
+        усиливают плоскостную композицию.
+      place: Chiba City Museum of Art, 2943002
+      rights:
+        embed: false
+        reviewed: "2026-10-14"
+        note: В атласе дана ссылка на репродукцию у источника.
+  example:
+    workId: ho-wave-met
+    title: Под волной у Канагавы — Kanagawa oki nami ura
+    author: Кацусика Хокусай — рисунок; резчик и печатник в выбранной записи не названы
+    year: около 1830–1832
+    medium: Цветная ксилография; чернила и цвет на бумаге
+    reference: https://www.metmuseum.org/art/collection/search/45434
+    sources:
+      - met-hokusai-wave
+    whyRepresentative: >-
+      Дуга волны окружает малую дальнюю Фудзи; крупный передний план и мелкие лодки создают резкий перепад
+      масштаба.
+    place: The Met
+    rights:
+      embed: false
+      reviewed: "2026-10-14"
+      note: В атласе дана ссылка на репродукцию у источника.
+  names:
+    - Кацусика Хокусай
+  links:
+    - title: Hokusai. Under the Wave off Kanagawa
+      url: https://www.metmuseum.org/art/collection/search/45434
+      src: The Metropolitan Museum of Art
+      lang: en
+    - title: Hokusai. Kajikazawa in Kai Province
+      url: https://www.metmuseum.org/art/collection/search/56727
+      src: The Metropolitan Museum of Art
+      lang: en
+    - title: Fine Wind, Clear Weather
+      url: https://www.ccma-net.jp/collection/works/4965/
+      src: Chiba City Museum of Art
+      lang: en
+  evidence:
+    - claim: Оттиск Под волной у Канагавы датирован около 1830–1832 и входит в Thirty-six Views of Mount Fuji.
+      field: corpus
+      source: met-hokusai-wave
+    - claim: >-
+        Музей Тибы датирует свой оттиск Fine Wind, Clear Weather приблизительно 1831–1833 годами и различает
+        варианты печати.
+      field: corpus
+      source: chiba-hokusai-red-fuji
+    - claim: Оттиск Кадзикадзава в провинции Каи датирован около 1830–1832 и входит в ту же серию.
+      field: corpus
+      source: met-hokusai-kajikazawa
+  review:
+    status: reviewed
+    date: "2026-10-14"
+    note: >-
+      Сверены указанный корпус, атрибуции и пределы текста; репродукции корпуса просмотрены. Историческая
+      генеалогия не утверждается.
+  maturity: established
+  labelStatus: editorial-scope-title
+  approx: true
+  scopeNote: >-
+    Три пейзажных листа серии «Тридцать шесть видов Фудзи» начала 1830-х. Карточка не описывает всю живопись,
+    книжную графику и все серии Хокусая.
+  dateNote: >-
+    Приблизительные музейные датировки трёх выбранных листов; не годы жизни автора и не точные границы выпуска
+    всей серии.
+  aliases:
+    - Хокусай
+    - Кацусика Хокусай
+    - Katsushika Hokusai
+    - Thirty-six Views of Mount Fuji
+    - Fugaku sanjūrokkei
+  creators:
+    - name: Кацусика Хокусай
+      orig: 葛飾北斎 / Katsushika Hokusai
+      role: автор изображений; изготовление оттисков включает труд не названных здесь резчиков и печатников
+      sources:
+        - met-hokusai-wave
+        - met-hokusai-kajikazawa
+        - chiba-hokusai-red-fuji
+  contexts:
+    - id: ukiyo-e
+      type: member-of
+      status: verified
+      note: >-
+        Выбранные цветные ксилографии принадлежат традиции укиё-э. Авторский корпус уже этой традиции и не
+        заменяет её.
+      sources:
+        - met-hokusai-wave
+        - chiba-hokusai-red-fuji
+  admission:
+    language: Узнаваемая композиционная работа с повтором Фудзи, кадрированием и перепадом масштаба.
+    corpus: Три самостоятельных листа одной серии, а не три фотографии одного оттиска.
+    distinctness: >-
+      Узел уже укиё-э и отличается от японизма, который описывает освоение японского искусства в других
+      средах. Не все листы укиё-э построены по этому композиционному принципу.
+    significance: >-
+      Конкретные оттиски хранятся и содержательно интерпретированы в Met и музее Тибы; сохраняется история
+      печатных вариантов.
+    sources:
+      - met-hokusai-wave
+      - met-hokusai-kajikazawa
+      - chiba-hokusai-red-fuji
+- id: norshtein-animation
+  name: Экранный язык Норштейна, Ярбусовой и съёмочных групп
+  orig: Yuri Norstein, Francheska Yarbusova and collaborators
+  kind: author-style
+  start: 1974
+  end: 1979
+  era: postmodern
+  domain:
+    - art
+  medium:
+    - moving-image
+    - drawing
+  region: Москва, СССР; студия «Союзмультфильм»
+  tier: 3
+  dateKind: practice
+  origin: unknown
+  parents: []
+  summary: Фактурный рисунок, светлое или туманное поле и выразительный силуэт соединяются в перекладочной анимации.
+  description: >-
+    Карточка сопоставляет визуальную организацию трёх фильмов 1974–1979 годов. В опубликованных кадрах рисунок
+    не теряет ручной фактуры: тонкие контуры птиц, мягкие границы тумана и контрастные силуэты формируют
+    разные пространственные состояния. Кадр используется как образец изображения; полное устройство движения и
+    монтажа требует просмотра фильма.
+
+
+    У этого корпуса несколько авторских ролей. Норштейн указан режиссёром и аниматором, Ярбусова —
+    художником-постановщиком. Александр Жуковский снял «Цаплю и журавля» и «Ёжика в тумане», Игорь
+    Скидан-Босин — «Сказку сказок». Именной узел не должен превращать всю экранную работу в единоличное
+    авторство режиссёра.
+  traits:
+    - Ручная фактура рисунка сохраняется в экранном изображении
+    - Контур и силуэт меняют выразительность на светлом либо туманном поле
+    - Разная чёткость фигур и фона создаёт ощущение воздушной глубины
+    - Небольшие цветовые акценты выделяются среди приглушённых тонов
+  corpus:
+    - workId: no-heron-1974
+      title: Цапля и журавль
+      author: Юрий Норштейн; Франческа Ярбусова; оператор Александр Жуковский
+      year: 1974
+      medium: Рисованная анимация и перекладки; показан отдельный кадр
+      reference: https://animator.ru/db/?fid=2670&p=show_film
+      sources:
+        - animator-norstein-heron
+      whyRepresentative: >-
+        Тонкие фигуры птиц и растительные силуэты организованы на светлом поле; фактура рисунка сохраняется в
+        экранном изображении.
+      place: Союзмультфильм
+      rights:
+        embed: false
+        reviewed: "2026-10-14"
+        note: В атласе дана ссылка на репродукцию у источника.
+    - workId: no-hedgehog-1975
+      title: Ёжик в тумане
+      author: Юрий Норштейн; Франческа Ярбусова; оператор Александр Жуковский
+      year: 1975
+      medium: Перекладочная анимация; показан отдельный кадр
+      reference: https://animator.ru/db/?fid=2684&p=show_film
+      sources:
+        - animator-norstein-hedgehog
+      whyRepresentative: >-
+        Фигуры проступают через светлое туманное поле; разная чёткость планов делает воздух частью
+        изображения.
+      place: Союзмультфильм
+      rights:
+        embed: false
+        reviewed: "2026-10-14"
+        note: В атласе дана ссылка на репродукцию у источника.
+    - workId: no-tales-1979
+      title: Сказка сказок
+      author: Юрий Норштейн; Франческа Ярбусова; оператор Игорь Скидан-Босин
+      year: 1979
+      medium: Рисованная анимация и перекладки; показан отдельный кадр
+      reference: https://animator.ru/db/?fid=2842&p=show_film
+      sources:
+        - animator-norstein-tales
+      whyRepresentative: >-
+        В выбранном зимнем кадре цветовое пятно фигуры выделено на светлом поле, а птицы и ветви образуют
+        близкое обрамление.
+      place: Союзмультфильм
+      rights:
+        embed: false
+        reviewed: "2026-10-14"
+        note: В атласе дана ссылка на репродукцию у источника.
+  example:
+    workId: no-heron-1974
+    title: Цапля и журавль
+    author: Юрий Норштейн; Франческа Ярбусова; оператор Александр Жуковский
+    year: 1974
+    medium: Рисованная анимация и перекладки; показан отдельный кадр
+    reference: https://animator.ru/db/?fid=2670&p=show_film
+    sources:
+      - animator-norstein-heron
+    whyRepresentative: >-
+      Тонкие фигуры птиц и растительные силуэты организованы на светлом поле; фактура рисунка сохраняется в
+      экранном изображении.
+    place: Союзмультфильм
+    rights:
+      embed: false
+      reviewed: "2026-10-14"
+      note: В атласе дана ссылка на репродукцию у источника.
+  names:
+    - Юрий Норштейн
+    - Франческа Ярбусова
+  links:
+    - title: Цапля и журавль, 1974 — фильмография и роли
+      url: https://animator.ru/db/?fid=2670&p=show_film
+      src: Аниматор.ру
+      lang: ru
+    - title: Ёжик в тумане, 1975 — фильмография и роли
+      url: https://animator.ru/db/?fid=2684&p=show_film
+      src: Аниматор.ру
+      lang: ru
+    - title: Сказка сказок, 1979 — фильмография и роли
+      url: https://animator.ru/db/?fid=2842&p=show_film
+      src: Аниматор.ру
+      lang: ru
+    - title: Кураторская программа фильмов Норштейна
+      url: https://movingimage.org/event/the-films-of-yuri-norstein/2026-01-30/
+      src: Museum of the Moving Image
+      lang: en
+  evidence:
+    - claim: >-
+        Каталог называет Норштейна режиссёром и аниматором, Ярбусову художником-постановщиком фильма 1974
+        года.
+      field: creators
+      source: animator-norstein-heron
+    - claim: Оператор фильма 1975 года — Александр Жуковский.
+      field: creators
+      source: animator-norstein-hedgehog
+    - claim: Оператор Сказки сказок — Игорь Скидан-Босин; дата фильма 1979, а не дата поздней реставрации.
+      field: creators
+      source: animator-norstein-tales
+  review:
+    status: reviewed
+    date: "2026-10-14"
+    note: >-
+      Прочитаны профессиональные предметные записи, сверены роли и три репродукции кадров. Полный просмотр
+      фильмов и покадровый анализ монтажа не выполнялись; приёмы движения по кадрам не выводятся.
+  maturity: established
+  labelStatus: editorial-scope-title
+  scopeNote: >-
+    Изображение в трёх законченных фильмах 1974–1979 годов. Ранние фильмы, незавершённая «Шинель» и весь
+    последующий корпус Ярбусовой требуют отдельного охвата.
+  dateNote: Годы выпуска выбранных фильмов; не даты существования студии или жизни участников.
+  aliases:
+    - Юрий Норштейн
+    - Норштейн
+    - Франческа Ярбусова
+    - Yuri Norstein
+    - Yuri Norshtein
+    - Francheska Yarbusova
+  creators:
+    - name: Юрий Норштейн
+      orig: Yuri Norstein
+      role: режиссёр и аниматор трёх выбранных фильмов
+      sources:
+        - animator-norstein-heron
+        - animator-norstein-hedgehog
+        - animator-norstein-tales
+    - name: Франческа Ярбусова
+      orig: Francheska Yarbusova
+      role: художник-постановщик трёх выбранных фильмов
+      sources:
+        - animator-norstein-heron
+        - animator-norstein-hedgehog
+        - animator-norstein-tales
+    - name: Александр Жуковский
+      role: оператор «Цапли и журавля» и «Ёжика в тумане»
+      sources:
+        - animator-norstein-heron
+        - animator-norstein-hedgehog
+    - name: Игорь Скидан-Босин
+      role: оператор «Сказки сказок»
+      sources:
+        - animator-norstein-tales
+  admission:
+    language: Сопоставимые приёмы фактурного изображения, силуэта и воздушного поля повторяются в разных фильмах.
+    corpus: >-
+      Три самостоятельных фильма; формальные наблюдения здесь ограничены опубликованными кадрами и
+      документированной техникой.
+    distinctness: >-
+      Это корпус конкретных съёмочных групп, более узкий, чем вся советская анимация. Он не совпадает со
+      сказочной книжной графикой Билибина или с рисованной анимацией вообще.
+    significance: >-
+      Фильмы сохранены в профессиональной фильмографии и включены в отдельную программу Museum of the Moving
+      Image. Доступность текущей музейной страницы ограничена и отмечена в источнике.
+    sources:
+      - animator-norstein-heron
+      - animator-norstein-hedgehog
+      - animator-norstein-tales
+      - momi-norstein-program
+- id: bilibin-illustration
+  name: Сказочная книжная графика Ивана Билибина
+  orig: "Ivan Bilibin: illustrated fairy-tale books"
+  kind: author-style
+  start: 1900
+  end: 1902
+  era: fin-de-siecle
+  domain:
+    - art
+  medium:
+    - illustration
+    - print
+    - graphic-design
+  region: Санкт-Петербург, Россия; книжное производство начала XX века
+  tier: 3
+  dateKind: practice
+  origin: unknown
+  parents: []
+  summary: >-
+    Контурный рисунок, цветовые плоскости и устройство книжной страницы связывают повествовательное
+    изображение с орнаментом и текстом.
+  description: >-
+    Карточка описывает ограниченный корпус сказочной книжной графики начала XX века. В нём есть и небольшой
+    контурный рисунок на свободном поле, и насыщенная рамкой цветная иллюстрация, и страница с текстом.
+    Повторяется внимание к линии, силуэту и месту рисунка внутри книги; степень орнаментальной плотности
+    меняется.
+
+
+    Третьяковская галерея рассматривает оформление сказок Билибина как целое, включающее иллюстрации, буквицы
+    и бордюры. Имя автора здесь обозначает самостоятельный визуальный язык, а не новое историческое движение.
+    Даты рисунков, выпуска книг и конкретных оттисков различаются: для страницы «Белой уточки» видна дата
+    рисунка 1902, но год показанного печатного экземпляра не установлен.
+  traits:
+    - Контурная линия удерживает силуэт и разделяет цветовые участки
+    - Плоские цветовые поля сочетаются с детализированным линейным узором
+    - Рамка, буквица и иллюстрация соотносятся с устройством книжной страницы
+    - Плотные орнаментальные листы чередуются с небольшими рисунками на свободном поле
+  corpus:
+    - workId: bi-white-duck-page
+      title: "«Белая уточка»: иллюстрированная страница"
+      author: Иван Яковлевич Билибин
+      year: рисунок 1902; год этого оттиска не установлен
+      medium: Оцифрованная книжная графика; материал оригинального рисунка в записи не установлен
+      sources:
+        - commons-bilibin-white-duck-scan
+      whyRepresentative: Цветные плоскости пейзажа связаны с рамкой; внизу продолжаются буквица, текст и декоративный пояс.
+      rights:
+        embed: true
+        reviewed: "2026-10-14"
+        basis: В описании файла Commons указано общественное достояние; атрибуция и тип репродукции просмотрены.
+        note: Год рисунка и год печатного оттиска различаются; неизвестное отмечено в подписи.
+      file: Билибин img573.jpg
+    - workId: bi-frog-1901
+      title: Контурная иллюстрация к «Царевне-лягушке»
+      author: Иван Яковлевич Билибин
+      year: 1901 (по описанию репродукции)
+      medium: Оцифрованная книжная графика; материал оригинального рисунка в записи не установлен
+      sources:
+        - commons-bilibin-frog-1901
+      whyRepresentative: >-
+        Редкая контурная линия и большое свободное поле показывают другой регистр книжной графики, без
+        плотного цветного обрамления.
+      rights:
+        embed: true
+        reviewed: "2026-10-14"
+        basis: В описании файла Commons указано общественное достояние; атрибуция и тип репродукции просмотрены.
+        note: Год рисунка и год печатного оттиска различаются; неизвестное отмечено в подписи.
+      file: Ivan Bilibin - illustration-for-the-russian-fairy-story-the-frog-princess-1901-1.jpg
+    - workId: bi-vasilisa-rider
+      title: Всадник в иллюстрации к «Василисе Прекрасной»
+      author: Иван Яковлевич Билибин
+      year: 1900 (по описанию репродукции)
+      medium: Оцифрованная книжная графика; материал оригинального рисунка в записи не установлен
+      sources:
+        - commons-bilibin-vasilisa-1900
+      whyRepresentative: >-
+        Силуэт всадника и леса заключён в орнаментальную рамку; линия отделяет цветовые участки и объединяет
+        детали.
+      rights:
+        embed: true
+        reviewed: "2026-10-14"
+        basis: В описании файла Commons указано общественное достояние; атрибуция и тип репродукции просмотрены.
+        note: Год рисунка и год печатного оттиска различаются; неизвестное отмечено в подписи.
+      file: Ivan Bilibin - illustration-for-the-fairy-tale-vasilisa-the-beautiful-1900-21.jpg
+  example:
+    workId: bi-white-duck-page
+    title: "«Белая уточка»: иллюстрированная страница"
+    author: Иван Яковлевич Билибин
+    year: рисунок 1902; год этого оттиска не установлен
+    medium: Оцифрованная книжная графика; материал оригинального рисунка в записи не установлен
+    sources:
+      - commons-bilibin-white-duck-scan
+    whyRepresentative: Цветные плоскости пейзажа связаны с рамкой; внизу продолжаются буквица, текст и декоративный пояс.
+    rights:
+      embed: true
+      reviewed: "2026-10-14"
+      basis: В описании файла Commons указано общественное достояние; атрибуция и тип репродукции просмотрены.
+      note: Год рисунка и год печатного оттиска различаются; неизвестное отмечено в подписи.
+    file: Билибин img573.jpg
+  names:
+    - Иван Яковлевич Билибин
+  links:
+    - title: "«Белая уточка»: оцифрованная книжная страница"
+      url: https://commons.wikimedia.org/wiki/File:Билибин_img573.jpg
+      src: Wikimedia Commons / Ivan Bilibin
+      lang: en
+    - title: Оцифрованная иллюстрация к «Царевне-лягушке»
+      url: >-
+        https://commons.wikimedia.org/wiki/File:Ivan_Bilibin_-_illustration-for-the-russian-fairy-story-the-frog-princess-1901-1.jpg
+      src: Wikimedia Commons / Ivan Bilibin
+      lang: en
+    - title: Оцифрованная иллюстрация к «Василисе Прекрасной»
+      url: >-
+        https://commons.wikimedia.org/wiki/File:Ivan_Bilibin_-_illustration-for-the-fairy-tale-vasilisa-the-beautiful-1900-21.jpg
+      src: Wikimedia Commons / Ivan Bilibin
+      lang: en
+    - title: Билибин — книжное оформление
+      url: https://www.tretyakovgallery.ru/events/o/i-ya-bilibin-illyustrator-russkikh-skazok/
+      src: Третьяковская галерея
+      lang: ru
+  evidence:
+    - claim: >-
+        Третьяковская галерея рассматривает книжное оформление Билибина как совокупность иллюстраций, буквиц и
+        орнаментов.
+      field: scope
+      source: gtg-bilibin-book-design
+    - claim: >-
+        Описание репродукции к Царевне-лягушке датирует рисунок 1901 годом. Дата печатного издания отдельно не
+        установлена.
+      field: corpus
+      source: commons-bilibin-frog-1901
+    - claim: >-
+        На оцифрованной странице Белой уточки видна авторская подпись с 1902 годом; год конкретного оттиска не
+        установлен.
+      field: dates
+      source: commons-bilibin-white-duck-scan
+    - claim: >-
+        Описание репродукции с всадником к Василисе Прекрасной датирует рисунок 1900 годом; первичное
+        местонахождение не указано.
+      field: corpus
+      source: commons-bilibin-vasilisa-1900
+  review:
+    status: partial
+    date: "2026-10-14"
+    note: >-
+      Просмотрены три разные композиции и обложка. Датировки двух рисунков известны по вторичному описанию
+      репродукций и требуют первичного подтверждения. Материалы оригиналов и год конкретного оттиска Белой
+      уточки не установлены; границы неизвестности отмечены в подписях.
+  maturity: established
+  labelStatus: editorial-scope-title
+  scopeNote: >-
+    Три разные композиции для трёх сказок, с датировками рисунков 1900–1902. Обложка дана дополнительно.
+    Театр, эмигрантские периоды и вся графика художника в этот корпус не включены.
+  dateNote: >-
+    Границы датировок выбранных рисунков, не годы всей авторской манеры. Две даты известны по вторичному
+    описанию репродукций; для Белой уточки читается 1902 на самом изображении, дата оттиска неизвестна.
+  aliases:
+    - Билибин
+    - Иван Билибин
+    - Ivan Bilibin
+    - билибинский стиль
+  gallery:
+    - workId: bi-vasilisa-cover
+      title: "«Василиса Прекрасная»: обложка"
+      author: Иван Яковлевич Билибин
+      year: 1902
+      medium: Оцифрованная книжная графика; материал оригинального рисунка в записи не установлен
+      sources:
+        - commons-bilibin-vasilisa-cover
+      whyRepresentative: Заглавие и декоративные изображения собраны в общую систему обрамления.
+      rights:
+        embed: true
+        reviewed: "2026-10-14"
+        basis: В описании файла Commons указано общественное достояние; атрибуция и тип репродукции просмотрены.
+        note: Год рисунка и год печатного оттиска различаются; неизвестное отмечено в подписи.
+      file: Vasilisa the Beautiful (Bilibin) - cover.jpg
+  creators:
+    - name: Иван Яковлевич Билибин
+      orig: Ivan Yakovlevich Bilibin
+      role: >-
+        автор выбранных рисунков и книжного оформления; производственные роли печати в этих записях не
+        установлены
+      sources:
+        - gtg-bilibin-book-design
+        - commons-bilibin-frog-1901
+        - commons-bilibin-vasilisa-1900
+        - commons-bilibin-white-duck-scan
+  compare:
+    - id: art-nouveau
+      note: >-
+        Визуальное сопоставление роли контура и орнамента в графике рубежа веков. Оно не утверждает единую
+        школу или конкретный маршрут влияния.
+      sources: []
+    - id: khokhloma
+      note: >-
+        Сопоставление растительного и звериного орнамента на плоскости книжной страницы и на объёмном
+        деревянном предмете; не генеалогия.
+      sources: []
+  admission:
+    language: >-
+      Повторяются контурное построение формы и связь рисунка с целым книжной страницы при разной плотности
+      декора.
+    corpus: Три самостоятельные композиции для трёх сказок, а не варианты одной типовой обложки.
+    distinctness: >-
+      Корпус уже общего модерна и отличается от Хохломы носителем, масштабом и отношением рисунка к тексту.
+      Народные мотивы не превращают авторскую графику в коллективный промысел.
+    significance: >-
+      Самостоятельность книжного языка Билибина и его значение рассматриваются в музейной программе
+      Третьяковской галереи; сами композиции доступны в оцифрованных репродукциях.
+    sources:
+      - gtg-bilibin-book-design
+      - commons-bilibin-frog-1901
+      - commons-bilibin-vasilisa-1900
+      - commons-bilibin-white-duck-scan
+  approx: true

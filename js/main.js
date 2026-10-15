@@ -1,10 +1,10 @@
 // Точка входа: данные, тема, поиск, роутинг между видами.
-import { loadAtlas } from './store.js?v=map4';
+import { loadAtlas } from './store.js?v=chain-author-map4';
 import { parseHash } from './router.js?v=map4';
 import { initTheme } from './theme.js';
-import { initSearch } from './ui/search-dialog.js?v=audit-p1p2';
+import { initSearch } from './ui/search-dialog.js?v=author-pilot';
 import { initLightbox } from './ui/lightbox.js';
-import { initImageEvents, markLoaded } from './ui/image.js?v=audit-p1p2';
+import { initImageEvents, markLoaded } from './ui/image.js?v=author-pilot';
 import { html, mount } from './html.js';
 
 const app = document.getElementById('app');
@@ -32,7 +32,7 @@ async function route(base, { first = false } = {}) {
     current.instance.update({ ...base, ...r });
     return;
   }
-  const mod = await import(`./views/${r.view}.js?v=chain-review-map4`);
+  const mod = await import(`./views/${r.view}.js?v=chain-author-map4`);
   if (seq !== routeSeq) return;
   const swap = () => {
     current?.instance?.destroy?.();

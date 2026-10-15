@@ -24,6 +24,7 @@ export function validateNebulae(doc, styles) {
     if (n.color != null && !HEX.test(n.color)) errors.push(`nebula "${n.id}": color must be #rrggbb`);
     if (!n.parts?.length) errors.push(`nebula "${n.id}" has no parts`);
     for (const p of n.parts ?? []) {
+      if (!p.id || !p.name) errors.push(`nebula "${n.id}": part needs id and name`);
       if (partIds.has(p.id)) errors.push(`duplicate part id "${p.id}"`);
       partIds.add(p.id);
       if (!p.styles?.length) errors.push(`part "${p.id}" has no styles`);

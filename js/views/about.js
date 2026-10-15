@@ -1,7 +1,7 @@
 // О проекте: как читать карту, пигменты эпох, источники и лицензии, куда копать дальше.
 import { html, mount, safeUrl } from '../html.js';
-import { RELATION, KIND, KIND_DESC, plural } from '../format.js?v=audit';
-import { footer } from '../ui/common.js?v=audit-p1p2';
+import { RELATION, KIND, KIND_DESC, plural } from '../format.js?v=author-pilot';
+import { footer } from '../ui/common.js?v=author-pilot';
 
 const REL_DESC = {
   evolved: 'Стиль прямо вырос из предшественника: те же мастера, школа или приёмы, доведённые до нового качества.',

@@ -348,11 +348,14 @@
   }
 
   // ---------- init ----------
+  let initVersion = 0;
   async function init(atlas, opt) {
+    const version = ++initVersion;
     const t0 = performance.now();
+    try { await Promise.all(['italic 500 20px Spectral', 'italic 400 20px Spectral', 'italic 600 20px Spectral'].map((f) => document.fonts.load(f, 'АБВабв'))); } catch (e) { /* шрифт подставится */ }
+    if (version !== initVersion) return false;
     A = atlas; theme = opt.theme;
     cache = null; clearTimeout(timer); lastCam = null;
-    try { await Promise.all(['italic 500 20px Spectral', 'italic 400 20px Spectral', 'italic 600 20px Spectral'].map((f) => document.fonts.load(f, 'АБВабв'))); } catch (e) { /* шрифт подставится */ }
     OX = -PAD; OY = -PAD; NX = Math.ceil((A.W + 2 * PAD) / CS) + 1; NY = Math.ceil((A.H + 2 * PAD) / CS) + 1;
     buildWarp(); dbg.tWarp = performance.now() - t0; dbg.WMAX = WMAX;
     const S = A.styles, paper = hex(opt.colors.paper), ink = hex(opt.colors.ink);
@@ -394,8 +397,9 @@
     // части: своё поле, конкуренция только с соседями по туманности, внутри моря туманности
     partRegs = [];
     const byNeb = new Map(nebRegs.map((r) => [r.gi, r]));
-    const pf = A.parts.map((p) => {
-      const idx = S.map((s, j) => (s.part === p.id ? j : -1)).filter((j) => j >= 0);
+    const partGroups = A.parts.map((p) => ({ ...p, idx: S.map((s, j) => (s.part === p.id ? j : -1)).filter((j) => j >= 0) }));
+    const pf = keepNonEmpty(partGroups).map((p) => {
+      const idx = p.idx;
       const pts = idx.map((j) => [S[j].x, S[j].y, TIERW[S[j].tier]]), segs = groupSegs(idx);
       const reg = regBox(pts, segs, 3 * SX + WMAX + 6); reg.F = splatField(reg, pts, segs); reg.members = idx; reg.pid = p.id; reg.nebula = p.nebula; return reg;
     });
@@ -443,6 +447,8 @@
     for (const r of partRegs) { r.label = r.name; mc.font = 'italic 500 100px Spectral, Georgia, serif'; r.lw = splitVariants(r.label, mc); }
     P = { paper: opt.colors.paper, dark };
     dbg.pts = stat.pts; dbg.init = performance.now() - t0;
+    dbg.members = S.length; dbg.nebulae = nebRegs.length; dbg.parts = partRegs.length;
+    return true;
   }
   // варианты подписи: одна строка или две (разрыв по пробелу ближе к середине)
   function splitVariants(str, mc) {
@@ -670,7 +676,7 @@ const MAX_ANG = 0.22;   // наклон названия на экране, ра
 export { init as initNebulae, draw as drawNebulae, names as drawNebulaNames };
 // Группы без членов (например, нет «свободных звёзд») поле не строят.
 export const keepNonEmpty = (groups) => groups.filter((g) => g.idx.length);
-export function disposeNebulae() { washFar = washMid = null; nebRegs = []; partRegs = []; cache = null; clearTimeout(timer); lastCam = null; }
+export function disposeNebulae() { initVersion++; washFar = washMid = null; nebRegs = []; partRegs = []; cache = null; clearTimeout(timer); lastCam = null; }
 export const nebulaStats = () => ({ ...dbg });
 
 // ---------- камера сайта: анизотропная (по x и y масштабы разные) ----------

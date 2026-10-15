@@ -16,6 +16,15 @@ const rows = { root: 5, a: 4, b: 6, c: 8, d: 3 };
 const row = (id) => rows[id];
 const go = (id, key) => stepTarget(store, row, id, key);
 
+test('keyboard traversal skips roots hidden by the author layer', () => {
+  const roots = ['visible', 'author', 'next'].map((id, i) => ({ id, start: i, parents: [], children: [] }));
+  const map = new Map(roots.map((s) => [s.id, s]));
+  const st = { styles: roots, get: (id) => map.get(id) };
+  const row = (id) => roots.findIndex((s) => s.id === id);
+  assert.equal(stepTarget(st, row, 'visible', 'ArrowDown'), 'author');
+  assert.equal(stepTarget(st, row, 'visible', 'ArrowDown', (s) => s.id !== 'author'), 'next');
+});
+
 test('left goes to the primary parent, never a secondary one', () => {
   assert.equal(go('a', 'ArrowLeft'), 'root');
   assert.equal(go('c', 'ArrowLeft'), 'root');

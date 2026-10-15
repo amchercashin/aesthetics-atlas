@@ -34,9 +34,9 @@ test('non-root without parents breaks connectivity', () => {
   assert.ok(r.errors.some((e) => e.includes('no parents')));
 });
 
-test('either example.file or palette is required', () => {
+test('an image, palette or sourced external work is required', () => {
   const r1 = validate([root, base({ example: { title: 't' } })], eras);
-  assert.ok(r1.errors.some((e) => e.includes('image or palette')));
+  assert.ok(r1.errors.some((e) => e.includes('image, palette or sourced external reference')));
   const r2 = validate([root, base({ example: { title: 't' }, palette: ['#ff0000', '#00ff00', '#0000ff'] })], eras);
   assert.deepEqual(r2.errors, []);
 });

@@ -1,9 +1,9 @@
 // js/graphnav.js
 // Шаг по графу с клавиатуры. row(id) — строка стиля в древе: вертикальный порядок.
-export function stepTarget(store, row, id, key) {
+export function stepTarget(store, row, id, key, visible = () => true) {
   const s = store.get(id);
   if (!s) return null;
-  const known = (x) => !!x && !!store.get(x);
+  const known = (x) => !!x && !!store.get(x) && visible(store.get(x));
   const start = (x) => store.get(x).start;
   if (key === 'ArrowLeft') return known(s.parents[0]?.id) ? s.parents[0].id : null;
   if (key === 'ArrowRight') {
@@ -16,7 +16,7 @@ export function stepTarget(store, row, id, key) {
     const pid = s.parents[0]?.id;
     const pool = known(pid)
       ? store.get(pid).children.map((c) => c.id).filter((x) => known(x) && store.get(x).parents[0]?.id === pid)
-      : store.styles.filter((x) => !x.parents.length).map((x) => x.id);
+      : store.styles.filter((x) => !x.parents.length && visible(x)).map((x) => x.id);
     const sorted = [...new Set(pool)].sort((a, b) => row(a) - row(b) || start(a) - start(b) || a.localeCompare(b));
     return sorted[sorted.indexOf(id) + (key === 'ArrowDown' ? 1 : -1)] ?? null;
   }

@@ -91,3 +91,20 @@ test('keepNonEmpty drops groups without members (no free stars must not break th
   assert.deepEqual(keepNonEmpty([{ i: 0, idx: [1, 2] }, { i: -1, idx: [] }]).map((g) => g.i), [0]);
   assert.deepEqual(keepNonEmpty([{ i: -1, idx: [] }]), []);
 });
+
+test('disposing a map cancels nebula initialization waiting for fonts', async () => {
+  const { initNebulae, disposeNebulae } = await import('../js/nebulae.js');
+  const previous = globalThis.document;
+  let release;
+  const pendingFont = new Promise((r) => { release = r; });
+  globalThis.document = { fonts: { load: () => pendingFont } };
+  try {
+    const pending = initNebulae({}, {});
+    disposeNebulae();
+    release();
+    assert.equal(await pending, false);
+  } finally {
+    if (previous === undefined) delete globalThis.document;
+    else globalThis.document = previous;
+  }
+});

@@ -1,5 +1,4 @@
-# Состав туманностей карты. Туманность → части → стили. Стиль без туманности — в free (явно).
-# Новый стиль добавляют в ближайшую по связям часть: подсказку даёт сообщение сборки.
+# Редакторские области навигации: море → часть → карточка; исторические связи задаются отдельно.
 nebulae:
   - id: drevnie-istoki
     name: Древние истоки
@@ -51,6 +50,7 @@ nebulae:
           - yamato-e
           - wabi-sabi
           - ukiyo-e
+          - hokusai-landscape-prints
   - id: srednevekove
     name: Средневековье
     color: '#378ADD'
@@ -164,6 +164,10 @@ nebulae:
         styles:
           - symbolism
           - mir-iskusstva
+      - id: knizhnaya-grafika
+        name: Книжная графика
+        styles:
+          - bilibin-illustration
   - id: avangard
     name: Авангард
     color: '#E24B4A'
@@ -337,7 +341,24 @@ nebulae:
         styles:
           - web-brutalism
           - brat
+  - id: russkie-rospisi-i-lubok
+    name: Русские росписи и лубок
+    color: '#A05C3B'
+    parts:
+      - id: rospis-dereva-i-metalla
+        name: Роспись дерева и металла
+        styles:
+          - khokhloma
 free:
   - aboriginal-art
   - mesoamerican-art
   - andean-art
+  - emily-kngwarray
+  - zverev-portrait-graphics
+  - shahzia-sikander
+  - carrolup-school
+  - rei-kawakubo
+  - pacita-abad
+  - esther-mahlangu
+  - reko-rennie
+  - norshtein-animation
