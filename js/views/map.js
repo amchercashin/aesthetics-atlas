@@ -14,12 +14,12 @@ import { replaceParams, pushParams } from '../router.js?v=map4';
 import { pushStep, toParam, parseTrail } from '../trail.js?v=map4';
 import { stepTarget } from '../graphnav.js?v=chain-author-map4';
 import { createGutterLens } from '../lens.js?v=map4';
-import { initNebulae, drawNebulae, drawNebulaNames, disposeNebulae, setNebulaDirtyHandler, nebulaRegion, nebulaRegionAt, nebulaShore } from '../nebulae.js?v=semantic-zoom-3';
+import { initNebulae, drawNebulae, drawNebulaNames, disposeNebulae, setNebulaDirtyHandler, nebulaRegion, nebulaRegionAt, nebulaShore } from '../nebulae.js?v=semantic-zoom-4';
 import { buildIndex, search } from '../search.js?v=author-pilot';
 import { fitLabelText } from '../map-labels.js?v=focus-fit-1';
 import { LINK_MODES, readLinkSettings, historicalLinkVisible } from '../map-links.js?v=link-modes-1';
-import { mapDetail, aggregateMapLinks } from '../map-detail.js?v=semantic-zoom-3';
-import { summaryCurve } from '../map-summary.js?v=semantic-zoom-3';
+import { mapDetail, aggregateMapLinks } from '../map-detail.js?v=semantic-zoom-4';
+import { summaryCurve } from '../map-summary.js?v=semantic-zoom-4';
 
 const NS = 'http://www.w3.org/2000/svg';
 const AXIS_H = 30;      // строка делений шкалы внутри SVG
@@ -116,7 +116,7 @@ export default {
             <div class="lg-layers" role="group" aria-label="Слои карты">
               <label class="map-switch"><input type="checkbox" data-layer="verified"><span class="sw" aria-hidden="true"></span>Только подтверждённые связи</label>
             </div>
-            <p class="lg-note">На дальнем плане читаются моря: отдельные точки и ветви скрыты, пунктир объединяет связи карточек из разных морей. Нажмите на него, чтобы увидеть конкретные связи, типы и источники. При приближении появляются части, затем эстетики; лёгкая цветная заливка и тонкий внешний берег моря остаются ориентирами даже на крупном плане. Нажмите на море или его название, чтобы приблизить область. В списке доступны все моря и карточки вне них. Соседство и расстояния не означают географическую или культурную близость; состав групп не доказывает происхождение. «Основные» показывает ветви по первым указанным предкам, «Все связи» добавляет остальные связи, контекст и визуальные сопоставления; на дальнем плане показывается только несколько сводных линий. Наведение выделяет связи моря, сохраняя основные маршруты на месте. «Без связей» отключает также сводки и маршрут. Авторские карточки доступны на тех же уровнях, что и остальные. Большинство исторических связей пока остаются редакционными гипотезами. Фильтр «Только подтверждённые» независим от режима линий. Время идёт слева направо, на узком экране — сверху вниз; текст остаётся горизонтальным. Шкала времени неравномерная: каждой эпохе отведено место по числу стилей. Перетаскивание двигает карту; Ctrl/⌘ с колёсиком или щипок меняет масштаб.</p>
+            <p class="lg-note">На дальнем плане читаются моря: отдельные точки и ветви скрыты, пунктир объединяет связи карточек из разных морей. Нажмите на него, чтобы увидеть конкретные связи, типы и источники. При приближении появляются части, затем эстетики; лёгкая цветная заливка и тонкий внешний берег моря остаются ориентирами даже на крупном плане. Нажмите на море или его название, чтобы приблизить область. В списке доступны все моря и карточки вне них. Соседство и расстояния не означают географическую или культурную близость; состав групп не доказывает происхождение. «Основные» показывает ветви по первым указанным предкам, «Все связи» добавляет остальные связи, контекст и визуальные сопоставления; на дальнем плане показывается только несколько сводных линий. Наведение выделяет связи моря, сохраняя основные маршруты на месте. «Без связей» отключает также сводки и маршрут. Авторские карточки доступны на тех же уровнях, что и остальные. Большинство исторических связей пока остаются редакционными гипотезами. Фильтр «Только подтверждённые» независим от режима линий. Время идёт слева направо, на узком экране — сверху вниз; текст остаётся горизонтальным. Шкала времени неравномерная: каждой эпохе отведено место по числу стилей. Перетаскивание двигает карту; щипок двумя пальцами на трекпаде или экране меняет масштаб. Также работают Ctrl/⌘ с колёсиком и двойной щелчок по свободному месту.</p>
           </div>
         </div>
         <div class="zoom-ctrls">
@@ -1579,13 +1579,22 @@ export default {
 
     // ---------- события полотна ----------
     const pointers = new Map();
-    let drag = null, pinch = null, moved = false;
+    let drag = null, pinch = null, moved = false, nativeGesture = null, lastPointer = null;
     const uiTarget = (e) => e.target.closest?.('.map-panel, .map-tip, .map-edge-pop, .map-offscreen, .mm-box, .map-trail, .map-levels, .map-directory');
+    const gesturePoint = (e) => {
+      const r = stage.getBoundingClientRect();
+      const inside = (p) => p && Number.isFinite(p.clientX) && Number.isFinite(p.clientY)
+        && p.clientX >= r.left && p.clientX <= r.right && p.clientY >= r.top && p.clientY <= r.bottom;
+      if (inside(e)) return toV(e.clientX, e.clientY);
+      if (nativeGesture) return nativeGesture.point;
+      return inside(lastPointer) ? toV(lastPointer.clientX, lastPointer.clientY) : { x: vw / 2, y: vh / 2 };
+    };
 
     // Подсказка нужна до первого движения по карте, дальше она только закрывает подписи.
     const dismissHint = () => hint.classList.add('is-gone');
     on(stage, 'pointerdown', (e) => {
       if (uiTarget(e)) return;
+      nativeGesture = null;
       cancelAnimationFrame(anim); clearTimeout(flightTimer);
       dismissHint();
       hideEdgeInfo();
@@ -1606,6 +1615,7 @@ export default {
       }
     });
     on(stage, 'pointermove', (e) => {
+      if (e.pointerType === 'mouse' && !uiTarget(e)) lastPointer = { clientX: e.clientX, clientY: e.clientY };
       if (!pointers.has(e.pointerId)) {
         if (uiTarget(e)) return;
         if (e.target.closest('.summary-hit')) return;
@@ -1672,7 +1682,13 @@ export default {
       e.preventDefault();
       hideTip();
       dismissHint();
-      if (e.ctrlKey || e.metaKey) { const p = toV(e.clientX, e.clientY); zoomAt(p.x, p.y, Math.exp(-e.deltaY * (e.deltaMode ? 0.05 : 0.0025))); }
+      if (nativeGesture) return; // Safari может послать и wheel в той же последовательности.
+      if (e.ctrlKey || e.metaKey) {
+        const p = toV(e.clientX, e.clientY);
+        // Пиксельный ctrl+wheel от щипка требует большей чувствительности, чем колесо мыши.
+        const sensitivity = e.deltaMode ? 0.05 : e.ctrlKey ? 0.01 : 0.0025;
+        zoomAt(p.x, p.y, Math.exp(-e.deltaY * sensitivity));
+      }
       else {
         const unit = e.deltaMode === 1 ? 16 : 1;
         const tall = contentRefH * syOf(t.k) > vh - AXIS_H;
@@ -1682,6 +1698,30 @@ export default {
         clampT(); schedule();
       }
     }, { passive: false });
+
+    // Safari на Mac передаёт щипок через GestureEvent. Касания экрана уже
+    // обслуживают PointerEvent: не применяем один жест дважды.
+    on(stage, 'gesturestart', (e) => {
+      if (uiTarget(e) || pointers.size) return;
+      e.preventDefault();
+      cancelAnimationFrame(anim); clearTimeout(flightTimer);
+      dismissHint(); hideTip();
+      nativeGesture = { scale: 1, point: gesturePoint(e) };
+    }, { passive: false });
+    on(stage, 'gesturechange', (e) => {
+      if (!nativeGesture) return;
+      e.preventDefault();
+      if (pointers.size || !Number.isFinite(e.scale) || e.scale <= 0) return;
+      const p = gesturePoint(e);
+      zoomAt(p.x, p.y, e.scale / nativeGesture.scale);
+      nativeGesture = { scale: e.scale, point: p };
+    }, { passive: false });
+    on(window, 'gestureend', (e) => {
+      if (!nativeGesture) return;
+      e.preventDefault();
+      nativeGesture = null;
+    }, { passive: false });
+    on(window, 'blur', () => { nativeGesture = null; });
 
     on(stage, 'dblclick', (e) => {
       if (uiTarget(e) || e.target.closest('.node, .label')) return;
@@ -1863,7 +1903,7 @@ export default {
       if (e.target.closest('[data-f-reset]')) { setFilter({ domain: '', family: '' }); togglePop(pops.find((p) => p.wrap.classList.contains('map-filter-wrap')), false); }
     });
 
-    hint.textContent = 'Нажмите на море, чтобы рассмотреть его. Ctrl/⌘ + колесо — масштаб.';
+    hint.textContent = 'Нажмите на море, чтобы рассмотреть его. Щипок или Ctrl/⌘ + колесо — масштаб.';
 
     const ro = new ResizeObserver(() => resize());
     ro.observe(stage);
