@@ -156,7 +156,7 @@ body[data-view="map"] .site-footer { display: none; }
 .plate.out { opacity: calc(var(--label-zoom, 1) * 0.12); }
 
 /* Узлы и подписи */
-.node { cursor: pointer; outline: none; transition: opacity 0.25s; }
+.node { cursor: pointer; outline: none; opacity: var(--node-zoom, 1); }
 .node .hit { fill: transparent; }
 .node .dot { stroke: var(--paper); stroke-width: 1.5; }
 .node .ring { fill: none; stroke-width: 2; display: none; }
@@ -176,20 +176,20 @@ body[data-view="map"] .site-footer { display: none; }
 .node:focus-visible .dot, .node:focus-visible .ring { stroke: var(--accent); stroke-width: 3; }
 
 /* Фильтр: несовпавшие стили бледнеют, но остаются на своих местах. */
-.node.out { opacity: 0.12; }
+.node.out { opacity: calc(var(--node-zoom, 1) * 0.12); }
 .label.out { opacity: calc(var(--label-zoom, 1) * 0.12); }
 .life.out { stroke-opacity: 0.06; }
 .edge-g.out .edge { stroke-opacity: 0.06; }
 .edge-g.out .case { display: none; }
 
 /* Наведение: стиль и его прямые связи */
-.has-hover .node:not(.near) { opacity: 0.28; }
+.has-hover .node:not(.near) { opacity: calc(var(--node-zoom, 1) * 0.28); }
 .has-hover .label:not(.near) { opacity: calc(var(--label-zoom, 1) * 0.28); }
 .has-hover .life:not(.near) { stroke-opacity: 0.08; }
 .has-hover .edge-g:not(.near) .edge { stroke-opacity: 0.08; }
 
 /* Выбор: крупный план связей или вся родословная */
-.has-selection .node:not(.lit) { opacity: 0.16; }
+.has-selection .node:not(.lit) { opacity: calc(var(--node-zoom, 1) * 0.16); }
 .has-selection .label:not(.lit) { opacity: calc(var(--label-zoom, 1) * 0.16); }
 .has-selection .life:not(.lit) { stroke-opacity: 0.06; }
 .has-selection .life.lit { stroke-opacity: 0.55; }
@@ -275,6 +275,7 @@ body[data-view="map"] .site-footer { display: none; }
   position: absolute; left: 0; top: 0; z-index: 7; width: min(320px, calc(100% - 16px)); padding: 12px 14px;
   background: var(--paper-2); border: 1px solid var(--rule); border-radius: 10px;
   box-shadow: 0 14px 40px -14px rgb(0 0 0 / 0.4); font-size: var(--t-sm); line-height: 1.45; cursor: auto;
+  max-height: calc(100% - 48px); overflow-y: auto; overscroll-behavior: contain;
 }
 .map-edge-pop[hidden] { display: none; }
 .ep-head { font-family: var(--serif); font-size: var(--t-lg); line-height: 1.25; }
@@ -378,3 +379,48 @@ body[data-view="map"] .site-footer { display: none; }
 /* Узкий экран: карта повёрнута на 90° — время сверху вниз; размер и поворот задаёт resize() */
 .map-stage.rot .map-svg, .map-stage.rot .map-neb { position: absolute; left: 0; top: 0; transform-origin: 0 0; max-width: none; max-height: none; }
 .map-stage.rot .mm-box { display: none; }
+
+/* Масштаб меняет предмет чтения: моря → части → отдельные эстетики. */
+.mm-box.is-quiet { display: none; }
+.map-hint { display: none; }
+.label, .plate { transition: none; }
+.m-nebnames .region-name { pointer-events: visiblePainted; cursor: pointer; outline: none; }
+.region-name:hover, .region-name:focus-visible { filter: brightness(0.75); text-decoration: underline; text-underline-offset: 4px; }
+[data-theme="dark"] .region-name:hover, [data-theme="dark"] .region-name:focus-visible { filter: brightness(1.25); }
+.summary-case { fill: none; stroke: var(--paper); stroke-linecap: round; pointer-events: none; }
+.summary-line { fill: none; stroke: var(--ink-2); stroke-dasharray: 5 6; stroke-linecap: round; pointer-events: none; }
+.summary-port { fill: var(--paper); stroke: var(--ink-2); stroke-width: 1.1; pointer-events: none; }
+.summary-hit { fill: none; stroke: transparent; stroke-width: 16; pointer-events: stroke; cursor: pointer; outline: none; }
+.summary-hit:focus-visible { stroke: var(--accent); stroke-width: 2; stroke-dasharray: 3 5; }
+.summary-records { display: grid; gap: 4px; margin-top: 10px; }
+.summary-records button { text-align: left; padding: 8px; border: 0; border-radius: 5px; background: var(--paper); font: inherit; font-size: 12px; cursor: pointer; }
+.summary-records button:hover { background: color-mix(in oklab, var(--accent) 9%, var(--paper)); }
+.summary-records small { display: block; margin-top: 3px; color: var(--ink-3); }
+.map-levels { position: absolute; z-index: 5; bottom: 14px; left: 50%; transform: translateX(-50%); display: flex; align-items: center; gap: 2px; padding: 4px; border: 1px solid var(--rule); border-radius: 999px; background: var(--paper-2); box-shadow: 0 3px 18px rgb(0 0 0 / 0.06); white-space: nowrap; }
+.map-levels[hidden] { display: none; }
+.map-levels button { border: 0; background: transparent; border-radius: 999px; padding: 6px 11px; font-size: 12px; color: var(--ink-3); cursor: pointer; }
+.map-levels button[aria-current] { background: var(--ink); color: var(--paper); }
+.map-levels button:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+.map-levels > span { color: var(--ink-3); font-size: 12px; }
+.map-levels .map-browse { border-left: 1px solid var(--rule); border-radius: 0 99px 99px 0; padding-inline: 11px; font-size: 15px; line-height: 1; }
+.map-stage:has(.mm-box:not(.is-quiet)):not(.rot) .map-levels { left: auto; right: 14px; transform: none; }
+.map-stage:has(.map-panel:not([hidden])) .map-levels { display: none; }
+.map-directory { position: absolute; z-index: 10; left: 14px; bottom: 64px; width: min(350px, calc(100% - 28px)); max-height: calc(100% - 80px); overflow-y: auto; overscroll-behavior: contain; background: var(--paper-2); border: 1px solid var(--rule); border-radius: 12px; padding: 14px; box-shadow: 0 10px 35px rgb(0 0 0 / 0.14); }
+.map-directory[hidden] { display: none; }
+.md-head { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+.md-head strong { font: 600 21px var(--serif); }
+.map-directory > p { font-size: 12px; color: var(--ink-3); line-height: 1.5; margin: 5px 0 12px; }
+.md-list { display: grid; gap: 3px; }
+.md-list button { display: flex; align-items: center; gap: 9px; border: 0; border-radius: 5px; padding: 8px; background: transparent; color: var(--ink); text-align: left; font-size: 13px; line-height: 1.35; cursor: pointer; }
+.md-list button:hover { background: color-mix(in oklab, var(--ink) 6%, transparent); }
+.md-list i { width: 7px; height: 7px; border-radius: 50%; background: var(--c); flex: none; }
+.md-list small { margin-left: auto; color: var(--ink-3); }
+.map-directory details { font-size: 13px; margin-top: 12px; border-top: 1px solid var(--rule); padding-top: 12px; }
+.map-directory summary { cursor: pointer; color: var(--ink-2); padding: 4px; }
+@media (max-width: 760px) {
+  .map-levels { bottom: 10px; }
+  .map-stage:has(.map-panel:not([hidden])) .map-levels { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .label, .plate, .edge, .life { transition: none; }
+}
