@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { styleLabelOpacity } from '../js/map-labels.js';
+import { styleLabelOpacity, fitLabelText } from '../js/map-labels.js';
 
 test('overview labels are readable, halfway labels subdued, whole-history labels absent at different window fits', () => {
   for (const fit of [0.013, 0.035, 0.06]) {
@@ -22,4 +22,22 @@ test('zoom in and out retrace a continuous monotone fade without a midpoint jump
   }
   const reverse = values.map((_, i) => styleLabelOpacity(0.02 * 10 ** ((1000 - i) / 1000), 0.02, 0.2));
   assert.deepEqual(reverse, [...values].reverse());
+});
+
+test('focused labels retain their full name when it fits and use a measured ellipsis when it does not', () => {
+  const measure = (text) => [...text].reduce((w, c) => w + (c === '…' ? 1 : c === 'И' ? 3 : 2), 0);
+  assert.deepEqual(fitLabelText('Индия', 11, measure), { text: 'Индия', width: 11 });
+  const short = fitLabelText('Индия', 6, measure);
+  assert.deepEqual(short, { text: 'Ин…', width: 6 });
+  assert.ok(measure('Инд…') > 6);
+});
+
+test('shortening never splits a non-BMP character or leaves a space before the ellipsis', () => {
+  const measure = (text) => [...text].length;
+  assert.equal(fitLabelText('🎨 мир', 3, measure).text, '🎨…');
+  assert.equal(fitLabelText('🎨 мир', 5, measure).text, '🎨 мир');
+});
+
+test('a viewport narrower than the ellipsis produces no text or overflow', () => {
+  assert.deepEqual(fitLabelText('Хокусай', 0.5, (text) => [...text].length), { text: '', width: 0 });
 });
