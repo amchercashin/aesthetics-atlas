@@ -77,6 +77,21 @@ test('non-embeddable images become a link, not an embedded picture', () => {
   assert.equal(rec.external.rights.status, 'nonfree');
 });
 
+test('local assets resolve for both main and gallery images without losing caption sources', () => {
+  const ref = 'assets/illustrations/flat-design.svg';
+  const example = { asset: ref, title: 'Схема', role: 'illustration', year: 2026, sources: ['source-a'], note: 'Дата схемы' };
+  const resolved = { local: true, w: 1200, h: 900, src: { 500: ref }, page: ref, nonfree: false };
+  const r = buildRecord(card({ example, gallery: [example] }), { img: (key) => key === ref ? resolved : null });
+  for (const im of [r.example, ...r.gallery]) {
+    assert.equal(im.img.local, true);
+    assert.equal(im.img.page, ref);
+    assert.equal(im.role, 'illustration');
+    assert.equal(im.year, 2026);
+    assert.equal(im.note, 'Дата схемы');
+    assert.deepEqual(im.sources, ['source-a']);
+  }
+});
+
 test('children carry relation status; comparisons are symmetric', () => {
   const styles = [card({ id: 'p', parents: [] }), card({ id: 'x', compare: [{ id: 'p', note: 'похожи' }] })];
   assert.equal(childrenOf(styles).get('p')[0].status, 'unverified');

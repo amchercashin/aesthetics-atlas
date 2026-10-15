@@ -1,7 +1,7 @@
 // Мелкие общие куски разметки.
 import { html } from '../html.js';
 import { fmtDates, plural } from '../format.js?v=audit';
-import { frame } from './image.js?v=audit';
+import { frame } from './image.js?v=audit-p1p2';
 
 export function eraTag(store, eraId, { link = true } = {}) {
   const e = store.era(eraId);
@@ -29,7 +29,7 @@ export { frameBg };
 export function footer(store) {
   return html`<footer class="site-footer">
     <span>Атлас эстетик: ${store.styles.length} ${plural(store.styles.length, 'карточка', 'карточки', 'карточек')}. Данные от ${store.builtAt}.</span>
-    <span>Изображения — Wikimedia Commons и Википедия, авторы указаны под каждой работой.</span>
+    <span>Изображения — Wikimedia Commons, Википедия и собственные схемы атласа. Источники указаны под каждой работой.</span>
     <a href="#/about">О проекте и источниках</a>
   </footer>`;
 }

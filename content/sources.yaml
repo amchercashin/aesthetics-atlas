@@ -213,14 +213,6 @@
   checked: 2026-10-13
   note: "Памятник ориентирован на солнцестояния: летний восход у Пяточного камня, зимний закат между столбами самого высокого трилита."
 
-- id: nss-pinterest-2026
-  title: "Pinterest Predicts 2026: aesthetic trends"
-  publisher: nss magazine
-  url: https://nssmag.com/en/lifestyle/43770/pinterest-predicts-2026-aesthetic-trends
-  sourceType: press
-  checked: 2026-10-13
-  note: "Пересказ отчёта Pinterest: раздел «Extra Celestial» — запросы «alien core aesthetics» +80%, «opalescent» +115%. Первичный отчёт Pinterest атлас не открыл; это статистика поиска одной платформы."
-
 - id: met-andes-1000bc
   title: "Central and Southern Andes, 1000 B.C.–1 A.D."
   publisher: The Metropolitan Museum of Art, Heilbrunn Timeline of Art History
@@ -236,3 +228,304 @@
   sourceType: museum
   checked: 2026-10-13
   note: "Гобеленовые туники — привилегия знати империи инков, государство раздавало их как дар; узор «инкский ключ» — один из самых распространённых. Данные из открытого API музея."
+
+- id: met-yamato-e
+  title: Yamato-e Painting
+  publisher: The Metropolitan Museum of Art
+  url: https://www.metmuseum.org/essays/yamato-e-painting
+  sourceType: museum
+  checked: '2026-10-14'
+  note: >-
+    Японские сюжеты, цветные и композиционные приёмы, развитие в эпоху Эдо. Не подтверждает отдельное
+    происхождение от шань-шуй.
+- id: met-genji-yadorigi
+  title: Trees Encoiled in Vines of Ivy (Yadorigi), 2006.570
+  publisher: The Metropolitan Museum of Art
+  url: https://www.metmuseum.org/art/collection/search/65586
+  sourceType: museum
+  checked: '2026-10-14'
+  note: >-
+    Мастерская Таварая Сотацу, начало XVII века; тушь, краски и золото. Атрибуция музея приоритетнее подписи
+    автора в Commons. Public Domain.
+- id: commons-genji-hakubyo
+  title: File:Hakubyo Genji monogatari emaki - scroll 1-5.jpg
+  publisher: Wikimedia Commons
+  url: https://commons.wikimedia.org/wiki/File:Hakubyo_Genji_monogatari_emaki_-_scroll_1-5.jpg
+  sourceType: catalog
+  checked: '2026-10-14'
+  note: В описании свитка указаны 1554 год и собрание NYPL; автор без музейной атрибуции не добавлен.
+- id: mucha-job-1898
+  title: JOB, 1898 — object 45
+  publisher: Mucha Foundation
+  url: https://www.muchafoundation.org/en/gallery/browse-works/object/45
+  sourceType: museum
+  checked: '2026-10-14'
+  note: >-
+    Композиция выбранного файла соответствует большому плакату 1898 года, а не версии 1896 года; дата Commons
+    конфликтует с каталогом фонда.
+- id: hfg-ulm-history
+  title: 'Permanent exhibition: HfG Ulm'
+  publisher: HfG-Archiv / Museum Ulm
+  url: https://hfg-archiv.museumulm.de/en/permanent-exhibition/
+  sourceType: museum
+  checked: '2026-10-14'
+  note: Школа работала в 1953–1968 годах; основатели — Инге Айхер-Шолль, Отль Айхер и Макс Билл.
+- id: moma-max-bill-clock
+  title: The Perfect Kitchen Clock
+  publisher: The Museum of Modern Art
+  url: https://www.moma.org/explore/inside_out/2010/11/19/the-perfect-kitchen-clock/
+  sourceType: museum
+  checked: '2026-10-14'
+  note: Кухонные часы Макса Билла с таймером, 1956–1957; не наручная модель 1961 года.
+- id: commons-utah-render
+  title: File:Utah teapot simple.png
+  publisher: Wikimedia Commons
+  url: https://commons.wikimedia.org/wiki/File:Utah_teapot_simple.png
+  sourceType: catalog
+  checked: '2026-10-14'
+  note: Рендер Dhatfield датирован 2008 годом; 1975 — год модели Мартина Ньюэлла.
+- id: commons-deepdream-mona
+  title: File:"Mona Lisa" with DeepDream effect using VGG16 network trained on ImageNet.jpg
+  publisher: Wikimedia Commons
+  url: >-
+    https://commons.wikimedia.org/wiki/File:%22Mona_Lisa%22_with_DeepDream_effect_using_VGG16_network_trained_on_ImageNet.jpg
+  sourceType: catalog
+  checked: '2026-10-14'
+  note: 'В описании файла: PJ Finlay, 2021, обработка с кодом Aleksa Gordić. Не изображение 2015 года.'
+- id: enwiki-material-widgets
+  title: File:Flat widgets.png
+  publisher: 'Wikipedia: страница файла'
+  url: https://en.wikipedia.org/wiki/File:Flat_widgets.png
+  sourceType: catalog
+  checked: '2026-10-14'
+  note: Описание файла прямо относит элементы к Material Design; Totie, 2015.
+- id: microsoft-metro-2010
+  title: Windows Phone 7 Series UI Design & Interaction Guide
+  publisher: Microsoft, Windows Developer Blog
+  url: https://blogs.windows.com/windowsdeveloper/2010/03/18/windows-phone-7-series-ui-design-interaction-guide/
+  sourceType: primary
+  checked: '2026-10-14'
+  note: >-
+    Публикация 18 марта 2010 года документирует Metro в Windows Phone 7. Это пример раннего интерфейса волны,
+    не дата изобретения плоского дизайна.
+- id: commons-material-you
+  title: File:Material you light.png
+  publisher: Wikimedia Commons
+  url: https://commons.wikimedia.org/wiki/File:Material_you_light.png
+  sourceType: catalog
+  checked: '2026-10-14'
+  note: Дата изображения в описании файла — 2023; её нельзя подменять годом представления Material You.
+- id: commons-barbie-cafe
+  title: File:Interior of the Barbie Cafe.jpg
+  publisher: Wikimedia Commons
+  url: https://commons.wikimedia.org/wiki/File:Interior_of_the_Barbie_Cafe.jpg
+  sourceType: catalog
+  checked: '2026-10-14'
+  note: 'Фотография интерьера 2013 года: ранний брендированный пример, не материал волны 2022–2024.'
+- id: commons-barbie-premiere
+  title: File:Margot Robbie (53012385004).jpg
+  publisher: Wikimedia Commons
+  url: https://commons.wikimedia.org/wiki/File:Margot_Robbie_(53012385004).jpg
+  sourceType: catalog
+  checked: '2026-10-14'
+  note: Eva Rinaldi, Barbie Pink Carpet Premiere, Sydney, 30 June 2023; CC BY-SA 2.0.
+- id: commons-sun-ra-1973
+  title: File:Sun Ra (1973 publicity photo - Impulse ABC Dunhill).jpg
+  publisher: Wikimedia Commons
+  url: https://commons.wikimedia.org/wiki/File:Sun_Ra_(1973_publicity_photo_-_Impulse_ABC_Dunhill).jpg
+  sourceType: catalog
+  checked: '2026-10-14'
+  note: Рекламный портрет Sun Ra, 1973; роль изображения — portrait.
+- id: inbal-rivera-1934
+  title: Tres aproximaciones narrativas al mural El hombre controlador del universo
+  publisher: INBAL / Museo del Palacio de Bellas Artes
+  url: >-
+    https://inba.gob.mx/prensa/20812/dialogaran-sobre-tres-aproximaciones-narrativas-que-se-desprenden-del-mural-el-hombre-controlador-del-universo
+  sourceType: official
+  checked: '2026-10-14'
+  note: >-
+    Фреска в Мехико — El hombre controlador del universo, 1934; её следует отличать от утраченной работы 1933
+    года в Нью-Йорке.
+- id: belvedere-kiss
+  title: A digital declaration of love
+  publisher: Belvedere
+  url: https://www.belvedere.at/en/press/digital-declaration-love
+  sourceType: museum
+  checked: '2026-10-14'
+  note: В музейном описании «Поцелуй» датирован 1908/09.
+- id: commons-bank-georgia
+  title: File:Bank-of-georgia-hq.jpg
+  publisher: Wikimedia Commons
+  url: https://commons.wikimedia.org/wiki/File:Bank-of-georgia-hq.jpg
+  sourceType: catalog
+  checked: '2026-10-14'
+  note: >-
+    В описании файла названы George Chakhava и Zurab Jalaghania. Проверка по проектному архиву остаётся
+    открытой.
+- id: special-offer-brat
+  title: Special Offer Inc. — Work
+  publisher: Special Offer Inc.
+  url: https://www.specialoffer.inc/work
+  sourceType: primary
+  checked: '2026-10-14'
+  note: Портфолио студии включает визуальную идентичность Brat.
+- id: developments-special-offer
+  title: 'Interview: Special Offer Inc.'
+  publisher: Developments / интервью с Special Offer Inc.
+  url: https://developments.media/interviews/special-offer
+  sourceType: primary
+  checked: '2026-10-14'
+  note: >-
+    Первое лицо: совместная работа студии с Charli XCX и Imogene Strauss. Исполнительница альбома не является
+    единственным автором дизайна.
+- id: scm-henry-machine
+  title: Drawing Machine 2 by Desmond Paul Henry
+  publisher: Science Museum Group
+  url: https://collection.sciencemuseumgroup.org.uk/objects/co8712245/drawing-machine-2-by-desmond-paul-henry
+  sourceType: museum
+  checked: '2026-10-14'
+  note: >-
+    Аналоговая электромеханическая рисующая машина на основе бомбового прицела; не цифровой компьютер с
+    программой. Источник о механизме, не атрибуция именно изображённого листа Machine 1.
+- id: unesco-angkor
+  title: Angkor
+  publisher: UNESCO World Heritage Centre
+  url: https://whc.unesco.org/en/list/668/
+  sourceType: official
+  checked: '2026-10-14'
+  note: >-
+    Ансамбли кхмерских столиц IX–XV веков: Ангкор-Ват, Байон и другие памятники. Общее индийское влияние не
+    доказывает отдельного пути через Гандхару.
+- id: unesco-borobudur
+  title: Borobudur Temple Compounds
+  publisher: UNESCO World Heritage Centre
+  url: https://whc.unesco.org/en/list/592/
+  sourceType: official
+  checked: '2026-10-14'
+  note: Боробудур — буддийский памятник Явы; исключён из перечня кхмерских примеров.
+- id: met-chinese-landscape
+  title: Landscape Painting in Chinese Art
+  publisher: The Metropolitan Museum of Art
+  url: https://www.metmuseum.org/essays/landscape-painting-in-chinese-art
+  sourceType: museum
+  checked: '2026-10-14'
+  note: Длительная традиция пейзажа; рубеж XVII века не является её прекращением.
+- id: met-islamic-art
+  title: Islamic Art — Curatorial Department
+  publisher: The Metropolitan Museum of Art
+  url: https://www.metmuseum.org/departments/islamic-art
+  sourceType: museum
+  checked: '2026-10-14'
+  note: Собрание охватывает VII–XXI века; термин не ограничен религиозными объектами или XIX веком.
+- id: nps-rock-art-techniques
+  title: Petroglyphs and Pictographs
+  publisher: National Park Service, Chaco Culture
+  url: https://www.nps.gov/chcu/learn/historyculture/petroglyphs-pictographs.htm
+  sourceType: official
+  checked: '2026-10-14'
+  note: >-
+    Петроглиф — удаление материала поверхности, пиктограмма — нанесение пигмента. Сосуществование техник не
+    задаёт всеобщей эволюционной последовательности.
+- id: commons-dreamcore
+  title: File:Dreamcore (cropped).jpg
+  publisher: Wikimedia Commons
+  url: https://commons.wikimedia.org/wiki/File:Dreamcore_(cropped).jpg
+  sourceType: catalog
+  checked: '2026-10-14'
+  note: Автор Crafts97; дата в описании файла — 2026.
+- id: ngs-constructivism
+  title: Constructivism
+  publisher: National Galleries of Scotland
+  url: https://www.nationalgalleries.org/art-and-artists/glossary-terms/constructivism
+  sourceType: museum
+  checked: '2026-10-14'
+  note: >-
+    Ранние конструкции Татлина и связь с кубизмом; одного примера Лисицкого недостаточно, чтобы вывести всё
+    движение из супрематизма.
+- id: pinterest-predicts-2026
+  title: Pinterest Predicts 2026 — Extra Celestial
+  publisher: Pinterest
+  url: https://business.pinterest.com/pdf/pinterest-predicts/2026-trend-report/
+  sourceType: primary
+  checked: '2026-10-14'
+  note: >-
+    Стр. 9 PDF: alien core aesthetic +80%, opalescent +115%. Нормализованные глобальные англоязычные поиски:
+    сентябрь 2024 — август 2025 против сентября 2023 — августа 2024. Это статистика Pinterest и прогноз 2026,
+    не измерение распространённости всего стиля.
+- id: commons-chinese-house
+  title: File:Chinesisches Haus - Park Sanssouci - Potsdam - panoramio.jpg
+  publisher: Wikimedia Commons
+  url: https://commons.wikimedia.org/wiki/File:Chinesisches_Haus_-_Park_Sanssouci_-_Potsdam_-_panoramio.jpg
+  sourceType: catalog
+  checked: '2026-10-14'
+  note: Фотограф Jens Cederskjold, 2 июня 2016; CC BY 3.0. Дата фотографии отделена от прежней датировки здания.
+- id: commons-glasgow-quadrangle
+  title: File:University of Glasgow Quadrangle.jpg
+  publisher: Wikimedia Commons
+  url: https://commons.wikimedia.org/wiki/File:University_of_Glasgow_Quadrangle.jpg
+  sourceType: catalog
+  checked: '2026-10-14'
+  note: Фотография Michael D Beckwith, 2015; не дата постройки университета.
+- id: commons-hathaway-cottage
+  title: File:Anne Hathaways Cottage 1 (5662418953).jpg
+  publisher: Wikimedia Commons
+  url: https://commons.wikimedia.org/wiki/File:Anne_Hathaways_Cottage_1_(5662418953).jpg
+  sourceType: catalog
+  checked: '2026-10-14'
+  note: 2011 — дата фотографии; исторический дом не является произведением интернет-тренда.
+- id: commons-hong-kong-night
+  title: File:Hong Kong night street.jpg
+  publisher: Wikimedia Commons
+  url: https://commons.wikimedia.org/wiki/File:Hong_Kong_night_street.jpg
+  sourceType: catalog
+  checked: '2026-10-14'
+  note: 2013 — дата фотографии; позднее иллюстративное сопоставление.
+- id: commons-punk-zines
+  title: File:UK and US zines.jpg
+  publisher: Wikimedia Commons
+  url: https://commons.wikimedia.org/wiki/File:UK_and_US_zines.jpg
+  sourceType: catalog
+  checked: '2026-10-14'
+  note: В описании файла указаны издания 1994–2004 годов.
+- id: commons-lowbrow-example
+  title: File:Parker Tiki Cat.jpg
+  publisher: Wikimedia Commons
+  url: https://commons.wikimedia.org/wiki/File:Parker_Tiki_Cat.jpg
+  sourceType: catalog
+  checked: '2026-10-14'
+  note: Old Man Parker, Tiki Cat, 2016 по описанию файла.
+- id: commons-glitch-art-example
+  title: File:Glitch Art by James Connolly and Eric Pellegrino.jpg
+  publisher: Wikimedia Commons
+  url: https://commons.wikimedia.org/wiki/File:Glitch_Art_by_James_Connolly_and_Eric_Pellegrino.jpg
+  sourceType: catalog
+  checked: '2026-10-14'
+  note: Работа James Connolly и Eric Pellegrino, 2010; фотограф jonCates указан отдельно в автоматической подписи.
+- id: commons-hyperrealism-example
+  title: File:John's Diner by John Baeder.jpg
+  publisher: Wikimedia Commons
+  url: https://commons.wikimedia.org/wiki/File:John's_Diner_by_John_Baeder.jpg
+  sourceType: catalog
+  checked: '2026-10-14'
+  note: John Baeder, John’s Diner with John’s Chevelle, 2007 по описанию файла.
+- id: commons-synthwave-example
+  title: File:Synthwave cyberspace sunset (low res).jpg
+  publisher: Wikimedia Commons
+  url: https://commons.wikimedia.org/wiki/File:Synthwave_cyberspace_sunset_(low_res).jpg
+  sourceType: catalog
+  checked: '2026-10-14'
+  note: G. Casqueiro, 2019 по описанию файла.
+- id: commons-seapunk-example
+  title: File:Seapunk is Alive!.png
+  publisher: Wikimedia Commons
+  url: https://commons.wikimedia.org/wiki/File:Seapunk_is_Alive!.png
+  sourceType: catalog
+  checked: '2026-10-14'
+  note: Ridley369, 2014 по описанию файла.
+- id: commons-vaporwave-collage
+  title: File:Vaporwave art example.png
+  publisher: Wikimedia Commons
+  url: https://commons.wikimedia.org/wiki/File:Vaporwave_art_example.png
+  sourceType: catalog
+  checked: '2026-10-14'
+  note: Ostarisk, 2017 по описанию файла.

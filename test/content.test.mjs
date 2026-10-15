@@ -55,6 +55,9 @@ test('search still finds terms moved from aliases to searchKeywords', () => {
   assert.equal(search(index, 'неоморфизм')[0]?.style.id, 'glassmorphism');
   assert.equal(search(index, 'Backrooms')[0]?.style.id, 'liminal-space');
   assert.ok(search(index, 'Дюшан').some((r) => r.style.id === 'dada'));
+  for (const [query, id] of [['Гэндзи-моногатари', 'yamato-e'], ['Ротко', 'color-field'], ['Alegria', 'corporate-memphis'], ['Y3K', 'alien-core'], ['плоттерная графика', 'computer-art'], ['Metro', 'flat-design']]) {
+    assert.ok(search(index, query).some(r => r.style.id === id), query);
+  }
 });
 
 test('macro-region rules: spread vs origin, multi-region and nothing unclassified', async () => {

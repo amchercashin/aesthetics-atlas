@@ -148,7 +148,10 @@
 - id: art-nouveau
   name: Модерн (ар-нуво)
   orig: Art Nouveau
-  aliases: [ар-нуво, модерн, югендстиль, сецессион, Муха, Гимар]
+  aliases:
+    - ар-нуво
+    - модерн
+    - югендстиль
   start: 1890
   end: 1910
   dates: ок. 1890 – 1910
@@ -176,18 +179,33 @@
   names: [Альфонс Муха, Эктор Гимар, Виктор Орта, Антонио Гауди, Фёдор Шехтель]
   example:
     file: Alphonse Mucha - Job - Google Art Project.jpg
-    title: Плакат для бумаги JOB
+    title: JOB — большой рекламный плакат
     author: Альфонс Муха
-    year: 1896
+    year: 1898
+    sources:
+      - mucha-job-1898
   wiki: Art Nouveau
   links:
     - { title: "Art Nouveau", url: "https://www.theartstory.org/movement/art-nouveau/", src: "The Art Story", lang: en }
     - { title: "Art Nouveau", url: "https://www.tate.org.uk/art/art-terms/a/art-nouveau", src: "Tate", lang: en }
+  review:
+    status: partial
+    date: "2026-10-14"
+    note: >-
+      Сверены версия и дата главного плаката по каталогу фонда Мухи; остальные сведения и связи не
+      полностью проверены.
+  searchKeywords:
+    - сецессион
+    - Муха
+    - Гимар
 
 - id: vienna-secession
   name: Венский сецессион
   orig: Vienna Secession
-  aliases: [сецессион, Климт, золотой период, венский модерн]
+  aliases:
+    - сецессион
+    - венский модерн
+    - венский сецессион
   start: 1897
   end: 1910
   dates: 1897 – 1910-е
@@ -216,11 +234,20 @@
     file: The Kiss - Gustav Klimt - Google Cultural Institute.jpg
     title: Поцелуй
     author: Густав Климт
-    year: 1907–1908
+    year: 1908–1909
     place: Галерея Бельведер, Вена
+    sources:
+      - belvedere-kiss
   wiki: Vienna Secession
   links:
     - { title: "Vienna Secession", url: "https://www.theartstory.org/movement/vienna-secession/", src: "The Art Story", lang: en }
+  review:
+    status: partial
+    date: "2026-10-14"
+    note: Датировка «Поцелуя» приведена к каталогу Бельведера; остальная карточка не полностью проверена.
+  searchKeywords:
+    - Климт
+    - золотой период
 
 - id: mir-iskusstva
   name: «Мир искусства»

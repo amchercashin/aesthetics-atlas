@@ -147,9 +147,11 @@
     - { title: "Orphism", url: "https://www.theartstory.org/movement/orphism/", src: "The Art Story", lang: en }
 
 - id: abstract-art
-  name: Абстракционизм
+  name: Ранняя абстрактная живопись
   orig: Abstract art
-  aliases: [абстракция, беспредметное искусство, Кандинский, лирическая абстракция]
+  aliases:
+    - ранняя абстрактная живопись
+    - ранний абстракционизм
   start: 1910
   end: 1940
   dates: 1910 – 1940
@@ -183,6 +185,16 @@
   wiki: Abstract art
   links:
     - { title: "Abstract Art", url: "https://www.tate.org.uk/art/art-terms/a/abstract-art", src: "Tate", lang: en }
+  searchKeywords:
+    - Абстракционизм
+    - абстракция
+    - беспредметное искусство
+    - Кандинский
+    - лирическая абстракция
+  scopeNote: >-
+    Обзор ранней абстрактной живописи примерно 1910–1940 годов. Абстракция не заканчивается в 1940 году;
+    супрематизм, неопластицизм и послевоенные направления представлены отдельно.
+  dateKind: period
 
 - id: suprematism
   name: Супрематизм
@@ -224,7 +236,9 @@
 - id: constructivism
   name: Конструктивизм
   orig: Constructivism
-  aliases: [конструктивисты, Лисицкий, Родченко, Татлин, ВХУТЕМАС]
+  aliases:
+    - конструктивизм
+    - constructivism
   start: 1915
   end: 1934
   dates: 1915 – 1934
@@ -234,15 +248,26 @@
   tier: 1
   kind: movement
   parents:
-    - { id: suprematism, type: evolved }
-    - { id: cubism, type: influence }
+    - id: suprematism
+      type: evolved
+      status: unverified
+      note: >-
+        Открытый вопрос: связь заметна в практике отдельных авторов, прежде всего Лисицкого; тип evolved
+        для движения в целом требует отдельного доказательства.
+    - id: cubism
+      type: influence
   summary: >
     Искусство как инженерия для нового общества: плакаты-клинья, фотомонтаж, рабочие клубы и башня Татлина.
-  description: |
-    После революции художники решили, что картина устарела: нужно конструировать вещи, здания и сознание.
-    Лисицкий в плакате «Клином красным бей белых» превращает супрематические формы в политическую агитацию.
-    Родченко делает фотомонтаж и рекламу с Маяковским, братья Веснины и Мельников строят клубы и дома-коммуны,
-    а ВХУТЕМАС становится советским Баухаусом.
+  description: >
+    Конструктивизм объединяет разные опыты работы с материалом, пространством и общественной функцией
+    искусства. Ранние конструкции Татлина возникли ещё до революции; его знакомство с кубистическими
+    опытами Пикассо — один из путей к новому подходу.
+
+
+    После революции проектирование вещей, зданий и печатной агитации стало важной задачей художников.
+    Плакат Лисицкого «Клином красным бей белых» соединяет геометрическую композицию с политическим
+    сообщением, но не представляет происхождение всего движения. Родченко работает с фотомонтажом и
+    рекламой, архитекторы — с клубами и жильём.
   traits:
     - Геометрия, диагонали, красный и чёрный
     - Фотомонтаж и резкие ракурсы
@@ -258,6 +283,22 @@
   links:
     - { title: "Constructivism", url: "https://www.theartstory.org/movement/constructivism/", src: "The Art Story", lang: en }
     - { title: "Constructivism", url: "https://www.tate.org.uk/art/art-terms/c/constructivism", src: "Tate", lang: en }
+  searchKeywords:
+    - конструктивисты
+    - Лисицкий
+    - Родченко
+    - Татлин
+    - ВХУТЕМАС
+  evidence:
+    - claim: История движения включает дореволюционные конструкции Татлина и его обращение к кубизму.
+      field: description
+      source: ngs-constructivism
+  review:
+    status: partial
+    date: "2026-10-14"
+    note: >-
+      Текст больше не сводит начало движения к послереволюционной агитации; тип связи с супрематизмом
+      оставлен открытым.
 
 - id: dada
   name: Дадаизм
@@ -506,7 +547,10 @@
 - id: new-objectivity
   name: Новая вещественность
   orig: New Objectivity (Neue Sachlichkeit)
-  aliases: [Neue Sachlichkeit, Дикс, Гросс, магический реализм]
+  aliases:
+    - Neue Sachlichkeit
+    - New Objectivity
+    - новая вещественность
   start: 1920
   end: 1933
   dates: 1920 – 1933
@@ -539,6 +583,10 @@
   wiki: New Objectivity
   links:
     - { title: "New Objectivity", url: "https://www.theartstory.org/movement/new-objectivity/", src: "The Art Story", lang: en }
+  searchKeywords:
+    - Дикс
+    - Гросс
+    - магический реализм
 
 - id: international-style
   name: Интернациональный стиль
@@ -592,9 +640,16 @@
   tier: 3
   kind: movement
   parents:
-    - { id: chicago-school, type: evolved }
-    - { id: arts-and-crafts, type: influence }
-    - { id: wabi-sabi, type: influence }
+    - id: chicago-school
+      type: evolved
+    - id: arts-and-crafts
+      type: influence
+    - id: wabi-sabi
+      type: influence
+      status: unverified
+      note: >-
+        Открытый вопрос. Общий интерес к природным материалам не доказывает влияние ваби-саби на
+        органическую архитектуру; нужен авторский или исторический источник.
   summary: >
     Дом, который вырастает из ландшафта: камень, дерево, консоли над водопадом и единство с природой.
   description: |
@@ -762,10 +817,19 @@
   names: [Диего Ривера, Хосе Клементе Ороско, Давид Альфаро Сикейрос, Руфино Тамайо]
   example:
     file: Mural. El hombre en el cruce de caminos. Diego rivera (1934).JPG
-    title: Человек на перепутье (фрагмент)
+    title: Человек, управляющий Вселенной (фрагмент)
     author: Диего Ривера
     year: 1934
     place: Дворец изящных искусств, Мехико
+    note: >-
+      Мексиканская версия 1934 года. «Человек на перепутье» — утраченная фреска 1933 года в
+      Рокфеллер-центре.
+    sources:
+      - inbal-rivera-1934
   wiki: Mexican muralism
   links:
     - { title: "Mexican Muralism", url: "https://www.theartstory.org/movement/mexican-muralism/", src: "The Art Story", lang: en }
+  review:
+    status: partial
+    date: "2026-10-14"
+    note: Сверены название и дата изображённой фрески; остальные утверждения и связи не пересверены.

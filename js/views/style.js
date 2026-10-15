@@ -2,8 +2,8 @@
 // Статус проверки карточки и связей виден сразу; источники утверждений — под раскрытием.
 import { html, mount, safeUrl } from '../html.js';
 import { fmtDates, fmtYear, RELATION, DOMAIN, KIND, DATE_KIND, REL_STATUS, roleLabel, plural } from '../format.js?v=audit';
-import { frame, credit } from '../ui/image.js?v=audit';
-import { eraTag, thumb, footer } from '../ui/common.js?v=audit';
+import { frame, credit } from '../ui/image.js?v=audit-p1p2';
+import { eraTag, thumb, footer } from '../ui/common.js?v=audit-p1p2';
 import { toast } from '../ui/toast.js';
 import notfound from './notfound.js';
 
@@ -30,6 +30,19 @@ function relCard(store, rel, dir) {
     ${rel.note ? html`<p class="ego-note">${rel.note}</p>` : ''}
     ${sourceLinks(store, rel.sources)}
   </li>`;
+}
+
+// Первый parent задаёт маршрут, но каждый переход сохраняет собственный тип и статус.
+export function lineageStrip(line, currentId) {
+  return html`<ol class="line-strip">${line.map((s, i) => {
+    const rel = i ? s.parents.find((p) => p.id === line[i - 1].id) : null;
+    return html`<li class="${s.id === currentId ? 'is-current' : ''}" style="--c:var(--era-${s.era})">
+      <span class="ls-connection">${rel
+        ? html`${RELATION[rel.type]?.label} · <span class="st st-${rel.status}">${REL_STATUS[rel.status]}</span>`
+        : 'Начало маршрута'}</span>
+      <a href="#/s/${s.id}" ${s.id === currentId ? html`aria-current="page"` : ''}>${thumb(s, 64)}<span class="ls-name">${s.name}</span><span class="ls-dates">${fmtDates(s)}</span></a>
+    </li>`;
+  })}</ol>`;
 }
 
 function reviewLine(s) {
@@ -115,6 +128,7 @@ export default {
           <p class="wl-facts">${[ex.year, ex.place].filter(Boolean).join(', ')}</p>
           ${ex.note && ex.note !== role ? html`<p class="wl-note">${ex.note}</p>` : ''}
           ${ex.why ? html`<p class="wl-why"><strong>Что здесь видно.</strong> ${ex.why}</p>` : ''}
+          ${sourceLinks(store, ex.sources)}
           ${credit(img)}
           ${ex.external ? html`<p class="credit"><a href="${safeUrl(ex.external.page)}" target="_blank" rel="noopener">Открыть изображение на странице файла</a></p>` : ''}
           <p class="wl-summary">${s.summary}</p>
@@ -137,21 +151,19 @@ export default {
         <div class="gallery-grid">
           ${s.gallery.map((g, i) => html`<figure class="art">
             <button class="work-zoom" type="button" data-gallery="${i}" ${g.img ? '' : 'disabled'} aria-label="Открыть крупно: ${g.title ?? ''}">${frame(g.img, p, { sizes: '(min-width: 900px) 30vw, 90vw', alt: g.title ?? '', capUpscale: true })}</button>
-            <figcaption>${roleLabel(g.role) ? html`<span class="wl-role">${roleLabel(g.role)}</span>` : ''}<span class="g-title">${g.title}</span>${[g.author, g.year].filter(Boolean).length ? html`<span class="g-meta">${[g.author, g.year].filter(Boolean).join(', ')}</span>` : ''}${g.why ? html`<span class="g-meta">${g.why}</span>` : ''}</figcaption>
+            <figcaption>${roleLabel(g.role) ? html`<span class="wl-role">${roleLabel(g.role)}</span>` : ''}<span class="g-title">${g.title}</span>${[g.author, g.year, g.place].filter(Boolean).length ? html`<span class="g-meta">${[g.author, g.year, g.place].filter(Boolean).join(', ')}</span>` : ''}${g.note ? html`<span class="g-meta">${g.note}</span>` : ''}${g.why ? html`<span class="g-meta">${g.why}</span>` : ''}</figcaption>
+            ${sourceLinks(store, g.sources)}
             ${credit(g.img)}
+            ${g.external ? html`<p class="credit"><a href="${safeUrl(g.external.page)}" target="_blank" rel="noopener">Открыть изображение на странице файла</a></p>` : ''}
           </figure>`)}
         </div>
       </section>` : ''}
 
       <section class="lineage">
-        <h2 class="section-title">Родословная</h2>
-        ${line.length > 1 ? html`<p class="lineage-lead">Линия по первому указанному предку — редакционная схема атласа. Связи без пометки «подтверждено» ещё не проверены по источникам.</p>
-        <ol class="line-strip">
-          ${line.map((a) => html`<li class="${a.id === s.id ? 'is-current' : ''}" style="--c:var(--era-${a.era})">
-            <a href="#/s/${a.id}" ${a.id === s.id ? 'aria-current="page"' : ''}>${thumb(a, 64)}<span class="ls-name">${a.name}</span><span class="ls-dates">${fmtDates(a)}</span></a>
-          </li>`)}
-        </ol>` : s.origin === 'unknown'
-          ? html`<p class="lineage-lead">Происхождение не установлено: подтверждённых предшественников в атласе нет. Похожие по виду стили — в разделе «Визуальные сопоставления».</p>`
+        <h2 class="section-title">Цепочка связей</h2>
+        ${line.length > 1 ? html`<p class="lineage-lead">Один из редакционных маршрутов по атласу, по первой связи каждой карточки. Для переходов показаны тип и степень проверки: влияние, реакция и возрождение не означают прямого происхождения.</p>
+        ${lineageStrip(line, s.id)}` : s.origin === 'unknown'
+          ? html`<p class="lineage-lead">Подтверждённый предшественник в атласе не установлен.${s.comparisons.length ? ' Похожие по виду стили — в разделе «Визуальные сопоставления».' : ''}</p>`
           : html`<p class="lineage-lead">Один из независимых истоков в атласе: предшественников у этого стиля здесь нет.</p>`}
         <div class="ego">
           <div class="ego-col">

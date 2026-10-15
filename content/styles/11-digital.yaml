@@ -11,8 +11,14 @@
   tier: 2
   kind: period
   parents:
-    - { id: pixel-art, type: evolved }
-    - { id: punk-graphics, type: influence }
+    - id: pixel-art
+      type: evolved
+      status: unverified
+      note: >-
+        Открытый вопрос. Использование растровых значков и GIF не означает происхождения всей веб-эстетики
+        от пиксель-арта. Тип evolved остаётся на проверке.
+    - id: punk-graphics
+      type: influence
   summary: >
     Домашние страницы 90-х: мигающие GIF, счётчики посетителей, фоны со звёздами и вечное «Under construction».
   description: |
@@ -29,8 +35,17 @@
   palette: ["#000080", "#00ffff", "#ff00ff", "#ffff00", "#c0c0c0"]
   paletteNote: Редакторская подборка из «веб-безопасной» палитры 216 цветов — тёмно-синий, циан, маджента, жёлтый, серый.
   example:
-    title: Домашняя страница на GeoCities
-    note: Свободных скриншотов эпохи почти нет — показана редакторская подборка из веб-безопасных цветов.
+    asset: assets/illustrations/web-1-0.svg
+    title: Домашняя веб-страница в духе 1990-х
+    author: Редакция атласа
+    year: 2026
+    role: reconstruction
+    note: >-
+      Оригинальная схема, созданная для атласа в 2026 году; не исторический скриншот и не изображение
+      реального продукта.
+    whyRepresentative: >-
+      Звёздный фон, ссылки, рамки, счётчик и плашка Under construction сведены в учебный макет. Мигающая
+      анимация не воспроизводится.
   wiki: GeoCities
   links:
     - { title: "Old Web", url: "https://aesthetics.fandom.com/wiki/Old_Web", src: "Aesthetics Wiki", lang: en }
@@ -151,7 +166,12 @@
   tier: 2
   kind: design-system
   parents:
-    - { id: y2k-aesthetic, type: evolved }
+    - id: y2k-aesthetic
+      type: evolved
+      status: unverified
+      note: >-
+        Открытый вопрос. Метод имитации физических объектов старше Y2K. Нужно проверить связь с выбранным
+        периодом интерфейсов и заменить тип evolved только при подтверждении.
   summary: >
     Интерфейсы, имитирующие реальные вещи: кожаный календарь, деревянная книжная полка и жёлтая бумага заметок.
   description: |
@@ -168,8 +188,15 @@
   palette: ["#6b4a2e", "#c9a46b", "#f3e7b6", "#3f5f3a", "#9aa3ab"]
   paletteNote: Редакторская подборка — оттенки кожи, дерева, жёлтой бумаги, сукна и металла, которые имитировали интерфейсы.
   example:
-    title: Интерфейс iOS 6 (календарь, заметки, книжная полка)
-    note: Скриншоты интерфейсов Apple защищены — показана редакторская подборка цветов кожи, дерева и бумаги.
+    asset: assets/illustrations/skeuomorphism.svg
+    title: Интерфейс ежедневника с кожей, бумагой и металлическими кольцами
+    author: Редакция атласа
+    year: 2026
+    role: illustration
+    note: >-
+      Оригинальная схема, созданная для атласа в 2026 году; не исторический скриншот и не изображение
+      реального продукта.
+    whyRepresentative: Имитируются материалы, швы, тени и физические детали переплёта.
   wiki: Skeuomorph
   links:
     - { title: "Skeuomorphism", url: "https://aesthetics.fandom.com/wiki/Skeuomorphism", src: "Aesthetics Wiki", lang: en }
@@ -241,19 +268,31 @@
   names: [Роза Менкман, Takeshi Murata, Ant Scott]
   example:
     file: Glitch Art by James Connolly and Eric Pellegrino.jpg
-    title: Глитч-арт
+    title: DIE COMPUTER / Southbridge Slow Electronics
     author: James Connolly, Eric Pellegrino
+    year: 2010
+    sources:
+      - commons-glitch-art-example
   wiki: Glitch art
   links:
     - { title: "Glitch Art", url: "https://aesthetics.fandom.com/wiki/Glitch_Art", src: "Aesthetics Wiki", lang: en }
+  review:
+    status: partial
+    date: "2026-10-14"
+    note: >-
+      Подпись конкретного изображения дополнена по странице файла; это не полная верификация истории
+      направления.
 
 - id: flat-design
   name: Плоский дизайн
   orig: Flat design
-  aliases: [флэт, плоский дизайн, Metro, iOS 7]
-  start: 2012
+  aliases:
+    - флэт
+    - плоский дизайн
+    - flat design
+  start: 2010
   end: null
-  dates: 2012 – наши дни
+  dates: 2010-е – наши дни
   era: digital
   domain: [design, internet]
   region: Весь мир
@@ -262,30 +301,61 @@
   parents:
     - { id: swiss-style, type: revival }
     - { id: skeuomorphism, type: reaction }
-  summary: >
-    Никаких теней и текстур: чистые цветные плоскости, простые иконки и типографика — как швейцарский плакат в смартфоне.
+  summary: >-
+    Чистые цветные плоскости, простые значки и типографика без буквальной имитации кожи, дерева и объёма
+    предметов.
   description: |
     Microsoft с интерфейсом Metro (Windows Phone, Windows 8) и Apple с iOS 7 в 2013 году отказались от
     имитации материалов. Плоские цветные плитки, тонкие иконки, крупная типографика и много воздуха
     вернули в цифровой дизайн принципы швейцарского стиля. Плоский дизайн быстро стал стандартом веба,
     логотипов и иллюстрации.
   traits:
-    - Отсутствие теней, бликов и текстур
-    - Яркие плоские цветные плоскости
-    - Простые линейные иконки
+    - Цветные плоскости без имитации физических материалов
+    - Простые геометрические или линейные значки
     - Типографика и сетка как основа
+    - В строгом варианте — отсутствие объёмных теней и бликов
   names: [Microsoft Metro, Джонатан Айв (iOS 7), Google]
   example:
-    file: "enwiki:Flat widgets.png"
-    title: Пример плоских элементов интерфейса
+    asset: assets/illustrations/flat-design.svg
+    title: "Плоский интерфейс: цвет, сетка и типографика"
+    author: Редакция атласа
+    year: 2026
+    role: illustration
+    note: >-
+      Оригинальная схема, созданная для атласа в 2026 году; не исторический скриншот и не изображение
+      реального продукта.
+    whyRepresentative: >-
+      Однотонные блоки, простые знаки и шрифтовая иерархия; нет теней, фактур кожи и имитации объёмных
+      кнопок.
   wiki: Flat design
   links:
     - { title: "Flat Design", url: "https://aesthetics.fandom.com/wiki/Flat_Design", src: "Aesthetics Wiki", lang: en }
+  dateKind: popularity
+  approx: true
+  dateNote: >-
+    Начало волны в массовых интерфейсах: Metro документирован Microsoft в 2010 году. Сам подход и его
+    предшественники старше.
+  kindNote: Общий дизайн-подход, объединяющий разные продукты; не единая система правил конкретной компании.
+  searchKeywords:
+    - Metro
+    - iOS 7
+  evidence:
+    - claim: Metro для Windows Phone 7 документирован Microsoft в марте 2010 года.
+      field: dates
+      source: microsoft-metro-2010
+  review:
+    status: partial
+    date: "2026-10-14"
+    note: >-
+      Проверен пример Metro 2010 года; основная иллюстрация заменена редакционной схемой. Исторические
+      связи остаются непроверенными.
 
 - id: material-design
   name: Material Design
   orig: Material Design
-  aliases: [материальный дизайн, Material You, Google, Android]
+  aliases:
+    - материальный дизайн
+    - Material Design
   start: 2014
   end: null
   dates: 2014 – наши дни
@@ -311,12 +381,41 @@
   names: [Маттиас Дуарте, Google Design, Android]
   example:
     file: Material you light.png
-    title: Material You
+    title: "Material You: светлая тема"
     author: Google
-    year: 2021
+    year: 2023 (дата изображения)
+    role: illustration
+    note: >-
+      2021 — год представления Material You; 2023 — дата конкретного файла по Commons. Это позднее
+      поколение Material, не образец запуска системы в 2014 году.
+    whyRepresentative: Пастельные тональные поверхности и скруглённые формы показывают позднее поколение системы.
+    sources:
+      - commons-material-you
   wiki: Material Design
   links:
     - { title: "Material Design", url: "https://m3.material.io/", src: "Google", lang: en }
+  gallery:
+    - file: enwiki:Flat widgets.png
+      title: Элементы интерфейса Material Design
+      author: Totie
+      year: 2015
+      role: illustration
+      note: >-
+        Учебная иллюстрация с тенями и приподнятыми элементами; эти свойства отличают её от строгого
+        плоского дизайна.
+      sources:
+        - enwiki-material-widgets
+  scopeNote: >-
+    Система Google с 2014 года. В галерее показан ранний вариант со слоями и тенями; главный пример
+    относится к поколению Material You.
+  searchKeywords:
+    - Material You
+    - Google
+    - Android
+  review:
+    status: partial
+    date: "2026-10-14"
+    note: Разведены поколения системы и даты иллюстраций; дата запуска и все связи отдельно не пересверены.
 
 - id: post-internet
   name: Пост-интернет
@@ -385,9 +484,18 @@
     file: Seapunk is Alive!.png
     title: Seapunk is Alive!
     author: Ridley369
+    year: 2014
+    sources:
+      - commons-seapunk-example
   wiki: Seapunk
   links:
     - { title: "Seapunk", url: "https://aesthetics.fandom.com/wiki/Seapunk", src: "Aesthetics Wiki", lang: en }
+  review:
+    status: partial
+    date: "2026-10-14"
+    note: >-
+      Подпись конкретного изображения дополнена по странице файла; это не полная верификация истории
+      направления.
 
 - id: web-brutalism
   name: Веб-брутализм
@@ -426,8 +534,15 @@
   palette: ["#ffffff", "#000000", "#0000ee", "#ff4911", "#ffde59"]
   paletteNote: Редакторская подборка — белый фон, чёрные рамки, стандартный синий цвет ссылок и кислотные плашки.
   example:
-    title: Сайт в стиле веб-брутализма
-    note: Свободного скриншота нет — показана редакторская подборка цветов.
+    asset: assets/illustrations/web-brutalism.svg
+    title: Веб-страница с открытой структурой и грубой типографикой
+    author: Редакция атласа
+    year: 2026
+    role: illustration
+    note: >-
+      Оригинальная схема, созданная для атласа в 2026 году; не исторический скриншот и не изображение
+      реального продукта.
+    whyRepresentative: Жёсткие линии таблицы, крупные заголовки, стандартные синие ссылки и контрастный фон.
   links:
     - { title: "Brutalist Websites", url: "https://brutalistwebsites.com/", src: "brutalistwebsites.com", lang: en }
     - { title: "Neubrutalism", url: "https://aesthetics.fandom.com/wiki/Neubrutalism", src: "Aesthetics Wiki", lang: en }
@@ -462,10 +577,18 @@
   names: [Такаси Мураками, Ёситомо Нара, Чихо Аосима, Mr.]
   example:
     file: Takashi Murakami Mononoke Kyoto.jpg
-    title: Выставка «Мононокэ Киото»
+    title: Экспозиция «Takashi Murakami Mononoke Kyoto»
     author: Такаси Мураками
     year: 2024
     place: Киото
+    role: illustration
+    note: Вид выставки со скульптурными объектами, а не отдельная плоская картина.
+    whyRepresentative: >-
+      Показывает персонажей и выставочный контекст Мураками; плоскую цветовую композицию этот ракурс
+      объясняет ограниченно.
   wiki: Superflat
   links:
     - { title: "Superflat", url: "https://www.theartstory.org/movement/superflat/", src: "The Art Story", lang: en }
+  scopeNote: >-
+    Концепция и круг практик, объединяющие живопись, графику, скульптуру и коммерческие образы. «Плоскость»
+    не означает, что каждый объект должен быть двумерным.

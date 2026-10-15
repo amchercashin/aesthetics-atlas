@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="900" viewBox="0 0 1200 900" role="img" aria-labelledby="title desc">
+<title id="title">Редакторская иллюстрация alien core: опалесценция и биоморфные формы</title>
+<desc id="desc">Оригинальная редакционная иллюстрация атласа, 2026. Схема признаков, не исторический документ.</desc>
+<defs><radialGradient id="space"><stop stop-color="#394755"/><stop offset="1" stop-color="#161e2a"/></radialGradient><linearGradient id="chrome" x1="0" y1="0" x2=".9" y2="1"><stop stop-color="#77949c"/><stop offset=".12" stop-color="#e8fff0"/><stop offset=".27" stop-color="#b9a5d7"/><stop offset=".4" stop-color="#f8d9ed"/><stop offset=".48" stop-color="#8dbdc8"/><stop offset=".56" stop-color="#244658"/><stop offset=".66" stop-color="#f6ffdf"/><stop offset=".8" stop-color="#a2e1d1"/><stop offset="1" stop-color="#788ab6"/></linearGradient><linearGradient id="eye" x2="0" y2="1"><stop stop-color="#060c17"/><stop offset=".7" stop-color="#38406a"/><stop offset="1" stop-color="#82c3c5"/></linearGradient><radialGradient id="opal" cx=".3" cy=".2"><stop stop-color="#f5ffef"/><stop offset=".3" stop-color="#b4d9e5"/><stop offset=".6" stop-color="#cfaed8"/><stop offset=".8" stop-color="#8ddcca"/><stop offset="1" stop-color="#4d6c94"/></radialGradient></defs>
+<rect x="0" y="0" width="1200" height="900" rx="0" fill="url(#space)" />
+<circle cx="600" cy="430" r="337" fill="none" stroke="#aac3d3" stroke-width="1" opacity=".5"/>
+<circle cx="600" cy="430" r="366" fill="none" stroke="#aac3d3" stroke-width="1" opacity=".2"/>
+<path d="M570 214C516 135 409 203 424 316C437 401 393 428 374 501C341 630 444 720 570 687C687 657 705 750 788 661C883 558 779 480 759 405C733 304 847 264 763 205C711 169 650 272 570 214Z" fill="url(#chrome)" stroke="#e6ffff" stroke-width="4"/>
+<path d="M570 214C590 315 704 260 718 357C730 446 582 451 535 535C505 589 537 635 570 687" fill="none" stroke="#ecfbff" stroke-width="19" opacity=".6"/>
+<path d="M432 327C480 347 468 422 432 450M695 557C720 605 773 575 786 622" fill="none" stroke="#354c7c" stroke-width="10" opacity=".7"/>
+<path d="M456 501C502 469 544 459 551 488C558 516 526 551 484 554C445 557 437 526 456 501Z" fill="url(#eye)" />
+<path d="M620 357C645 335 687 332 695 357C703 382 661 415 631 409C607 404 601 375 620 357Z" fill="url(#eye)" />
+<circle cx="260" cy="240" r="50" fill="url(#opal)" stroke="#d0fffa" stroke-width="2"/>
+<circle cx="972" cy="624" r="70" fill="url(#opal)" stroke="#d0fffa" stroke-width="2"/>
+<circle cx="884" cy="139" r="26" fill="url(#opal)" stroke="#d0fffa" stroke-width="2"/>
+<circle cx="227" cy="701" r="21" fill="url(#opal)" stroke="#d0fffa" stroke-width="2"/>
+<path d="M159 450h84M201 408v84M967 294h64M999 262v64" fill="none" stroke="#d8eaf7" stroke-width="2"/>
+<text x="600" y="825" font-family="Arial, sans-serif" font-size="20" fill="#bbd7e3" text-anchor="middle" letter-spacing="5">IRIDESCENT / ORGANIC / OTHERWORLDLY</text>
+</svg>

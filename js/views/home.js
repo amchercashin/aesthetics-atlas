@@ -1,8 +1,8 @@
 // Главная: заголовок, поиск, лента эпох (вся история одной полосой), три входа и стиль дня.
 import { html, mount } from '../html.js';
 import { fmtDates, fmtYear, plural } from '../format.js?v=audit';
-import { frame } from '../ui/image.js?v=audit';
-import { footer, thumb } from '../ui/common.js?v=audit';
+import { frame } from '../ui/image.js?v=audit-p1p2';
+import { footer, thumb } from '../ui/common.js?v=audit-p1p2';
 import { createTimeScale, segmentWidths } from '../timescale.js';
 import { layoutRows } from '../layout.js';
 
