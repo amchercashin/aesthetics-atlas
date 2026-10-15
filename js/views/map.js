@@ -10,7 +10,12 @@ import { createTimeScale, segmentWidths, segmentTicks } from '../timescale.js';
 import { layoutGenealogy, routeBranches } from '../layout.js?v=sparse';
 import { frame, markLoaded } from '../ui/image.js?v=author-pilot';
 import { eraTag, thumb } from '../ui/common.js?v=author-pilot';
-import { replaceParams } from '../router.js';
+import { replaceParams, pushParams } from '../router.js?v=map4';
+import { pushStep, toParam, parseTrail } from '../trail.js?v=map4';
+import { stepTarget } from '../graphnav.js?v=chain-author-map4';
+import { pickAmbient } from '../ambient.js?v=map4';
+import { createGutterLens } from '../lens.js?v=map4';
+import { initNebulae, drawNebulae, drawNebulaNames, disposeNebulae, setNebulaDirtyHandler } from '../nebulae.js?v=chain-author-map4';
 import { buildIndex, search } from '../search.js?v=author-pilot';
 
 const NS = 'http://www.w3.org/2000/svg';
@@ -26,6 +31,8 @@ const FONT_PX = { 1: 16, 2: 14, 3: 13 };
 const DATE_FONT = '400 11px "Golos Text"';
 const R = { z0: { 1: 3.6, 2: 2.8, 3: 2.4 }, z1: { 1: 6, 2: 5, 3: 4.2 }, z2: { 1: 15, 2: 13, 3: 11 } };
 const DASH = { evolved: '', influence: '', reaction: '6 4', revival: '1.5 4' };
+const AMBIENT_CAP = 40; // фоновых дуг на рабочем масштабе
+const NEB_PADX = 60, NEB_PADY = 70;   // поля поля плотности туманностей в обзорных единицах
 const LONG = 1200;      // разрыв во времени (px рабочего масштаба), после которого связь рисуется парными отростками
 const reduceMotion = () => window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 const clamp = (v, a, b) => Math.min(b, Math.max(a, v));
@@ -91,7 +98,7 @@ export default {
           <div class="map-pop map-legend-pop" hidden>
             <p class="lg-title">Как читать карту</p>
             <ul>
-              <li><svg viewBox="0 0 40 14" aria-hidden="true"><circle cx="5" cy="7" r="4" fill="var(--era-xix)"/><path d="M10 7h24" class="edge lg"/></svg>Точка — начало стиля, цвет — эпоха; линия от точки — ствол, от которого отходят потомки</li>
+              <li><svg viewBox="0 0 40 14" aria-hidden="true"><circle cx="5" cy="7" r="4" fill="var(--ink-3)"/><path d="M10 7h24" class="edge lg"/></svg>Точка — начало стиля, цвет — туманность (группа близких стилей); линия от точки — ствол, от которого отходят потомки</li>
               <li><svg viewBox="0 0 40 14" aria-hidden="true"><path d="M4 7h32" class="dur-legend"/></svg>Длительность — у выбранного стиля и в датах подписи</li>
               <li><svg viewBox="0 0 40 14" aria-hidden="true"><path d="M4 2v5q0 5 5 5h27" class="edge lg rel-evolved"/></svg>Развитие — ветвь от предка</li>
               <li><svg viewBox="0 0 40 14" aria-hidden="true"><path d="M2 7h36" class="edge lg rel-influence"/></svg>Влияние</li>
@@ -127,9 +134,10 @@ export default {
         </div>
       </nav>
       <div class="map-stage" tabindex="0" aria-label="Карта родословной стилей. Стрелки — двигать, плюс и минус — масштаб, Tab — по стилям.">
+        <canvas class="map-neb" aria-hidden="true"></canvas>
         <svg class="map-svg z0">
           <defs>${[11, 13, 15].map((r) => html`<clipPath id="clip-${r}"><circle cx="0" cy="0" r="${r}"/></clipPath>`)}</defs>
-          <g class="m-eras"></g><g class="m-dur"></g><g class="m-life"></g><g class="m-cmp"></g><g class="m-contexts"></g><g class="m-edges"></g><g class="m-edge-hits"></g><g class="m-plates"></g>
+          <g class="m-eras"></g><g class="m-dur"></g><g class="m-life"></g><g class="m-cmp"></g><g class="m-contexts"></g><g class="m-edges"></g><g class="m-edge-hits"></g><g class="m-trail"></g><g class="m-nebnames"></g><g class="m-plates"></g>
           <g class="m-nodes"></g><g class="m-labels"></g><g class="m-stubs"></g><g class="m-sel"></g><g class="m-elabels"></g><g class="m-axis"></g>
         </svg>
         <div class="map-offscreen" aria-label="Связи за краем экрана"></div>
@@ -147,18 +155,23 @@ export default {
         <aside class="map-panel" hidden aria-live="polite"></aside>
         <p class="map-loading">Строим карту…</p>
         <p class="map-hint"></p>
+        <nav class="map-trail" aria-label="Маршрут" hidden></nav>
       </div>
     </div>`);
 
     const q = (s) => root.querySelector(s);
     const stage = q('.map-stage');
     const svg = q('.map-svg');
-    const G = Object.fromEntries(['eras', 'dur', 'life', 'cmp', 'contexts', 'edges', 'edge-hits', 'plates', 'nodes', 'labels', 'stubs', 'sel', 'elabels', 'axis'].map((k) => [k, svg.querySelector(`.m-${k}`)]));
+    const G = Object.fromEntries(['eras', 'dur', 'life', 'cmp', 'contexts', 'edges', 'edge-hits', 'trail', 'nebnames', 'plates', 'nodes', 'labels', 'stubs', 'sel', 'elabels', 'axis'].map((k) => [k, svg.querySelector(`.m-${k}`)]));
     const tip = q('.map-tip');
     const edgePop = q('.map-edge-pop');
     const panel = q('.map-panel');
     const chips = q('.map-offscreen');
     const hint = q('.map-hint');
+    const trailNav = q('.map-trail');
+    const nebCanvas = q('.map-neb');
+    const nebCtx = nebCanvas.getContext('2d');
+    const trailPath = el('path', { class: 'trail-path' }, G.trail);
     const navTrack = q('.era-nav-track');
     const navWin = q('.era-nav-window');
     const navSegs = [...root.querySelectorAll('.en-seg')];
@@ -174,7 +187,10 @@ export default {
 
     // ---------- состояние ----------
     const t = { k: 1, tx: 0, ty: 0 };
-    let vw = 0, vh = 0, sc, k0 = 0.1, syFit = 0.5, contentRefH = 0;
+    // Узкий экран: карта повёрнута на 90° по часовой стрелке — время идёт сверху вниз. Внутри всё считается
+    // как раньше, в «виртуальной» альбомной сцене vw × vh; pw × ph — настоящий размер, rot — повёрнута ли сцена.
+    let vw = 0, vh = 0, pw = 0, ph = 0, rot = false, sc, k0 = 0.1, syFit = 0.5, contentRefH = 0;
+    const rotateOn = ctx.params?.get('rot') !== '0';
     const nodes = [], edges = [], cmps = [], contextEdges = [];
     const nodeById = new Map();
     const axis = {};
@@ -184,8 +200,22 @@ export default {
     const authorHidden = (s) => isAuthor(s) && !showAuthors && s.id !== selected;
     let filter = { domain: '', family: '' };
     let camBeforeFocus = null, camBeforeFilter = null;
+    let trail = [];        // маршрут по стилям; источник правды — параметр trail в адресе
+    const lensParam = ctx.params?.get('lens') !== '0';
+    const lensNow = () => lensParam && !rot;   // на повёрнутой карте (телефон) желоба не нужны: сцена слишком короткая
+    // Желоба по краям: центр — камера, остальное сжато у краёв (js/lens.js). Пока кадр не нарисован — тождество камеры.
+    const IDENT = { fwd: (x) => x * t.k + t.tx, zone: () => 'C', hasL: false, hasR: false, gutter: 0, width: 1e9 };
+    let lens = IDENT;
+    let primaryOf = null, nebDpr = 1, nebTimer = 0;   // туманности: главный предок по id, DPR слоя, пауза перед пересборкой
+    const neb = { ready: false };
+    let nebBuildVersion = 0;
+    const nebOn = ctx.params?.get('neb') !== '0';
     const LABEL_PAD = window.innerWidth < 760 ? 110 : 170;
-    const isNarrow = () => vw < 760;
+    const isNarrow = () => pw < 760;
+    // Экранные координаты ↔ виртуальные (x_в = y_э, y_в = pw − x_э) и сдвиги.
+    const toV = (cx, cy) => { const r = stage.getBoundingClientRect(), x = cx - r.left, y = cy - r.top; return rot ? { x: y, y: pw - x } : { x, y }; };
+    const toP = (x, y) => (rot ? { x: pw - y, y: x } : { x, y });
+    const dV = (dx, dy) => (rot ? { x: dy, y: -dx } : { x: dx, y: dy });
 
     // Высота строк зависит от масштаба: «Вся история» вписывает всё по высоте, просторный обзор
     // держит строки читаемыми (SY_OV), рабочий масштаб раскрывает их полностью.
@@ -197,12 +227,13 @@ export default {
       const p = clamp(Math.log(k / k0) / Math.log(ko / k0), 0, 1);
       return fitY * Math.pow(SY_OV / fitY, p);
     }
-    const X = (year) => sc.x(year) * t.k + t.tx;
-    const XR = (xr) => xr * t.k + t.tx;           // координата раскладки → экран
+    const X = (year) => lens.fwd(sc.x(year));
+    const XR = (xr) => lens.fwd(xr);              // координата раскладки → экран (с желобами по краям)
     const yRef = (n) => PAD + n.row * ROW + ROW / 2;
     const Y = (n) => AXIS_H + t.ty + yRef(n) * syOf(t.k);
-    const panelWidth = () => (!panel.hidden && !isNarrow() ? panel.offsetWidth + 24 : 0);
-    const sheetHeight = () => (!panel.hidden && isNarrow() ? panel.offsetHeight + 8 : 0);
+    // Нижняя шторка на повёрнутой карте занимает «правый» край сцены (конец времени).
+    const panelWidth = () => (rot ? (!panel.hidden ? panel.offsetHeight + 8 : 0) : (!panel.hidden && !isNarrow() ? panel.offsetWidth + 24 : 0));
+    const sheetHeight = () => (!rot && !panel.hidden && isNarrow() ? panel.offsetHeight + 8 : 0);
     const viewRect = () => ({ x0: 0, x1: vw - panelWidth(), y0: AXIS_H, y1: vh - sheetHeight() });
 
     // ---------- построение ----------
@@ -227,6 +258,7 @@ export default {
         reach: ((s.tier === 1 ? 11 : R.z1[s.tier]) + 7 + meta.get(s.id).w + 12) / OV_K,
       }));
       const lay = layoutGenealogy(layNodes, sc.x, { now: store.now, dot: 16, gap: 22, tail: 28, longGap: LONG });
+      primaryOf = lay.primary;
       // Коридоры ищутся при масштабе обзора: свободный там — свободен и при любом более крупном.
       const routes = routeBranches(layNodes, sc.x, lay, { now: store.now, dot: 16, scale: OV_K, extent: (n) => n.reach });
       contentRefH = PAD * 2 + lay.count * ROW;
@@ -263,8 +295,8 @@ export default {
         const life = el('path', { class: `life t${s.tier}`, 'data-id': s.id, style: `--w:${weight(s.id).toFixed(2)}` }, G.life);
         const g = el('g', { class: `node t${s.tier}`, tabindex: '0', role: 'button', 'aria-label': `${s.name}, ${fmtDates(s)}`, 'data-id': s.id }, G.nodes);
         el('circle', { class: 'hit', r: 18 }, g);
-        const dot = el('circle', { class: 'dot', fill: `var(--era-${s.era})` }, g);
-        const ring = el('circle', { class: 'ring', stroke: `var(--era-${s.era})` }, g);
+        const dot = el('circle', { class: 'dot', fill: store.nebulaColor(s.id) }, g);
+        const ring = el('circle', { class: 'ring', stroke: store.nebulaColor(s.id) }, g);
         // Подложка подписи: линии уходят под название, как на транспортной карте, а не сквозь текст.
         const plate = el('rect', { class: 'plate', rx: 3 }, G.plates);
         const text = el('text', { class: `label t${s.tier}`, 'data-id': s.id }, G.labels);
@@ -338,7 +370,50 @@ export default {
       drawMinimap();
       overview(false);
       applyParams(ctx.params, true);
+      buildNebulae();
     }
+
+    // Туманности. Обзорные единицы прототипа: x = PADX + sc.x·OV_K, y = PADY + yRef·SY_OV.
+    function rebuildNeb() { clearTimeout(nebTimer); nebTimer = setTimeout(buildNebulae, 120); }
+    async function buildNebulae() {
+      clearTimeout(nebTimer);
+      if (!nebOn || !store.nebulae.length) return;
+      const version = ++nebBuildVersion;
+      const nebNodes = nodes.filter((n) => !authorHidden(n.s));
+      const css = getComputedStyle(document.documentElement);
+      const colors = { paper: css.getPropertyValue('--paper').trim(), ink: css.getPropertyValue('--ink').trim() };
+      const theme = css.colorScheme.includes('dark') ? 'dark' : 'light';
+      const idx = new Map(nebNodes.map((n, i) => [n.s.id, i]));
+      // id части в слое — её номер (так устроены поля стилей: part = номер части)
+      const partList = store.nebulae.flatMap((n, ni) => n.parts.map((p) => ({ key: p.id, name: p.name, nebula: ni })));
+      const parts = partList.map((p, i) => ({ id: i, name: p.name, nebula: p.nebula }));
+      const partIdx = new Map(partList.map((p, i) => [p.key, i]));
+      const nebIdx = new Map(store.nebulae.map((n, i) => [n.id, i]));
+      const A = {
+        W: NEB_PADX * 2 + sc.total * OV_K, H: NEB_PADY * 2 + contentRefH * SY_OV,
+        nebulae: store.nebulae.map((n) => ({ name: n.name, color: n.color })), parts,
+        styles: nebNodes.map((n) => ({
+          x: NEB_PADX + sc.x(n.s.start) * OV_K, y: NEB_PADY + yRef(n) * SY_OV, tier: n.s.tier,
+          nebula: nebIdx.get(n.s.nebula) ?? -1, part: partIdx.get(n.s.part) ?? -1,
+          palette: n.s.palette?.colors?.length ? n.s.palette.colors : ['#888780'], accent: n.s.palette?.accent ?? null,
+          parent: idx.get(primaryOf.get(n.s.id)) ?? -1,
+          links: n.s.parents.map((r) => [idx.get(r.id), 0]).filter(([j]) => j !== undefined),
+        })),
+      };
+      neb.ready = false;
+      const t0 = performance.now();
+      const ready = await initNebulae(A, { theme, colors });
+      if (!ready || destroyed || version !== nebBuildVersion) return;
+      svg.dataset.nebulaMembers = String(nebNodes.length);
+      window.__nebInit = performance.now() - t0;
+      neb.ready = true;
+      schedule();
+    }
+    const nebulaCam = () => {
+      const kx = t.k / OV_K, ky = syOf(t.k) / SY_OV;
+      return { kx, ky, ox: t.tx - NEB_PADX * kx, oy: AXIS_H + t.ty - NEB_PADY * ky, w: vw, h: vh, axis: AXIS_H, dpr: nebDpr,
+        toScreen: (ux, uy) => [t.tx + (ux - NEB_PADX) * kx, AXIS_H + t.ty + (uy - NEB_PADY) * ky], svg: el };
+    };
 
     function applyParams(params, first = false) {
       setLayer('all', params.get('links') === 'all');
@@ -351,11 +426,10 @@ export default {
       if (d !== filter.domain || k !== filter.family) setFilter({ domain: d, family: k }, { animate: !first });
       const focus = store.resolve(params.get('s') ?? '');
       const eraI = store.eras.findIndex((e) => e.id === params.get('era'));
-      if (focus && nodeById.has(focus)) select(focus, { animate: !first, mode: params.get('view') === 'line' ? 'line' : 'near' });
-      else {
-        if (selected) clearSelection();
-        if (eraI >= 0) zoomToEra(eraI, first ? 0 : 650);
-      }
+      trail = parseTrail(params.get('trail'), (x) => nodeById.has(x));
+      if (focus && nodeById.has(focus)) select(focus, { animate: !first, mode: params.get('view') === 'line' ? 'line' : 'near', nav: 'url' });
+      else if (selected) clearSelection({ restore: true, nav: 'url' });
+      else if (eraI >= 0) zoomToEra(eraI, first ? 0 : 650);
     }
 
     // ---------- отрисовка ----------
@@ -364,6 +438,7 @@ export default {
     function draw() {
       raf = 0;
       if (!sc) return;
+      lens = lensNow() ? createGutterLens({ total: sc.total, k: t.k, tx: t.tx, width: vw - panelWidth() }) : IDENT;
       const sy = syOf(t.k);
       const rowH = ROW * sy;
       const m = rowH < 17 ? 'z0' : rowH < 31 || t.k < Z2_K ? 'z1' : 'z2';
@@ -376,17 +451,34 @@ export default {
       });
       drawAxis();
 
+      // Туманности: слой на canvas под деревом, названия — в SVG поверх (ниже, после подписей стилей).
+      const nebT0 = window.__mapPerf ? performance.now() : 0;
+      nebCtx.setTransform(1, 0, 0, 1, 0, 0);
+      nebCtx.clearRect(0, 0, nebCanvas.width, nebCanvas.height);
+      if (neb.ready && nebOn) {
+        nebCtx.setTransform(nebDpr, 0, 0, nebDpr, 0, 0);
+        const gl = lens.hasL ? lens.gutter : 0, gr = lens.hasR ? lens.width - lens.gutter : vw;
+        nebCtx.save(); nebCtx.beginPath(); nebCtx.rect(gl, AXIS_H, gr - gl, vh - AXIS_H); nebCtx.clip();
+        drawNebulae(nebCtx, nebulaCam());
+        nebCtx.restore();
+      }
+
       // Узлы и линии жизни
       const visible = [];
       for (const n of nodes) {
         const x = X(n.s.start), y = Y(n);
         const x2 = X(n.s.end ?? store.now);
         n.x = x; n.y = y; n.r = n.landmark && m !== 'z2' ? 11 : R[m][n.s.tier];
+        n.zone = lens.zone(sc.x(n.s.start));
+        if (n.zone !== 'C') n.r = 2.2;          // в желобе — просто точка
+        n.g.classList.toggle('gutter', n.zone !== 'C');
+        const hitR = n.zone === 'C' ? 18 : 4;     // у сжатых точек круг попадания маленький: соседи стоят вплотную
+        if (n.hitR !== hitR) { n.hitR = hitR; n.g.firstChild.setAttribute('r', hitR); }
         const off = authorHidden(n.s) || x2 < -40 || x > vw + 40 || y < AXIS_H - 30 || y > vh + 30;
         n.g.style.display = off ? 'none' : '';
         n.life.style.display = off ? 'none' : '';
         // С клавиатуры обходятся только стили на экране: Tab не уводит камеру в другой конец истории.
-        const tabOff = off || x < 0 || x > vw - panelWidth() || y < AXIS_H || y > vh - sheetHeight();
+        const tabOff = off || n.zone !== 'C' || x < 0 || x > vw - panelWidth() || y < AXIS_H || y > vh - sheetHeight();
         if (n.tabOff !== tabOff) { n.tabOff = tabOff; n.g.setAttribute('tabindex', tabOff ? '-1' : '0'); }
         if (off) { n.text.style.display = 'none'; n.plate.style.display = 'none'; n.labelOn = false; n.lbox = null; continue; }
         n.g.setAttribute('transform', `translate(${x.toFixed(1)},${y.toFixed(1)})`);
@@ -414,6 +506,20 @@ export default {
       // название хуже отсутствующего (сдвиньте карту — оно появится).
       const view = viewRect();
       occ.add([mmBox.offsetLeft - 4, mmBox.offsetLeft + mmBox.offsetWidth + 4, mmBox.offsetTop - 4, mmBox.offsetTop + mmBox.offsetHeight + 4, '']);
+      // На «Всей истории» названия туманностей важнее подписей стилей: ставятся первыми, подписи их обходят.
+      const nebNamesFirst = neb.ready && nebOn && nebulaCam().kx < 0.7;
+      G.nebnames.replaceChildren();
+      const placeNebNames = (labelBoxes) => {
+        const reserved = [[mmBox.offsetLeft - 4, mmBox.offsetTop - 4, mmBox.offsetLeft + mmBox.offsetWidth + 4, mmBox.offsetTop + mmBox.offsetHeight + 4]];
+        if (panelWidth()) reserved.push([vw - panelWidth(), AXIS_H, vw, vh]);
+        if (lens.hasL) reserved.push([0, AXIS_H, lens.gutter, vh]);
+        if (lens.hasR) reserved.push([lens.width - lens.gutter, AXIS_H, lens.width, vh]);
+        return drawNebulaNames(G.nebnames, {
+          ...nebulaCam(), labelBoxes, reserved,
+          dotBoxes: visible.map((n) => [n.x - n.r - 1, n.y - n.r - 1, n.x + n.r + 1, n.y + n.r + 1]),
+        });
+      };
+      if (nebNamesFirst) for (const b of placeNebNames([])) occ.add([b[0], b[2], b[1], b[3], '']);
       const inView = (b) => b[0] >= view.x0 + 4 && b[1] <= view.x1 - 4 && b[2] >= AXIS_H && b[3] <= view.y1;
       const allowTier = m === 'z0' ? 2 : 3;
       const focusSet = svg.classList.contains('has-selection');
@@ -425,6 +531,7 @@ export default {
         const w = m === 'z2' ? Math.max(n.w, n.wd) : n.w;
         const spot = spotOf(n, m, w, fh);
         let show = forced || (focusSet ? lit : n.s.tier <= allowTier || n.g.classList.contains('near'));
+        if (n.zone !== 'C' && !forced) show = false;
         if (show && !forced) show = inView(spot.box) && !occ.hit(spot.box, n.s.id);
         // Ориентир без подписи — не ориентир: в тесноте он становится обычной точкой.
         if (n.landmark && m !== 'z2') {
@@ -448,7 +555,10 @@ export default {
           n.plate.setAttribute('y', (c - 1).toFixed(1)); n.plate.setAttribute('height', (d - c + 3).toFixed(1));
         }
       }
+      if (neb.ready && nebOn && !nebNamesFirst) placeNebNames(visible.filter((n) => n.lbox).map((n) => [n.lbox[0], n.lbox[2], n.lbox[1], n.lbox[3]]));
+      if (nebT0) window.__mapPerf.push(performance.now() - nebT0);
       drawEdges();
+      drawTrail();
       drawSelection();
       drawOffscreen();
       drawNav();
@@ -498,7 +608,7 @@ export default {
         const sw = axis.eraMarks[i].start.style.display === 'none' ? 0 : axis.eraMarks[i].sw;
         for (const y of segmentTicks(seg, t.k, 90)) {
           const x = X(y);
-          if (x < x0 + sw + 40 || x > vw + 40 || x < -40) continue;
+          if (x < x0 + sw + 40 || x > vw + 40 || x < -40 || lens.zone(sc.x(y)) !== 'C') continue;
           let tk = axis.pool[ti];
           if (!tk) { tk = { line: el('line', { class: 'tick', y1: AXIS_H - 5, y2: AXIS_H }, axis.ticks), text: el('text', { class: 'tick-label', y: 20 }, axis.ticks) }; axis.pool.push(tk); }
           tk.line.setAttribute('x1', x); tk.line.setAttribute('x2', x); tk.line.style.display = '';
@@ -571,7 +681,7 @@ export default {
       for (const n of nodes) if (n.lbox) occ.add([...n.lbox, n.s.id]);
       for (const e of edges) {
         if (!e.stubText) continue;
-        const on = show && e.stub && e.drawn && e.ch.g.style.display !== 'none';
+        const on = show && e.stub && e.drawn && e.ch.g.style.display !== 'none' && e.ch.zone === 'C';
         let vis = false;
         if (on) {
           const x1 = X(e.ch.s.start) - e.ch.r - 30, w = e.stubText.getComputedTextLength?.() || 80;
@@ -585,7 +695,7 @@ export default {
         if (!n.outText) continue;
         const xpe = X(n.s.end ?? store.now);
         let vis = false;
-        if (show && n.outX != null) {
+        if (show && n.outX != null && n.zone === 'C') {
           const x0 = n.outX + 20, w = n.outText.getComputedTextLength?.() || 120;
           const box = [x0 - 2, x0 + w + 2, n.y - 8, n.y + 6];
           if (!occ.hit(box)) { occ.add(box); vis = true; n.outText.setAttribute('x', x0.toFixed(1)); n.outText.setAttribute('y', (n.y + 4).toFixed(1)); }
@@ -602,24 +712,51 @@ export default {
       return `M${sx.toFixed(1)},${yp.toFixed(1)}C${(sx + k1).toFixed(1)},${yp.toFixed(1)} ${(xc - k1).toFixed(1)},${yc.toFixed(1)} ${xc.toFixed(1)},${yc.toFixed(1)}`;
     }
 
+    // Маршрут: трек по связям между пройденными стилями (по ветви или дуге; без связи — пунктир напрямую).
+    function drawTrail() {
+      let d = '';
+      for (let i = 1; i < trail.length; i++) {
+        const a = nodeById.get(trail[i - 1]), b = nodeById.get(trail[i]);
+        if (!a || !b) continue;
+        const e = edges.find((x) => (x.par === a && x.ch === b) || (x.par === b && x.ch === a));
+        d += e ? (e.primary ? branchPath(e) : arcPath(e)) : `M${a.x.toFixed(1)},${a.y.toFixed(1)}L${b.x.toFixed(1)},${b.y.toFixed(1)}`;
+      }
+      trailPath.setAttribute('d', d);
+    }
+    function renderTrail() {
+      trailNav.hidden = trail.length < 2;
+      if (trailNav.hidden) return;
+      mount(trailNav, html`<ol>${trail.map((id, i) => html`<li><button type="button" class="${i === trail.length - 1 ? 'is-last' : ''}" data-select="${id}">${store.get(id).name}</button></li>`)}</ol><button type="button" class="mt-clear" data-trail-clear aria-label="Сбросить маршрут">×</button>`);
+    }
+
     function drawEdges() {
       const focusNear = selected && focusMode === 'near';
+      // На рабочем масштабе без выбора: вторичные связи с обоими концами на экране — бледными дугами.
+      const ambient = mode === 'z2' && !selected && !showAll
+        ? new Set(pickAmbient(edges, {
+          visible: (n) => n.zone === 'C' && n.x >= 0 && n.x <= vw - panelWidth() && n.y >= AXIS_H && n.y <= vh - sheetHeight(),
+          span: (e) => Math.abs(sc.x(e.ch.s.start) - sc.x(e.par.s.start)),
+          cap: AMBIENT_CAP,
+        }))
+        : null;
       for (const e of edges) {
+        const amb = !!ambient?.has(e);
         const p = e.par, c = e.ch;
         const lit = e.g.classList.contains('hl');
         const near = !!hovered && (p.s.id === hovered || c.s.id === hovered);
         e.g.classList.toggle('near', near);
         const out = e.g.classList.contains('out');
         const hidden = authorHidden(p.s) || authorHidden(c.s) || (verifiedOnly && e.rel.status !== 'verified') || (focusNear && !lit && !e.primary);
-        const want = !hidden && (e.primary || showAll || lit || near || verifiedOnly) && !(out && !lit);
+        const want = !hidden && (e.primary || showAll || lit || near || verifiedOnly || amb) && !(out && !lit);
         const xa = Math.min(X(p.s.start), X(c.s.start)), xb = Math.max(X(p.s.start), X(c.s.start));
         const offscreen = xb < -60 || xa > vw + 60 || Math.max(p.y, c.y) < AXIS_H - 40 || Math.min(p.y, c.y) > vh + 40;
         if (!want || offscreen) {
           if (e.drawn) { e.path.setAttribute('d', ''); e.casing.setAttribute('d', ''); e.hit.setAttribute('d', ''); e.drawn = false; }
           continue;
         }
-        e.stub = e.long && !lit && !near && !showAll;
+        e.stub = e.long && !lit && !near && !showAll && !amb;
         e.g.classList.toggle('stub', e.stub);
+        e.g.classList.toggle('ambient', amb);
         const d = e.stub ? stubPath(e) : e.primary ? branchPath(e) : arcPath(e);
         e.path.setAttribute('d', d); e.casing.setAttribute('d', d); e.hit.setAttribute('d', d);
         e.drawn = true;
@@ -703,7 +840,7 @@ export default {
       for (const r of rels) {
         const o = nodeById.get(r.id);
         if (!o || authorHidden(o.s)) continue;
-        if (o.x > rect.x0 + 4 && o.x < rect.x1 - 4 && o.y > rect.y0 + 4 && o.y < rect.y1 - 4) continue;
+        if (o.zone === 'C' && o.x > rect.x0 + 4 && o.x < rect.x1 - 4 && o.y > rect.y0 + 4 && o.y < rect.y1 - 4) continue;
         // Точка выхода луча «выбранный → родственник» на рамке видимой области.
         const cx = clamp(sel.x, rect.x0 + 40, rect.x1 - 40), cy = clamp(sel.y, rect.y0 + 30, rect.y1 - 30);
         const dx = o.x - cx, dy = o.y - cy;
@@ -817,7 +954,7 @@ export default {
         if (authorHidden(n.s)) continue;
         const out = n.g.classList.contains('out');
         c.globalAlpha = out ? 0.2 : 0.9;
-        c.fillStyle = cs.getPropertyValue(`--era-${n.s.era}`).trim() || '#555';
+        c.fillStyle = store.nebula(n.s.id)?.color ?? (cs.getPropertyValue('--ink-3').trim() || '#555');
         const r = n.s.tier === 1 ? 1.7 : 1.15;
         c.beginPath(); c.arc(mx(sc.x(n.s.start)), my(yRef(n)), r, 0, Math.PI * 2); c.fill();
       }
@@ -864,7 +1001,7 @@ export default {
       t.k = k2;
       clampT(); schedule();
     }
-    let anim = 0;
+    let anim = 0, flightTimer = 0;
     function animateTo(k, tx, ty, ms = 650) {
       cancelAnimationFrame(anim);
       if (reduceMotion() || ms === 0) { Object.assign(t, { k, tx, ty }); clampT(); schedule(); return; }
@@ -905,17 +1042,18 @@ export default {
     // keep — стиль, который обязан остаться в видимой области (не под панелью и не за краем).
     function fitBox(x0, x1, y0, y1, { kMin = k0, kMax = 1.15, ms = 650, fitY = true, yFocus = null, keep = null } = {}) {
       const rect = viewRect();
-      const availW = Math.max(120, rect.x1 - rect.x0 - 80 - (isNarrow() ? 60 : 160)), availH = rect.y1 - rect.y0 - 50;
+      const gut = lensNow() ? 56 : 0;   // желоба по краям занимают место: рабочий вид начинается правее левого желоба
+      const availW = Math.max(120, rect.x1 - rect.x0 - 80 - 2 * gut - (isNarrow() ? 60 : 160)), availH = rect.y1 - rect.y0 - 50;
       let k = clamp(availW / Math.max(1, x1 - x0), kMin, kMax);
       if (fitY) for (let i = 0; i < 6; i++) { if ((y1 - y0) * syOf(k) > availH && k > kMin) k = Math.max(kMin, k * 0.85); else break; }
       const sy = syOf(k);
-      let tx = rect.x0 + 40 + Math.max(0, availW - (x1 - x0) * k) / 2 - x0 * k;
+      let tx = rect.x0 + 40 + gut + Math.max(0, availW - (x1 - x0) * k) / 2 - x0 * k;
       const yc = (y1 - y0) * sy <= availH || yFocus == null ? (y0 + y1) / 2 : yFocus;
       let ty = (rect.y1 - rect.y0) / 2 - yc * sy;
       if (keep) {
         const n = nodeById.get(keep);
         const nx = sc.x(n.s.start) * k + tx, ny = AXIS_H + ty + yRef(n) * sy;
-        const right = rect.x1 - Math.min(220, (rect.x1 - rect.x0) * 0.35), left = rect.x0 + 30;
+        const right = rect.x1 - Math.min(220, (rect.x1 - rect.x0) * 0.35), left = rect.x0 + 30 + gut + (rot ? 44 : 0);   // на повёрнутой карте сверху лежит цепочка маршрута
         if (nx > right) tx -= nx - right; else if (nx < left) tx += left - nx;
         const top = rect.y0 + 40, bottom = rect.y1 - 50;
         if (ny > bottom) ty -= ny - bottom; else if (ny < top) ty += top - ny;
@@ -937,7 +1075,7 @@ export default {
       const n = nodeById.get(id);
       const rel = [...s.parents, ...s.children, ...s.comparisons, ...(s.contexts ?? []).filter((r) => !verifiedOnly || r.status === 'verified')].map((r) => nodeById.get(r.id)).filter((n) => n && !authorHidden(n.s));
       const rect = viewRect();
-      const availW = Math.max(120, rect.x1 - rect.x0 - 80 - (isNarrow() ? 60 : 220));
+      const availW = Math.max(120, rect.x1 - rect.x0 - 80 - (lensNow() ? 112 : 0) - (isNarrow() ? 60 : 220));
       const kRead = isNarrow() ? 0.6 : 0.72;
       // Берём ближайших по времени родственников, пока они помещаются в рабочем масштабе;
       // остальные останутся метками на краю экрана.
@@ -960,6 +1098,15 @@ export default {
       const ys = keep.map(yRef);
       fitBox(lo, hi, Math.min(...ys) - ROW, Math.max(...ys) + ROW, { kMin, kMax: 1.15, ms, keep: id, fitY: !isNarrow(), yFocus: yRef(n) });
     }
+    // Полёт по связи: сначала камера охватывает оба конца (без приближения), затем садится на новый стиль.
+    function flyTo(fromId, toId) {
+      clearTimeout(flightTimer);
+      const a = nodeById.get(fromId), b = nodeById.get(toId);
+      if (!a || !b || reduceMotion()) { focusCamera(toId, 0); return; }
+      const xa = sc.x(a.s.start), xb = sc.x(b.s.start), ys = [yRef(a), yRef(b)];
+      fitBox(Math.min(xa, xb), Math.max(xa, xb), Math.min(...ys) - ROW, Math.max(...ys) + ROW, { kMin: k0, kMax: t.k, ms: 420, keep: toId });
+      flightTimer = setTimeout(() => focusCamera(toId, 480), 440);
+    }
     function fitLineage(id, animate = true) {
       const ns = [id, ...store.ancestors(id), ...store.descendants(id)].map((i) => nodeById.get(i)).filter(Boolean);
       const xs = ns.map((n) => sc.x(n.s.start)), ys = ns.map(yRef);
@@ -969,9 +1116,18 @@ export default {
       fitBox(Math.min(...xs), Math.max(...xs), Math.min(...ys) - ROW, Math.max(...ys) + ROW, { kMin, kMax: 1.1, ms: animate ? 750 : 0, keep: id });
     }
     function resize() {
-      vw = stage.clientWidth; vh = stage.clientHeight;
+      pw = stage.clientWidth; ph = stage.clientHeight;
+      rot = rotateOn && pw < 760;
+      vw = rot ? ph : pw; vh = rot ? pw : ph;
+      stage.classList.toggle('rot', rot);
+      for (const el2 of [svg, nebCanvas]) {
+        el2.style.width = rot ? `${vw}px` : ''; el2.style.height = rot ? `${vh}px` : '';
+        el2.style.transform = rot ? `translate(${pw}px, 0) rotate(90deg)` : '';
+      }
       svg.setAttribute('width', vw); svg.setAttribute('height', vh);
       svg.setAttribute('viewBox', `0 0 ${vw} ${vh}`);
+      nebDpr = Math.min(2, window.devicePixelRatio || 1);
+      nebCanvas.width = Math.round(vw * nebDpr); nebCanvas.height = Math.round(vh * nebDpr);
       if (sc) {
         const wasFit = Math.abs(t.k - k0) < 1e-6;
         computeFit();
@@ -993,9 +1149,11 @@ export default {
     }
 
     // ---------- выбор: крупный план связей или полная родословная ----------
-    function select(id, { animate = true, mode: m = 'near' } = {}) {
+    function select(id, { animate = true, mode: m = 'near', nav = 'push' } = {}) {
       if (!selected) camBeforeFocus = camera();
+      const prev = selected;
       selected = id;
+      trail = pushStep(trail, id);
       focusMode = m;
       setHover(null);
       hideTip(); hideEdgeInfo();
@@ -1044,22 +1202,35 @@ export default {
         e.path.style.transitionDelay = (up || down) && animate && !reduceMotion() ? `${Math.min(dd, 14) * 60}ms` : '0ms';
       }
       openPanel(s);
-      syncUrl();
+      syncUrl({ push: nav === 'push' && prev !== id });
       draw();
-      if (m === 'line') fitLineage(id, animate); else focusCamera(id, animate ? 650 : 0);
+      clearTimeout(flightTimer);
+      if (m === 'line') fitLineage(id, animate);
+      else if (animate && prev && prev !== id) flyTo(prev, id);
+      else focusCamera(id, animate ? 650 : 0);
     }
-    function clearSelection({ restore = false } = {}) {
+    function clearSelection({ restore = false, nav = 'push' } = {}) {
       if (!selected) return;
+      clearTimeout(flightTimer);
       selected = null;
       svg.classList.remove('has-selection', 'mode-line');
       for (const n of nodes) for (const x of [n.g, n.text, n.life, n.plate]) x.classList.remove('lit', 'is-selected', 'on-line', 'is-related');
       for (const e of edges) { e.g.classList.remove('hl', 'main', 'desc'); e.path.style.transitionDelay = '0ms'; }
       panel.hidden = true;
       drawMinimap();
-      syncUrl();
+      trail = [];
+      syncUrl({ push: nav === 'push' && (history.state?.mapStep ?? 0) > 0 });   // иначе «Назад» после снятия выбора ничего не делает
       if (restore && camBeforeFocus) { const c = camBeforeFocus; animateTo(c.k, c.tx, c.ty, 550); }
       camBeforeFocus = null;
       schedule();
+    }
+
+    // Назад по маршруту: шаг истории, если он наш (state.mapStep), иначе — к предыдущему стилю маршрута.
+    function goBack() {
+      if (!selected) return;
+      if ((history.state?.mapStep ?? 0) > 0) { history.back(); return; }   // update() вернёт стиль или снимет выбор
+      if (trail.length >= 2) { trail = trail.slice(0, -1); select(trail[trail.length - 1], { nav: 'replace' }); return; }
+      clearSelection({ restore: true });
     }
 
     function relList(s, key, dir) {
@@ -1133,24 +1304,32 @@ export default {
       }
       edgePop.hidden = false;
       const w = edgePop.offsetWidth, h = edgePop.offsetHeight;
-      const left = clamp(px + 12, 8, vw - w - 8), top = py + 14 + h > vh - 8 ? Math.max(AXIS_H + 4, py - h - 14) : py + 14;
+      const left = clamp(px + 12, 8, pw - w - 8), top = py + 14 + h > ph - 8 ? Math.max(rot ? 4 : AXIS_H + 4, py - h - 14) : py + 14;
       edgePop.style.transform = `translate(${left}px, ${top}px)`;
     }
     const hideEdgeInfo = () => { edgePop.hidden = true; };
 
     // ---------- слои и фильтр ----------
-    const syncUrl = () => replaceParams('map', {
-      s: selected ?? '', view: selected && focusMode === 'line' ? 'line' : '',
-      d: filter.domain, k: filter.family,
-      cmp: showCmp ? '1' : '', rel: verifiedOnly ? '' : 'all', links: showAll ? 'all' : '',
-      authors: showAuthors ? '1' : '', contexts: showContexts ? '1' : '',
-    });
+    const syncUrl = ({ push = false } = {}) => {
+      renderTrail();
+      const params = {
+        s: selected ?? '', view: selected && focusMode === 'line' ? 'line' : '',
+        d: filter.domain, k: filter.family,
+        cmp: showCmp ? '1' : '', rel: verifiedOnly ? '' : 'all', links: showAll ? 'all' : '',
+        authors: showAuthors ? '1' : '', contexts: showContexts ? '1' : '',
+        trail: selected && trail.length > 1 ? toParam(trail) : '',
+      };
+      if (push) pushParams('map', params, { mapStep: (history.state?.mapStep ?? 0) + 1 });
+      else replaceParams('map', params);
+    };
     function setLayer(name, v) {
       if (name === 'all') { showAll = v; svg.classList.toggle('show-all', v); }
       if (name === 'compare') { showCmp = v; svg.classList.toggle('show-cmp', v); }
       if (name === 'verified') { verifiedOnly = v; svg.classList.toggle('verified-only', v); drawMinimap(); }
       if (name === 'authors') {
-        showAuthors = v; svg.classList.toggle('show-authors', v);
+        const changed = showAuthors !== v;
+        showAuthors = v;
+        if (changed && sc) rebuildNeb(); svg.classList.toggle('show-authors', v);
         if (!v && filter.family === 'authors') setFilter({ domain: filter.domain, family: '' }, { animate: false });
         drawMinimap();
       }
@@ -1198,9 +1377,10 @@ export default {
       markLoaded(tip);
       tip.hidden = false;
       const tw = tip.offsetWidth, th = tip.offsetHeight;
-      let left = n.x + 18, top = n.y + 18;
-      if (left + tw > vw - 10) left = Math.max(10, n.x - tw - 18);
-      if (top + th > vh - 10) top = n.y - th - 18;
+      const np = toP(n.x, n.y);
+      let left = np.x + 18, top = np.y + 18;
+      if (left + tw > pw - 10) left = Math.max(10, np.x - tw - 18);
+      if (top + th > ph - 10) top = np.y - th - 18;
       tip.style.transform = `translate(${left}px, ${top}px)`;
     }
     function hideTip() { clearTimeout(tipTimer); tipTimer = 0; tip.hidden = true; tipFor = null; }
@@ -1208,7 +1388,7 @@ export default {
     // ---------- события полотна ----------
     const pointers = new Map();
     let drag = null, pinch = null, moved = false;
-    const uiTarget = (e) => e.target.closest?.('.map-panel, .map-tip, .map-edge-pop, .map-offscreen, .mm-box');
+    const uiTarget = (e) => e.target.closest?.('.map-panel, .map-tip, .map-edge-pop, .map-offscreen, .mm-box, .map-trail');
 
     // Подсказка нужна до первого движения по карте, дальше она только закрывает подписи.
     const dismissHint = () => hint.classList.add('is-gone');
@@ -1222,7 +1402,8 @@ export default {
       if (pointers.size === 1) drag = { x: e.clientX, y: e.clientY, tx: t.tx, ty: t.ty, node: e.target.closest('.node, .label'), edge: e.target.closest('.edge-hit') };
       if (pointers.size === 2) {
         const [a, b] = [...pointers.values()];
-        pinch = { d: Math.hypot(a.x - b.x, a.y - b.y), k: t.k, cx: (a.x + b.x) / 2, cy: (a.y + b.y) / 2, tx: t.tx, ty: t.ty };
+        const c0 = toV((a.x + b.x) / 2, (a.y + b.y) / 2);
+        pinch = { d: Math.hypot(a.x - b.x, a.y - b.y), k: t.k, cx: c0.x, cy: c0.y, tx: t.tx, ty: t.ty };
         drag = null;
       }
     });
@@ -1240,21 +1421,20 @@ export default {
         return;
       }
       pointers.set(e.pointerId, { x: e.clientX, y: e.clientY });
-      const rect = stage.getBoundingClientRect();
       if (pinch && pointers.size >= 2) {
         const [a, b] = [...pointers.values()];
         const dist = Math.hypot(a.x - b.x, a.y - b.y);
         const k2 = clamp(pinch.k * (dist / pinch.d), Math.min(k0 * 0.9, pinch.k), 5);
-        const cx = (a.x + b.x) / 2 - rect.left, cy = (a.y + b.y) / 2 - rect.top - AXIS_H;
+        const c1 = toV((a.x + b.x) / 2, (a.y + b.y) / 2), cx = c1.x, cy = c1.y - AXIS_H;
         const s1 = syOf(pinch.k), s2 = syOf(k2);
-        t.tx = cx - ((pinch.cx - rect.left - pinch.tx) * k2) / pinch.k;
-        t.ty = cy - ((pinch.cy - rect.top - AXIS_H - pinch.ty) * s2) / s1;
+        t.tx = cx - ((pinch.cx - pinch.tx) * k2) / pinch.k;
+        t.ty = cy - ((pinch.cy - AXIS_H - pinch.ty) * s2) / s1;
         t.k = k2;
         moved = true; clampT(); schedule();
       } else if (drag) {
         const dx = e.clientX - drag.x, dy = e.clientY - drag.y;
         if (Math.abs(dx) + Math.abs(dy) > 4) moved = true;
-        if (moved) { hideTip(); setHover(null); stage.classList.add('dragging'); t.tx = drag.tx + dx; t.ty = drag.ty + dy; clampT(); schedule(); }
+        if (moved) { hideTip(); setHover(null); stage.classList.add('dragging'); const d = dV(dx, dy); t.tx = drag.tx + d.x; t.ty = drag.ty + d.y; clampT(); schedule(); }
       }
     });
     const end = (e) => {
@@ -1282,21 +1462,20 @@ export default {
       e.preventDefault();
       hideTip();
       dismissHint();
-      const rect = stage.getBoundingClientRect();
-      if (e.ctrlKey || e.metaKey) zoomAt(e.clientX - rect.left, e.clientY - rect.top, Math.exp(-e.deltaY * (e.deltaMode ? 0.05 : 0.0025)));
+      if (e.ctrlKey || e.metaKey) { const p = toV(e.clientX, e.clientY); zoomAt(p.x, p.y, Math.exp(-e.deltaY * (e.deltaMode ? 0.05 : 0.0025))); }
       else {
         const unit = e.deltaMode === 1 ? 16 : 1;
         const tall = contentRefH * syOf(t.k) > vh - AXIS_H;
-        if (e.shiftKey || !tall) t.tx -= (e.deltaY + e.deltaX) * unit;
-        else { t.tx -= e.deltaX * unit; t.ty -= e.deltaY * unit; }
+        const d = dV(e.deltaX, e.deltaY);
+        if (e.shiftKey || !tall) t.tx -= (d.y + d.x) * unit;
+        else { t.tx -= d.x * unit; t.ty -= d.y * unit; }
         clampT(); schedule();
       }
     }, { passive: false });
 
     on(stage, 'dblclick', (e) => {
       if (uiTarget(e) || e.target.closest('.node, .label')) return;
-      const rect = stage.getBoundingClientRect();
-      const px = e.clientX - rect.left, py = e.clientY - rect.top - AXIS_H;
+      const pv = toV(e.clientX, e.clientY), px = pv.x, py = pv.y - AXIS_H;
       const k2 = Math.min(5, t.k * 2.2);
       const s1 = syOf(t.k), s2 = syOf(k2);
       animateTo(k2, px - ((px - t.tx) * k2) / t.k, py - ((py - t.ty) * s2) / s1, 450);
@@ -1305,14 +1484,22 @@ export default {
     on(stage, 'keydown', (e) => {
       const nodeEl = e.target.closest?.('.node');
       if (nodeEl && (e.key === 'Enter' || e.key === ' ')) { e.preventDefault(); select(nodeEl.dataset.id); return; }
-      if (uiTarget(e)) { if (e.key === 'Escape' && selected) clearSelection({ restore: true }); return; }
+      if ((e.metaKey || e.altKey) && e.key.startsWith('Arrow')) return;   // Cmd/Alt+← — «Назад» браузера
+      if (uiTarget(e)) { if (e.key === 'Escape' && selected) goBack(); return; }
+      if (selected && e.key.startsWith('Arrow')) {
+        e.preventDefault();
+        const to = stepTarget(store, (x) => nodeById.get(x)?.row ?? 0, selected, e.key, (s) => !authorHidden(s));
+        if (to) select(to, { mode: focusMode });
+        return;
+      }
+      if (e.key === 'Backspace' && selected) { e.preventDefault(); goBack(); return; }
       const step = 90;
-      if (e.key === 'ArrowLeft') t.tx += step; else if (e.key === 'ArrowRight') t.tx -= step;
-      else if (e.key === 'ArrowUp') t.ty += step / 2; else if (e.key === 'ArrowDown') t.ty -= step / 2;
+      const pan = { ArrowLeft: [step, 0], ArrowRight: [-step, 0], ArrowUp: [0, step / 2], ArrowDown: [0, -step / 2] }[e.key];
+      if (pan) { const d = dV(pan[0], pan[1]); t.tx += d.x; t.ty += d.y; }
       else if (e.key === '+' || e.key === '=') return zoomAt(vw / 2, vh / 2, 1.5);
       else if (e.key === '-' || e.key === '_') return zoomAt(vw / 2, vh / 2, 1 / 1.5);
       else if (e.key === '0') return fit();
-      else if (e.key === 'Escape') { if (!edgePop.hidden) return hideEdgeInfo(); return clearSelection({ restore: true }); }
+      else if (e.key === 'Escape') { if (!edgePop.hidden) return hideEdgeInfo(); return goBack(); }
       else return;
       e.preventDefault(); clampT(); schedule();
     });
@@ -1416,6 +1603,7 @@ export default {
     for (const box of root.querySelectorAll('[data-layer]')) on(box, 'change', (e) => { setLayer(box.dataset.layer, e.target.checked); syncUrl(); });
 
     on(root, 'click', (e) => {
+      if (e.target.closest('[data-trail-clear]')) { trail = selected ? [selected] : []; syncUrl(); schedule(); return; }
       const z = e.target.closest('[data-zoom]');
       if (z) {
         if (z.dataset.zoom === 'fit') { if (selected) clearSelection(); if (atFit()) overview(); else fit(); }
@@ -1452,6 +1640,14 @@ export default {
 
     build();
 
+    setNebulaDirtyHandler(schedule);
+    const themeObs = new MutationObserver(rebuildNeb);
+    themeObs.observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
+    on(window.matchMedia('(prefers-color-scheme: dark)'), 'change', rebuildNeb);
+    cleanups.push(() => { themeObs.disconnect(); clearTimeout(nebTimer); disposeNebulae(); });
+
+    for (const ev of ['pointerdown', 'wheel']) on(stage, ev, () => clearTimeout(flightTimer), { passive: true });
+
     return {
       update(next) {
         if (!sc) return;
@@ -1459,7 +1655,7 @@ export default {
       },
       destroy() {
         destroyed = true;
-        cancelAnimationFrame(raf); cancelAnimationFrame(anim); clearTimeout(tipTimer);
+        cancelAnimationFrame(raf); cancelAnimationFrame(anim); clearTimeout(tipTimer); clearTimeout(flightTimer);
         cleanups.forEach((f) => f());
       },
     };
