@@ -14,11 +14,12 @@ import { replaceParams, pushParams } from '../router.js?v=map4';
 import { pushStep, toParam, parseTrail } from '../trail.js?v=map4';
 import { stepTarget } from '../graphnav.js?v=chain-author-map4';
 import { createGutterLens } from '../lens.js?v=map4';
-import { initNebulae, drawNebulae, drawNebulaNames, disposeNebulae, setNebulaDirtyHandler, nebulaRegion, nebulaRegionAt } from '../nebulae.js?v=semantic-zoom-1';
+import { initNebulae, drawNebulae, drawNebulaNames, disposeNebulae, setNebulaDirtyHandler, nebulaRegion, nebulaRegionAt, nebulaShore } from '../nebulae.js?v=semantic-zoom-2';
 import { buildIndex, search } from '../search.js?v=author-pilot';
 import { fitLabelText } from '../map-labels.js?v=focus-fit-1';
 import { LINK_MODES, readLinkSettings, historicalLinkVisible } from '../map-links.js?v=link-modes-1';
-import { mapDetail, aggregateMapLinks } from '../map-detail.js?v=semantic-zoom-1';
+import { mapDetail, aggregateMapLinks } from '../map-detail.js?v=semantic-zoom-2';
+import { summaryCurve } from '../map-summary.js?v=semantic-zoom-2';
 
 const NS = 'http://www.w3.org/2000/svg';
 const AXIS_H = 30;      // строка делений шкалы внутри SVG
@@ -115,7 +116,7 @@ export default {
             <div class="lg-layers" role="group" aria-label="Слои карты">
               <label class="map-switch"><input type="checkbox" data-layer="verified"><span class="sw" aria-hidden="true"></span>Только подтверждённые связи</label>
             </div>
-            <p class="lg-note">На дальнем плане читаются моря: отдельные точки и ветви скрыты, пунктир объединяет связи карточек из разных морей. Нажмите на него, чтобы увидеть конкретные связи, типы и источники. При приближении появляются части, затем эстетики; береговые контуры уходят до крупного плана. Нажмите на море или его название, чтобы приблизить область. В списке доступны все моря и карточки вне них. Соседство и расстояния не означают географическую или культурную близость; состав групп не доказывает происхождение. «Основные» показывает ветви по первым указанным предкам, «Все связи» добавляет остальные связи, контекст и визуальные сопоставления; на дальнем плане показывается только несколько сводных линий. «Без связей» отключает также сводки и маршрут. Авторские карточки доступны на тех же уровнях, что и остальные. Большинство исторических связей пока остаются редакционными гипотезами. Фильтр «Только подтверждённые» независим от режима линий. Время идёт слева направо, на узком экране — сверху вниз; текст остаётся горизонтальным. Шкала времени неравномерная: каждой эпохе отведено место по числу стилей. Перетаскивание двигает карту; Ctrl/⌘ с колёсиком или щипок меняет масштаб.</p>
+            <p class="lg-note">На дальнем плане читаются моря: отдельные точки и ветви скрыты, пунктир объединяет связи карточек из разных морей. Нажмите на него, чтобы увидеть конкретные связи, типы и источники. При приближении появляются части, затем эстетики; тонкий внешний берег моря остаётся ориентиром даже на крупном плане. Нажмите на море или его название, чтобы приблизить область. В списке доступны все моря и карточки вне них. Соседство и расстояния не означают географическую или культурную близость; состав групп не доказывает происхождение. «Основные» показывает ветви по первым указанным предкам, «Все связи» добавляет остальные связи, контекст и визуальные сопоставления; на дальнем плане показывается только несколько сводных линий. Наведение выделяет связи моря, сохраняя основные маршруты на месте. «Без связей» отключает также сводки и маршрут. Авторские карточки доступны на тех же уровнях, что и остальные. Большинство исторических связей пока остаются редакционными гипотезами. Фильтр «Только подтверждённые» независим от режима линий. Время идёт слева направо, на узком экране — сверху вниз; текст остаётся горизонтальным. Шкала времени неравномерная: каждой эпохе отведено место по числу стилей. Перетаскивание двигает карту; Ctrl/⌘ с колёсиком или щипок меняет масштаб.</p>
           </div>
         </div>
         <div class="zoom-ctrls">
@@ -684,14 +685,22 @@ export default {
       const seaKeys = new Map(store.nebulae.map((s, i) => [s.id, `neb:${i}`]));
       const groups = aggregateMapLinks(records, (id) => seaKeys.get(nodeById.get(id).s.nebula), { mode: linkMode, verifiedOnly });
       const named = groups.filter((g) => regionNames.has(g.a) && regionNames.has(g.b));
-      aggregateLinks = (regionHover ? named.filter((g) => g.a === regionHover || g.b === regionHover) : named.filter((g) => verifiedOnly || g.records.length >= 2)).slice(0, linkMode === 'all' ? 10 : 6);
+      const baseline = named.filter((g) => verifiedOnly || g.records.length >= 2).slice(0, linkMode === 'all' ? 10 : 6);
+      const incident = (g) => g.a === regionHover || g.b === regionHover;
+      // Базовые маршруты сохраняются при наведении, чтобы карта не менялась под указателем.
+      aggregateLinks = [...baseline, ...(regionHover ? named.filter((g) => incident(g) && !baseline.includes(g)).slice(0, 4) : [])];
+      const boxes = [...summaryMask.querySelectorAll('rect[fill="black"]')].map((r) => [+r.getAttribute('x'), +r.getAttribute('y'), +r.getAttribute('x') + +r.getAttribute('width'), +r.getAttribute('y') + +r.getAttribute('height')]);
+      const shores = new Map();
+      const shore = (key) => { if (!shores.has(key)) shores.set(key, nebulaShore(key, nameCam().toScreen)); return shores.get(key); };
       for (const [i, g] of aggregateLinks.entries()) {
         const a = regionNames.get(g.a), b = regionNames.get(g.b);
-        const dx = b.x - a.x, dy = b.y - a.y, len = Math.hypot(dx, dy), bend = Math.min(70, len * 0.18);
-        if (len < 30) continue;
-        const cx = (a.x + b.x) / 2 - dy / len * bend, cy = (a.y + b.y) / 2 + dx / len * bend;
-        const d = `M${a.x.toFixed(1)},${a.y.toFixed(1)}Q${cx.toFixed(1)},${cy.toFixed(1)} ${b.x.toFixed(1)},${b.y.toFixed(1)}`;
-        el('path', { class: 'summary-line', d, 'stroke-width': Math.min(2.6, 0.65 + Math.log2(g.records.length + 1) * 0.35), opacity: detail.aggregates * (regionHover ? 0.62 : 0.24) }, G.summary);
+        const route = summaryCurve({ ...a, ports: shore(g.a) }, { ...b, ports: shore(g.b) }, boxes, [6, rot ? 6 : AXIS_H + 6, pw - (rot ? AXIS_H + 6 : 6), ph - 6]);
+        if (!route) continue;
+        const { d } = route;
+        const width = Math.min(2.6, 0.85 + Math.log2(g.records.length + 1) * 0.4);
+        el('path', { class: 'summary-case', d, 'stroke-width': width + 2.4, opacity: detail.aggregates * 0.85 }, G.summary);
+        el('path', { class: 'summary-line', d, 'stroke-width': width, opacity: detail.aggregates * (regionHover ? incident(g) ? 0.82 : 0.34 : 0.5) }, G.summary);
+        for (const p of route.ports) el('circle', { class: 'summary-port', cx: p.x, cy: p.y, r: 2.4, opacity: detail.aggregates * (regionHover && incident(g) ? 0.9 : 0.65) }, G.summary);
         const count = `${g.records.length} ${plural(g.records.length, 'связь карточек', 'связи карточек', 'связей карточек')}`;
         const h = el('path', { class: 'summary-hit', d, 'data-summary': i, 'data-key': `${g.a}/${g.b}`, role: 'button', tabindex: 0, 'aria-label': `${a.name} и ${b.name}: ${count}. Открыть список` }, G['summary-hits']);
         el('title', {}, h).textContent = `${count} · ${a.name} / ${b.name}`;

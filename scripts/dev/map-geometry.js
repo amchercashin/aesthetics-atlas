@@ -5,7 +5,7 @@
 // Сравнимая проверка для старой и новой карты: все подписи стилей и все видимые линии связей,
 // без исключения подписей концов связи (в старой разметке концы неизвестны).
 const vis = (el) => { for (let e = el; e && e.tagName !== 'svg'; e = e.parentElement) { const cs = getComputedStyle(e); if (e.matches('text') && +cs.fillOpacity < 0.15) return false; if (cs.display === 'none' || +cs.opacity < 0.15) return false; } return true; };
-const edgePaths = [...document.querySelectorAll('.map-svg .m-edges path:not(.case), .map-svg .m-cmp path, .map-svg .m-contexts path, .map-svg .m-summary path, .map-svg .m-life path, .map-svg .m-trail path')];
+const edgePaths = [...document.querySelectorAll('.map-svg .m-edges path:not(.case), .map-svg .m-cmp path, .map-svg .m-contexts path, .map-svg .m-summary path:not(.summary-case), .map-svg .m-life path, .map-svg .m-trail path')];
 const maskBoxes = new Map(edgePaths.map((p) => {
   const g = p.closest('[mask]'); if (!g) return [p, []];
   const id = g.getAttribute('mask').match(/#([^)]*)/)?.[1], mask = id && document.getElementById(id);

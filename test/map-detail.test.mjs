@@ -21,19 +21,20 @@ test('parts have their own readable scale before individual cards and branches',
   assert.equal(d.nodes + d.labels + d.edges, 0);
 });
 
-test('strong card labels have no stretched coast behind them, branches follow the labels', () => {
+test('card labels replace the wash while a stable coast preserves orientation at maximum zoom', () => {
   for (const k of [0.268, 0.42, 1, 2, 5]) {
     const d = mapDetail(k, 0.04, 0.2);
     assert.equal(d.labels, 1);
     assert.equal(d.nodes, 1);
     assert.equal(d.regions + d.seaNames + d.partNames, 0);
+    assert.equal(d.coast, 1, 'the orientation coast must survive further zooming');
   }
   assert.equal(mapDetail(0.2 * 1.7, 0.04, 0.2).edges, 1);
 });
 
 test('continuous layer fades retrace the same values in both directions', () => {
   const values = Array.from({ length: 2001 }, (_, i) => mapDetail(0.04 * 20 ** (i / 2000), 0.04, 0.2));
-  for (const key of ['regions', 'nodes', 'labels', 'edges']) {
+  for (const key of ['regions', 'coast', 'nodes', 'labels', 'edges']) {
     const up = values.map((d) => d[key]);
     for (let i = 1; i < up.length; i++) {
       assert.ok(Math.abs(up[i] - up[i - 1]) < 0.018, key);
@@ -50,7 +51,7 @@ test('continuous layer fades retrace the same values in both directions', () => 
 test('a disabled region layer still exposes individual cards and their graph', () => {
   const d = mapDetail(0.04, 0.04, 0.2, false);
   assert.equal(d.nodes + d.labels + d.edges, 3);
-  assert.equal(d.regions + d.aggregates, 0);
+  assert.equal(d.regions + d.coast + d.aggregates, 0);
 });
 
 const groups = new Map([['a', 'sea-1'], ['b', 'sea-2'], ['c', 'sea-1'], ['free', null]]);

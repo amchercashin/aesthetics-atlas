@@ -228,11 +228,13 @@
   // изолинии поля региона → Path2D в координатах карты
   function toPath(reg, V, lev, smooth, eps, minLen, stat) {
     const loops = contours(V, reg.bw, reg.bh, lev), path = new Path2D();
+    if (lev === 0) reg.shore = [];
     let pts = 0;
     for (let lp of loops) {
       for (let i = 0; i < lp.length; i += 2) { lp[i] = OX + (reg.bx0 + lp[i]) * CS; lp[i + 1] = OY + (reg.by0 + lp[i + 1]) * CS; }
       if (perim(lp) < minLen) continue;
       lp = rdp(chaikin(lp, smooth), eps);
+      if (lev === 0) reg.shore.push(lp);
       path.moveTo(lp[0], lp[1]); for (let i = 2; i < lp.length; i += 2) path.lineTo(lp[i], lp[i + 1]); path.closePath();
       pts += lp.length / 2;
     }
@@ -521,7 +523,33 @@ function renderLayer(cam) {
   });
 }
 function draw(ctx, cam) {
-  if (!washFar || cam.detail?.regions === 0) return;
+  if (!washFar) return;
+  const mix = cam.detail?.partMix ?? sstep(0.62, 0.95, cam.kx), alpha = cam.detail?.regions ?? 1;
+  if (alpha > 0) drawWash(ctx, cam, mix, alpha);
+  else { clearTimeout(timer); lastCam = null; }
+  // Только внешний берег: без растянутой заливки и линий глубины. Прозрачность
+  // не падает с дальнейшим приближением, толщина остаётся экранной.
+  const coast = cam.detail?.coast ?? 0;
+  if (coast > 0) {
+    const { kx, ky, ox, oy, dpr } = cam;
+    const x0 = -ox / kx, x1 = (cam.w - ox) / kx, y0 = (cam.axis - oy) / ky, y1 = (cam.h - oy) / ky;
+    ctx.save();
+    ctx.setTransform(dpr, 0, 0, dpr, dpr * ox, dpr * oy);
+    ctx.globalAlpha = coast * (P.dark ? 0.42 : 0.36);
+    ctx.lineWidth = 0.85; ctx.lineJoin = 'round';
+    const key = `${kx.toFixed(4)}|${ky.toFixed(4)}`;
+    for (const r of nebRegs) {
+      const b = r.box; if (b[2] < x0 || b[0] > x1 || b[3] < y0 || b[1] > y1) continue;
+      if (r.coast?.key !== key) {
+        const path = new Path2D(); path.addPath(r.paths[0], new DOMMatrix([kx, 0, 0, ky, 0, 0]));
+        r.coast = { key, path };
+      }
+      ctx.strokeStyle = r.line; ctx.stroke(r.coast.path);
+    }
+    ctx.restore();
+  }
+}
+function drawWash(ctx, cam, mix, alpha) {
   lastCam = cam;
   // При отдалении/перемещении в кадр входят новые территории. Старый
   // битмап их не содержит: нельзя оставлять там пустоту до остановки камеры.
@@ -532,7 +560,6 @@ function draw(ctx, cam) {
   }
   if (!cache) return;
   const r = blitRect(cache, cam);
-  const mix = cam.detail?.partMix ?? sstep(0.62, 0.95, cam.kx), alpha = cam.detail?.regions ?? 1;
   ctx.save();
   cache.canvases.forEach((cv, i) => {
     ctx.globalAlpha = alpha * (i === 0 ? 1 - mix : mix);
@@ -732,6 +759,21 @@ export function nebulaRegion(key) {
   const [kind, id] = key.split(':');
   const r = (kind === 'neb' ? nebRegs : partRegs).find((r) => r.id === Number(id));
   return r && { key, kind, name: r.name, members: r.members.slice(), box: r.box.slice() };
+}
+
+// Порты обзорных связей лежат на настоящем береге, не на рамке названия.
+export function nebulaShore(key, toScreen) {
+  const [kind, id] = key.split(':');
+  const r = (kind === 'neb' ? nebRegs : partRegs).find((r) => r.id === Number(id));
+  const out = [];
+  for (const loop of r?.shore ?? []) {
+    let prev = null;
+    for (let i = 0; i < loop.length; i += 2) {
+      const [x, y] = toScreen(loop[i], loop[i + 1]);
+      if (!prev || Math.hypot(x - prev.x, y - prev.y) >= 12) { prev = { x, y }; out.push(prev); }
+    }
+  }
+  return out;
 }
 
 // Попадание в область проверяется по маске, а не её широкому прямоугольнику.

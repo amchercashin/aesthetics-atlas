@@ -5,11 +5,12 @@ const smooth = (a, b, x) => {
 
 // Один ход масштаба для всех слоёв. Учитывает полную историю на широком окне.
 export function mapDetail(k, fit, overview, regions = true) {
-  if (!regions) return { level: 'styles', regions: 0, partMix: 0, seaNames: 0, partNames: 0, nodes: 1, labels: 1, edges: 1, aggregates: 0 };
+  if (!regions) return { level: 'styles', regions: 0, coast: 0, partMix: 0, seaNames: 0, partNames: 0, nodes: 1, labels: 1, edges: 1, aggregates: 0 };
   const ratio = k / Math.max(overview, fit * 2.2);
   return {
     level: ratio < 0.74 ? 'seas' : ratio < 1.25 ? 'parts' : 'styles',
     regions: 1 - smooth(0.96, 1.28, ratio),
+    coast: smooth(0.96, 1.28, ratio),
     partMix: smooth(0.54, 0.9, ratio),
     seaNames: 1 - smooth(0.73, 0.79, ratio),
     partNames: smooth(0.73, 0.79, ratio) * (1 - smooth(1.02, 1.14, ratio)),
