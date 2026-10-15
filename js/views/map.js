@@ -13,11 +13,11 @@ import { eraTag, thumb } from '../ui/common.js?v=author-pilot';
 import { replaceParams, pushParams } from '../router.js?v=map4';
 import { pushStep, toParam, parseTrail } from '../trail.js?v=map4';
 import { stepTarget } from '../graphnav.js?v=chain-author-map4';
-import { pickAmbient } from '../ambient.js?v=map4';
 import { createGutterLens } from '../lens.js?v=map4';
 import { initNebulae, drawNebulae, drawNebulaNames, disposeNebulae, setNebulaDirtyHandler } from '../nebulae.js?v=seas-audit-1';
 import { buildIndex, search } from '../search.js?v=author-pilot';
 import { styleLabelOpacity, fitLabelText } from '../map-labels.js?v=focus-fit-1';
+import { LINK_MODES, readLinkSettings, historicalLinkVisible } from '../map-links.js?v=link-modes-1';
 
 const NS = 'http://www.w3.org/2000/svg';
 const AXIS_H = 30;      // строка делений шкалы внутри SVG
@@ -32,7 +32,6 @@ const FONT_PX = { 1: 16, 2: 14, 3: 13 };
 const DATE_FONT = '400 11px "Golos Text"';
 const R = { z0: { 1: 3.6, 2: 2.8, 3: 2.4 }, z1: { 1: 6, 2: 5, 3: 4.2 }, z2: { 1: 15, 2: 13, 3: 11 } };
 const DASH = { evolved: '', influence: '', reaction: '6 4', revival: '1.5 4' };
-const AMBIENT_CAP = 40; // фоновых дуг на рабочем масштабе
 const NEB_PADX = 60, NEB_PADY = 70;   // поля поля плотности туманностей в обзорных единицах
 const LONG = 1200;      // разрыв во времени (px рабочего масштаба), после которого связь рисуется парными отростками
 const reduceMotion = () => window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -90,8 +89,9 @@ export default {
             <button class="btn ghost mf-reset" type="button" data-f-reset>Сбросить</button>
           </div>
         </div>
-        <label class="map-switch map-all-switch"><input type="checkbox" data-layer="all"><span class="sw" aria-hidden="true"></span>Все связи</label>
-        <label class="map-switch map-authors-switch"><input type="checkbox" data-layer="authors"><span class="sw" aria-hidden="true"></span>Авторские языки</label>
+        <div class="map-links" role="group" aria-label="Связи на карте">
+          ${Object.entries(LINK_MODES).map(([id, name]) => html`<button type="button" data-link-mode="${id}" aria-pressed="${id === 'main'}">${name}</button>`)}
+        </div>
         <div class="map-pop-wrap map-legend-wrap">
           <button class="icon-btn" type="button" data-legend aria-expanded="false" aria-label="Как читать карту">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9.6 9.3a2.5 2.5 0 1 1 3.3 2.4c-.6.2-.9.7-.9 1.3v.5M12 16.6v.3"/></svg>
@@ -111,13 +111,9 @@ export default {
               <li><svg viewBox="0 0 40 14" aria-hidden="true"><path d="M2 7h36" class="edge context"/></svg>Контекст — школа, среда или техника</li>
             </ul>
             <div class="lg-layers" role="group" aria-label="Слои карты">
-              <label class="map-switch lg-all"><input type="checkbox" data-layer="all"><span class="sw" aria-hidden="true"></span>Все связи сразу</label>
-              <label class="map-switch"><input type="checkbox" data-layer="authors"><span class="sw" aria-hidden="true"></span>Авторские языки</label>
-              <label class="map-switch"><input type="checkbox" data-layer="compare"><span class="sw" aria-hidden="true"></span>Визуальные сопоставления</label>
-              <label class="map-switch"><input type="checkbox" data-layer="contexts"><span class="sw" aria-hidden="true"></span>Школы и культурный контекст</label>
-              <label class="map-switch"><input type="checkbox" data-layer="verified" checked><span class="sw" aria-hidden="true"></span>Только связи с источником</label>
+              <label class="map-switch"><input type="checkbox" data-layer="verified"><span class="sw" aria-hidden="true"></span>Только подтверждённые связи</label>
             </div>
-            <p class="lg-note">Моря делятся на части при приближении. Их соседство и расстояния не означают географическую или культурную близость; состав групп не доказывает происхождение. Подпись области может охватывать несколько островов. Вертикаль не означает иерархию: стили стоят рядом с главным предком, чтобы ветви были короткими. Большинство связей пока не сверены с источниками — это редакционная схема. По умолчанию гипотезы скрыты; переключатель «Только связи с источником» позволяет включить их. Шкала времени неравномерная: каждой эпохе — место по числу стилей. На «Всей истории» подписи стилей исчезают; при приближении проявляются плавно. Наведите на точку или выберите её, чтобы прочесть название. Нажмите на линию — появится объяснение связи; на стиль — его связи крупным планом.</p>
+            <p class="lg-note">Моря делятся на части при приближении. Их соседство и расстояния не означают географическую или культурную близость; состав групп не доказывает происхождение. Подпись области может охватывать несколько островов. Вертикаль не означает иерархию: стили стоят рядом с главным предком, чтобы ветви были короткими. «Основные» показывает дерево по первым указанным предкам, «Все связи» добавляет остальные связи, культурный контекст и визуальные сопоставления. «Без связей» оставляет области и карточки. Авторские карточки показаны всегда. Большинство исторических связей пока не сверены с источниками — это редакционная схема; при желании можно оставить только подтверждённые связи. Шкала времени неравномерная: каждой эпохе — место по числу стилей. На «Всей истории» подписи стилей исчезают; при приближении проявляются плавно. Наведите на точку или выберите её, чтобы прочесть название. Нажмите на линию — появится объяснение связи; на стиль — его связи крупным планом.</p>
           </div>
         </div>
         <div class="zoom-ctrls">
@@ -196,9 +192,7 @@ export default {
     const nodeById = new Map();
     const axis = {};
     let raf = 0, selected = null, focusMode = 'near', hovered = null, mode = 'z0';
-    let showAll = false, showCmp = false, showContexts = false, showAuthors = false, verifiedOnly = true;
-    const isAuthor = (s) => s.kind.includes('author-style');
-    const authorHidden = (s) => isAuthor(s) && !showAuthors && s.id !== selected;
+    let linkMode = 'main', verifiedOnly = false;
     let filter = { domain: '', family: '' };
     let camBeforeFocus = null, camBeforeFilter = null;
     let trail = [];        // маршрут по стилям; источник правды — параметр trail в адресе
@@ -388,7 +382,7 @@ export default {
       clearTimeout(nebTimer);
       if (!nebOn || !store.nebulae.length) return;
       const version = ++nebBuildVersion;
-      const nebNodes = nodes.filter((n) => !authorHidden(n.s));
+      const nebNodes = nodes;
       const css = getComputedStyle(document.documentElement);
       const colors = { paper: css.getPropertyValue('--paper').trim(), ink: css.getPropertyValue('--ink').trim() };
       const theme = css.colorScheme.includes('dark') ? 'dark' : 'light';
@@ -426,11 +420,9 @@ export default {
     };
 
     function applyParams(params, first = false) {
-      setLayer('all', params.get('links') === 'all');
-      setLayer('compare', params.get('cmp') === '1');
-      setLayer('verified', params.get('rel') !== 'all');
-      setLayer('authors', params.get('authors') === '1' || params.get('k') === 'authors');
-      setLayer('contexts', params.get('contexts') === '1');
+      const settings = readLinkSettings(params);
+      setLinkMode(settings.mode);
+      setLayer('verified', settings.verifiedOnly);
       const d = DOMAIN[params.get('d')] ? params.get('d') : '';
       const k = KIND_FAMILY[params.get('k')] ? params.get('k') : '';
       if (d !== filter.domain || k !== filter.family) setFilter({ domain: d, family: k }, { animate: !first });
@@ -484,7 +476,7 @@ export default {
         n.g.classList.toggle('gutter', n.zone !== 'C');
         const hitR = n.zone === 'C' ? 18 : 4;     // у сжатых точек круг попадания маленький: соседи стоят вплотную
         if (n.hitR !== hitR) { n.hitR = hitR; n.g.firstChild.setAttribute('r', hitR); }
-        const off = authorHidden(n.s) || x2 < -40 || x > vw + 40 || y < AXIS_H - 30 || y > vh + 30;
+        const off = x2 < -40 || x > vw + 40 || y < AXIS_H - 30 || y > vh + 30;
         n.g.style.display = off ? 'none' : '';
         n.life.style.display = off ? 'none' : '';
         // С клавиатуры обходятся только стили на экране: Tab не уводит камеру в другой конец истории.
@@ -756,6 +748,7 @@ export default {
 
     // Маршрут: трек по связям между пройденными стилями (по ветви или дуге; без связи — пунктир напрямую).
     function drawTrail() {
+      if (linkMode === 'none') { trailPath.setAttribute('d', ''); return; }
       let d = '';
       for (let i = 1; i < trail.length; i++) {
         const a = nodeById.get(trail[i - 1]), b = nodeById.get(trail[i]);
@@ -772,33 +765,22 @@ export default {
     }
 
     function drawEdges() {
-      const focusNear = selected && focusMode === 'near';
-      // На рабочем масштабе без выбора: вторичные связи с обоими концами на экране — бледными дугами.
-      const ambient = mode === 'z2' && !selected && !showAll
-        ? new Set(pickAmbient(edges, {
-          visible: (n) => n.zone === 'C' && n.x >= 0 && n.x <= vw - panelWidth() && n.y >= AXIS_H && n.y <= vh - sheetHeight(),
-          span: (e) => Math.abs(sc.x(e.ch.s.start) - sc.x(e.par.s.start)),
-          cap: AMBIENT_CAP,
-        }))
-        : null;
+      const showAll = linkMode === 'all';
       for (const e of edges) {
-        const amb = !!ambient?.has(e);
         const p = e.par, c = e.ch;
         const lit = e.g.classList.contains('hl');
         const near = !!hovered && (p.s.id === hovered || c.s.id === hovered);
         e.g.classList.toggle('near', near);
         const out = e.g.classList.contains('out');
-        const hidden = authorHidden(p.s) || authorHidden(c.s) || (verifiedOnly && e.rel.status !== 'verified') || (focusNear && !lit && !e.primary);
-        const want = !hidden && (e.primary || showAll || lit || near || verifiedOnly || amb) && !(out && !lit);
+        const want = historicalLinkVisible({ mode: linkMode, primary: e.primary, highlighted: lit || near, verifiedOnly, status: e.rel.status, filtered: out && !lit });
         const xa = Math.min(X(p.s.start), X(c.s.start)), xb = Math.max(X(p.s.start), X(c.s.start));
         const offscreen = xb < -60 || xa > vw + 60 || Math.max(p.y, c.y) < AXIS_H - 40 || Math.min(p.y, c.y) > vh + 40;
         if (!want || offscreen) {
           if (e.drawn) { e.path.setAttribute('d', ''); e.casing.setAttribute('d', ''); e.hit.setAttribute('d', ''); e.drawn = false; }
           continue;
         }
-        e.stub = e.long && !lit && !near && !showAll && !amb;
+        e.stub = e.long && !lit && !near && !showAll;
         e.g.classList.toggle('stub', e.stub);
-        e.g.classList.toggle('ambient', amb);
         const d = e.stub ? stubPath(e) : e.primary ? branchPath(e) : arcPath(e);
         e.path.setAttribute('d', d); e.casing.setAttribute('d', d); e.hit.setAttribute('d', d);
         e.drawn = true;
@@ -810,8 +792,8 @@ export default {
         const sel = !!selected && (c.a.s.id === selected || c.b.s.id === selected);
         const offA = c.a.g.style.display === 'none', offB = c.b.g.style.display === 'none';
         c.path.classList.toggle('near', near || sel);
-        const enabled = c.context ? showContexts : showCmp;
-        const hidden = authorHidden(c.a.s) || authorHidden(c.b.s) || (c.context && verifiedOnly && c.status !== 'verified');
+        const enabled = linkMode === 'all';
+        const hidden = linkMode === 'none' || (c.context && verifiedOnly && c.status !== 'verified');
         if (hidden || !(enabled || near || sel) || (offA && offB && !sel)) { c.path.setAttribute('d', ''); c.hit.setAttribute('d', ''); continue; }
         const [l, r] = c.a.x <= c.b.x ? [c.a, c.b] : [c.b, c.a];
         const mx = (l.x + r.x) / 2, lift = Math.min(70, Math.abs(r.x - l.x) * 0.15 + 14);
@@ -867,7 +849,7 @@ export default {
 
     // Метки связей за краем экрана: дальние концы длинных связей не теряются.
     function drawOffscreen() {
-      if (!selected || focusMode !== 'near' || isNarrow()) { if (chips.childElementCount) chips.replaceChildren(); return; }
+      if (linkMode === 'none' || !selected || focusMode !== 'near' || isNarrow()) { if (chips.childElementCount) chips.replaceChildren(); return; }
       const s = store.get(selected);
       const sel = nodeById.get(selected);
       const rect = viewRect();
@@ -881,7 +863,7 @@ export default {
       const items = [];
       for (const r of rels) {
         const o = nodeById.get(r.id);
-        if (!o || authorHidden(o.s)) continue;
+        if (!o) continue;
         if (o.zone === 'C' && o.x > rect.x0 + 4 && o.x < rect.x1 - 4 && o.y > rect.y0 + 4 && o.y < rect.y1 - 4) continue;
         // Точка выхода луча «выбранный → родственник» на рамке видимой области.
         const cx = clamp(sel.x, rect.x0 + 40, rect.x1 - 40), cy = clamp(sel.y, rect.y0 + 30, rect.y1 - 30);
@@ -987,13 +969,12 @@ export default {
       c.globalAlpha = 0.28; c.strokeStyle = cs.getPropertyValue('--ink-2').trim() || '#666'; c.lineWidth = 0.8;
       c.beginPath();
       for (const e of edges) {
-        if (!e.primary || e.long || authorHidden(e.par.s) || authorHidden(e.ch.s) || (verifiedOnly && e.rel.status !== 'verified')) continue;
+        if (linkMode === 'none' || !e.primary || e.long || (verifiedOnly && e.rel.status !== 'verified')) continue;
         const px = mx(sc.x(e.par.s.start)), py = my(yRef(e.par)), cx = mx(sc.x(e.ch.s.start)), cy = my(yRef(e.ch));
         c.moveTo(px, py); c.lineTo(Math.max(px, cx - 2), py); c.lineTo(Math.max(px, cx - 2), cy); c.lineTo(cx, cy);
       }
       c.stroke();
       for (const n of nodes) {
-        if (authorHidden(n.s)) continue;
         const out = n.g.classList.contains('out');
         c.globalAlpha = out ? 0.2 : 0.9;
         c.fillStyle = store.nebula(n.s.id)?.color ?? (cs.getPropertyValue('--ink-3').trim() || '#555');
@@ -1116,7 +1097,7 @@ export default {
     function focusCamera(id, ms = 650) {
       const s = store.get(id);
       const n = nodeById.get(id);
-      const rel = [...s.parents, ...s.children, ...s.comparisons, ...(s.contexts ?? []).filter((r) => !verifiedOnly || r.status === 'verified')].map((r) => nodeById.get(r.id)).filter((n) => n && !authorHidden(n.s));
+      const rel = [...s.parents, ...s.children, ...s.comparisons, ...(s.contexts ?? []).filter((r) => !verifiedOnly || r.status === 'verified')].map((r) => nodeById.get(r.id)).filter(Boolean);
       const rect = viewRect();
       const availW = Math.max(120, rect.x1 - rect.x0 - 80 - (lensNow() ? 112 : 0) - (isNarrow() ? 60 : 220));
       const kRead = isNarrow() ? 0.6 : 0.72;
@@ -1201,8 +1182,6 @@ export default {
       setHover(null);
       hideTip(); hideEdgeInfo();
       const s = store.get(id);
-      if (isAuthor(s)) setLayer('authors', true);
-      else if (!showAuthors && prev && isAuthor(store.get(prev))) rebuildNeb();
       const relIds = new Set([...s.parents.map((r) => r.id), ...s.children.map((r) => r.id), ...s.comparisons.map((r) => r.id), ...(s.contexts ?? []).map((r) => r.id)]);
       const anc = store.ancestors(id), desc = store.descendants(id);
       const lit = m === 'near' ? new Set([id, ...relIds]) : new Set([id, ...anc, ...desc]);
@@ -1256,9 +1235,7 @@ export default {
     function clearSelection({ restore = false, nav = 'push' } = {}) {
       if (!selected) return;
       clearTimeout(flightTimer);
-      const hiddenAuthor = !showAuthors && isAuthor(store.get(selected));
       selected = null;
-      if (hiddenAuthor) rebuildNeb();
       svg.classList.remove('has-selection', 'mode-line');
       for (const n of nodes) for (const x of [n.g, n.text, n.life, n.plate]) x.classList.remove('lit', 'is-selected', 'on-line', 'is-related');
       for (const e of edges) { e.g.classList.remove('hl', 'main', 'desc'); e.path.style.transitionDelay = '0ms'; }
@@ -1363,25 +1340,23 @@ export default {
       const params = {
         s: selected ?? '', view: selected && focusMode === 'line' ? 'line' : '',
         d: filter.domain, k: filter.family,
-        cmp: showCmp ? '1' : '', rel: verifiedOnly ? '' : 'all', links: showAll ? 'all' : '',
-        authors: showAuthors ? '1' : '', contexts: showContexts ? '1' : '',
+        rel: verifiedOnly ? 'verified' : '', links: linkMode === 'main' ? '' : linkMode,
         trail: selected && trail.length > 1 ? toParam(trail) : '',
       };
       if (push) pushParams('map', params, { mapStep: (history.state?.mapStep ?? 0) + 1 });
       else replaceParams('map', params);
     };
+    function setLinkMode(next) {
+      linkMode = Object.hasOwn(LINK_MODES, next) ? next : 'main';
+      svg.dataset.linkMode = linkMode;
+      svg.classList.toggle('show-all', linkMode === 'all');
+      root.querySelectorAll('button[data-link-mode]').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.linkMode === linkMode)));
+      hideEdgeInfo();
+      if (sc) drawMinimap();
+      schedule();
+    }
     function setLayer(name, v) {
-      if (name === 'all') { showAll = v; svg.classList.toggle('show-all', v); }
-      if (name === 'compare') { showCmp = v; svg.classList.toggle('show-cmp', v); }
       if (name === 'verified') { verifiedOnly = v; svg.classList.toggle('verified-only', v); drawMinimap(); }
-      if (name === 'authors') {
-        const changed = showAuthors !== v;
-        showAuthors = v;
-        if (changed && sc) rebuildNeb(); svg.classList.toggle('show-authors', v);
-        if (!v && filter.family === 'authors') setFilter({ domain: filter.domain, family: '' }, { animate: false });
-        drawMinimap();
-      }
-      if (name === 'contexts') { showContexts = v; svg.classList.toggle('show-contexts', v); }
       root.querySelectorAll(`[data-layer="${name}"]`).forEach((b) => { b.checked = v; });
       schedule();
     }
@@ -1390,7 +1365,6 @@ export default {
     function setFilter(next, { animate = true } = {}) {
       const was = filter.domain || filter.family;
       filter = next;
-      if (filter.family === 'authors') setLayer('authors', true);
       const active = !!(filter.domain || filter.family);
       if (active && !was) camBeforeFilter = camera();
       svg.classList.toggle('has-filter', active);
@@ -1538,7 +1512,7 @@ export default {
       if (uiTarget(e)) { if (e.key === 'Escape' && selected) goBack(); return; }
       if (selected && e.key.startsWith('Arrow')) {
         e.preventDefault();
-        const to = stepTarget(store, (x) => nodeById.get(x)?.row ?? 0, selected, e.key, (s) => !authorHidden(s));
+        const to = stepTarget(store, (x) => nodeById.get(x)?.row ?? 0, selected, e.key);
         if (to) select(to, { mode: focusMode });
         return;
       }
@@ -1653,6 +1627,8 @@ export default {
     for (const box of root.querySelectorAll('[data-layer]')) on(box, 'change', (e) => { setLayer(box.dataset.layer, e.target.checked); syncUrl(); });
 
     on(root, 'click', (e) => {
+      const links = e.target.closest('button[data-link-mode]');
+      if (links) { setLinkMode(links.dataset.linkMode); syncUrl(); return; }
       if (e.target.closest('[data-trail-clear]')) { trail = selected ? [selected] : []; syncUrl(); schedule(); return; }
       const z = e.target.closest('[data-zoom]');
       if (z) {

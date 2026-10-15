@@ -32,7 +32,7 @@ async function route(base, { first = false } = {}) {
     current.instance.update({ ...base, ...r });
     return;
   }
-  const mod = await import(`./views/${r.view}.js?v=focus-fit-1`);
+  const mod = await import(`./views/${r.view}.js?v=link-modes-1`);
   if (seq !== routeSeq) return;
   const swap = () => {
     current?.instance?.destroy?.();
