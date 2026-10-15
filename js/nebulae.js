@@ -547,8 +547,14 @@ const MAX_ANG = 0.22;   // наклон названия на экране, ра
 
   // кривая подписи в экранных координатах: центр, направление, кривизна
   function lineBoxes(cx, cy, ang, curv, wid, fs, off) {
-    const ux = Math.cos(ang), uy = Math.sin(ang), nx = -uy, ny = ux, out = [], st = fs * 0.75, half = wid / 2;
-    for (let t = -half; t <= half + 0.1; t += st) { const vv = curv * t * t + off, x = cx + ux * t + nx * vv, y = cy + uy * t + ny * vv; out.push([x - fs * 0.48, y - fs * 0.5, x + fs * 0.48, y + fs * 0.5]); }
+    const ux = Math.cos(ang), uy = Math.sin(ang), nx = -uy, ny = ux, out = [], half = wid / 2;
+    // Оба конца строки и диагональ наклонного глифа с обводкой входят в оценку занятого места.
+    const steps = Math.max(1, Math.ceil(wid / (fs * 0.5)));
+    for (let i = 0; i <= steps; i++) {
+      const t = -half + wid * i / steps, vv = curv * t * t + off, x = cx + ux * t + nx * vv, y = cy + uy * t + ny * vv;
+      const tangent = ang + Math.atan(2 * curv * t), radius = fs * 0.5 * (Math.abs(Math.cos(tangent)) + Math.abs(Math.sin(tangent))) + 1.6;
+      out.push([x - radius, y - radius, x + radius, y + radius]);
+    }
     return out;
   }
   // Возвращает рамки поставленных названий ([x0, y0, x1, y1]) — чтобы подписи стилей их обходили.
@@ -558,7 +564,8 @@ const MAX_ANG = 0.22;   // наклон названия на экране, ра
     if (t2 > 0.6) return [];   // на рабочем масштабе названия частей пересекали бы ветви древа
     // hard — с запасом между названиями; tight — без запаса: на него переходим, если иначе названию не нашлось места.
     const hard = new BoxIdx(v.w, v.h), tight = new BoxIdx(v.w, v.h), soft = new BoxIdx(v.w, v.h);
-    for (const b of v.labelBoxes || []) { hard.add([b[0] - 4, b[1] - 3, b[2] + 4, b[3] + 3]); tight.add([b[0] - 1, b[1] - 1, b[2] + 1, b[3] + 1]); }
+    // Запасной вариант уплотняет названия областей, сохраняя отступ от подписей стилей.
+    for (const b of v.labelBoxes || []) { const padded = [b[0] - 6, b[1] - 4, b[2] + 6, b[3] + 4]; hard.add(padded); tight.add(padded); }
     for (const b of v.dotBoxes || []) soft.add(b);
     for (const b of v.reserved || []) { hard.add(b); tight.add(b); }
     const defs = v.svg('defs', {}, g);
@@ -614,7 +621,7 @@ const MAX_ANG = 0.22;   // наклон названия на экране, ра
     let bestC = null, bestCost = 1e9;
     const tryAt = (c, cx, cy, ang, curv, extra) => {
       const lh = c.fs * 1.18, nL = c.lines.length, boxes = [];
-      for (let li = 0; li < nL; li++) { const off = (li - (nL - 1) / 2) * lh; boxes.push(...lineBoxes(cx, cy, ang, curv, c.lines[li].w * c.fs / 100 + c.ls * (c.lines[li].n - 1), c.fs, off)); }
+      for (let li = 0; li < nL; li++) { const off = (li - (nL - 1) / 2) * lh; boxes.push(...lineBoxes(cx, cy, ang, curv, c.lines[li].w * c.fs / 100 + c.ls * c.lines[li].n, c.fs, off)); }
       for (const b of boxes) if (b[0] < 3 || b[2] > v.w - 3 || b[1] < v.axis + 3 || b[3] > v.h - 3) return;
       let cost = extra + c.pri;
       for (const b of boxes) { if (hard.hits(b)) return; }

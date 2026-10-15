@@ -15,7 +15,7 @@ import { pushStep, toParam, parseTrail } from '../trail.js?v=map4';
 import { stepTarget } from '../graphnav.js?v=chain-author-map4';
 import { pickAmbient } from '../ambient.js?v=map4';
 import { createGutterLens } from '../lens.js?v=map4';
-import { initNebulae, drawNebulae, drawNebulaNames, disposeNebulae, setNebulaDirtyHandler } from '../nebulae.js?v=chain-author-map4';
+import { initNebulae, drawNebulae, drawNebulaNames, disposeNebulae, setNebulaDirtyHandler } from '../nebulae.js?v=chain-seas-review';
 import { buildIndex, search } from '../search.js?v=author-pilot';
 
 const NS = 'http://www.w3.org/2000/svg';
@@ -405,6 +405,7 @@ export default {
       const ready = await initNebulae(A, { theme, colors });
       if (!ready || destroyed || version !== nebBuildVersion) return;
       svg.dataset.nebulaMembers = String(nebNodes.length);
+      svg.dataset.nebulaBuild = String(version);
       window.__nebInit = performance.now() - t0;
       neb.ready = true;
       schedule();

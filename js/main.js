@@ -32,7 +32,7 @@ async function route(base, { first = false } = {}) {
     current.instance.update({ ...base, ...r });
     return;
   }
-  const mod = await import(`./views/${r.view}.js?v=chain-regional-map4`);
+  const mod = await import(`./views/${r.view}.js?v=chain-seas-review`);
   if (seq !== routeSeq) return;
   const swap = () => {
     current?.instance?.destroy?.();

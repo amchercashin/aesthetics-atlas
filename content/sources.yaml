@@ -1291,3 +1291,434 @@
   note: >-
     Прочитан кураторский обзор Н. В. Толстухиной о коллекции, разных авторах, ранней резьбе, росписи и
     продолжении промысла в XX веке. Общий обзор не заменяет предметных атрибуций Русского музея.
+
+# Региональная графика, бумага и росписи: партия 2
+- id: nypl-lubok-cat-1866
+  title: Похороны кота крысами и мышами, 1866
+  publisher: The New York Public Library
+  url: https://digitalcollections.nypl.org/items/6a809960-c641-012f-46fc-58d385a7bc34
+  sourceType: primary
+  checked: '2026-10-14'
+  note: >-
+    Прочитана предметная запись и IIIF-манифест. Date Issued 1866 относится к этому листу; она не датирует
+    возникновение сюжета. Литография, 33 × 42 см, Image ID 479510. Репродукция просмотрена. NYPL сообщает
+    статус public domain по праву США, а не универсальное разрешение для всех стран.
+- id: nypl-lubok-bear-1868
+  title: Свадьба медведя Мишки косолапого, 1868
+  publisher: The New York Public Library
+  url: https://digitalcollections.nypl.org/items/6a098e00-c641-012f-bcc6-58d385a7bc34
+  sourceType: primary
+  checked: '2026-10-14'
+  note: >-
+    Date Issued 1868, Москва, литография, 33 × 42 см, Image ID 479508. Художник не назван. Предмет не
+    отождествлён с другими версиями сюжета. Просмотрена репродукция из публичного IIIF-манифеста.
+- id: nypl-lubok-ilya-1868
+  title: Сильный храбрый богатырь Илья Муромец, 1868
+  publisher: The New York Public Library
+  url: https://digitalcollections.nypl.org/items/6e1ac700-c641-012f-80de-58d385a7bc34
+  sourceType: primary
+  checked: '2026-10-14'
+  note: >-
+    NYPL называет Ивана Александровича Голышева с ролью Lithographer. Год выпуска 1868; Москва, литография, 31
+    × 42 см, Image ID 479522. Роль литографа не расширена до единственного автора всех лубочных изображений.
+- id: rusmuseum-lubok-comfort
+  title: «Утоли моя печали», Гр.Луб.-2916, XIX век
+  publisher: Государственный Русский музей
+  url: https://rusmuseumvrm.ru/data/collections/engraving/gr.lub.-2916/index.php
+  sourceType: museum
+  checked: '2026-10-14'
+  note: >-
+    Прочитана запись: бумага, раскрашенная резцовая гравюра; неизвестный художник, предметное поле даты — XIX
+    век. Более узкая рубрика периода не подменяет эту датировку.
+- id: rusmuseum-lubok-judgement
+  title: Образ страшного суда, Гр.Луб.-3270, XVII–XIX
+  publisher: Государственный Русский музей
+  url: https://rusmuseumvrm.ru/data/collections/engraving/gr.lub.-3270/index.php
+  sourceType: museum
+  checked: '2026-10-14'
+  note: >-
+    В предметном поле стоит широкий интервал XVII–XIX, а в рубрике периода — XVII век. Расхождение сохранено,
+    точный год не выбран. Бумага, резцовая гравюра. П. Шилинговский указан в истории поступления, не как автор
+    листа.
+- id: rusmuseum-lubok-collection
+  title: 'Лубок: музейная типологическая подборка'
+  publisher: Государственный Русский музей
+  url: https://rusmuseumvrm.ru/reference/classifier/typology/lubok/index.php
+  sourceType: museum
+  checked: '2026-10-14'
+  note: >-
+    Коллекция включает религиозные, исторические и другие изображения, разные техники и мастерские. Термин не
+    принят как название одной неизменной манеры.
+
+# Региональная графика, бумага и росписи: партия 2
+- id: aaav-yangliuqing-theatre
+  title: 'Miglė Lebednykaitė. The Case of Peking Opera in Lithuania: The Collection of Chinese Woodblock Prints'
+  publisher: Acta Academiae Artium Vilnensis / Vilnius Academy of Arts
+  url: https://aaav.vda.lt/journal/article/download/52/52/74
+  sourceType: scholarly
+  checked: '2026-10-14'
+  note: >-
+    Оригинальный PDF, выпуск 96 (2020), с. 209–259: напрямую сверены подписи и пять репродукций на печатных с.
+    222, 233, 238; выборочно прочитаны абзацы о мастерской и атрибуции. Подписи, инвентарные номера и широкие
+    даты сохранены. На с. 236 дано Yixinghe huadian 义兴合画店; в подписях — Isinghe. Дата снимков 2019 не
+    перенесена на гравюры. Полное прочтение статьи не заявлено.
+- id: met-china-popular-prints
+  title: 'The Printed Image in China: Popular Prints'
+  publisher: The Metropolitan Museum of Art
+  url: https://www.metmuseum.org/exhibitions/listings/2012/printed-image-in-china
+  sourceType: museum
+  checked: '2026-10-14'
+  note: >-
+    Прочитан кураторский фрагмент о популярной графике и няньхуа, включая различение Янлюцина, Таохуау и
+    Мяньчжу. Он используется для границ темы, не вместо предметных атрибуций выбранных литовских листов.
+
+# Региональная графика, бумага и росписи: партия 2
+- id: yangzhou-cutpaper-museum
+  title: 'China Paper Cutting Museum: музейная коллекция и локальные школы'
+  publisher: China Paper Cutting Museum, Yangzhou / Google Arts & Culture
+  url: https://artsandculture.google.com/partner/china-paper-cutting-museum
+  sourceType: museum
+  checked: '2026-10-14'
+  note: >-
+    Прочитано представление музея, истории местной практики и разных авторов. Музей основан в 2007 году; эта
+    дата не принята за начало вырезания бумаги. Коллекция и предметные подписи опубликованы самим музеем на
+    Google Arts & Culture.
+- id: yangzhou-bao-jun-tianjin
+  title: Bao Jun. “Cut-paper Paintings” in Tianjin
+  publisher: China Paper Cutting Museum, Yangzhou / Google Arts & Culture
+  url: >-
+    https://artsandculture.google.com/asset/%E2%80%9Ccut-paper-paintings%E2%80%9D-by-bao-jun-in-tianjin/rAEgGs49qyf33w
+  sourceType: museum
+  checked: '2026-10-14'
+  note: >-
+    Карточка сообщает 1800; описание относит автора к правлениям Цзяцин и Даогуан. Это не точный подписанный
+    год отдельного листа. Тяньцзинь — место хранения серии, а не автоматически место её создания; описание
+    связывает Бао Цзюня с Янчжоу.
+- id: yangzhou-zhang-screen
+  title: Zhang Xiufang. Four-panel Decorative Screen, 2007
+  publisher: China Paper Cutting Museum, Yangzhou / Google Arts & Culture
+  url: https://artsandculture.google.com/asset/four-panel-decorative-screen/0wHFEaRZ7BJBQA
+  sourceType: museum
+  checked: '2026-10-14'
+  note: >-
+    Автор, 2007, Type: Paper Cutting. На доступной репродукции видна одна панель описанного четырёхчастного
+    набора. Комплект считается одним произведением; дата рождения автора 1943.12 не перенесена на работу.
+- id: yangzhou-zhang-cranes
+  title: Zhang Xiufang. Cranes Flying Around Clouds, 2007
+  publisher: China Paper Cutting Museum, Yangzhou / Google Arts & Culture
+  url: https://artsandculture.google.com/asset/cranes-flying-around-clouds/xAE3cvbs7dsIag
+  sourceType: museum
+  checked: '2026-10-14'
+  note: >-
+    Автор, 2007, Type: Paper Cutting. Просмотрена целая круглая композиция; тонкая сетка и крупные силуэты
+    различаются на музейной репродукции.
+- id: kemper-foshan-misery
+  title: The Years of Misery, WU 1999.19.02
+  publisher: Mildred Lane Kemper Art Museum, Washington University in St. Louis
+  url: >-
+    https://www.kemperartmuseum.wustl.edu/collection/search-results/wu-1999-19-02-anonymous-members-of-a-peoples-commune-in-fatshan-chinese-the-years-of-misery-from-the-series-the-east-is-red-20th-century
+  sourceType: museum
+  checked: '2026-10-14'
+  note: >-
+    Предметные поля прочитаны через веб-инструмент: Papercut mounted to paper, Anonymous Members of a People’s
+    Commune in Fatshan, XX век; кураторский текст уточняет производство около начала 1970-х. Прямая страница в
+    Chrome отвечает защитой; сама репродукция просмотрена по публичной ссылке изображения из этой записи.
+    Слово prints в описании не подменило явно указанный материал вырезки.
+
+# Региональная графика, бумага и росписи: партия 2
+- id: met-adinkra-687569
+  title: Adinkra prestige cloth, 2015.614.6, 1960-е
+  publisher: The Metropolitan Museum of Art
+  url: https://www.metmuseum.org/art/collection/search/687569
+  sourceType: museum
+  checked: '2026-10-14'
+  note: >-
+    Прочитаны предметная запись и кураторский текст; просмотрено полотно. Асанте-акан, Гана, хлопок, шерсть и
+    краситель. Узор нанесён штампами на готовую ткань; дата дара 2015 не подменяет изготовление в 1960-е.
+- id: bm-adinkra-1935-1005-2
+  title: Adinkra cloth, Af1935,1005.2
+  publisher: The British Museum
+  url: https://www.britishmuseum.org/collection/object/E_Af1935-1005-2
+  sourceType: museum
+  checked: '2026-10-14'
+  note: >-
+    Предметный текст прочитан в поисковом извлечении: production date 1934, Asante, хлопок, окраска и
+    штампование. В музейном каталоге Met/British Museum 2008 тот же предмет датирован первой четвертью XX
+    века. Разница оставлена явно; A. F. Kerr — собиратель и даритель, не автор ткани.
+- id: 89plus-glover-sankofa
+  title: Ablade Glover. Sankofa Adinkra symbol, запись проекта 2015
+  publisher: 89plus / Google Arts & Culture
+  url: >-
+    https://artsandculture.google.com/asset/sankofa-adinkra-symbol-drawn-by-artist-ablade-glover-ablade-glover-and-hans-ulrich-obrist/ZwHnWY3w7bKriw
+  sourceType: museum
+  checked: '2026-10-14'
+  note: >-
+    Прочитана первичная запись проекта, просмотрено изображение. Ink on paper, Accra, дата в цифровой записи
+    2015-07-31. Рисунок назван вкладом Гловера в проект Ханса Ульриха Обриста; Обрист не представлен как
+    рисовальщик знака.
+- id: wmf-adinkra-spread
+  title: The Spread of Adinkra
+  publisher: World Monuments Fund / Google Arts & Culture
+  url: https://artsandculture.google.com/story/the-spread-of-adinkra-world-monuments-fund/NQVBErEmnp6i8w?hl=en
+  sourceType: museum
+  checked: '2026-10-14'
+  note: >-
+    Прочитан материал о знаках, пословицах, ткани и архитектурных применениях. Он подтверждает более широкий
+    графический контекст, но не подменяет атрибуцию отдельных полотен. Значения отдельных знаков не превращены
+    в универсальную инструкцию чтения любой ткани.
+
+# Региональная графика, бумага и росписи: партия 2
+- id: staffrider-mural-art-1991
+  title: 'Annette Loubser. Contemporary Mural Art: Urban Dislocation and Indifference. Staffrider 9(4), 1991'
+  publisher: Congress of South African Writers / South African History Online
+  url: https://sahistory.org.za/sites/default/files/archive-files3/stv9n491.pdf
+  sourceType: press
+  checked: '2026-10-14'
+  note: >-
+    Прочитана статья на PDF-с. 56–61 и подпись фотографии на PDF-с. 61; изображение стены просмотрено. Подпись
+    называет Ботшабело, неизвестного автора и материалы стены со ступенью. Год журнала не является датой
+    изготовления стены или росписи. Назначение ансамбля (жилое или музейное) эта подпись отдельно не уточняет.
+    Обобщения статьи 1991 года о всей истории южноафриканского искусства не перенесены в карточку.
+- id: vmfa-mahlangu-home-2014
+  title: Эстер Малангу у росписей своего дома, фотография 19 мая 2014
+  publisher: Virginia Museum of Fine Arts
+  url: https://www.vmfa.museum/press/important-ndebele-artist-esther-mahlangu-to-paint-at-vmfa
+  sourceType: museum
+  checked: '2026-10-14'
+  note: >-
+    Прочитана музейная публикация от 18 августа 2014 и просмотрена фотография Richard B. Woodward с датой 19
+    мая 2014. Дата относится к снимку, исполнитель и год конкретной домашней росписи в подписи отдельно не
+    названы. Два заказа VMFA на холсте не подменяют настенную работу дома.
+- id: serpentine-mahlangu-mural-2024
+  title: Esther Mahlangu. Umuntu ngumuntu ngabantu, 2024
+  publisher: Serpentine Galleries
+  url: https://www.serpentinegalleries.org/whats-on/dr-esther-mahlangu-umuntu-ngumuntu-ngabantu/
+  sourceType: museum
+  checked: '2026-10-14'
+  note: >-
+    Прочитаны описание проекта, авторство и подпись; просмотрена фотография George Darrell. Шестнадцать
+    деревянных панелей образуют один публичный мурал. Описание домашней работы с природными материалами и
+    акриловой живописи на холсте не выдаётся за точный состав красок именно этого проекта. Дата 2024 относится
+    к произведению, даты показа не являются сроком существования традиции.
+
+# Региональная графика, бумага и росписи: партия 2
+- id: warsaw-childhood-wycinanki-2021
+  title: 'Dzieciństwo / Childhood. Каталог собрания, 2021: выцинанки'
+  publisher: Państwowe Muzeum Etnograficzne w Warszawie
+  url: https://ethnomuseum.pl/wp-content/uploads/2025/12/Dziecinstwo_Childhood_katalog_rozkladowki1.pdf
+  sourceType: catalog
+  checked: '2026-10-14'
+  note: >-
+    Прочитаны выходные сведения каталога 2021, подписи трёх репродукций на PDF-с. 266 (печатные с. 528–529,
+    илл. 413–415) и примечания 195, 200, 204 на PDF-с. 280–281. Все три изображения просмотрены. В каждой
+    подписи различаются мастерица и фотограф. Две пары музейных номеров из примечаний не посчитаны
+    дополнительными произведениями: выбраны именно три воспроизведённые вещи. Дата 2025 в пути файла не
+    заменяет год издания 2021.
+- id: rapperswil-wycinanka-lis
+  title: Wycinanka łowicka — Krystyna Lis?
+  publisher: Muzeum Polskie w Rapperswilu / Google Arts & Culture
+  url: https://artsandculture.google.com/asset/wycinanka-%C5%82owicka-krystyna-lis/ZgEt5fn7HzmdYg?hl=pl
+  sourceType: museum
+  checked: '2026-10-14'
+  note: >-
+    Прочитана музейная запись и просмотрена круглая многоцветная вырезка с двумя петухами. Вопросительный знак
+    в имени Krystyna Lis? сохранён; дата не сообщается. Круглая композиция состоит из наложенных цветных
+    частей на связной чёрной основе. Общая характеристика регионов не использована как универсальное правило
+    для каждой вещи.
+- id: stl-stanislawa-bakula
+  title: 'Stanisława Bakuła: регион Курпе, работа с выцинанками'
+  publisher: Stowarzyszenie Twórców Ludowych
+  url: https://zgstl.pl/tworcy_ludowi/stanislawa-bakula-1925-1989/
+  sourceType: community
+  checked: '2026-10-14'
+  note: >-
+    Прочитана биографическая статья Katarzyna Kraczoń, основанная в том числе на архиве объединения мастеров.
+    Подтверждены регион Курпе и работа Бакулы с разными типами вырезок, включая повествовательные и
+    многоцветные варианты. Текст не поддерживает правило «все выцинанки Курпе одноцветны»; даты отдельных
+    работ берутся из музейного каталога.
+
+# Региональная графика, бумага и росписи: партия 2
+- id: qagoma-mantu-gujarat-2012
+  title: Mantu Chitrakar. The Gujarat Earthquake, 2012
+  publisher: Queensland Art Gallery & Gallery of Modern Art / Google Arts & Culture
+  url: https://artsandculture.google.com/asset/the-gujarat-earthquake-mantu-chitrakar/LgFogX8rBOX6Qg
+  sourceType: museum
+  checked: '2026-10-14'
+  note: >-
+    Прочитана предметная запись, просмотрен целый свиток в опубликованной репродукции. Указаны 2012, 352,5 ×
+    56 см и natural colour on mill-made paper with fabric backing. 2001 — год события сюжета, приобретение
+    2015 — отдельная дата. Числа потерь из исторического вступления не заимствованы как проверенная
+    статистика.
+- id: qagoma-jaba-durga-ganga-2010
+  title: Jaba Chitrakar. The fight between Goddess Durga and Goddess Ganga, 2010
+  publisher: Queensland Art Gallery & Gallery of Modern Art / Google Arts & Culture
+  url: >-
+    https://artsandculture.google.com/asset/the-fight-between-goddess-durga-and-goddess-ganga-jaba-chitrakar/9AHooVbb7MYcrQ?hl=en
+  sourceType: museum
+  checked: '2026-10-14'
+  note: >-
+    Прочитана предметная запись и просмотрен целый свиток. Указаны 2010, 344 × 56 см, натуральные краски на
+    фабричной бумаге с тканевой подложкой. Куратор выделяет более свободный ход последовательности вместо
+    постоянного разделения на кадры. Приобретение и выставка 2015–2016 не подменяют год произведения.
+- id: qagoma-monimala-santhal-2014
+  title: Monimala Chitrakar. Santhal Story of Origin, 2014
+  publisher: Queensland Art Gallery & Gallery of Modern Art / Google Arts & Culture
+  url: https://artsandculture.google.com/asset/santhal-story-of-origin-monimala-chitrakar/JwHOdG4gGO82vw?hl=en
+  sourceType: museum
+  checked: '2026-10-14'
+  note: >-
+    Прочитана предметная запись и просмотрен целый свиток. Указаны 2014, 275,5 × 56 см и натуральные краски на
+    фабричной бумаге с тканевой подложкой. Санталы / Santhal — тема рассказа, из которой не выводится
+    этническая принадлежность автора. Дата приобретения 2015 отделена от изготовления.
+- id: qagoma-jaba-nirbhaya-2013
+  title: Jaba Chitrakar. Nirbhaya — Delhi rape case, 2013
+  publisher: Queensland Art Gallery & Gallery of Modern Art / Google Arts & Culture
+  url: https://artsandculture.google.com/asset/nirbhaya-delhi-rape-case-jaba-chitrakar/pQHpn0hf-5Axsw?hl=en
+  sourceType: museum
+  checked: '2026-10-14'
+  note: >-
+    Прочитана предметная запись, просмотрен целый свиток. Указаны 2013, 278 × 55,9 см и натуральные краски на
+    фабричной бумаге с тканевой подложкой. 2012 — год события, приобретение 2016 — отдельная дата; они не
+    заменяют 2013 в подписи произведения.
+- id: banglanatak-swarna-colour-process
+  title: 'Swarna Chitrakar. Colour Making Process: Raw Materials for Natural Colour, 2018'
+  publisher: Banglanatak / Google Arts & Culture
+  url: https://artsandculture.google.com/asset/colour-making-process-0098/iQHdRxaL8FYtaQ
+  sourceType: community
+  checked: '2026-10-14'
+  note: >-
+    Прочитана первичная запись о материалах и практике Сварны Читракар в Paschim Medinipur. Текст связывает
+    бенгальские свитки с рассказом и песней Pater Gaan. Он поддерживает контекст живой практики, но не
+    заменяет материалы четырёх конкретных предметов QAGOMA и не доказывает древнейшую мировую хронологию.
+
+# Региональная графика, бумага и росписи: партия 2
+- id: map-mashe-warli-1990
+  title: Jivya Soma Mashe. Untitled Warli painting, около 1990
+  publisher: Museum of Art & Photography / Google Arts & Culture
+  url: https://artsandculture.google.com/asset/untitled-warli-painting-jivya-soma-mashe/qgF8F8jGsjAQRw
+  sourceType: museum
+  checked: '2026-10-14'
+  note: >-
+    Прочитана предметная запись и просмотрено произведение целиком. Указаны около 1990, 63,5 × 91,5 см,
+    natural pigments on cloth. Биографические годы не используются как даты возникновения варли.
+- id: crafts-museum-vangad-ladke-warli
+  title: Rajesh Chaitya Vangad, Balu Ladke. Warli Painting
+  publisher: National Crafts Museum, New Delhi / Google Arts & Culture
+  url: https://artsandculture.google.com/asset/warli-painting/SAEoZ6eEemZUXQ?hl=en
+  sourceType: museum
+  checked: '2026-10-14'
+  note: >-
+    Прочитана музейная запись и просмотрена опубликованная фотография росписи. Указаны два соавтора и внешние
+    стены Crafts Museum; дата и точные материалы не сообщены. Изображения нескольких полей не считаются
+    отдельными произведениями. Вангад и Ладке не отождествляются с другими художниками на основании сходства
+    имён.
+- id: cartier-mashe-fishnet-2009
+  title: 'Jivya Soma Mashe. Fishnet, 2009: опубликованный выставочный вид'
+  publisher: Fondation Cartier pour l’art contemporain
+  url: https://www.fondationcartier.com/en/collection/artists/jivya-soma-mashe
+  sourceType: museum
+  checked: '2026-10-14'
+  note: >-
+    Прочитан текст и подпись Fishnet, 2009; просмотрена соответствующая фотография выставки. В alt она названа
+    видом выставки 2025: год фотографии не заменяет год картины. Посетительница закрывает часть нижней
+    композиции. Материалы отдельной работы не уточнены; общие или очень ранние датировки традиции из вводного
+    текста не перенесены в карточку.
+- id: banglanatak-warli-wedding-process
+  title: A Wedding Depiction Underway, фотодокументация 2025
+  publisher: Banglanatak / Google Arts & Culture
+  url: https://artsandculture.google.com/asset/a-wedding-depiction-underway/nAH2uae7bg856g?hl=en
+  sourceType: community
+  checked: '2026-10-14'
+  note: >-
+    Прочитана первичная запись и просмотрена фотография двух женщин, работающих над одной композицией. Имена
+    художниц не сообщены. 2025 относится к цифровой записи фотографии. Видимая архитектурная поверхность и
+    процесс нанесения линий не дают точной рецептуры материалов и даты завершения росписи.
+- id: banglanatak-palghar-living-heritage
+  title: Living Heritage Trails of Palghar
+  publisher: Banglanatak / Google Arts & Culture
+  url: https://artsandculture.google.com/story/living-heritage-trails-of-palghar-banglanatak/zwUhIYx8QUgYuA?hl=en
+  sourceType: community
+  checked: '2026-10-14'
+  note: >-
+    Прочитан материал о Ганджаде, Бапугаоне и других местных практиках Пальгхара. Он поддерживает контекст
+    действующих художников и участия женщин, а не происхождение всех приёмов или единую дату начала варли.
+    Туристические и рекламные формулировки не использованы как художественные критерии.
+
+# Региональная графика, бумага и росписи: партия 2
+- id: hkbu-mianzhu-collection
+  title: 'New Year woodblock prints and paintings: вводный текст коллекции'
+  publisher: Hong Kong Baptist University Library
+  url: https://bcc.lib.hkbu.edu.hk/artcollection/collection/chinese-new-year-print/
+  sourceType: primary
+  checked: '2026-10-14'
+  note: >-
+    Коллекция описывает приобретение работ у мастерских Мяньчжу. В общем перечне есть и Янлюцин; регион
+    каждого предмета требует отдельного основания. Вводный текст пишет 李方福, предметная запись — 李芳福;
+    разночтение не исправлено автоматически.
+- id: hkbu-hu-double-whips
+  title: 双扬鞭 / Flipping with double whips
+  publisher: Hong Kong Baptist University Library
+  url: https://bcc.lib.hkbu.edu.hk/artcollection/j218-3-h47e/
+  sourceType: primary
+  checked: '2026-10-14'
+  note: >-
+    胡明貴; издатель 绵竹胡氏画坊. Два листа составляют одну парную композицию. Год [19--?] не уточнён; copyright 2022
+    сайта не датирует оттиск. Репродукция просмотрена.
+- id: hkbu-li-gourd-boys
+  title: 金瓜童子 / A pair of servant boys with gourd
+  publisher: Hong Kong Baptist University Library
+  url: https://bcc.lib.hkbu.edu.hk/artcollection/j218-3-l40e/
+  sourceType: primary
+  checked: '2026-10-14'
+  note: >-
+    Автор 李芳福 по предметной записи, дата [19--?]. Два листа составляют одну пару. Разночтение имени с вводным
+    текстом коллекции сохранено; биография и дата рождения не перенесены на предмет. Репродукция просмотрена.
+- id: bm-ding-flower-basket
+  title: 'Ding family: A basket of flowers, 1906,1128,0.3'
+  publisher: British Museum / Google Arts & Culture
+  url: >-
+    https://artsandculture.google.com/asset/ding-family-of-the-jinchang-pavillion-a-basket-of-flowers-a-colour-woodblock-print/xAEZUSvFMC7yyQ
+  sourceType: museum
+  checked: '2026-10-14'
+  note: >-
+    1700–1799; designed by Ding Workshop, printed in Suzhou. Связь с китайским Новым годом музей обозначает
+    предположительно (presumably), а не как доказанное использование конкретного листа. Полная репродукция
+    просмотрена.
+- id: faam-dongho-collection-2024
+  title: 'New Collection Exhibition: Dong Ho Print from the Cynthea J. Bogel Collection'
+  publisher: Fukuoka Asian Art Museum
+  url: https://faam.city.fukuoka.lg.jp/en/exhibition/20238/
+  sourceType: museum
+  checked: '2026-10-14'
+  note: >-
+    Описание бумаги Dó, раковинного покрытия и последовательности цветной печати. Подпись Nguyen Thi Oanh, The
+    Marriage of a Mouse, unknown проверена по data-caption соответствующего изображения IMG_4759; файл F07
+    относится к Guang Renqian и исключён. Дар 2022 и выставка 2024 не являются датами оттиска.
+- id: faam-dongho-modernization-2973
+  title: Modernization (Hunter and Bicycle Rider), 2973
+  publisher: Fukuoka Asian Art Museum
+  url: https://jmapps.ne.jp/faam_en/det.html?data_id=6041
+  sourceType: museum
+  checked: '2026-10-14'
+  note: >-
+    Автор неизвестен; производство исходного дизайна не датировано, отпечатано в 2010, приобретено в 2018.
+    Бумага, ксилография, 19,4 × 26,6 см. Репродукция полностью загружена и просмотрена на предметной странице.
+- id: faam-dongho-peace-2957
+  title: Peace, Education for the Populace, in Memorial of September 8, 2957
+  publisher: Fukuoka Asian Art Museum
+  url: https://jmapps.ne.jp/faam_en/det.html?data_id=6025
+  sourceType: museum
+  checked: '2026-10-14'
+  note: >-
+    Nguyen Dang San по предметной записи; исходный дизайн не датирован, отпечатано в 2010, приобретено в 2018.
+    Бумага, ксилография, 26,4 × 17,3 см. Репродукция полностью загружена и просмотрена на предметной странице.
+- id: lnma-dongho-dragon-1960s
+  title: 'Art of Viet Nam: Dragon Dance, detail'
+  publisher: Latvian National Museum of Art / Art Museum RIGA BOURSE
+  url: https://lnmm.gov.lv/en/art-museum-riga-bourse/exhibitions/art-of-viet-nam-562
+  sourceType: museum
+  checked: '2026-10-14'
+  note: >-
+    Подпись: неизвестный мастер Донгхо, Вьетнам, 1960-е, бумага, цветная ксилография. Просмотрена
+    опубликованная деталь, не весь лист. Выставка 2025–2026 и дипломатический дар 2024 не датируют этот
+    оттиск; общий текст о китайском влиянии на наследие Вьетнама не доказывает отдельную генеалогию Донгхо.

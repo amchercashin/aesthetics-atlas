@@ -1,0 +1,2327 @@
+- domain:
+    - art
+  tier: 2
+  dateKind: corpus
+  origin: unknown
+  parents: []
+  aliases:
+    - Лубок
+    - Русский лубок
+    - Народная картинка
+    - Lubok
+  names:
+    - Иван Александрович Голышев
+  maturity: established
+  labelStatus: historical
+  id: lubok
+  name: Русский печатный лубок
+  orig: Russian lubok / popular prints
+  kind: tradition
+  kindNote: Издательская и визуальная традиция с разными печатными техниками; не единая авторская манера.
+  start: 1600
+  end: 1899
+  approx: true
+  dates: "корпус: XIX век и лист с датировкой XVII–XIX"
+  era: renaissance
+  region: Россия; в двух записях NYPL указана Москва
+  medium:
+    - print
+    - illustration
+  summary: >-
+    Самостоятельные печатные листы соединяют образ, повествовательные сцены, заголовок и подписи; религиозные
+    и светские варианты используют разные техники.
+  description: >-
+    Лубок рассматривается здесь как традиция популярной печатной картинки. Выбранные вещи не сводятся к яркой
+    раскраске: три литографических листа NYPL монохромны, а музейные резцовые гравюры показывают другой способ
+    работы линии и цвета.
+
+
+    Изображение может занимать одно поле, делиться на сцены или включать множество регистров. Текст поясняет
+    персонажей и действия, а заголовок и рамка организуют самостоятельный лист. Сказочная, бытовая и
+    религиозная тематика не определяет единую палитру. Именная роль литографа Голышева сохраняется отдельно от
+    неизвестного авторства других изображений.
+  traits:
+    - Заголовок, подписи и изображение составляют самостоятельную листовую композицию
+    - События могут распределяться по сценам, регистрам и обрамлённым полям
+    - Контур, штрих и печатный текст задают различимые уровни изображения
+    - Монохромная печать и раскраска сосуществуют; одной обязательной палитры нет
+  scopeNote: >-
+    Пять листов: три литографии NYPL 1866–1868 годов и две резцовые гравюры Русского музея. Ранние
+    ксилографии, рисованный лубок и современное продолжение требуют расширения корпуса. Не каждая русская
+    гравюра включается в лубок только по языку подписи.
+  dateNote: >-
+    1600–1899 — условная рамка широкого предметного интервала «XVII–XIX» у одного листа, не доказанный период
+    существования традиции. У трёх литографий известен год выпуска, но не обязательно создания исходного
+    рисунка. Год альбома и годы поступления в музеи не перенесены на произведения.
+  creators:
+    - name: Иван Александрович Голышев
+      orig: I. A. Golyshev (Ivan Aleksandrovich)
+      role: литограф листа «Илья Муромец», 1868; роль по записи NYPL
+      sources:
+        - nypl-lubok-ilya-1868
+  corpus:
+    - workId: lubok-cat-nypl-479510
+      title: Похороны кота крысами и мышами
+      author: Автор не указан
+      year: 1866 — выпуск листа
+      medium: Литография
+      sources:
+        - nypl-lubok-cat-1866
+      reference: https://digitalcollections.nypl.org/items/6a809960-c641-012f-46fc-58d385a7bc34
+      whyRepresentative: >-
+        Процессия и отдельные группы животных объединены пейзажем; заголовок находится сверху, поясняющий
+        текст занимает широкое нижнее поле.
+      place: The New York Public Library
+      rights:
+        embed: false
+        reviewed: "2026-10-14"
+        note: Репродукция доступна на предметной странице источника.
+    - workId: lubok-bear-nypl-479508
+      title: Свадьба медведя Мишки косолапого
+      author: Автор не указан
+      year: 1868 — выпуск листа
+      medium: Литография
+      sources:
+        - nypl-lubok-bear-1868
+      reference: https://digitalcollections.nypl.org/items/6a098e00-c641-012f-bcc6-58d385a7bc34
+      whyRepresentative: >-
+        Многолюдное застолье животных занимает единое плотное поле; подробные подписи вынесены под
+        изображение.
+      place: The New York Public Library
+      rights:
+        embed: false
+        reviewed: "2026-10-14"
+        note: Репродукция доступна на предметной странице источника.
+    - workId: lubok-ilya-nypl-479522
+      title: Сильный храбрый богатырь Илья Муромец
+      author: Иван Александрович Голышев — литограф
+      year: 1868 — выпуск листа
+      medium: Литография
+      sources:
+        - nypl-lubok-ilya-1868
+      reference: https://digitalcollections.nypl.org/items/6e1ac700-c641-012f-80de-58d385a7bc34
+      whyRepresentative: >-
+        Несколько сцен разного размера заключены в орнаментальные очертания; центральный эпизод и боковые
+        фигуры читаются как составной рассказ.
+      place: The New York Public Library
+      rights:
+        embed: false
+        reviewed: "2026-10-14"
+        note: Репродукция доступна на предметной странице источника.
+    - workId: lubok-comfort-rm-2916
+      title: Икона Божией Матери «Утоли моя печали», Гр.Луб.-2916
+      author: Художник не указан
+      year: XIX век
+      medium: Бумага; резцовая гравюра с раскраской
+      sources:
+        - rusmuseum-lubok-comfort
+      reference: https://rusmuseumvrm.ru/data/collections/engraving/gr.lub.-2916/index.php
+      whyRepresentative: >-
+        Крупная поясная фигура отделена от текстового поля; отдельные цветные участки сосуществуют с тонким
+        печатным штрихом.
+      place: Государственный Русский музей
+      rights:
+        embed: false
+        reviewed: "2026-10-14"
+        note: Репродукция доступна на предметной странице источника.
+    - workId: lubok-judgement-rm-3270
+      title: Образ страшного суда, Гр.Луб.-3270
+      author: Художник не указан
+      year: XVII–XIX — предметная датировка музея
+      medium: Бумага; резцовая гравюра
+      sources:
+        - rusmuseum-lubok-judgement
+      reference: https://rusmuseumvrm.ru/data/collections/engraving/gr.lub.-3270/index.php
+      whyRepresentative: >-
+        Множество небольших фигур, регистров и надписей составляют плотную вертикальную схему. Этот предмет
+        показывает отличие духовного варианта от сюжетной литографической картинки.
+      place: Государственный Русский музей
+      rights:
+        embed: false
+        reviewed: "2026-10-14"
+        note: Репродукция доступна на предметной странице источника.
+  compare:
+    - id: bilibin-illustration
+      note: >-
+        Самостоятельные лубочные листы с заголовками и пояснениями сопоставляются с книжной композицией
+        Билибина. Это сравнение устройства изображений и текста; влияние конкретного листа не заявлено.
+    - id: hokusai-landscape-prints
+      note: >-
+        Сравниваются самостоятельные печатные листы: в выбранном лубке текст и многочастный рассказ заметнее,
+        чем в пейзажном корпусе Хокусая. Ни одна техника не приравнивается ко всей национальной графике.
+  evidence:
+    - claim: NYPL датирует три самостоятельных литографических листа выпусками 1866 и 1868 годов.
+      field: corpus
+      source: nypl-lubok-cat-1866
+    - claim: И. А. Голышев указан с ролью Lithographer у конкретного листа 1868 года.
+      field: authorship
+      source: nypl-lubok-ilya-1868
+    - claim: Рубрика «Лубок» Русского музея объединяет разные сюжеты и печатные техники.
+      field: scope
+      source: rusmuseum-lubok-collection
+    - claim: >-
+        У «Образа страшного суда» предметный интервал XVII–XIX шире рубрики периода; он оставлен без
+        искусственного уточнения.
+      field: dates
+      source: rusmuseum-lubok-judgement
+  admission:
+    language: >-
+      Повторяются самостоятельный лист, соединение изображения с подписью и повествовательное деление
+      поверхности; линия и цвет варьируются по технике.
+    corpus: >-
+      Пять различных предметных записей и композиций из двух собраний. Разные версии «Похорон кота» не
+      использованы для набора трёх работ.
+    distinctness: >-
+      От книжной графики Билибина выбранные листы отличаются самостоятельным листовым устройством и большим
+      пояснительным текстом. От пейзажной гравюры Хокусая — структурой рассказа и ролью подписей. Лубок не
+      объявлен единственной манерой русской народной графики.
+    significance: >-
+      Традиция выделена музейной типологией Русского музея и отдельным корпусом исторических популярных листов
+      NYPL.
+    sources:
+      - nypl-lubok-cat-1866
+      - nypl-lubok-bear-1868
+      - nypl-lubok-ilya-1868
+      - rusmuseum-lubok-comfort
+      - rusmuseum-lubok-judgement
+      - rusmuseum-lubok-collection
+  review:
+    status: partial
+    date: "2026-10-14"
+    note: >-
+      Просмотрены все пять репродукций и прочитаны предметные записи. Датировка одного листа остаётся широкой
+      и расходится с рубрикой периода; ранняя ксилография этим корпусом не представлена. Различены автор,
+      литограф, коллекционер и год выпуска.
+  example:
+    workId: lubok-cat-nypl-479510
+    title: Похороны кота крысами и мышами
+    author: Автор не указан
+    year: 1866 — выпуск листа
+    medium: Литография
+    sources:
+      - nypl-lubok-cat-1866
+    reference: https://digitalcollections.nypl.org/items/6a809960-c641-012f-46fc-58d385a7bc34
+    whyRepresentative: >-
+      Процессия и отдельные группы животных объединены пейзажем; заголовок находится сверху, поясняющий текст
+      занимает широкое нижнее поле.
+    place: The New York Public Library
+    rights:
+      embed: false
+      reviewed: "2026-10-14"
+      note: Репродукция доступна на предметной странице источника.
+  links:
+    - title: Похороны кота крысами и мышами, 1866
+      url: https://digitalcollections.nypl.org/items/6a809960-c641-012f-46fc-58d385a7bc34
+      src: The New York Public Library
+      lang: en
+    - title: Свадьба медведя Мишки косолапого, 1868
+      url: https://digitalcollections.nypl.org/items/6a098e00-c641-012f-bcc6-58d385a7bc34
+      src: The New York Public Library
+      lang: en
+    - title: Сильный храбрый богатырь Илья Муромец, 1868
+      url: https://digitalcollections.nypl.org/items/6e1ac700-c641-012f-80de-58d385a7bc34
+      src: The New York Public Library
+      lang: en
+    - title: «Утоли моя печали», Гр.Луб.-2916, XIX век
+      url: https://rusmuseumvrm.ru/data/collections/engraving/gr.lub.-2916/index.php
+      src: Государственный Русский музей
+      lang: ru
+    - title: Образ страшного суда, Гр.Луб.-3270, XVII–XIX
+      url: https://rusmuseumvrm.ru/data/collections/engraving/gr.lub.-3270/index.php
+      src: Государственный Русский музей
+      lang: ru
+    - title: "Лубок: музейная типологическая подборка"
+      url: https://rusmuseumvrm.ru/reference/classifier/typology/lubok/index.php
+      src: Государственный Русский музей
+      lang: ru
+- domain:
+    - art
+  tier: 2
+  dateKind: corpus
+  origin: unknown
+  parents: []
+  aliases:
+    - Янлюцин
+    - Янлюцинские няньхуа
+    - Yangliuqing
+    - Xichu nianhua
+    - 杨柳青年画
+  names:
+    - Мастерская Yixinghe / 义兴合画店
+  maturity: established
+  labelStatus: historical
+  id: yang-liuqing-nianhua
+  name: Янлюцинская театральная гравюра
+  orig: Yangliuqing xichu nianhua / 杨柳青戏出年画
+  kind: tradition
+  kindNote: Ограниченный театральный корпус внутри более широкой янлюцинской популярной графики.
+  start: 1875
+  end: 1925
+  approx: true
+  dates: "корпус: конец XIX — начало XX века"
+  era: fin-de-siecle
+  region: Янлюцин близ Тяньцзиня, Китай
+  medium:
+    - print
+    - illustration
+  summary: >-
+    Раскрашенные печатные листы переводят театральную сцену в ясное расположение фигур, выразительные жесты и
+    подробный костюм.
+  description: >-
+    Пять выбранных янлюцинских гравюр посвящены театральным сюжетам. Цветные фигуры, костюмные детали, жесты и
+    надписи организуют действие; архитектура и пейзаж могут обозначать место либо почти исчезать. Широкие
+    свободные участки не исключают подробной проработки одежды и лиц.
+
+
+    В исследовании четыре листа связаны с мастерской Yixinghe, название которой читается на оттисках; у пятого
+    мастерская не установлена. Название мастерской не становится именем одного художника. Театральная ветвь не
+    заменяет все янлюцинские благопожелательные картинки, изображения детей и домашних божеств; няньхуа в
+    целом — ещё более широкая тема.
+  traits:
+    - Контур и цветные участки подробно разделяют костюм и силуэт
+    - Театральные жесты, оружие и ленты организуют действие
+    - Фигуры могут занимать свободное поле или включаться в архитектурное окружение
+    - Заголовки и надписи входят в композицию и помогают читать сюжет
+  scopeNote: >-
+    Пять гравюр из двух литовских музейных собраний по одному предметному исследованию. Даты и атрибуции не
+    объявлены независимо перепроверенными музейными заключениями. Другие жанры Янлюцина и другие центры
+    няньхуа требуют отдельного корпуса.
+  dateNote: >-
+    1875–1925 — условное размещение приблизительного музейно-исследовательского интервала «конец XIX — начало
+    XX века», а не точные годы каждой работы. 2019 в подписях относится к фотографиям. Печатный выпуск статьи
+    обозначен 2020; это не дата произведений.
+  creators:
+    - name: Мастерская Yixinghe
+      orig: Yixinghe huadian / 义兴合画店; Isinghe в литовских подписях
+      role: >-
+        мастерская четырёх выбранных гравюр по прочитанным в исследовании оттискам названия; индивидуальные
+        авторы не названы
+      sources:
+        - aaav-yangliuqing-theatre
+  corpus:
+    - workId: ylq-ldm-g6195
+      title: Danao tiangong / 大闹天宫 — Переполох в Небесном дворце, LDM G-6195
+      author: Мастерская Yixinghe (义兴合画店; Isinghe в подписи статьи)
+      year: Конец XIX — начало XX века
+      medium: Бумага из древесной массы; раскрашенная ксилография
+      sources:
+        - aaav-yangliuqing-theatre
+      reference: https://aaav.vda.lt/journal/article/download/52/52/74#page=14
+      whyRepresentative: >-
+        Фигуры с длинными лентами и сложными костюмами распределены по двору; архитектура обрамляет действие,
+        а надпись расположена в верхнем поле.
+      place: Lietuvos dailės muziejus (LDM; название в публикации)
+      rights:
+        embed: false
+        reviewed: "2026-10-14"
+        note: >-
+          Репродукция опубликована в исследовании; дана ссылка на соответствующую страницу PDF, разрешение на
+          встраивание не заявлено.
+    - workId: ylq-ldm-g6181
+      title: Na Cai Tianhua / 拿蔡天化 — Поимка Цай Тяньхуа, LDM G-6181
+      author: Мастерская Yixinghe (Isinghe в подписи статьи)
+      year: Конец XIX — начало XX века
+      medium: Бумага; раскрашенная ксилография
+      sources:
+        - aaav-yangliuqing-theatre
+      reference: https://aaav.vda.lt/journal/article/download/52/52/74#page=14
+      whyRepresentative: >-
+        Герои расставлены на ступенях и между деревьями; красные и синие участки костюмов связывают фигуры с
+        более мягким пейзажным окружением.
+      place: Lietuvos dailės muziejus (LDM; название в публикации)
+      rights:
+        embed: false
+        reviewed: "2026-10-14"
+        note: >-
+          Репродукция опубликована в исследовании; дана ссылка на соответствующую страницу PDF, разрешение на
+          встраивание не заявлено.
+    - workId: ylq-cdm-tt5842
+      title: San xia wu yi zhuona Deng Che / 三侠五义捉拿鄧車, ČDM Tt-5842
+      author: Мастерская не установлена; янлюцинская атрибуция по исследованию
+      year: Конец XIX — начало XX века
+      medium: Бумага; раскрашенная ксилография
+      sources:
+        - aaav-yangliuqing-theatre
+      reference: https://aaav.vda.lt/journal/article/download/52/52/74#page=25
+      whyRepresentative: >-
+        Группа персонажей образует поперечную сцену на почти свободном поле; костюм, жест и надпись несут
+        большую часть повествования.
+      place: M. K. Čiurlionis National Museum of Art (ČDM)
+      rights:
+        embed: false
+        reviewed: "2026-10-14"
+        note: >-
+          Репродукция опубликована в исследовании; дана ссылка на соответствующую страницу PDF, разрешение на
+          встраивание не заявлено.
+    - workId: ylq-cdm-tt5844
+      title: Qu feng ming guan / 取凤鸣关 — Взятие перевала Фэнмин, ČDM Tt-5844
+      author: Мастерская Yixinghe (Isinghe в подписи статьи)
+      year: Конец XIX — начало XX века
+      medium: Бумага; раскрашенная ксилография
+      sources:
+        - aaav-yangliuqing-theatre
+      reference: https://aaav.vda.lt/journal/article/download/52/52/74#page=25
+      whyRepresentative: >-
+        Небольшая группа фигур с оружием организована активными диагоналями. Жесты и цветные участки выделены
+        на незаполненном фоне.
+      place: M. K. Čiurlionis National Museum of Art (ČDM)
+      rights:
+        embed: false
+        reviewed: "2026-10-14"
+        note: >-
+          Репродукция опубликована в исследовании; дана ссылка на соответствующую страницу PDF, разрешение на
+          встраивание не заявлено.
+    - workId: ylq-cdm-tt5843
+      title: Changshou shan dao wei yang cao / 長壽山盗違陽草, ČDM Tt-5843
+      author: Мастерская Yixinghe (Isinghe в подписи статьи)
+      year: Конец XIX — начало XX века
+      medium: Бумага; раскрашенная ксилография
+      sources:
+        - aaav-yangliuqing-theatre
+      reference: https://aaav.vda.lt/journal/article/download/52/52/74#page=30
+      whyRepresentative: >-
+        Арка пещеры и летящая птица обрамляют сцену; изгибы лент и разные позы связывают фигуры на свободном
+        поле.
+      place: M. K. Čiurlionis National Museum of Art (ČDM)
+      rights:
+        embed: false
+        reviewed: "2026-10-14"
+        note: >-
+          Репродукция опубликована в исследовании; дана ссылка на соответствующую страницу PDF, разрешение на
+          встраивание не заявлено.
+  example:
+    workId: ylq-cdm-tt5844
+    title: Qu feng ming guan / 取凤鸣关 — Взятие перевала Фэнмин, ČDM Tt-5844
+    author: Мастерская Yixinghe (Isinghe в подписи статьи)
+    year: Конец XIX — начало XX века
+    medium: Бумага; раскрашенная ксилография
+    sources:
+      - aaav-yangliuqing-theatre
+    reference: https://aaav.vda.lt/journal/article/download/52/52/74#page=25
+    whyRepresentative: >-
+      Небольшая группа фигур с оружием организована активными диагоналями. Жесты и цветные участки выделены на
+      незаполненном фоне.
+    place: M. K. Čiurlionis National Museum of Art (ČDM)
+    rights:
+      embed: false
+      reviewed: "2026-10-14"
+      note: >-
+        Репродукция опубликована в исследовании; дана ссылка на соответствующую страницу PDF, разрешение на
+        встраивание не заявлено.
+  compare:
+    - id: lubok
+      note: >-
+        Сопоставляются самостоятельные популярные печатные листы. В выбранном янлюцинском корпусе жест и
+        костюм сценических персонажей играют иную роль, чем развёрнутые подписи русских сюжетных листов.
+        Историческая передача приёмов не утверждается.
+    - id: kalighat-painting
+      note: >-
+        Оба корпуса используют выразительную фигуру и свободный фон; здесь костюм и ансамбль театральных
+        персонажей сопоставляются с компактной городской сценой Калигхата. Это ограниченное визуальное
+        сравнение.
+  evidence:
+    - claim: В подписях пяти разных музейных номеров приведена датировка «конец XIX — начало XX века».
+      field: corpus
+      source: aaav-yangliuqing-theatre
+    - claim: >-
+        В исследовании различаются четыре оттиска названия мастерской и атрибуция оставшихся листов к той же
+        среде как предположение. Мастерская Tt-5842 здесь оставлена неизвестной.
+      field: authorship
+      source: aaav-yangliuqing-theatre
+    - claim: Met различает популярные изображения разных центров; Янлюцин не приравнен ко всем няньхуа.
+      field: scope
+      source: met-china-popular-prints
+  admission:
+    language: >-
+      Повторяются ясный печатный контур, раскраска, выразительное размещение фигур и подробности театрального
+      костюма.
+    corpus: >-
+      Пять различных композиций с инвентарными номерами G-6195, G-6181, Tt-5842, Tt-5844, Tt-5843. Другой
+      вариант сюжета на соседней иллюстрации статьи не добавлен как шестой предмет.
+    distinctness: >-
+      Кураторский обзор Met отличает живописное исполнение Янлюцина от более сдержанной колористики Таохуау и
+      смелого яркого рисунка Мяньчжу. Конкретный театральный корпус показывает отдельный круг композиций; эти
+      характеристики не превращены в безусловные признаки любого листа.
+    significance: >-
+      Корпус исследован в рецензируемом издании на материале двух музейных собраний; Met отдельно
+      рассматривает Янлюцин как один из самостоятельных центров популярной графики.
+    sources:
+      - aaav-yangliuqing-theatre
+      - met-china-popular-prints
+  review:
+    status: partial
+    date: "2026-10-14"
+    note: >-
+      Просмотрены пять репродукций и сверены предметные подписи в оригинальном PDF. Атрибуции и широкие даты
+      опираются на это исследование; отдельные музейные записи ещё не сопоставлены. Неустановленная мастерская
+      пятого листа и предел театральной выборки сохранены.
+  links:
+    - title: "Miglė Lebednykaitė. The Case of Peking Opera in Lithuania: The Collection of Chinese Woodblock Prints"
+      url: https://aaav.vda.lt/journal/article/download/52/52/74
+      src: Acta Academiae Artium Vilnensis / Vilnius Academy of Arts
+      lang: en
+    - title: "The Printed Image in China: Popular Prints"
+      url: https://www.metmuseum.org/exhibitions/listings/2012/printed-image-in-china
+      src: The Metropolitan Museum of Art
+      lang: en
+  contexts:
+    - id: nianhua
+      type: related-context
+      status: verified
+      note: >-
+        Региональный театральный корпус относится к более широкому жанру няньхуа по исследованию. Это
+        навигация между масштабами описания, не историческое влияние или единый стиль всех центров.
+      sources:
+        - aaav-yangliuqing-theatre
+- domain:
+    - art
+  tier: 2
+  dateKind: corpus
+  origin: unknown
+  parents: []
+  aliases:
+    - Цзяньчжи
+    - Цзяньчжи, китайская вырезная бумага
+    - Chinese paper cutting
+    - Jianzhi
+    - 剪纸
+    - 剪紙
+  names:
+    - Бао Цзюнь
+    - Чжан Сюфан
+    - Коллектив Фошань (Fatshan)
+  maturity: established
+  labelStatus: editorial-scope-title
+  id: chinese-jianzhi
+  name: "Китайское вырезание бумаги: обзор"
+  orig: Jiǎnzhǐ / 剪纸 / 剪紙 — Chinese paper cutting
+  kind: overview
+  kindNote: Навигационный обзор разных подходов; единого национального визуального стиля не заявляет.
+  start: 1800
+  end: 2007
+  approx: true
+  dates: "корпус: каталожное 1800, XX век и 2007"
+  era: xix
+  region: Китай; выбранный корпус — Янчжоу и Фошань, один комплект хранится в Тяньцзине
+  medium:
+    - decorative-arts
+  summary: >-
+    Силуэт, ажурная линия, просвет и наклеенный фрагмент становятся разными способами построения изображения
+    из бумаги.
+  description: >-
+    Китайское вырезание бумаги объединяет разные местные, авторские и исторические практики. В этом обзоре
+    сопоставлены литературно-живописное сочетание вырезанных форм Бао Цзюня, тонкий ажур Чжан Сюфан и
+    политическое повествование коллектива Фошань. Они связаны способом работы с бумагой, но не одним набором
+    цветов или сюжетов.
+
+
+    Просвет и сохранённый участок могут образовывать орнамент, птицу, растение или многофигурную сцену.
+    Наклеивание и живопись расширяют возможности материала. Национальный обзор оставляет место для
+    самостоятельных карточек локальных школ и авторов; выбранные четыре работы не представляют все регионы и
+    сообщества Китая.
+  traits:
+    - Сохранённый силуэт и вырезанный просвет совместно образуют рисунок
+    - Тонкие ажурные линии могут сочетаться с крупными плотными участками
+    - Подложка, рамка и цвет бумаги влияют на читаемость формы
+    - Орнамент, отдельный мотив и многочастный рассказ используют разные композиционные схемы
+  scopeNote: >-
+    Четыре самостоятельные музейные позиции двух локальных контекстов: Бао Цзюнь, два произведения Чжан Сюфан
+    и одна вырезка Фошань. Четырёхчастная ширма посчитана одним комплектом, а не четырьмя работами. Другие
+    китайские школы и этнические практики требуют собственных корпусов.
+  dateNote: >-
+    1800 воспроизводит поле каталога, описание которого указывает более широкий исторический период. У вырезки
+    Фошань предметное поле даёт XX век, кураторский текст — начало 1970-х. 2007 у работ Чжан Сюфан взято из их
+    подписей, а не из года открытия музея. Даты не устанавливают происхождение техники.
+  creators:
+    - name: Бао Цзюнь
+      orig: Bao Jun
+      role: автор исторического комплекта по музейной атрибуции
+      sources:
+        - yangzhou-bao-jun-tianjin
+    - name: Чжан Сюфан
+      orig: Zhang Xiufang
+      role: автор двух отдельных произведений 2007 года
+      sources:
+        - yangzhou-zhang-screen
+        - yangzhou-zhang-cranes
+    - name: Анонимные участники коммуны Фошань
+      orig: Anonymous Members of a People’s Commune in Fatshan
+      role: коллективная атрибуция вырезки WU 1999.19.02
+      sources:
+        - kemper-foshan-misery
+  corpus:
+    - workId: jz-bao-jun-tianjin
+      title: “Cut-paper Paintings” by Bao Jun in Tianjin
+      author: Бао Цзюнь / Bao Jun
+      year: 1800 — поле музейной карточки; в описании более широкий период
+      medium: Вырезание, наклеивание и живопись; состав по музейному описанию
+      sources:
+        - yangzhou-bao-jun-tianjin
+      reference: >-
+        https://artsandculture.google.com/asset/%E2%80%9Ccut-paper-paintings%E2%80%9D-by-bao-jun-in-tianjin/rAEgGs49qyf33w
+      whyRepresentative: >-
+        Два изображения цветов и птиц расположены на светлых полях. Музей описывает сочетание вырезания,
+        наклеивания и живописи; микроскопическое устройство краёв по этой репродукции не устанавливается.
+      place: Tianjin Museum; публикация музея Янчжоу
+      rights:
+        embed: false
+        reviewed: "2026-10-14"
+        note: Репродукция доступна на предметной странице источника.
+    - workId: jz-zhang-screen-2007
+      title: Four-panel Decorative Screen
+      author: Чжан Сюфан / Zhang Xiufang
+      year: 2007
+      medium: Вырезная бумага; уточнения ниже
+      sources:
+        - yangzhou-zhang-screen
+      reference: https://artsandculture.google.com/asset/four-panel-decorative-screen/0wHFEaRZ7BJBQA
+      whyRepresentative: >-
+        Видимая вертикальная панель соединяет белые силуэты птиц и цветов с ажурными линиями на тёмном поле.
+        Весь набор учтён как одно произведение.
+      place: China Paper Cutting Museum, Yangzhou / Google Arts & Culture
+      rights:
+        embed: false
+        reviewed: "2026-10-14"
+        note: Репродукция доступна на предметной странице источника.
+    - workId: jz-zhang-cranes-2007
+      title: Cranes Flying Around Clouds
+      author: Чжан Сюфан / Zhang Xiufang
+      year: 2007
+      medium: Вырезная бумага; уточнения ниже
+      sources:
+        - yangzhou-zhang-cranes
+      reference: https://artsandculture.google.com/asset/cranes-flying-around-clouds/xAE3cvbs7dsIag
+      whyRepresentative: >-
+        Круглая композиция чередует плотные силуэты журавлей и тонкие непрерывные облачные линии; просветы так
+        же существенны, как оставшаяся бумага.
+      place: China Paper Cutting Museum, Yangzhou / Google Arts & Culture
+      rights:
+        embed: false
+        reviewed: "2026-10-14"
+        note: Репродукция доступна на предметной странице источника.
+    - workId: jz-foshan-misery
+      title: The Years of Misery, from The East is Red, WU 1999.19.02
+      author: Анонимные участники коммуны Фошань (Fatshan), по музейной записи
+      year: XX век; около начала 1970-х по кураторскому тексту
+      medium: Вырезная бумага, наклеенная на бумагу
+      sources:
+        - kemper-foshan-misery
+      reference: >-
+        https://www.kemperartmuseum.wustl.edu/collection/search-results/wu-1999-19-02-anonymous-members-of-a-peoples-commune-in-fatshan-chinese-the-years-of-misery-from-the-series-the-east-is-red-20th-century
+      whyRepresentative: >-
+        Красные силуэты и светлая подложка образуют многочастную повествовательную сцену с фигурами,
+        архитектурой и предметами; это иной формальный подход, чем ажурный орнамент.
+      place: Mildred Lane Kemper Art Museum
+      rights:
+        embed: false
+        reviewed: "2026-10-14"
+        note: Репродукция доступна на предметной странице источника.
+  example:
+    workId: jz-zhang-cranes-2007
+    title: Cranes Flying Around Clouds
+    author: Чжан Сюфан / Zhang Xiufang
+    year: 2007
+    medium: Вырезная бумага; уточнения ниже
+    sources:
+      - yangzhou-zhang-cranes
+    reference: https://artsandculture.google.com/asset/cranes-flying-around-clouds/xAE3cvbs7dsIag
+    whyRepresentative: >-
+      Круглая композиция чередует плотные силуэты журавлей и тонкие непрерывные облачные линии; просветы так
+      же существенны, как оставшаяся бумага.
+    place: China Paper Cutting Museum, Yangzhou / Google Arts & Culture
+    rights:
+      embed: false
+      reviewed: "2026-10-14"
+      note: Репродукция доступна на предметной странице источника.
+  compare:
+    - id: yang-liuqing-nianhua
+      note: >-
+        Вырезанные и наклеенные бумажные формы сопоставляются с контуром и раскраской печатного листа.
+        Сходство плоскостной композиции не означает одной технологии или общего направления.
+  evidence:
+    - claim: Две предметные карточки музея Янчжоу называют Чжан Сюфан и дату 2007.
+      field: authorship
+      source: yangzhou-zhang-screen
+    - claim: >-
+        Kemper определяет материал выбранной работы как вырезку, наклеенную на бумагу, и отдельно обсуждает
+        политический контекст серии.
+      field: corpus
+      source: kemper-foshan-misery
+    - claim: >-
+        Музей Янчжоу рассматривает локальную практику и нескольких авторов; год основания учреждения не принят
+        за дату возникновения вырезания бумаги.
+      field: scope
+      source: yangzhou-cutpaper-museum
+  admission:
+    language: >-
+      Обзор сопоставляет разные способы строить изображение сохранённой бумагой, просветом и наклеиванием. Он
+      не утверждает однородности всех китайских вырезок.
+    corpus: >-
+      Четыре независимые каталожные позиции, три авторские/коллективные атрибуции; наборы и панели не умножены
+      ради количества.
+    distinctness: >-
+      От печатных няньхуа отличается работа с вырезанным материалом; от линейного рисунка — физическая
+      организация просветов и фрагментов. Дальнейшее сравнение локальных школ должно опираться на отдельные
+      корпуса, а не на общую страну.
+    significance: >-
+      Локальный специализированный музей публикует исторические и современные работы; Kemper документирует
+      самостоятельную политическую адаптацию практики.
+    sources:
+      - yangzhou-cutpaper-museum
+      - yangzhou-bao-jun-tianjin
+      - yangzhou-zhang-screen
+      - yangzhou-zhang-cranes
+      - kemper-foshan-misery
+  review:
+    status: partial
+    date: "2026-10-14"
+    note: >-
+      Просмотрены четыре репродукции и прочитаны предметные поля. У Бао Цзюня дата приблизительна по
+      контексту; от ширмы показана одна панель. Подписи Kemper прочитаны веб-инструментом, изображение — по
+      публичной предметной ссылке. Полнота регионального охвата не заявлена.
+  links:
+    - title: Bao Jun. “Cut-paper Paintings” in Tianjin
+      url: >-
+        https://artsandculture.google.com/asset/%E2%80%9Ccut-paper-paintings%E2%80%9D-by-bao-jun-in-tianjin/rAEgGs49qyf33w
+      src: China Paper Cutting Museum, Yangzhou / Google Arts & Culture
+      lang: en
+    - title: Zhang Xiufang. Four-panel Decorative Screen, 2007
+      url: https://artsandculture.google.com/asset/four-panel-decorative-screen/0wHFEaRZ7BJBQA
+      src: China Paper Cutting Museum, Yangzhou / Google Arts & Culture
+      lang: en
+    - title: Zhang Xiufang. Cranes Flying Around Clouds, 2007
+      url: https://artsandculture.google.com/asset/cranes-flying-around-clouds/xAE3cvbs7dsIag
+      src: China Paper Cutting Museum, Yangzhou / Google Arts & Culture
+      lang: en
+    - title: The Years of Misery, WU 1999.19.02
+      url: >-
+        https://www.kemperartmuseum.wustl.edu/collection/search-results/wu-1999-19-02-anonymous-members-of-a-peoples-commune-in-fatshan-chinese-the-years-of-misery-from-the-series-the-east-is-red-20th-century
+      src: Mildred Lane Kemper Art Museum, Washington University in St. Louis
+      lang: en
+    - title: "China Paper Cutting Museum: музейная коллекция и локальные школы"
+      url: https://artsandculture.google.com/partner/china-paper-cutting-museum
+      src: China Paper Cutting Museum, Yangzhou / Google Arts & Culture
+      lang: en
+- domain:
+    - art
+  tier: 2
+  dateKind: corpus
+  origin: unknown
+  parents: []
+  aliases:
+    - Адинкра
+    - Adinkra
+    - Адинкра акан
+  names:
+    - Абладе Гловер
+    - Ханс Ульрих Обрист
+  maturity: established
+  labelStatus: historical
+  id: adinkra
+  name: "Адинкра: печатные ткани и графические знаки"
+  orig: Adinkra — Akan stamped textiles and graphic signs
+  kind: tradition
+  start: 1900
+  end: 2015
+  approx: true
+  dates: "корпус: XX век и запись проекта 2015"
+  era: fin-de-siecle
+  region: Акан, Гана; два полотна асанте и современная графическая адаптация в Аккре
+  medium:
+    - textile
+    - drawing
+  summary: >-
+    Именованные графические знаки повторяются в полях ткани и могут переходить в самостоятельный рисунок и
+    другие художественные среды.
+  description: >-
+    Адинкра объединяет графический словарь и практику его применения, а не один геометрический узор. В двух
+    выбранных полотнах знаки повторяются внутри размеченных полей на готовой ткани. Современный рисунок Абладе
+    Гловера выделяет один знак из такого орнаментального окружения.
+
+
+    Печатная ткань и отдельный рисунок — разные произведения и способы использования графического языка. Знаки
+    связаны с традиционным знанием и пословицами, однако значение конкретной композиции нельзя автоматически
+    получить из случайного интернет-словаря. Статус имени художника, автора проекта и неизвестного мастера
+    ткани сохраняется раздельно.
+  traits:
+    - Отдельные узнаваемые знаки могут повторяться внутри ограниченного поля
+    - Прямые линии и бордюры организуют ткань в группы мотивов
+    - На готовой ткани оттиск знака отличается от рисунка, созданного переплетением нитей
+    - Графический знак может существовать отдельно от текстильного раппорта
+  scopeNote: >-
+    Два музейных полотна и современный рисунок одного знака. Архитектурные, ювелирные и цифровые применения не
+    представлены этим корпусом полностью. Рисунок Гловера не заменяет все адинкра, а весь фон его фотографии
+    не считается отдельной атрибутированной тканью.
+  dateNote: >-
+    У Af1935,1005.2 сохранены обе опубликованные датировки — 1934 и первая четверть XX века. Нижняя координата
+    1900 условна. Дата 2015-07-31 относится к записи современного проекта, а не к изобретению знака Sankofa
+    или всей адинкры. Даты происхождения практики не установлены этим корпусом.
+  creators:
+    - name: Абладе Гловер
+      orig: Ablade Glover
+      role: автор выбранного современного рисунка Sankofa
+      sources:
+        - 89plus-glover-sankofa
+    - name: Ханс Ульрих Обрист
+      orig: Hans Ulrich Obrist
+      role: инициатор проекта Protest against the disappearance of handwriting; не автор рисунка Гловера
+      sources:
+        - 89plus-glover-sankofa
+  corpus:
+    - workId: adinkra-bm-af1935-1005-2
+      title: Полотно адинкра, Af1935,1005.2
+      author: Мастер асанте; имя не указано
+      year: 1934 — предметная запись; I четверть XX века — каталог 2008
+      medium: Хлопок; окраска индиго и нанесение пигмента по каталогу 2008
+      sources:
+        - bm-adinkra-1935-1005-2
+        - met-african-textiles-2008
+      reference: >-
+        https://resources.metmuseum.org/resources/metpublications/pdf/The_Essential_Art_of_African_Textiles_Design_Without_End.pdf#page=50
+      whyRepresentative: >-
+        На опубликованной детали видны обрамлённые поля с повторением круговых, решётчатых и криволинейных
+        знаков. Анализ ограничен видимой частью полотна.
+      place: The British Museum
+      rights:
+        embed: false
+        reviewed: "2026-10-14"
+        note: >-
+          Просмотрена фотографическая деталь на печатной с. 49 музейного каталога 2008. Она не считается
+          отдельным произведением.
+    - workId: adinkra-met-2015-614-6
+      title: Adinkra prestige cloth, 2015.614.6
+      author: Мастер асанте-акан; имя не указано
+      year: 1960-е
+      medium: Хлопок, шерсть, краситель
+      sources:
+        - met-adinkra-687569
+      reference: https://www.metmuseum.org/art/collection/search/687569
+      whyRepresentative: >-
+        На жёлтом фоне повторяются разные чёрные знаки в прямоугольных полях; узкие разноцветные полосы
+        отделяют группы этих полей.
+      place: The Metropolitan Museum of Art
+      rights:
+        embed: false
+        reviewed: "2026-10-14"
+        note: Репродукция доступна на предметной странице источника.
+    - workId: adinkra-glover-sankofa
+      title: Sankofa Adinkra symbol drawn by artist Ablade Glover
+      author: Абладе Гловер — рисунок; Ханс Ульрих Обрист — проект
+      year: 2015-07-31 — дата цифровой записи проекта
+      medium: Чернила на бумаге
+      sources:
+        - 89plus-glover-sankofa
+      reference: >-
+        https://artsandculture.google.com/asset/sankofa-adinkra-symbol-drawn-by-artist-ablade-glover-ablade-glover-and-hans-ulrich-obrist/ZwHnWY3w7bKriw
+      whyRepresentative: >-
+        Отдельный знак с парными завитками подписан своим именем; фотография показывает рисунок на листке
+        поверх орнаментальной ткани. Фон не посчитан дополнительной работой.
+      place: 89plus
+      rights:
+        embed: false
+        reviewed: "2026-10-14"
+        note: Репродукция доступна на предметной странице источника.
+  example:
+    workId: adinkra-met-2015-614-6
+    title: Adinkra prestige cloth, 2015.614.6
+    author: Мастер асанте-акан; имя не указано
+    year: 1960-е
+    medium: Хлопок, шерсть, краситель
+    sources:
+      - met-adinkra-687569
+    reference: https://www.metmuseum.org/art/collection/search/687569
+    whyRepresentative: >-
+      На жёлтом фоне повторяются разные чёрные знаки в прямоугольных полях; узкие разноцветные полосы отделяют
+      группы этих полей.
+    place: The Metropolitan Museum of Art
+    rights:
+      embed: false
+      reviewed: "2026-10-14"
+      note: Репродукция доступна на предметной странице источника.
+  compare:
+    - id: asante-kente
+      note: >-
+        Повторение оттисков на готовой ткани сопоставляется с тканым построением рисунка кенте. Общая
+        география и геометрия не делают техники одинаковыми.
+      sources:
+        - met-adinkra-687569
+    - id: bogolanfini
+      note: >-
+        Сравниваются штампованный графический словарь адинкры и окрашивание поверхности боголанфини. Сходные
+        сетки и светло-тёмные контрасты не являются доказательством общего происхождения.
+  evidence:
+    - claim: Met описывает нанесение знаков штампами на готовые панели ткани.
+      field: traits
+      source: met-adinkra-687569
+    - claim: >-
+        Датировка предметной страницы Af1935,1005.2 отличается от даты подписи музейного каталога 2008; обе
+        оставлены в карточке.
+      field: dates
+      source: bm-adinkra-1935-1005-2
+    - claim: Запись 89plus называет Гловера автором вклада в проект Обриста и сообщает материал ink on paper.
+      field: authorship
+      source: 89plus-glover-sankofa
+    - claim: WMF рассматривает переходы адинкры между тканью и другими художественными средами.
+      field: scope
+      source: wmf-adinkra-spread
+  admission:
+    language: >-
+      Именованные знаки и их повторение внутри размеченной поверхности связывают текстильные и графические
+      применения.
+    corpus: >-
+      Три самостоятельные работы: два разных музейных номера и рисунок в отдельной первичной записи проекта.
+      Деталь ткани и её целое не посчитаны двумя вещами.
+    distinctness: >-
+      От кенте отличается способом нанесения узора на готовую основу; от боголанфини — штампованием отдельных
+      знаков и их графическим словарём. Признаки относятся к выбранным вариантам, не ко всем геометрическим
+      тканям Африки.
+    significance: >-
+      Практика документирована предметами Met и British Museum, исследованием WMF и самостоятельной
+      современной работой признанного художника в проекте 89plus.
+    sources:
+      - met-adinkra-687569
+      - bm-adinkra-1935-1005-2
+      - 89plus-glover-sankofa
+      - wmf-adinkra-spread
+      - met-african-textiles-2008
+  review:
+    status: partial
+    date: "2026-10-14"
+    note: >-
+      Просмотрены ткань Met, опубликованная деталь British Museum и рисунок Гловера. Две даты исторической
+      ткани расходятся; предметная запись BM прочитана через поисковое извлечение. Знак не объявлен
+      универсальной манерой всей живописи Гловера или всех тканей акан.
+  links:
+    - title: Adinkra cloth, Af1935,1005.2
+      url: https://www.britishmuseum.org/collection/object/E_Af1935-1005-2
+      src: The British Museum
+      lang: en
+    - title: "The Essential Art of African Textiles: Design Without End, 2008"
+      url: >-
+        https://resources.metmuseum.org/resources/metpublications/pdf/The_Essential_Art_of_African_Textiles_Design_Without_End.pdf
+      src: The Metropolitan Museum of Art
+      lang: en
+    - title: Adinkra prestige cloth, 2015.614.6, 1960-е
+      url: https://www.metmuseum.org/art/collection/search/687569
+      src: The Metropolitan Museum of Art
+      lang: en
+    - title: Ablade Glover. Sankofa Adinkra symbol, запись проекта 2015
+      url: >-
+        https://artsandculture.google.com/asset/sankofa-adinkra-symbol-drawn-by-artist-ablade-glover-ablade-glover-and-hans-ulrich-obrist/ZwHnWY3w7bKriw
+      src: 89plus / Google Arts & Culture
+      lang: en
+    - title: The Spread of Adinkra
+      url: >-
+        https://artsandculture.google.com/story/the-spread-of-adinkra-world-monuments-fund/NQVBErEmnp6i8w?hl=en
+      src: World Monuments Fund / Google Arts & Culture
+      lang: en
+- domain:
+    - art
+  tier: 2
+  dateKind: corpus
+  origin: unknown
+  parents: []
+  aliases:
+    - Роспись ндебеле
+    - "Ндебеле: настенная роспись"
+    - Ndebele murals
+    - amaNdebele wall painting
+  names:
+    - Эстер Малангу
+  maturity: established
+  labelStatus: historical
+  id: ndebele-murals
+  name: Настенная роспись ндебеле в ЮАР и её адаптации
+  orig: South African Ndebele wall painting
+  kind: tradition
+  kindNote: >-
+    Традиция оформления архитектурной поверхности; отдельная авторская практика Малангу представлена своей
+    карточкой.
+  start: 1991
+  end: 2024
+  approx: true
+  dates: "корпус: не позднее 1991 — 2024; две даты относятся к фотодокументации"
+  era: digital
+  region: "Южная Африка (ЮАР): Ботшабело и дом Малангу; место показа современной адаптации — Лондон, Великобритания"
+  medium:
+    - painting
+    - architecture
+    - decorative-arts
+  summary: >-
+    Геометрические поля и контрастные бордюры организуют стены, ограды и другие архитектурные поверхности;
+    современные проекты переносят эти решения на выставочные панели.
+  description: >-
+    Выбранный корпус соединяет фрагмент стены неизвестного мастера в Ботшабело, фотографию домашнего ансамбля
+    Малангу и её публичный проект на деревянных панелях. Наблюдаемые связи — крупные геометрические поля,
+    вложенные границы и согласование рисунка с архитектурной поверхностью. У старой чёрно-белой фотографии
+    нельзя восстановить исходную палитру.
+
+
+    Женская передача навыков и индивидуальные решения художниц имеют значение для этой практики. Современная
+    работа Малангу расширяет круг поверхностей и зрителей, но не представляет собой единоличное авторство всей
+    традиции. Росписи ндебеле ЮАР не объединены здесь со всеми украшенными домами Африки или с отдельными
+    практиками ндебеле Зимбабве.
+  traits:
+    - Крупные геометрические поля ограничены контрастными линиями
+    - Диагонали, треугольники и ступенчатые формы могут сочетаться с прямоугольными модулями
+    - Масштаб и направление рисунка связаны со стеной, оградой или сборной панелью
+    - В цветных примерах чёрные и белые бордюры разделяют разные цветовые поля
+  scopeNote: >-
+    Три самостоятельные архитектурные работы по документированным изображениям: неизвестный мастер Ботшабело,
+    домашний ансамбль с неуточнённым исполнителем и один публичный мурал Малангу. Корпус не охватывает всех
+    центров и поколений ндебеле. Два музейных холста VMFA и BMW Art Car не включены как дополнительные стены.
+  dateNote: >-
+    1991 — верхняя граница существования первой стены по году журнала, а не установленный год её росписи; 19
+    мая 2014 — дата снимка второй. 2024 — дата публичного произведения. Нижняя координата карты условно
+    привязана к журнальному свидетельству. Эти числа не датируют происхождение или прекращение традиции.
+  creators:
+    - name: Эстер Малангу
+      orig: Esther Mahlangu
+      role: >-
+        автор Umuntu ngumuntu ngabantu, 2024; исполнитель двух других фрагментов по этим подписям не
+        устанавливается
+      sources:
+        - serpentine-mahlangu-mural-2024
+  corpus:
+    - workId: ndebele-botshabelo-courtyard-loubser
+      title: Стена внутреннего двора со ступенью, Ботшабело
+      author: Автор росписи не указан
+      year: "Не позднее 1991: год публикации фотографии; дата выполнения неизвестна"
+      medium: >-
+        В подписи стены со ступенью названы сажа, зола, известь и коровий навоз; красочный слой отдельно не
+        описан
+      sources:
+        - staffrider-mural-art-1991
+      reference: https://sahistory.org.za/sites/default/files/archive-files3/stv9n491.pdf#page=61
+      whyRepresentative: >-
+        На чёрно-белой фотографии светлые диагонали делят тёмную поверхность на крупные треугольные поля.
+        Нижняя горизонталь связана со ступенью; исходные цвета по этому снимку не определяются.
+      place: Ботшабело, ЮАР
+      rights:
+        embed: false
+        reviewed: "2026-10-14"
+        note: Репродукция доступна на предметной странице источника.
+      note: >-
+        Фотография Аннет Лубсер. Стена рассматривается по опубликованному фрагменту; жилое или музейное
+        назначение ансамбля подпись отдельно не сообщает.
+    - workId: ndebele-mahlangu-home-photo-2014
+      title: Роспись дома Эстер Малангу, фрагмент на фотографии 19 мая 2014
+      author: Исполнитель конкретного фрагмента в подписи не указан
+      year: "Не позднее 19 мая 2014: дата фотографии; дата росписи неизвестна"
+      medium: Настенная роспись; состав красок этой стены не указан
+      sources:
+        - vmfa-mahlangu-home-2014
+      reference: https://www.vmfa.museum/press/important-ndebele-artist-esther-mahlangu-to-paint-at-vmfa
+      whyRepresentative: >-
+        Чёрные и белые границы отделяют розовые, голубые, зелёные и жёлтые поля; диагонали, зубчатый мотив и
+        вложенные формы продолжаются за фигурой хозяйки.
+      place: Дом Эстер Малангу, ЮАР
+      rights:
+        embed: false
+        reviewed: "2026-10-14"
+        note: Репродукция доступна на предметной странице источника.
+      note: >-
+        Фото Richard B. Woodward. Присутствие художницы и расположение у её дома не заменяют отдельную
+        атрибуцию каждого фрагмента росписи.
+    - workId: ndebele-mahlangu-serpentine-2024
+      title: Umuntu ngumuntu ngabantu
+      author: Эстер Малангу
+      year: "2024"
+      medium: Живопись на шестнадцати деревянных панелях; один публичный мурал
+      sources:
+        - serpentine-mahlangu-mural-2024
+      reference: https://www.serpentinegalleries.org/whats-on/dr-esther-mahlangu-umuntu-ngumuntu-ngabantu/
+      whyRepresentative: >-
+        Крупное центральное поле окружено меньшими прямоугольными модулями. Чёрные и белые бордюры связывают
+        ступенчатые формы, треугольники и цветные вставки в одну фронтальную композицию.
+      place: Serpentine North Garden, Лондон
+      rights:
+        embed: false
+        reviewed: "2026-10-14"
+        note: Репродукция доступна на предметной странице источника.
+      note: >-
+        Архитектурная выставочная адаптация, а не часть жилого дома. Все шестнадцать панелей и разные
+        фотографии проекта посчитаны одной работой.
+  example:
+    workId: ndebele-mahlangu-serpentine-2024
+    title: Umuntu ngumuntu ngabantu
+    author: Эстер Малангу
+    year: "2024"
+    medium: Живопись на шестнадцати деревянных панелях; один публичный мурал
+    sources:
+      - serpentine-mahlangu-mural-2024
+    reference: https://www.serpentinegalleries.org/whats-on/dr-esther-mahlangu-umuntu-ngumuntu-ngabantu/
+    whyRepresentative: >-
+      Крупное центральное поле окружено меньшими прямоугольными модулями. Чёрные и белые бордюры связывают
+      ступенчатые формы, треугольники и цветные вставки в одну фронтальную композицию.
+    place: Serpentine North Garden, Лондон
+    rights:
+      embed: false
+      reviewed: "2026-10-14"
+      note: Репродукция доступна на предметной странице источника.
+    note: >-
+      Архитектурная выставочная адаптация, а не часть жилого дома. Все шестнадцать панелей и разные фотографии
+      проекта посчитаны одной работой.
+  compare:
+    - id: de-stijl
+      note: >-
+        Сопоставляются разграниченные цветовые плоскости. В выбранных росписях ндебеле заметны диагонали,
+        ступенчатые формы и многоцветные вставки; это формальное сравнение, а не утверждение о происхождении.
+    - id: gorodets-painting
+      note: >-
+        В обоих корпусах цвет и контрастные границы организуют декоративную поверхность. Здесь сравнивается
+        архитектурная геометрия с предметной и повествовательной росписью Городца; общего происхождения
+        карточка не заявляет.
+  evidence:
+    - claim: >-
+        Staffrider публикует архитектурную стену неизвестного мастера в Ботшабело; год выпуска журнала не
+        является датой изготовления.
+      field: corpus
+      source: staffrider-mural-art-1991
+    - claim: Подпись VMFA датирует фотографию дома 19 мая 2014; живописные заказы самого музея описаны как холсты.
+      field: dates
+      source: vmfa-mahlangu-home-2014
+    - claim: Serpentine называет автора, год и шестнадцать деревянных панелей единого публичного мурала.
+      field: authorship
+      source: serpentine-mahlangu-mural-2024
+    - claim: >-
+        Serpentine описывает передачу навыков от матери и бабушки Малангу; этот авторский пример не подменяет
+        коллективную традицию.
+      field: scope
+      source: serpentine-mahlangu-mural-2024
+  admission:
+    language: >-
+      В выбранных архитектурных поверхностях повторяются крупные поля, контрастные границы и согласование
+      рисунка с формой стены или панели.
+    corpus: >-
+      Три самостоятельных объекта в трёх публикациях. Виды одного мурала и его шестнадцать панелей не
+      увеличивают число произведений.
+    distinctness: >-
+      От ортогонального сопоставления с де Стейл отличаются диагональная организация и набор мотивов выбранных
+      стен; от городецкой росписи — архитектурный масштаб и геометрическое членение вместо предметных сцен.
+      Это сравнение ограниченных корпусов.
+    significance: >-
+      Архитектурная практика обсуждается в южноафриканской культурной публикации и в музейных текстах;
+      современный публичный проект документирован принимающей институцией. Неизвестное имя домашнего мастера
+      не исключает работу из рассмотрения.
+    sources:
+      - staffrider-mural-art-1991
+      - vmfa-mahlangu-home-2014
+      - serpentine-mahlangu-mural-2024
+  review:
+    status: partial
+    date: "2026-10-14"
+    note: >-
+      Все три опубликованных изображения просмотрены. Две даты относятся к документированию, авторы двух
+      фрагментов не установлены; назначение ансамбля Ботшабело и ранняя хронология остаются открытыми. Один
+      снимок монохромен, второй показывает часть домашней стены. Новая карточка не объявляет эти три работы
+      исчерпывающим корпусом ндебеле.
+  links:
+    - title: "Annette Loubser. Contemporary Mural Art: Urban Dislocation and Indifference. Staffrider 9(4), 1991"
+      url: https://sahistory.org.za/sites/default/files/archive-files3/stv9n491.pdf
+      src: Congress of South African Writers / South African History Archive
+      lang: en
+    - title: Эстер Малангу у росписей своего дома, фотография 19 мая 2014
+      url: https://www.vmfa.museum/press/important-ndebele-artist-esther-mahlangu-to-paint-at-vmfa
+      src: Virginia Museum of Fine Arts
+      lang: en
+    - title: Esther Mahlangu. Umuntu ngumuntu ngabantu, 2024
+      url: https://www.serpentinegalleries.org/whats-on/dr-esther-mahlangu-umuntu-ngumuntu-ngabantu/
+      src: Serpentine Galleries
+      lang: en
+- domain:
+    - art
+  tier: 2
+  dateKind: corpus
+  origin: unknown
+  parents: []
+  aliases:
+    - Польские вырезки из бумаги
+    - Польская выцинанка
+    - Wycinanki
+    - Łowicz paper cutouts
+    - Kurpie paper cutouts
+  names:
+    - Janina Strycharska-Wawrykowicz
+    - Stanisława Bakuła
+    - Elżbieta Żaczek
+    - Krystyna Lis?
+  maturity: established
+  labelStatus: editorial-scope-title
+  id: polish-wycinanki
+  name: "Польские выцинанки: Лович и Курпе"
+  orig: Wycinanki — Łowicz i Kurpie
+  kind: overview
+  kindNote: >-
+    Обзор двух местных практик вырезания бумаги; многоцветная аппликация и одноцветный ажур не объявляются
+    единым национальным стилем.
+  start: 1940
+  end: 1960
+  approx: true
+  dates: "корпус: середина XX века; одна работа без даты"
+  era: postwar
+  region: "Польша: Лович, Злакув-Боровы и Стшалки в регионе Курпе"
+  medium:
+    - decorative-arts
+  summary: >-
+    Вырезанные силуэты и просветы образуют орнаментальные и повествовательные композиции; цвет может
+    создаваться многослойной аппликацией или уступать место чёрному ажуру.
+  description: >-
+    Обзор сопоставляет три музейные работы середины XX века и недатированную круглую ловичскую вырезку. Две
+    повествовательные композиции и круглый орнамент используют многоцветные вставки, а работа Бакулы строит
+    сцену из чёрных силуэтов и просветов. Различаются формат, плотность вырезанного рисунка и способы
+    соединения фигур.
+
+
+    Региональные названия полезны для навигации, но не заменяют автора и историю вещи. Объединение мастеров
+    описывает у Бакулы разные типы выцинанок, в том числе многоцветные; поэтому один чёрный лист не становится
+    правилом для всех Курпе. Отдельные местные традиции и авторские корпуса требуют дальнейшего расширения.
+  traits:
+    - Сохранённая бумажная форма и вырезанный просвет совместно образуют изображение
+    - Цвет может создаваться наложением вырезанных частей на общую основу
+    - Зеркальная или радиальная орнаментальная схема сосуществует с протяжённым повествовательным фризом
+    - Узкие перемычки и повторяющиеся силуэты могут связывать людей, растения и постройки
+  scopeNote: >-
+    Четыре самостоятельные вещи: две работы региона Лович из каталога Варшавы, повествовательная вырезка
+    Бакулы из Курпе и круглая ловичская вырезка музея Рапперсвиля. Это обзор сопоставимых практик, не
+    исчерпывающий каталог всех польских регионов. Альтернативные музейные номера и отдельные фотографии одного
+    предмета не увеличивают корпус.
+  dateNote: >-
+    1940–1960 — условные координаты для подписей «середина XX века» и «1950-е». У круглой работы дата
+    отсутствует и в эти границы не подставляется. Издание каталога 2021 и загрузка файла в каталог сайта 2025
+    не датируют ни произведения, ни возникновение выцинанок.
+  creators:
+    - name: Janina Strycharska-Wawrykowicz
+      role: автор Karuzela, PME 10509
+      sources:
+        - warsaw-childhood-wycinanki-2021
+    - name: Stanisława Bakuła
+      role: автор 1 Maja, PME 16916; мастерица региона Курпе
+      sources:
+        - warsaw-childhood-wycinanki-2021
+        - stl-stanislawa-bakula
+    - name: Elżbieta Żaczek
+      role: автор Wesele, PME 10574
+      sources:
+        - warsaw-childhood-wycinanki-2021
+    - name: Krystyna Lis?
+      role: предполагаемый автор круглой вырезки; вопросительный знак музейной записи сохранён
+      sources:
+        - rapperswil-wycinanka-lis
+  corpus:
+    - workId: wycinanki-pme-10509
+      title: Karuzela / «Карусель», PME 10509
+      author: Janina Strycharska-Wawrykowicz
+      year: Середина XX века
+      medium: Глянцевая бумага, бумажная основа
+      sources:
+        - warsaw-childhood-wycinanki-2021
+      reference: >-
+        https://ethnomuseum.pl/wp-content/uploads/2025/12/Dziecinstwo_Childhood_katalog_rozkladowki1.pdf#page=266
+      whyRepresentative: >-
+        Навес карусели образует крупный веер над всадниками; отдельный нижний ряд фигур и орнаментальный
+        бордюр организуют лист по горизонтальным зонам. Многоцветные детали сочетаются с вырезанными
+        силуэтами.
+      place: Лович, Польша
+      rights:
+        embed: false
+        reviewed: "2026-10-14"
+        note: Встроенная репродукция не используется; ссылка ведёт к музейному развороту с подписями.
+      note: >-
+        Каталог 2021, илл. 413; выбран один воспроизведённый предмет. Фотограф Edward Koprowski не является
+        автором вырезки.
+    - workId: wycinanki-pme-16916
+      title: 1 Maja / «Первое мая», PME 16916
+      author: Stanisława Bakuła
+      year: 1950-е
+      medium: Глянцевая бумага
+      sources:
+        - warsaw-childhood-wycinanki-2021
+      reference: >-
+        https://ethnomuseum.pl/wp-content/uploads/2025/12/Dziecinstwo_Childhood_katalog_rozkladowki1.pdf#page=266
+      whyRepresentative: >-
+        Чёрные силуэты собраны в несколько ярусов: поезд, шествие, дома и деревья. Узкие перемычки и общий
+        внешний контур объединяют повествовательную сцену.
+      place: Стшалки, регион Курпе, Польша
+      rights:
+        embed: false
+        reviewed: "2026-10-14"
+        note: Встроенная репродукция не используется; ссылка ведёт к музейному развороту с подписями.
+      note: >-
+        Каталог 2021, илл. 414; выбран один воспроизведённый предмет. PME 17241 из общей заметки не добавлен
+        вторым экземпляром.
+    - workId: wycinanki-pme-10574
+      title: Wesele / «Свадьба», PME 10574
+      author: Elżbieta Żaczek
+      year: 1950-е
+      medium: Глянцевая бумага, картон
+      sources:
+        - warsaw-childhood-wycinanki-2021
+      reference: >-
+        https://ethnomuseum.pl/wp-content/uploads/2025/12/Dziecinstwo_Childhood_katalog_rozkladowki1.pdf#page=266
+      whyRepresentative: >-
+        Удлинённая горизонтальная композиция связывает танцующие пары, музыкантов и деревья. Цветные детали
+        костюмов наложены на силуэтные фигуры и повторяются вдоль полосы.
+      place: Злакув-Боровы, регион Лович, Польша
+      rights:
+        embed: false
+        reviewed: "2026-10-14"
+        note: Встроенная репродукция не используется; ссылка ведёт к музейному развороту с подписями.
+      note: >-
+        Каталог 2021, илл. 415; выбран один воспроизведённый предмет. PME 18101 из общей музейной заметки не
+        добавлен вторым экземпляром.
+    - workId: wycinanki-rapperswil-lis-round
+      title: Wycinanka łowicka / Круглая ловичская выцинанка
+      author: Krystyna Lis? — музейная атрибуция с вопросительным знаком
+      year: Дата не указана
+      medium: Вырезанная бумага; многослойная аппликация на чёрной основе и белом картоне
+      sources:
+        - rapperswil-wycinanka-lis
+      reference: https://artsandculture.google.com/asset/wycinanka-%C5%82owicka-krystyna-lis/ZgEt5fn7HzmdYg?hl=pl
+      whyRepresentative: >-
+        Два петуха и растительные завитки образуют зеркальную композицию внутри ажурного круга. Яркие цветовые
+        вставки наложены на общий чёрный рисунок.
+      place: Muzeum Polskie w Rapperswilu
+      rights:
+        embed: false
+        reviewed: "2026-10-14"
+        note: Репродукция доступна на предметной странице источника.
+  example:
+    workId: wycinanki-pme-10574
+    title: Wesele / «Свадьба», PME 10574
+    author: Elżbieta Żaczek
+    year: 1950-е
+    medium: Глянцевая бумага, картон
+    sources:
+      - warsaw-childhood-wycinanki-2021
+    reference: >-
+      https://ethnomuseum.pl/wp-content/uploads/2025/12/Dziecinstwo_Childhood_katalog_rozkladowki1.pdf#page=266
+    whyRepresentative: >-
+      Удлинённая горизонтальная композиция связывает танцующие пары, музыкантов и деревья. Цветные детали
+      костюмов наложены на силуэтные фигуры и повторяются вдоль полосы.
+    place: Злакув-Боровы, регион Лович, Польша
+    rights:
+      embed: false
+      reviewed: "2026-10-14"
+      note: Встроенная репродукция не используется; ссылка ведёт к музейному развороту с подписями.
+    note: >-
+      Каталог 2021, илл. 415; выбран один воспроизведённый предмет. PME 18101 из общей музейной заметки не
+      добавлен вторым экземпляром.
+  compare:
+    - id: chinese-jianzhi
+      note: >-
+        Сопоставляются вырезанный силуэт, ажур и цветные вставки в двух ограниченных обзорах местных практик.
+        Общая работа с бумагой не доказывает единого происхождения или одинакового языка всех регионов.
+    - id: lubok
+      note: >-
+        Лубочный лист строится печатным изображением, а в показанных выцинанках сам контур бумаги и просвет
+        формируют рисунок. Повествовательная тема сама по себе не делает эти способы одинаковыми.
+  evidence:
+    - claim: >-
+        Музейный разворот воспроизводит три разных предмета с авторами, датами и инвентарными номерами;
+        примечания раскрывают места и материалы.
+      field: corpus
+      source: warsaw-childhood-wycinanki-2021
+    - claim: >-
+        Рапперсвильская запись сохраняет неопределённую атрибуцию Krystyna Lis? и описывает наложение цветных
+        частей на чёрную основу.
+      field: authorship
+      source: rapperswil-wycinanka-lis
+    - claim: >-
+        Объединение народных мастеров документирует регион Курпе и разнообразие практики Бакулы, включая
+        многоцветные варианты.
+      field: scope
+      source: stl-stanislawa-bakula
+  admission:
+    language: >-
+      Обзор показывает разные способы вырезания и аппликации; общего неизменного польского орнамента из этих
+      четырёх вещей не выводится.
+    corpus: >-
+      Четыре независимые композиции с музейными подписями. Три предмета одного разворота различаются
+      изображениями и номерами; они не являются тремя видами одной работы.
+    distinctness: >-
+      Навигационный узел позволяет сравнить местные форматы и авторские решения с китайским вырезанием бумаги
+      и печатным лубком. Конкретный просвет и бумажная форма отличают показанные работы от печатного
+      воспроизведения силуэта.
+    significance: >-
+      Вещи сохраняются и подробно описаны местным государственным музеем и польским музеем диаспоры;
+      объединение народных мастеров документирует передачу и авторскую вариативность практики.
+    sources:
+      - warsaw-childhood-wycinanki-2021
+      - rapperswil-wycinanka-lis
+      - stl-stanislawa-bakula
+  review:
+    status: partial
+    date: "2026-10-14"
+    note: >-
+      Все четыре репродукции просмотрены; подписи трёх вещей сверены с музейными заметками. Атрибуция Krystyna
+      Lis? остаётся неопределённой, дата этой вещи отсутствует. Обзор охватывает два местных контекста и не
+      заменяет дальнейшие карточки регионов и мастеров.
+  links:
+    - title: "Dzieciństwo / Childhood. Каталог собрания, 2021: выцинанки"
+      url: https://ethnomuseum.pl/wp-content/uploads/2025/12/Dziecinstwo_Childhood_katalog_rozkladowki1.pdf
+      src: Państwowe Muzeum Etnograficzne w Warszawie
+      lang: en
+    - title: Wycinanka łowicka — Krystyna Lis?
+      url: https://artsandculture.google.com/asset/wycinanka-%C5%82owicka-krystyna-lis/ZgEt5fn7HzmdYg?hl=pl
+      src: Muzeum Polskie w Rapperswilu / Google Arts & Culture
+      lang: en
+    - title: "Stanisława Bakuła: регион Курпе, работа с выцинанками"
+      url: https://zgstl.pl/tworcy_ludowi/stanislawa-bakula-1925-1989/
+      src: Stowarzyszenie Twórców Ludowych
+      lang: en
+- domain:
+    - art
+  tier: 2
+  dateKind: corpus
+  origin: unknown
+  parents: []
+  aliases:
+    - Патачитра Бенгалии
+    - Бенгальские расписные свитки
+    - Bengal Patachitra
+    - West Bengal scroll painting
+  names:
+    - Манту Читракар
+    - Джаба Читракар
+    - Монимала Читракар
+  maturity: established
+  labelStatus: historical
+  id: bengal-patachitra
+  name: Бенгальская патачитра
+  orig: Patachitra / pat — West Bengal scroll painting
+  kind: tradition
+  start: 2010
+  end: 2014
+  dates: "корпус: 2010–2014"
+  era: digital
+  region: Индия, Западная Бенгалия; корпус современных свитков патуа
+  medium:
+    - painting
+  summary: >-
+    Расписной свиток организует рассказ вдоль длинной полосы; художники патуа соединяют изображение с песенным
+    повествованием и обращаются как к мифам, так и к современным событиям.
+  description: >-
+    В четырёх выбранных свитках цветные контурные фигуры образуют последовательности по вертикали. Манту
+    Читракар и Джаба Читракар используют отдельные поля эпизодов, а в работе о Дурге и Ганге
+    последовательность становится более текучей. Монимала Читракар связывает плотное центральное изображение с
+    цепочками круглых сцен на полях.
+
+
+    Музейные и местные первичные тексты описывают разворачивание свитка с песенным рассказом. Здесь проверены
+    статические репродукции и предметные подписи; темп, мелодия и взаимодействие конкретного исполнения со
+    зрителем не исследованы. Бенгальская практика не объединена с другими традициями, которые также называют
+    patachitra, в частности с практиками Одиши.
+  traits:
+    - Несколько сцен организуются вдоль длинного узкого свитка
+    - Контурные фигуры и плоские цветные участки сохраняют читаемость небольшого эпизода
+    - Бордюр и повтор мотивов могут связывать разные повествовательные поля
+    - >-
+      Прямоугольные разделители, свободная последовательность и круговые сцены дают разные способы построения
+      рассказа
+  scopeNote: >-
+    Четыре самостоятельных свитка трёх современных художников Западной Бенгалии в предметных записях QAGOMA.
+    Печатные книги по мотивам свитков, отдельные кадры одного свитка и исторические экземпляры в корпус не
+    добавлены. Живая песенная практика подтверждается текстами, но не анализом исполнения в этой проверке.
+  dateNote: >-
+    2010–2014 — даты выбранных произведений. 2001 и 2012 в названиях событий, приобретения 2015–2016 и
+    выставка APT8 2015–2016 имеют другие значения. Корпус не устанавливает начало, непрерывность или конец
+    всей традиции.
+  creators:
+    - name: Манту Читракар
+      orig: Mantu Chitrakar
+      role: автор The Gujarat Earthquake, 2012
+      sources:
+        - qagoma-mantu-gujarat-2012
+    - name: Джаба Читракар
+      orig: Jaba Chitrakar
+      role: автор двух выбранных свитков 2010 и 2013
+      sources:
+        - qagoma-jaba-durga-ganga-2010
+        - qagoma-jaba-nirbhaya-2013
+    - name: Монимала Читракар
+      orig: Monimala Chitrakar
+      role: автор Santhal Story of Origin, 2014
+      sources:
+        - qagoma-monimala-santhal-2014
+  corpus:
+    - workId: bengal-mantu-gujarat-2012
+      title: The Gujarat Earthquake / Землетрясение в Гуджарате
+      author: Манту Читракар
+      year: "2012"
+      medium: Натуральные краски на фабричной бумаге с тканевой подложкой
+      sources:
+        - qagoma-mantu-gujarat-2012
+      reference: https://artsandculture.google.com/asset/the-gujarat-earthquake-mantu-chitrakar/LgFogX8rBOX6Qg
+      whyRepresentative: >-
+        Небольшие повествовательные сцены следуют одна под другой в выделенных горизонтальных полях. Контур,
+        цветовые пятна и орнаментальные разделители связывают бытовые и чрезвычайные события в длинную
+        вертикаль.
+      place: Собрание Queensland Art Gallery
+      rights:
+        embed: false
+        reviewed: "2026-10-14"
+        note: Репродукция доступна на предметной странице источника.
+    - workId: bengal-jaba-durga-ganga-2010
+      title: The fight between Goddess Durga and Goddess Ganga / Борьба Дурги и Ганги
+      author: Джаба Читракар
+      year: "2010"
+      medium: Натуральные краски на фабричной бумаге с тканевой подложкой
+      sources:
+        - qagoma-jaba-durga-ganga-2010
+      reference: >-
+        https://artsandculture.google.com/asset/the-fight-between-goddess-durga-and-goddess-ganga-jaba-chitrakar/9AHooVbb7MYcrQ?hl=en
+      whyRepresentative: >-
+        Фигуры повторяются вдоль голубой извивающейся полосы; общая последовательность строится без одинаковых
+        прямоугольных рамок для каждого эпизода. Растительный бордюр объединяет всю длину.
+      place: Собрание Queensland Art Gallery
+      rights:
+        embed: false
+        reviewed: "2026-10-14"
+        note: Репродукция доступна на предметной странице источника.
+    - workId: bengal-monimala-santhal-2014
+      title: Santhal Story of Origin / Рассказ о происхождении санталов
+      author: Монимала Читракар
+      year: "2014"
+      medium: Натуральные краски на фабричной бумаге с тканевой подложкой
+      sources:
+        - qagoma-monimala-santhal-2014
+      reference: >-
+        https://artsandculture.google.com/asset/santhal-story-of-origin-monimala-chitrakar/JwHOdG4gGO82vw?hl=en
+      whyRepresentative: >-
+        Плотное центральное поле заполнено рядами маленьких фигур, а по краям идут круглые сцены. Общий бордюр
+        и повтор цветных контуров связывают несколько масштабов изображения.
+      place: Собрание Queensland Art Gallery
+      rights:
+        embed: false
+        reviewed: "2026-10-14"
+        note: Репродукция доступна на предметной странице источника.
+    - workId: bengal-jaba-nirbhaya-2013
+      title: "Nirbhaya — Delhi rape case / Нирбхая: дело в Дели"
+      author: Джаба Читракар
+      year: "2013"
+      medium: Натуральные краски на фабричной бумаге с тканевой подложкой
+      sources:
+        - qagoma-jaba-nirbhaya-2013
+      reference: https://artsandculture.google.com/asset/nirbhaya-delhi-rape-case-jaba-chitrakar/pQHpn0hf-5Axsw?hl=en
+      whyRepresentative: >-
+        Последовательность разделена растительными полосами на сцены с людьми, транспортом и архитектурой. В
+        отдельных полях диагональные формы меняют ритм горизонтальных рядов.
+      place: Собрание Queensland Art Gallery
+      rights:
+        embed: false
+        reviewed: "2026-10-14"
+        note: Репродукция доступна на предметной странице источника.
+  example:
+    workId: bengal-jaba-durga-ganga-2010
+    title: The fight between Goddess Durga and Goddess Ganga / Борьба Дурги и Ганги
+    author: Джаба Читракар
+    year: "2010"
+    medium: Натуральные краски на фабричной бумаге с тканевой подложкой
+    sources:
+      - qagoma-jaba-durga-ganga-2010
+    reference: >-
+      https://artsandculture.google.com/asset/the-fight-between-goddess-durga-and-goddess-ganga-jaba-chitrakar/9AHooVbb7MYcrQ?hl=en
+    whyRepresentative: >-
+      Фигуры повторяются вдоль голубой извивающейся полосы; общая последовательность строится без одинаковых
+      прямоугольных рамок для каждого эпизода. Растительный бордюр объединяет всю длину.
+    place: Собрание Queensland Art Gallery
+    rights:
+      embed: false
+      reviewed: "2026-10-14"
+      note: Репродукция доступна на предметной странице источника.
+  compare:
+    - id: kalighat-painting
+      note: >-
+        Сопоставляются контурные фигуры двух бенгальских корпусов. Для показанных свитков существенно
+        последовательное разворачивание рассказа; отдельный лист Калигхата организован иначе. Это сравнение не
+        заменяет исследования исторических связей.
+    - id: mithila-painting
+      note: >-
+        Сравниваются плотность фигур, цвет и бордюры. У этих свитков длинный формат и смена эпизодов задают
+        конкретный способ повествования; сходные орнаментальные поля сами по себе не доказывают родство.
+  evidence:
+    - claim: >-
+        Предметная запись Манту Читракара сообщает 2012 и натуральные краски на фабричной бумаге с тканевой
+        подложкой.
+      field: corpus
+      source: qagoma-mantu-gujarat-2012
+    - claim: Куратор описывает свободную последовательность в свитке Дурги и Ганги.
+      field: traits
+      source: qagoma-jaba-durga-ganga-2010
+    - claim: Тема Santhal в музейном заголовке относится к истории, рассказанной свитком.
+      field: scope
+      source: qagoma-monimala-santhal-2014
+    - claim: Запись Nirbhaya датирует работу 2013, отдельно от сюжета 2012 и приобретения 2016.
+      field: dates
+      source: qagoma-jaba-nirbhaya-2013
+    - claim: Материал Banglanatak описывает соединение расписного свитка с песней Pater Gaan.
+      field: context
+      source: banglanatak-swarna-colour-process
+  admission:
+    language: >-
+      Контурная фигура, плоский цвет и продольная организация сцен повторяются при заметных индивидуальных
+      различиях построения свитка.
+    corpus: >-
+      Четыре самостоятельных свитка с четырьмя предметными записями и тремя названными художниками; отдельные
+      фрагменты одного свитка не увеличивают число работ.
+    distinctness: >-
+      Последовательность вдоль разворачиваемой полосы и связь с песенным рассказом сохраняют смысл, который
+      теряется в общем обзоре индийской живописи. Соседние корпуса Калигхата и Митхилы позволяют сравнить
+      формат и организацию сцены.
+    significance: >-
+      Самостоятельные предметные записи и кураторское представление трёх художников сочетаются с материалом
+      местной организации о действующей практике патуа. Западная музейная коллекция не является единственным
+      свидетельством продолжения традиции.
+    sources:
+      - qagoma-mantu-gujarat-2012
+      - qagoma-jaba-durga-ganga-2010
+      - qagoma-monimala-santhal-2014
+      - qagoma-jaba-nirbhaya-2013
+      - banglanatak-swarna-colour-process
+  review:
+    status: reviewed
+    date: "2026-10-14"
+    note: >-
+      Прочитаны четыре предметные записи, все четыре целых свитка просмотрены в опубликованных репродукциях;
+      различены даты сюжета, работы, выставки и приобретения. Формальный анализ относится к этим статическим
+      изображениям; исполнение песен и историческая полнота корпуса не заявлены.
+  links:
+    - title: Mantu Chitrakar. The Gujarat Earthquake, 2012
+      url: https://artsandculture.google.com/asset/the-gujarat-earthquake-mantu-chitrakar/LgFogX8rBOX6Qg
+      src: Queensland Art Gallery & Gallery of Modern Art / Google Arts & Culture
+      lang: en
+    - title: Jaba Chitrakar. The fight between Goddess Durga and Goddess Ganga, 2010
+      url: >-
+        https://artsandculture.google.com/asset/the-fight-between-goddess-durga-and-goddess-ganga-jaba-chitrakar/9AHooVbb7MYcrQ?hl=en
+      src: Queensland Art Gallery & Gallery of Modern Art / Google Arts & Culture
+      lang: en
+    - title: Monimala Chitrakar. Santhal Story of Origin, 2014
+      url: >-
+        https://artsandculture.google.com/asset/santhal-story-of-origin-monimala-chitrakar/JwHOdG4gGO82vw?hl=en
+      src: Queensland Art Gallery & Gallery of Modern Art / Google Arts & Culture
+      lang: en
+    - title: Jaba Chitrakar. Nirbhaya — Delhi rape case, 2013
+      url: https://artsandculture.google.com/asset/nirbhaya-delhi-rape-case-jaba-chitrakar/pQHpn0hf-5Axsw?hl=en
+      src: Queensland Art Gallery & Gallery of Modern Art / Google Arts & Culture
+      lang: en
+    - title: "Swarna Chitrakar. Colour Making Process: Raw Materials for Natural Colour, 2018"
+      url: https://artsandculture.google.com/asset/colour-making-process-0098/iQHdRxaL8FYtaQ
+      src: Banglanatak / Google Arts & Culture
+      lang: en
+- domain:
+    - art
+  tier: 2
+  dateKind: corpus
+  origin: unknown
+  parents: []
+  aliases:
+    - Варли
+    - "Варли: живопись"
+    - Warli painting
+    - Varli painting
+  names:
+    - Дживья Сома Маше
+    - Раджеш Чайтья Вангад
+    - Балу Ладке
+  maturity: established
+  labelStatus: historical
+  id: warli-painting
+  name: Живопись варли
+  orig: Warli / Varli painting
+  kind: tradition
+  start: 1990
+  end: 2025
+  approx: true
+  dates: "корпус: около 1990 и 2009; две росписи без даты, документирование до 2025"
+  era: digital
+  region: Индия, Махараштра; современные работы художников варли и музейная роспись в Нью-Дели
+  medium:
+    - painting
+    - decorative-arts
+  summary: >-
+    Небольшие геометризированные фигуры, тонкая линия и ритмические группы организуют сцены людей, животных и
+    деревьев на ткани и архитектурной поверхности.
+  description: >-
+    В выбранных примерах пространство заполнено множеством маленьких фигур. Парные треугольные формы, линейные
+    конечности, круговые группы и повторяющиеся растительные мотивы позволяют собирать протяжённую сцену без
+    объёмной моделировки. Корпус показывает как белый рисунок на коричневой основе, так и более тёмный рисунок
+    на светлой стене.
+
+
+    Две работы Маше сопоставлены с ансамблем двух других художников и с документированным совместным процессом
+    двух женщин. Музейные и выставочные произведения не заменяют все домашние и ритуальные практики варли. По
+    статическим изображениям не выводятся правила всех церемоний, универсальная символика фигур или точная
+    древняя дата возникновения традиции.
+  traits:
+    - Малые геометризированные фигуры соединяются тонкими линиями
+    - Повтор небольших форм организует круги, спирали и протяжённые ряды
+    - Люди, животные, деревья и архитектура могут сосуществовать в едином поле
+    - Контраст линии и основы важен для читаемости; направление светло-тёмного контраста может различаться
+  scopeNote: >-
+    Три самостоятельных музейных или выставочных произведения и фрагмент четвёртой композиции в процессе
+    создания. Портрет Маше и фотографии одного ансамбля не увеличивают корпус. Домашние и ритуальные варианты
+    требуют дальнейшего локального исследования; имена двух художниц на фотографии не установлены.
+  dateNote: >-
+    Около 1990 и 2009 — даты произведений. У росписи Crafts Museum дата отсутствует; 2025 относится к
+    выставочной фотографии Fishnet и записи отдельного рабочего процесса. Координаты карты ограничивают это
+    документированное сопоставление, а не время существования варли.
+  creators:
+    - name: Дживья Сома Маше
+      orig: Jivya Soma Mashe
+      role: автор двух выбранных работ около 1990 и 2009
+      sources:
+        - map-mashe-warli-1990
+        - cartier-mashe-fishnet-2009
+    - name: Раджеш Чайтья Вангад
+      orig: Rajesh Chaitya Vangad
+      role: соавтор росписи Crafts Museum
+      sources:
+        - crafts-museum-vangad-ladke-warli
+    - name: Балу Ладке
+      orig: Balu Ladke
+      role: соавтор росписи Crafts Museum; не отождествляется с Балу Маше
+      sources:
+        - crafts-museum-vangad-ladke-warli
+  corpus:
+    - workId: warli-map-mashe-c1990
+      title: Untitled Warli painting / Живопись варли без названия
+      author: Дживья Сома Маше
+      year: Около 1990
+      medium: Натуральные пигменты на ткани
+      sources:
+        - map-mashe-warli-1990
+      reference: https://artsandculture.google.com/asset/untitled-warli-painting-jivya-soma-mashe/qgF8F8jGsjAQRw
+      whyRepresentative: >-
+        Множество небольших фигур образует плотную спираль вокруг музыканта. Линейные деревья, дома и животные
+        заполняют пространство вокруг неё; белый рисунок контрастирует с коричневой основой.
+      place: Museum of Art & Photography, Бангалор
+      rights:
+        embed: false
+        reviewed: "2026-10-14"
+        note: Репродукция доступна на предметной странице источника.
+    - workId: warli-crafts-vangad-ladke-wall
+      title: Warli Painting / Роспись внешних стен Crafts Museum
+      author: Раджеш Чайтья Вангад и Балу Ладке
+      year: Дата не указана
+      medium: Настенная роспись; точные материалы не указаны
+      sources:
+        - crafts-museum-vangad-ladke-warli
+      reference: https://artsandculture.google.com/asset/warli-painting/SAEoZ6eEemZUXQ?hl=en
+      whyRepresentative: >-
+        Несколько архитектурных полей заполнены тонкими фигурами, деревьями, круговыми группами и большой
+        сетью. Светлая основа и более тёмный рисунок показывают вариант, отличный от белой линии на коричневом
+        фоне.
+      place: National Crafts Museum, Нью-Дели
+      rights:
+        embed: false
+        reviewed: "2026-10-14"
+        note: Репродукция доступна на предметной странице источника.
+      note: Два художника названы соавторами одного ансамбля; отдельные поля и снимки не увеличивают число работ.
+    - workId: warli-cartier-fishnet-2009
+      title: Fishnet / Рыболовная сеть
+      author: Дживья Сома Маше
+      year: "2009"
+      medium: Материалы этой работы страница не уточняет
+      sources:
+        - cartier-mashe-fishnet-2009
+      reference: https://www.fondationcartier.com/en/collection/artists/jivya-soma-mashe
+      whyRepresentative: >-
+        Крупная конусообразная сеть собрана из множества тонких светлых линий; её масштаб резко отличается от
+        мелких фигур на поверхности. Нижний участок на выставочной фотографии частично закрыт посетительницей.
+      place: Fondation Cartier pour l’art contemporain
+      rights:
+        embed: false
+        reviewed: "2026-10-14"
+        note: Репродукция доступна на предметной странице источника.
+      note: >-
+        Год произведения взят из подписи 2009; вид выставки подписан 2025. Это не портрет художника и не новая
+        работа 2025 года.
+    - workId: warli-wedding-process-document-2025
+      title: Свадебная композиция в процессе создания
+      author: Две художницы; имена не сообщены
+      year: Дата выполнения не уточнена; фотодокументация 2025
+      medium: Роспись архитектурной поверхности; состав материалов не указан
+      sources:
+        - banglanatak-warli-wedding-process
+      reference: https://artsandculture.google.com/asset/a-wedding-depiction-underway/nAH2uae7bg856g?hl=en
+      whyRepresentative: >-
+        На фотографии светлые фигурные ряды и орнаментальные полосы окружают крупные вложенные диагональные
+        границы. Видны руки двух художниц, продолжающих один рисунок.
+      place: Махараштра, Индия
+      rights:
+        embed: false
+        reviewed: "2026-10-14"
+        note: Репродукция доступна на предметной странице источника.
+      note: >-
+        Дополнительная композиция показана в работе и фрагментарно. Организация Banglanatak документирует
+        процесс, а не названа автором росписи.
+  example:
+    workId: warli-map-mashe-c1990
+    title: Untitled Warli painting / Живопись варли без названия
+    author: Дживья Сома Маше
+    year: Около 1990
+    medium: Натуральные пигменты на ткани
+    sources:
+      - map-mashe-warli-1990
+    reference: https://artsandculture.google.com/asset/untitled-warli-painting-jivya-soma-mashe/qgF8F8jGsjAQRw
+    whyRepresentative: >-
+      Множество небольших фигур образует плотную спираль вокруг музыканта. Линейные деревья, дома и животные
+      заполняют пространство вокруг неё; белый рисунок контрастирует с коричневой основой.
+    place: Museum of Art & Photography, Бангалор
+    rights:
+      embed: false
+      reviewed: "2026-10-14"
+      note: Репродукция доступна на предметной странице источника.
+  compare:
+    - id: mithila-painting
+      note: >-
+        Сопоставляются небольшие фигуры, контур и организация заполненной поверхности. В показанных работах
+        варли особенно заметен ритм тонких линейных групп; различия выбранных корпусов не являются
+        универсальными правилами для всех мастеров.
+    - id: kalighat-painting
+      note: >-
+        Плотные группы мелких геометризированных фигур сравниваются с организацией отдельных листов Калигхата
+        вокруг более крупных фигур. Это формальное сопоставление, а не историческая генеалогия.
+  evidence:
+    - claim: MAP сообщает дату около 1990 и натуральные пигменты на ткани для конкретной работы Маше.
+      field: corpus
+      source: map-mashe-warli-1990
+    - claim: Crafts Museum называет двух соавторов и место росписи; дата не сообщается.
+      field: authorship
+      source: crafts-museum-vangad-ladke-warli
+    - claim: В подписи Fondation Cartier Fishnet датирован 2009, тогда как вид выставки относится к 2025.
+      field: dates
+      source: cartier-mashe-fishnet-2009
+    - claim: Первичная фотозапись показывает двух неназванных женщин, работающих над одной композицией.
+      field: authorship
+      source: banglanatak-warli-wedding-process
+    - claim: Местный материал Banglanatak рассматривает варли как продолжающуюся практику Пальгхара.
+      field: context
+      source: banglanatak-palghar-living-heritage
+  admission:
+    language: >-
+      Повторяемая маломасштабная фигура и тонкая линия связывают круговые группы, протяжённые ряды и
+      фигуративную среду при различиях основы и направления контраста.
+    corpus: >-
+      Три самостоятельные музейные или выставочные работы и дополнительная фрагментарная композиция в
+      процессе. Два произведения Маше различаются; портрет художника не используется вместо произведения.
+    distinctness: >-
+      Сравнение с Митхилой и Калигхатом показывает конкретную роль малого геометризированного силуэта и
+      ритмических групп. Полезность узла не сводится к коричнево-белой палитре или общей индийской географии.
+    significance: >-
+      Предметное сохранение в индийских музеях и выставочная история Маше сопоставлены с местной документацией
+      действующих художников; персональное признание одного мастера не заменяет коллективную практику.
+    sources:
+      - map-mashe-warli-1990
+      - crafts-museum-vangad-ladke-warli
+      - cartier-mashe-fishnet-2009
+      - banglanatak-warli-wedding-process
+      - banglanatak-palghar-living-heritage
+  review:
+    status: partial
+    date: "2026-10-14"
+    note: >-
+      Просмотрены три самостоятельных произведения и фрагмент четвёртой композиции в работе. Выставочный вид
+      Fishnet частично закрыт посетительницей; дата росписи Crafts Museum и имена двух женщин не сообщены.
+      Ранние датировки, точная рецептура красок каждого примера и полнота ритуального корпуса не установлены.
+  links:
+    - title: Jivya Soma Mashe. Untitled Warli painting, около 1990
+      url: https://artsandculture.google.com/asset/untitled-warli-painting-jivya-soma-mashe/qgF8F8jGsjAQRw
+      src: Museum of Art & Photography / Google Arts & Culture
+      lang: en
+    - title: Rajesh Chaitya Vangad, Balu Ladke. Warli Painting
+      url: https://artsandculture.google.com/asset/warli-painting/SAEoZ6eEemZUXQ?hl=en
+      src: National Crafts Museum, New Delhi / Google Arts & Culture
+      lang: en
+    - title: "Jivya Soma Mashe. Fishnet, 2009: опубликованный выставочный вид"
+      url: https://www.fondationcartier.com/en/collection/artists/jivya-soma-mashe
+      src: Fondation Cartier pour l’art contemporain
+      lang: en
+    - title: A Wedding Depiction Underway, фотодокументация 2025
+      url: https://artsandculture.google.com/asset/a-wedding-depiction-underway/nAH2uae7bg856g?hl=en
+      src: Banglanatak / Google Arts & Culture
+      lang: en
+    - title: Living Heritage Trails of Palghar
+      url: >-
+        https://artsandculture.google.com/story/living-heritage-trails-of-palghar-banglanatak/zwUhIYx8QUgYuA?hl=en
+      src: Banglanatak / Google Arts & Culture
+      lang: en
+- domain:
+    - art
+  tier: 2
+  dateKind: corpus
+  origin: unknown
+  parents: []
+  aliases:
+    - Няньхуа
+    - Няньхуа, новогодняя народная картинка
+    - Nianhua
+    - 年画
+    - 年畫
+  names:
+    - Мастерская Дин
+    - Ху Мингуй
+    - Ли Фанфу
+    - Yixinghe
+  maturity: established
+  labelStatus: editorial-scope-title
+  id: nianhua
+  name: "Няньхуа: региональные новогодние картинки Китая"
+  orig: 年画 / 年畫 / nianhua
+  kind: overview
+  kindNote: Обзор жанра и нескольких региональных практик; не единый национальный визуальный стиль.
+  start: 1700
+  end: 1999
+  approx: true
+  dates: "корпус: XVIII век; конец XIX — начало XX; два комплекта [19--?]"
+  era: renaissance
+  region: "Китай: Суджоу / Таохуау, Янлюцин / Тяньцзинь, Мяньчжу / Сычуань"
+  medium:
+    - print
+    - illustration
+  summary: >-
+    Обзор новогодней печатной картинки объединяет парные образы, благопожелательные цветы и театральный
+    рассказ, сохраняя различия мастерских и мест.
+  description: >-
+    Няньхуа — полезное жанровое соседство региональных практик, а не название одной манеры. В выбранном
+    корпусе парные фигуры Мяньчжу, цветочный лист Суджоу и многофигурная театральная сцена Янлюцина
+    различаются масштабом фигур, заполнением поля, рисунком и цветом. Общий обзор помогает находить эти
+    различия, не заменяя самостоятельные местные узлы.
+
+
+    Парный комплект дверных божеств или детей учитывается как один ансамбль. Тонкая цветочная композиция не
+    подгоняется под обязательную ярко-красную палитру; музей называет её новогоднее использование
+    предположительным. Китайские популярные гравюры шире жанра няньхуа: язык надписи, техника ксилографии или
+    китайский сюжет сами по себе не включают лист в этот обзор.
+  traits:
+    - >-
+      В выбранных вещах встречаются парные фигуры, одиночная благопожелательная композиция и многофигурная
+      сцена
+    - Печатный контур, цвет и надписи организуют лист по-разному в разных мастерских
+    - Симметричная пара и повествовательное поле — разные композиционные решения
+    - "От тонкой цветочной графики до насыщенных плоскостей костюма: единой обязательной палитры нет"
+  scopeNote: >-
+    Четыре композиции из трёх региональных контекстов: два парных комплекта HKBU, корзина цветов British
+    Museum и один уже представленный янлюцинский лист. Последний также представлен в янлюцинской карточке и не
+    увеличивает число самостоятельных предметов. Другие центры и собственные корпуса Таохуау и Мяньчжу требуют
+    продолжения. Для пары 李芳福 региональное чтение опирается на вводный текст коллекции; разночтение имени 李方福
+    / 李芳福 не разрешено.
+  dateNote: >-
+    1700–1999 — условная рамка выбранного корпуса: 1700–1799 у цветочного листа, конец XIX — начало XX у
+    театрального и [19--?] у двух парных комплектов. Предположительная столетняя датировка не превращена в
+    точный год. Это не период возникновения или завершения няньхуа; copyright сайта 2022 не перенесён на
+    работы.
+  creators:
+    - name: Мастерская Дин
+      orig: Ding Workshop
+      role: Designed by — рисунок корзины цветов; печать в Суджоу
+      sources:
+        - bm-ding-flower-basket
+    - name: Ху Мингуй
+      orig: 胡明貴
+      role: автор парных дверных божеств; издатель 绵竹胡氏画坊
+      sources:
+        - hkbu-hu-double-whips
+    - name: Ли Фанфу
+      orig: 李芳福
+      role: автор пары 金瓜童子 по предметной записи; вводное 李方福 оставлено как неразрешённое разночтение
+      sources:
+        - hkbu-li-gourd-boys
+        - hkbu-mianzhu-collection
+  corpus:
+    - workId: nianhua-hkbu-hu-double-whips
+      title: 双扬鞭 — парные дверные божества
+      author: Ху Мингуй (胡明貴); издатель 绵竹胡氏画坊
+      year: "[19--?] — предположительно XX век; точный год неизвестен"
+      medium: Цветная ксилография; парный комплект из двух листов
+      sources:
+        - hkbu-hu-double-whips
+      reference: https://bcc.lib.hkbu.edu.hk/artcollection/j218-3-h47e/
+      whyRepresentative: >-
+        Две крупные фигуры развёрнуты друг к другу; красные и синие участки костюмов, плотные детали
+        вооружения и белое поле удерживают симметричную пару. Комплект считается одной работой.
+      place: HKBU Library
+      rights:
+        embed: false
+        reviewed: "2026-10-14"
+        note: Репродукция доступна на предметной странице источника.
+    - workId: nianhua-bm-ding-1906-1128-0-3
+      title: Корзина цветов, 1906,1128,0.3
+      author: Мастерская Дин — автор рисунка (Designed by Ding Workshop)
+      year: 1700–1799
+      medium: Бумага; цветная ксилография
+      sources:
+        - bm-ding-flower-basket
+      reference: >-
+        https://artsandculture.google.com/asset/ding-family-of-the-jinchang-pavillion-a-basket-of-flowers-a-colour-woodblock-print/xAEZUSvFMC7yyQ
+      whyRepresentative: >-
+        Тонкие ветви и цветы поднимаются из центральной корзины, слева помещён стихотворный текст. Сдержанный
+        цвет и свободное поле отличаются от насыщенных парных фигур; новогоднее применение конкретного листа
+        предположено музеем.
+      place: British Museum
+      rights:
+        embed: false
+        reviewed: "2026-10-14"
+        note: Репродукция доступна на предметной странице источника.
+    - workId: ylq-ldm-g6195
+      title: Danao tiangong / 大闹天宫 — Переполох в Небесном дворце, LDM G-6195
+      author: Мастерская Yixinghe (义兴合画店; Isinghe в подписи статьи)
+      year: Конец XIX — начало XX века
+      medium: Бумага из древесной массы; раскрашенная ксилография
+      sources:
+        - aaav-yangliuqing-theatre
+      reference: https://aaav.vda.lt/journal/article/download/52/52/74#page=14
+      whyRepresentative: >-
+        Фигуры с длинными лентами и сложными костюмами распределены по двору; архитектура обрамляет действие,
+        а надпись расположена в верхнем поле. Тот же предмет также включён в самостоятельный янлюцинский
+        корпус; повторная карточная позиция не является новой работой.
+      place: Lietuvos dailės muziejus (LDM; название в публикации)
+      rights:
+        embed: false
+        reviewed: "2026-10-14"
+        note: >-
+          Репродукция опубликована в исследовании; дана ссылка на соответствующую страницу PDF, разрешение на
+          встраивание не заявлено.
+    - workId: nianhua-hkbu-li-gourd-boys
+      title: 金瓜童子 — парные изображения детей с тыквами
+      author: Ли Фанфу (李芳福 — написание предметной записи)
+      year: "[19--?] — предположительно XX век; точный год неизвестен"
+      medium: Цветная ксилография; парный комплект из двух листов
+      sources:
+        - hkbu-li-gourd-boys
+      reference: https://bcc.lib.hkbu.edu.hk/artcollection/j218-3-l40e/
+      whyRepresentative: >-
+        Два ребёнка с веерами образуют зеркальную пару среди тыкв и бабочек; крупные цветовые участки и
+        изгибающиеся контуры читаются на свободном белом поле. Два листа не посчитаны двумя независимыми
+        работами.
+      place: HKBU Library
+      rights:
+        embed: false
+        reviewed: "2026-10-14"
+        note: Репродукция доступна на предметной странице источника.
+  compare:
+    - id: chinese-jianzhi
+      note: >-
+        Печатный лист с контуром и цветом сопоставляется с вырезанием и ажуром бумаги. Оба обзора сохраняют
+        местные различия; общее праздничное использование не означает одной техники или манеры.
+    - id: lubok
+      note: >-
+        Сравниваются жанровые традиции популярной листовой картинки и сочетание текста с изображением. Сходная
+        функция не доказывает общего происхождения; выбранные вещи показывают различные способы устройства
+        листа.
+  evidence:
+    - claim: >-
+        The Met отличает новогодние няньхуа как особую категорию внутри более широкого круга китайских
+        популярных гравюр.
+      field: scope
+      source: met-china-popular-prints
+    - claim: Исследование прямо относит рассмотренные театральные листы к няньхуа и различает региональные центры.
+      field: scope
+      source: aaav-yangliuqing-theatre
+    - claim: Предметная запись дверной пары называет 胡明貴, издателя Мяньчжу и два листа с датировкой [19--?].
+      field: corpus
+      source: hkbu-hu-double-whips
+    - claim: Музей датирует цветочную гравюру 1700–1799 и описывает её новогоднее применение как предположение.
+      field: dates
+      source: bm-ding-flower-basket
+    - claim: "Вводный текст коллекции и предметная запись расходятся в написании одного имени: 李方福 и 李芳福."
+      field: authorship
+      source: hkbu-mianzhu-collection
+  admission:
+    language: >-
+      Обзор намеренно показывает несколько композиционных и печатных языков, а не заявляет единую национальную
+      манеру.
+    corpus: >-
+      Четыре самостоятельных композиции в четырёх позициях обзора; два парных комплекта считаются каждый одной
+      работой. Один янлюцинский предмет повторяется между двумя карточками.
+    distinctness: >-
+      От обзора цзяньчжи отличается печатной организацией листа; от русского лубка — конкретными региональными
+      корпусами, системой парных благопожелательных образов и письменной средой. Это сравнение, не утверждение
+      всеобщих стилевых правил или влияния.
+    significance: >-
+      Жанр выделяют музейная экспозиция The Met, предметные коллекции HKBU и British Museum и исследование
+      театрального корпуса. Обзор нужен для навигации между местными узлами.
+    sources:
+      - met-china-popular-prints
+      - aaav-yangliuqing-theatre
+      - hkbu-mianzhu-collection
+      - hkbu-hu-double-whips
+      - hkbu-li-gourd-boys
+      - bm-ding-flower-basket
+  review:
+    status: partial
+    date: "2026-10-14"
+    note: >-
+      Просмотрены четыре композиции и предметные записи. У одного листа новогодняя функция предположительна;
+      два комплекта датированы [19--?]. Разночтение имени не разрешено, один предмет повторно используется.
+      Обзор не исчерпывает региональные школы.
+  example:
+    workId: nianhua-hkbu-hu-double-whips
+    title: 双扬鞭 — парные дверные божества
+    author: Ху Мингуй (胡明貴); издатель 绵竹胡氏画坊
+    year: "[19--?] — предположительно XX век; точный год неизвестен"
+    medium: Цветная ксилография; парный комплект из двух листов
+    sources:
+      - hkbu-hu-double-whips
+    reference: https://bcc.lib.hkbu.edu.hk/artcollection/j218-3-h47e/
+    whyRepresentative: >-
+      Две крупные фигуры развёрнуты друг к другу; красные и синие участки костюмов, плотные детали вооружения
+      и белое поле удерживают симметричную пару. Комплект считается одной работой.
+    place: HKBU Library
+    rights:
+      embed: false
+      reviewed: "2026-10-14"
+      note: Репродукция доступна на предметной странице источника.
+  links:
+    - title: 双扬鞭 / Flipping with double whips
+      url: https://bcc.lib.hkbu.edu.hk/artcollection/j218-3-h47e/
+      src: Hong Kong Baptist University Library
+      lang: en
+    - title: "Ding family: A basket of flowers, 1906,1128,0.3"
+      url: >-
+        https://artsandculture.google.com/asset/ding-family-of-the-jinchang-pavillion-a-basket-of-flowers-a-colour-woodblock-print/xAEZUSvFMC7yyQ
+      src: British Museum / Google Arts & Culture
+      lang: en
+    - title: "Miglė Lebednykaitė. The Case of Peking Opera in Lithuania: The Collection of Chinese Woodblock Prints"
+      url: https://aaav.vda.lt/journal/article/download/52/52/74
+      src: Acta Academiae Artium Vilnensis / Vilnius Academy of Arts
+      lang: en
+    - title: 金瓜童子 / A pair of servant boys with gourd
+      url: https://bcc.lib.hkbu.edu.hk/artcollection/j218-3-l40e/
+      src: Hong Kong Baptist University Library
+      lang: en
+    - title: "The Printed Image in China: Popular Prints"
+      url: https://www.metmuseum.org/exhibitions/listings/2012/printed-image-in-china
+      src: The Metropolitan Museum of Art
+      lang: en
+    - title: "New Year woodblock prints and paintings: вводный текст коллекции"
+      url: https://bcc.lib.hkbu.edu.hk/artcollection/collection/chinese-new-year-print/
+      src: Hong Kong Baptist University Library
+      lang: en
+- domain:
+    - art
+  tier: 2
+  dateKind: corpus
+  origin: unknown
+  parents: []
+  aliases:
+    - Донгхо
+    - Донг Хо
+    - Dong Ho
+    - Đông Hồ
+    - Tranh Đông Hồ
+  names:
+    - Nguyen Thi Oanh
+    - Nguyen Dang San
+  maturity: established
+  labelStatus: historical
+  id: dong-ho-prints
+  name: Печатные картинки Донгхо
+  orig: Dong Ho prints / tranh Đông Hồ
+  kind: tradition
+  kindNote: Локальная традиция цветной печатной картинки; не название всей вьетнамской графики.
+  start: 1960
+  end: 2010
+  approx: true
+  dates: "корпус: 1960-е и оттиски 2010; одна вещь не датирована"
+  era: postwar
+  region: "Вьетнам: деревня Донгхо, север страны"
+  medium:
+    - print
+  summary: >-
+    Локальная цветная печать соединяет выразительный контур, плоские участки цвета и надписи: от животных и
+    праздничных сцен до быта и общественных сюжетов.
+  description: >-
+    Четыре выбранные композиции показывают работу тёмного контура, локального цвета и текста. «Мышиная
+    свадьба» строится двумя горизонтальными последовательностями, «Модернизация» — вокруг велосипеда и двух
+    фигур, а лист Nguyen Dang San использует вертикальную иерархию группы с флагом. Такой корпус не сводит
+    Донгхо к одной праздничной теме.
+
+
+    Музей Фукуоки описывает традиционную печать на бумаге Dó с раковинным покрытием и нанесением чёрного
+    контура после цветных прогонов. Это описание практики не подменяет предметную запись: у двух конкретных
+    оттисков названы только бумага и ксилография, а точный состав листа Nguyen Thi Oanh не сообщён. В корпусе
+    сохранены имена известных авторов и анонимность других работ.
+  traits:
+    - Выразительный тёмный контур разделяет плоские цветные участки
+    - Фигуры, предметы и надписи собраны в ясное ограниченное поле
+    - >-
+      Горизонтальные процессии сосуществуют с центральной бытовой сценой и вертикальной общественной
+      композицией
+    - Животные, быт и политические сюжеты используют одну локальную печатную среду, не задавая единой темы
+  scopeNote: >-
+    Четыре разные композиции: Nguyen Thi Oanh, анонимный мастер, анонимный бытовой лист и Nguyen Dang San.
+    Дракон представлен только деталью. Корпус ограничен музейными листами; не охватывает всю историю Донгхо и
+    не объединяет её с Хангчонг или всей вьетнамской графикой.
+  dateNote: >-
+    1960–2010 — условная рамка датированных музейных оттисков: «1960-е» у Dragon Dance и печать 2010 у двух
+    листов Фукуоки. Исходные дизайны этих двух листов не датированы; год приобретения 2018 не является годом
+    создания. «Мышиная свадьба» остаётся без даты; дар 2022 и выставка 2024 её не уточняют. Происхождение
+    традиции этим корпусом не датируется.
+  creators:
+    - name: Nguyen Thi Oanh
+      orig: Nguyen Thi Oanh
+      role: автор The Marriage of a Mouse по музейной подписи
+      sources:
+        - faam-dongho-collection-2024
+    - name: Nguyen Dang San
+      orig: Nguyen Dang San
+      role: автор листа 2957 по предметной записи; год исходного дизайна неизвестен
+      sources:
+        - faam-dongho-peace-2957
+  corpus:
+    - workId: dongho-faam-oanh-mouse-marriage
+      title: The Marriage of a Mouse — Мышиная свадьба
+      author: Nguyen Thi Oanh — написание музейной подписи
+      year: Дата неизвестна
+      medium: Цветная печатная картинка Донгхо; точный состав материала этого оттиска не сообщён
+      sources:
+        - faam-dongho-collection-2024
+      reference: https://faam.city.fukuoka.lg.jp/en/exhibition/20238/
+      whyRepresentative: >-
+        Тёмный контур и цветные участки удерживают две горизонтальные последовательности: мышей с дарами перед
+        котом и свадебную процессию. Надписи встроены в свободные участки листа.
+      place: Fukuoka Asian Art Museum
+      rights:
+        embed: false
+        reviewed: "2026-10-14"
+        note: Музейная репродукция просмотрена; право встраивания не установлено, дана ссылка на источник.
+    - workId: dongho-lnma-dragon-dance-1960s
+      title: Dragon Dance — Танец дракона, опубликованная деталь
+      author: Неизвестный мастер деревни Донгхо
+      year: 1960-е
+      medium: Бумага; цветная ксилография
+      sources:
+        - lnma-dongho-dragon-1960s
+      reference: https://lnmm.gov.lv/en/art-museum-riga-bourse/exhibitions/art-of-viet-nam-562
+      whyRepresentative: >-
+        Опубликованная деталь показывает плотный тёмный контур и повторяющиеся цветные узоры тела дракона на
+        тёплом поле. Полную композицию листа по этому фрагменту не восстанавливаем.
+      place: Latvian National Museum of Art
+      rights:
+        embed: false
+        reviewed: "2026-10-14"
+        note: Музейная репродукция просмотрена; право встраивания не установлено, дана ссылка на источник.
+    - workId: dongho-faam-2973
+      title: Modernization (Hunter and Bicycle Rider), 2973
+      author: Автор неизвестен — по предметной записи
+      year: 2010 — оттиск; дата исходного дизайна неизвестна
+      medium: Бумага; ксилография, 19,4 × 26,6 см
+      sources:
+        - faam-dongho-modernization-2973
+      reference: https://jmapps.ne.jp/faam_en/det.html?data_id=6041
+      whyRepresentative: >-
+        Велосипед и две крупные фигуры занимают центр, рядом собака и цветочный мотив. Надпись и тонкая рамка
+        ограничивают плоское цветное поле; бытовая сцена отличается от регистров мышиной процессии.
+      place: Fukuoka Asian Art Museum
+      rights:
+        embed: false
+        reviewed: "2026-10-14"
+        note: Музейная репродукция просмотрена; право встраивания не установлено, дана ссылка на источник.
+    - workId: dongho-faam-2957
+      title: Peace, Education for the Populace, in Memorial of September 8, 2957
+      author: Nguyen Dang San — написание предметной записи
+      year: 2010 — оттиск; дата исходного дизайна неизвестна
+      medium: Бумага; ксилография, 26,4 × 17,3 см
+      sources:
+        - faam-dongho-peace-2957
+      reference: https://jmapps.ne.jp/faam_en/det.html?data_id=6025
+      whyRepresentative: >-
+        Вертикальная композиция объединяет крупную верхнюю фигуру с флагом, группу людей и надписи. Чёткий
+        контур и отдельные цветовые участки используются для общественно-политического сюжета.
+      place: Fukuoka Asian Art Museum
+      rights:
+        embed: false
+        reviewed: "2026-10-14"
+        note: Музейная репродукция просмотрена; право встраивания не установлено, дана ссылка на источник.
+  compare:
+    - id: nianhua
+      note: >-
+        Сопоставляются цветная печатная картинка, роль надписей и праздничные сюжеты. Няньхуа — обзор
+        нескольких региональных практик, Донгхо — отдельная местная традиция; историческое влияние конкретных
+        мастерских этим сравнением не доказано.
+    - id: lubok
+      note: >-
+        Сравниваются самостоятельные печатные листы и рассказ через фигуры с подписью. Выбранный Донгхо
+        использует контур и локальные цветные участки иначе, чем монохромные литографии и резцовые гравюры
+        русского корпуса; это различие примеров, не правило для всех вещей.
+  evidence:
+    - claim: >-
+        Музей Фукуоки описывает деревню Донгхо, бумагу Dó, покрытие с раковинным порошком и печать чёрного
+        контура после цветов.
+      field: technique
+      source: faam-dongho-collection-2024
+    - claim: Музейная подпись называет Nguyen Thi Oanh автором The Marriage of a Mouse; дата неизвестна.
+      field: authorship
+      source: faam-dongho-collection-2024
+    - claim: В записи 2973 отдельно указаны неизвестная дата исходного дизайна, печать 2010 и приобретение 2018.
+      field: dates
+      source: faam-dongho-modernization-2973
+    - claim: В записи 2957 назван Nguyen Dang San; печать 2010 не датирует неизвестный исходный дизайн.
+      field: authorship
+      source: faam-dongho-peace-2957
+    - claim: LNMA подписывает опубликованную деталь Dragon Dance как работу неизвестного мастера Донгхо 1960-х.
+      field: corpus
+      source: lnma-dongho-dragon-1960s
+  admission:
+    language: >-
+      В выбранных работах повторяются выразительный контур, локальный цвет, ограниченное поле и включение
+      надписей; схема сцены меняется вместе с сюжетом.
+    corpus: >-
+      Четыре различные композиции, одна из которых доступна только в виде детали. Два оттиска с известными
+      годами печати имеют разные названия, авторство и изображения; разные фотографии одной вещи не
+      добавлялись.
+    distinctness: >-
+      От многорегионального обзора няньхуа отличается конкретным локальным кругом и документированной печатной
+      практикой; от выбранного русского лубка — работой локального цвета и контура. Эти различия проверены на
+      ограниченных корпусах, общего предка не назначено.
+    significance: >-
+      Локальная традиция выделена отдельным жанром в коллекции Фукуоки и предметной выставкой LNMA; названы
+      конкретные авторы и сохранены анонимные вещи.
+    sources:
+      - faam-dongho-collection-2024
+      - faam-dongho-modernization-2973
+      - faam-dongho-peace-2957
+      - lnma-dongho-dragon-1960s
+  review:
+    status: partial
+    date: "2026-10-14"
+    note: >-
+      Прочитаны музейные тексты и просмотрены четыре репродукции с проверкой подписей. Дракон доступен
+      деталью, одна вещь не датирована. У двух оттисков известен год печати, но не дата исходной композиции.
+      Корпус не исчерпывает историю традиции.
+  example:
+    workId: dongho-faam-oanh-mouse-marriage
+    title: The Marriage of a Mouse — Мышиная свадьба
+    author: Nguyen Thi Oanh — написание музейной подписи
+    year: Дата неизвестна
+    medium: Цветная печатная картинка Донгхо; точный состав материала этого оттиска не сообщён
+    sources:
+      - faam-dongho-collection-2024
+    reference: https://faam.city.fukuoka.lg.jp/en/exhibition/20238/
+    whyRepresentative: >-
+      Тёмный контур и цветные участки удерживают две горизонтальные последовательности: мышей с дарами перед
+      котом и свадебную процессию. Надписи встроены в свободные участки листа.
+    place: Fukuoka Asian Art Museum
+    rights:
+      embed: false
+      reviewed: "2026-10-14"
+      note: Музейная репродукция просмотрена; право встраивания не установлено, дана ссылка на источник.
+  links:
+    - title: "New Collection Exhibition: Dong Ho Print from the Cynthea J. Bogel Collection"
+      url: https://faam.city.fukuoka.lg.jp/en/exhibition/20238/
+      src: Fukuoka Asian Art Museum
+      lang: en
+    - title: "Art of Viet Nam: Dragon Dance, detail"
+      url: https://lnmm.gov.lv/en/art-museum-riga-bourse/exhibitions/art-of-viet-nam-562
+      src: Latvian National Museum of Art / Art Museum RIGA BOURSE
+      lang: en
+    - title: Modernization (Hunter and Bicycle Rider), 2973
+      url: https://jmapps.ne.jp/faam_en/det.html?data_id=6041
+      src: Fukuoka Asian Art Museum
+      lang: en
+    - title: Peace, Education for the Populace, in Memorial of September 8, 2957
+      url: https://jmapps.ne.jp/faam_en/det.html?data_id=6025
+      src: Fukuoka Asian Art Museum
+      lang: en

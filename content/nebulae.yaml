@@ -355,6 +355,10 @@ nebulae:
         name: Лаковая миниатюра
         styles:
           - palekh-miniature
+      - id: russkiy-pechatnyy-lubok
+        name: Печатный лубок
+        styles:
+          - lubok
   - id: zhivopis-indii
     name: Живопись Индии
     color: '#8D6EAA'
@@ -367,6 +371,14 @@ nebulae:
         name: Калигхат
         styles:
           - kalighat-painting
+      - id: varli
+        name: Варли
+        styles:
+          - warli-painting
+      - id: bengalskaya-patachitra
+        name: Бенгальская патачитра
+        styles:
+          - bengal-patachitra
   - id: tekstil-i-rospisi-afriki
     name: Текстиль и росписи Африки
     color: '#0B827E'
@@ -375,10 +387,16 @@ nebulae:
         name: Текстиль асанте
         styles:
           - asante-kente
+          - adinkra
       - id: bogolan
         name: Боголанфини
         styles:
           - bogolanfini
+      - id: rospis-ndebele
+        name: Роспись ндебеле
+        styles:
+          - ndebele-murals
+          - esther-mahlangu
   - id: polotna-iz-kory-okeanii
     name: Полотна из коры Океании
     color: '#3C829A'
@@ -395,6 +413,31 @@ nebulae:
         name: Фиджийское маси
         styles:
           - fijian-masi
+  - id: bumazhnye-vyrezki
+    name: Вырезание бумаги
+    color: '#667A2A'
+    parts:
+      - id: kitayskoe-vyrezanie-bumagi
+        name: Вырезание бумаги Китая
+        styles:
+          - chinese-jianzhi
+      - id: polskie-vycinanki
+        name: Польские выцинанки
+        styles:
+          - polish-wycinanki
+  - id: kartinki-kitaya-i-vietnama
+    name: Картинки Китая и Вьетнама
+    color: '#B77620'
+    parts:
+      - id: nyanhua
+        name: Няньхуа
+        styles:
+          - nianhua
+          - yang-liuqing-nianhua
+      - id: dongkho
+        name: Донгхо
+        styles:
+          - dong-ho-prints
 free:
   - aboriginal-art
   - mesoamerican-art
@@ -405,6 +448,5 @@ free:
   - carrolup-school
   - rei-kawakubo
   - pacita-abad
-  - esther-mahlangu
   - reko-rennie
   - norshtein-animation
