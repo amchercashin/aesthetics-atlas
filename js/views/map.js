@@ -482,6 +482,7 @@ export default {
       }
       detail = mapDetail(t.k, k0, kOv(), nebOn);
       svg.dataset.detail = JSON.stringify(detail);
+      svg.dataset.zoom = t.k.toFixed(6);
       G.nodes.setAttribute('aria-hidden', String(detail.nodes === 0 && !selected && !hovered));
       G.labels.setAttribute('aria-hidden', String(detail.labels === 0 && !selected && !hovered));
       svg.dataset.level = detail.level;
