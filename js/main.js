@@ -1,5 +1,5 @@
 // Точка входа: данные, тема, поиск, роутинг между видами.
-import { loadAtlas } from './store.js?v=author-pilot';
+import { loadAtlas } from './store.js?v=chain-author-map4';
 import { parseHash } from './router.js?v=map4';
 import { initTheme } from './theme.js';
 import { initSearch } from './ui/search-dialog.js?v=author-pilot';
