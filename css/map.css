@@ -133,10 +133,10 @@ body[data-view="map"] .site-footer { display: none; }
 .node.lm-on .ring { display: block; }
 
 /* Подложки подписей: цвет бумаги, чтобы линия уходила под название */
-.plate { fill: var(--paper); fill-opacity: 0.94; pointer-events: none; transition: opacity 0.25s; }
-.has-hover .plate:not(.near) { opacity: 0.28; }
-.has-selection .plate:not(.lit) { opacity: 0.16; }
-.plate.out { opacity: 0.12; }
+.plate { fill: var(--paper); fill-opacity: 0.94; pointer-events: none; opacity: var(--label-zoom, 1); transition: opacity 0.25s; }
+.has-hover .plate:not(.near) { opacity: calc(var(--label-zoom, 1) * 0.28); }
+.has-selection .plate:not(.lit) { opacity: calc(var(--label-zoom, 1) * 0.16); }
+.plate.out { opacity: calc(var(--label-zoom, 1) * 0.12); }
 
 /* Узлы и подписи */
 .node { cursor: pointer; outline: none; transition: opacity 0.25s; }
@@ -147,6 +147,7 @@ body[data-view="map"] .site-footer { display: none; }
 .map-svg:not(.z2) .node:not(.lm-on) .thumb-img { display: none; }
 .z2 .node .dot { stroke: none; }
 .label {
+  opacity: var(--label-zoom, 1);
   fill: var(--ink); paint-order: stroke; stroke: var(--paper); stroke-width: 4px; stroke-linejoin: round;
   font-family: var(--sans); font-size: 14px; font-weight: 500; cursor: pointer; transition: opacity 0.25s;
 }
@@ -158,18 +159,21 @@ body[data-view="map"] .site-footer { display: none; }
 .node:focus-visible .dot, .node:focus-visible .ring { stroke: var(--accent); stroke-width: 3; }
 
 /* Фильтр: несовпавшие стили бледнеют, но остаются на своих местах. */
-.node.out, .label.out { opacity: 0.12; }
+.node.out { opacity: 0.12; }
+.label.out { opacity: calc(var(--label-zoom, 1) * 0.12); }
 .life.out { stroke-opacity: 0.06; }
 .edge-g.out .edge { stroke-opacity: 0.06; }
 .edge-g.out .case { display: none; }
 
 /* Наведение: стиль и его прямые связи */
-.has-hover .node:not(.near), .has-hover .label:not(.near) { opacity: 0.28; }
+.has-hover .node:not(.near) { opacity: 0.28; }
+.has-hover .label:not(.near) { opacity: calc(var(--label-zoom, 1) * 0.28); }
 .has-hover .life:not(.near) { stroke-opacity: 0.08; }
 .has-hover .edge-g:not(.near) .edge { stroke-opacity: 0.08; }
 
 /* Выбор: крупный план связей или вся родословная */
-.has-selection .node:not(.lit), .has-selection .label:not(.lit) { opacity: 0.16; }
+.has-selection .node:not(.lit) { opacity: 0.16; }
+.has-selection .label:not(.lit) { opacity: calc(var(--label-zoom, 1) * 0.16); }
 .has-selection .life:not(.lit) { stroke-opacity: 0.06; }
 .has-selection .life.lit { stroke-opacity: 0.55; }
 .has-selection .life.is-selected { stroke: var(--ink); stroke-opacity: 0.9; }
@@ -183,6 +187,12 @@ body[data-view="map"] .site-footer { display: none; }
 .has-selection .edge.cmp:not(.near) { stroke-opacity: 0.05; }
 .node.is-selected .dot, .node.is-selected .ring { stroke: var(--ink); stroke-width: 3; }
 .label.is-selected { fill: var(--ink); font-weight: 700; }
+/* Контекст не должен перекрывать чтение морей на общем плане. */
+.map-svg .edge.context:not(.near) { stroke-opacity: var(--context-alpha, 0.35); stroke-width: 1.1; }
+.map-svg .edge.context.st-unverified:not(.near) { stroke-opacity: calc(var(--context-alpha, 0.35) * 0.6); }
+.map-svg .edge.context.near { stroke-opacity: 0.85; stroke-width: 1.8; }
+.map-svg .edge.context.st-unverified.near { stroke-opacity: 0.5; }
+.has-selection .edge.context:not(.near), .has-hover .edge.context:not(.near) { stroke-opacity: 0.06; }
 .elabel {
   font-family: var(--sans); font-size: 11.5px; font-weight: 500; fill: var(--ink-2); text-anchor: middle; pointer-events: none;
   paint-order: stroke; stroke: var(--paper); stroke-width: 5px; stroke-linejoin: round;

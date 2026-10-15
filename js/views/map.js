@@ -15,8 +15,9 @@ import { pushStep, toParam, parseTrail } from '../trail.js?v=map4';
 import { stepTarget } from '../graphnav.js?v=chain-author-map4';
 import { pickAmbient } from '../ambient.js?v=map4';
 import { createGutterLens } from '../lens.js?v=map4';
-import { initNebulae, drawNebulae, drawNebulaNames, disposeNebulae, setNebulaDirtyHandler } from '../nebulae.js?v=chain-seas-review';
+import { initNebulae, drawNebulae, drawNebulaNames, disposeNebulae, setNebulaDirtyHandler } from '../nebulae.js?v=seas-audit-1';
 import { buildIndex, search } from '../search.js?v=author-pilot';
+import { styleLabelOpacity } from '../map-labels.js';
 
 const NS = 'http://www.w3.org/2000/svg';
 const AXIS_H = 30;      // строка делений шкалы внутри SVG
@@ -98,7 +99,7 @@ export default {
           <div class="map-pop map-legend-pop" hidden>
             <p class="lg-title">Как читать карту</p>
             <ul>
-              <li><svg viewBox="0 0 40 14" aria-hidden="true"><circle cx="5" cy="7" r="4" fill="var(--ink-3)"/><path d="M10 7h24" class="edge lg"/></svg>Точка — начало стиля, цвет — туманность (группа близких стилей); линия от точки — ствол, от которого отходят потомки</li>
+              <li><svg viewBox="0 0 40 14" aria-hidden="true"><circle cx="5" cy="7" r="4" fill="var(--ink-3)"/><path d="M10 7h24" class="edge lg"/></svg>Точка — дата начала, принятая в карточке; для авторских языков и ряда традиций — начало выбранного корпуса работ. Цвет — море, редакционная область навигации</li>
               <li><svg viewBox="0 0 40 14" aria-hidden="true"><path d="M4 7h32" class="dur-legend"/></svg>Длительность — у выбранного стиля и в датах подписи</li>
               <li><svg viewBox="0 0 40 14" aria-hidden="true"><path d="M4 2v5q0 5 5 5h27" class="edge lg rel-evolved"/></svg>Развитие — ветвь от предка</li>
               <li><svg viewBox="0 0 40 14" aria-hidden="true"><path d="M2 7h36" class="edge lg rel-influence"/></svg>Влияние</li>
@@ -116,7 +117,7 @@ export default {
               <label class="map-switch"><input type="checkbox" data-layer="contexts"><span class="sw" aria-hidden="true"></span>Школы и культурный контекст</label>
               <label class="map-switch"><input type="checkbox" data-layer="verified" checked><span class="sw" aria-hidden="true"></span>Только связи с источником</label>
             </div>
-            <p class="lg-note">Вертикаль не означает иерархию: стили стоят рядом с главным предком, чтобы ветви были короткими. Большинство связей пока не сверены с источниками — это редакционная схема. По умолчанию гипотезы скрыты; переключатель «Только связи с источником» позволяет включить их. Шкала времени неравномерная: каждой эпохе — место по числу стилей. Нажмите на линию — появится объяснение связи; на стиль — его связи крупным планом.</p>
+            <p class="lg-note">Моря делятся на части при приближении. Их соседство и расстояния не означают географическую или культурную близость; состав групп не доказывает происхождение. Подпись области может охватывать несколько островов. Вертикаль не означает иерархию: стили стоят рядом с главным предком, чтобы ветви были короткими. Большинство связей пока не сверены с источниками — это редакционная схема. По умолчанию гипотезы скрыты; переключатель «Только связи с источником» позволяет включить их. Шкала времени неравномерная: каждой эпохе — место по числу стилей. На «Всей истории» подписи стилей исчезают; при приближении проявляются плавно. Наведите на точку или выберите её, чтобы прочесть название. Нажмите на линию — появится объяснение связи; на стиль — его связи крупным планом.</p>
           </div>
         </div>
         <div class="zoom-ctrls">
@@ -244,12 +245,18 @@ export default {
       } catch { /* шрифты не критичны */ }
       if (destroyed) return;
       const canvas = document.createElement('canvas').getContext('2d');
-      const measure = (font, text) => { canvas.font = font; return canvas.measureText(text).width; };
+      const measure = (font, text) => { canvas.font = font; return canvas.measureText(text); };
 
       const breaks = [...store.eras.map((e) => e.start), store.now + 1];
       sc = createTimeScale(breaks, segmentWidths(breaks, store.styles.map((s) => s.start), { base: 60, perItem: 76, min: 170 }));
 
-      const meta = new Map(store.styles.map((s) => [s.id, { w: measure(FONT[s.tier], s.name), wd: measure(DATE_FONT, fmtDates(s)) }]));
+      const meta = new Map(store.styles.map((s) => {
+        const name = measure(FONT[s.tier], s.name), dates = measure(DATE_FONT, fmtDates(s));
+        return [s.id, { w: name.width, wd: dates.width,
+          ascent: name.fontBoundingBoxAscent ?? FONT_PX[s.tier] * 1.15,
+          descent: name.fontBoundingBoxDescent ?? FONT_PX[s.tier] * 0.55,
+          dateDescent: dates.fontBoundingBoxDescent ?? 5 }];
+      }));
       const layNodes = store.styles.map((s) => ({
         id: s.id, start: s.start, end: s.end, tier: s.tier,
         width: R.z2[s.tier] + 8 + Math.max(meta.get(s.id).w, meta.get(s.id).wd),
@@ -305,7 +312,7 @@ export default {
         const dates = el('tspan', { class: 'l-dates' }, text);
         dates.textContent = fmtDates(s);
         const m = meta.get(s.id);
-        const n = { s, row: lay.pos.get(s.id), g, dot, ring, text, name, dates, life, plate, img: null, w: m.w, wd: m.wd, wt: weight(s.id), x: 0, y: 0, r: 4, labelOn: false, landmark: landmarks.has(s.id) };
+        const n = { s, row: lay.pos.get(s.id), g, dot, ring, text, name, dates, life, plate, img: null, w: m.w, wd: m.wd, wt: weight(s.id), ascent: m.ascent, descent: m.descent, dateDescent: m.dateDescent, x: 0, y: 0, r: 4, labelOn: false, landmark: landmarks.has(s.id) };
         if (n.landmark) g.classList.add('landmark');
         nodes.push(n);
         nodeById.set(s.id, n);
@@ -524,14 +531,22 @@ export default {
       const inView = (b) => b[0] >= view.x0 + 4 && b[1] <= view.x1 - 4 && b[2] >= AXIS_H && b[3] <= view.y1;
       const allowTier = m === 'z0' ? 2 : 3;
       const focusSet = svg.classList.contains('has-selection');
+      const labelAlpha = styleLabelOpacity(t.k, k0, kOv());
+      svg.dataset.labelOpacity = labelAlpha.toFixed(4);
+      svg.style.setProperty('--context-alpha', (0.22 + 0.13 * labelAlpha).toFixed(3));
       visible.sort((a, b) => prio(b) - prio(a));
       for (const n of visible) {
         const forced = n.s.id === selected || n.s.id === hovered;
         const lit = n.g.classList.contains('lit');
+        const emphasized = forced || (focusSet && lit) || (!!hovered && n.g.classList.contains('near'));
+        const alpha = emphasized ? 1 : labelAlpha;
+        for (const label of [n.text, n.plate]) label.style.setProperty('--label-zoom', alpha);
         const fh = FONT_PX[n.s.tier];
         const w = m === 'z2' ? Math.max(n.w, n.wd) : n.w;
         const spot = spotOf(n, m, w, fh);
         let show = forced || (focusSet ? lit : n.s.tier <= allowTier || n.g.classList.contains('near'));
+        // Невидимые подписи не занимают место и не перехватывают щелчки.
+        if (alpha === 0) show = false;
         if (n.zone !== 'C' && !forced) show = false;
         if (show && !forced) show = inView(spot.box) && !occ.hit(spot.box, n.s.id);
         // Ориентир без подписи — не ориентир: в тесноте он становится обычной точкой.
@@ -573,7 +588,7 @@ export default {
       const base = y + (m === 'z2' ? -1 : fh * 0.36);
       const place = (anchor, tx) => {
         const a = anchor === 'end' ? tx - w - 2 : tx - 2, b = anchor === 'end' ? tx + 2 : tx + w + 2;
-        return { anchor, tx, base, box: [a, b, base - fh * 0.95, m === 'z2' ? base + 18 : base + fh * 0.3] };
+        return { anchor, tx, base, box: [a, b, base - n.ascent - 2, m === 'z2' ? base + 15 + n.dateDescent + 2 : base + n.descent + 2] };
       };
       const right = place('start', x + r + 7);
       if (right.box[1] > vw - 6) { const left = place('end', x - r - 7); if (left.box[0] > 4) return left; }
@@ -1160,6 +1175,7 @@ export default {
       hideTip(); hideEdgeInfo();
       const s = store.get(id);
       if (isAuthor(s)) setLayer('authors', true);
+      else if (!showAuthors && prev && isAuthor(store.get(prev))) rebuildNeb();
       const relIds = new Set([...s.parents.map((r) => r.id), ...s.children.map((r) => r.id), ...s.comparisons.map((r) => r.id), ...(s.contexts ?? []).map((r) => r.id)]);
       const anc = store.ancestors(id), desc = store.descendants(id);
       const lit = m === 'near' ? new Set([id, ...relIds]) : new Set([id, ...anc, ...desc]);
@@ -1213,7 +1229,9 @@ export default {
     function clearSelection({ restore = false, nav = 'push' } = {}) {
       if (!selected) return;
       clearTimeout(flightTimer);
+      const hiddenAuthor = !showAuthors && isAuthor(store.get(selected));
       selected = null;
+      if (hiddenAuthor) rebuildNeb();
       svg.classList.remove('has-selection', 'mode-line');
       for (const n of nodes) for (const x of [n.g, n.text, n.life, n.plate]) x.classList.remove('lit', 'is-selected', 'on-line', 'is-related');
       for (const e of edges) { e.g.classList.remove('hl', 'main', 'desc'); e.path.style.transitionDelay = '0ms'; }
@@ -1371,9 +1389,11 @@ export default {
     function showTip(n) {
       const s = n.s;
       tipFor = s.id;
+      const sea = store.nebula(s.id);
+      const part = sea?.parts.find((p) => p.id === s.part);
       const from = s.parents.slice(0, 2).map((p) => store.get(p.id)?.name).filter(Boolean);
       const to = s.children.length;
-      mount(tip, html`${thumb(s, 72)}<span class="tip-text"><span class="tip-name">${s.name}</span><span class="tip-dates">${fmtDates(s)}</span><span class="tip-sum">${s.summary}</span>
+      mount(tip, html`${thumb(s, 72)}<span class="tip-text"><span class="tip-name">${s.name}</span><span class="tip-dates">${fmtDates(s)}</span><span class="tip-rel">${sea ? `${sea.name} → ${part?.name ?? ''}` : 'Вне морей'}</span><span class="tip-sum">${s.summary}</span>
         <span class="tip-rel">${from.length ? `из: ${from.join(', ')}` : s.origin === 'unknown' ? 'связи происхождения пока не показаны' : 'исток'}${to ? ` · ${to} ${plural(to, 'потомок', 'потомка', 'потомков')}` : ''}</span></span>`);
       markLoaded(tip);
       tip.hidden = false;
