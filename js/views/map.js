@@ -14,12 +14,12 @@ import { replaceParams, pushParams } from '../router.js?v=map4';
 import { pushStep, toParam, parseTrail } from '../trail.js?v=map4';
 import { stepTarget } from '../graphnav.js?v=chain-author-map4';
 import { createGutterLens } from '../lens.js?v=map4';
-import { initNebulae, drawNebulae, drawNebulaNames, disposeNebulae, setNebulaDirtyHandler, nebulaRegion, nebulaRegionAt, nebulaShore } from '../nebulae.js?v=semantic-zoom-4';
+import { initNebulae, drawNebulae, drawNebulaNames, disposeNebulae, setNebulaDirtyHandler, nebulaRegion, nebulaRegionAt, nebulaShore } from '../nebulae.js?v=semantic-zoom-5';
 import { buildIndex, search } from '../search.js?v=author-pilot';
 import { fitLabelText } from '../map-labels.js?v=focus-fit-1';
 import { LINK_MODES, readLinkSettings, historicalLinkVisible } from '../map-links.js?v=link-modes-1';
-import { mapDetail, aggregateMapLinks } from '../map-detail.js?v=semantic-zoom-4';
-import { summaryCurve } from '../map-summary.js?v=semantic-zoom-4';
+import { mapDetail, aggregateMapLinks } from '../map-detail.js?v=semantic-zoom-5';
+import { summaryCurve } from '../map-summary.js?v=semantic-zoom-5';
 
 const NS = 'http://www.w3.org/2000/svg';
 const AXIS_H = 30;      // строка делений шкалы внутри SVG
@@ -218,6 +218,7 @@ export default {
     let filter = { domain: '', family: '' };
     let camBeforeFocus = null, camBeforeFilter = null;
     let trail = [];        // маршрут по стилям; источник правды — параметр trail в адресе
+    let edgeInfoFocus = null;
     const lensParam = ctx.params?.get('lens') !== '0';
     const lensNow = () => lensParam && !rot;   // на повёрнутой карте (телефон) желоба не нужны: сцена слишком короткая
     // Желоба по краям: центр — камера, остальное сжато у краёв (js/lens.js). Пока кадр не нарисован — тождество камеры.
@@ -1496,12 +1497,22 @@ export default {
       placeEdgeInfo(px, py);
     }
     function placeEdgeInfo(px, py) {
+      if (edgePop.hidden) edgeInfoFocus = stage.contains(document.activeElement) ? document.activeElement : stage;
+      const close = document.createElement('button');
+      close.type = 'button'; close.className = 'icon-btn'; close.dataset.closeEdge = '';
+      close.setAttribute('aria-label', 'Закрыть сведения о связи'); close.textContent = '×';
+      edgePop.prepend(close);
       edgePop.hidden = false;
       const w = edgePop.offsetWidth, h = edgePop.offsetHeight;
       const left = clamp(px + 12, 8, pw - w - 8), top = py + 14 + h > ph - 8 ? Math.max(rot ? 4 : AXIS_H + 4, py - h - 14) : py + 14;
       edgePop.style.transform = `translate(${left}px, ${top}px)`;
+      close.focus({ preventScroll: true });
     }
-    const hideEdgeInfo = () => { edgePop.hidden = true; };
+    const hideEdgeInfo = ({ restoreFocus = false } = {}) => {
+      edgePop.hidden = true;
+      if (restoreFocus) (edgeInfoFocus?.isConnected ? edgeInfoFocus : stage).focus({ preventScroll: true });
+      edgeInfoFocus = null;
+    };
 
     // ---------- слои и фильтр ----------
     const syncUrl = ({ push = false } = {}) => {
@@ -1857,18 +1868,24 @@ export default {
     };
     for (const p of pops) on(p.btn, 'click', () => togglePop(p));
     on(document, 'pointerdown', (e) => { for (const p of pops) if (!p.pop.hidden && !p.wrap.contains(e.target)) togglePop(p, false); });
+    on(document, 'keydown', (e) => {
+      if (e.key === 'Escape' && !edgePop.hidden) {
+        e.preventDefault(); e.stopPropagation(); hideEdgeInfo({ restoreFocus: true });
+      }
+    }, { capture: true });
     on(document, 'keydown', (e) => { if (e.key === 'Escape') for (const p of pops) if (!p.pop.hidden) { togglePop(p, false); p.btn.focus(); } });
 
     for (const box of root.querySelectorAll('[data-layer]')) on(box, 'change', (e) => { setLayer(box.dataset.layer, e.target.checked); syncUrl(); });
 
     on(root, 'click', (e) => {
+      if (e.target.closest('[data-close-edge]')) { hideEdgeInfo({ restoreFocus: true }); return; }
       if (e.target.closest('[data-browse]')) { directory.hidden = !directory.hidden; q('[data-browse]').setAttribute('aria-expanded', String(!directory.hidden)); return; }
       if (e.target.closest('[data-browse-close]')) { directory.hidden = true; q('[data-browse]').setAttribute('aria-expanded', 'false'); return; }
       const region = e.target.closest('button[data-region]');
       if (region) { focusRegion(region.dataset.region); return; }
       const record = e.target.closest('[data-summary-record]');
       if (record) { const r = stage.getBoundingClientRect(); showEdgeInfo(summaryRecords[+record.dataset.summaryRecord].info, e.clientX - r.x, e.clientY - r.y); return; }
-      const level = e.target.closest('[data-detail]');
+      const level = e.target.closest('button[data-detail]');
       if (level) {
         if (selected) clearSelection();
         if (level.dataset.detail === 'seas') fit();
@@ -1878,7 +1895,7 @@ export default {
       const links = e.target.closest('button[data-link-mode]');
       if (links) { setLinkMode(links.dataset.linkMode); syncUrl(); return; }
       if (e.target.closest('[data-trail-clear]')) { trail = selected ? [selected] : []; syncUrl(); schedule(); return; }
-      const z = e.target.closest('[data-zoom]');
+      const z = e.target.closest('button[data-zoom]');
       if (z) {
         if (z.dataset.zoom === 'fit') { if (selected) clearSelection(); if (atFit()) overview(); else fit(); }
         else {
