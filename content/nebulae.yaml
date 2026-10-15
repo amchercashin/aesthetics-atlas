@@ -349,6 +349,52 @@ nebulae:
         name: Роспись дерева и металла
         styles:
           - khokhloma
+          - zhostovo-painting
+          - gorodets-painting
+      - id: lakovaya-miniatyura
+        name: Лаковая миниатюра
+        styles:
+          - palekh-miniature
+  - id: zhivopis-indii
+    name: Живопись Индии
+    color: '#8D6EAA'
+    parts:
+      - id: mitkhila
+        name: Митхила
+        styles:
+          - mithila-painting
+      - id: kaligkhat
+        name: Калигхат
+        styles:
+          - kalighat-painting
+  - id: tekstil-i-rospisi-afriki
+    name: Текстиль и росписи Африки
+    color: '#0B827E'
+    parts:
+      - id: tekstil-asante
+        name: Текстиль асанте
+        styles:
+          - asante-kente
+      - id: bogolan
+        name: Боголанфини
+        styles:
+          - bogolanfini
+  - id: polotna-iz-kory-okeanii
+    name: Полотна из коры Океании
+    color: '#3C829A'
+    parts:
+      - id: samoanskoe-siapo
+        name: Самоанское сиапо
+        styles:
+          - samoan-siapo
+      - id: tonganskoe-ngatu
+        name: Тонганское нгату
+        styles:
+          - tongan-ngatu
+      - id: fidjiyskoe-masi
+        name: Фиджийское маси
+        styles:
+          - fijian-masi
 free:
   - aboriginal-art
   - mesoamerican-art

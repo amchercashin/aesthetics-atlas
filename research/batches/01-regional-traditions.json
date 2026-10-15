@@ -1,0 +1,146 @@
+{
+  "title": "Региональные росписи, графика и текстиль",
+  "status": "prepared-subset",
+  "baselineCommit": "bb0cad8",
+  "baselineCards": 165,
+  "selectedTopics": 16,
+  "rule": "Состав рабочий; подготовленная карточка требует корпуса, визуальной сверки и решения в каноническом каталоге. Присутствие здесь не означает принятие темы.",
+  "items": [
+    {
+      "id": "lubok",
+      "priority": "P1",
+      "proposedKind": "tradition",
+      "status": "research-in-progress",
+      "researchNote": "Прочитана запись NYPL «Pokhorony Kota Krysami i Myshami», 1866, литография, Image ID 479510. Нужны ещё две независимые композиции и просмотр оригинальных репродукций; страницы альбома и даты старых оригиналов различать."
+    },
+    {
+      "id": "gorodets-painting",
+      "priority": "P1",
+      "proposedKind": "tradition",
+      "status": "prepared",
+      "productionCardId": "gorodets-painting",
+      "reviewStatus": "reviewed",
+      "corpusWorks": 4
+    },
+    {
+      "id": "zhostovo-painting",
+      "priority": "P2",
+      "proposedKind": "tradition",
+      "status": "prepared",
+      "productionCardId": "zhostovo-painting",
+      "reviewStatus": "reviewed",
+      "corpusWorks": 4
+    },
+    {
+      "id": "palekh-miniature",
+      "priority": "P1",
+      "proposedKind": "school",
+      "status": "prepared",
+      "productionCardId": "palekh-miniature",
+      "reviewStatus": "reviewed",
+      "corpusWorks": 4
+    },
+    {
+      "id": "mithila-painting",
+      "priority": "P2",
+      "proposedKind": "tradition",
+      "status": "prepared",
+      "productionCardId": "mithila-painting",
+      "reviewStatus": "partial",
+      "corpusWorks": 5
+    },
+    {
+      "id": "warli-painting",
+      "priority": "P1",
+      "proposedKind": "tradition",
+      "status": "research-in-progress",
+      "researchNote": "Fondation Cartier документирует Jivya Soma Mashe и Fishnet, 2009. Нужен сравнительный корпус и коллективный контекст. Утверждение страницы о 2500 до н. э. не принято как проверенная датировка."
+    },
+    {
+      "id": "kalighat-painting",
+      "priority": "P2",
+      "proposedKind": "school",
+      "status": "prepared",
+      "productionCardId": "kalighat-painting",
+      "reviewStatus": "reviewed",
+      "corpusWorks": 4
+    },
+    {
+      "id": "asante-kente",
+      "priority": "P1",
+      "proposedKind": "tradition",
+      "status": "prepared",
+      "productionCardId": "asante-kente",
+      "reviewStatus": "reviewed",
+      "corpusWorks": 4
+    },
+    {
+      "id": "bogolanfini",
+      "priority": "P2",
+      "proposedKind": "tradition",
+      "status": "prepared",
+      "productionCardId": "bogolanfini",
+      "reviewStatus": "reviewed",
+      "corpusWorks": 4
+    },
+    {
+      "id": "ndebele-murals",
+      "priority": "P1",
+      "proposedKind": "tradition",
+      "status": "research-in-progress",
+      "researchNote": "Нужны три самостоятельные настенные росписи южных ндебеле с раздельными датами стены и фотографии. Северные ндебеле Зимбабве и несколько ракурсов одной хижины не подставляются в корпус; переносные работы Малангу не заменяют настенную традицию."
+    },
+    {
+      "id": "samoan-siapo",
+      "priority": "P1",
+      "proposedKind": "tradition",
+      "status": "prepared",
+      "productionCardId": "samoan-siapo",
+      "reviewStatus": "partial",
+      "corpusWorks": 4
+    },
+    {
+      "id": "tongan-ngatu",
+      "priority": "P2",
+      "proposedKind": "tradition",
+      "status": "prepared",
+      "productionCardId": "tongan-ngatu",
+      "reviewStatus": "reviewed",
+      "corpusWorks": 3
+    },
+    {
+      "id": "fijian-masi",
+      "priority": "P2",
+      "proposedKind": "tradition",
+      "status": "prepared",
+      "productionCardId": "fijian-masi",
+      "reviewStatus": "partial",
+      "corpusWorks": 4
+    },
+    {
+      "id": "chinese-jianzhi",
+      "priority": "P2",
+      "proposedKind": "tradition",
+      "status": "research-in-progress",
+      "researchNote": "Материал UNESCO различает региональные техники и сообщества; следует проверить обзорный/технический тип узла. Требуется корпус отдельных предметов. Включение в список 2009 года не является датой возникновения."
+    },
+    {
+      "id": "adinkra",
+      "priority": "P1",
+      "proposedKind": "tradition",
+      "status": "research-in-progress",
+      "researchNote": "Прочитаны Met 687569 и печатные с. 48–49 каталога Met/British Museum 2008 с Af1935,1005.2; фото последнего просмотрено. Уточнить расхождение его датировок и найти третий предмет с доступной репродукцией. Метаданные Smithsonian доступны в поиске, прямые страницы пока отвечают защитой."
+    },
+    {
+      "id": "yang-liuqing-nianhua",
+      "priority": "P2",
+      "proposedKind": "tradition",
+      "status": "research-in-progress",
+      "researchNote": "Найден первичный предметный маршрут BM 1954,1113,0.5, Zaojun, 1873. Нужны ещё две янлюцинские композиции и визуальная сверка; место приобретения Wei Xian не переносится в производство."
+    }
+  ],
+  "preparedCards": 10,
+  "preparedCorpusWorks": 40,
+  "remainingTopics": 6,
+  "note": "Для PR подготовлена проверенная порция из 10 карточек. Шесть остальных тем остаются активным исследованием; они не отклонены и не считаются покрытыми этой порцией. Все 557 тем общей программы сохранены."
+}

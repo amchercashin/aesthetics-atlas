@@ -1,7 +1,7 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { buildRecord, childrenOf, comparisonsOf, imageRecord } from '../scripts/lib/record.mjs';
-import { roleLabel } from '../js/format.js';
+import { roleLabel, fmtDates } from '../js/format.js';
 
 const img = (file) => (file ? { w: 100, h: 80, src: { 250: 'u' }, page: `https://commons.wikimedia.org/wiki/File:${file}`, nonfree: false } : null);
 const card = (over = {}) => ({
@@ -9,6 +9,22 @@ const card = (over = {}) => ({
   summary: 's', description: 'a\n\nb', traits: ['1', '2', '3'], parents: [{ id: 'p', type: 'evolved' }],
   example: { file: 'X.jpg', title: 't' },
   ...over,
+});
+
+test('corpus dates survive into display without turning unknown work dates into an ongoing practice', () => {
+  const sample = card({
+    dateKind: 'corpus', endKind: 'unknown', dates: 'корпус: около 1900 и недатированная работа',
+    dateNote: 'Координата относится к выбранным работам; начало традиции не установлено.',
+    corpus: [
+      { workId: 'dated', title: 'Датированная работа', author: 'Автор не указан', year: 'около 1900', reference: 'https://museum.example/dated', sources: ['src'], whyRepresentative: 'Ритм линий.' },
+      { workId: 'undated', title: 'Работа', author: 'Автор не указан', year: 'Дата не указана', reference: 'https://museum.example/work', sources: ['src'], whyRepresentative: 'Ритм линий.' },
+    ],
+  });
+  const r = buildRecord(sample, { img });
+  assert.equal(r.dateKind, 'corpus');
+  assert.equal(r.dateNote, sample.dateNote);
+  assert.equal(fmtDates(r), sample.dates);
+  assert.equal(r.corpus[1].year, 'Дата не указана');
 });
 
 test('new model fields survive into the output record', () => {

@@ -16,6 +16,20 @@ test('valid graph passes', () => {
   assert.deepEqual(r.errors, []);
 });
 
+test('corpus coordinates need dated works and an explicit explanation of their limits', () => {
+  const sample = base({
+    start: 1900, end: 1900,
+    dateKind: 'corpus', dates: 'корпус: около 1900; остальные даты неизвестны',
+    dateNote: 'Координата относится к работе, не к возникновению традиции.',
+    corpus: [{ workId: 'one', file: 'X.jpg', title: 'Работа', author: 'Автор не указан', year: 'около 1900', sources: ['src'], whyRepresentative: 'Повторение линий.' }],
+  });
+  const sources = [{ id: 'src', sourceType: 'museum', title: 'Предметная запись', url: 'https://museum.example/work' }];
+  assert.deepEqual(validate([root, sample], eras, sources).errors, []);
+  for (const over of [{ dates: '' }, { dates: 1900 }, { dateNote: '' }, { corpus: [] }]) {
+    assert.ok(validate([root, { ...sample, ...over }], eras, sources).errors.some(e => e.includes('corpus dates need')), JSON.stringify(over));
+  }
+});
+
 test('duplicate ids and unknown parent are errors', () => {
   const r = validate([root, base(), base({ parents: [{ id: 'nope', type: 'evolved' }] })], eras);
   assert.ok(r.errors.some((e) => e.includes('duplicate id')));

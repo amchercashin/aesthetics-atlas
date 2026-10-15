@@ -1,7 +1,7 @@
 // Зал стиля: стена тонируется палитрой, работа висит с этикеткой, ниже — текст, родословная, ссылки.
 // Статус проверки карточки и связей виден сразу; источники утверждений — под раскрытием.
 import { html, mount, safeUrl } from '../html.js';
-import { fmtDates, fmtYear, RELATION, DOMAIN, KIND, DATE_KIND, REL_STATUS, roleLabel, plural } from '../format.js?v=author-pilot';
+import { fmtDates, fmtYear, RELATION, DOMAIN, KIND, DATE_KIND, REL_STATUS, roleLabel, plural } from '../format.js?v=regional-01';
 import { frame, credit } from '../ui/image.js?v=author-pilot';
 import { eraTag, thumb, footer } from '../ui/common.js?v=author-pilot';
 import { toast } from '../ui/toast.js';
@@ -104,7 +104,7 @@ export default {
     <article class="room">
       <header class="room-head">
         <div class="room-meta">
-          ${eraTag(store, s.era)}
+          ${s.dateKind === 'corpus' ? '' : eraTag(store, s.era)}
           <span>${fmtDates(s)}</span>
           ${s.region && s.region !== 'Интернет' ? html`<span>${s.region}</span>` : ''}
           <span>${s.domain.map((d) => DOMAIN[d]).join(', ')}</span>
@@ -118,9 +118,13 @@ export default {
 
       <div class="room-hang">
         <figure class="room-work">
-          <button class="work-zoom" type="button" ${img ? '' : 'disabled'} aria-label="Открыть работу крупно">
+          ${ex.external?.reference ? html`<div class="reference-work">
+            <p class="reference-note">Репродукция — у источника</p>
+            <p class="reference-title">${ex.title}</p>
+            <a class="btn" href="${safeUrl(ex.external.page)}" target="_blank" rel="noopener">Посмотреть работу ↗</a>
+          </div>` : html`<button class="work-zoom" type="button" ${img ? '' : 'disabled'} aria-label="Открыть работу крупно">
             ${frame(img, p, { sizes: '(min-width: 1100px) 58vw, 100vw', eager: true, size: 960, alt: ex.title ?? '', note: ex.external ? 'Репродукция — у источника' : ex.note, capUpscale: true })}
-          </button>
+          </button>`}
         </figure>
         <aside class="wall-label" aria-label="Этикетка">
           ${role ? html`<p class="wl-role">${role}</p>` : ''}
@@ -168,12 +172,12 @@ export default {
         <h2 class="section-title">Цепочка связей</h2>
         ${line.length > 1 ? html`<p class="lineage-lead">Один из редакционных маршрутов по атласу, по первой связи каждой карточки. Для переходов показаны тип и степень проверки: влияние, реакция и возрождение не означают прямого происхождения.</p>
         ${lineageStrip(line, s.id)}` : s.origin === 'unknown'
-          ? html`<p class="lineage-lead">Подтверждённый предшественник в атласе не установлен.${s.comparisons.length ? ' Похожие по виду стили — в разделе «Визуальные сопоставления».' : ''}</p>`
+          ? html`<p class="lineage-lead">Связи происхождения пока не представлены на карте.${s.comparisons.length ? ' Похожие по виду стили — в разделе «Визуальные сопоставления».' : ''}</p>`
           : html`<p class="lineage-lead">Один из независимых истоков в атласе: предшественников у этого стиля здесь нет.</p>`}
         <div class="ego">
           <div class="ego-col">
             <h3 class="ego-title">Откуда</h3>
-            ${s.parents.length ? html`<ul>${s.parents.map((r) => relCard(store, r, 'from'))}</ul>` : html`<p class="muted">${s.origin === 'unknown' ? 'Не установлено' : 'Исток'}</p>`}
+            ${s.parents.length ? html`<ul>${s.parents.map((r) => relCard(store, r, 'from'))}</ul>` : html`<p class="muted">${s.origin === 'unknown' ? 'Связи пока не показаны' : 'Исток'}</p>`}
           </div>
           <div class="ego-center" aria-hidden="true"><span>${s.name}</span></div>
           <div class="ego-col">

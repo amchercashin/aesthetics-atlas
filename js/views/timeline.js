@@ -21,7 +21,7 @@ export default {
       <div class="tl-main">
         <header class="tl-head">
           <h1 class="tl-title">Хронология</h1>
-          <p class="tl-lead">От первых отпечатков ладоней до эстетик, которые родились в TikTok вчера. Читайте по порядку или переходите к нужной эпохе через оглавление.</p>
+          <p class="tl-lead">От первых отпечатков ладоней до современных визуальных языков. Читайте по порядку или переходите к нужному временному разделу через оглавление. Корпуса традиций расположены по датам выбранных работ; сведения о происхождении и границах практики приведены в карточках.</p>
         </header>
         ${store.eras.map((e) => {
           const items = store.inEra(e.id);
@@ -37,7 +37,7 @@ export default {
             ${items.length ? html`<ol class="entries">
               ${items.map((s) => html`<li class="entry">
                 <a class="entry-link" href="#/s/${s.id}">
-                  <span class="e-art">${frame(s.example.img, s.palette, { ratio: '4 / 3', sizes: '(min-width: 900px) 220px, 34vw', alt: '', size: 500 })}</span>
+                  <span class="e-art">${frame(s.example.img, s.palette, { ratio: '4 / 3', sizes: '(min-width: 900px) 220px, 34vw', alt: '', size: 500, note: s.example.external ? 'Репродукция — у источника' : '' })}</span>
                   <span class="e-text">
                     <span class="e-dates">${fmtDates(s)}</span>
                     <span class="e-name">${s.name}</span>
@@ -48,7 +48,7 @@ export default {
                 ${s.parents.length ? html`<p class="e-from">${s.parents.every((p) => p.status !== 'verified') ? 'По версии атласа: ' : ''}${s.parents.map((p, i) => {
                   const par = store.get(p.id);
                   return par ? html`${i ? ', ' : ''}${RELATION[p.type].from} <a href="#/s/${par.id}">${par.name}</a>${p.status === 'verified' ? html` <span class="st st-verified" title="Связь подтверждена источником"><span class="visually-hidden">подтверждено</span></span>` : ''}` : '';
-                })}</p>` : s.origin === 'unknown' ? html`<p class="e-from">Происхождение не установлено</p>` : ''}
+                })}</p>` : s.origin === 'unknown' ? html`<p class="e-from">Связи происхождения пока не представлены на карте</p>` : ''}
               </li>`)}
             </ol>` : html`<p class="chapter-empty">Стили этой эпохи появятся в атласе позже.</p>`}
           </section>`;

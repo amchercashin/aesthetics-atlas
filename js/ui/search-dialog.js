@@ -39,7 +39,7 @@ export function initSearch(store) {
       mount(hint, html`Ничего не нашлось по запросу «${q}». Попробуйте другое написание, имя художника или год.`);
       return;
     }
-    mount(list, html`${year !== null && Math.abs(year) >= 100 ? html`<li class="search-group-title" role="presentation">Стили, существовавшие в ${fmtYear(year)}</li>` : ''}${items.map(row)}`);
+    mount(list, html`${year !== null && Math.abs(year) >= 100 ? html`<li class="search-group-title" role="presentation">Карточки по датам: ${fmtYear(year)}</li>` : ''}${items.map(row)}`);
     mount(hint, html`<kbd>↑</kbd> <kbd>↓</kbd> выбрать, <kbd>Enter</kbd> открыть`);
     markLoaded(list);
   }
