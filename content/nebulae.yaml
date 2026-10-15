@@ -5,13 +5,13 @@ nebulae:
     color: '#BA7517'
     parts:
       - id: paleolit
-        name: Палеолит
+        name: Пещеры, фигурки и петроглифы
         styles:
           - paleolithic-cave-art
           - venus-figurines
           - petroglyphs
       - id: drevnie-carstva
-        name: Древние царства
+        name: Неолит и древние культуры
         styles:
           - neolithic-art
           - megaliths
@@ -21,10 +21,13 @@ nebulae:
           - scythian-animal-style
           - achaemenid-art
       - id: indiya
-        name: Индия
+        name: Южная Азия
         styles:
           - ancient-indian-art
           - gandhara
+      - id: angkor
+        name: Ангкор
+        styles:
           - khmer-temple-art
       - id: greciya
         name: Греция
@@ -43,16 +46,19 @@ nebulae:
     color: '#1D9E75'
     parts:
       - id: kitay-i-yaponiya
-        name: Китай и Япония
+        name: Китай
         styles:
           - ancient-chinese-art
           - shan-shui
+      - id: yaponskie-traditsii
+        name: Япония
+        styles:
           - yamato-e
           - wabi-sabi
           - ukiyo-e
           - hokusai-landscape-prints
   - id: srednevekove
-    name: Средневековье
+    name: Рим, Средневековье и исламский мир
     color: '#378ADD'
     parts:
       - id: rim-i-vizantiya
@@ -69,23 +75,23 @@ nebulae:
           - persian-miniature
           - mughal-miniature
       - id: gotika
-        name: Готика
+        name: Романика и готика
         styles:
           - romanesque
           - gothic
           - international-gothic
-      - id: ranniy-renessans
-        name: Ранний Ренессанс
-        styles:
-          - proto-renaissance
-          - early-renaissance
-          - northern-renaissance
   - id: vozrozhdenie-i-barokko
     name: Возрождение и барокко
     color: '#D85A30'
     parts:
+      - id: ranniy-renessans
+        name: Ранний и Северный Ренессанс
+        styles:
+          - proto-renaissance
+          - early-renaissance
+          - northern-renaissance
       - id: vysokoe-vozrozhdenie
-        name: Высокое Возрождение
+        name: Ренессанс и маньеризм
         styles:
           - high-renaissance
           - mannerism
@@ -118,7 +124,7 @@ nebulae:
           - gothic-revival
           - historicism
       - id: stalinskiy-ampir
-        name: Сталинский ампир
+        name: Соцреализм и сталинская архитектура
         styles:
           - socialist-realism
           - stalinist-architecture
@@ -148,13 +154,13 @@ nebulae:
     color: '#D4537E'
     parts:
       - id: prerafaelity
-        name: Прерафаэлиты
+        name: Прерафаэлиты, эстетизм и японизм
         styles:
           - pre-raphaelites
           - aesthetic-movement
           - japonisme
       - id: modern
-        name: Модерн
+        name: Ремёсла, модерн и сецессион
         styles:
           - arts-and-crafts
           - art-nouveau
@@ -173,7 +179,7 @@ nebulae:
     color: '#E24B4A'
     parts:
       - id: kubizm-futurizm-dada
-        name: Кубизм, футуризм, дада
+        name: Авангард начала XX века
         styles:
           - cubism
           - futurism
@@ -184,7 +190,7 @@ nebulae:
           - mexican-muralism
           - new-objectivity
       - id: konstruktivizm
-        name: Конструктивизм
+        name: Геометрия и кинетика
         styles:
           - constructivism
           - suprematism
@@ -194,29 +200,32 @@ nebulae:
     color: '#7F77DD'
     parts:
       - id: syurrealizm
-        name: Сюрреализм
+        name: Метафизика и сюрреализм
         styles:
           - metaphysical-painting
           - surrealism
-          - abstract-expressionism
-      - id: minimalizm-i-koncept
-        name: Минимализм и концепт
+      - id: poslevoennaya-abstraktsiya
+        name: Послевоенная абстракция
         styles:
+          - abstract-expressionism
           - color-field
+      - id: minimalizm-i-koncept
+        name: Минимализм, концепт и ленд-арт
+        styles:
           - conceptual-art
           - minimalism
           - land-art
   - id: modernizm-v-arhitekture
-    name: Модернизм в архитектуре
+    name: Архитектура и дизайн
     color: '#378ADD'
     parts:
       - id: organicheskaya-arhitektura
-        name: Органическая архитектура
+        name: Чикаго и органическая архитектура
         styles:
           - chicago-school
           - organic-architecture
       - id: bauhaus-i-internacional
-        name: Баухаус и интернационал
+        name: Модернизм и постмодернизм
         styles:
           - bauhaus
           - international-style
@@ -225,17 +234,17 @@ nebulae:
           - postmodern-architecture
           - deconstructivism
       - id: brutalizm
-        name: Брутализм
+        name: Брутализм и метаболизм
         styles:
           - brutalism
           - metabolism
       - id: shveycarskiy-stil
-        name: Швейцарский стиль
+        name: Швейцарская школа и Ульм
         styles:
           - swiss-style
           - ulm-school
   - id: retrofuturizm
-    name: Ретрофутуризм
+    name: Ар-деко и образы будущего
     color: '#BA7517'
     parts:
       - id: ar-deko-i-kosmos
@@ -247,7 +256,7 @@ nebulae:
           - space-age
           - high-tech
       - id: psihodeliya-i-solarpank
-        name: Психоделия и соларпанк
+        name: Психоделия и футуризмы
         styles:
           - psychedelic-art
           - afrofuturism
@@ -265,23 +274,23 @@ nebulae:
           - memphis-design
           - superflat
       - id: strit-art
-        name: Стрит-арт
+        name: Стрит-арт и неоэкспрессионизм
         styles:
           - graffiti-street-art
           - neo-expressionism
   - id: cifrovye-estetiki
-    name: Цифровые эстетики
+    name: Оптические и цифровые эстетики
     color: '#1D9E75'
     parts:
       - id: ranniy-kompyuter
-        name: Ранний компьютер
+        name: Оп-арт и машинная графика
         styles:
           - computer-art
           - op-art
           - pixel-art
           - early-cgi
       - id: ranniy-veb
-        name: Ранний веб
+        name: Веб и постинтернет
         styles:
           - web-1-0
           - net-art
@@ -312,12 +321,11 @@ nebulae:
           - cyberpunk
           - synthwave
       - id: y2k
-        name: Y2K
+        name: Y2K и глянец нулевых
         styles:
           - y2k-aesthetic
           - frutiger-aero
           - skeuomorphism
-          - barbiecore
       - id: kory
         name: Коры
         styles:
@@ -325,19 +333,23 @@ nebulae:
           - kidcore
           - cottagecore
           - coquette
+          - barbiecore
   - id: ploskiy-interfeys
-    name: Плоский интерфейс
+    name: Интерфейсы и графика
     color: '#378ADD'
     parts:
       - id: ploskiy-dizayn
-        name: Плоский дизайн
+        name: Flat и иллюстрация
         styles:
           - flat-design
-          - material-design
           - corporate-memphis
+      - id: material-i-steklo
+        name: Material и стекло
+        styles:
+          - material-design
           - glassmorphism
       - id: veb-brutalizm
-        name: Веб-брутализм
+        name: Веб-брутализм и Brat
         styles:
           - web-brutalism
           - brat
@@ -384,7 +396,7 @@ nebulae:
     color: '#0B827E'
     parts:
       - id: tekstil-asante
-        name: Текстиль асанте
+        name: Кенте и адинкра
         styles:
           - asante-kente
           - adinkra

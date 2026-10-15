@@ -1,7 +1,7 @@
 // test/nebulae-geo.test.mjs
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { edt, contours, chaikin, rdp, components, screenAngle, screenLength, blitRect, covers, keepNonEmpty } from '../js/nebulae.js';
+import { edt, contours, chaikin, rdp, components, screenAngle, screenLength, blitRect, covers, keepNonEmpty, nameFitsRegion } from '../js/nebulae.js';
 
 const disc = (r, w = 41) => {
   const M = new Uint8Array(w * w);
@@ -107,4 +107,18 @@ test('disposing a map cancels nebula initialization waiting for fonts', async ()
     if (previous === undefined) delete globalThis.document;
     else globalThis.document = previous;
   }
+});
+
+test('a name cannot float between disconnected islands even when its ends overlap them', () => {
+  const name = { cx: 0, cy: 0, ang: 0, curv: 0, widths: [100], lh: 14 };
+  const islands = (x, y) => Math.abs(x) > 15 && Math.abs(x) < 60 && Math.abs(y) < 12;
+  assert.equal(nameFitsRegion(name, islands, 2), false);
+  assert.equal(nameFitsRegion({ ...name, cx: 35, widths: [30] }, islands, 5), true);
+});
+
+test('every line of a sea name must stay attached to its own region', () => {
+  const name = { cx: 0, cy: 0, ang: 0, curv: 0, widths: [50, 50], lh: 14 };
+  const lowerIsland = (x, y) => Math.abs(x) < 30 && y >= -1 && y < 20;
+  assert.equal(nameFitsRegion(name, lowerIsland, 2), false);
+  assert.equal(nameFitsRegion({ ...name, widths: [50] }, lowerIsland, 2), true);
 });

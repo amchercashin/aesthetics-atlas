@@ -527,8 +527,10 @@ function renderLayer(cam) {
 function draw(ctx, cam) {
   if (!washFar) return;
   lastCam = cam;
-  if (!cache) renderLayer(cam);
-  else if (cache.key !== scaleKey(cam) || !covers(cache, cam)) {
+  // При отдалении/перемещении в кадр входят новые территории. Старый
+  // битмап их не содержит: нельзя оставлять там пустоту до остановки камеры.
+  if (!cache || !covers(cache, cam)) renderLayer(cam);
+  else if (cache.key !== scaleKey(cam)) {
     clearTimeout(timer);
     timer = setTimeout(() => { if (washFar && lastCam) { renderLayer(lastCam); onDirty(); } }, SETTLE_MS);
   }
@@ -541,18 +543,19 @@ const MAX_ANG = 0.22;   // наклон названия на экране, ра
   // ---------- названия ----------
   function BoxIdx(w, h) { this.c = 48; this.nx = Math.ceil(w / 48) + 1; this.ny = Math.ceil(h / 48) + 1; this.cells = new Array(this.nx * this.ny); }
   BoxIdx.prototype.add = function (b) { const c = this.c; for (let j = Math.max(0, Math.floor(b[1] / c)); j <= Math.min(this.ny - 1, Math.floor(b[3] / c)); j++) for (let i = Math.max(0, Math.floor(b[0] / c)); i <= Math.min(this.nx - 1, Math.floor(b[2] / c)); i++) { const k2 = j * this.nx + i; (this.cells[k2] || (this.cells[k2] = [])).push(b); } };
-  BoxIdx.prototype.hits = function (b) { const c = this.c; let n = 0; const seen = new Set();
+  BoxIdx.prototype.hits = function (b, seen = new Set()) { const c = this.c; let n = 0;
     for (let j = Math.max(0, Math.floor(b[1] / c)); j <= Math.min(this.ny - 1, Math.floor(b[3] / c)); j++) for (let i = Math.max(0, Math.floor(b[0] / c)); i <= Math.min(this.nx - 1, Math.floor(b[2] / c)); i++) { const L = this.cells[j * this.nx + i]; if (!L) continue; for (const o of L) if (!seen.has(o) && b[0] < o[2] && o[0] < b[2] && b[1] < o[3] && o[1] < b[3]) { seen.add(o); n++; } }
     return n; };
 
   // кривая подписи в экранных координатах: центр, направление, кривизна
   function lineBoxes(cx, cy, ang, curv, wid, fs, off) {
     const ux = Math.cos(ang), uy = Math.sin(ang), nx = -uy, ny = ux, out = [], half = wid / 2;
-    // Оба конца строки и диагональ наклонного глифа с обводкой входят в оценку занятого места.
+    // Оба конца, обводка и полная типографская высота Spectral (около 1.6em)
+    // входят в рамки. Номинальный em не покрывает браузерные рамки глифов.
     const steps = Math.max(1, Math.ceil(wid / (fs * 0.5)));
     for (let i = 0; i <= steps; i++) {
       const t = -half + wid * i / steps, vv = curv * t * t + off, x = cx + ux * t + nx * vv, y = cy + uy * t + ny * vv;
-      const tangent = ang + Math.atan(2 * curv * t), radius = fs * 0.5 * (Math.abs(Math.cos(tangent)) + Math.abs(Math.sin(tangent))) + 1.6;
+      const tangent = ang + Math.atan(2 * curv * t), radius = fs * 0.8 * (Math.abs(Math.cos(tangent)) + Math.abs(Math.sin(tangent))) + 2;
       out.push([x - radius, y - radius, x + radius, y + radius]);
     }
     return out;
@@ -618,14 +621,24 @@ const MAX_ANG = 0.22;   // наклон названия на экране, ра
     cands.sort((a, b) => a.pri - b.pri);
     // подпись видимой части области (если главный бассейн за кадром)
     const vis = visibleAxis(r, v);
+    const inside = (x, y) => {
+      const i = Math.round(((x - v.ox) / v.kx - OX) / CS) - r.bx0;
+      const j = Math.round(((y - v.oy) / v.ky - OY) / CS) - r.by0;
+      return i >= 0 && j >= 0 && i < r.bw && j < r.bh && !!r.M[j * r.bw + i];
+    };
     let bestC = null, bestCost = 1e9;
     const tryAt = (c, cx, cy, ang, curv, extra) => {
+      // PCA и обход коллизий могут увести название на сушу между островами.
+      // Центр должен принадлежать собственной области; длинные имена малых морей
+      // могут выходить за берег, но не отрываться от него целиком.
+      if (!nameFitsRegion({ cx, cy, ang, curv, widths: c.lines.map((ln) => ln.w * c.fs / 100 + c.ls * ln.n), lh: c.fs * 1.18 }, inside, far ? 2 : 5)) return;
       const lh = c.fs * 1.18, nL = c.lines.length, boxes = [];
       for (let li = 0; li < nL; li++) { const off = (li - (nL - 1) / 2) * lh; boxes.push(...lineBoxes(cx, cy, ang, curv, c.lines[li].w * c.fs / 100 + c.ls * c.lines[li].n, c.fs, off)); }
       for (const b of boxes) if (b[0] < 3 || b[2] > v.w - 3 || b[1] < v.axis + 3 || b[3] > v.h - 3) return;
       let cost = extra + c.pri;
       for (const b of boxes) { if (hard.hits(b)) return; }
-      let dots = 0; for (const b of boxes) dots += soft.hits(b);
+      const dotHits = new Set();
+      let dots = 0; for (const b of boxes) dots += soft.hits(b, dotHits);
       cost += dots * (far ? 1.2 : 3);
       if (cost < bestCost) { bestCost = cost; bestC = { c, cx, cy, ang, curv, boxes }; }
     };
@@ -646,6 +659,25 @@ const MAX_ANG = 0.22;   // наклон названия на экране, ра
       for (const c of cands.slice(0, 2)) {
         const ux = Math.cos(vis.ang), uy = Math.sin(vis.ang);
         for (let oi = 0; oi < offs.length; oi++) { const [au, an] = offs[oi]; tryAt(c, vis.x + ux * au * vis.L - uy * an * c.fs * 1.4, vis.y + uy * au * vis.L + ux * an * c.fs * 1.4, vis.ang, 0, 2 + oi * 0.35); }
+      }
+    }
+    if (!bestC) {
+      // Запасные позиции в глубоких точках реального берега, а не в среднем
+      // между разорванными островами. Сначала ближайшие к видимому центру.
+      const anchor = vis ?? { x: v.w / 2, y: v.h / 2 };
+      const samples = [];
+      for (let i = 0; i < r.samples.length; i += 3) {
+        const [x, y] = v.toScreen(r.samples[i], r.samples[i + 1]);
+        if (x < 10 || x > v.w - 10 || y < v.axis + 10 || y > v.h - 10) continue;
+        samples.push({ x, y, d: Math.hypot(x - anchor.x, y - anchor.y) });
+      }
+      samples.sort((a, b) => a.d - b.d);
+      const tried = [];
+      for (const p of samples) {
+        if (tried.some((q) => Math.hypot(p.x - q.x, p.y - q.y) < 12)) continue;
+        tried.push(p);
+        for (const c of cands.slice(0, 4)) tryAt(c, p.x, p.y, 0, 0, 2.5);
+        if (bestC || tried.length >= 32) break;
       }
     }
     return bestC && bestCost < (far ? 9 : 6) ? bestC : null;
@@ -698,4 +730,19 @@ export function blitRect(cache, cam) {
 export function covers(cache, cam) {
   const x0 = -cam.ox / cam.kx, x1 = (cam.w - cam.ox) / cam.kx, y0 = (cam.axis - cam.oy) / cam.ky, y1 = (cam.h - cam.oy) / cam.ky;
   return x0 >= cache.u0 && x1 <= cache.u1 && y0 >= cache.v0 && y1 <= cache.v1;
+}
+
+// Проверка привязки имени: свой якорь и часть каждой строки над своей областью.
+export function nameFitsRegion({ cx, cy, ang, curv, widths, lh }, inside, minSamples) {
+  if (!inside(cx, cy)) return false;
+  const ux = Math.cos(ang), uy = Math.sin(ang);
+  return widths.every((wid, li) => {
+    const off = (li - (widths.length - 1) / 2) * lh;
+    let within = 0;
+    for (let i = 0; i <= 10; i++) {
+      const t = wid * (i / 10 - 0.5), dy = curv * t * t + off;
+      if (inside(cx + ux * t - uy * dy, cy + uy * t + ux * dy)) within++;
+    }
+    return within >= minSamples;
+  });
 }
