@@ -17,7 +17,7 @@ import { pickAmbient } from '../ambient.js?v=map4';
 import { createGutterLens } from '../lens.js?v=map4';
 import { initNebulae, drawNebulae, drawNebulaNames, disposeNebulae, setNebulaDirtyHandler } from '../nebulae.js?v=seas-audit-1';
 import { buildIndex, search } from '../search.js?v=author-pilot';
-import { styleLabelOpacity } from '../map-labels.js';
+import { styleLabelOpacity, fitLabelText } from '../map-labels.js?v=focus-fit-1';
 
 const NS = 'http://www.w3.org/2000/svg';
 const AXIS_H = 30;      // строка делений шкалы внутри SVG
@@ -209,6 +209,7 @@ export default {
     let lens = IDENT;
     let primaryOf = null, nebDpr = 1, nebTimer = 0;   // туманности: главный предок по id, DPR слоя, пауза перед пересборкой
     const neb = { ready: false };
+    let labelMeasure;
     let nebBuildVersion = 0;
     const nebOn = ctx.params?.get('neb') !== '0';
     const LABEL_PAD = window.innerWidth < 760 ? 110 : 170;
@@ -246,6 +247,7 @@ export default {
       if (destroyed) return;
       const canvas = document.createElement('canvas').getContext('2d');
       const measure = (font, text) => { canvas.font = font; return canvas.measureText(text); };
+      labelMeasure = (font, text) => measure(font, text).width;
 
       const breaks = [...store.eras.map((e) => e.start), store.now + 1];
       sc = createTimeScale(breaks, segmentWidths(breaks, store.styles.map((s) => s.start), { base: 60, perItem: 76, min: 170 }));
@@ -312,7 +314,7 @@ export default {
         const dates = el('tspan', { class: 'l-dates' }, text);
         dates.textContent = fmtDates(s);
         const m = meta.get(s.id);
-        const n = { s, row: lay.pos.get(s.id), g, dot, ring, text, name, dates, life, plate, img: null, w: m.w, wd: m.wd, wt: weight(s.id), ascent: m.ascent, descent: m.descent, dateDescent: m.dateDescent, x: 0, y: 0, r: 4, labelOn: false, landmark: landmarks.has(s.id) };
+        const n = { s, row: lay.pos.get(s.id), g, dot, ring, text, name, dates, fullDates: dates.textContent, life, plate, img: null, w: m.w, wd: m.wd, wt: weight(s.id), ascent: m.ascent, descent: m.descent, dateDescent: m.dateDescent, x: 0, y: 0, r: 4, labelOn: false, landmark: landmarks.has(s.id) };
         if (n.landmark) g.classList.add('landmark');
         nodes.push(n);
         nodeById.set(s.id, n);
@@ -527,7 +529,15 @@ export default {
           dotBoxes: visible.map((n) => [n.x - n.r - 1, n.y - n.r - 1, n.x + n.r + 1, n.y + n.r + 1]),
         });
       };
-      if (nebNamesFirst) for (const b of placeNebNames([])) occ.add([b[0], b[2], b[1], b[3], '']);
+      if (nebNamesFirst) {
+        // Выбранная/наведённая подпись сохраняется даже на дальнем плане.
+        // Моря обходят её заранее: последующая отсечка коллизий её не скрывает.
+        const focusBoxes = visible.filter((n) => n.s.id === selected || n.s.id === hovered).map((n) => {
+          const b = spotOf(n, m, m === 'z2' ? Math.max(n.w, n.wd) : n.w, FONT_PX[n.s.tier], true).box;
+          return [b[0], b[2], b[1], b[3]];
+        });
+        for (const b of placeNebNames(focusBoxes)) occ.add([b[0], b[2], b[1], b[3], '']);
+      }
       const inView = (b) => b[0] >= view.x0 + 4 && b[1] <= view.x1 - 4 && b[2] >= AXIS_H && b[3] <= view.y1;
       const allowTier = m === 'z0' ? 2 : 3;
       const focusSet = svg.classList.contains('has-selection');
@@ -543,10 +553,11 @@ export default {
         for (const label of [n.text, n.plate]) label.style.setProperty('--label-zoom', alpha);
         const fh = FONT_PX[n.s.tier];
         const w = m === 'z2' ? Math.max(n.w, n.wd) : n.w;
-        const spot = spotOf(n, m, w, fh);
+        const spot = spotOf(n, m, w, fh, forced);
         let show = forced || (focusSet ? lit : n.s.tier <= allowTier || n.g.classList.contains('near'));
         // Невидимые подписи не занимают место и не перехватывают щелчки.
         if (alpha === 0) show = false;
+        if (!spot.name) show = false;
         if (n.zone !== 'C' && !forced) show = false;
         if (show && !forced) show = inView(spot.box) && !occ.hit(spot.box, n.s.id);
         // Ориентир без подписи — не ориентир: в тесноте он становится обычной точкой.
@@ -561,6 +572,8 @@ export default {
         n.lbox = show ? spot.box : null;
         n.lpos = show ? (spot.anchor === 'end' ? 'l' : 'r') : null;
         if (show) {
+          if (n.name.textContent !== spot.name) n.name.textContent = spot.name;
+          if (n.dates.textContent !== spot.dates) n.dates.textContent = spot.dates;
           const [a, b, c, d] = spot.box;
           occ.add([a, b, c, d, n.s.id]);
           if (spot.anchor !== (n.anchor ?? 'start')) { n.anchor = spot.anchor; n.text.setAttribute('text-anchor', spot.anchor); }
@@ -583,15 +596,28 @@ export default {
 
     // Подпись — справа от точки на своей строке. У правого края экрана — слева, чтобы не обрезалась.
     // Прямоугольник подписи — от базовой линии шрифта: с надстрочными и подстрочными элементами.
-    function spotOf(n, m, w, fh) {
+    function spotOf(n, m, w, fh, forced = false) {
       const { x, y, r } = n;
+      const view = viewRect();
+      let name = n.s.name, dates = n.fullDates;
+      if (forced) {
+        const font = n.s.id === selected ? FONT[n.s.tier].replace(/^\d+/, '700') : FONT[n.s.tier];
+        w = Math.max(labelMeasure(font, name), m === 'z2' ? n.wd : 0);
+        const room = Math.max(0, view.x1 - 10 - (x + r + 7), x - r - 7 - view.x0 - 10);
+        if (w > room) {
+          const clippedName = fitLabelText(name, room, (text) => labelMeasure(font, text));
+          const clippedDates = fitLabelText(dates, room, (text) => labelMeasure(DATE_FONT, text));
+          name = clippedName.text; dates = clippedDates.text;
+          w = Math.max(clippedName.width, m === 'z2' ? clippedDates.width : 0);
+        }
+      }
       const base = y + (m === 'z2' ? -1 : fh * 0.36);
       const place = (anchor, tx) => {
         const a = anchor === 'end' ? tx - w - 2 : tx - 2, b = anchor === 'end' ? tx + 2 : tx + w + 2;
-        return { anchor, tx, base, box: [a, b, base - n.ascent - 2, m === 'z2' ? base + 15 + n.dateDescent + 2 : base + n.descent + 2] };
+        return { anchor, tx, base, name, dates, box: [a, b, base - n.ascent - 2, m === 'z2' ? base + 15 + n.dateDescent + 2 : base + n.descent + 2] };
       };
       const right = place('start', x + r + 7);
-      if (right.box[1] > vw - 6) { const left = place('end', x - r - 7); if (left.box[0] > 4) return left; }
+      if (right.box[1] > view.x1 - 6) { const left = place('end', x - r - 7); if (left.box[0] > view.x0 + 4) return left; }
       return right;
     }
 
@@ -1035,8 +1061,9 @@ export default {
       anim = requestAnimationFrame(step);
     }
     function computeFit() {
-      k0 = (vw - 80 - LABEL_PAD) / sc.total;
-      syFit = (vh - AXIS_H - 16) / contentRefH;
+      const rect = viewRect();
+      k0 = Math.max(24, rect.x1 - rect.x0 - 80 - LABEL_PAD) / sc.total;
+      syFit = Math.max(24, rect.y1 - rect.y0 - 16) / contentRefH;
     }
     function fit(animate = true) {
       computeFit();
@@ -1236,6 +1263,7 @@ export default {
       for (const n of nodes) for (const x of [n.g, n.text, n.life, n.plate]) x.classList.remove('lit', 'is-selected', 'on-line', 'is-related');
       for (const e of edges) { e.g.classList.remove('hl', 'main', 'desc'); e.path.style.transitionDelay = '0ms'; }
       panel.hidden = true;
+      computeFit();
       drawMinimap();
       trail = [];
       syncUrl({ push: nav === 'push' && (history.state?.mapStep ?? 0) > 0 });   // иначе «Назад» после снятия выбора ничего не делает
@@ -1297,6 +1325,7 @@ export default {
           <a class="btn mp-open" href="#/s/${s.id}">Открыть зал</a>
         </div>`);
       panel.hidden = false;
+      computeFit();
       markLoaded(panel);
     }
 
