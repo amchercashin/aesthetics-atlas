@@ -1,0 +1,653 @@
+{
+  "checked": "2026-10-14",
+  "sources": [
+    {
+      "id": "S01",
+      "title": "Русское народное искусство XVII–XXI веков",
+      "url": "https://virtual.rusmuseumvrm.ru/rossi_wing/collection/russkoe_narodnoe_iskusstvo_xviixxi_vekov/index.php",
+      "publisher": "Русский музей",
+      "accessStatus": "collection-route",
+      "checked": "2026-10-14",
+      "supports": "Каталог предметов и мастеров. Для каждой росписи выбрать конкретный объект; общая страница не доказывает даты возникновения и влияния."
+    },
+    {
+      "id": "S02",
+      "title": "Мамонтовы и Абрамцевский кружок",
+      "url": "https://www.abramtsevo.net/history/2011-10-02-17-22-18.html",
+      "publisher": "Музей-заповедник Абрамцево",
+      "accessStatus": "opened",
+      "checked": "2026-10-14",
+      "supports": "Различение русского стиля эклектики и неорусского направления модерна; роль Абрамцевского кружка."
+    },
+    {
+      "id": "S03",
+      "title": "Тренды укутались в меха",
+      "url": "https://www.kommersant.ru/doc/6394454",
+      "publisher": "Коммерсантъ FM",
+      "accessStatus": "opened",
+      "checked": "2026-10-14",
+      "supports": "Медийная фиксация Russian core / Slavic core в 2023 году; не источник о народном костюме."
+    },
+    {
+      "id": "S04",
+      "title": "Joseon Buncheong Ware: Between Celadon and Porcelain",
+      "url": "https://www.metmuseum.org/essays/joseon-buncheong-ware-between-celadon-and-porcelain",
+      "publisher": "The Met",
+      "accessStatus": "opened",
+      "checked": "2026-10-14",
+      "supports": "Пунчхон, белый ангоб, региональные варианты; развитие из селадона Корё; поздние обращения японских и корейских керамистов."
+    },
+    {
+      "id": "S05",
+      "title": "Dansaekhwa: Korean Monochrome Painting",
+      "url": "https://www.mmca.go.kr/exhibitions/exhibitionsDetail.do?exhId=201203200000055&menuId=1030000000",
+      "publisher": "MMCA Korea",
+      "accessStatus": "opened",
+      "checked": "2026-10-14",
+      "supports": "Выставочное описание тансэкхва и круг художников. Историю каждого участника проверять отдельно."
+    },
+    {
+      "id": "S06",
+      "title": "Drama and Contemporary Art Triggered by ShaMaTe",
+      "url": "https://www.rockbundartmuseum.org/calendar/the-night-owl-project",
+      "publisher": "Rockbund Art Museum",
+      "accessStatus": "opened",
+      "checked": "2026-10-14",
+      "supports": "Шаматэ: молодые рабочие, QQ, выразительные причёски; Луо Фусин — участник и организатор, Ли Ифань — документалист. Событие 2023, фильм 2019."
+    },
+    {
+      "id": "S07",
+      "title": "Modern Chinese clothing 新中式穿搭",
+      "url": "https://jingdaily.com/posts/china-lifestyle-trends-2022-skiing-urban-outdoor-prada",
+      "publisher": "Jing Daily",
+      "accessStatus": "opened",
+      "checked": "2026-10-14",
+      "supports": "Новая китайская одежда и её отличие от ханфу; guochao — более широкий контекст. Обзор 2022, не доказательство популярности в октябре 2026."
+    },
+    {
+      "id": "S08",
+      "title": "What went viral this Chinese New Year",
+      "url": "https://jingdaily.com/posts/what-went-viral-this-chinese-new-year",
+      "publisher": "Jing Daily",
+      "accessStatus": "search-only",
+      "checked": "2026-10-14",
+      "supports": "Пример xinzhongshi и локальной переработки спортивной одежды в 2025–2026. Перепроверить оригинал и первичные кампании."
+    },
+    {
+      "id": "S09",
+      "title": "Cave Temples of Dunhuang",
+      "url": "https://www.getty.edu/research/exhibitions_events/exhibitions/cave_temples_dunhuang/gallery.html",
+      "publisher": "Getty",
+      "accessStatus": "search-only",
+      "checked": "2026-10-14",
+      "supports": "Могао IV–XIV веков, росписи и скульптура, обмен по Шёлковым путям. Не единый китайский стиль."
+    },
+    {
+      "id": "S10",
+      "title": "Kalighat painting",
+      "url": "https://www.vam.ac.uk/articles/kalighat-painting",
+      "publisher": "V&A",
+      "accessStatus": "opened",
+      "checked": "2026-10-14",
+      "supports": "Калькуттские патуа, XIX–начало XX века, выразительный контур и пустой фон; современный Анвар Читракар."
+    },
+    {
+      "id": "S11",
+      "title": "Engineer of the Enchanted Forest: Jangarh Singh Shyam",
+      "url": "https://map-india.org/engineer-of-the-enchanted-forest-jangarh-singh-shyam/",
+      "publisher": "Museum of Art & Photography",
+      "accessStatus": "opened",
+      "checked": "2026-10-14",
+      "supports": "Джангарх Сингх Шьям, Pardhan Gond и Jangarh Kalam; не смешивать все сообщества гонд в один древний стиль."
+    },
+    {
+      "id": "S12",
+      "title": "Warli Painting",
+      "url": "https://imp-art.org/articles/warli-painting/",
+      "publisher": "Impart / Art & Photography Foundation",
+      "accessStatus": "opened",
+      "checked": "2026-10-14",
+      "supports": "Варли, белая рисовая краска, геометрические фигуры, женская ритуальная практика и Дживья Сома Маше; древнейшая дата не установлена."
+    },
+    {
+      "id": "S13",
+      "title": "Bengal School",
+      "url": "https://imp-art.org/articles/bengal-school/",
+      "publisher": "Impart / Art & Photography Foundation",
+      "accessStatus": "opened",
+      "checked": "2026-10-14",
+      "supports": "Бенгальская школа, Абаниндранат Тагор, Нандалал Бос; реакция на европейское академическое образование."
+    },
+    {
+      "id": "S14",
+      "title": "Adorned in Dreams: Art and Poetry on Pakistan’s Highways",
+      "url": "https://imp-art.org/perspectives/dispatches/adorned-in-dreams-art-and-poetry-on-pakistans-highways/",
+      "publisher": "Impart",
+      "accessStatus": "opened",
+      "checked": "2026-10-14",
+      "supports": "Пакистанский truck art: живопись, каллиграфия, поэзия, региональные и общественные контексты; не просто psychedelic."
+    },
+    {
+      "id": "S15",
+      "title": "Maximalism is making a comeback in India",
+      "url": "https://www.vogue.in/content/maximalism-is-making-a-comeback-in-india-and-its-not-just-90s-nostalgia",
+      "publisher": "Vogue India",
+      "accessStatus": "opened",
+      "checked": "2026-10-14",
+      "supports": "Статья 21.05.2025: Зинат и Самир Кулавур, Шивани Параснис, Танья Сингх; местные шрифты, вывески и ностальгия. Журналистский тренд, не школа с каноном."
+    },
+    {
+      "id": "S16",
+      "title": "Shiva as Lord of Dance (Nataraja)",
+      "url": "https://www.metmuseum.org/art/collection/search/39328",
+      "publisher": "The Met",
+      "accessStatus": "opened",
+      "checked": "2026-10-14",
+      "supports": "Бронза Чола, Тамилнад, конец XI века; иконография и конкретный предмет. Это не дата первого появления образа Натараджи."
+    },
+    {
+      "id": "S17",
+      "title": "Indonesian Batik",
+      "url": "https://ich.unesco.org/en/RL/batik-indonesian-00170",
+      "publisher": "UNESCO ICH",
+      "accessStatus": "search-only",
+      "checked": "2026-10-14",
+      "supports": "Восковое резервирование, разнообразие индонезийских традиций и обмен мотивами. При прямом открытии не извлечён основной текст; проверить перед публикацией."
+    },
+    {
+      "id": "S18",
+      "title": "The Nanyang School: A Fantasy in the Hearts of Commentators",
+      "url": "https://www.nationalgallery.sg/sg/en/learn-about-art/magazine/the-nanyang-school-a-fantasy-in-the-hearts-of-commentators.html",
+      "publisher": "National Gallery Singapore",
+      "accessStatus": "opened",
+      "checked": "2026-10-14",
+      "supports": "Критический разбор термина Nanyang school; не выдавать позднее обобщение за единый манифест художников."
+    },
+    {
+      "id": "S19",
+      "title": "Artists of the Saqqakhana Movement",
+      "url": "https://www.metmuseum.org/essays/artists-of-the-saqqakhana-movement-1950s60s",
+      "publisher": "The Met",
+      "accessStatus": "opened",
+      "checked": "2026-10-14",
+      "supports": "Саккахане, термин 1963, Зендеруди, Пиларам, Танаволи; связь с местной религиозной и бытовой визуальной культурой; стилистическая неоднородность."
+    },
+    {
+      "id": "S20",
+      "title": "Vegetal Patterns in Islamic Art",
+      "url": "https://www.metmuseum.org/fr/essays/vegetal-patterns-in-islamic-art",
+      "publisher": "The Met",
+      "accessStatus": "search-only",
+      "checked": "2026-10-14",
+      "supports": "Растительные мотивы и их доисламские контексты. Не доказывает прямую генеалогию всех исламских традиций."
+    },
+    {
+      "id": "S21",
+      "title": "The Ife Head",
+      "url": "https://www.britishmuseum.org/collection/object/E_Af1939-34-1",
+      "publisher": "British Museum",
+      "accessStatus": "search-only",
+      "checked": "2026-10-14",
+      "supports": "Натуралистическая латунная голова правителя; описание предмета доступно в поисковом извлечении, прямое открытие не удалось."
+    },
+    {
+      "id": "S22",
+      "title": "Ùhúnmwèlaò (head of an ọ́bà)",
+      "url": "https://www.metmuseum.org/art/collection/search/312290",
+      "publisher": "The Met",
+      "accessStatus": "opened",
+      "checked": "2026-10-14",
+      "supports": "Придворная скульптура Эдо, Бенин, конкретный предмет и мастерская; Бенин здесь — историческое царство на территории современной Нигерии."
+    },
+    {
+      "id": "S23",
+      "title": "Wrapper, Asante-Akan artist",
+      "url": "https://www.metmuseum.org/art/collection/search/316800",
+      "publisher": "The Met",
+      "accessStatus": "opened",
+      "checked": "2026-10-14",
+      "supports": "Узкополосное ткачество кенте асанте, статус и композиция. Не источник для всей истории кенте эве."
+    },
+    {
+      "id": "S24",
+      "title": "Wrapper, Asante artist",
+      "url": "https://africa.si.edu/collection/object/nmafa_74-31-29",
+      "publisher": "National Museum of African Art",
+      "accessStatus": "search-only",
+      "checked": "2026-10-14",
+      "supports": "Различение традиций кенте асанте и эве, Гана и Того; конкретный предмет."
+    },
+    {
+      "id": "S25",
+      "title": "Africa Fashion",
+      "url": "https://www.vam.ac.uk/exhibitions/africa-fashion",
+      "publisher": "V&A",
+      "accessStatus": "opened",
+      "checked": "2026-10-14",
+      "supports": "Обзор разных африканских мод и текстильных практик, не единый стиль; переходы к страницам дизайнеров и adire."
+    },
+    {
+      "id": "S26",
+      "title": "Visionary Viewpoints on Africa’s Arts: Visionary Artists",
+      "url": "https://africa.si.edu/exhibitions/visionary-viewpoints-africas-arts-visionary-artists",
+      "publisher": "National Museum of African Art",
+      "accessStatus": "search-only",
+      "checked": "2026-10-14",
+      "supports": "Уче Океке, Нсукка и влияние uli; прямое открытие не удалось."
+    },
+    {
+      "id": "S27",
+      "title": "Fun, fierce and fantastical African art",
+      "url": "https://www.ted.com/talks/wanuri_kahiu_fun_fierce_and_fantastical_african_art?view=transcript",
+      "publisher": "Wanuri Kahiu / TED",
+      "accessStatus": "search-only",
+      "checked": "2026-10-14",
+      "supports": "Самоописание Afrobubblegum. Требует первичного корпуса визуальных работ, не только определения."
+    },
+    {
+      "id": "S28",
+      "title": "Extreme canvas 2",
+      "url": "https://www.si.edu/object/siris_sil_1023572",
+      "publisher": "Smithsonian Libraries",
+      "accessStatus": "search-only",
+      "checked": "2026-10-14",
+      "supports": "Библиографический каталог книги о ганских киноплакатах. Не заменяет просмотр самих плакатов и биографий авторов."
+    },
+    {
+      "id": "S29",
+      "title": "Papunya Tula",
+      "url": "https://www.nma.gov.au/defining-moments/resources/papunya-tula",
+      "publisher": "National Museum of Australia",
+      "accessStatus": "opened",
+      "checked": "2026-10-14",
+      "supports": "Западная пустыня: движение с 1971, кооператив 1972; авторы и отличие от общего обзора искусства коренных народов Австралии."
+    },
+    {
+      "id": "S30",
+      "title": "Tapa: barkcloth art in the Pacific",
+      "url": "https://www.tepapa.govt.nz/digital-museum/explore-digital-museum/tapa-barkcloth-art-in-the-pacific",
+      "publisher": "Te Papa",
+      "accessStatus": "opened",
+      "checked": "2026-10-14",
+      "supports": "Отдельные названия и традиции siapo, ngatu, masi, hiapo, kapa; современные мастера и ссылки на предметы."
+    },
+    {
+      "id": "S31",
+      "title": "Pacific Sisters: Fashion Activists",
+      "url": "https://www.tepapa.govt.nz/about/past-exhibitions/pacific-sisters-fashion-activists",
+      "publisher": "Te Papa",
+      "accessStatus": "opened",
+      "checked": "2026-10-14",
+      "supports": "Коллектив маори и Pasifika, одежда, перформанс и смешанные материалы; 21st Sentry Cyber Sister, 1997."
+    },
+    {
+      "id": "S32",
+      "title": "What is Blak Design?",
+      "url": "https://www.monash.edu/mada/events/2022/What-is-Blak-Design",
+      "publisher": "Monash University / Koorie Heritage Trust",
+      "accessStatus": "opened",
+      "checked": "2026-10-14",
+      "supports": "Blak Design как современная область и дискуссия, а не единый орнамент или автоматически школа."
+    },
+    {
+      "id": "S33",
+      "title": "Formline Design",
+      "url": "https://www.historymuseum.ca/teachers-zone/haida-arts-and-technologies/formline-design/",
+      "publisher": "Canadian Museum of History",
+      "accessStatus": "search-only",
+      "checked": "2026-10-14",
+      "supports": "Formline хайда и соседних народов; прямое открытие не удалось. Не распространять на все народы Америки."
+    },
+    {
+      "id": "S34",
+      "title": "Urban Art and Music",
+      "url": "https://festival.si.edu/2015/peru/performing-and-visual-arts/urban-art-and-music/smithsonian",
+      "publisher": "Smithsonian Folklife Festival",
+      "accessStatus": "search-only",
+      "checked": "2026-10-14",
+      "supports": "Афиши chicha, Monky и Elliot Tupac. Прямое открытие не удалось; текст виден в поисковом извлечении."
+    },
+    {
+      "id": "S35",
+      "title": "Petrykivka decorative painting",
+      "url": "https://ich.unesco.org/en/RL/petrykivka-decorative-painting-as-a-phenomenon-of-the-ukrainian-ornamental-folk-art-00893",
+      "publisher": "UNESCO ICH",
+      "accessStatus": "search-only",
+      "checked": "2026-10-14",
+      "supports": "Петриковская роспись Украины, природные мотивы и передача практики; прямое открытие не извлекло основного текста."
+    },
+    {
+      "id": "S36",
+      "title": "Ala-kiyiz and Shyrdak",
+      "url": "https://ich.unesco.org/en/USL/ala-kiyiz-and-shyrdak-art-of-kyrgyz-traditional-felt-carpets-00693",
+      "publisher": "UNESCO ICH",
+      "accessStatus": "search-only",
+      "checked": "2026-10-14",
+      "supports": "Две техники кыргызского войлока; при публикации сверить номинацию и терминологию."
+    },
+    {
+      "id": "S37",
+      "title": "The Casablanca Art School",
+      "url": "https://www.tate.org.uk/whats-on/tate-st-ives/casablanca-art-school",
+      "publisher": "Tate",
+      "accessStatus": "search-only",
+      "checked": "2026-10-14",
+      "supports": "Школа Касабланки 1960–1970-х. Поиск вернул зеркальный адрес; канонический Tate не открылся. Источник нуждается в повторной проверке."
+    },
+    {
+      "id": "S38",
+      "title": "Ganga Devi",
+      "url": "https://imp-art.org/articles/ganga-devi/",
+      "publisher": "Impart",
+      "accessStatus": "search-only",
+      "checked": "2026-10-14",
+      "supports": "Ганга Деви и живопись Митхилы. Найден через поиск; оригинал ещё не прочитан."
+    },
+    {
+      "id": "S39",
+      "title": "Beverley Meldrum",
+      "url": "https://www.ngv.vic.gov.au/melbourne-now/artists/beverley-meldrum/",
+      "publisher": "NGV",
+      "accessStatus": "search-only",
+      "checked": "2026-10-14",
+      "supports": "Конкретный пример современного Indigenous design; не основатель общего стиля."
+    },
+    {
+      "id": "S40",
+      "title": "Mono-ha, Lee Ufan: Marking Infinity",
+      "url": "https://web.guggenheim.org/exhibitions/leeufan/series/mono-ha",
+      "publisher": "Guggenheim",
+      "accessStatus": "search-only",
+      "checked": "2026-10-14",
+      "supports": "Материальность Mono-ha и сопоставления с Arte Povera и другими движениями; не автоматическая стрелка происхождения."
+    },
+    {
+      "id": "S41",
+      "title": "Григорий Горковенко о русском стиле",
+      "url": "https://style.rbc.ru/people/68555bfe9a7947b36ad03923",
+      "publisher": "РБК Стиль",
+      "accessStatus": "opened",
+      "checked": "2026-10-14",
+      "supports": "Интервью 25.06.2025, предметы SHURA и авторская интерпретация матрёшки. Один кейс не доказывает существование общей школы нового русского дизайна."
+    },
+    {
+      "id": "S42",
+      "title": "Momo Hassan-Odukale Is the Stylist With Trans-Continental Style",
+      "url": "https://www.vogue.com/article/momo-hassan-odukale-is-the-stylist-with-trans-continental-style",
+      "publisher": "Vogue",
+      "accessStatus": "opened",
+      "checked": "2026-10-14",
+      "supports": "Alté как локальная творческая сцена; героиня не всегда относит себя к этому ярлыку. Основание для исследования, не приписывания идентичности."
+    },
+    {
+      "id": "S43",
+      "title": "解构新中式 东方美学基因如何创新落地",
+      "url": "https://style.cctv.cn/2025/10/21/ARTIL5I3xbD29sIBPJDrZwdM251021.shtml",
+      "publisher": "CCTV",
+      "accessStatus": "opened",
+      "checked": "2026-10-14",
+      "supports": "Китайскоязычный материал 21.10.2025 о современном переосмыслении форм в моде; проверить первичные коллекции."
+    },
+    {
+      "id": "S44",
+      "title": "I Nyoman Mandra",
+      "url": "https://australian.museum/learn/cultures/international-collection/balinese/i-nyoman-mandra/",
+      "publisher": "Australian Museum",
+      "accessStatus": "opened",
+      "checked": "2026-10-14",
+      "supports": "Камасан, И Ньоман Мандра и Ни Ваян Шри Ведари; преемственность, контур, композиция. Статья 2018 года, не источник о текущем статусе мастеров."
+    },
+    {
+      "id": "S45",
+      "title": "Ghanaian Hand-painted Movie Posters",
+      "url": "https://www.parkland.edu/Audience/Community-Business/Parkland-Presents/Art-Gallery/Exhibitions-Events/Exhibits/2006-Exhibits/Ghanaian-Hand-painted-Movie-Posters",
+      "publisher": "Parkland College Art Gallery",
+      "accessStatus": "opened",
+      "checked": "2026-10-14",
+      "supports": "Первичный каталог выставки 2006 года: мобильные кинопоказы и имена Leonardo, Heavy J, Joe Mensah и других художников."
+    },
+    {
+      "id": "S46",
+      "title": "Музей Филимоновская игрушка",
+      "url": "https://filimonovo-museum.ru/",
+      "publisher": "Музей Филимоновская игрушка",
+      "accessStatus": "opened",
+      "checked": "2026-10-14",
+      "supports": "Имена мастериц: Елена Кузьминична Евдокимова, Анна Иосифовна Дербенева; примеры предметов. Не подтверждает легендарную дату основания промысла."
+    },
+    {
+      "id": "S47",
+      "title": "Oral history interview with Dalani K. Tanahy, 2023 November 25",
+      "url": "https://www.aaa.si.edu/collections/interviews/oral-history-interview-dalani-k-tanahy-22313",
+      "publisher": "Archives of American Art, Smithsonian",
+      "accessStatus": "search-only",
+      "checked": "2026-10-14",
+      "supports": "Имя художницы kapa и её собственный рассказ. Поисковое извлечение доступно, прямое открытие вернуло ошибку."
+    },
+    {
+      "id": "N01",
+      "title": "И. Я. Билибин — иллюстратор русских сказок",
+      "publisher": "Третьяковская галерея",
+      "url": "https://www.tretyakovgallery.ru/events/o/i-ya-bilibin-illyustrator-russkikh-skazok/",
+      "accessStatus": "search-only",
+      "checked": "2026-10-14",
+      "supports": "Описание книжно-иллюстративного языка Билибина и оформления книги. Для границ периода и отдельных работ нужны предметные записи."
+    },
+    {
+      "id": "N02",
+      "title": "Красавицы столетий: 55 женских портретов Анатолия Зверева",
+      "publisher": "Музей АЗ",
+      "url": "https://old.museum-az.com/information/news-in/vystavka-zhenskikh-portretov-krasavitsy-stoletiy",
+      "accessStatus": "search-only",
+      "checked": "2026-10-14",
+      "supports": "Музейный корпус женских портретов, включая графику и работы разных лет. Поддерживает выбор портретного корпуса, но не заявляет существование отдельного исторического движения."
+    },
+    {
+      "id": "N03",
+      "title": "Esther Mahlangu: A Retrospective",
+      "publisher": "Iziko Museums of South Africa",
+      "url": "https://www.iziko.org.za/news/iziko-museums-of-south-africa-presentsthen-i-knew-i-was-good-at-painting-esthermahlangu-a-retrospective/",
+      "accessStatus": "opened",
+      "checked": "2026-10-14",
+      "supports": "Ретроспективный корпус Эстер Махлангу, развитие настенной практики ндебеле на других поверхностях и публичное признание. Не заменяет историю всей традиции ндебеле."
+    },
+    {
+      "id": "N04",
+      "title": "Shahzia Sikander: Extraordinary Realities",
+      "publisher": "The Morgan Library & Museum / RISD Museum",
+      "url": "https://www.themorgan.org/exhibitions/shahzia-sikander",
+      "accessStatus": "search-only",
+      "checked": "2026-10-14",
+      "supports": "Переработка индо-персидской рукописной живописи в первые пятнадцать лет практики Сикандер. Поздняя анимация и скульптура требуют дополнительных источников."
+    },
+    {
+      "id": "N05",
+      "title": "Emily Kam Kngwarray",
+      "publisher": "National Gallery of Australia",
+      "url": "https://nga.gov.au/exhibitions/emily-kam-kngwarray-retrospective2023/",
+      "accessStatus": "search-only",
+      "checked": "2026-10-14",
+      "supports": "Ретроспективный охват и переход от батиков к живописи. Прямой доступ вернул ошибку; перепроверить полный текст и предметные записи."
+    },
+    {
+      "id": "N06",
+      "title": "REKOSPECTIVE: The Art of Reko Rennie",
+      "publisher": "National Gallery of Victoria",
+      "url": "https://www.ngv.vic.gov.au/media_release/rekospective-the-art-of-reko-rennie/",
+      "accessStatus": "search-only",
+      "checked": "2026-10-14",
+      "supports": "Многолетний корпус Реко Ренни, сочетание камиларои геометрических мотивов и городских визуальных практик; нормализовать этноним по местному источнику. Это музейный материал о ретроспективе 2024 года, а не доказательство нового тренда 2026 года."
+    },
+    {
+      "id": "N07",
+      "title": "Lisa Reihana: learning resource",
+      "publisher": "Museum of New Zealand Te Papa Tongarewa",
+      "url": "https://www.tepapa.govt.nz/learn/for-educators/teaching-resources/venice-biennale/venice-biennale-and-lisa-reihana-learning-0",
+      "accessStatus": "search-only",
+      "checked": "2026-10-14",
+      "supports": "Образовательный контекст практики Лизы Рейханы и in Pursuit of Venus [infected]. Для самостоятельного авторского узла нужен более широкий корпус."
+    },
+    {
+      "id": "N08",
+      "title": "El Anatsui, Dusasa II, 2007",
+      "publisher": "The Metropolitan Museum of Art",
+      "url": "https://www.metmuseum.org/art/collection/search/495553",
+      "accessStatus": "opened",
+      "checked": "2026-10-14",
+      "supports": "Материал и командное изготовление конкретной работы, пояснение подвесных металлических композиций и названные куратором культурные отсылки. Изображение имеет отдельные ограничения использования."
+    },
+    {
+      "id": "N09",
+      "title": "Alick Tipoti, Soll",
+      "publisher": "Queensland Art Gallery / Gallery of Modern Art",
+      "url": "https://collection.qagoma.qld.gov.au/objects/11314",
+      "accessStatus": "search-only",
+      "checked": "2026-10-14",
+      "supports": "Предметная запись линогравюры Алика Типоти. Одна работа не доказывает все признаки авторского языка."
+    },
+    {
+      "id": "N10",
+      "title": "Liu Kuo-sung: Experimentation as Method",
+      "publisher": "National Gallery Singapore",
+      "url": "https://www.nationalgallery.sg/content/dam/microsites/lighttonight2023/programmes/liu-kuo-sung-experimentation-as-method/index.html",
+      "accessStatus": "search-only",
+      "checked": "2026-10-14",
+      "supports": "Ретроспективная рамка экспериментальной тушевой практики Лю Госуна; даты и материалы отдельных работ требуют каталогов."
+    },
+    {
+      "id": "N11",
+      "title": "Company Painting",
+      "publisher": "MAP Academy / Impart",
+      "url": "https://imp-art.org/articles/company-painting/",
+      "accessStatus": "search-only",
+      "checked": "2026-10-14",
+      "supports": "Историческая рамка живописи Company; региональные школы и атрибуции мастеров проверять отдельно."
+    },
+    {
+      "id": "N12",
+      "title": "Cheong Soo Pieng: Layer by Layer",
+      "publisher": "National Gallery Singapore",
+      "url": "https://www.nationalgallery.sg/content/dam/media-releases/encounter-art-in-new-ways-and-rediscover-one-of-singapore-s-leading-artists/Media%20Release%20Cheong%20Soo%20Pieng%20Layer%20by%20Layer%20Final.pdf",
+      "accessStatus": "search-only",
+      "checked": "2026-10-14",
+      "supports": "Выставка и исследование материалов и методов Чеонг Су Пиенга. PDF найден через поиск; предметную проверку полного каталога ещё провести."
+    },
+    {
+      "id": "N13",
+      "title": "Pacita Abad",
+      "publisher": "Walker Art Center",
+      "url": "https://www.walkerart.org/whats-on/pacita-abad/",
+      "accessStatus": "opened",
+      "checked": "2026-10-14",
+      "supports": "Корпус trapunto и других медиумов, принцип стёжки и наполнения живописного холста, ретроспектива нескольких десятилетий. Не переносить признаки одной техники на всю практику."
+    },
+    {
+      "id": "N14",
+      "title": "Al-Qatt Al-Asiri",
+      "publisher": "UNESCO Intangible Cultural Heritage",
+      "url": "https://ich.unesco.org/en/RL/al-qatt-al-asiri-female-traditional-interior-wall-decoration-in-asir-saudi-arabia-01261",
+      "accessStatus": "search-only",
+      "checked": "2026-10-14",
+      "supports": "Локальная традиция интерьерной настенной росписи и её носители. Дата включения в список не является датой возникновения."
+    },
+    {
+      "id": "N15",
+      "title": "Julie Mehretu",
+      "publisher": "Whitney Museum of American Art",
+      "url": "https://whitney.org/exhibitions/julie-mehretu",
+      "accessStatus": "search-only",
+      "checked": "2026-10-14",
+      "supports": "Ретроспективный корпус живописи и работ на бумаге; формальный анализ и границы выбранного авторского языка остаются задачей карточки."
+    },
+    {
+      "id": "N16",
+      "title": "Tarsila do Amaral: Inventing Modern Art in Brazil",
+      "publisher": "The Museum of Modern Art",
+      "url": "https://www.moma.org/calendar/exhibitions/3871",
+      "accessStatus": "search-only",
+      "checked": "2026-10-14",
+      "supports": "Выставочный корпус и бразильский модернистский контекст, прежде всего 1920-х; не подтверждает одинаковый язык всех периодов."
+    },
+    {
+      "id": "N17",
+      "title": "Rei Kawakubo / Comme des Garçons: Exhibition Galleries",
+      "publisher": "The Metropolitan Museum of Art",
+      "url": "https://www.metmuseum.org/exhibitions/listings/2017/rei-kawakubo/exhibition-galleries",
+      "accessStatus": "opened",
+      "checked": "2026-10-14",
+      "supports": "Кураторское описание нескольких коллекций, деформация силуэта, асимметрия и работа с незавершённостью. Позволяет исследовать авторский корпус и его периоды; не служит единым определением всей японской моды."
+    },
+    {
+      "id": "N18",
+      "title": "The Museum of Savage Beauty",
+      "publisher": "Victoria and Albert Museum",
+      "url": "https://www.vam.ac.uk/museumofsavagebeauty/",
+      "accessStatus": "opened",
+      "checked": "2026-10-14",
+      "supports": "Тематические серии Маккуина и роль творческих сотрудников; история одежды, природа, органические материалы и крой как направления анализа."
+    },
+    {
+      "id": "N19",
+      "title": "What is Tropical Modernism?",
+      "publisher": "Victoria and Albert Museum",
+      "url": "https://www.vam.ac.uk/articles/what-is-tropical-modernism",
+      "accessStatus": "opened",
+      "checked": "2026-10-14",
+      "supports": "Западноафриканский и индийский контексты, солнцезащитные экраны, вентиляция и широкий карниз. Другие национальные ветви и Бава требуют дополнительных источников."
+    },
+    {
+      "id": "N20",
+      "title": "Scissors make films: Lotte Reiniger",
+      "publisher": "British Film Institute / Sight and Sound",
+      "url": "https://www.bfi.org.uk/sight-and-sound/features/scissors-make-films-lotte-reiniger-creating-her-magical-animations/",
+      "accessStatus": "opened",
+      "checked": "2026-10-14",
+      "supports": "Авторский рассказ о силуэтных марионетках, многослойном фоне и покадровой съёмке. Для значимости дополнить независимой кураторской оценкой."
+    },
+    {
+      "id": "N21",
+      "title": "Hayao Miyazaki",
+      "publisher": "Academy Museum of Motion Pictures",
+      "url": "https://www.academymuseum.org/en/exhibitions/hayao-miyazaki",
+      "accessStatus": "opened",
+      "checked": "2026-10-14",
+      "supports": "Ретроспективный корпус фильмов и материалов Studio Ghibli: эскизы, фоны, раскадровки. Не даёт оснований приписать все производственные изображения только режиссёру."
+    },
+    {
+      "id": "N22",
+      "title": "Refik Anadol: Unsupervised",
+      "publisher": "The Museum of Modern Art",
+      "url": "https://www.moma.org/calendar/exhibitions/5535",
+      "accessStatus": "opened",
+      "checked": "2026-10-14",
+      "supports": "Конкретный генеративный проект, непрерывное изменение изображения и состав студии. Требуются другие проекты для доказательства устойчивого языка; AI не означает одну эстетику."
+    },
+    {
+      "id": "N23",
+      "title": "The Carrolup Artworks",
+      "publisher": "John Curtin Gallery / Curtin University",
+      "url": "https://www.curtin.edu.au/jcg/carrolup-centre/overview/",
+      "accessStatus": "opened",
+      "checked": "2026-10-14",
+      "supports": "Коллекция работ детей Карролап, время и институциональный контекст, участие сообществ в представлении коллекции. Не объединяет все современные практики нунгар в одну школу."
+    },
+    {
+      "id": "N24",
+      "title": "Carrolup collection transfer",
+      "publisher": "Curtin University",
+      "url": "https://www.curtin.edu.au/news/stolen-generation-artwork-to-transfer-to-western-australia/",
+      "accessStatus": "search-only",
+      "checked": "2026-10-14",
+      "supports": "Именная атрибуция Reynold Hart и сведения о корпусе 1945–1951 годов; численность коллекции зависит от даты публикации."
+    },
+    {
+      "id": "N25",
+      "title": "A Together Story: A Beginning",
+      "publisher": "John Curtin Gallery / Curtin University",
+      "url": "https://www.curtin.edu.au/jcg/events/a-together-story-a-beginning/",
+      "accessStatus": "search-only",
+      "checked": "2026-10-14",
+      "supports": "Парнелл Демпстер как автор Карролап; обсуждение с представительницей сообщества. Не источник формального анализа всех работ."
+    }
+  ]
+}

@@ -8,7 +8,8 @@
     "check-links": "node scripts/check-links.mjs",
     "find": "node scripts/find-media.mjs",
     "test": "node --test test/*.test.mjs",
-    "coverage": "node scripts/coverage.mjs"
+    "coverage": "node scripts/coverage.mjs",
+    "research:check": "node scripts/check-research.mjs"
   },
   "devDependencies": {
     "js-yaml": "^4.1.0",
