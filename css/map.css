@@ -393,6 +393,8 @@ body[data-view="map"] .site-footer { display: none; }
 .summary-hit { fill: none; stroke: transparent; stroke-width: 16; pointer-events: stroke; cursor: pointer; outline: none; }
 .summary-hit:focus-visible { stroke: var(--accent); stroke-width: 2; stroke-dasharray: 3 5; }
 .summary-records { display: grid; gap: 4px; margin-top: 10px; }
+.map-edge-pop [data-close-edge] { position: absolute; top: 5px; right: 5px; width: 26px; height: 26px; }
+.map-edge-pop .ep-head { padding-right: 28px; }
 .summary-records button { text-align: left; padding: 8px; border: 0; border-radius: 5px; background: var(--paper); font: inherit; font-size: 12px; cursor: pointer; }
 .summary-records button:hover { background: color-mix(in oklab, var(--accent) 9%, var(--paper)); }
 .summary-records small { display: block; margin-top: 3px; color: var(--ink-3); }
