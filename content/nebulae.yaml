@@ -1,0 +1,452 @@
+# Редакторские области навигации: море → часть → карточка; исторические связи задаются отдельно.
+nebulae:
+  - id: drevnie-istoki
+    name: Древние истоки
+    color: '#BA7517'
+    parts:
+      - id: paleolit
+        name: Палеолит
+        styles:
+          - paleolithic-cave-art
+          - venus-figurines
+          - petroglyphs
+      - id: drevnie-carstva
+        name: Древние царства
+        styles:
+          - neolithic-art
+          - megaliths
+          - mesopotamian-art
+          - ancient-egypt
+          - minoan-art
+          - scythian-animal-style
+          - achaemenid-art
+      - id: indiya
+        name: Индия
+        styles:
+          - ancient-indian-art
+          - gandhara
+          - khmer-temple-art
+      - id: greciya
+        name: Греция
+        styles:
+          - greek-archaic
+          - classical-greece
+          - hellenistic-art
+      - id: kelty-i-vikingi
+        name: Кельты и викинги
+        styles:
+          - celtic-art
+          - insular-art
+          - viking-art
+  - id: dalniy-vostok
+    name: Дальний Восток
+    color: '#1D9E75'
+    parts:
+      - id: kitay-i-yaponiya
+        name: Китай и Япония
+        styles:
+          - ancient-chinese-art
+          - shan-shui
+          - yamato-e
+          - wabi-sabi
+          - ukiyo-e
+          - hokusai-landscape-prints
+  - id: srednevekove
+    name: Средневековье
+    color: '#378ADD'
+    parts:
+      - id: rim-i-vizantiya
+        name: Рим и Византия
+        styles:
+          - ancient-rome
+          - fayum-portraits
+          - byzantine-art
+          - old-russian-icons
+      - id: islamskiy-mir
+        name: Исламский мир
+        styles:
+          - islamic-art
+          - persian-miniature
+          - mughal-miniature
+      - id: gotika
+        name: Готика
+        styles:
+          - romanesque
+          - gothic
+          - international-gothic
+      - id: ranniy-renessans
+        name: Ранний Ренессанс
+        styles:
+          - proto-renaissance
+          - early-renaissance
+          - northern-renaissance
+  - id: vozrozhdenie-i-barokko
+    name: Возрождение и барокко
+    color: '#D85A30'
+    parts:
+      - id: vysokoe-vozrozhdenie
+        name: Высокое Возрождение
+        styles:
+          - high-renaissance
+          - mannerism
+          - palladianism
+      - id: karavadzho-i-gollandcy
+        name: Караваджо и голландцы
+        styles:
+          - caravaggism
+          - dutch-golden-age
+      - id: barokko-i-rokoko
+        name: Барокко и рококо
+        styles:
+          - baroque
+          - rococo
+          - chinoiserie
+  - id: klassicizm-i-istorizm
+    name: Классицизм и историзм
+    color: '#888780'
+    parts:
+      - id: klassicizm
+        name: Классицизм
+        styles:
+          - neoclassicism
+          - empire-style
+          - biedermeier
+          - academism
+      - id: istorizm
+        name: Историзм
+        styles:
+          - gothic-revival
+          - historicism
+      - id: stalinskiy-ampir
+        name: Сталинский ампир
+        styles:
+          - socialist-realism
+          - stalinist-architecture
+  - id: ot-romantizma-k-ekspressionizmu
+    name: От романтизма к экспрессионизму
+    color: '#639922'
+    parts:
+      - id: romantizm-impressionizm
+        name: Романтизм → импрессионизм
+        styles:
+          - romanticism
+          - barbizon-school
+          - realism
+          - impressionism
+          - peredvizhniki
+          - neo-impressionism
+      - id: postimpressionizm-ekspressionizm
+        name: Постимпрессионизм → экспрессионизм
+        styles:
+          - post-impressionism
+          - nabis
+          - fauvism
+          - expressionism
+          - abstract-art
+  - id: modern-i-simvolizm
+    name: Модерн и символизм
+    color: '#D4537E'
+    parts:
+      - id: prerafaelity
+        name: Прерафаэлиты
+        styles:
+          - pre-raphaelites
+          - aesthetic-movement
+          - japonisme
+      - id: modern
+        name: Модерн
+        styles:
+          - arts-and-crafts
+          - art-nouveau
+          - vienna-secession
+      - id: simvolizm
+        name: Символизм
+        styles:
+          - symbolism
+          - mir-iskusstva
+      - id: knizhnaya-grafika
+        name: Книжная графика
+        styles:
+          - bilibin-illustration
+  - id: avangard
+    name: Авангард
+    color: '#E24B4A'
+    parts:
+      - id: kubizm-futurizm-dada
+        name: Кубизм, футуризм, дада
+        styles:
+          - cubism
+          - futurism
+          - cubo-futurism
+          - orphism
+          - dada
+          - de-stijl
+          - mexican-muralism
+          - new-objectivity
+      - id: konstruktivizm
+        name: Конструктивизм
+        styles:
+          - constructivism
+          - suprematism
+          - kinetic-art
+  - id: syurrealizm-i-abstrakciya
+    name: Сюрреализм и абстракция
+    color: '#7F77DD'
+    parts:
+      - id: syurrealizm
+        name: Сюрреализм
+        styles:
+          - metaphysical-painting
+          - surrealism
+          - abstract-expressionism
+      - id: minimalizm-i-koncept
+        name: Минимализм и концепт
+        styles:
+          - color-field
+          - conceptual-art
+          - minimalism
+          - land-art
+  - id: modernizm-v-arhitekture
+    name: Модернизм в архитектуре
+    color: '#378ADD'
+    parts:
+      - id: organicheskaya-arhitektura
+        name: Органическая архитектура
+        styles:
+          - chicago-school
+          - organic-architecture
+      - id: bauhaus-i-internacional
+        name: Баухаус и интернационал
+        styles:
+          - bauhaus
+          - international-style
+          - mid-century-modern
+          - soviet-modernism
+          - postmodern-architecture
+          - deconstructivism
+      - id: brutalizm
+        name: Брутализм
+        styles:
+          - brutalism
+          - metabolism
+      - id: shveycarskiy-stil
+        name: Швейцарский стиль
+        styles:
+          - swiss-style
+          - ulm-school
+  - id: retrofuturizm
+    name: Ретрофутуризм
+    color: '#BA7517'
+    parts:
+      - id: ar-deko-i-kosmos
+        name: Ар-деко и космос
+        styles:
+          - art-deco
+          - streamline-moderne
+          - googie
+          - space-age
+          - high-tech
+      - id: psihodeliya-i-solarpank
+        name: Психоделия и соларпанк
+        styles:
+          - psychedelic-art
+          - afrofuturism
+          - solarpunk
+  - id: pop-i-ulica
+    name: Поп и улица
+    color: '#E24B4A'
+    parts:
+      - id: pop-art-i-memfis
+        name: Поп-арт и Мемфис
+        styles:
+          - pop-art
+          - hyperrealism
+          - lowbrow
+          - memphis-design
+          - superflat
+      - id: strit-art
+        name: Стрит-арт
+        styles:
+          - graffiti-street-art
+          - neo-expressionism
+  - id: cifrovye-estetiki
+    name: Цифровые эстетики
+    color: '#1D9E75'
+    parts:
+      - id: ranniy-kompyuter
+        name: Ранний компьютер
+        styles:
+          - computer-art
+          - op-art
+          - pixel-art
+          - early-cgi
+      - id: ranniy-veb
+        name: Ранний веб
+        styles:
+          - web-1-0
+          - net-art
+          - post-internet
+      - id: veyporveyv-i-neyroseti
+        name: Вейпорвейв и нейросети
+        styles:
+          - glitch-art
+          - vaporwave
+          - seapunk
+          - ai-aesthetic
+          - alien-core
+      - id: liminalnoe
+        name: Лиминальное
+        styles:
+          - liminal-space
+          - weirdcore
+          - dreamcore
+  - id: y2k-i-kiberpank
+    name: Y2K и киберпанк
+    color: '#D4537E'
+    parts:
+      - id: kiberpank-i-pank
+        name: Киберпанк и панк
+        styles:
+          - punk-graphics
+          - new-wave-graphic
+          - cyberpunk
+          - synthwave
+      - id: y2k
+        name: Y2K
+        styles:
+          - y2k-aesthetic
+          - frutiger-aero
+          - skeuomorphism
+          - barbiecore
+      - id: kory
+        name: Коры
+        styles:
+          - dark-academia
+          - kidcore
+          - cottagecore
+          - coquette
+  - id: ploskiy-interfeys
+    name: Плоский интерфейс
+    color: '#378ADD'
+    parts:
+      - id: ploskiy-dizayn
+        name: Плоский дизайн
+        styles:
+          - flat-design
+          - material-design
+          - corporate-memphis
+          - glassmorphism
+      - id: veb-brutalizm
+        name: Веб-брутализм
+        styles:
+          - web-brutalism
+          - brat
+  - id: russkie-rospisi-i-lubok
+    name: Русские росписи и лубок
+    color: '#A05C3B'
+    parts:
+      - id: rospis-dereva-i-metalla
+        name: Роспись дерева и металла
+        styles:
+          - khokhloma
+          - zhostovo-painting
+          - gorodets-painting
+      - id: lakovaya-miniatyura
+        name: Лаковая миниатюра
+        styles:
+          - palekh-miniature
+      - id: russkiy-pechatnyy-lubok
+        name: Печатный лубок
+        styles:
+          - lubok
+  - id: zhivopis-indii
+    name: Живопись Индии
+    color: '#8D6EAA'
+    parts:
+      - id: mitkhila
+        name: Митхила
+        styles:
+          - mithila-painting
+      - id: kaligkhat
+        name: Калигхат
+        styles:
+          - kalighat-painting
+      - id: varli
+        name: Варли
+        styles:
+          - warli-painting
+      - id: bengalskaya-patachitra
+        name: Бенгальская патачитра
+        styles:
+          - bengal-patachitra
+  - id: tekstil-i-rospisi-afriki
+    name: Текстиль и росписи Африки
+    color: '#0B827E'
+    parts:
+      - id: tekstil-asante
+        name: Текстиль асанте
+        styles:
+          - asante-kente
+          - adinkra
+      - id: bogolan
+        name: Боголанфини
+        styles:
+          - bogolanfini
+      - id: rospis-ndebele
+        name: Роспись ндебеле
+        styles:
+          - ndebele-murals
+          - esther-mahlangu
+  - id: polotna-iz-kory-okeanii
+    name: Полотна из коры Океании
+    color: '#3C829A'
+    parts:
+      - id: samoanskoe-siapo
+        name: Самоанское сиапо
+        styles:
+          - samoan-siapo
+      - id: tonganskoe-ngatu
+        name: Тонганское нгату
+        styles:
+          - tongan-ngatu
+      - id: fidjiyskoe-masi
+        name: Фиджийское маси
+        styles:
+          - fijian-masi
+  - id: bumazhnye-vyrezki
+    name: Вырезание бумаги
+    color: '#667A2A'
+    parts:
+      - id: kitayskoe-vyrezanie-bumagi
+        name: Вырезание бумаги Китая
+        styles:
+          - chinese-jianzhi
+      - id: polskie-vycinanki
+        name: Польские выцинанки
+        styles:
+          - polish-wycinanki
+  - id: kartinki-kitaya-i-vietnama
+    name: Картинки Китая и Вьетнама
+    color: '#B77620'
+    parts:
+      - id: nyanhua
+        name: Няньхуа
+        styles:
+          - nianhua
+          - yang-liuqing-nianhua
+      - id: dongkho
+        name: Донгхо
+        styles:
+          - dong-ho-prints
+free:
+  - aboriginal-art
+  - mesoamerican-art
+  - andean-art
+  - emily-kngwarray
+  - zverev-portrait-graphics
+  - shahzia-sikander
+  - carrolup-school
+  - rei-kawakubo
+  - pacita-abad
+  - reko-rennie
+  - norshtein-animation

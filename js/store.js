@@ -14,6 +14,8 @@ export function createStore(data) {
   const former = new Map(styles.flatMap((s) => (s.formerIds ?? []).map((f) => [f, s.id])));
   const sources = new Map((data.sources ?? []).map((src) => [src.id, src]));
   const eras = data.eras;
+  const nebulae = data.nebulae ?? [];
+  const nebulaById = new Map(nebulae.map((n) => [n.id, n]));
   const eraById = new Map(eras.map((e, i) => [e.id, { ...e, index: i }]));
 
   const walk = (id, key) => {
@@ -39,6 +41,9 @@ export function createStore(data) {
     sources: [...sources.values()],
     era: (id) => eraById.get(id),
     eraColor: (id) => `var(--era-${id})`,
+    nebulae,
+    nebula: (id) => nebulaById.get(byId.get(id)?.nebula) ?? null,
+    nebulaColor: (id) => nebulaById.get(byId.get(id)?.nebula)?.color ?? 'var(--ink-3)',
     ancestors: (id) => walk(id, 'parents'),
     descendants: (id) => walk(id, 'children'),
     // Главная линия: по первому родителю до корня.
