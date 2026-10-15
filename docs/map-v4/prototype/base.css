@@ -1,0 +1,20 @@
+/* Общая основа прототипов туманностей: бумага и чернила сайта «Атлас эстетик». */
+:root {
+  --paper: #f2f1ee; --paper-2: #fbfaf8; --paper-3: #e7e5e0;
+  --ink: #1a1a1c; --ink-2: #44433f; --ink-3: #69675f;
+  --rule: rgb(26 26 28 / 0.13);
+  --serif: "Spectral", Georgia, "Times New Roman", serif;
+  --sans: "Golos Text", "Segoe UI", system-ui, -apple-system, sans-serif;
+}
+:root[data-theme="dark"] {
+  --paper: #202226; --paper-2: #2a2c31; --paper-3: #34373d;
+  --ink: #ecebe7; --ink-2: #c4c2bc; --ink-3: #9a9891;
+  --rule: rgb(236 235 231 / 0.13);
+}
+html, body { margin: 0; height: 100%; overflow: hidden; background: var(--paper); color: var(--ink); font-family: var(--sans); }
+#neb, #tree, #names { position: fixed; inset: 0; width: 100vw; height: 100vh; display: block; }
+#tree, #names { pointer-events: none; overflow: visible; }
+#hud { position: fixed; left: 12px; bottom: 10px; display: flex; gap: 6px; align-items: center; font: 12px var(--sans); color: var(--ink-3); }
+#hud button { font: inherit; color: var(--ink-2); background: var(--paper-2); border: 1px solid var(--rule); border-radius: 6px; padding: 3px 8px; cursor: pointer; }
+#hud button.on { color: var(--ink); border-color: var(--ink-3); }
+.lbl { paint-order: stroke; stroke: var(--paper); stroke-width: 3px; stroke-linejoin: round; }
