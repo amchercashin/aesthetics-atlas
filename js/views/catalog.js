@@ -3,7 +3,7 @@ import { html, mount } from '../html.js';
 import { fmtDates, DOMAIN, KIND, KIND_FAMILY, plural } from '../format.js?v=audit';
 import { frame, markLoaded } from '../ui/image.js?v=audit-p1p2';
 import { footer } from '../ui/common.js?v=audit-p1p2';
-import { replaceParams } from '../router.js';
+import { replaceParams } from '../router.js?v=map4';
 
 // Карточка попадает в семейство по основному типу (первому в списке kind).
 const inFamily = (s, fam) => !fam || KIND_FAMILY[fam].kinds.includes(s.kind[0]);

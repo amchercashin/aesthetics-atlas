@@ -21,5 +21,19 @@ for (const p of document.querySelectorAll('.map-svg .m-edges path:not(.case), .m
     labels.forEach((l, i) => { if (!seen.has(i) && x > l.x0 + 3 && x < l.x1 - 3 && y > l.y0 && y < l.y1) { seen.add(i); hits++; if (plates.some((r) => x >= r.left && x <= r.right && y >= r.top && y <= r.bottom)) hidden++; } });
   }
 }
-return { labels: labels.length, edgesDrawn: drawn, labelOverLabel: ll, lineThroughText: hits, ofThemUnderPlate: hidden, visibleThroughText: hits - hidden };
+// Названия туманностей (textPath): пакеты символов поштучно, чтобы наклон не раздувал рамки.
+const charBoxes = (t) => { const out = []; for (const node of t.querySelectorAll('tspan, textPath')) for (const tn of node.childNodes) { if (tn.nodeType !== 3) continue; const r = document.createRange(); for (let i = 0; i < tn.length; i++) { if (!tn.data[i].trim()) continue; r.setStart(tn, i); r.setEnd(tn, i + 1); const b = r.getBoundingClientRect(); if (b.width) out.push({ x0: b.left + 1, x1: b.right - 1, y0: b.top + 2, y1: b.bottom - 2 }); } } return out; };
+const nameEls = [...document.querySelectorAll('.map-svg .m-nebnames text')].filter(vis);
+const names = nameEls.map(charBoxes);
+const nameText = (i) => nameEls[i].textContent.trim();
+const labelEls = texts.filter((t) => { const r = t.getBoundingClientRect(); return r.right > 0 && r.left < innerWidth && r.bottom > 60 && r.top < innerHeight && r.width > 4; });
+const collisions = [];
+const hit2 = (a, b) => a.x0 < b.x1 && b.x0 < a.x1 && a.y0 < b.y1 && b.y0 < a.y1;
+let nameOverLabel = 0, nameOverName = 0;
+names.forEach((nb, i) => {
+  const li = labels.findIndex((l) => nb.some((c) => hit2(c, l)));
+  if (li >= 0) { nameOverLabel++; collisions.push([nameText(i), 'label:' + (labelEls[li]?.textContent ?? '?').trim()]); }
+  names.forEach((ob, j) => { if (j > i && nb.some((c) => ob.some((d) => hit2(c, d)))) { nameOverName++; collisions.push([nameText(i), 'name:' + nameText(j)]); } });
+});
+return { names: names.length, nameOverLabel, nameOverName, collisions, labels: labels.length, edgesDrawn: drawn, labelOverLabel: ll, lineThroughText: hits, ofThemUnderPlate: hidden, visibleThroughText: hits - hidden };
 })();
