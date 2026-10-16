@@ -116,7 +116,7 @@ export default {
             <div class="lg-layers" role="group" aria-label="Слои карты">
               <label class="map-switch"><input type="checkbox" data-layer="verified"><span class="sw" aria-hidden="true"></span>Только подтверждённые связи</label>
             </div>
-            <p class="lg-note">На дальнем плане читаются моря: отдельные точки и ветви скрыты, пунктир объединяет связи карточек из разных морей. Нажмите на него, чтобы увидеть конкретные связи, типы и источники. При приближении появляются части, затем эстетики; лёгкая цветная заливка и тонкий внешний берег моря остаются ориентирами даже на крупном плане. Нажмите на море или его название, чтобы приблизить область. В списке доступны все моря и карточки вне них. Соседство и расстояния не означают географическую или культурную близость; состав групп не доказывает происхождение. «Основные» показывает ветви по первым указанным предкам, «Все связи» добавляет остальные связи, контекст и визуальные сопоставления; на дальнем плане показывается только несколько сводных линий. Наведение выделяет связи моря, сохраняя основные маршруты на месте. «Без связей» отключает также сводки и маршрут. Авторские карточки доступны на тех же уровнях, что и остальные. У исторических связей указаны статус проверки и источники. Фильтр «Только подтверждённые» независим от режима линий. Время идёт слева направо, на узком экране — сверху вниз; текст остаётся горизонтальным. Шкала времени неравномерная: участки с большим числом карточек занимают больше места. Перейти к периоду можно через меню карты ☰. Перетаскивание двигает карту; щипок двумя пальцами на трекпаде или экране меняет масштаб. Также работают Ctrl/⌘ с колёсиком и двойной щелчок по свободному месту.</p>
+            <p class="lg-note">На дальнем плане читаются моря: отдельные точки и ветви скрыты, пунктир объединяет связи карточек из разных морей. Нажмите на него, чтобы увидеть конкретные связи, типы и источники. При приближении появляются части, затем эстетики; лёгкая цветная заливка и тонкий внешний берег моря остаются ориентирами даже на крупном плане. Нажмите на море или его название, чтобы приблизить область. В списке доступны все моря и карточки вне них. Соседство и расстояния не означают географическую или культурную близость; состав групп не доказывает происхождение. «Основные» показывает ветви по первым указанным предкам, «Все связи» добавляет остальные связи, контекст и визуальные сопоставления; на дальнем плане показывается только несколько сводных линий. Наведение выделяет связи моря, сохраняя основные маршруты на месте. «Без связей» отключает также сводки и маршрут. Авторские карточки доступны на тех же уровнях, что и остальные. У исторических связей указаны статус проверки и источники. Фильтр «Только подтверждённые» независим от режима линий. Время идёт слева направо, на узком экране — сверху вниз; текст остаётся горизонтальным. Шкала времени неравномерная: участки с большим числом карточек занимают больше места. Перейти к периоду можно через меню карты ☰. Перетаскивание двигает карту; колесо мыши плавно меняет масштаб к точке под курсором, без Ctrl/⌘. Щипок двумя пальцами на трекпаде или экране также меняет масштаб. Работает и двойной щелчок по свободному месту.</p>
           </div>
         </div>
         <div class="zoom-ctrls">
@@ -1122,6 +1122,7 @@ export default {
       mmFrame.style.height = `${Math.max(6, fy1 - fy0).toFixed(1)}px`;
     }
     function minimapGo(e) {
+      stopAnimation();
       dismissHint();
       const r = mmCanvas.getBoundingClientRect();
       const xr = clamp((e.clientX - r.left) / r.width, 0, 1) * sc.total;
@@ -1142,21 +1143,52 @@ export default {
       const avail = vh - AXIS_H - sheetHeight();
       t.ty = h <= avail ? clamp(t.ty, 0, avail - h) : clamp(t.ty, avail - h, 0);
     }
-    function zoomAt(px, py, factor, animate = false) {
-      cancelAnimationFrame(anim); clearTimeout(flightTimer);
-      const k2 = clamp(t.k * factor, Math.min(k0 * 0.9, t.k), MAX_K);
+    function zoomTransformAt(px, py, k) {
+      const k2 = clamp(k, Math.min(k0 * 0.9, t.k), MAX_K);
       const s1 = syOf(t.k), s2 = syOf(k2);
       const tx = px - ((px - t.tx) * k2) / t.k;
       const yy = py - AXIS_H;
       const ty = yy - ((yy - t.ty) * s2) / s1;
-      if (animate) { animateTo(k2, tx, ty, 500); return; }
-      t.tx = tx; t.ty = ty;
-      t.k = k2;
+      return { k: k2, tx, ty };
+    }
+    function zoomAt(px, py, factor, animate = false) {
+      stopAnimation(); clearTimeout(flightTimer);
+      const next = zoomTransformAt(px, py, t.k * factor);
+      if (animate) { animateTo(next.k, next.tx, next.ty, 500); return; }
+      Object.assign(t, next);
       clampT(); schedule();
     }
-    let anim = 0, flightTimer = 0;
-    function animateTo(k, tx, ty, ms = 650) {
+    let anim = 0, flightTimer = 0, wheelTarget = null;
+    function stopAnimation() {
       cancelAnimationFrame(anim);
+      anim = 0; wheelTarget = null;
+    }
+    // Колесо задаёт цель, а камера догоняет её по кадрам. На каждом кадре заново
+    // держим точку под курсором: вертикальный масштаб карты меняется нелинейно.
+    function wheelZoomAt(px, py, delta) {
+      const previous = wheelTarget;
+      const base = previous && Math.sign(Math.log(previous.k / t.k)) === Math.sign(delta) ? previous.k : t.k;
+      const k = clamp(base * Math.exp(delta), Math.min(k0 * 0.9, t.k), MAX_K);
+      if (reduceMotion()) { zoomAt(px, py, k / t.k); return; }
+      if (!previous) stopAnimation();
+      wheelTarget = { k, px, py };
+      if (previous) return;
+      let last = performance.now();
+      const step = (now) => {
+        const { k, px, py } = wheelTarget;
+        const gap = Math.log(k / t.k);
+        const done = Math.abs(gap) < 0.001;
+        const nextK = done ? k : t.k * Math.exp(gap * (1 - Math.exp(-(now - last) / 70)));
+        last = now;
+        Object.assign(t, zoomTransformAt(px, py, nextK));
+        clampT(); draw();
+        if (done) { anim = 0; wheelTarget = null; }
+        else anim = requestAnimationFrame(step);
+      };
+      anim = requestAnimationFrame(step);
+    }
+    function animateTo(k, tx, ty, ms = 650) {
+      stopAnimation();
       if (reduceMotion() || ms === 0) { Object.assign(t, { k, tx, ty }); clampT(); schedule(); return; }
       const from = { ...t };
       const t0 = performance.now();
@@ -1270,6 +1302,7 @@ export default {
       fitBox(Math.min(...xs), Math.max(...xs), Math.min(...ys) - ROW, Math.max(...ys) + ROW, { kMin, kMax: 1.1, ms: animate ? 750 : 0, keep: id });
     }
     function resize() {
+      stopAnimation();
       pw = stage.clientWidth; ph = stage.clientHeight;
       rot = rotateOn && pw < 760;
       vw = rot ? ph : pw; vh = rot ? pw : ph;
@@ -1570,7 +1603,7 @@ export default {
     on(stage, 'pointerdown', (e) => {
       if (uiTarget(e)) return;
       nativeGesture = null;
-      cancelAnimationFrame(anim); clearTimeout(flightTimer);
+      stopAnimation(); clearTimeout(flightTimer);
       dismissHint();
       hideEdgeInfo();
       try { stage.setPointerCapture?.(e.pointerId); } catch { /* указатель уже отпущен */ }
@@ -1653,24 +1686,20 @@ export default {
 
     on(stage, 'wheel', (e) => {
       if (e.target.closest('.map-panel, .map-directory, .map-edge-pop')) return;
-      cancelAnimationFrame(anim); clearTimeout(flightTimer);
+      clearTimeout(flightTimer);
       e.preventDefault();
       hideTip();
       dismissHint();
       if (nativeGesture) return; // Safari может послать и wheel в той же последовательности.
-      if (e.ctrlKey || e.metaKey) {
-        const p = toV(e.clientX, e.clientY);
-        // Пиксельный ctrl+wheel от щипка требует большей чувствительности, чем колесо мыши.
-        const sensitivity = e.deltaMode ? 0.05 : e.ctrlKey ? 0.01 : 0.0025;
-        zoomAt(p.x, p.y, Math.exp(-e.deltaY * sensitivity));
-      }
-      else {
-        const unit = e.deltaMode === 1 ? 16 : 1;
-        const tall = contentRefH * syOf(t.k) > vh - AXIS_H;
-        const d = dV(e.deltaX, e.deltaY);
-        if (e.shiftKey || !tall) t.tx -= (d.y + d.x) * unit;
-        else { t.tx -= d.x * unit; t.ty -= d.y * unit; }
-        clampT(); schedule();
+      if (!Number.isFinite(e.deltaY) || e.deltaY === 0) return;
+      const p = toV(e.clientX, e.clientY);
+      // Chromium передаёт щипок небольшими пиксельными ctrl+wheel: сохраняем
+      // прямой отклик. Крупные шаги мыши, в том числе с Ctrl/⌘, сглаживаем.
+      if (e.ctrlKey && e.deltaMode === 0 && Math.abs(e.deltaY) < 40) {
+        zoomAt(p.x, p.y, Math.exp(-e.deltaY * 0.01));
+      } else {
+        const unit = e.deltaMode === 1 ? 40 : e.deltaMode === 2 ? 120 : 1;
+        wheelZoomAt(p.x, p.y, clamp(-e.deltaY * unit * 0.0015, -0.18, 0.18));
       }
     }, { passive: false });
 
@@ -1679,7 +1708,7 @@ export default {
     on(stage, 'gesturestart', (e) => {
       if (uiTarget(e) || pointers.size) return;
       e.preventDefault();
-      cancelAnimationFrame(anim); clearTimeout(flightTimer);
+      stopAnimation(); clearTimeout(flightTimer);
       dismissHint(); hideTip();
       nativeGesture = { scale: 1, point: gesturePoint(e) };
     }, { passive: false });
@@ -1696,7 +1725,7 @@ export default {
       e.preventDefault();
       nativeGesture = null;
     }, { passive: false });
-    on(window, 'blur', () => { nativeGesture = null; });
+    on(window, 'blur', () => { nativeGesture = null; stopAnimation(); });
 
     on(stage, 'dblclick', (e) => {
       if (uiTarget(e) || e.target.closest('.node, .label')) return;
@@ -1728,7 +1757,7 @@ export default {
       if (e.key === 'Backspace' && selected) { e.preventDefault(); goBack(); return; }
       const step = 90;
       const pan = { ArrowLeft: [step, 0], ArrowRight: [-step, 0], ArrowUp: [0, step / 2], ArrowDown: [0, -step / 2] }[e.key];
-      if (pan) { const d = dV(pan[0], pan[1]); t.tx += d.x; t.ty += d.y; }
+      if (pan) { stopAnimation(); const d = dV(pan[0], pan[1]); t.tx += d.x; t.ty += d.y; }
       else if (e.key === '+' || e.key === '=') return zoomAt(vw / 2, vh / 2, 1.5);
       else if (e.key === '-' || e.key === '_') return zoomAt(vw / 2, vh / 2, 1 / 1.5);
       else if (e.key === '0') return fit();
@@ -1861,7 +1890,7 @@ export default {
       if (e.target.closest('[data-f-reset]')) { setFilter({ domain: '', family: '' }); togglePop(pops.find((p) => p.wrap.classList.contains('map-filter-wrap')), false); }
     });
 
-    hint.textContent = 'Нажмите на море, чтобы рассмотреть его. Щипок или Ctrl/⌘ + колесо — масштаб.';
+    hint.textContent = 'Нажмите на море, чтобы рассмотреть его. Колесо или щипок — масштаб к курсору.';
 
     const ro = new ResizeObserver(() => resize());
     ro.observe(stage);
@@ -1884,7 +1913,7 @@ export default {
       },
       destroy() {
         destroyed = true;
-        cancelAnimationFrame(raf); cancelAnimationFrame(anim); clearTimeout(tipTimer); clearTimeout(flightTimer);
+        cancelAnimationFrame(raf); stopAnimation(); clearTimeout(tipTimer); clearTimeout(flightTimer);
         cleanups.forEach((f) => f());
       },
     };
