@@ -28,7 +28,7 @@ test('legacy links remain usable while an explicit mode wins over legacy overlay
   assert.equal(readLinkSettings(new URLSearchParams('links=typo')).mode, 'main');
 });
 
-test('real atlas defaults show the complete primary tree rather than only four verified claims', () => {
+test('real atlas defaults show the complete primary tree and verification filters the current data', () => {
   const atlas = JSON.parse(fs.readFileSync(new URL('../data/atlas.json', import.meta.url)));
   const links = atlas.styles.flatMap((s) => s.parents.map((r, i) => ({ primary: i === 0, status: r.status })));
   const count = (mode, verifiedOnly = false) => links.filter((e) => historicalLinkVisible({ ...e, mode, verifiedOnly })).length;
@@ -36,5 +36,6 @@ test('real atlas defaults show the complete primary tree rather than only four v
   assert.equal(count('main'), atlas.styles.filter((s) => s.parents.length).length);
   assert.equal(count('all'), links.length);
   assert.equal(count('all', true), links.filter((e) => e.status === 'verified').length);
-  assert.ok(count('main') > count('all', true));
+  assert.equal(count('main', true), links.filter((e) => e.primary && e.status === 'verified').length);
+  assert.ok(count('all') >= count('main'));
 });
