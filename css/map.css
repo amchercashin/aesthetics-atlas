@@ -3,7 +3,7 @@ body[data-view="map"] { overflow: hidden; }
 body[data-view="map"] .site-footer { display: none; }
 
 .map-view {
-  display: grid; grid-template-rows: auto auto 1fr; grid-template-columns: minmax(0, 1fr);
+  display: grid; grid-template-rows: auto 1fr; grid-template-columns: minmax(0, 1fr);
   height: calc(100dvh - var(--header-h));
 }
 @media (max-width: 760px) { .map-view { height: calc(100dvh - var(--header-h) - 64px - env(safe-area-inset-bottom)); } body[data-view="map"] { padding-bottom: 0; } }
@@ -74,55 +74,16 @@ body[data-view="map"] .site-footer { display: none; }
   .map-links { grid-column: 1 / -1; grid-row: 2; justify-self: start; }
 }
 
-/* ---------- Шкала эпох ---------- */
-.era-nav { display: flex; gap: 8px; padding: 0 var(--gutter) 8px; border-bottom: 1px solid var(--rule); }
-.era-nav-track { flex: 1 1 0; min-width: 0; }
-.era-nav-track { position: relative; display: flex; gap: 2px; overflow-x: auto; scrollbar-width: none; cursor: pointer; touch-action: pan-x; }
-.era-nav-track::-webkit-scrollbar { display: none; }
-.era-nav-track.dragging { cursor: grabbing; }
-.en-seg {
-  flex: 1 1 0; min-width: 0; display: grid; gap: 1px; padding: 6px 8px 7px; text-align: left;
-  border: 0; border-top: 3px solid var(--c); border-radius: 0 0 6px 6px; background: color-mix(in oklab, var(--c) 6%, transparent);
-  transition: background 0.2s;
-}
-.en-seg:hover { background: color-mix(in oklab, var(--c) 16%, transparent); }
-.en-seg.in-view { background: color-mix(in oklab, var(--c) 14%, transparent); }
-.en-name { font-size: 12px; font-weight: 500; color: var(--ink-2); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.en-seg.in-view .en-name { color: var(--ink); }
-.en-count { font-size: 11px; color: var(--ink-3); }
-.era-nav-window {
-  position: absolute; top: 0; bottom: 0; left: 0; width: 0; pointer-events: none;
-  border: 2px solid var(--accent); border-radius: 6px; box-shadow: 0 0 0 3px color-mix(in oklab, var(--accent) 14%, transparent);
-}
-.era-nav[hidden], .map-era-labels[hidden], .me-label[hidden] { display: none; }
-.map-time-vertical { grid-template-rows: auto 1fr; }
-/* Отдельные плашки поверх карты, без сплошной боковой панели. */
-.map-era-labels { position: absolute; inset: 0; z-index: 2; pointer-events: none; }
-.me-label {
-  position: absolute; right: 38px; transform: translateY(-50%); height: var(--era-label-h, 24px);
-  display: flex; align-items: center; padding: 0 7px; max-width: 112px; border: 1px solid var(--rule); border-right: 2px solid var(--c);
-  border-radius: 5px; background: color-mix(in srgb, var(--paper) 88%, transparent);
-  backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px);
-  color: var(--ink-2); font: 500 10.5px/14px var(--sans); white-space: nowrap;
-  cursor: pointer; pointer-events: auto;
-}
-.me-label:hover { background: var(--paper-2); color: var(--ink); }
-.me-label:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
-.me-leaders { position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden; }
-.me-leaders path { fill: none; stroke-width: 1; opacity: 0.6; }
-
 /* ---------- Полотно ---------- */
 .map-stage { position: relative; overflow: hidden; touch-action: none; cursor: grab; user-select: none; -webkit-user-select: none; outline-offset: -3px; }
 .map-stage.dragging { cursor: grabbing; }
 .map-svg { position: absolute; inset: 0; }
-.era-line { stroke: var(--rule); stroke-width: 1; }
 
 .axis-bg { fill: var(--paper); }
 .axis-line { stroke: var(--rule-strong); }
-.axis-strip { opacity: 0.85; }
 .axis-start { font-size: 11px; fill: var(--ink-2); font-weight: 500; }
 .tick { stroke: var(--rule-strong); }
-.tick-label { font-size: 11px; fill: var(--ink-3); text-anchor: middle; }
+.tick-label { font-size: 11px; fill: var(--ink-3); }
 
 /* Стволы: от точки зарождения до последнего потомка; чернила, толщина — вес родословной. */
 .life { fill: none; stroke: var(--ink-2); stroke-width: calc(1.1px + var(--w, 0) * 0.32px); stroke-opacity: 0.55; stroke-linecap: round; transition: stroke-opacity 0.25s; }
@@ -435,6 +396,10 @@ body[data-view="map"] .site-footer { display: none; }
 .md-list small { margin-left: auto; color: var(--ink-3); }
 .map-directory details { font-size: 13px; margin-top: 12px; border-top: 1px solid var(--rule); padding-top: 12px; }
 .map-directory summary { cursor: pointer; color: var(--ink-2); padding: 4px; }
+.map-directory .md-periods { margin-top: 0; padding-top: 0; border-top: 0; }
+.md-period-list button { flex-direction: column; align-items: flex-start; gap: 2px; }
+.md-period-list small { margin-left: 0; }
+.md-section-title { margin: 14px 4px 6px; font-size: 12px; color: var(--ink-3); }
 @media (max-width: 760px) {
   .map-levels { bottom: 10px; }
   .map-stage:has(.map-panel:not([hidden])) .map-levels { display: none; }

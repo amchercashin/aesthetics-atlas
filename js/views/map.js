@@ -14,13 +14,12 @@ import { replaceParams, pushParams } from '../router.js?v=map4';
 import { pushStep, toParam, parseTrail } from '../trail.js?v=map4';
 import { stepTarget } from '../graphnav.js?v=chain-author-map4';
 import { createGutterLens } from '../lens.js?v=map4';
-import { initNebulae, drawNebulae, drawNebulaNames, disposeNebulae, setNebulaDirtyHandler, nebulaRegion, nebulaRegionAt, nebulaShore } from '../nebulae.js?v=semantic-zoom-7';
+import { initNebulae, drawNebulae, drawNebulaNames, disposeNebulae, setNebulaDirtyHandler, nebulaRegion, nebulaRegionAt, nebulaShore } from '../nebulae.js?v=years-only-1';
 import { buildIndex, search } from '../search.js?v=author-pilot';
 import { fitLabelText } from '../map-labels.js?v=focus-fit-1';
 import { LINK_MODES, readLinkSettings, historicalLinkVisible } from '../map-links.js?v=link-modes-1';
-import { mapDetail, aggregateMapLinks } from '../map-detail.js?v=semantic-zoom-7';
-import { summaryCurve } from '../map-summary.js?v=semantic-zoom-7';
-import { layoutEraLabels } from '../map-eras.js?v=semantic-zoom-7';
+import { mapDetail, aggregateMapLinks } from '../map-detail.js?v=years-only-1';
+import { summaryCurve } from '../map-summary.js?v=years-only-1';
 
 const NS = 'http://www.w3.org/2000/svg';
 const AXIS_H = 30;      // строка делений шкалы внутри SVG
@@ -117,7 +116,7 @@ export default {
             <div class="lg-layers" role="group" aria-label="Слои карты">
               <label class="map-switch"><input type="checkbox" data-layer="verified"><span class="sw" aria-hidden="true"></span>Только подтверждённые связи</label>
             </div>
-            <p class="lg-note">На дальнем плане читаются моря: отдельные точки и ветви скрыты, пунктир объединяет связи карточек из разных морей. Нажмите на него, чтобы увидеть конкретные связи, типы и источники. При приближении появляются части, затем эстетики; лёгкая цветная заливка и тонкий внешний берег моря остаются ориентирами даже на крупном плане. Нажмите на море или его название, чтобы приблизить область. В списке доступны все моря и карточки вне них. Соседство и расстояния не означают географическую или культурную близость; состав групп не доказывает происхождение. «Основные» показывает ветви по первым указанным предкам, «Все связи» добавляет остальные связи, контекст и визуальные сопоставления; на дальнем плане показывается только несколько сводных линий. Наведение выделяет связи моря, сохраняя основные маршруты на месте. «Без связей» отключает также сводки и маршрут. Авторские карточки доступны на тех же уровнях, что и остальные. Большинство исторических связей пока остаются редакционными гипотезами. Фильтр «Только подтверждённые» независим от режима линий. Время идёт слева направо, на узком экране — сверху вниз; текст остаётся горизонтальным. Шкала времени неравномерная: каждой эпохе отведено место по числу стилей. Перетаскивание двигает карту; щипок двумя пальцами на трекпаде или экране меняет масштаб. Также работают Ctrl/⌘ с колёсиком и двойной щелчок по свободному месту.</p>
+            <p class="lg-note">На дальнем плане читаются моря: отдельные точки и ветви скрыты, пунктир объединяет связи карточек из разных морей. Нажмите на него, чтобы увидеть конкретные связи, типы и источники. При приближении появляются части, затем эстетики; лёгкая цветная заливка и тонкий внешний берег моря остаются ориентирами даже на крупном плане. Нажмите на море или его название, чтобы приблизить область. В списке доступны все моря и карточки вне них. Соседство и расстояния не означают географическую или культурную близость; состав групп не доказывает происхождение. «Основные» показывает ветви по первым указанным предкам, «Все связи» добавляет остальные связи, контекст и визуальные сопоставления; на дальнем плане показывается только несколько сводных линий. Наведение выделяет связи моря, сохраняя основные маршруты на месте. «Без связей» отключает также сводки и маршрут. Авторские карточки доступны на тех же уровнях, что и остальные. Большинство исторических связей пока остаются редакционными гипотезами. Фильтр «Только подтверждённые» независим от режима линий. Время идёт слева направо, на узком экране — сверху вниз; текст остаётся горизонтальным. Шкала времени неравномерная: участки с большим числом карточек занимают больше места. Перейти к периоду можно через меню карты ☰. Перетаскивание двигает карту; щипок двумя пальцами на трекпаде или экране меняет масштаб. Также работают Ctrl/⌘ с колёсиком и двойной щелчок по свободному месту.</p>
           </div>
         </div>
         <div class="zoom-ctrls">
@@ -126,25 +125,13 @@ export default {
           <button class="chip" type="button" data-zoom="fit">Вся история</button>
         </div>
       </div>
-      <nav class="era-nav" aria-label="Эпохи: нажмите, чтобы приблизить">
-        <div class="era-nav-track">
-          ${store.eras.map((e, i) => html`<button type="button" class="en-seg" data-era-i="${i}" style="--c:var(--era-${e.id})" title="${e.name}">
-            <span class="en-name">${e.short}</span><span class="en-count">${store.inEra(e.id).length}</span>
-          </button>`)}
-          <div class="era-nav-window" aria-hidden="true"></div>
-        </div>
-      </nav>
       <div class="map-stage" tabindex="0" aria-label="Карта эстетик: моря, части и карточки. Стрелки — двигать, плюс и минус — масштаб, Tab — по областям и стилям.">
         <canvas class="map-neb" aria-hidden="true"></canvas>
         <svg class="map-svg z0">
           <defs>${[11, 13, 15].map((r) => html`<clipPath id="clip-${r}"><circle cx="0" cy="0" r="${r}"/></clipPath>`)}</defs>
-          <g class="m-eras"></g><g class="m-summary"></g><g class="m-summary-hits"></g><g class="m-dur"></g><g class="m-life"></g><g class="m-cmp"></g><g class="m-contexts"></g><g class="m-edges"></g><g class="m-edge-hits"></g><g class="m-trail"></g><g class="m-nebnames"></g><g class="m-plates"></g>
-          <g class="m-nodes"></g><g class="m-labels"></g><g class="m-stubs"></g><g class="m-sel"></g><g class="m-elabels"></g><g class="m-axis"></g>
+          <g class="m-summary"></g><g class="m-summary-hits"></g><g class="m-dur"></g><g class="m-life"></g><g class="m-cmp"></g><g class="m-contexts"></g><g class="m-edges"></g><g class="m-edge-hits"></g><g class="m-trail"></g><g class="m-nebnames"></g><g class="m-plates"></g>
+          <g class="m-nodes"></g><g class="m-labels"></g><g class="m-stubs"></g><g class="m-sel"></g><g class="m-elabels"></g><g class="m-axis" role="group" aria-label="Годы. Неравномерная шкала времени"></g>
         </svg>
-        <nav class="map-era-labels" aria-label="Эпохи вдоль шкалы времени" hidden>
-          <svg class="me-leaders" aria-hidden="true"></svg>
-          ${store.eras.map((e, i) => html`<button type="button" class="me-label" data-era-label="${i}" style="--c:var(--era-${e.id})" title="${e.name}: приблизить" aria-label="${e.name}: приблизить">${e.short}</button>`)}
-        </nav>
         <div class="map-offscreen" aria-label="Связи за краем экрана"></div>
         <div class="mm-box">
           <div class="minimap" role="img" aria-label="Миникарта: вся карта, рамка — видимая часть. Нажмите или тяните, чтобы перейти">
@@ -163,13 +150,14 @@ export default {
           <button type="button" data-detail="seas">Моря</button><span aria-hidden="true">›</span>
           <button type="button" data-detail="parts">Части</button><span aria-hidden="true">›</span>
           <button type="button" data-detail="styles">Эстетики</button>
-          <button type="button" class="map-browse" data-browse aria-expanded="false" aria-label="Список морей и карточек">☰</button>
+          <button type="button" class="map-browse" data-browse aria-expanded="false" aria-label="Меню карты">☰</button>
         </nav>
-        <section class="map-directory" hidden aria-label="Моря и карточки">
-          <div class="md-head"><strong>Моря эстетик</strong><button type="button" class="icon-btn" data-browse-close aria-label="Закрыть список">×</button></div>
-          <p>Выберите область, чтобы рассмотреть её части и карточки.</p>
+        <section class="map-directory" hidden aria-label="Навигация по карте">
+          <div class="md-head"><strong>Навигация по карте</strong><button type="button" class="icon-btn" data-browse-close aria-label="Закрыть меню">×</button></div>
+          <p>Выберите период или море, чтобы приблизить нужную область.</p>
+          <details class="md-periods"><summary>Перейти к периоду</summary><div class="md-list md-period-list">${store.eras.map((e, i) => html`<button type="button" data-period="${i}"><span>${fmtYear(e.start)} — ${fmtYear(store.eras[i + 1]?.start ?? store.now)}</span><small>${e.name}</small></button>`)}</div></details>
+          <h3 class="md-section-title">Моря эстетик</h3>
           <div class="md-list">${store.nebulae.map((n, i) => html`<button type="button" data-region="neb:${i}"><i style="--c:${n.color}"></i><span>${n.name}</span><small>${store.styles.filter((s) => s.nebula === n.id).length}</small></button>`)}</div>
-          <details><summary>Перейти к эпохе</summary><div class="md-list">${store.eras.map((e, i) => html`<button type="button" data-era-label="${i}"><i style="--c:var(--era-${e.id})"></i><span>${e.name}</span></button>`)}</div></details>
           <details><summary>Карточки вне морей</summary><div class="md-list">${store.styles.filter((s) => !s.nebula).map((s) => html`<button type="button" data-select="${s.id}">${s.name}</button>`)}</div></details>
         </section>
         <p class="map-hint"></p>
@@ -180,7 +168,7 @@ export default {
     const q = (s) => root.querySelector(s);
     const stage = q('.map-stage');
     const svg = q('.map-svg');
-    const G = Object.fromEntries(['eras', 'summary', 'summary-hits', 'dur', 'life', 'cmp', 'contexts', 'edges', 'edge-hits', 'trail', 'nebnames', 'plates', 'nodes', 'labels', 'stubs', 'sel', 'elabels', 'axis'].map((k) => [k, svg.querySelector(`.m-${k}`)]));
+    const G = Object.fromEntries(['summary', 'summary-hits', 'dur', 'life', 'cmp', 'contexts', 'edges', 'edge-hits', 'trail', 'nebnames', 'plates', 'nodes', 'labels', 'stubs', 'sel', 'elabels', 'axis'].map((k) => [k, svg.querySelector(`.m-${k}`)]));
     const summaryMask = el('mask', { id: 'map-summary-mask', maskUnits: 'userSpaceOnUse', maskContentUnits: 'userSpaceOnUse' }, svg.querySelector('defs'));
     G.summary.setAttribute('mask', 'url(#map-summary-mask)'); G['summary-hits'].setAttribute('mask', 'url(#map-summary-mask)');
     const regionMask = el('mask', { id: 'map-region-mask', maskUnits: 'userSpaceOnUse', maskContentUnits: 'userSpaceOnUse' }, svg.querySelector('defs'));
@@ -195,14 +183,6 @@ export default {
     const nebCanvas = q('.map-neb');
     const nebCtx = nebCanvas.getContext('2d');
     const trailPath = el('path', { class: 'trail-path' }, G.trail);
-    const navTrack = q('.era-nav-track');
-    const eraNav = q('.era-nav');
-    const navWin = q('.era-nav-window');
-    const navSegs = [...root.querySelectorAll('.en-seg')];
-    const eraLabels = q('.map-era-labels');
-    const eraButtons = [...eraLabels.querySelectorAll('.me-label')];
-    const eraLeaders = q('.me-leaders');
-    let eraBoxes = [];
     const mmBox = q('.mm-box');
     const mmToggle = q('.mm-toggle');
     const mm = q('.minimap');
@@ -270,7 +250,7 @@ export default {
     // ---------- построение ----------
     async function build() {
       try {
-        await Promise.all([...Object.values(FONT), DATE_FONT].map((f) => document.fonts.load(f, 'Аа')));
+        await Promise.all([...Object.values(FONT), DATE_FONT].map((f) => document.fonts.load(f, 'Аа0123456789')));
         await document.fonts.ready;
       } catch { /* шрифты не критичны */ }
       if (destroyed) return;
@@ -314,16 +294,9 @@ export default {
         .filter((s) => { const c = perEra.get(s.era) ?? 0; if (c >= 2 || (sizeOf.get(s.id) < 4 && s.tier > 1)) return false; perEra.set(s.era, c + 1); return true; })
         .slice(0, 16).map((s) => s.id));
 
-      // Эпохи и ось
-      store.eras.forEach(() => el('line', { class: 'era-line' }, G.eras));
+      // Годы на прежней неравномерной шкале, без слоя эпох.
       axis.bg = el('rect', { class: 'axis-bg', x: 0, y: 0, height: AXIS_H }, G.axis);
       axis.line = el('line', { class: 'axis-line', y1: AXIS_H - 0.5, y2: AXIS_H - 0.5, x1: 0 }, G.axis);
-      axis.eraMarks = store.eras.map((e) => {
-        const strip = el('rect', { class: 'axis-strip', y: 0, height: 3, fill: `var(--era-${e.id})` }, G.axis);
-        const start = el('text', { class: 'axis-start', y: 20 }, G.axis);
-        start.textContent = fmtYear(e.start);
-        return { strip, start, sw: 0 };
-      });
       axis.ticks = el('g', { class: 'axis-ticks' }, G.axis);
       axis.pool = [];
 
@@ -483,7 +456,6 @@ export default {
 
     // ---------- отрисовка ----------
     const schedule = () => { if (!raf) raf = requestAnimationFrame(draw); };
-    for (const event of ['loadingdone', 'loadingerror']) on(document.fonts, event, schedule);
 
     function draw() {
       raf = 0;
@@ -511,13 +483,7 @@ export default {
       const m = rowH < 17 ? 'z0' : rowH < 31 || t.k < Z2_K ? 'z1' : 'z2';
       if (m !== mode) { svg.classList.remove(mode); svg.classList.add(m); mode = m; }
 
-      store.eras.forEach((e, i) => {
-        const x = X(e.start);
-        const ln = G.eras.children[i];
-        ln.setAttribute('x1', x); ln.setAttribute('x2', x); ln.setAttribute('y1', AXIS_H); ln.setAttribute('y2', vh);
-      });
       drawAxis();
-      drawEraLabels();
 
       // Туманности: слой на canvas под деревом, названия — в SVG поверх (ниже, после подписей стилей).
       const nebT0 = window.__mapPerf ? performance.now() : 0;
@@ -575,7 +541,6 @@ export default {
       // Подписи: по приоритету, без наложений друг на друга и на точки. Сетка — чтобы и 600 стилей не тормозили.
       // На просторном обзоре место под каждую подпись оставила раскладка; мельче — побеждает приоритет.
       const occ = grid();
-      for (const b of eraBoxes.map(fromNameBox)) occ.add([b[0] - 4, b[2] + 4, b[1] - 4, b[3] + 4, '']);
       for (const n of visible) if (n.alpha > 0.15) occ.add([n.x - n.r - 1, n.x + n.r + 1, n.y - n.r - 1, n.y + n.r + 1, n.s.id]);
       // Подпись целиком в видимой области и не под миникартой — иначе не показываем: обрезанное
       // название хуже отсутствующего (сдвиньте карту — оно появится).
@@ -601,7 +566,6 @@ export default {
           reserved.push([Math.min(a.x, b.x) - 5, Math.min(a.y, b.y) - 5, Math.max(a.x, b.x) + 5, Math.max(a.y, b.y) + 5]);
         }
         if (rot) reserved.push([0, 0, vw, AXIS_H]);
-        reserved.push(...eraBoxes.map(fromNameBox));
         return drawNebulaNames(G.nebnames, {
           ...nameCam(), labelBoxes: labelBoxes.map(toNameBox), reserved: reserved.map(toNameBox),
           dotBoxes: visible.filter((n) => n.alpha > 0.15).map((n) => toNameBox([n.x - n.r - 1, n.y - n.r - 1, n.x + n.r + 1, n.y + n.r + 1])),
@@ -672,7 +636,7 @@ export default {
       drawTrail();
       drawSelection();
       drawOffscreen();
-      drawNav();
+      updateFitButton();
       drawMinimapFrame();
       if (focusedRegion) [...G.nebnames.querySelectorAll('.region-name')].find((n) => n.dataset.region === focusedRegion)?.focus({ preventScroll: true });
       if (focusedSummary) [...G['summary-hits'].children].find((n) => n.dataset.key === focusedSummary)?.focus({ preventScroll: true });
@@ -688,7 +652,6 @@ export default {
           const x = Math.min(...bs.map((b) => b[0])) - 5, y = Math.min(...bs.map((b) => b[1])) - 4;
           el('rect', { x, y, width: Math.max(...bs.map((b) => b[2])) - x + 5, height: Math.max(...bs.map((b) => b[3])) - y + 4, fill: 'black' }, mask);
         }
-        for (const b of eraBoxes.map(project)) el('rect', { x: b[0] - 4, y: b[1] - 4, width: b[2] - b[0] + 8, height: b[3] - b[1] + 8, fill: 'black' }, mask);
       }
     }
     function drawSummary() {
@@ -754,8 +717,7 @@ export default {
       const { x, y, r } = n;
       if (rot) {
         const p = toP(x, y), gap = r + 7;
-        const rightEdge = Math.min(pw - AXIS_H - 8, ...eraBoxes.filter((b) => b[1] < p.y + 24 && b[3] > p.y - fh - 3).map((b) => b[0] - 6));
-        const right = rightEdge - p.x - gap, left = p.x - gap - 8;
+        const right = pw - AXIS_H - 8 - p.x - gap, left = p.x - gap - 8;
         const side = right >= w || right >= left ? 'start' : 'end', room = Math.max(0, side === 'start' ? right : left);
         const font = n.s.id === selected ? FONT[n.s.tier].replace(/^\d+/, '700') : FONT[n.s.tier];
         const name = fitLabelText(n.s.name, room, (s) => labelMeasure(font, s));
@@ -803,29 +765,44 @@ export default {
     function drawAxis() {
       axis.bg.setAttribute('width', vw);
       axis.line.setAttribute('x2', vw);
-      sc.segments.forEach((seg, i) => {
-        const M = axis.eraMarks[i];
-        const x0 = X(seg.start), x1 = X(seg.end), w = x1 - x0;
-        M.strip.setAttribute('x', x0); M.strip.setAttribute('width', Math.max(0, w - 1));
-        if (!M.sw) M.sw = M.start.getComputedTextLength();
-        M.start.setAttribute('x', x0 + 6);
-        M.start.style.display = w > M.sw + 12 && x1 > 0 && x0 < vw ? '' : 'none';
-      });
-      let ti = 0;
-      sc.segments.forEach((seg, i) => {
-        const x0 = X(seg.start), x1 = X(seg.end);
-        if (x1 < 0 || x0 > vw) return;
-        const sw = axis.eraMarks[i].start.style.display === 'none' ? 0 : axis.eraMarks[i].sw;
-        for (const y of segmentTicks(seg, t.k, 90)) {
-          const x = X(y);
-          if (x < x0 + sw + 40 || x > vw + 40 || x < -40 || lens.zone(sc.x(y)) !== 'C') continue;
-          let tk = axis.pool[ti];
-          if (!tk) { tk = { line: el('line', { class: 'tick', y1: AXIS_H - 5, y2: AXIS_H }, axis.ticks), text: el('text', { class: 'tick-label', y: 20 }, axis.ticks) }; axis.pool.push(tk); }
-          tk.line.setAttribute('x1', x); tk.line.setAttribute('x2', x); tk.line.style.display = '';
-          tk.text.setAttribute('x', x); tk.text.textContent = fmtYear(y); tk.text.style.display = '';
-          ti++;
+      const left = 4, right = vw - panelWidth() - 4, candidates = new Map();
+      const add = (year, priority) => {
+        const x = X(year);
+        if (x < 0 || x > right || candidates.has(year)) return;
+        candidates.set(year, { year, x, priority });
+      };
+      // Концы истории — ориентиры; остальные годы заполняют свободное место.
+      // Подпись может выходить за свой сегмент, но никогда за экран или на соседа.
+      add(sc.segments[0].start, 0); add(store.now, 0);
+      for (const seg of sc.segments) {
+        add(seg.start, 1);
+        for (const year of segmentTicks(seg, t.k, 90)) if (lens.zone(sc.x(year)) === 'C') add(year, 2);
+      }
+      add(Math.min(store.now, Math.round(sc.invert(((left + right) / 2 - t.tx) / t.k))), 3);
+      const occupied = [];
+      for (const c of [...candidates.values()].sort((a, b) => a.priority - b.priority || a.x - b.x)) {
+        const font = `${c.priority < 2 ? 500 : 400} 11px "Golos Text"`;
+        c.text = fmtYear(c.year);
+        c.width = labelMeasure(font, c.text);
+        if (c.width > right - left && c.year < 0) {
+          c.text = `−${fmtYear(-c.year)}`;
+          c.width = labelMeasure(font, c.text);
         }
-      });
+        c.tx = clamp(c.x + 6, left, right - c.width);
+        c.show = c.width <= right - left && !occupied.some(([a, b]) => c.tx < b + 12 && a < c.tx + c.width + 12);
+        if (c.show) occupied.push([c.tx, c.tx + c.width]);
+      }
+      let ti = 0;
+      for (const c of [...candidates.values()].sort((a, b) => a.x - b.x)) {
+        let tk = axis.pool[ti];
+        if (!tk) { tk = { line: el('line', { class: 'tick', y1: AXIS_H - 5, y2: AXIS_H }, axis.ticks), text: el('text', { y: 20 }, axis.ticks) }; axis.pool.push(tk); }
+        for (const key of ['x1', 'x2']) tk.line.setAttribute(key, c.x);
+        tk.line.dataset.year = c.year; tk.line.style.display = '';
+        tk.text.setAttribute('x', c.tx); tk.text.setAttribute('class', c.priority < 2 ? 'axis-start' : 'tick-label');
+        tk.text.setAttribute('aria-label', fmtYear(c.year));
+        tk.text.textContent = c.text; tk.text.style.display = c.show ? '' : 'none';
+        ti++;
+      }
       for (; ti < axis.pool.length; ti++) { axis.pool[ti].line.style.display = 'none'; axis.pool[ti].text.style.display = 'none'; }
     }
 
@@ -1093,68 +1070,12 @@ export default {
       }));
     }
 
-    // Шкала эпох: равные сегменты, рамка показывает видимый период.
-    const navPos = (year) => {
-      const segs = sc.segments;
-      let i = segs.findIndex((s) => year < s.end);
-      if (i < 0) i = segs.length - 1;
-      const s = segs[i];
-      return (i + clamp((year - s.start) / (s.end - s.start), 0, 1)) / segs.length;
-    };
-    const navYear = (f) => {
-      const segs = sc.segments, n = segs.length;
-      const i = clamp(Math.floor(f * n), 0, n - 1);
-      const s = segs[i];
-      return s.start + clamp(f * n - i, 0, 1) * (s.end - s.start);
-    };
-    // Кнопка «Вся история» на общем виде становится «Обзор» — возврат к просторному виду в один клик.
+    // Кнопка возврата к полной истории и перехода к просторному обзору.
     const atFit = () => Math.abs(t.k - k0) < k0 * 0.03;
     const fitBtn = q('[data-zoom="fit"]');
-    function drawEraLabels() {
-      eraBoxes = [];
-      eraLeaders.replaceChildren();
-      if (!rot) return;
-      const level = q('.map-levels');
-      const bottom = Math.min(ph - panelWidth() - 6, level.offsetHeight ? level.offsetTop - 8 : ph - 6);
-      const top = trailNav.hidden ? 6 : trailNav.offsetTop + trailNav.offsetHeight + 8;
-      const intervals = sc.segments.map((s, id) => ({ id, start: X(s.start), end: X(s.end) }));
-      const count = intervals.filter((s) => s.end > top && s.start < bottom).length;
-      const compact = count * 28 - 4 > bottom - top && count * 23 - 3 <= bottom - top;
-      const height = compact ? 20 : 24;
-      eraLabels.style.setProperty('--era-label-h', `${height}px`);
-      const labels = layoutEraLabels(intervals, top, bottom, { height, gap: compact ? 3 : 4 });
-      const byId = new Map(labels.map((l) => [l.id, l]));
-      eraButtons.forEach((btn, i) => {
-        const l = byId.get(i);
-        btn.hidden = !l;
-        if (l) btn.style.top = `${l.y.toFixed(2)}px`;
-      });
-      // Один пакет измерений после записи позиций. Поздний веб-шрифт может
-      // изменить ширину плашки без resize: препятствие должно совпадать с ней.
-      const widths = eraButtons.map((btn) => btn.hidden ? 0 : btn.getBoundingClientRect().width);
-      for (const l of labels) {
-        const i = l.id;
-        const right = pw - AXIS_H - 8;
-        eraBoxes.push([right - widths[i], l.y - height / 2, right, l.y + height / 2]);
-        el('path', { d: `M${right},${l.y.toFixed(2)}L${pw - AXIS_H},${l.anchor.toFixed(2)}`, style: `stroke:var(--era-${store.eras[i].id})` }, eraLeaders);
-      }
-    }
-    function drawNav() {
+    function updateFitButton() {
       const fitLabel = atFit() ? 'Части' : 'Вся история';
       if (fitBtn.textContent !== fitLabel) fitBtn.textContent = fitLabel;
-      if (rot) return;
-      const y0 = sc.invert((0 - t.tx) / t.k), y1 = sc.invert((vw - panelWidth() - t.tx) / t.k);
-      const a = navPos(y0), b = navPos(y1);
-      const W = navSegs.length ? navSegs[navSegs.length - 1].offsetLeft + navSegs[navSegs.length - 1].offsetWidth - navSegs[0].offsetLeft : 0;
-      const left0 = navSegs[0]?.offsetLeft ?? 0;
-      const wl = left0 + a * W, ww = Math.max(8, (b - a) * W);
-      navWin.style.left = `${wl.toFixed(1)}px`;
-      navWin.style.width = `${ww.toFixed(1)}px`;
-      if (!navDrag && performance.now() > navUserUntil && navTrack.scrollWidth > navTrack.clientWidth) {
-        const sl = navTrack.scrollLeft, cw = navTrack.clientWidth;
-        if (wl < sl || wl + Math.min(ww, cw) > sl + cw) navTrack.scrollLeft = Math.max(0, wl - 16);
-      }
-      sc.segments.forEach((s, i) => navSegs[i].classList.toggle('in-view', s.end > y0 && s.start < y1));
     }
 
     // ---------- миникарта: вся карта в координатах раскладки, рамка — видимая область ----------
@@ -1171,12 +1092,6 @@ export default {
       c.clearRect(0, 0, mmW, mmH);
       const cs = getComputedStyle(svg);
       const mx = (xr) => (xr / sc.total) * mmW, my = (yr) => (yr / contentRefH) * mmH;
-      store.eras.forEach((e, i) => {
-        const seg = sc.segments[i];
-        c.fillStyle = cs.getPropertyValue(`--era-${e.id}`).trim() || '#888';
-        c.globalAlpha = 0.09; c.fillRect(mx(seg.x0), 0, mx(seg.x1) - mx(seg.x0), mmH);
-        c.globalAlpha = 0.9; c.fillRect(mx(seg.x0), 0, Math.max(1, mx(seg.x1) - mx(seg.x0) - 1), 3);
-      });
       // Очертания древа: главные ветви тонкими линиями — по ним видно, где «материки» карты.
       c.globalAlpha = 0.28; c.strokeStyle = cs.getPropertyValue('--ink-2').trim() || '#666'; c.lineWidth = 0.8;
       c.beginPath();
@@ -1357,9 +1272,6 @@ export default {
     function resize() {
       pw = stage.clientWidth; ph = stage.clientHeight;
       rot = rotateOn && pw < 760;
-      q('.map-view').classList.toggle('map-time-vertical', rot);
-      eraNav.hidden = rot;
-      eraLabels.hidden = !rot;
       vw = rot ? ph : pw; vh = rot ? pw : ph;
       stage.classList.toggle('rot', rot);
       for (const el2 of [svg, nebCanvas]) {
@@ -1643,7 +1555,7 @@ export default {
     // ---------- события полотна ----------
     const pointers = new Map();
     let drag = null, pinch = null, moved = false, nativeGesture = null, lastPointer = null;
-    const uiTarget = (e) => e.target.closest?.('.map-panel, .map-tip, .map-edge-pop, .map-offscreen, .mm-box, .map-trail, .map-levels, .map-directory, .map-era-labels');
+    const uiTarget = (e) => e.target.closest?.('.map-panel, .map-tip, .map-edge-pop, .map-offscreen, .mm-box, .map-trail, .map-levels, .map-directory');
     const gesturePoint = (e) => {
       const r = stage.getBoundingClientRect();
       const inside = (p) => p && Number.isFinite(p.clientX) && Number.isFinite(p.clientY)
@@ -1851,37 +1763,6 @@ export default {
     setMinimap(mmOpen);
     on(mmToggle, 'click', () => setMinimap(mmBox.classList.contains('collapsed')));
 
-    // ---------- шкала эпох ----------
-    let navDrag = null, navUserUntil = 0;
-    for (const ev of ['wheel', 'touchstart']) on(navTrack, ev, () => { navUserUntil = performance.now() + 2000; }, { passive: true });
-    const navFrac = (e) => {
-      const first = navSegs[0], last = navSegs[navSegs.length - 1];
-      const rect = navTrack.getBoundingClientRect();
-      const x = e.clientX - rect.left + navTrack.scrollLeft - first.offsetLeft;
-      return clamp(x / (last.offsetLeft + last.offsetWidth - first.offsetLeft), 0, 1);
-    };
-    on(navTrack, 'pointerdown', (e) => {
-      if (!sc || e.button > 0) return;
-      navDrag = { x: e.clientX, moved: false, seg: e.target.closest('[data-era-i]'), id: e.pointerId };
-    });
-    on(navTrack, 'pointermove', (e) => {
-      if (!navDrag) return;
-      if (!navDrag.moved && Math.abs(e.clientX - navDrag.x) > 6) { navDrag.moved = true; navTrack.setPointerCapture(navDrag.id); navTrack.classList.add('dragging'); }
-      if (navDrag.moved) {
-        t.tx = (vw - panelWidth()) / 2 - sc.x(navYear(navFrac(e))) * t.k;
-        clampT(); schedule();
-      }
-    });
-    const navEnd = () => {
-      if (navDrag && !navDrag.moved && navDrag.seg) zoomToEra(Number(navDrag.seg.dataset.eraI));
-      navTrack.classList.remove('dragging');
-      navDrag = null;
-    };
-    on(navTrack, 'pointerup', navEnd);
-    on(navTrack, 'click', (e) => { const seg = e.target.closest('[data-era-i]'); if (seg && e.detail === 0 && sc) zoomToEra(Number(seg.dataset.eraI)); });
-    on(navTrack, 'pointercancel', () => { navTrack.classList.remove('dragging'); navDrag = null; });
-    on(navTrack, 'scroll', () => schedule());
-
     // ---------- тулбар ----------
     const findInput = q('.map-find input');
     const findList = q('.map-find-results');
@@ -1929,13 +1810,13 @@ export default {
     for (const box of root.querySelectorAll('[data-layer]')) on(box, 'change', (e) => { setLayer(box.dataset.layer, e.target.checked); syncUrl(); });
 
     on(root, 'click', (e) => {
-      const era = e.target.closest('button[data-era-label]');
-      if (era) {
+      const period = e.target.closest('button[data-period]');
+      if (period) {
         directory.hidden = true; q('[data-browse]').setAttribute('aria-expanded', 'false');
         hideEdgeInfo();
         if (selected) clearSelection();
         stage.focus({ preventScroll: true });
-        zoomToEra(Number(era.dataset.eraLabel)); return;
+        zoomToEra(Number(period.dataset.period)); return;
       }
       if (e.target.closest('[data-close-edge]')) { hideEdgeInfo({ restoreFocus: true }); return; }
       if (e.target.closest('[data-browse]')) { directory.hidden = !directory.hidden; q('[data-browse]').setAttribute('aria-expanded', String(!directory.hidden)); return; }
@@ -1985,9 +1866,6 @@ export default {
     const ro = new ResizeObserver(() => resize());
     ro.observe(stage);
     cleanups.push(() => ro.disconnect());
-    const eraRo = new ResizeObserver(schedule);
-    eraButtons.forEach((btn) => eraRo.observe(btn));
-    cleanups.push(() => eraRo.disconnect());
 
     build();
 
