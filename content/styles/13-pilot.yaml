@@ -81,9 +81,7 @@
         reviewed: "2026-10-14"
         note: В атласе дана ссылка на репродукцию у источника.
   example:
-    image: https://rusmuseumvrm.ru/data/collections/folk_art/onir-1293/35450_mainfoto_03.jpg
-    imageWidth: 600
-    imageHeight: 561
+    asset: assets/works/khokhloma.jpg
     credit: "Государственный Русский музей"
     license: "© Государственный Русский музей"
     nonfree: true
@@ -100,7 +98,6 @@
       колорит связан в музейном тексте со старой олифой.
     place: Русский музей
     rights:
-      embed: false
       reviewed: "2026-10-14"
       note: В атласе дана ссылка на репродукцию у источника.
   names:
@@ -252,9 +249,7 @@
         reviewed: "2026-10-14"
         note: В атласе дана ссылка на репродукцию у источника.
   example:
-    image: https://content.ngv.vic.gov.au/retrieve.php?type=image&size=xl&vernonID=2650
-    imageWidth: 694
-    imageHeight: 1207
+    asset: assets/works/emily-kngwarray.jpg
     credit: "National Gallery of Victoria"
     license: "© National Gallery of Victoria"
     nonfree: true
@@ -269,7 +264,6 @@
     whyRepresentative: Плотное точечное поле меняет цвет и ритм по всей поверхности; под ним читается линейная структура.
     place: National Gallery of Victoria
     rights:
-      embed: false
       reviewed: "2026-10-14"
       note: В атласе дана ссылка на репродукцию у источника.
   names:
@@ -1520,9 +1514,7 @@
         reviewed: "2026-10-14"
         note: В атласе дана ссылка на репродукцию у источника.
   example:
-    image: https://content.ngv.vic.gov.au/retrieve.php?type=image&size=xl&vernonID=108708
-    imageWidth: 694
-    imageHeight: 498
+    asset: assets/works/reko-rennie.jpg
     credit: "National Gallery of Victoria"
     license: "© National Gallery of Victoria"
     nonfree: true
@@ -1537,7 +1529,6 @@
     whyRepresentative: Три изолированных светящихся знака — корона, ромб и флаг — читаются как лаконичная эмблема.
     place: NGV, 2015.178.a–c
     rights:
-      embed: false
       reviewed: "2026-10-14"
       note: В атласе дана ссылка на репродукцию у источника.
   names:
@@ -1905,9 +1896,7 @@
         reviewed: "2026-10-14"
         note: В атласе дана ссылка на репродукцию у источника.
   example:
-    image: https://animator.ru/film_img/film_005.jpg
-    imageWidth: 369
-    imageHeight: 248
+    asset: assets/works/norshtein-animation.jpg
     credit: "Союзмультфильм"
     license: "© Союзмультфильм"
     nonfree: true
@@ -1924,7 +1913,6 @@
       экранном изображении.
     place: Союзмультфильм
     rights:
-      embed: false
       reviewed: "2026-10-14"
       note: В атласе дана ссылка на репродукцию у источника.
   names:

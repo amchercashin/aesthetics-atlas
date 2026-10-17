@@ -92,7 +92,7 @@ const img = (ref) => {
   const m = ref && media.get(ref);
   if (!m || m.missing) return null;
   return {
-    ...(m.local ? { local: true } : {}),
+    ...(m.local ? { local: true, kind: m.kind } : {}),
     w: m.width, h: m.height, src: m.thumbs, page: m.page,
     artist: m.artist, artistUrl: m.artistUrl, license: m.license, licenseUrl: m.licenseUrl,
     credit: m.credit, nonfree: m.nonfree,

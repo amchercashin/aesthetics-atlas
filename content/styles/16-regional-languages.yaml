@@ -1273,9 +1273,8 @@
     - Гравюра Торресова пролива
     - Torres Strait Islander art
   gallery:
-    - image: https://printsandprintmaking.gov.au/media/images/19621.jpg
-      imageWidth: 600
-      imageHeight: 411
+    - asset: assets/works/torres-strait-printmaking.jpg
+      reference: https://printsandprintmaking.gov.au/works/5018/
       title: Aralpaia Ar Zenikula, 1998
       author: Alick Tipoti
       credit: Australian Prints + Printmaking / National Gallery of Australia
@@ -1473,9 +1472,8 @@
     - Алик Типоти
     - Alick Tipoti
   gallery:
-    - image: https://printsandprintmaking.gov.au/media/images/4704.jpg
-      imageWidth: 442
-      imageHeight: 600
+    - asset: assets/works/alick-tipoti.jpg
+      reference: https://printsandprintmaking.gov.au/works/19915/
       title: Paths of my tradition
       author: Alick Tipoti
       credit: Australian Prints + Printmaking / National Gallery of Australia

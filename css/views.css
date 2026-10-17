@@ -169,6 +169,8 @@ body[data-view="style"] .room, body[data-view="style"] .site-footer {
 .room-gallery, .lineage, .study, .compare, .evidence { margin-top: clamp(48px, 7vw, 104px); }
 .gallery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 28px; align-items: start; }
 .gallery-grid .art-frame { box-shadow: var(--shadow-art); width: min(100%, calc(60vh * var(--arn))); }
+.gallery-grid .reference-work { min-height: 0; aspect-ratio: 3 / 2; padding: 18px; gap: 10px; }
+.gallery-grid .reference-title { font-size: var(--t-xl); }
 .gallery-grid figcaption { margin-top: 12px; display: grid; gap: 2px; }
 .g-title { font-family: var(--serif); font-size: var(--t-lg); }
 .g-meta { color: var(--ink-2); font-size: var(--t-sm); }

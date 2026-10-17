@@ -50,10 +50,11 @@ export function relationDateIssue(parent, child, type, now = 2026) {
 }
 
 function checkImage(at, im, where, sourceIds, errors) {
+  const localWork = /^assets\/works\//.test(im.asset ?? '');
   if (im.reference != null) {
     if (!/^https:\/\//.test(im.reference)) errors.push(`${at} ${where}: reference must be https`);
-    if (im.file || im.asset) errors.push(`${at} ${where}: choose reference or embedded image`);
-    if (!asList(im.sources).length) errors.push(`${at} ${where}: external reference needs caption sources`);
+    if (im.file || (im.asset && !localWork)) errors.push(`${at} ${where}: choose reference or embedded image`);
+    if (!asList(im.sources).length && !localWork) errors.push(`${at} ${where}: external reference needs caption sources`);
   }
   if (im.image != null) {
     if (!/^https:\/\//.test(im.image)) errors.push(`${at} ${where}: image must be https`);
@@ -67,8 +68,15 @@ function checkImage(at, im, where, sourceIds, errors) {
   if (im.asset != null) {
     if (!isLocalAsset(im.asset)) errors.push(`${at} ${where}: invalid local asset path`);
     if (im.file) errors.push(`${at} ${where}: choose file or asset, not both`);
-    if (!['illustration', 'reconstruction'].includes(im.role)) errors.push(`${at} ${where}: local illustration needs an explicit role`);
-    if (!im.author || !im.year || !im.whyRepresentative) errors.push(`${at} ${where}: local illustration needs author, year and whyRepresentative`);
+    if (localWork) {
+      if (!im.credit) errors.push(`${at} ${where}: local work needs credit`);
+      if (!im.license) errors.push(`${at} ${where}: local work needs license`);
+      if (!/^https:\/\//.test(im.reference ?? '')) errors.push(`${at} ${where}: local work needs an https source reference`);
+      if (!im.whyRepresentative) errors.push(`${at} ${where}: local work needs whyRepresentative`);
+    } else {
+      if (!['illustration', 'reconstruction'].includes(im.role)) errors.push(`${at} ${where}: local illustration needs an explicit role`);
+      if (!im.author || !im.year || !im.whyRepresentative) errors.push(`${at} ${where}: local illustration needs author, year and whyRepresentative`);
+    }
   }
   if (im.role != null && !IMAGE_ROLES.includes(im.role)) errors.push(`${at} ${where}: bad image role "${im.role}"`);
   if (im.rights != null) {

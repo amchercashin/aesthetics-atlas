@@ -72,18 +72,29 @@ export function imageRecord(spec = {}, img = null) {
     if (spec.reference) rec.external = { page: spec.reference, reference: true, license: str(spec.license), nonfree, rights };
     return rec;
   }
-  if (spec.reference) {
-    rec.external = { page: spec.reference, reference: true, license: null, nonfree: null,
-      rights: { status: 'reference', basis: str(spec.rights?.basis), reviewed: ymd(spec.rights?.reviewed), note: str(spec.rights?.note) } };
+  if (!img) {
+    if (spec.reference) {
+      rec.external = { page: spec.reference, reference: true, license: null, nonfree: null,
+        rights: { status: 'reference', basis: str(spec.rights?.basis), reviewed: ymd(spec.rights?.reviewed), note: str(spec.rights?.note) } };
+    }
     return rec;
   }
-  if (!img) return rec;
-  const rights = rightsOf(spec, img);
+  const merged = { ...img };
+  if (img.local && img.kind === 'work') {
+    merged.artist = str(spec.credit) ?? img.artist;
+    merged.license = str(spec.license) ?? img.license;
+    merged.nonfree = spec.nonfree === true;
+    merged.page = str(spec.reference) ?? img.page;
+  }
+  const rights = rightsOf(spec, merged);
   if (spec.rights?.embed === false) {
     // Не встраиваем: только ссылка на страницу файла.
-    rec.external = { page: img.page, license: img.license, nonfree: !!img.nonfree, rights };
+    rec.external = { page: merged.page, license: merged.license, nonfree: !!merged.nonfree, rights };
   } else {
-    rec.img = { ...img, rights };
+    rec.img = { ...merged, rights };
+  }
+  if (spec.reference) {
+    rec.external = { page: spec.reference, reference: true, license: merged.license, nonfree: !!merged.nonfree, rights };
   }
   return rec;
 }

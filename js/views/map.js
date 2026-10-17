@@ -65,6 +65,7 @@ export default {
 
     mount(root, html`
     <div class="map-view">
+      <h1 class="visually-hidden">Карта эстетик</h1>
       <div class="map-toolbar">
         <div class="map-find" role="search">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4.5 4.5"/></svg>
@@ -132,7 +133,7 @@ export default {
           <g class="m-summary"></g><g class="m-summary-hits"></g><g class="m-dur"></g><g class="m-life"></g><g class="m-cmp"></g><g class="m-contexts"></g><g class="m-edges"></g><g class="m-edge-hits"></g><g class="m-trail"></g><g class="m-nebnames"></g><g class="m-plates"></g>
           <g class="m-nodes"></g><g class="m-labels"></g><g class="m-stubs"></g><g class="m-sel"></g><g class="m-elabels"></g><g class="m-axis" role="group" aria-label="Годы. Неравномерная шкала времени"></g>
         </svg>
-        <div class="map-offscreen" aria-label="Связи за краем экрана"></div>
+        <div class="map-offscreen" role="group" aria-label="Связи за краем экрана"></div>
         <div class="mm-box">
           <div class="minimap" role="img" aria-label="Миникарта: вся карта, рамка — видимая часть. Нажмите или тяните, чтобы перейти">
             <canvas></canvas><div class="mm-frame" aria-hidden="true"></div>
@@ -1063,8 +1064,8 @@ export default {
         b.type = 'button';
         b.className = 'oc-chip';
         b.dataset.select = it.o.s.id;
-        b.innerHTML = String(html`<span class="oc-arrow" aria-hidden="true">${it.arrow}</span><span class="oc-text"><span class="oc-rel">${it.word}</span><span class="oc-name">${it.o.s.name}</span></span>`);
-        b.setAttribute('aria-label', `${it.word}: ${it.o.s.name} — за краем экрана, перейти`);
+        b.innerHTML = String(html`<span class="oc-arrow" data-arrow="${it.arrow}" aria-hidden="true"></span><span class="oc-text"><span class="oc-rel">${it.word}</span> <span class="oc-name">${it.o.s.name}</span></span>`);
+        b.setAttribute('aria-label', `${it.word} ${it.o.s.name} — за краем экрана, перейти`);
         b.style.transform = `translate(${it.x.toFixed(0)}px, ${it.y.toFixed(0)}px) translate(${it.left ? '0' : '-100%'}, -50%)`;
         return b;
       }));

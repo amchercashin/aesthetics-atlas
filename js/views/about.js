@@ -15,7 +15,7 @@ const WIDTH = { evolved: 2.2, influence: 1.2, reaction: 1.6, revival: 2.2 };
 export default {
   render(root, { store }) {
     document.title = 'О проекте — Атлас эстетик';
-    const imgs = store.styles.reduce((n, s) => n + (s.example.img ? 1 : 0) + s.gallery.filter((g) => g.img).length, 0);
+    const imgs = store.styles.reduce((n, s) => n + (s.example.img ? 1 : 0) + s.gallery.filter((g) => g.img).length + s.corpus.filter((w) => w.img).length, 0);
     const fair = store.styles.reduce((n, s) => n + [s.example.img, ...s.gallery.map((g) => g.img)].filter((m) => m?.nonfree).length, 0);
     const total = store.styles.length;
     const reviewed = store.styles.filter((s) => s.review.status !== 'legacy').length;

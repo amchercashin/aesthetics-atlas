@@ -13,7 +13,12 @@ const ARROW_R = html`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" 
 const EXT = html`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M14 5h5v5M19 5l-8 8M17 14v5H5V7h5"/></svg>`;
 
 // «13 октября 2026» — без «г.», чтобы не получить двойную точку в конце фразы.
-const fmtDay = (d) => (d ? new Date(d).toLocaleDateString('ru-RU', { day: 'numeric', month: 'long', year: 'numeric' }).replace(/\s*г\.$/, '') : '');
+const fmtDay = (d) => {
+  if (!d) return '';
+  const [y, m, day] = String(d).slice(0, 10).split('-').map(Number);
+  const date = Number.isFinite(y) && Number.isFinite(m) && Number.isFinite(day) ? new Date(y, m - 1, day) : new Date(d);
+  return date.toLocaleDateString('ru-RU', { day: 'numeric', month: 'long', year: 'numeric' }).replace(/\s*г\.$/, '');
+};
 
 function sourceLinks(store, ids) {
   const list = (ids ?? []).map((id) => store.source(id)).filter(Boolean);
@@ -124,7 +129,7 @@ export default {
       <div class="room-hang">
         <figure class="room-work">
           ${cover ? html`<button class="work-zoom" type="button" aria-label="Открыть работу крупно">
-            ${frame(cover, p, { sizes: '(min-width: 1100px) 58vw, 100vw', eager: true, size: 960, alt: coverTitle ?? '', note: galleryCover ? 'Пример традиции; основная работа — по ссылке' : img.external ? 'Изображение с сайта источника' : ex.external ? 'Репродукция — у источника' : ex.note, capUpscale: true })}
+            ${frame(cover, p, { sizes: '(min-width: 1100px) 58vw, 100vw', eager: true, size: 960, alt: coverTitle ?? '', note: galleryCover ? 'Пример традиции; основная работа — по ссылке' : img.local ? 'Локальная репродукция; источник — по ссылке' : img.external ? 'Изображение с сайта источника' : ex.external ? 'Репродукция — у источника' : ex.note, capUpscale: true })}
           </button>` : ex.external?.reference ? html`<div class="reference-work">
             <p class="reference-note">Репродукция — у источника</p>
             <p class="reference-title">${ex.title}</p>
@@ -167,7 +172,10 @@ export default {
         <h2 class="section-title">Ещё примеры</h2>
         <div class="gallery-grid">
           ${s.gallery.map((g, i) => html`<figure class="art">
-            <button class="work-zoom" type="button" data-gallery="${i}" ${g.img ? '' : 'disabled'} aria-label="Открыть крупно: ${g.title ?? ''}">${frame(g.img, p, { sizes: '(min-width: 900px) 30vw, 90vw', alt: g.title ?? '', capUpscale: true })}</button>
+            ${g.img ? html`<button class="work-zoom" type="button" data-gallery="${i}" aria-label="Открыть крупно: ${g.title ?? ''}">${frame(g.img, p, { sizes: '(min-width: 900px) 30vw, 90vw', alt: g.title ?? '', capUpscale: true })}</button>` : g.external ? html`<div class="reference-work gallery-reference">
+              <p class="reference-note">Репродукция — у источника</p>
+              <a class="btn" href="${safeUrl(g.external.page)}" target="_blank" rel="noopener">Посмотреть работу ↗</a>
+            </div>` : ''}
             <figcaption>${roleLabel(g.role) ? html`<span class="wl-role">${roleLabel(g.role)}</span>` : ''}<span class="g-title">${g.title}</span>${[g.author, g.year, g.place].filter(Boolean).length ? html`<span class="g-meta">${[g.author, g.year, g.place].filter(Boolean).join(', ')}</span>` : ''}${g.note ? html`<span class="g-meta">${g.note}</span>` : ''}${g.why ? html`<span class="g-meta">${g.why}</span>` : ''}</figcaption>
             ${sourceLinks(store, g.sources)}
             ${credit(g.img)}

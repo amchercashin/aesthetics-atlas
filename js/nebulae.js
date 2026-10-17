@@ -745,7 +745,7 @@ const MAX_ANG = 0.22;   // наклон названия на экране, ра
       const P1 = [cx + nx * (-curv * T2 * T2 + off), cy + ny * (-curv * T2 * T2 + off)];
       const id = `eng-n${uid}-${li}`;
       v.svg('path', { id, d: `M${P0[0].toFixed(1)} ${P0[1].toFixed(1)}Q${P1[0].toFixed(1)} ${P1[1].toFixed(1)} ${P2[0].toFixed(1)} ${P2[1].toFixed(1)}`, fill: 'none' }, defs);
-      const tp = v.svg('textPath', { href: `#${id}`, startOffset: '50%' }, t); tp.textContent = ln.s;
+      const tp = v.svg('textPath', { href: `#${id}`, startOffset: '50%' }, t); tp.textContent = li < nL - 1 ? ln.s + ' ' : ln.s;
     }
     g.appendChild(t);
   }

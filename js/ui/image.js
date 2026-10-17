@@ -1,5 +1,5 @@
 // Картинки: srcset из реальных ширин, плейсхолдер из палитры, атрибуция, фолбэк на палитра-карточку.
-import { html, esc, safeUrl } from '../html.js';
+import { html, esc, safeUrl, raw } from '../html.js';
 
 const WIDTHS = [250, 500, 960, 1280];
 
@@ -19,7 +19,7 @@ export function srcset(img) {
 export function imgTag(img, { sizes = '100vw', alt = '', eager = false, size = 500 } = {}) {
   if (!img) return '';
   const src = img.src[size] ?? img.src[500];
-  return html`<img src="${src}" srcset="${srcset(img)}" sizes="${sizes}" width="${img.w}" height="${img.h}" alt="${alt}" ${eager ? '' : 'loading="lazy"'} decoding="async" referrerpolicy="no-referrer">`;
+  return html`<img src="${src}" srcset="${srcset(img)}" sizes="${sizes}" width="${img.w}" height="${img.h}" alt="${alt}" ${eager ? '' : raw('loading="lazy"')} decoding="async" referrerpolicy="no-referrer">`;
 }
 
 export function paletteCard(palette, note) {
@@ -46,6 +46,16 @@ const NONFREE_TITLE = 'Работа защищена авторским прав
 export function credit(img) {
   if (!img) return '';
   if (img.local) {
+    if (img.kind === 'work') {
+      const who = img.artist || 'автор не указан';
+      const r = img.rights ?? {};
+      return html`<p class="credit">
+        ${img.nonfree ? html`<span class="badge-fair" title="${NONFREE_TITLE}">несвободное</span>` : ''}${who}${img.license ? `, ${img.license}` : ''}.
+        <a href="${safeUrl(img.page)}" target="_blank" rel="noopener">Источник</a>
+        ${img.nonfree ? html`<span class="credit-note">${r.basis ? `Основание: ${r.basis}` : 'Основание использования в атласе ещё не проверено.'}</span>` : ''}
+        ${r.note ? html`<span class="credit-note">${r.note}</span>` : ''}
+      </p>`;
+    }
     const source = /^assets\/illustrations\/[a-z0-9-]+\.svg$/.test(img.page ?? '') ? img.page : '#/';
     return html`<p class="credit">${img.artist}. Иллюстрация создана для атласа.
       <a href="${source}" target="_blank" rel="noopener">SVG-исходник</a></p>`;
