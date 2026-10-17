@@ -290,6 +290,11 @@
         документированные образцы без объявления всего маньеризма простой следующей стадией.
       sources:
         - ra26-mannerism
+  gallery:
+    - file: Jacopo_Pontormo_-_Kreuzabnahme_Christi.jpg
+      title: Понтормо. Снятие с креста
+    - file: Angelo_Bronzino_-_Venus,_Cupid,_Folly_and_Time_-_National_Gallery,_London.jpg
+      title: Бронзино. Аллегория с Венерой и Купидоном
   summary: >
     Вытянутые фигуры, закрученные позы, тесное пространство и холодные цвета: изощрённый язык итальянского
     искусства после 1520 года.
@@ -348,6 +353,11 @@
       sources:
         - ra26-d2-caravaggio-empathy
         - ra26-d2-caravaggist
+  gallery:
+    - file: The_Entombment_of_Christ-Caravaggio_(c.1602-3).jpg
+      title: Караваджо. Положение во гроб
+    - file: Judit_decapitando_a_Holofernes,_por_Artemisia_Gentileschi.jpg
+      title: Артемизия Джентилески. Юдифь и Олоферн
   summary: >
     Луч света из темноты выхватывает грязные пятки и живые лица: священная история как уличная сцена.
   description: |
@@ -407,6 +417,11 @@
         Ослабить evolved до influence и назвать промежуточную стадию в примечании.
       sources:
         - ra26-baroque
+  gallery:
+    - file: Las_Meninas,_by_Diego_Velázquez,_from_Prado_in_Google_Earth.jpg
+      title: Веласкес. Менины
+    - file: Peter_Paul_Rubens_-_Raising_of_the_Cross_(Antwerp_Cathedral).JPG
+      title: Рубенс. Воздвижение креста
   summary: >
     Театр, движение и пышность: изогнутые фасады, взлетающие драпировки и потолки, распахнутые в небо.
   description: |
@@ -466,6 +481,11 @@
       sources:
         - ra26-caravaggisti
         - ra26-utrecht
+  gallery:
+    - file: La_ronda_de_noche,_por_Rembrandt_van_Rijn.jpg
+      title: Рембрандт. Ночной дозор
+    - file: Johannes_Vermeer_-_Het_melkmeisje_-_Google_Art_Project.png
+      title: Вермеер. Молочница
   summary: >
     Тихий свет из окна, натюрморты, пейзажи и портреты бюргеров: живопись для дома, а не для церкви.
   description: |
@@ -524,6 +544,11 @@
         Сохранять различие между практикой Палладио и её поздними возвращениями.
       sources:
         - ra26-palladian
+  gallery:
+    - file: Queens_House.jpg
+      title: Дом королевы в Гринвиче
+    - file: Chiswick_House_from_SE_(cropped).jpg
+      title: Чизик-хаус
   summary: >
     Симметричные виллы с портиками-храмами по чертежам Андреа Палладио — от Виченцы до Петербурга и Вирджинии.
   description: |
@@ -572,6 +597,11 @@
         мебели и декоративного искусства.
       sources:
         - ra26-rococo
+  gallery:
+    - file: L'Embarquement_pour_Cythère,_by_Antoine_Watteau,_from_C2RMF_retouched.jpg
+      title: Ватто. Паломничество на Киферу
+    - file: François_Boucher_011.jpg
+      title: Буше. Рождение Венеры
   summary: >
     Барокко становится лёгким и игривым: пастельные тона, раковины-рокайли, качели и флирт в садах.
   description: |
@@ -641,10 +671,10 @@
   wiki: Chinoiserie
   links: []
   gallery:
-    - file: Chinese House (Sanssouci).jpg
-      title: Китайский домик в парке Сан-Суси
-      year: 1755–1764
-      place: Потсдам, Германия
+    - file: The_Yellow_Drawing_Room_at_Buckingham_Palace_–_James_Roberts.jpg
+      title: Жёлтая гостиная Букингемского дворца
+    - file: Kina_slott_October_2016_01.jpg
+      title: Китайский павильон в Дроттнингхольме
       note: Общий зимний вид павильона; на главной фотографии лучше различимы декоративные детали.
   review:
     status: partial
@@ -680,6 +710,11 @@
         и производственные источники.
       sources:
         - met-yamato-e
+  gallery:
+    - file: 「富嶽三十六景_凱風快晴」-South_Wind,_Clear_Sky_(Gaifū_kaisei),_also_known_as_Red_Fuji,_from_the_series_Thirty-six_Views_of_Mount_Fuji_(Fugaku_sanjūrokkei)_MET_DP141062.jpg
+      title: Хокусай. Красная Фудзи
+    - file: Utagawa_Hiroshige_-_Evening_Shower_at_Atake_and_the_Great_Bridge.jpg
+      title: Хиросигэ. Вечерний дождь в Атаке
   summary: >
     Японская цветная гравюра на дереве: актёры, куртизанки, пейзажи и волны с плоским цветом
     и смелой линией.
@@ -741,6 +776,11 @@
         копий и адаптаций при могольском дворе; не подменять его всем европейским искусством.
       sources:
         - ra26-d2-mughal-durer
+  gallery:
+    - file: Govardhan._Jahangir_Visiting_the_Ascetic_Jadrup._ca._1616-20,_Musee_Guimet,_Paris.jpg
+      title: Джахангир посещает отшельника Джадрупа
+    - file: The_Spy_Zanbur_Bringing_Mahiyya_to_the_City_of_Tawariq,_Folio_from_a_Hamzanama_ca._1570_(74x57.2_cm)_Metmuseum_N-Y.jpg
+      title: "Хамзанама: лазутчик Занбур"
   summary: >
     Персидская миниатюра при дворе Великих Моголов обретает портретность, натурализм и даже европейские приёмы.
   description: |
