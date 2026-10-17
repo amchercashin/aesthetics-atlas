@@ -50,7 +50,7 @@ export function credit(img) {
     return html`<p class="credit">${img.artist}. Иллюстрация создана для атласа.
       <a href="${source}" target="_blank" rel="noopener">SVG-исходник</a></p>`;
   }
-  const who = img.artist || 'автор не указан';
+  const who = (img.artist || 'автор не указан').replace(/(Unknown author)(?:\s*Unknown author)+/gi, '$1');
   const r = img.rights ?? {};
   return html`<p class="credit">
     ${img.nonfree ? html`<span class="badge-fair" title="${NONFREE_TITLE}">несвободное</span>` : ''}${who}${img.license ? `, ${img.license}` : ''}.

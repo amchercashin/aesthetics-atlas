@@ -65,9 +65,10 @@ export default {
       let list = store.styles.filter((s) => (!state.domain || s.domain.includes(state.domain)) && inFamily(s, state.family) && (!state.eras.size || state.eras.has(s.era)));
       if (state.sort === 'az') list = [...list].sort((a, b) => a.name.localeCompare(b.name, 'ru'));
       mount(grid, html`${list.map((s) => {
-        const ar = clampAr(s.example.img);
+        const cover = s.example.img ?? s.gallery.find((g) => g.img)?.img ?? null;
+        const ar = clampAr(cover);
         return html`<a class="tile" href="#/s/${s.id}" style="--ar:${ar.toFixed(3)}">
-          ${frame(s.example.img, s.palette, { ratio: ar.toFixed(3), sizes: `${Math.round(ar * 240)}px`, alt: '', size: ar > 1.3 ? 960 : 500, note: s.example.external ? 'Репродукция — у источника' : '' })}
+          ${frame(cover, s.palette, { ratio: ar.toFixed(3), sizes: `${Math.round(ar * 240)}px`, alt: '', size: ar > 1.3 ? 960 : 500, note: !cover && s.example.external ? 'Репродукция — у источника' : '' })}
           <span class="tile-cap"><span class="swatch" style="--c:var(--era-${s.era})"></span><span class="tile-name">${s.name}</span><span class="tile-dates">${s.kind[0] ? `${KIND[s.kind[0]]}, ` : ''}${fmtDates(s)}</span></span>
         </a>`;
       })}`);

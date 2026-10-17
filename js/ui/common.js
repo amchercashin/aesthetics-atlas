@@ -16,7 +16,8 @@ export function styleLink(s) {
 }
 
 export function thumb(s, size = 52) {
-  return html`<span class="thumb" style="--ph:${frameBg(s)}">${s.example.img ? html`<img src="${s.example.img.src[250]}" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer" width="${size}" height="${size}">` : ''}</span>`;
+  const im = s.example.img ?? s.gallery?.find((g) => g.img)?.img ?? null;
+  return html`<span class="thumb" style="--ph:${frameBg(s)}">${im ? html`<img src="${im.src[250]}" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer" width="${size}" height="${size}">` : ''}</span>`;
 }
 
 function frameBg(s) {

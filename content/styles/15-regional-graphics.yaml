@@ -505,6 +505,11 @@
   region: Китай; выбранный корпус — Янчжоу и Фошань, один комплект хранится в Тяньцзине
   medium:
     - decorative-arts
+  gallery:
+    - file: File:Chinese Paper Cutting.png
+      title: Chinese Paper Cutting
+      author: Lanneixi
+      whyRepresentative: Симметричный резной узор с птицами и растениями; красная бумага и тонкая сетка прорезей.
   summary: >-
     Силуэт, ажурная линия, просвет и наклеенный фрагмент становятся разными способами построения изображения
     из бумаги.
@@ -730,6 +735,11 @@
   medium:
     - textile
     - drawing
+  gallery:
+    - file: File:Adinkra cloth.JPG
+      title: Adinkra cloth
+      author: photo of 2D work more than 100 years old
+      whyRepresentative: Полотно с повторяющимися знаками-символами и сетчатой композицией.
   summary: >-
     Именованные графические знаки повторяются в полях ткани и могут переходить в самостоятельный рисунок и
     другие художественные среды.
@@ -1398,6 +1408,11 @@
   region: Индия, Западная Бенгалия; корпус современных свитков патуа
   medium:
     - painting
+  gallery:
+    - file: File:Bengal Patachitra 2.jpg
+      title: Bengal Patachitra 2
+      author: বাক্যবাগীশ
+      whyRepresentative: Свиток с фигурами и растительным бордюром.
   summary: >-
     Расписной свиток организует рассказ вдоль длинной полосы; художники патуа соединяют изображение с песенным
     повествованием и обращаются как к мифам, так и к современным событиям.
@@ -1639,6 +1654,11 @@
   medium:
     - painting
     - decorative-arts
+  gallery:
+    - file: File:A Warli painting by Jivya Soma Mashe, Thane district.jpg
+      title: A Warli painting by Jivya Soma Mashe, Thane district
+      author: "[ https://www.flickr.com/people/72746018@N00 Jean-Pierre Dalb�ra] from Paris, France"
+      whyRepresentative: Круговой ритуальный мотив и фигурки в белом контуре.
   summary: >-
     Небольшие геометризированные фигуры, тонкая линия и ритмические группы организуют сцены людей, животных и
     деревьев на ткани и архитектурной поверхности.
@@ -1880,6 +1900,11 @@
   medium:
     - print
     - illustration
+  gallery:
+    - file: File:1900s Nianhua The Spirit of the Doors woodblock print.jpg
+      title: 1900s Nianhua The Spirit of the Doors woodblock print
+      author: Unknown author Unknown author
+      whyRepresentative: "Дверное божество: плотный контур, яркая раскраска и благопожелательные атрибуты."
   summary: >-
     Обзор новогодней печатной картинки объединяет парные образы, благопожелательные цветы и театральный
     рассказ, сохраняя различия мастерских и мест.
@@ -2129,6 +2154,11 @@
   region: "Вьетнам: деревня Донгхо, север страны"
   medium:
     - print
+  gallery:
+    - file: File:Dong-ho-rat-wedding.jpg
+      title: Dong-ho-rat-wedding
+      author: Unknown artisan from the village of Dong Ho.
+      whyRepresentative: "Мышиная свадьба: силуэты, плотная композиция и простонародный сюжет."
   summary: >-
     Локальная цветная печать соединяет выразительный контур, плоские участки цвета и надписи: от животных и
     праздничных сцен до быта и общественных сюжетов.

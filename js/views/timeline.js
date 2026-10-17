@@ -37,7 +37,7 @@ export default {
             ${items.length ? html`<ol class="entries">
               ${items.map((s) => html`<li class="entry">
                 <a class="entry-link" href="#/s/${s.id}">
-                  <span class="e-art">${frame(s.example.img, s.palette, { ratio: '4 / 3', sizes: '(min-width: 900px) 220px, 34vw', alt: '', size: 500, note: s.example.external ? 'Репродукция — у источника' : '' })}</span>
+                  <span class="e-art">${frame(s.example.img ?? s.gallery.find((g) => g.img)?.img ?? null, s.palette, { ratio: '4 / 3', sizes: '(min-width: 900px) 220px, 34vw', alt: '', size: 500, note: s.example.img || s.gallery.some((g) => g.img) ? '' : s.example.external ? 'Репродукция — у источника' : '' })}</span>
                   <span class="e-text">
                     <span class="e-dates">${fmtDates(s)}</span>
                     <span class="e-name">${s.name}</span>
