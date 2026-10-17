@@ -59,19 +59,6 @@ export function imageRecord(spec = {}, img = null) {
     note: str(spec.note), role: spec.role ?? 'work', why: str(spec.whyRepresentative), sources: asList(spec.sources),
     medium: str(spec.medium), workId: str(spec.workId), img: null, external: null,
   };
-  if (spec.image) {
-    const src = String(spec.image);
-    const nonfree = spec.nonfree === true;
-    const rights = { status: nonfree ? 'nonfree' : 'external', basis: str(spec.rights?.basis), reviewed: ymd(spec.rights?.reviewed), note: str(spec.rights?.note) };
-    rec.img = {
-      w: Number(spec.imageWidth), h: Number(spec.imageHeight),
-      src: { 250: src, 500: src, 960: src, 1280: src },
-      page: str(spec.reference) ?? src, artist: str(spec.credit), license: str(spec.license),
-      nonfree, rights, external: true,
-    };
-    if (spec.reference) rec.external = { page: spec.reference, reference: true, license: str(spec.license), nonfree, rights };
-    return rec;
-  }
   if (!img) {
     if (spec.reference) {
       rec.external = { page: spec.reference, reference: true, license: null, nonfree: null,

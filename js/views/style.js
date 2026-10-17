@@ -129,7 +129,7 @@ export default {
       <div class="room-hang">
         <figure class="room-work">
           ${cover ? html`<button class="work-zoom" type="button" aria-label="Открыть работу крупно">
-            ${frame(cover, p, { sizes: '(min-width: 1100px) 58vw, 100vw', eager: true, size: 960, alt: coverTitle ?? '', note: galleryCover ? 'Пример традиции; основная работа — по ссылке' : img.local ? 'Локальная репродукция; источник — по ссылке' : img.external ? 'Изображение с сайта источника' : ex.external ? 'Репродукция — у источника' : ex.note, capUpscale: true })}
+            ${frame(cover, p, { sizes: '(min-width: 1100px) 58vw, 100vw', eager: true, size: 960, alt: coverTitle ?? '', note: galleryCover ? 'Пример традиции; основная работа — по ссылке' : img.local ? 'Локальная репродукция; источник — по ссылке' : ex.external ? 'Репродукция — у источника' : ex.note, capUpscale: true })}
           </button>` : ex.external?.reference ? html`<div class="reference-work">
             <p class="reference-note">Репродукция — у источника</p>
             <p class="reference-title">${ex.title}</p>
