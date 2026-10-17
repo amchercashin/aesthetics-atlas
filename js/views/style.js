@@ -13,7 +13,12 @@ const ARROW_R = html`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" 
 const EXT = html`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M14 5h5v5M19 5l-8 8M17 14v5H5V7h5"/></svg>`;
 
 // «13 октября 2026» — без «г.», чтобы не получить двойную точку в конце фразы.
-const fmtDay = (d) => (d ? new Date(d).toLocaleDateString('ru-RU', { day: 'numeric', month: 'long', year: 'numeric' }).replace(/\s*г\.$/, '') : '');
+const fmtDay = (d) => {
+  if (!d) return '';
+  const [y, m, day] = String(d).slice(0, 10).split('-').map(Number);
+  const date = Number.isFinite(y) && Number.isFinite(m) && Number.isFinite(day) ? new Date(y, m - 1, day) : new Date(d);
+  return date.toLocaleDateString('ru-RU', { day: 'numeric', month: 'long', year: 'numeric' }).replace(/\s*г\.$/, '');
+};
 
 function sourceLinks(store, ids) {
   const list = (ids ?? []).map((id) => store.source(id)).filter(Boolean);

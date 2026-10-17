@@ -44,8 +44,16 @@ export function initSearch(store) {
     markLoaded(list);
   }
 
-  const update = () => (input.value.trim() ? renderResults(input.value) : renderEmpty());
+  const update = () => {
+    input.value.trim() ? renderResults(input.value) : renderEmpty();
+    if (items.length) setActive(0);
+    else {
+      input.removeAttribute('aria-activedescendant');
+      input.setAttribute('aria-expanded', dlg.open ? 'true' : 'false');
+    }
+  };
   const setActive = (i) => {
+    if (!items.length) { input.removeAttribute('aria-activedescendant'); return; }
     active = (i + items.length) % items.length;
     list.querySelectorAll('[role=option]').forEach((a, j) => a.setAttribute('aria-selected', String(j === active)));
     const el = list.querySelector(`#sr-${active}`);
@@ -58,10 +66,16 @@ export function initSearch(store) {
     input.value = prefill;
     update();
     dlg.showModal();
+    input.setAttribute('aria-expanded', 'true');
     input.focus();
     if (prefill) input.select();
   }
-  const close = () => dlg.open && dlg.close();
+  const close = () => {
+    if (!dlg.open) return;
+    dlg.close();
+    input.setAttribute('aria-expanded', 'false');
+    input.removeAttribute('aria-activedescendant');
+  };
 
   input.addEventListener('input', update);
   input.addEventListener('keydown', (e) => {

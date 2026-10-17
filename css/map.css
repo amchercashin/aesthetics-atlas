@@ -204,6 +204,7 @@ body[data-view="map"] .site-footer { display: none; }
 }
 .oc-chip:hover { border-color: var(--ink-2); color: var(--ink); }
 .oc-arrow { font-size: 15px; line-height: 1; color: var(--ink); }
+.oc-arrow::before { content: attr(data-arrow); }
 .oc-text { display: grid; line-height: 1.15; min-width: 0; }
 .oc-rel { font-size: 10.5px; color: var(--ink-3); }
 .oc-name { font-family: var(--serif); font-size: var(--t-sm); color: var(--ink); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
