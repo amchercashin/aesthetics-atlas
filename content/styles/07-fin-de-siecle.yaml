@@ -25,6 +25,11 @@
         Уточнить преемственность выставочного круга и дальнейшее расхождение техники.
       sources:
         - ra26-impressionism
+  gallery:
+    - file: Baigneurs_a_Asnieres.jpg
+      title: Сёра. Купальщики в Аньере
+    - file: Georges_Seurat_-_Models_(Poseuses)_-_BF811_-_Barnes_Foundation.jpg
+      title: Сёра. Позирующие
   summary: >
     Импрессионизм, поставленный на научную основу: картина складывается из тысяч точек чистого цвета.
   description: |
@@ -194,6 +199,11 @@
         от всей ретроспективной категории постимпрессионизма.
       sources:
         - ra26-nabis
+  gallery:
+    - file: Paul_Gauguin_-_The_Green_Christ_(1889).jpg
+      title: Гоген. Зелёный Христос
+    - file: Paul_Gauguin_-_The_Yellow_Christ_(Le_Christ_jaune)_1889.jpg
+      title: Гоген. Жёлтый Христос
   summary: >
     «Картина — это плоская поверхность, покрытая красками»: декоративные пятна цвета вместо иллюзии.
   description: |
@@ -273,6 +283,11 @@
         документированный канал, не замена линии через Arts and Crafts.
       sources:
         - ra26-preraphaelite-legacy
+  gallery:
+    - file: Casa_Batllo_Overview_Barcelona_Spain_cut.jpg
+      title: Дом Бальо, Гауди
+    - file: Victor_Horta_Hotel_Tassel.JPG
+      title: Отель Тассель, Орта
   summary: >
     Линия «удар бича»: стебли, лилии, женские волосы и стрекозы прорастают в афишах, вокзалах и дверных ручках.
   description: |
@@ -343,6 +358,11 @@
         организационная принадлежность к сецессиону не делает каждого участника символистом.
       sources:
         - ra26-d2-vienna-symbolism
+  gallery:
+    - file: Gustav_Klimt_046.jpg
+      title: Климт. Портрет Адели Блох-Бауэр I
+    - file: Gustav_Klimt_-_Beethovenfries,_"Die_Sehnsucht_nach_dem_Glück"_(nach_Richard_Wagners_Interpretation_der_IX._Sinfonie_von_Ludwig_van_Beethoven)_-_5987_-_Österreichische_Galerie_Belvedere.jpg
+      title: Климт. Бетховенский фриз
   summary: >
     Золото, орнамент и геометрия Вены: Климт, Венские мастерские и павильон с золотой «капустой».
   description: |
@@ -418,6 +438,11 @@
       sources:
         - ra26-d3-beardsley-study
         - ra26-d3-bakst-curators
+  gallery:
+    - file: Léon_Bakst_001.jpg
+      title: Бакст. Жар-птица
+    - file: Bakst_self.JPG
+      title: Бакст. Автопортрет
   summary: >
     Петербургские эстеты: ностальгия по XVIII веку, изысканная графика и костюмы «Русских сезонов» Дягилева.
   description: |
@@ -531,6 +556,11 @@
         этой фазой и мастером.
       sources:
         - ra26-neoimpressionism
+  gallery:
+    - file: Matissedance.jpg
+      title: Матисс. Танец
+    - file: Bonheur_Matisse.jpg
+      title: Матисс. Радость жизни
   summary: >
     «Дикие» цвета прямо из тюбика: зелёный нос, оранжевое небо, красное дерево — цвет освобождается от предмета.
   description: |
@@ -598,6 +628,11 @@
         эмоциональность разных движений сама по себе доказательством не является.
       sources:
         - ra26-d2-munch
+  gallery:
+    - file: Kirchner_1913_Street,_Berlin.jpg
+      title: Кирхнер. Улица в Берлине
+    - file: Large_Blue_Horses.jpg
+      title: Марк. Большие синие кони
   summary: >
     Мир, искажённый тревогой: кричащие цвета, рубленые формы и лица, в которых видна душа на грани.
   description: |
