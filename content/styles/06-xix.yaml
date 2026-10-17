@@ -212,6 +212,11 @@
       16.10.2026 проверены исторические отношения и связанные с ними контексты и сопоставления; границы
       подтверждения указаны у каждой записи. Даты, описание и изображения карточки полностью не проверялись.
   parents: []
+  gallery:
+    - file: Carl_Spitzweg_-_Sonntagsspaziergang.jpg
+      title: Шпицвег. Воскресная прогулка
+    - file: Carl_Spitzweg_-_"The_Bookworm".jpg
+      title: Шпицвег. Книжный червь
   summary: >
     Домашний уют бюргера: простая светлая мебель, цветы на окнах и тихие жанровые сценки.
   description: |
@@ -261,6 +266,11 @@
         возникновением академий вообще.
       sources:
         - ra26-barbizon
+  gallery:
+    - file: Le_Bain_Turc,_by_Jean_Auguste_Dominique_Ingres,_from_C2RMFFXD.jpg
+      title: Энгр. Турецкая баня
+    - file: Jean-Léon_Gérôme_-_Le_charmeur_de_serpents.jpg
+      title: Жером. Заклинатель змей
   summary: >
     Идеальная гладкая живопись Салона: мифологические богини, безупречное тело, невидимый мазок.
   description: |
@@ -318,6 +328,11 @@
         корпусом.
       sources:
         - ra26-barbizon
+  gallery:
+    - file: Jean-François_Millet_-_Gleaners_-_Google_Art_Project_2.jpg
+      title: Милле. Сборщицы колосьев
+    - file: JEAN-FRANÇOIS_MILLET_-_El_Ángelus_(Museo_de_Orsay,_1857-1859._Óleo_sobre_lienzo,_55.5_x_66_cm).jpg
+      title: Милле. Анжелюс
   summary: >
     Художники уходят из мастерских в лес Фонтенбло и пишут обычную французскую природу — без богов и героев.
   description: |
@@ -375,6 +390,11 @@
         Revival допустим для этих ориентиров, а не буквального восстановления всей эпохи.
       sources:
         - ra26-preraphaelites
+  gallery:
+    - file: Dante_Gabriel_Rossetti_-_Ecce_Ancilla_Domini!_-_Google_Art_Project.jpg
+      title: Россетти. Ecce Ancilla Domini
+    - file: Hunt-AwakeningConscience1853.jpg
+      title: Хант. Пробудившаяся совесть
   summary: >
     Молодые англичане против академической рутины: яркие краски, точность ботаника и средневековая поэзия.
   description: |
@@ -433,6 +453,11 @@
         академическим регламентом. Реакцию описать через выбор сюжетов и организацию выставок.
       sources:
         - ra26-peredvizhniki
+  gallery:
+    - file: RooksBackOfSavrasov.jpg
+      title: Саврасов. Грачи прилетели
+    - file: Iván_el_Terrible_y_su_hijo,_por_Iliá_Repin.jpg
+      title: Репин. Иван Грозный и сын его Иван
   summary: >
     Русский реализм с гражданской совестью: бурлаки, крестный ход, суровая природа, выставки по всей стране.
   description: |
@@ -493,6 +518,11 @@
       16.10.2026 проверены исторические отношения и связанные с ними контексты и сопоставления; границы
       подтверждения указаны у каждой записи. Даты, описание и изображения карточки полностью не проверялись.
   parents: []
+  gallery:
+    - file: Wiener_Staatsoper_Front.jpg
+      title: Венская опера
+    - file: Schloss_Neuschwanstein_2013.jpg
+      title: Замок Нойшванштайн
   summary: >
     Все стили прошлого сразу: неоренессанс, необарокко, неорусский стиль — пышные фасады для оперы, банка и вокзала.
   description: |
@@ -550,6 +580,11 @@
         Бёрдсли. Подтверждён этот ограниченный канал, не всеобщая зависимость эстетизма.
       sources:
         - ra26-art-nouveau
+  gallery:
+    - file: The_Peacock_Room.jpg
+      title: Павлинья комната
+    - file: Whistler_James_Symphony_in_White_no_1_(The_White_Girl)_1862.jpg
+      title: Уистлер. Симфония в белом № 1
   summary: >
     «Искусство для искусства»: красота сама по себе, без морали и сюжета, — от ноктюрнов Уистлера до павлиньих интерьеров.
   description: |
@@ -600,6 +635,11 @@
         лак, бронзу и другие виды искусства.
       sources:
         - ra26-japonisme
+  gallery:
+    - file: Claude_Monet-Madame_Monet_en_costume_japonais.jpg
+      title: Моне. Мадам Моне в японском костюме
+    - file: James_Tissot_-_Young_Ladies_Looking_at_Japanese_Objects.jpg
+      title: Тиссо. Дамы рассматривают японские вещи
   summary: >
     Открытие Японии потрясает Европу: плоский цвет, смелое кадрирование и асимметрия меняют живопись и дизайн.
   description: |
@@ -726,6 +766,11 @@
         reaction французской живописью XIX века.
       sources:
         - ra26-realism
+  gallery:
+    - file: Gustave_Courbet_-_The_Stonebreakers_-_WGA05457.jpg
+      title: Курбе. Дробильщики камня
+    - file: Edouard_Manet_-_Olympia_-_Google_Art_ProjectFXD.jpg
+      title: Мане. Олимпия
   summary: >
     Писать то, что видишь: крестьян, рабочих и похороны в провинции — в масштабе, прежде
     отведённом богам и героям.
@@ -785,6 +830,11 @@
         дизайнерским кругом, не всеми ремесленными традициями.
       sources:
         - ra26-preraphaelite-legacy
+  gallery:
+    - file: Philip_Webb's_Red_House_in_Upton.jpg
+      title: Красный дом Филипа Уэбба
+    - file: William_Morris_age_53.jpg
+      title: Уильям Моррис
   summary: >
     Бунт против фабричной безликости: ручная работа, честные материалы и узоры из птиц и листьев.
   description: |
@@ -854,6 +904,11 @@
         Ограничить подтверждение пейзажной практикой и этими художественными кругами.
       sources:
         - ra26-barbizon-impressionism
+  gallery:
+    - file: Renoir,_Pierre-Auguste_-_Dance_at_Le_Moulin_de_la_Galette,_1876.jpg
+      title: Ренуар. Бал в Мулен де ла Галетт
+    - file: Pierre-Auguste_Renoir_-_Luncheon_of_the_Boating_Party_-_Google_Art_Project.jpg
+      title: Ренуар. Завтрак гребцов
   summary: >
     Свет, воздух и мгновение: быстрые мазки чистого цвета на пленэре вместо выверенной
     мастерской живописи.

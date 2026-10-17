@@ -1652,10 +1652,12 @@
   origin: unknown
   parents: []
   gallery:
-    - file: File:The Great Wave off Kanagawa.jpg
-      title: The Great Wave off Kanagawa
-      author: After Katsushika Hokusai
-      whyRepresentative: "Волна с лодками и Фудзи: крупный передний план и диагональ."
+    - file: 「富嶽三十六景_凱風快晴」-South_Wind,_Clear_Sky_(Gaifū_kaisei),_also_known_as_Red_Fuji,_from_the_series_Thirty-six_Views_of_Mount_Fuji_(Fugaku_sanjūrokkei)_MET_DP141062.jpg
+      title: Хокусай. Красная Фудзи
+    - file: Kajikazawa_in_Kai_Province_(Koshu_Kajikazawa).jpg
+      title: Хокусай. Кадзикадзава
+    - file: The Great Wave off Kanagawa.jpg
+      title: Хокусай. Большая волна в Канагаве
   summary: >-
     Фудзи становится постоянной точкой сравнения в композициях с крупным передним планом, резкими диагоналями
     и меняющимся масштабом.

@@ -76,6 +76,11 @@
       sources:
         - ra26-post-impressionism
         - ra26-impressionism
+  gallery:
+    - file: Paul_Gauguin_056.jpg
+      title: Гоген. Таитянские женщины на пляже
+    - file: Les_Joueurs_de_cartes,_par_Paul_Cézanne.jpg
+      title: Сезанн. Игроки в карты
   summary: >
     Четыре гения, пошедших дальше импрессионизма: Сезанн строит форму, Ван Гог выражает чувство, Гоген ищет символ.
   description: |
@@ -135,6 +140,11 @@
       sources:
         - ra26-preraphaelite-legacy
         - ra26-symbolism
+  gallery:
+    - file: Odilon_Redon_-_The_Cyclops,_c._1914.jpg
+      title: Редон. Циклоп
+    - file: Salome_Dancing_before_Herod_by_Gustave_Moreau.jpg
+      title: Моро. Саломея, танцующая перед Иродом
   summary: >
     Не изображать, а намекать: сны, мифы, смерть и тайна в сумеречных, мерцающих образах.
   description: |
@@ -460,6 +470,11 @@
       16.10.2026 проверены исторические отношения и связанные с ними контексты и сопоставления; границы
       подтверждения указаны у каждой записи. Даты, описание и изображения карточки полностью не проверялись.
   parents: []
+  gallery:
+    - file: Home_Insurance_Building.JPG
+      title: Home Insurance Building
+    - file: Reliance_Building_in_September_2015.jpg
+      title: Reliance Building
   summary: >
     Стальной каркас, большие окна и честная вертикаль: Чикаго придумывает небоскрёб и принцип «форма следует функции».
   description: |
