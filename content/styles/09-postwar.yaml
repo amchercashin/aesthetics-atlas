@@ -169,6 +169,11 @@
       sources:
         - ra26-d2-swiss-government
         - ra26-d2-modern-poster
+  gallery:
+    - file: Geisser Plakat Mohrenball 1969.jpg
+      title: Швейцарский плакат, 1969
+    - file: TM Typographische Monatsblätter 1959 6.jpg
+      title: Typographische Monatsblätter, 1959
   summary: >
     Модульная сетка, гротеск без засечек, флажковый набор и объективность: язык, на котором говорят аэропорты и корпорации.
   description: |
@@ -533,6 +538,11 @@
       16.10.2026 проверены исторические отношения и связанные с ними контексты и сопоставления; границы
       подтверждения указаны у каждой записи. Даты, описание и изображения карточки полностью не проверялись.
   parents: []
+  gallery:
+    - file: Kokuritsu_Yoyogi_Kyōgijō_1.jpg
+      title: Йойоги, Тангэ
+    - file: KUROKAWA-Sony.jpg
+      title: Курокава. Здание Sony
   summary: >
     Города как живые организмы: ядра-стволы и сменные жилые капсулы, которые должны расти и обновляться.
   description: |
@@ -852,6 +862,11 @@
         ограничено конкретным художественным кругом и не является всеобщей зависимостью.
       sources:
         - ra26-conceptual
+  gallery:
+    - file: Art-LanguageV3No1-1974.jpg
+      title: Крейг-Мартин. Дуб
+    - file: Marcel_Duchamp,_1917,_Fountain,_photograph_by_Alfred_Stieglitz.jpg
+      title: Дюшан. Фонтан
   summary: >
     Искусство — это идея, а не вещь: стул, фото стула и словарное определение стула рядом на стене.
   description: |
@@ -935,7 +950,11 @@
     file: San Francisco Oracle Cover Vol.1 No.5, January 1967.jpg
     title: Обложка газеты San Francisco Oracle
     year: 1967
-  gallery: []
+  gallery:
+    - file: Liquid Oil Projection.jpg
+      title: Питер Макс
+    - file: Psychedelic eye.jpg
+      title: Психоделический глаз
   wiki: Psychedelic art
   links: []
 
