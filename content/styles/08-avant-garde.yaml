@@ -757,7 +757,7 @@
   gallery:
     - file: Bauhaus_Chair_Breuer.png
       title: Кресло Василия, Брейер
-    - file: Bauhaus_Dessau.jpg
+    - file: Theo_van_Doesburg_Design_for_a_poster.jpg
       title: Баухаус в Дессау
   summary: >
     Школа, которая соединила искусство и промышленность: функция, геометрия, основные цвета
@@ -897,8 +897,6 @@
   gallery:
     - file: enwiki:George_Grosz_-_Metropolis_(1916-17).jpg
       title: Грос. Метрополис
-    - file: Pillars_of_Society.jpg
-      title: Грос. Столпы общества
   summary: >
     Холодный, едкий реализм Веймарской Германии: кабаре, инвалиды войны и портреты с беспощадной точностью.
   description: |
