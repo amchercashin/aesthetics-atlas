@@ -525,10 +525,12 @@
   medium:
     - decorative-arts
   gallery:
-    - file: File:Chinese Paper Cutting.png
-      title: Chinese Paper Cutting
-      author: Lanneixi
-      whyRepresentative: Симметричный резной узор с птицами и растениями; красная бумага и тонкая сетка прорезей.
+    - file: Chinese_Paper_Cutting.png
+      title: Китайская бумажная вырезка
+    - file: Paper-cut_with_stupa.jpg
+      title: Вырезка со ступой
+    - file: Jianzhi.JPG
+      title: Цзяньчжи
   summary: >-
     Силуэт, ажурная линия, просвет и наклеенный фрагмент становятся разными способами построения изображения
     из бумаги.
@@ -1944,10 +1946,14 @@
     - print
     - illustration
   gallery:
+    - file: "'Honourable_Offspring_after_Another'._Yangliuqing_New_Year_Picture.jpg"
+      title: Янлюцинская новогодняя картина
     - file: File:1900s Nianhua The Spirit of the Doors woodblock print.jpg
       title: 1900s Nianhua The Spirit of the Doors woodblock print
       author: Unknown author
       whyRepresentative: "Дверное божество: плотный контур, яркая раскраска и благопожелательные атрибуты."
+    - file: 1900s Nianhua Three Deities colored woodblock print.jpg
+      title: "Няньхуа: три божества"
   summary: >-
     Обзор новогодней печатной картинки объединяет парные образы, благопожелательные цветы и театральный
     рассказ, сохраняя различия мастерских и мест.

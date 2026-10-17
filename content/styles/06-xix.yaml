@@ -36,6 +36,11 @@
         самостоятельную роль археологии, античных моделей и Просвещения.
       sources:
         - ra26-d2-neoclassicism-aic
+  gallery:
+    - file: David_-_The_Death_of_Socrates.jpg
+      title: Давид. Смерть Сократа
+    - file: Death_of_Marat_by_David.jpg
+      title: Давид. Смерть Марата
   summary: >
     После раскопок Помпей Европа устала от рококо и вернулась к строгой античной добродетели: ясная линия, героизм, колонны.
   description: |
@@ -98,6 +103,11 @@
       16.10.2026 проверены исторические отношения и связанные с ними контексты и сопоставления; границы
       подтверждения указаны у каждой записи. Даты, описание и изображения карточки полностью не проверялись.
   parents: []
+  gallery:
+    - file: Eglise_de_la_Madeleine_2024.jpg
+      title: Церковь Мадлен
+    - file: Place_Vendome,_Paris_20_April_2011.jpg
+      title: Вандомская колонна
   summary: >
     Имперский неоклассицизм Наполеона: триумфальные арки, лавровые венки, золочёная бронза и тёмное красное дерево.
   description: |
@@ -146,6 +156,11 @@
         этим корпусом; отношения шире простой оппозиции.
       sources:
         - ra26-romanticism
+  gallery:
+    - file: JEAN_LOUIS_THÉODORE_GÉRICAULT_-_La_Balsa_de_la_Medusa_(Museo_del_Louvre,_1818-19).jpg
+      title: Жерико. Плот «Медузы»
+    - file: El_Tres_de_Mayo,_by_Francisco_de_Goya,_from_Prado_thin_black_margin.jpg
+      title: Гойя. Третье мая 1808 года
   summary: >
     Чувство против разума: одинокий путник над туманом, бури, руины, восстания и величие природы.
   description: |
@@ -646,6 +661,11 @@
         переработка, а не продолжение без перерыва.
       sources:
         - ra26-gothic
+  gallery:
+    - file: St_Pancras_Railway_Station_2012-06-23.jpg
+      title: Вокзал Сент-Панкрас
+    - file: Basilique_Sainte-Clotilde_-_Façade_-_Juillet_2026_-_1.jpg
+      title: Базилика Сент-Клотильда
   summary: >
     Возрождение средневековой готики в эпоху пара и железа: парламенты, вокзалы и университеты
     в стрельчатых арках.
