@@ -28,6 +28,11 @@
   medium:
     - decorative-arts
     - painting
+  gallery:
+    - file: File:Podnos.jpg
+      title: Podnos
+      author: Obersachse
+      whyRepresentative: Чёрный поднос с букетом и золотым орнаментом — другой предмет той же мастерской.
   summary: >-
     Мазковая цветочная живопись на металлических подносах соединяет объём лепестков, свободное поле и
     орнаментальное обрамление.
@@ -258,6 +263,11 @@
   medium:
     - painting
     - decorative-arts
+  gallery:
+    - file: File:PalekhComintern.jpg
+      title: PalekhComintern
+      author: Ivan Ivanovich Golikov
+      whyRepresentative: Лаковая миниатюра с многофигурной сценой и золотым контуром.
   summary: >-
     Темперные повествования на лаковых предметах: тонкая линия, вытянутые фигуры, насыщенные цветовые поля и
     золочёные детали.
@@ -467,6 +477,11 @@
     - textile
     - decorative-arts
     - painting
+  gallery:
+    - file: File:Siapo mamanu (tapa cloth) - Google Art Project.jpg
+      title: Siapo mamanu (tapa cloth) - Google Art Project
+      author: Unknown author
+      whyRepresentative: Сиапо с сеткой геометрических штампов и растительных мотивов.
   summary: >-
     Орнамент на лубяном полотне соединяет сетки, полосы, растительные силуэты и контраст коричневого рисунка
     со светлой основой.
@@ -667,6 +682,11 @@
     - textile
     - decorative-arts
     - painting
+  gallery:
+    - file: Paint ngatu.jpg
+      title: Изготовление нгату
+      author: James Foster
+      whyRepresentative: "Роспись полотна нгату: процесс нанесения узора на тапу."
   summary: >-
     Модульный декор лубяного полотна объединяет растирание по купеси, ручную дорисовку и мотивы общественных
     событий.
@@ -838,6 +858,11 @@
   medium:
     - painting
     - drawing
+  gallery:
+    - file: File:Madhubani Painting.jpg
+      title: Madhubani Painting
+      author: Vinodtiwari2608
+      whyRepresentative: Плоскостная фигура в орнаментальной рамке.
   summary: >-
     Контур, штриховое заполнение и орнаментальные обрамления соединяют фигуры, растения, животных и
     повествовательные сцены.
@@ -1162,6 +1187,18 @@
         reviewed: "2026-10-14"
         note: Репродукция доступна на предметной странице источника.
   gallery:
+    - file: Brooklyn Museum - Goddess Lakshmi with a Rose and a Peacock.jpg
+      title: Лакшми с розой и павлином
+      author: Unknown author
+      whyRepresentative: "Женская фигура с павлином: локальные цвета и быстрый контур."
+    - file: Bengali Lady applying Kohl, Kalighat Painting.jpg
+      title: Бенгальская дама подводит глаза
+      author: Rajan Guptta
+      whyRepresentative: Крупный план лица и рук; характерная для Калигхата графическая манера.
+    - file: A Dancing Courtesan.jpg
+      title: Танцующая куртизанка
+      author: Rajan Guptta
+      whyRepresentative: Движение и драпировка; плотный контур и локальные заливки.
     - workId: kalighat-bribe-49
       title: The policeman’s bribe, IS.49-2011
       author: Анвар Читракар
@@ -1478,6 +1515,11 @@
   medium:
     - textile
     - painting
+  gallery:
+    - file: File:Bògòlanfini.jpg
+      title: Bògòlanfini
+      author: Rhodapenmarck
+      whyRepresentative: Тёмное полотно с белыми геометрическими знаками.
   summary: >-
     Светлые геометрические формы и тёмные поля организуют расписное хлопчатое полотно, соединяя внутренний
     узор и разные по рисунку края.
@@ -1679,6 +1721,11 @@
     - textile
     - decorative-arts
     - painting
+  gallery:
+    - file: File:Tapa, asset G1ejUDBXecRYZQSYBP6Y8Tmw.jpg
+      title: Tapa, asset G1ejUDBXecRYZQSYBP6Y8Tmw
+      author: onbekend (textielwerker)
+      whyRepresentative: Маси с плотным геометрическим трафаретным узором.
   summary: >-
     Повторяющиеся трафаретные мотивы, вложенные обрамления и контрастные поля соединяются на лубяном полотне;
     современный декор допускает сюжетную сцену.
@@ -1903,6 +1950,11 @@
     - painting
     - decorative-arts
     - drawing
+  gallery:
+    - file: File:Distaff, Gorodets 01.jpg
+      title: Distaff, Gorodets 01
+      author: Nikolay Omonov
+      whyRepresentative: Расписное донце с фигурами, конями и цветочным орнаментом.
   summary: >-
     Сюжетные сцены, кони, птицы и крупные цветы собраны в плоскостные композиции с выразительными цветовыми
     пятнами и тонкой прорисовкой.

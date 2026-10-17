@@ -81,6 +81,10 @@
         reviewed: "2026-10-14"
         note: В атласе дана ссылка на репродукцию у источника.
   example:
+    asset: assets/works/khokhloma.jpg
+    credit: "Государственный Русский музей"
+    license: "© Государственный Русский музей"
+    nonfree: true
     workId: kh-bowl-1293
     title: Чаша, ОНИ/Р-1293
     author: Мастер не указан; Семёновский уезд
@@ -94,7 +98,6 @@
       колорит связан в музейном тексте со старой олифой.
     place: Русский музей
     rights:
-      embed: false
       reviewed: "2026-10-14"
       note: В атласе дана ссылка на репродукцию у источника.
   names:
@@ -246,6 +249,10 @@
         reviewed: "2026-10-14"
         note: В атласе дана ссылка на репродукцию у источника.
   example:
+    asset: assets/works/emily-kngwarray.jpg
+    credit: "National Gallery of Victoria"
+    license: "© National Gallery of Victoria"
+    nonfree: true
     workId: em-after-rain
     title: After rain / После дождя
     author: Эмили Кам Кнгваррей
@@ -257,7 +264,6 @@
     whyRepresentative: Плотное точечное поле меняет цвет и ритм по всей поверхности; под ним читается линейная структура.
     place: National Gallery of Victoria
     rights:
-      embed: false
       reviewed: "2026-10-14"
       note: В атласе дана ссылка на репродукцию у источника.
   names:
@@ -351,6 +357,11 @@
   dateKind: practice
   origin: unknown
   parents: []
+  gallery:
+    - file: File:Anatoly Zverev. Portrait of Alyona Basilova.jpg
+      title: Anatoly Zverev. Portrait of Alyona Basilova
+      author: Aleksei Svetailo
+      whyRepresentative: Экспрессивный портрет со свободными мазками и сдвинутой композицией.
   summary: >-
     Портретный образ собирается стремительной линией, открытым пятном и несколькими выразительными акцентами
     лица.
@@ -506,6 +517,12 @@
   dateKind: practice
   origin: unknown
   parents: []
+  gallery:
+    - file: Shahzia Sikander Witness.jpg
+      title: Witness
+      author: Shahzia Sikander
+      whyRepresentative: Публичная скульптура с растительными и каллиграфическими мотивами; не миниатюра на бумаге.
+      note: Публичная работа, а не миниатюра; показана как контекст практики.
   summary: >-
     Рукописная страница становится пространством разрывов, повторяющихся фигур, изменённых рамок и
     неоднозначного чтения.
@@ -685,6 +702,11 @@
   dateKind: practice
   origin: unknown
   parents: []
+  gallery:
+    - file: File:Rabbits-enemies-003799d.jpg
+      title: Rabbits-enemies-003799d
+      author: Неизвестный автор
+      whyRepresentative: Детский рисунок с животными и подписями; линейная манера школы Карролап.
   summary: >-
     Пейзажные рисунки детей Карролап соединяют выразительный цвет земли, тёмные силуэты деревьев и ритм фигур
     и животных.
@@ -871,6 +893,11 @@
   dateKind: practice
   origin: unknown
   parents: []
+  gallery:
+    - file: File:Dresses by Rei Kawakubo - Sarah Stierch 03.jpg
+      title: Dresses by Rei Kawakubo - Sarah Stierch 03
+      author: Sarah Stierch
+      whyRepresentative: Скульптурные объёмы и асимметрия в коллекции Comme des Garçons.
   summary: Одежда меняет очертания и пропорции тела через асимметрию, набивку и многослойный объём.
   description: >-
     Три музейных предмета из разных коллекций показывают несколько способов построить непривычный силуэт. В
@@ -1050,6 +1077,15 @@
   dateKind: practice
   origin: unknown
   parents: []
+  gallery:
+    - file: enwiki:Ati-Atihan (1983) by Pacita Abad.jpg
+      title: Ati-Atihan, 1983
+      author: Pacita Abad
+      whyRepresentative: Пёстрая тканевая композиция с фигуративными мотивами.
+    - file: enwiki:Filipina - A racial identity crisis (1990) by Pacita Abad.jpg
+      title: Filipina — A racial identity crisis, 1990
+      author: Pacita Abad
+      whyRepresentative: Текстильный коллаж с масками и узорными фрагментами.
   summary: >-
     Живопись, шитьё и собранные ткани образуют плотную цветовую поверхность с заметным рельефом и повтором
     деталей.
@@ -1226,6 +1262,11 @@
   dateKind: practice
   origin: unknown
   parents: []
+  gallery:
+    - file: File:BMW 525i Art Car - Esther Mahlangu (1991).jpg
+      title: BMW 525i Art Car - Esther Mahlangu (1991)
+      author: User:Strainu
+      whyRepresentative: BMW Art Car с геометрической росписью ндебеле.
   summary: >-
     Геометрические поля с чёрно-белыми контурами переносятся между кузовом, прямоугольным холстом и круглой
     поверхностью.
@@ -1473,6 +1514,10 @@
         reviewed: "2026-10-14"
         note: В атласе дана ссылка на репродукцию у источника.
   example:
+    asset: assets/works/reko-rennie.jpg
+    credit: "National Gallery of Victoria"
+    license: "© National Gallery of Victoria"
+    nonfree: true
     workId: rr-regalia-2013
     title: Regalia
     author: Реко Ренни
@@ -1484,7 +1529,6 @@
     whyRepresentative: Три изолированных светящихся знака — корона, ромб и флаг — читаются как лаконичная эмблема.
     place: NGV, 2015.178.a–c
     rights:
-      embed: false
       reviewed: "2026-10-14"
       note: В атласе дана ссылка на репродукцию у источника.
   names:
@@ -1602,6 +1646,11 @@
   dateKind: practice
   origin: unknown
   parents: []
+  gallery:
+    - file: File:The Great Wave off Kanagawa.jpg
+      title: The Great Wave off Kanagawa
+      author: After Katsushika Hokusai
+      whyRepresentative: "Волна с лодками и Фудзи: крупный передний план и диагональ."
   summary: >-
     Фудзи становится постоянной точкой сравнения в композициях с крупным передним планом, резкими диагоналями
     и меняющимся масштабом.
@@ -1847,6 +1896,10 @@
         reviewed: "2026-10-14"
         note: В атласе дана ссылка на репродукцию у источника.
   example:
+    asset: assets/works/norshtein-animation.jpg
+    credit: "Союзмультфильм"
+    license: "© Союзмультфильм"
+    nonfree: true
     workId: no-heron-1974
     title: Цапля и журавль
     author: Юрий Норштейн; Франческа Ярбусова; оператор Александр Жуковский
@@ -1860,7 +1913,6 @@
       экранном изображении.
     place: Союзмультфильм
     rights:
-      embed: false
       reviewed: "2026-10-14"
       note: В атласе дана ссылка на репродукцию у источника.
   names:
