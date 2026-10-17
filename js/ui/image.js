@@ -1,5 +1,5 @@
 // Картинки: srcset из реальных ширин, плейсхолдер из палитры, атрибуция, фолбэк на палитра-карточку.
-import { html, esc, safeUrl } from '../html.js';
+import { html, esc, safeUrl, raw } from '../html.js';
 
 const WIDTHS = [250, 500, 960, 1280];
 
@@ -19,7 +19,7 @@ export function srcset(img) {
 export function imgTag(img, { sizes = '100vw', alt = '', eager = false, size = 500 } = {}) {
   if (!img) return '';
   const src = img.src[size] ?? img.src[500];
-  return html`<img src="${src}" srcset="${srcset(img)}" sizes="${sizes}" width="${img.w}" height="${img.h}" alt="${alt}" ${eager ? '' : 'loading="lazy"'} decoding="async" referrerpolicy="no-referrer">`;
+  return html`<img src="${src}" srcset="${srcset(img)}" sizes="${sizes}" width="${img.w}" height="${img.h}" alt="${alt}" ${eager ? '' : raw('loading="lazy"')} decoding="async" referrerpolicy="no-referrer">`;
 }
 
 export function paletteCard(palette, note) {
