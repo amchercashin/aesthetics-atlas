@@ -350,6 +350,11 @@
         Малевича и 1910-е годы.
       sources:
         - ra26-russian-avantgarde
+  gallery:
+    - file: White_on_White_(Malevich,_1918).png
+      title: Малевич. Белое на белом
+    - file: Suprematist_Composition_-_Kazimir_Malevich.jpg
+      title: Малевич. Супрематическая композиция
   summary: >
     «Чёрный квадрат» и парящие в белом пространстве плоскости: точка нуля живописи и начало новой формы.
   description: |
@@ -489,6 +494,11 @@
         ограниченный художественный канал.
       sources:
         - ra26-cubism
+  gallery:
+    - file: enwiki:Marcel_Duchamp,_1919,_L.H.O.O.Q.jpg
+      title: Дюшан. L.H.O.O.Q.
+    - file: Hoch_Dada-Messe_1920.jpg
+      title: Хёх. Дада-ярмарка
   summary: >
     Антиискусство в ответ на бойню Первой мировой: писсуар как скульптура, бессмысленные стихи и коллажи из газет.
   description: |
@@ -608,6 +618,11 @@
       sources:
         - ra26-surrealism
         - ra26-dechirico
+  gallery:
+    - file: enwiki:The_Elephant_Celebes.jpg
+      title: Магритт. Вероломство образов
+    - file: enwiki:The_Son_of_Man.jpg
+      title: Магритт. Сын человеческий
   summary: >
     Логика сна: тающие часы, окаменевшие пейзажи и невозможные встречи предметов, выписанные
     с фотографической точностью.
@@ -665,6 +680,11 @@
       sources:
         - ra26-mondrian
         - ra26-geometric
+  gallery:
+    - file: Piet_Mondrian,_1942_-_Broadway_Boogie_Woogie.jpg
+      title: Мондриан. Бродвей-буги-вуги
+    - file: Rietveld_Schröderhuis_HayKranen-20.JPG
+      title: Дом Шрёдер, Ритвелд
   summary: >
     Прямые углы, чёрные линии и три основных цвета: поиск универсальной гармонии у Мондриана и его соратников.
   description: |
@@ -734,6 +754,11 @@
         преподавание Баухауса. Это конкретный канал передачи идей.
       sources:
         - ra26-geometric
+  gallery:
+    - file: Bauhaus_Chair_Breuer.png
+      title: Кресло Василия, Брейер
+    - file: Theo_van_Doesburg_Design_for_a_poster.jpg
+      title: Баухаус в Дессау
   summary: >
     Школа, которая соединила искусство и промышленность: функция, геометрия, основные цвета
     и шрифт без засечек.
@@ -806,6 +831,11 @@
         возможны, но не описывают всю категорию.
       sources:
         - ra26-artdeco-intro
+  gallery:
+    - file: Niagara_Mohawk_Building,_Syracuse_New_York.jpg
+      title: Niagara Mohawk Building
+    - file: Palais_de_Tokyo_@_Paris_(31028565970).jpg
+      title: Пале де Токио
   summary: >
     Роскошь эпохи джаза: зигзаги, солнечные лучи, хром, лак и небоскрёбы со ступенчатыми шпилями.
   description: |
@@ -864,6 +894,9 @@
         историю всем участникам Новой вещественности.
       sources:
         - ra26-new-objectivity-dada
+  gallery:
+    - file: enwiki:George_Grosz_-_Metropolis_(1916-17).jpg
+      title: Грос. Метрополис
   summary: >
     Холодный, едкий реализм Веймарской Германии: кабаре, инвалиды войны и портреты с беспощадной точностью.
   description: |
@@ -937,6 +970,11 @@
         широкие формулировки этого исторического источника не означают единственного источника стиля.
       sources:
         - ra26-destijl-bauhaus
+  gallery:
+    - file: enwiki:VillaSavoye.jpg
+      title: Вилла Савой, Ле Корбюзье
+    - file: Farnsworth_House_by_Mies_Van_Der_Rohe_-_exterior-8.jpg
+      title: Дом Фарнсуорт, Мис
   summary: >
     Стеклянные коробки на тонких опорах: плоские крыши, ленточные окна и «меньше — значит больше».
   description: |
@@ -1072,6 +1110,10 @@
     author: Budd Company
     year: 1934
   gallery:
+    - file: SFMaritimeMuseum.jpg
+      title: Морской музей Сан-Франциско
+    - file: C-69.jpg
+      title: Lockheed Constellation
     - { file: "Coca-Cola Building Los Angeles.jpg", title: "Здание Coca-Cola в Лос-Анджелесе", year: "1939" }
   wiki: Streamline Moderne
   links: []
@@ -1115,6 +1157,11 @@
         включает новую государственную программу, а не простое продолжение передвижничества.
       sources:
         - ra26-d2-socreal-severyukhin
+  gallery:
+    - file: Isaak_Brodsky_stalin02.jpg
+      title: Бродский. Портрет Сталина
+    - file: Ouvrier_kolkhosienne_2.jpg
+      title: Рабочий и колхозница
   summary: >
     Официальный метод советского искусства: героические рабочие, светлое будущее и монументальный оптимизм.
   description: |
@@ -1167,6 +1214,11 @@
       sources:
         - ra26-d2-stalin-barkhin
         - ra26-d2-stalin-niitiag
+  gallery:
+    - file: Moscow,_Hotel_Ukraina_(30585861673).jpg
+      title: Гостиница «Украина»
+    - file: Skyscraper_on_Kotelnicheskaya_Embankment_-_August_2010.jpg
+      title: Дом на Котельнической
   summary: >
     Монументальная архитектура империи: колонны, шпили, гербы и семь высоток Москвы.
   description: |
@@ -1220,6 +1272,11 @@
         Риверы; не все муралисты проходили одинаковые этапы.
       sources:
         - ra26-rivera
+  gallery:
+    - file: Palacio_Nacional_Murals_view.JPG
+      title: Ривера. Муралы Национального дворца
+    - file: David_Alfaro_Siqueiros_(El_Coronelazo).jpg
+      title: Сикейрос. Портрет
   summary: >
     Огромные фрески на стенах общественных зданий: история Мексики, индейское наследие и революция — для всех.
   description: |

@@ -33,6 +33,11 @@
         несколько линий влияния и самостоятельные условия Нью-Йорка.
       sources:
         - ra26-abstract-expressionism
+  gallery:
+    - file: enwiki:No._5,_1948.jpg
+      title: Поллок. № 5, 1948
+    - file: Number 1, 1950 (Lavender Mist) by Jackson Pollock (1950).jpg
+      title: де Кунинг. Женщина I
   summary: >
     Огромные холсты, по которым краска разбрызгана, пролита и размазана жестом: Нью-Йорк становится столицей искусства.
   description: |
@@ -321,6 +326,10 @@
     title: Калифорнийский дом середины века
     year: 1960
   gallery:
+    - file: Eameslounch.jpg
+      title: Кресло Eames Lounge
+    - file: Case_Study_House_No._22.JPG
+      title: Case Study House № 22
     - { file: "Arne Jacobsen - Grand Prix chair.jpg", title: "Стул Grand Prix", author: "Арне Якобсен", year: "1957" }
   wiki: Mid-century modern
   links: []
@@ -567,6 +576,11 @@
         для этого исторического полемического контекста.
       sources:
         - ra26-pop
+  gallery:
+    - file: Whaam! - Roy Lichenstein.jpg
+      title: Уорхол. Диптих Мэрилин
+    - file: Drawing for 'Whaam!' cropped 2.JPG
+      title: Лихтенштейн. Whaam!
   summary: >
     Банки супа, комиксы и звёзды Голливуда как искусство: массовая культура входит в музей.
   description: |
