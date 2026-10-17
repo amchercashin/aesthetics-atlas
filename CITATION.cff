@@ -1,0 +1,21 @@
+cff-version: 1.2.0
+message: "Если вы используете материалы атласа, цитируйте их так:"
+title: "Атлас эстетик"
+abstract: >-
+  Навигатор по визуальным стилям человечества: 195 карточек с родословной,
+  хронологией, главными работами и ссылками для самостоятельного изучения.
+authors:
+  - family-names: Cherkashin
+    given-names: Alexander
+    alias: amchercashin
+repository-code: "https://github.com/amchercashin/aesthetics-atlas"
+url: "https://amchercashin.github.io/aesthetics-atlas/"
+license: MIT
+license-url: "https://github.com/amchercashin/aesthetics-atlas/blob/main/LICENSE"
+date-released: 2026-10-17
+keywords:
+  - art history
+  - aesthetics
+  - visual culture
+  - digital humanities
+  - atlas
