@@ -46,6 +46,10 @@
     year: ок. 540–530 до н. э.
     place: Музеи Ватикана
   gallery:
+    - file: Kouros_anavissos.jpg
+      title: Курос из Анависоса
+    - file: ACMA_Moschophoros.jpg
+      title: Мосхофор
     - { file: "Kouros anavissos.jpg", title: "Курос из Анависсоса", year: "ок. 530 до н. э." }
   wiki: Archaic Greece
   links:
@@ -79,6 +83,11 @@
       sources:
         - ra26-greek-archaic
         - ra26-classical
+  gallery:
+    - file: Front_views_of_the_Venus_de_Milo.jpg
+      title: Венера Милосская
+    - file: Roman_bronze_copy_of_Myron’s_Discobolos,_2nd_century_CE_(Glyptothek_Munich).jpg
+      title: Дискобол
   summary: >
     Идеальные пропорции, ордер и человеческое тело как мера всего: эталон, к которому Европа
     будет возвращаться две с половиной тысячи лет.
@@ -133,6 +142,11 @@
         н. э.; не единственная и не изолированная линия.
       sources:
         - ra26-hellenistic
+  gallery:
+    - file: Laocoön_and_his_sons_group.jpg
+      title: Лаокоон и его сыновья
+    - file: 0_Galata_Morente_-_Musei_Capitolini_(1).jpg
+      title: Умирающий галл
   summary: >
     После Александра Македонского классика получает драму: развевающиеся одежды, страдание,
     старость и движение.
@@ -202,6 +216,10 @@
     year: 70–80 н. э.
     place: Рим
   gallery:
+    - file: Trajan's_Column_HD.jpg
+      title: Колонна Траяна
+    - file: Pantheon_(Rome)_-_Right_side_and_front.jpg
+      title: Пантеон
     - { file: "Pantheon (Rome) - Right side and front.jpg", title: "Пантеон", year: "ок. 125 н. э." }
   wiki: Ancient Roman architecture
   links:
