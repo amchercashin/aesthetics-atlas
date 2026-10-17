@@ -85,6 +85,11 @@
         Грека. Influence не сводит самостоятельные русские школы к одному общему предку.
       sources:
         - ra26-icons-rus
+  gallery:
+    - file: Virgin_of_Vladimir.jpg
+      title: Владимирская Богоматерь
+    - file: Московская_Казанская_икона.jpg
+      title: Казанская икона Божией Матери
   summary: >
     Византийский канон, прочитанный по-русски: светлые краски, мягкие силуэты и тишина «Троицы» Рублёва.
   description: |
@@ -147,6 +152,11 @@
         остаются гипотезами.
       sources:
         - ra26-d2-lindisfarne-study
+  gallery:
+    - file: IE_TCD_MS_57_f.86r.jpg
+      title: Книга Дарроу
+    - file: LindisfarneFol27rIncipitMatt.jpg
+      title: Линдисфарнское Евангелие
   summary: >
     Монашеские рукописи, где буквы превращаются в лабиринты плетёнки, спиралей и фантастических зверей.
   description: |
@@ -196,6 +206,11 @@
       sources:
         - ra26-pitney
         - ra26-viking
+  gallery:
+    - file: Osebergskipet_2016.jpg
+      title: Осебергский корабль
+    - file: Viking_gold_jewellery_-_Hiddensee_treasure_-_VIKING_exhibition_at_the_National_Museum_of_Denmark_-_Photo_The_National_Museum_of_Denmark_(9066249208).jpg
+      title: Золотые украшения викингов
   summary: >
     Звери, змеи и драконы, сплетённые в тугие петли на носах кораблей, брошах и порталах деревянных церквей.
   description: |
@@ -254,6 +269,11 @@
         мастерскую.
       sources:
         - ra26-d2-sigena
+  gallery:
+    - file: Speyer_dom_11.jpg
+      title: Шпайерский собор
+    - file: Durham_MMB_02_Cathedral.jpg
+      title: Даремский собор
   summary: >
     Толстые стены, полукруглые арки и тяжёлые своды: монастыри и соборы как крепости веры.
   description: |
@@ -303,6 +323,11 @@
         не переносить автоматически на всю живопись и предметное искусство.
       sources:
         - ra26-gothic
+  gallery:
+    - file: Notre-Dame_de_Paris,_4_October_2017.jpg
+      title: Собор Парижской Богоматери
+    - file: Kölner_Dom_-_Westfassade_2022_ohne_Gerüst-0968_b.jpg
+      title: Кёльнский собор
   summary: >
     Соборы, растворённые в свете: стрельчатые арки, рёбра сводов, контрфорсы и огромные
     витражи-розы.
@@ -355,6 +380,11 @@
       16.10.2026 проверены исторические отношения и связанные с ними контексты и сопоставления; границы
       подтверждения указаны у каждой записи. Даты, описание и изображения карточки полностью не проверялись.
   parents: []
+  gallery:
+    - file: Gentile_da_Fabriano_-_Adorazione_dei_Magi_-_Google_Art_ProjectFXD.jpg
+      title: Джентиле да Фабриано. Поклонение волхвов
+    - file: Wilton_Diptych.jpg
+      title: Уилтонский диптих
   summary: >
     Придворная утончённость: изящные фигуры, роскошные ткани, лазурь и золото миниатюр часословов.
   description: |
@@ -397,6 +427,11 @@
         раннеисламским восточным Средиземноморьем.
       sources:
         - ra26-byzantium-islam
+  gallery:
+    - file: Jerusalem_DomeoftheRock_J65_(cropped).JPG
+      title: Купол Скалы
+    - file: Mezquita_de_Córdoba_desde_el_aire_(Córdoba,_España).jpg
+      title: Мескита в Кордове
   summary: >
     Бесконечный геометрический узор, арабеска и каллиграфия, покрывающие купола, изразцы и ковры.
   description: |
@@ -493,6 +528,10 @@
     year: 1539–1543
     place: Британская библиотека, Лондон
   gallery:
+    - file: The_Court_of_Gayumars.jpg
+      title: Двор Гайумарса
+    - file: Mongol_soldiers_by_Rashid_al-Din_1305.JPG
+      title: Монгольские воины, Рашид ад-Дин
     - { file: "Reza Abbasi - Two Lovers (1630).jpg", title: "Двое влюблённых", author: "Реза Аббаси", year: "1630" }
   wiki: Persian miniature
   links: []
@@ -524,6 +563,11 @@
         - ra26-d2-shanshui-origins
   origin: unknown
   parents: []
+  gallery:
+    - file: Guo_Xi_-_Early_Spring_(large).jpg
+      title: Го Си. Ранняя весна
+    - file: A_Thousand_Li_of_Rivers_and_Mountains_part.jpg
+      title: Тысяча ли рек и гор
   summary: >
     «Горы и воды», написанные тушью на шёлке: человек — крошечная фигура в бескрайнем мире.
   description: |
@@ -623,6 +667,10 @@
     Японские сюжеты и условности изображения в живописи от Хэйан до Эдо. Это исторический обзор части
     длительной традиции, а не вся японская живопись.
   gallery:
+    - file: Sigisanengi_tobikura.jpg
+      title: Свиток Сигисан-энги
+    - file: Chouju_sumo2.jpg
+      title: "Тёдзю-гига: сумо"
     - file: Hakubyo Genji monogatari emaki - scroll 1-5.jpg
       title: "«Повесть о Гэндзи»: монохромный свиток хакубё, фрагмент"
       year: 1554
@@ -674,6 +722,11 @@
       16.10.2026 проверены исторические отношения и связанные с ними контексты и сопоставления; границы
       подтверждения указаны у каждой записи. Даты, описание и изображения карточки полностью не проверялись.
   parents: []
+  gallery:
+    - file: Kare-sansui_zen_garden,_Ryōan-ji,_Kyoto_20190416_1.jpg
+      title: Сад Рёандзи
+    - file: Tea_bowl,_Korea,_Joseon_dynasty,_16th_century_AD,_Mishima-hakeme_type,_buncheong_ware,_stoneware_with_white_engobe_and_translucent,_greenish-gray_glaze,_gold_lacquer_-_Ethnological_Museum,_Berlin_-_DSC02061.JPG
+      title: "Кинцуги: чайная чаша"
   summary: >
     Красота несовершенного, неполного и мимолётного: грубая чаша раку, мох на камне, пустота сада.
   description: |
@@ -719,6 +772,11 @@
       sources:
         - unesco-angkor
         - ra26-phnomda
+  gallery:
+    - file: Bayon,_Angkor_Thom,_Camboya,_2013-08-17,_DD_37.JPG
+      title: Байон
+    - file: Banteay_Srei_full2.jpg
+      title: Бантей-Срей
   summary: >
     Храмы-горы, покрытые танцующими апсарами и многокилометровыми рельефами мифов.
   description: >
