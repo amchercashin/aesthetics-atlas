@@ -25,6 +25,11 @@
         категории постимпрессионизма.
       sources:
         - ra26-cubism
+  gallery:
+    - file: enwiki:PicassoGuernica.jpg
+      title: Пикассо. Герника
+    - file: enwiki:Pablo_Picasso,_1910,_Girl_with_a_Mandolin_(Fanny_Tellier),_oil_on_canvas,_100.3_x_73.6_cm,_Museum_of_Modern_Art_New_York..jpg
+      title: Пикассо. Девушка с мандолиной
   summary: >
     Предмет, разобранный на грани и показанный сразу с нескольких сторон: конец перспективы, придуманной Возрождением.
   description: |
@@ -87,6 +92,11 @@
       sources:
         - ra26-d2-futurism-moma
         - ra26-d2-severini
+  gallery:
+    - file: enwiki:Giacomo_Balla,_1912,_Dynamism_of_a_Dog_on_a_Leash,_oil_on_canvas,_89.8_x_109.8_cm,_Albright-Knox_Art_Gallery.jpg
+      title: Балла. Динамизм собаки на поводке
+    - file: "'Unique_Forms_of_Continuity_in_Space',_1913_bronze_by_Umberto_Boccioni.jpg"
+      title: Боччони. Уникальные формы непрерывности в пространстве
   summary: >
     Скорость, машины и город: «рычащий автомобиль прекраснее Ники Самофракийской».
   description: |
@@ -145,6 +155,11 @@
         синтезировал разные источники и не был филиалом итальянского движения.
       sources:
         - ra26-d2-popova
+  gallery:
+    - file: Cyclist_(Goncharova,_1913).jpg
+      title: Гончарова. Велосипедист
+    - file: Woodcutter_by_Kazimir_Malevich.jpg
+      title: Малевич. Путешественник
   summary: >
     Русский сплав кубизма и футуризма: металлические грани, мелькание движения и заумная поэзия будетлян.
   description: |
@@ -194,6 +209,11 @@
         в границах описанного круга Делоне и их современников.
       sources:
         - ra26-french-artdeco
+  gallery:
+    - file: Robert_Delaunay_-_Eiffel_Tower_-_1911_-_Solomon_R._Guggenheim_Museum.jpg
+      title: Делоне. Эйфелева башня
+    - file: Robert_Delaunay_-_Circular_Forms_-_1930_-_Solomon_R._Guggenheim_Museum,_49.1184.jpg
+      title: Делоне. Круговые формы
   summary: >
     Кубизм, наполненный светом и цветом: прозрачные окна, круги-диски и музыка красок.
   description: |
@@ -266,6 +286,11 @@
         ранней абстракции. Не объявлять их происхождением всей абстрактной живописи.
       sources:
         - ra26-geometric
+  gallery:
+    - file: Vassily_Kandinsky,_1923_-_On_White_II.jpg
+      title: Кандинский. На белом II
+    - file: Vassily_Kandinsky,_1923_-_Composition_8,_huile_sur_toile,_140_cm_x_201_cm,_Musée_Guggenheim,_New_York.jpg
+      title: Кандинский. Композиция 8
   summary: >
     Живопись без предмета: цвет, линия и форма звучат сами по себе, как музыка.
   description: |
@@ -379,6 +404,11 @@
         геометрического авангарда. Сохранить различие художественных и производственных программ.
       sources:
         - ngs-constructivism
+  gallery:
+    - file: Tatlin's_Tower_maket_1919_year.jpg
+      title: Татлин. Башня III Интернационала
+    - file: El_Lissitzky_-_Proun_5A.jpg
+      title: Лисицкий. Проун 5А
   summary: >
     Искусство как инженерия для нового общества: плакаты-клинья, фотомонтаж, рабочие клубы и башня Татлина.
   description: >
@@ -513,6 +543,11 @@
         evolved всего метафизического направления из символизма.
       sources:
         - ra26-dechirico-symbolism
+  gallery:
+    - file: enwiki:The Red Tower by Giorgio de Chirico.jpg
+      title: Де Кирико. Красная башня
+    - file: enwiki:The_Disquieting_Muses.jpg
+      title: Де Кирико. Беспокойные музы
   summary: >
     Пустые площади, длинные тени, аркады и манекены: тревожная тишина города, где что-то вот-вот случится.
   description: |
@@ -962,6 +997,11 @@
         Райта, не происхождением всех органических архитектур и не отрицанием его других источников.
       sources:
         - ra26-d2-wright-arts-crafts
+  gallery:
+    - file: Taliesin_exterior_2024_(54225850259).jpg
+      title: Талиесин
+    - file: Museo_Guggenheim,_Bilbao_(31273245344).jpg
+      title: Гуггенхайм в Бильбао
   summary: >
     Дом, который вырастает из ландшафта: камень, дерево, консоли над водопадом и единство с природой.
   description: |
