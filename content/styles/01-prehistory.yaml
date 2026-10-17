@@ -57,6 +57,10 @@
     place: Дордонь, Франция
     whyRepresentative: Животные в профиль, наложение фигур, рельеф стены, минеральные пигменты.
   gallery:
+    - file: 9_Bisonte_Magdaleniense_polícromo.jpg
+      title: Бизон, Альтамира
+    - file: Paintings_from_the_Chauvet_cave_(museum_replica).jpg
+      title: Живопись Шове, музейная реплика
     - { file: "Lascaux, Megaloceros.jpg", title: "Большерогий олень, Ласко", year: "ок. 21–18 тыс. лет назад" }
   wiki: Cave painting
   links:
@@ -80,6 +84,11 @@
   kind: tradition
   root: true
   parents: []
+  gallery:
+    - file: Vestonicka_venuse_edit.jpg
+      title: Вестоницкая Венера
+    - file: Venus_de_Brassempouy.jpg
+      title: Венера из Брассемпуи
   summary: >
     Маленькие фигурки из камня, бивня и кости — прежде всего женские, с подчёркнутыми формами.
     Одни из древнейших известных скульптурных изображений человека.
@@ -148,6 +157,10 @@
     year: IV–III тыс. до н. э.
     place: Карелия, Россия
   gallery:
+    - file: Rock_Shelter_8,_Bhimbetka_02.jpg
+      title: Скальное убежище Бхимбетка
+    - file: Twyfelfontein_16.jpg
+      title: Петроглифы Твифелфонтейна
     - { file: "Libya 5321 Meercatze (Gatti Mammoni) Petroglyphs Wadi Methkandoush Luca Galuzzi 2007.jpg", title: "Петроглифы Вади-Меткандуш", year: "ок. 10 000 до н. э." }
   wiki: Petroglyph
   links:
@@ -224,6 +237,10 @@
     year: ок. 3000 до н. э.
     place: Национальный музей, Токио
   gallery:
+    - file: Çatalhöyük,_7400_BC,_Konya,_Turkey_-_UNESCO_World_Heritage_Site,_08.jpg
+      title: Чатал-Хююк
+    - file: Archeologico_firenze,_statuetta_idolo_in_terracotta,_5250-5000_a.c.,_da_hacilar_(turchia)_02.JPG
+      title: Керамика дзёмон, стиль пламени
     - { file: "Two painted pottery jar. Cucuteni-Tripolje culture. Neues Museum.jpg", title: "Расписные сосуды Кукутени-Триполье", year: "V–IV тыс. до н. э." }
   wiki: Neolithic art
   links:
@@ -263,6 +280,11 @@
         - ra26-megaliths
   origin: unknown
   parents: []
+  gallery:
+    - file: 4748.1099_Menhire,_bis_zu_4_Meter_hoch,_von_OstnachWest_in_1167_Meter_Langen_Alignements_(Granit-Steinreihen)_in_einem_Halbkreis_endend_Le_Ménec,_Carnac,_Departement_Morbihan,_Bretagne_Steffen_Heilfort.jpg
+      title: Аллеи менгиров в Карнаке
+    - file: 2018_07_12_Schottland_(94).jpg
+      title: Скара-Брей
   summary: >
     Многотонные камни, поставленные кругами, рядами и «столами»: гробницы и святилища
     неолитической и бронзовой Европы.
@@ -314,6 +336,11 @@
   kind: tradition
   root: true
   parents: []
+  gallery:
+    - file: Ubirr_rock_art.JPG
+      title: Наскальная живопись Убирра
+    - file: Aboriginal_Art_Australia(3).jpg
+      title: Рентгеновский стиль, наскальная живопись
   summary: >
     Старейшая непрерывная художественная традиция Земли: от наскальных росписей «рентгеновского» стиля
     до современной точечной живописи.
