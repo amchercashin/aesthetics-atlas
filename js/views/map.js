@@ -39,6 +39,8 @@ const NEB_PADX = 60, NEB_PADY = 70;   // поля поля плотности т
 const LONG = 1200;      // разрыв во времени (px рабочего масштаба), после которого связь рисуется парными отростками
 const reduceMotion = () => window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 const clamp = (v, a, b) => Math.min(b, Math.max(a, v));
+// Карточка может не иметь главной работы, но иметь галерейный пример — он и служит обложкой.
+const coverOf = (s) => s.example.img ?? s.gallery?.find((g) => g.img)?.img ?? null;
 
 function el(name, attrs = {}, parent) {
   const n = document.createElementNS(NS, name);
@@ -290,7 +292,7 @@ export default {
       const weight = (id) => Math.log2(sizeOf.get(id));
       // Ориентиры для общего вида: крупные узлы родословной с картинкой, не больше двух на эпоху.
       const perEra = new Map();
-      const landmarks = new Set(store.styles.filter((s) => s.example.img)
+      const landmarks = new Set(store.styles.filter((s) => coverOf(s))
         .sort((a, b) => sizeOf.get(b.id) - sizeOf.get(a.id) || a.tier - b.tier || a.start - b.start)
         .filter((s) => { const c = perEra.get(s.era) ?? 0; if (c >= 2 || (sizeOf.get(s.id) < 4 && s.tier > 1)) return false; perEra.set(s.era, c + 1); return true; })
         .slice(0, 16).map((s) => s.id));
@@ -317,7 +319,7 @@ export default {
         const dates = el('tspan', { class: 'l-dates' }, text);
         dates.textContent = fmtDates(s);
         const m = meta.get(s.id);
-        const n = { s, row: lay.pos.get(s.id), g, dot, ring, text, name, dates, fullDates: dates.textContent, life, plate, img: null, w: m.w, wd: m.wd, wt: weight(s.id), ascent: m.ascent, descent: m.descent, dateDescent: m.dateDescent, x: 0, y: 0, r: 4, labelOn: false, landmark: landmarks.has(s.id) };
+        const n = { s, row: lay.pos.get(s.id), g, dot, ring, text, name, dates, fullDates: dates.textContent, life, plate, img: null, cover: coverOf(s), w: m.w, wd: m.wd, wt: weight(s.id), ascent: m.ascent, descent: m.descent, dateDescent: m.dateDescent, x: 0, y: 0, r: 4, labelOn: false, landmark: landmarks.has(s.id) };
         if (n.landmark) g.classList.add('landmark');
         nodes.push(n);
         nodeById.set(s.id, n);
@@ -525,10 +527,10 @@ export default {
         n.g.setAttribute('transform', `translate(${x.toFixed(1)},${y.toFixed(1)})`);
         n.dot.setAttribute('r', n.r);
         n.ring.setAttribute('r', n.r + 1);
-        if (n.alpha > 0.15 && (m === 'z2' || n.landmark) && n.s.example.img) {
+        if (n.alpha > 0.15 && (m === 'z2' || n.landmark) && n.cover) {
           const r = m === 'z2' ? R.z2[n.s.tier] : 11;
           if (!n.img) {
-            n.img = el('image', { href: n.s.example.img.src[250], preserveAspectRatio: 'xMidYMid slice', class: 'thumb-img' });
+            n.img = el('image', { href: n.cover.src[250], preserveAspectRatio: 'xMidYMid slice', class: 'thumb-img' });
             n.g.insertBefore(n.img, n.ring);
           }
           if (n.imgR !== r) {
