@@ -35,6 +35,11 @@
       sources:
         - ra26-duccio
         - ra26-italian-medieval
+  gallery:
+    - file: Padova_Cappella_degli_Scrovegni_Innen_Langhaus_West_5.jpg
+      title: Капелла Скровеньи
+    - file: Duccio_maesta1021.jpg
+      title: Маэста Дуччо
   summary: >
     Джотто возвращает фигурам вес и пространство: на смену золотому фону приходят земля, небо и человеческое горе.
   description: |
@@ -91,6 +96,11 @@
         Уточнить, что речь о римском и греко-римском наследии.
       sources:
         - ra26-renaissance-antique
+  gallery:
+    - file: Botticelli-primavera.jpg
+      title: Боттичелли. Весна
+    - file: Masaccio,_trinità.jpg
+      title: Мазаччо. Троица
   summary: >
     Флоренция открывает линейную перспективу, возвращает античные формы и ставит человека в центр картины.
   description: |
@@ -224,6 +234,11 @@
         обменом, не всей историей Северного Возрождения.
       sources:
         - ra26-renaissance-antique
+  gallery:
+    - file: The_Garden_of_earthly_delights.jpg
+      title: Босх. Сад земных наслаждений
+    - file: Pieter_Bruegel_the_Elder_-_Hunters_in_the_Snow_(Winter)_-_Google_Art_Project.jpg
+      title: Брейгель. Охотники на снегу
   summary: >
     Масляная живопись с микроскопической точностью: каждое отражение, ворсинка и блик — символ.
   description: |

@@ -261,6 +261,11 @@
         влияние, отдельное от греческой живописной техники.
       sources:
         - ra26-mummy
+  gallery:
+    - file: Fayum-34.jpg
+      title: Фаюмский портрет
+    - file: Portrait_of_the_Boy_Eutyches_-_Metmuseum_18.9.2.jpg
+      title: Портрет мальчика Евтихия
   summary: >
     Живые лица римских египтян, написанные восковыми красками на досках для мумий. Они смотрят
     на нас уже две тысячи лет.
@@ -318,6 +323,11 @@
         влияние не означает греческого авторства буддийских образов.
       sources:
         - ra26-gandhara
+  gallery:
+    - file: Kanishka_casket,_Asia,_G33_South_Asia.jpg
+      title: Кушанская шкатулка
+    - file: BimaranCasket2.JPG
+      title: Реликварий из Бимарана
   summary: >
     Будда в греческих одеждах: встреча эллинистической скульптуры и буддизма на краю мира Александра.
   description: |
@@ -374,6 +384,11 @@
         Источник 1928 года требует историографической оговорки.
       sources:
         - ra26-d2-massilia
+  gallery:
+    - file: KellsFol032vChristEnthroned.jpg
+      title: "Евангелие из Келлса: Христос во славе"
+    - file: Silver_cauldron.jpg
+      title: Котёл из Гундеструпа
   summary: >
     Текучие спирали, трискели и пальметты на щитах, шейных гривнах и зеркалах латенских кельтов.
   description: |
