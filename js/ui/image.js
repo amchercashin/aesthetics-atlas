@@ -10,7 +10,7 @@ export function placeholder(palette) {
 }
 
 export function srcset(img) {
-  if (img.local) return ''; // SVG масштабируется без набора растровых превью.
+  if (img.local || img.external) return ''; // локальная схема или прямая ссылка на изображение
   const parts = WIDTHS.filter((w) => w < img.w).map((w) => `${img.src[w]} ${w}w`);
   if (img.w <= 1280) parts.push(`${img.src[1280] ?? img.src[960]} ${img.w}w`);
   return parts.join(', ');
@@ -54,7 +54,7 @@ export function credit(img) {
   const r = img.rights ?? {};
   return html`<p class="credit">
     ${img.nonfree ? html`<span class="badge-fair" title="${NONFREE_TITLE}">несвободное</span>` : ''}${who}${img.license ? `, ${img.license}` : ''}.
-    <a href="${safeUrl(img.page)}" target="_blank" rel="noopener">${img.page?.includes('commons.wikimedia') ? 'Wikimedia Commons' : 'Википедия'}</a>
+    <a href="${safeUrl(img.page)}" target="_blank" rel="noopener">${img.external ? 'Источник' : img.page?.includes('commons.wikimedia') ? 'Wikimedia Commons' : 'Википедия'}</a>
     ${img.nonfree ? html`<span class="credit-note">${r.basis ? `Основание: ${r.basis}` : 'Основание использования в атласе ещё не проверено.'}</span>` : ''}
     ${r.note ? html`<span class="credit-note">${r.note}</span>` : ''}
   </p>`;

@@ -682,6 +682,11 @@
     - textile
     - decorative-arts
     - painting
+  gallery:
+    - file: Paint ngatu.jpg
+      title: Изготовление нгату
+      author: James Foster
+      whyRepresentative: "Роспись полотна нгату: процесс нанесения узора на тапу."
   summary: >-
     Модульный декор лубяного полотна объединяет растирание по купеси, ручную дорисовку и мотивы общественных
     событий.
@@ -1182,6 +1187,18 @@
         reviewed: "2026-10-14"
         note: Репродукция доступна на предметной странице источника.
   gallery:
+    - file: Brooklyn Museum - Goddess Lakshmi with a Rose and a Peacock.jpg
+      title: Лакшми с розой и павлином
+      author: Unknown author Unknown author
+      whyRepresentative: "Женская фигура с павлином: локальные цвета и быстрый контур."
+    - file: Bengali Lady applying Kohl, Kalighat Painting.jpg
+      title: Бенгальская дама подводит глаза
+      author: Rajan Guptta
+      whyRepresentative: Крупный план лица и рук; характерная для Калигхата графическая манера.
+    - file: A Dancing Courtesan.jpg
+      title: Танцующая куртизанка
+      author: Rajan Guptta
+      whyRepresentative: Движение и драпировка; плотный контур и локальные заливки.
     - workId: kalighat-bribe-49
       title: The policeman’s bribe, IS.49-2011
       author: Анвар Читракар

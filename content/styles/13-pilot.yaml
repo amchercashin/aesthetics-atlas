@@ -81,6 +81,12 @@
         reviewed: "2026-10-14"
         note: В атласе дана ссылка на репродукцию у источника.
   example:
+    image: https://rusmuseumvrm.ru/data/collections/folk_art/onir-1293/35450_mainfoto_03.jpg
+    imageWidth: 600
+    imageHeight: 561
+    credit: "Государственный Русский музей"
+    license: "© Государственный Русский музей"
+    nonfree: true
     workId: kh-bowl-1293
     title: Чаша, ОНИ/Р-1293
     author: Мастер не указан; Семёновский уезд
@@ -246,6 +252,12 @@
         reviewed: "2026-10-14"
         note: В атласе дана ссылка на репродукцию у источника.
   example:
+    image: https://content.ngv.vic.gov.au/retrieve.php?type=image&size=xl&vernonID=2650
+    imageWidth: 694
+    imageHeight: 1207
+    credit: "National Gallery of Victoria"
+    license: "© National Gallery of Victoria"
+    nonfree: true
     workId: em-after-rain
     title: After rain / После дождя
     author: Эмили Кам Кнгваррей
@@ -511,6 +523,12 @@
   dateKind: practice
   origin: unknown
   parents: []
+  gallery:
+    - file: Shahzia Sikander Witness.jpg
+      title: Witness
+      author: Shahzia Sikander
+      whyRepresentative: Публичная скульптура с растительными и каллиграфическими мотивами; не миниатюра на бумаге.
+      note: Публичная работа, а не миниатюра; показана как контекст практики.
   summary: >-
     Рукописная страница становится пространством разрывов, повторяющихся фигур, изменённых рамок и
     неоднозначного чтения.
@@ -1065,6 +1083,15 @@
   dateKind: practice
   origin: unknown
   parents: []
+  gallery:
+    - file: enwiki:Ati-Atihan (1983) by Pacita Abad.jpg
+      title: Ati-Atihan, 1983
+      author: Pacita Abad
+      whyRepresentative: Пёстрая тканевая композиция с фигуративными мотивами.
+    - file: enwiki:Filipina - A racial identity crisis (1990) by Pacita Abad.jpg
+      title: Filipina — A racial identity crisis, 1990
+      author: Pacita Abad
+      whyRepresentative: Текстильный коллаж с масками и узорными фрагментами.
   summary: >-
     Живопись, шитьё и собранные ткани образуют плотную цветовую поверхность с заметным рельефом и повтором
     деталей.
@@ -1493,6 +1520,12 @@
         reviewed: "2026-10-14"
         note: В атласе дана ссылка на репродукцию у источника.
   example:
+    image: https://content.ngv.vic.gov.au/retrieve.php?type=image&size=xl&vernonID=108708
+    imageWidth: 694
+    imageHeight: 498
+    credit: "National Gallery of Victoria"
+    license: "© National Gallery of Victoria"
+    nonfree: true
     workId: rr-regalia-2013
     title: Regalia
     author: Реко Ренни
@@ -1872,6 +1905,12 @@
         reviewed: "2026-10-14"
         note: В атласе дана ссылка на репродукцию у источника.
   example:
+    image: https://animator.ru/film_img/film_005.jpg
+    imageWidth: 369
+    imageHeight: 248
+    credit: "Союзмультфильм"
+    license: "© Союзмультфильм"
+    nonfree: true
     workId: no-heron-1974
     title: Цапля и журавль
     author: Юрий Норштейн; Франческа Ярбусова; оператор Александр Жуковский

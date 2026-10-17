@@ -533,6 +533,16 @@
     - 徐冰
     - Square Word Calligraphy
     - Book from the Sky
+  gallery:
+    - file: EnglishChinaWriting.jpg
+      title: English China Writing
+      author: Xu Bing
+      whyRepresentative: Латинские буквы и китайские знаки как изображение; работа с письмом.
+    - file: Xu Bing Phoenixes 037.JPG
+      title: Фениксы
+      author: Xu Bing
+      whyRepresentative: Инсталляция из найденных материалов; контекст практики, не «Книга с неба».
+      note: Инсталляция, не работа с письмом; показана как контекст.
   summary: >-
     Знаки выглядят знакомым письмом, но меняют правила чтения: вымышленные иероглифы, английские слова в
     квадрате и слова как пространственные фигуры.
@@ -1262,6 +1272,16 @@
     - Torres Strait printmaking
     - Гравюра Торресова пролива
     - Torres Strait Islander art
+  gallery:
+    - image: https://printsandprintmaking.gov.au/media/images/19621.jpg
+      imageWidth: 600
+      imageHeight: 411
+      title: Aralpaia Ar Zenikula, 1998
+      author: Alick Tipoti
+      credit: Australian Prints + Printmaking / National Gallery of Australia
+      license: © Alick Tipoti
+      nonfree: true
+      whyRepresentative: Плотный линогравюрный узор с фигурами, лодкой и морскими мотивами.
   summary: >-
     Современная региональная печатная графика связывает сильный контраст, подробный линейный рисунок,
     рассказы и новые предметные мотивы; художники сохраняют собственные системы формы.
@@ -1452,6 +1472,16 @@
   aliases:
     - Алик Типоти
     - Alick Tipoti
+  gallery:
+    - image: https://printsandprintmaking.gov.au/media/images/4704.jpg
+      imageWidth: 442
+      imageHeight: 600
+      title: Paths of my tradition
+      author: Alick Tipoti
+      credit: Australian Prints + Printmaking / National Gallery of Australia
+      license: © Alick Tipoti
+      nonfree: true
+      whyRepresentative: Линогравюра с лодкой, фигурами и знаками; характерная резкая чёрно-белая манера.
   summary: >-
     Плотный рисунок из фигур, мелких заполнений и контрастных прорезей делает лист одновременно
     повествовательным изображением и орнаментальным полем.

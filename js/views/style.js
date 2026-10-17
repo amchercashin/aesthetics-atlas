@@ -94,6 +94,11 @@ export default {
 
     const ex = s.example;
     const img = ex.img;
+    const galleryCover = img ? null : s.gallery.find((g) => g.img) ?? null;
+    const cover = img ?? galleryCover?.img ?? null;
+    const coverTitle = img ? ex.title : galleryCover?.title ?? null;
+    const coverAuthor = img ? ex.author : galleryCover?.author ?? null;
+    const coverYear = img ? ex.year : galleryCover?.year ?? null;
     const line = store.mainLine(s.id);
     const prev = store.prev(s.id);
     const next = store.next(s.id);
@@ -118,12 +123,14 @@ export default {
 
       <div class="room-hang">
         <figure class="room-work">
-          ${ex.external?.reference ? html`<div class="reference-work">
+          ${cover ? html`<button class="work-zoom" type="button" aria-label="Открыть работу крупно">
+            ${frame(cover, p, { sizes: '(min-width: 1100px) 58vw, 100vw', eager: true, size: 960, alt: coverTitle ?? '', note: galleryCover ? 'Пример традиции; основная работа — по ссылке' : img.external ? 'Изображение с сайта источника' : ex.external ? 'Репродукция — у источника' : ex.note, capUpscale: true })}
+          </button>` : ex.external?.reference ? html`<div class="reference-work">
             <p class="reference-note">Репродукция — у источника</p>
             <p class="reference-title">${ex.title}</p>
             <a class="btn" href="${safeUrl(ex.external.page)}" target="_blank" rel="noopener">Посмотреть работу ↗</a>
-          </div>` : html`<button class="work-zoom" type="button" ${img ? '' : 'disabled'} aria-label="Открыть работу крупно">
-            ${frame(img, p, { sizes: '(min-width: 1100px) 58vw, 100vw', eager: true, size: 960, alt: ex.title ?? '', note: ex.external ? 'Репродукция — у источника' : ex.note, capUpscale: true })}
+          </div>` : html`<button class="work-zoom" type="button" disabled aria-label="Открыть работу крупно">
+            ${frame(null, p, { sizes: '(min-width: 1100px) 58vw, 100vw', eager: true, size: 960, alt: ex.title ?? '', note: ex.note, capUpscale: true })}
           </button>`}
         </figure>
         <aside class="wall-label" aria-label="Этикетка">
@@ -132,9 +139,10 @@ export default {
           ${ex.author ? html`<p class="wl-author">${ex.author}</p>` : ''}
           <p class="wl-facts">${[ex.year, ex.place].filter(Boolean).join(', ')}</p>
           ${ex.note && ex.note !== role ? html`<p class="wl-note">${ex.note}</p>` : ''}
+          ${galleryCover ? html`<p class="wl-note"><strong>На изображении.</strong> ${galleryCover.title} — другой пример традиции; основная работа открывается по ссылке ниже.</p>` : ''}
           ${ex.why ? html`<p class="wl-why"><strong>Что здесь видно.</strong> ${ex.why}</p>` : ''}
           ${sourceLinks(store, ex.sources)}
-          ${credit(img)}
+          ${credit(cover)}
           ${ex.external ? html`<p class="credit"><a href="${safeUrl(ex.external.page)}" target="_blank" rel="noopener">${ex.external.reference ? 'Посмотреть работу у источника' : 'Открыть изображение на странице файла'}</a></p>` : ''}
           <p class="wl-summary">${s.summary}</p>
           ${paletteBlock(s, img)}
@@ -242,7 +250,7 @@ export default {
       if (zoom && !zoom.disabled) {
         const gi = zoom.dataset.gallery;
         if (gi !== undefined) { const g = s.gallery[+gi]; openLightbox(g.img, [g.title, g.author, g.year].filter(Boolean).join(', ')); }
-        else openLightbox(img, [ex.title, ex.author, ex.year].filter(Boolean).join(', '));
+        else openLightbox(cover, [coverTitle, coverAuthor, coverYear].filter(Boolean).join(', '));
       }
     };
     root.addEventListener('click', onClick);

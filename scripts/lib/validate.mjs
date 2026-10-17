@@ -55,6 +55,15 @@ function checkImage(at, im, where, sourceIds, errors) {
     if (im.file || im.asset) errors.push(`${at} ${where}: choose reference or embedded image`);
     if (!asList(im.sources).length) errors.push(`${at} ${where}: external reference needs caption sources`);
   }
+  if (im.image != null) {
+    if (!/^https:\/\//.test(im.image)) errors.push(`${at} ${where}: image must be https`);
+    if (im.file || im.asset) errors.push(`${at} ${where}: choose image or embedded file`);
+    if (!Number.isFinite(im.imageWidth) || !Number.isFinite(im.imageHeight) || im.imageWidth <= 0 || im.imageHeight <= 0) {
+      errors.push(`${at} ${where}: image needs positive imageWidth and imageHeight`);
+    }
+    if (!im.credit) errors.push(`${at} ${where}: external image needs credit`);
+    if (!im.license) errors.push(`${at} ${where}: external image needs license`);
+  }
   if (im.asset != null) {
     if (!isLocalAsset(im.asset)) errors.push(`${at} ${where}: invalid local asset path`);
     if (im.file) errors.push(`${at} ${where}: choose file or asset, not both`);
@@ -187,7 +196,7 @@ export function validate(styles, eras, sources = []) {
     for (const id of asList(s.example?.sources)) usedSources.add(id);
 
     for (const g of s.gallery ?? []) {
-      if (!g.file && !g.asset && !g.reference) errors.push(`${at} gallery item without file, asset or reference`);
+      if (!g.file && !g.asset && !g.reference && !g.image) errors.push(`${at} gallery item without file, asset, image or reference`);
       checkImage(at, g, 'gallery', sourceIds, errors);
       for (const id of asList(g.sources)) usedSources.add(id);
     }

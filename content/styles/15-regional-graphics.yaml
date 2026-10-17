@@ -27,6 +27,19 @@
   medium:
     - print
     - illustration
+  gallery:
+    - file: BearWedding.jpg
+      title: Свадьба медведя
+      author: Unknown author Unknown author
+      whyRepresentative: "Звериная свадьба с человеческими ролями: плотная гравюра и подписи-присказки."
+    - file: ChickenDivination.jpg
+      title: Гадание на курице
+      author: Anonymous folk artist
+      whyRepresentative: Бытовая сцена с интерьером и подписями; лубочная манера письма.
+    - file: Alkonost XIX century.jpg
+      title: Алконост
+      author: Unknown author Unknown author
+      whyRepresentative: Райская птица с подписью; тонкая гравюра и симметричная композиция.
   summary: >-
     Самостоятельные печатные листы соединяют образ, повествовательные сцены, заголовок и подписи; религиозные
     и светские варианты используют разные техники.
@@ -264,6 +277,12 @@
   medium:
     - print
     - illustration
+  gallery:
+    - file: 1900. Няньхуа.jpg
+      title: Няньхуа, 1900
+      author: Unknown author Unknown author
+      whyRepresentative: Парные дверные божества; другой центр няньхуа, не Янлюцин.
+      note: Другой центр няньхуа; показан как широкий жанровый контекст.
   summary: >-
     Раскрашенные печатные листы переводят театральную сцену в ясное расположение фигур, выразительные жесты и
     подробный костюм.
@@ -957,6 +976,17 @@
     - painting
     - architecture
     - decorative-arts
+  gallery:
+    - file: 0723 ndebele jacolo (3371213961).jpg
+      title: Бисерный фартук ндебеле
+      author: Ann Porteus
+      whyRepresentative: Геометрический бисерный узор — источник мотивов настенной росписи ндебеле.
+      note: Бисерный фартук, не настенная роспись; показан как источник орнамента.
+    - file: 0724 ndebele jacolo (3371215825).jpg
+      title: Бисерный фартук ндебеле
+      author: Ann Porteus
+      whyRepresentative: Полосы, ромбы и контрастные рамки — та же геометрия, что в росписи домов.
+      note: Бисерный фартук, не настенная роспись.
   summary: >-
     Геометрические поля и контрастные бордюры организуют стены, ограды и другие архитектурные поверхности;
     современные проекты переносят эти решения на выставочные панели.
@@ -1173,6 +1203,19 @@
   region: "Польша: Лович, Злакув-Боровы и Стшалки в регионе Курпе"
   medium:
     - decorative-arts
+  gallery:
+    - file: Wycinanka lowicka. 1909 (106673350).jpg
+      title: Выцинанка, Лович, 1909
+      author: Unknown author Unknown author
+      whyRepresentative: Симметричный растительный мотив с птицами; классическая ловичская выцинанка.
+    - file: Lowiczer Scherenschnitt.JPG
+      title: Ловичская выцинанка
+      author: "Foto: de:Benutzer:Armin Schönewolf"
+      whyRepresentative: Многофигурная сцена с курицей и цветами; бумажная аппликация.
+    - file: Wycinanka Kurpie Białe Józefa Kowalczykówna.jpg
+      title: Курпская выцинанка
+      author: Anna Tarko Pracownia Fotograficzna MEK
+      whyRepresentative: Всадник и геометрические розетки; яркая курпская манера.
   summary: >-
     Вырезанные силуэты и просветы образуют орнаментальные и повествовательные композиции; цвет может
     создаваться многослойной аппликацией или уступать место чёрному ажуру.
