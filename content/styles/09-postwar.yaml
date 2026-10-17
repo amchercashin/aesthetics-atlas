@@ -94,6 +94,11 @@
       16.10.2026 проверены исторические отношения и связанные с ними контексты и сопоставления; границы
       подтверждения указаны у каждой записи. Даты, описание и изображения карточки полностью не проверялись.
   parents: []
+  gallery:
+    - file: enwiki:Big A (Jack Bush painting).jpg
+      title: Джек Буш. Big A
+    - file: enwiki:Richard Diebenkorn's painting 'Ocean Park No.129'.jpg
+      title: Дибенкорн. Ocean Park № 129
   summary: >
     Большие светящиеся поля цвета, в которые зритель погружается, как в медитацию.
   description: |
@@ -250,6 +255,8 @@
     author: Ханс Гугелот, Дитер Рамс
     year: 1956
   gallery:
+    - file: HfGUlmbuilding.jpg
+      title: Здание Высшей школы дизайна в Ульме
     - file: Max-bill junghans retouched.jpg
       title: Кухонные часы Junghans с таймером
       author: Макс Билл
@@ -433,6 +440,8 @@
     year: 1965–1976
     place: Лондон
   gallery:
+    - file: Trellick_Tower_front_view_(colour_brightness_adjust).jpg
+      title: Треллик-тауэр
     - { file: "1981 BostonCityHall byLebovich8 HABS MA1176.jpg", title: "Мэрия Бостона", year: "1968" }
   wiki: Brutalist architecture
   links:
@@ -470,6 +479,11 @@
       sources:
         - ra26-d2-pavlov
         - ra26-d2-parallel-modernity
+  gallery:
+    - file: Moscow,_Narkomfin_building_in_May_2021_03.jpg
+      title: Дом Наркомфина
+    - file: Shukhov_Tower_photo_by_Maxim_Fedorov._Night.jpg
+      title: Шуховская башня
   summary: >
     После «борьбы с излишествами» — стекло, бетон и смелые формы: дворцы пионеров, санатории-тарелки и здания-конструкторы.
   description: |
@@ -644,6 +658,11 @@
       sources:
         - ra26-d2-op-albers
         - ra26-d2-op-barberini
+  gallery:
+    - file: Black circle.jpg
+      title: ��-���. ׸���� ����
+    - file: Soto Sphere.jpg
+      title: Сото. Сфера
   summary: >
     Картины, которые шевелятся: чёрно-белые полосы и клетки обманывают глаз и вызывают головокружение.
   description: |
@@ -705,6 +724,11 @@
       sources:
         - ra26-d2-gabo-getty
         - ngs-constructivism
+  gallery:
+    - file: Kuspit3-27-2.jpg
+      title: Кинетическая скульптура
+    - file: Calder-redmobile.jpg
+      title: Кальдер. Красный мобиль
   summary: >
     Скульптура, которая движется: мобили Калдера качаются от воздуха, машины Тэнгли гремят и самоуничтожаются.
   description: |
@@ -763,6 +787,11 @@
         Это реакция на абстрактный экспрессионизм, а не развитие из Color Field.
       sources:
         - ra26-conceptual
+  gallery:
+    - file: Donald Judd Concrete Blocks.jpg
+      title: Джадд. Бетонные блоки
+    - file: Tonysmith freeride sculpture.jpg
+      title: Тони Смит. Скульптура
   summary: >
     Повторяющиеся металлические ящики, кирпичи на полу и флуоресцентные лампы: объект без метафор и эмоций.
   description: |
@@ -966,6 +995,8 @@
     year: 1968
     place: Пинакотека современности, Мюнхен
   gallery:
+    - file: Space_Needle_2011-07-04.jpg
+      title: Спейс-Нидл
     - { file: "Panton Chair by Verner Panton.JPG", title: "Стул Пантона", author: "Вернер Пантон", year: "1960" }
   wiki: Space Age
   links: []
@@ -1005,6 +1036,11 @@
         от автономного объекта.
       sources:
         - ra26-land
+  gallery:
+    - file: Walter_de_Maria,_The_Lightning_Field,_1977_(7873321374).jpg
+      title: Уолтер де Мария. Поле молний
+    - file: The_Gates,_a_site-specific_work_of_art_by_Christo_and_Jeanne-Claude_in_Central_Park,_New_York_City_LCCN2011633978.jpg
+      title: Кристо и Жанна-Клод. Ворота
   summary: >
     Искусство, которое нельзя повесить в галерее: спираль из камней в солёном озере, линии в пустыне.
   description: |
@@ -1065,6 +1101,11 @@
         не происхождение всего computer art.
       sources:
         - ra26-d2-computer-pearson
+  gallery:
+    - file: VERTICAL-HORIZONTAL_NUMBER_THREE_(1964)_BY_A._MICHAEL_NOLL.jpg
+      title: Нолл. Vertical-Horizontal № 3
+    - file: Boundaryfunctions_1.jpg
+      title: Цифровая работа Boundary Functions
   summary: >-
     Раннее машинное искусство: электромеханические рисунки, программируемые плоттеры, геометрия и
     случайность.

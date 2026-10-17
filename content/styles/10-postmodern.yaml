@@ -153,6 +153,11 @@
         Tech; инженерная культура и другие образцы остаются самостоятельными источниками.
       sources:
         - ra26-d2-hightech-docomomo
+  gallery:
+    - file: Sainsbury Centre for Visual Arts, University of East Anglia - geograph.org.uk - 673603.jpg
+      title: Центр Сейнсбери
+    - file: HK_HSBC_Main_Building_2008.jpg
+      title: HSBC Building, Гонконг
   summary: >
     Здание-машина: трубы, лифты, лестницы и конструкции вынесены наружу и покрашены как в учебнике.
   description: |
@@ -318,6 +323,11 @@
       16.10.2026 проверены исторические отношения и связанные с ними контексты и сопоставления; границы
       подтверждения указаны у каждой записи. Даты, описание и изображения карточки полностью не проверялись.
   parents: []
+  gallery:
+    - file: Berliner Mauer.jpg
+      title: Берлинская стена, граффити
+    - file: Bristol UK graffiti art3.jpg
+      title: Граффити в Бристоле
   summary: >
     Подписи-теги на поездах метро превращаются в многоцветные «куски», а затем — в мировой музейный стрит-арт.
   description: |
@@ -617,6 +627,11 @@
         музыкально-визуальной линией внутри афрофутуризма.
       sources:
         - ra26-afrofuturism
+  gallery:
+    - file: Serengeti Cyborg, by Fanuel Leul.jpg
+      title: Фануэл Леул. Serengeti Cyborg
+    - file: Sun Ra Space is the Place 1974 film poster.jpg
+      title: Сан Ра. Space Is the Place
   summary: >
     Будущее, в котором центр — африканская культура: космические фараоны Сан Ра, фанк-корабли и Ваканда.
   description: |
