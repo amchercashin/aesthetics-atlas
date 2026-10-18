@@ -86,18 +86,18 @@ export function imageRecord(spec = {}, img = null) {
   return rec;
 }
 
-export function paletteRecord(spec, computed, example) {
+export function paletteRecord(spec, computed, example, fromImages = false) {
   if (!computed) return null;
-  const editorial = Array.isArray(spec.palette) && spec.palette.length > 0;
+  const editorial = !fromImages && Array.isArray(spec.palette) && spec.palette.length > 0;
   return {
     ...computed,
     source: editorial ? 'editorial' : 'image',
-    note: str(spec.paletteNote),
-    from: editorial ? null : example?.img?.page ?? example?.external?.page ?? null,
+    note: editorial ? str(spec.paletteNote) : fromImages ? 'Средний цвет по всем изображениям карточки' : str(spec.paletteNote),
+    from: editorial ? null : fromImages ? null : example?.img?.page ?? example?.external?.page ?? null,
   };
 }
 
-export function buildRecord(s, { links = [], palette = null, img = () => null, children = [], comparisons = [], contexts = null } = {}) {
+export function buildRecord(s, { links = [], palette = null, paletteFromImages = false, img = () => null, children = [], comparisons = [], contexts = null } = {}) {
   const example = imageRecord(s.example, img(s.example?.file ?? s.example?.asset));
   return {
     id: s.id, name: s.name, orig: s.orig,
@@ -120,7 +120,7 @@ export function buildRecord(s, { links = [], palette = null, img = () => null, c
     example,
     gallery: (s.gallery ?? []).map((g) => imageRecord(g, img(g.file ?? g.asset))),
     corpus: (s.corpus ?? []).map((w) => imageRecord(w, img(w.file ?? w.asset))),
-    palette: paletteRecord(s, palette, example),
+    palette: paletteRecord(s, palette, example, paletteFromImages),
     evidence: (s.evidence ?? []).map((e) => ({ claim: str(e.claim), field: str(e.field), source: e.source, note: str(e.note) })),
     review: s.review ? { status: s.review.status, date: ymd(s.review.date), note: str(s.review.note) } : { status: 'legacy', date: null, note: null },
     links,

@@ -9,7 +9,7 @@ import { validateNebulae, resolveNebulae } from './lib/nebulae.mjs';
 import { validate, ymd } from './lib/validate.mjs';
 import { buildRecord, childrenOf, comparisonsOf, contextsOf } from './lib/record.mjs';
 import { resolveFiles, resolveWiki, commonsCategories, commonsCategoriesExist, saveCache } from './lib/wikimedia.mjs';
-import { downloadThumb, paletteFromImage, paletteFromHexList, mapLimit } from './lib/palette.mjs';
+import { downloadThumb, paletteFromImages, paletteFromHexList, mapLimit } from './lib/palette.mjs';
 import { resolveLocalAssets } from './lib/local-images.mjs';
 import { worksOf, imageUsage } from './lib/works.mjs';
 
@@ -73,15 +73,37 @@ function wikiLinks(s) {
   return links;
 }
 
-// 4. Палитры
+// 4. Палитры: всегда по всем изображениям карточки, если они есть.
 const palettes = new Map();
+const paletteMeta = new Map();
 await mapLimit(styles, 3, async (s) => {
   try {
-    if (Array.isArray(s.palette) && s.palette.length) { palettes.set(s.id, paletteFromHexList(s.palette)); return; }
-    const m = media.get(s.example?.file ?? s.example?.asset);
-    if (!m || m.missing) return;
-    const buf = m.local ? m.buffer : await downloadThumb(m.thumbs[250] ?? m.url, opts);
-    palettes.set(s.id, await paletteFromImage(buf));
+    const refs = [...new Set([
+      s.example?.file ?? s.example?.asset,
+      ...(s.gallery ?? []).map((g) => g.file ?? g.asset),
+      ...(s.corpus ?? []).map((c) => c.file ?? c.asset),
+    ].filter(Boolean))];
+    const bufs = [];
+    for (const ref of refs) {
+      const m = media.get(ref);
+      if (!m || m.missing) continue;
+      try {
+        bufs.push(m.local ? m.buffer : await downloadThumb(m.thumbs[250] ?? m.url, opts));
+      } catch (e) {
+        warnings.push(`[${s.id}] palette image skipped: ${e.message}`);
+      }
+    }
+    if (bufs.length) {
+      palettes.set(s.id, await paletteFromImages(bufs));
+      paletteMeta.set(s.id, { fromImages: true, count: bufs.length });
+      return;
+    }
+    if (Array.isArray(s.palette) && s.palette.length) {
+      palettes.set(s.id, paletteFromHexList(s.palette));
+      paletteMeta.set(s.id, { fromImages: false, count: 0 });
+      return;
+    }
+    if (!s.example?.reference) errors.push(`[${s.id}] no palette`);
   } catch (e) {
     errors.push(`[${s.id}] palette failed: ${e.message}`);
   }
@@ -111,7 +133,7 @@ const out = styles.map((s) => {
   if (links.length < need) errors.push(`[${s.id}] needs ≥${need} links (has ${links.length})`);
   if (!palettes.has(s.id) && !s.example?.reference) errors.push(`[${s.id}] no palette`);
   return buildRecord(s, {
-    links, img, palette: palettes.get(s.id) ?? null,
+    links, img, palette: palettes.get(s.id) ?? null, paletteFromImages: paletteMeta.get(s.id)?.fromImages ?? false,
     children: children.get(s.id) ?? [], comparisons: comparisons.get(s.id) ?? [],
     contexts: contexts.get(s.id) ?? [],
   });

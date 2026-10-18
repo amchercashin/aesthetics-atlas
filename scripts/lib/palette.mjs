@@ -153,6 +153,20 @@ export async function paletteFromImage(buf) {
   return paletteFromClusters(kmeans(pts, 9), pts);
 }
 
+// Палитра по всем изображениям карточки: каждая работа даёт равный вклад,
+// поэтому обложка не перевешивает остальные примеры.
+export async function paletteFromImages(buffers) {
+  const pts = [];
+  for (const buf of buffers) {
+    try {
+      const { data, info } = await sharp(buf).resize(48, 48, { fit: 'inside' }).removeAlpha().raw().toBuffer({ resolveWithObject: true });
+      for (let i = 0; i < data.length; i += info.channels) pts.push(rgbToLab([data[i], data[i + 1], data[i + 2]]));
+    } catch { /* битое изображение пропускаем */ }
+  }
+  if (!pts.length) throw new Error('нет пригодных изображений');
+  return paletteFromClusters(kmeans(pts, 9), pts);
+}
+
 // Простой пул с ограниченной параллельностью.
 export async function mapLimit(items, limit, fn) {
   const out = new Array(items.length);
