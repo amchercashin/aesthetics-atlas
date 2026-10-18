@@ -44,9 +44,12 @@ export function lineageStrip(line, currentId) {
     const rel = i ? s.parents.find((p) => p.id === line[i - 1].id) : null;
     return html`<li class="${s.id === currentId ? 'is-current' : ''}" style="--c:var(--era-${s.era})">
       <span class="ls-connection">${rel
-        ? html`${RELATION[rel.type]?.label} · <span class="st st-${rel.status}">${REL_STATUS[rel.status]}</span>`
-        : 'Начало маршрута'}</span>
-      <a href="#/s/${s.id}" ${s.id === currentId ? html`aria-current="page"` : ''}>${thumb(s, 64)}<span class="ls-name">${s.name}</span><span class="ls-dates">${fmtDates(s)}</span></a>
+        ? html`<span class="ls-rel">${RELATION[rel.type]?.label}</span><span class="ls-state st st-${rel.status}" title="${REL_STATUS[rel.status]}"><span class="visually-hidden">${REL_STATUS[rel.status]}</span></span>`
+        : html`<span class="ls-rel">Начало маршрута</span>`}</span>
+      <a href="#/s/${s.id}" ${s.id === currentId ? html`aria-current="page"` : ''}>
+        <span class="ls-medallion">${thumb(s, 96)}</span>
+        <span class="ls-copy"><span class="ls-name">${s.name}</span><span class="ls-dates">${fmtDates(s)}</span>${s.id === currentId ? html`<span class="ls-now">вы здесь</span>` : ''}</span>
+      </a>
     </li>`;
   })}</ol>`;
 }
@@ -190,9 +193,17 @@ export default {
       ${contextSection(store, s)}
 
       <section class="lineage">
-        <h2 class="section-title">Цепочка связей</h2>
+        <div class="lineage-head">
+          <div><p class="lineage-kicker">Маршрут</p><h2 class="section-title">Цепочка связей</h2></div>
+          ${line.length > 1 ? html`<p class="lineage-count">${line.length} ${plural(line.length, 'стиль', 'стиля', 'стилей')} · ${line.length - 1} ${plural(line.length - 1, 'переход', 'перехода', 'переходов')}</p>` : ''}
+        </div>
         ${line.length > 1 ? html`<p class="lineage-lead">Один из редакционных маршрутов по атласу, по первой связи каждой карточки. Для переходов показаны тип и степень проверки: влияние, реакция и возрождение не означают прямого происхождения.</p>
-        ${lineageStrip(line, s.id)}` : s.origin === 'unknown'
+        <div class="lineage-rail">
+          <button class="line-nav line-prev" type="button" data-line-prev aria-label="Предыдущие стили">${ARROW_L}</button>
+          ${lineageStrip(line, s.id)}
+          <button class="line-nav line-next" type="button" data-line-next aria-label="Следующие стили">${ARROW_R}</button>
+          <div class="line-progress" aria-hidden="true"><span></span></div>
+        </div>` : s.origin === 'unknown'
           ? html`<p class="lineage-lead">Связи происхождения пока не представлены на карте.${s.comparisons.length ? ' Похожие по виду стили — в разделе «Визуальные сопоставления».' : ''}</p>`
           : html`<p class="lineage-lead">Один из независимых истоков в атласе: предшественников у этого стиля здесь нет.</p>`}
         <div class="ego">
@@ -277,14 +288,44 @@ export default {
     };
     document.addEventListener('keydown', onKey);
 
-    // Прокрутить полосу родословной к текущему стилю
+    // Полоса родословной: центрируем текущий стиль и управляем прокруткой.
     const strip = root.querySelector('.line-strip');
-    if (strip) strip.scrollLeft = strip.scrollWidth;
+    const rail = root.querySelector('.lineage-rail');
+    let syncRail = () => {};
+    let onRailScroll = () => {};
+    let railObserver = null;
+    if (strip && rail) {
+      const prevBtn = rail.querySelector('[data-line-prev]');
+      const nextBtn = rail.querySelector('[data-line-next]');
+      const bar = rail.querySelector('.line-progress span');
+      syncRail = () => {
+        const max = strip.scrollWidth - strip.clientWidth;
+        rail.classList.toggle('is-scrollable', max > 4);
+        prevBtn.disabled = strip.scrollLeft <= 2;
+        nextBtn.disabled = strip.scrollLeft >= max - 2;
+        if (bar) {
+          const visible = Math.min(1, strip.clientWidth / strip.scrollWidth);
+          bar.style.width = `${Math.max(12, visible * 100)}%`;
+          bar.style.left = `${(strip.scrollLeft / Math.max(1, strip.scrollWidth)) * 100}%`;
+        }
+      };
+      onRailScroll = () => syncRail();
+      strip.addEventListener('scroll', onRailScroll, { passive: true });
+      prevBtn.addEventListener('click', () => strip.scrollBy({ left: -Math.round(strip.clientWidth * 0.8), behavior: 'smooth' }));
+      nextBtn.addEventListener('click', () => strip.scrollBy({ left: Math.round(strip.clientWidth * 0.8), behavior: 'smooth' }));
+      const current = strip.querySelector('.is-current');
+      if (current) strip.scrollLeft = Math.max(0, current.offsetLeft - (strip.clientWidth - current.offsetWidth) / 2);
+      railObserver = new ResizeObserver(() => syncRail());
+      railObserver.observe(strip);
+      syncRail();
+    }
 
     return {
       destroy() {
         root.removeEventListener('click', onClick);
         document.removeEventListener('keydown', onKey);
+        if (strip) strip.removeEventListener('scroll', onRailScroll);
+        railObserver?.disconnect();
       },
     };
   },
