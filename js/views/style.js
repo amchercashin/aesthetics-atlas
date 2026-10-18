@@ -104,6 +104,15 @@ export default {
     const coverTitle = img ? ex.title : galleryCover?.title ?? null;
     const coverAuthor = img ? ex.author : galleryCover?.author ?? null;
     const coverYear = img ? ex.year : galleryCover?.year ?? null;
+    const galleryImgs = s.gallery.filter((g) => g.img);
+    const lightboxItems = [];
+    if (cover) lightboxItems.push({ img: cover, caption: [coverTitle, coverAuthor, coverYear].filter(Boolean).join(' · ') });
+    for (const g of galleryImgs) {
+      if (cover && g.img.page === cover.page) continue;
+      lightboxItems.push({ img: g.img, caption: [g.title, g.author, g.year, g.place].filter(Boolean).join(' · ') });
+    }
+    const thumbItems = galleryImgs.filter((g) => !cover || g.img.page !== cover.page);
+    const galleryRefs = s.gallery.filter((g) => !g.img && g.external);
     const line = store.mainLine(s.id);
     const prev = store.prev(s.id);
     const next = store.next(s.id);
@@ -127,7 +136,8 @@ export default {
       </header>
 
       <div class="room-hang">
-        <figure class="room-work">
+        <div class="room-art">
+        <figure class="room-work"${cover ? html` style="--cover-ar:${(cover.w / cover.h).toFixed(4)}"` : ''}>
           ${cover ? html`<button class="work-zoom" type="button" aria-label="Открыть работу крупно">
             ${frame(cover, p, { sizes: '(min-width: 1100px) 58vw, 100vw', eager: true, size: 960, alt: coverTitle ?? '', note: galleryCover ? 'Пример традиции; основная работа — по ссылке' : img.local ? 'Локальная репродукция; источник — по ссылке' : ex.external ? 'Репродукция — у источника' : ex.note, capUpscale: true })}
           </button>` : ex.external?.reference ? html`<div class="reference-work">
@@ -138,6 +148,17 @@ export default {
             ${frame(null, p, { sizes: '(min-width: 1100px) 58vw, 100vw', eager: true, size: 960, alt: ex.title ?? '', note: ex.note, capUpscale: true })}
           </button>`}
         </figure>
+        ${thumbItems.length || galleryRefs.length ? html`<div class="room-thumbs" role="group" aria-label="Другие изображения этого стиля">
+          ${thumbItems.map((g) => html`<button class="room-thumb" type="button" data-gallery="${lightboxItems.findIndex((x) => x.img.page === g.img.page)}" aria-label="Открыть крупно: ${g.title ?? ''}">
+            <img src="${g.img.src[250]}" alt="${g.title ?? ''}" loading="lazy">
+            <span class="room-thumb-cap">${g.title ?? ''}</span>
+          </button>`)}
+          ${galleryRefs.map((g) => html`<a class="room-thumb room-thumb-ref" href="${safeUrl(g.external.page)}" target="_blank" rel="noopener">
+            <span class="room-thumb-ref-mark" aria-hidden="true">↗</span>
+            <span class="room-thumb-cap">${g.title ?? 'Репродукция у источника'}</span>
+          </a>`)}
+        </div>` : ''}
+        </div>
         <aside class="wall-label" aria-label="Этикетка">
           ${role ? html`<p class="wl-role">${role}</p>` : ''}
           <p class="wl-title">${ex.title}</p>
@@ -167,22 +188,6 @@ export default {
       ${authorshipSection(store, s)}
       ${corpusSection(store, s)}
       ${contextSection(store, s)}
-
-      ${s.gallery.length ? html`<section class="room-gallery">
-        <h2 class="section-title">Ещё примеры</h2>
-        <div class="gallery-grid">
-          ${s.gallery.map((g, i) => html`<figure class="art">
-            ${g.img ? html`<button class="work-zoom" type="button" data-gallery="${i}" aria-label="Открыть крупно: ${g.title ?? ''}">${frame(g.img, p, { sizes: '(min-width: 900px) 30vw, 90vw', alt: g.title ?? '', capUpscale: true })}</button>` : g.external ? html`<div class="reference-work gallery-reference">
-              <p class="reference-note">Репродукция — у источника</p>
-              <a class="btn" href="${safeUrl(g.external.page)}" target="_blank" rel="noopener">Посмотреть работу ↗</a>
-            </div>` : ''}
-            <figcaption>${roleLabel(g.role) ? html`<span class="wl-role">${roleLabel(g.role)}</span>` : ''}<span class="g-title">${g.title}</span>${[g.author, g.year, g.place].filter(Boolean).length ? html`<span class="g-meta">${[g.author, g.year, g.place].filter(Boolean).join(', ')}</span>` : ''}${g.note ? html`<span class="g-meta">${g.note}</span>` : ''}${g.why ? html`<span class="g-meta">${g.why}</span>` : ''}</figcaption>
-            ${sourceLinks(store, g.sources)}
-            ${credit(g.img)}
-            ${g.external ? html`<p class="credit"><a href="${safeUrl(g.external.page)}" target="_blank" rel="noopener">${g.external.reference ? 'Посмотреть работу у источника' : 'Открыть изображение на странице файла'}</a></p>` : ''}
-          </figure>`)}
-        </div>
-      </section>` : ''}
 
       <section class="lineage">
         <h2 class="section-title">Цепочка связей</h2>
@@ -254,12 +259,13 @@ export default {
         navigator.clipboard?.writeText(pal.dataset.hex).then(() => toast(`Скопировано: ${pal.dataset.hex}`), () => toast(pal.dataset.hex));
         return;
       }
-      const zoom = e.target.closest('.work-zoom');
-      if (zoom && !zoom.disabled) {
-        const gi = zoom.dataset.gallery;
-        if (gi !== undefined) { const g = s.gallery[+gi]; openLightbox(g.img, [g.title, g.author, g.year].filter(Boolean).join(', ')); }
-        else openLightbox(cover, [coverTitle, coverAuthor, coverYear].filter(Boolean).join(', '));
+      const thumb = e.target.closest('.room-thumb');
+      if (thumb) {
+        openLightbox(lightboxItems, Number(thumb.dataset.gallery) || 0);
+        return;
       }
+      const zoom = e.target.closest('.work-zoom');
+      if (zoom && !zoom.disabled && lightboxItems.length) openLightbox(lightboxItems, 0);
     };
     root.addEventListener('click', onClick);
 
