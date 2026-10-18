@@ -122,6 +122,43 @@ body[data-view="style"] .room, body[data-view="style"] .site-footer {
 .room-work .art-frame { box-shadow: var(--shadow-art); max-height: 78vh; }
 .room-work .art-frame img { object-fit: contain; background: var(--paper-2); }
 .room-work .art-frame:has(img) { aspect-ratio: var(--ar); max-height: none; width: min(100%, calc(78vh * var(--arn))); margin-inline: auto; }
+.room-art { min-width: 0; }
+.room-thumbs {
+  display: flex; gap: 8px; overflow-x: auto; margin-top: 12px; padding: 2px 2px 8px;
+  scroll-snap-type: x proximity; scrollbar-width: thin;
+}
+.room-thumb {
+  flex: 0 0 132px; scroll-snap-align: start; display: flex; flex-direction: column; gap: 3px;
+  padding: 4px; border: 1px solid var(--rule); background: var(--paper-2); color: var(--ink);
+  text-align: left; cursor: zoom-in;
+}
+.room-thumb:hover, .room-thumb:focus-visible { border-color: var(--ink-3); }
+.room-thumb img { display: block; width: 100%; height: 88px; object-fit: cover; background: var(--paper); }
+.room-thumb-ref { align-items: center; justify-content: center; text-decoration: none; background: var(--paper); min-height: 88px; }
+.room-thumb-ref-mark { font-size: 24px; line-height: 1; color: var(--ink-3); }
+.room-thumb-cap {
+  display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
+  font-size: 11px; line-height: 1.25; color: var(--ink-2); min-height: 2.5em;
+}
+@media (max-width: 700px) {
+  .room-thumb { flex-basis: 108px; }
+  .room-thumb img { height: 72px; }
+}
+@media (max-width: 899px) {
+  .room-art { display: block; }
+  .room-work { width: 100%; }
+}
+@media (min-width: 900px) {
+  .room-art { display: flex; gap: 10px; align-items: flex-start; }
+  .room-work { flex: 0 1 auto; width: auto; max-width: 100%; margin: 0; }
+  .room-work .art-frame:has(img) { margin-inline: 0; }
+  .room-thumbs {
+    flex: 0 0 112px; flex-direction: column; overflow-x: hidden; overflow-y: auto; max-height: min(78vh, 760px);
+    margin-top: 0; padding: 0 4px 0 0; scroll-snap-type: y proximity;
+  }
+  .room-thumb { flex: 0 0 auto; width: 100%; }
+  .room-thumb img { height: 72px; }
+}
 
 .wall-label {
   position: sticky; top: calc(var(--header-h) + 24px);

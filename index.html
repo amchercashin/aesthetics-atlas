@@ -20,9 +20,9 @@
   <link rel="preconnect" href="https://thumb.wikimedia.org">
   <link rel="preconnect" href="https://upload.wikimedia.org">
   <link rel="stylesheet" href="css/tokens.css">
-  <link rel="stylesheet" href="css/base.css?v=regional-review">
-  <link rel="stylesheet" href="css/views.css?v=regional-review">
-  <link rel="stylesheet" href="css/map.css?v=relations-audit-1">
+  <link rel="stylesheet" href="css/base.css?v=gallery-4">
+  <link rel="stylesheet" href="css/views.css?v=gallery-4">
+  <link rel="stylesheet" href="css/map.css?v=gallery-4">
 </head>
 <body>
   <a class="skip-link" href="#app">К содержимому</a>
@@ -74,16 +74,24 @@
     <div class="search-hint"></div>
   </dialog>
 
-  <dialog class="lightbox" aria-label="Изображение">
-    <button class="icon-btn" type="button" data-close aria-label="Закрыть">
+  <dialog class="lightbox" aria-label="Просмотр изображения">
+    <button class="icon-btn lb-close" type="button" data-close aria-label="Закрыть">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg>
     </button>
+    <button class="lb-nav lb-prev" type="button" data-prev aria-label="Предыдущее изображение"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="m15 5-7 7 7 7"/></svg></button>
+    <button class="lb-nav lb-next" type="button" data-next aria-label="Следующее изображение"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="m9 5 7 7-7 7"/></svg></button>
     <img alt="">
-    <figcaption></figcaption>
+    <div class="lb-bar">
+      <span class="lb-count" aria-live="polite"></span>
+      <p class="lb-caption"></p>
+    </div>
   </dialog>
 
   <div class="toast" role="status" aria-live="polite"></div>
 
-  <script type="module" src="js/main.js?v=map-covers-1"></script>
+  <script type="module" src="js/main.js?v=gallery-4"></script>
 </body>
 </html>
+
+
+

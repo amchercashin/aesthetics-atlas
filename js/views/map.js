@@ -61,7 +61,7 @@ function grid(cell = 96) {
 
 export default {
   render(root, ctx) {
-    const { store } = ctx;
+    const { store, openLightbox } = ctx;
     document.title = 'Карта эстетик — Атлас эстетик';
     const famCount = (k) => store.styles.filter((s) => KIND_FAMILY[k].kinds.includes(s.kind[0])).length;
 
@@ -1448,10 +1448,28 @@ export default {
     }
     function openPanel(s) {
       const nRel = s.parents.length + s.children.length + s.comparisons.length + (s.contexts?.length ?? 0);
-      const cover = s.example.img ?? s.gallery?.find((g) => g.img)?.img ?? null;
+      const arts = [];
+      const seen = new Set();
+      const addArt = (img, title, author, year, place) => {
+        if (!img || seen.has(img.page)) return;
+        seen.add(img.page);
+        arts.push({ img, caption: [title, author, year, place].filter(Boolean).join(' · ') });
+      };
+      addArt(s.example.img, s.example.title, s.example.author, s.example.year, s.example.place);
+      for (const g of s.gallery ?? []) addArt(g.img, g.title, g.author, g.year, g.place);
+      const cover = arts[0]?.img ?? null;
       mount(panel, html`
         <button class="icon-btn mp-close" type="button" data-close-panel aria-label="Закрыть и вернуться к прежнему виду"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
-        ${cover ? html`<a class="mp-art" href="#/s/${s.id}" aria-label="Открыть карточку: ${s.name}">${frame(cover, s.palette, { ratio: '16 / 10', sizes: '380px', alt: '', note: s.example.img ? '' : 'Пример традиции' })}</a>` : s.example.external?.reference ? html`<div class="mp-reference"><p class="mp-kind">Основная работа</p><p>${s.example.title}</p><a href="${safeUrl(s.example.external.page)}" target="_blank" rel="noopener">Посмотреть репродукцию ↗</a></div>` : html`<a class="mp-art" href="#/s/${s.id}" aria-label="Открыть карточку: ${s.name}">${frame(null, s.palette, { ratio: '16 / 10', sizes: '380px', alt: '', note: s.palette?.source === 'editorial' ? 'Редакторская подборка цветов' : '' })}</a>`}
+        ${cover ? html`<div class="mp-art-wrap">
+          <button class="mp-art mp-art-btn" type="button" data-panel-open data-panel-index="0" aria-label="Открыть изображение крупно: ${s.name}">
+            ${frame(cover, s.palette, { ratio: '16 / 10', sizes: '380px', alt: '', note: s.example.img ? '' : 'Пример традиции' })}
+            <span class="mp-art-hint">Увеличить</span>
+          </button>
+          <p class="mp-art-cap">${arts[0].caption}</p>
+        </div>` : s.example.external?.reference ? html`<div class="mp-reference"><p class="mp-kind">Основная работа</p><p>${s.example.title}</p><a href="${safeUrl(s.example.external.page)}" target="_blank" rel="noopener">Посмотреть репродукцию ↗</a></div>` : html`<div class="mp-art-wrap"><a class="mp-art" href="#/s/${s.id}" aria-label="Открыть карточку: ${s.name}">${frame(null, s.palette, { ratio: '16 / 10', sizes: '380px', alt: '', note: s.palette?.source === 'editorial' ? 'Редакторская подборка цветов' : '' })}</a></div>`}
+        ${arts.length > 1 ? html`<div class="mp-thumbs" role="group" aria-label="Другие изображения этого стиля">
+          ${arts.map((a, i) => html`<button class="mp-thumb" type="button" data-panel-thumb="${i}" aria-label="Показать изображение: ${a.caption}" aria-pressed="${i === 0}"><img src="${a.img.src[250]}" alt="" loading="lazy"></button>`)}
+        </div>` : ''}
         <div class="mp-body">
           <p class="mp-meta">${s.dateKind === 'corpus' ? '' : eraTag(store, s.era, { link: false })}${s.kind[0] ? html`<span class="mp-kind">${KIND[s.kind[0]].toLowerCase()}</span>` : ''}</p>
           <h2 class="mp-name">${s.name}</h2>
@@ -1471,6 +1489,21 @@ export default {
       panel.hidden = false;
       computeFit();
       markLoaded(panel);
+      const mainArt = panel.querySelector('[data-panel-open]');
+      if (mainArt) {
+        mainArt.addEventListener('click', () => openLightbox(arts, Number(mainArt.dataset.panelIndex) || 0));
+        for (const btn of panel.querySelectorAll('[data-panel-thumb]')) {
+          btn.addEventListener('click', () => {
+            const i = Number(btn.dataset.panelThumb) || 0;
+            mainArt.dataset.panelIndex = String(i);
+            mainArt.innerHTML = frame(arts[i].img, s.palette, { ratio: '16 / 10', sizes: '380px', alt: '', note: '' }) + '<span class="mp-art-hint">Увеличить</span>';
+            mainArt.setAttribute('aria-label', `Открыть изображение крупно: ${s.name}`);
+            const cap = panel.querySelector('.mp-art-cap');
+            if (cap) cap.textContent = arts[i].caption;
+            for (const b of panel.querySelectorAll('[data-panel-thumb]')) b.setAttribute('aria-pressed', String(b === btn));
+          });
+        }
+      }
     }
 
     // Объяснение связи по клику на линию.
