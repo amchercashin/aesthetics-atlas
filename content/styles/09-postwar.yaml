@@ -393,6 +393,16 @@
     year: 1959
     place: Лас-Вегас
   gallery:
+    - asset: assets/works/googie-theme-building.jpg
+      title: Theme Building, Лос-Анджелес
+      author: Pereira & Luckman, Пол Уильямс, Уэлтон Бекет
+      year: 1961
+      place: Международный аэропорт Лос-Анджелеса
+      credit: LAX / Britannica
+      license: © LAX; образовательное использование
+      nonfree: true
+      reference: https://www.britannica.com/art/Googie-architecture
+      whyRepresentative: Параболические арки и «летающая тарелка» ресторана — хрестоматийный пример гуги с космической динамикой.
     - { file: "NormsRestaurant LaCienega.JPG", title: "Ресторан Norms", year: "1957" }
   wiki: Googie architecture
   links: []

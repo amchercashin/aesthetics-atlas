@@ -230,6 +230,16 @@
     role: illustration
     whyRepresentative: Современная композиция из типичных мотивов — стекло, вода, пузыри, трава и небо. Не материал 2000-х.
   gallery:
+    - asset: assets/works/frutiger-aero-landscape.jpg
+      title: "Frutiger Aero: пейзаж"
+      author: Неизвестный автор
+      year: 2000-е
+      place: Frutiger Aero
+      credit: Frutiger Aero archive
+      license: ©; образовательное использование
+      nonfree: true
+      reference: https://en.wikipedia.org/wiki/Frutiger_Aero
+      whyRepresentative: Глянцевые пузыри, вода, зелень и технологичный город — типичный набор мотивов Frutiger Aero.
     - { file: "Frutiger Aero Bubbles And Grass.jpg", title: "Пузыри и трава", role: illustration }
   wiki: Frutiger Aero
   links:

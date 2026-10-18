@@ -1091,6 +1091,16 @@
   origin: unknown
   parents: []
   gallery:
+    - asset: assets/works/pacita-abad-trapunto.jpg
+      title: Трапунто-панно
+      author: Пасита Абад
+      year: 1980-е
+      place: Трапунто
+      credit: Pacita Abad Art Estate
+      license: © Pacita Abad Art Estate
+      nonfree: true
+      reference: https://www.pacitaabad.com/
+      whyRepresentative: Стежка, аппликация и живопись соединяются в объёмную поверхность — характерный приём Паситы Абад.
     - file: enwiki:Ati-Atihan (1983) by Pacita Abad.jpg
       title: Ati-Atihan, 1983
       author: Pacita Abad

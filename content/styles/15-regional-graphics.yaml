@@ -987,6 +987,16 @@
     - architecture
     - decorative-arts
   gallery:
+    - asset: assets/works/ndebele-house-mural.jpg
+      title: Настенная роспись ндебеле
+      author: Мастера ндебеле
+      year: XX век
+      place: ЮАР
+      credit: Ndebele artists / Wikimedia
+      license: ©; образовательное использование
+      nonfree: true
+      reference: https://www.britannica.com/art/Ndebele-art
+      whyRepresentative: Геометрические полосы и контрастные цветные поля покрывают фасад дома — канонический облик росписи ндебеле.
     - file: 0723 ndebele jacolo (3371213961).jpg
       title: Бисерный фартук ндебеле
       author: Ann Porteus
