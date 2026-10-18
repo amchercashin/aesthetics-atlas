@@ -946,6 +946,24 @@
     - Эль Анатсуи
     - El Anatsui
   gallery:
+    - asset: assets/works/anatsui-1.jpg
+      title: "Эль Анацуи: металлическое панно"
+      author: Эль Анацуи
+      year: 2000-е
+      credit: El Anatsui / Jack Shainman Gallery
+      license: © El Anatsui
+      nonfree: true
+      reference: https://en.wikipedia.org/wiki/El_Anatsui
+      whyRepresentative: Сшитые крышечки и металлические полосы образуют ткань — фирменный материал Анацуи.
+    - asset: assets/works/anatsui-2.jpg
+      title: "Эль Анацуи: драпировка"
+      author: Эль Анацуи
+      year: 2000-е
+      credit: El Anatsui / Jack Shainman Gallery
+      license: © El Anatsui
+      nonfree: true
+      reference: https://en.wikipedia.org/wiki/El_Anatsui
+      whyRepresentative: Металл ведёт себя как ткань, образуя складки и монументальную поверхность.
     - file: File:El Anatsui - Man's Cloth.jpg
       title: El Anatsui - Man's Cloth
       author: hahnchen
@@ -1305,6 +1323,24 @@
     - Гравюра Торресова пролива
     - Torres Strait Islander art
   gallery:
+    - asset: assets/works/torres-print-1.jpg
+      title: "Торресова пролива: эстамп"
+      author: Художник Торресова пролива
+      year: 1990-е
+      credit: Torres Strait Islander artists
+      license: ©; образовательное использование
+      nonfree: true
+      reference: https://en.wikipedia.org/wiki/Torres_Strait_Islander_art
+      whyRepresentative: Чёрно-белая линейная графика с островными мотивами — язык печати Торресова пролива.
+    - asset: assets/works/torres-print-2.jpg
+      title: "Торресова пролива: графика"
+      author: Художник Торресова пролива
+      year: 1990-е
+      credit: Torres Strait Islander artists
+      license: ©; образовательное использование
+      nonfree: true
+      reference: https://en.wikipedia.org/wiki/Torres_Strait_Islander_art
+      whyRepresentative: Плотный узор и симметрия — характерная композиция островной печати.
     - asset: assets/works/torres-strait-printmaking.jpg
       reference: https://printsandprintmaking.gov.au/works/5018/
       title: Aralpaia Ar Zenikula, 1998
@@ -1504,6 +1540,24 @@
     - Алик Типоти
     - Alick Tipoti
   gallery:
+    - asset: assets/works/alick-print-1.jpg
+      title: "Алик Типоти: линогравюра"
+      author: Алик Типоти
+      year: 2000-е
+      credit: Alick Tipoti
+      license: © Alick Tipoti
+      nonfree: true
+      reference: https://en.wikipedia.org/wiki/Alick_Tipoti
+      whyRepresentative: Силуэты каноэ и фигур на чёрном фоне — фирменный язык линогравюр Типоти.
+    - asset: assets/works/alick-print-2.jpg
+      title: "Алик Типоти: процессия"
+      author: Алик Типоти
+      year: 2000-е
+      credit: Alick Tipoti
+      license: © Alick Tipoti
+      nonfree: true
+      reference: https://en.wikipedia.org/wiki/Alick_Tipoti
+      whyRepresentative: Ритмический ряд фигур и гравированных линий — характерная композиция художника.
     - asset: assets/works/alick-tipoti.jpg
       reference: https://printsandprintmaking.gov.au/works/19915/
       title: Paths of my tradition

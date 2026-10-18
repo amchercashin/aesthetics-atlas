@@ -422,6 +422,25 @@
         Influence точнее revival: у послевоенных художников были и другие источники и задачи.
       sources:
         - ra26-neo-expressionism
+  gallery:
+    - asset: assets/works/neo-basquiat-1.jpg
+      title: Жан-Мишель Баския. Картина
+      author: Жан-Мишель Баския
+      year: 1980-е
+      credit: Basquiat Estate / Gagosian
+      license: © Estate of Jean-Michel Basquiat
+      nonfree: true
+      reference: https://www.brooklynmuseum.org/
+      whyRepresentative: Сырая фигуративность, текст и экспрессивный мазок — язык неоэкспрессионизма.
+    - asset: assets/works/neo-basquiat-2.jpg
+      title: Жан-Мишель Баския. Голова
+      author: Жан-Мишель Баския
+      year: 1980-е
+      credit: Basquiat Estate / Gagosian
+      license: © Estate of Jean-Michel Basquiat
+      nonfree: true
+      reference: https://www.brooklynmuseum.org/
+      whyRepresentative: Крупная голова, гротеск и живописная фактура — характерный образ Баския.
   summary: >
     После минимализма и концептуализма — снова грубая, яркая, фигуративная живопись: Баския, Кифер, «новые дикие».
   description: |
@@ -483,6 +502,25 @@
       16.10.2026 проверены исторические отношения и связанные с ними контексты и сопоставления; границы
       подтверждения указаны у каждой записи. Даты, описание и изображения карточки полностью не проверялись.
   parents: []
+  gallery:
+    - asset: assets/works/decon-guggenheim.jpg
+      title: Гуггенхайм в Бильбао
+      author: Фрэнк Гери
+      year: "1997"
+      credit: Solomon R. Guggenheim Foundation
+      license: © Frank Gehry
+      nonfree: true
+      reference: https://www.guggenheim-bilbao.eus/
+      whyRepresentative: Разорванные титановые плоскости и отказ от прямоугольной коробки — деконструктивизм в архитектуре.
+    - asset: assets/works/decon-dancing-house.jpg
+      title: Танцующий дом
+      author: Владо Милунич, Фрэнк Гери
+      year: "1996"
+      credit: Dancing House
+      license: © Vlado Milunić / Frank Gehry
+      nonfree: true
+      reference: https://www.dancinghouse.cz/
+      whyRepresentative: Сдвинутые бетонные опоры и стеклянная башня — архитектурная деконструкция формы.
   summary: >
     Здания, которые будто взорвались и застыли: изломанные плоскости, наклонные стены и титановые волны.
   description: |

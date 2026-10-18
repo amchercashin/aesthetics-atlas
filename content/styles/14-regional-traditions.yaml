@@ -875,6 +875,24 @@
     - painting
     - drawing
   gallery:
+    - asset: assets/works/mithila-1.jpg
+      title: "Митхила: птицы и богиня"
+      author: Мастера митхилы
+      year: XX век
+      credit: Madhubani artists
+      license: ©; образовательное использование
+      nonfree: true
+      reference: https://en.wikipedia.org/wiki/Madhubani_art
+      whyRepresentative: Плотный орнамент, симметрия и мифологические фигуры — канон митхильской живописи.
+    - asset: assets/works/mithila-2.jpg
+      title: "Митхила: рыба"
+      author: Мастера митхилы
+      year: XX век
+      credit: Madhubani artists
+      license: ©; образовательное использование
+      nonfree: true
+      reference: https://en.wikipedia.org/wiki/Madhubani_art
+      whyRepresentative: Зооморфный сюжет и декоративная рамка — характерный мотив Мадхубани.
     - file: File:Madhubani Painting.jpg
       title: Madhubani Painting
       author: Vinodtiwari2608

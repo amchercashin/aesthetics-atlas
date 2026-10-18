@@ -691,6 +691,25 @@
   compare:
     - { id: frutiger-aero, note: "Глянец, стекло и прозрачность интерфейсов 2000-х. Сходство материала, а не доказанное возрождение." }
     - { id: skeuomorphism, note: "Интерес к физическому материалу в интерфейсе — но без имитации кожи и дерева." }
+  gallery:
+    - asset: assets/works/glass-1.jpg
+      title: "Глассморфизм: интерфейс"
+      author: Неизвестный автор
+      year: 2020-е
+      credit: UI archive
+      license: ©; образовательное использование
+      nonfree: true
+      reference: https://en.wikipedia.org/wiki/Glassmorphism
+      whyRepresentative: Полупрозрачные слои, размытие и цветные градиенты — формула глассморфизма.
+    - asset: assets/works/glass-2.jpg
+      title: "Глассморфизм: панели"
+      author: Неизвестный автор
+      year: 2020-е
+      credit: UI archive
+      license: ©; образовательное использование
+      nonfree: true
+      reference: https://en.wikipedia.org/wiki/Glassmorphism
+      whyRepresentative: Стеклянные карточки и мягкие тени — характерный приём направления.
   summary: >
     Полупрозрачные панели матового стекла над размытыми цветными пятнами: объём возвращается в плоский интерфейс.
   description: |
@@ -772,6 +791,25 @@
       sources:
         - flynn-solarpunk-2014
       note: Флинн прямо противопоставляет соларпанк «нигилистическому» киберпанку.
+  gallery:
+    - asset: assets/works/solarpunk-1.jpg
+      title: "Соларпанк: город"
+      author: Неизвестный автор
+      year: 2010-е
+      credit: Solarpunk art
+      license: ©; образовательное использование
+      nonfree: true
+      reference: https://en.wikipedia.org/wiki/Solarpunk
+      whyRepresentative: Зелень, солнечный свет и технологии — оптимистичный город соларпанка.
+    - asset: assets/works/solarpunk-2.jpg
+      title: "Соларпанк: будущее"
+      author: Неизвестный автор
+      year: 2010-е
+      credit: Solarpunk art
+      license: ©; образовательное использование
+      nonfree: true
+      reference: https://en.wikipedia.org/wiki/Solarpunk
+      whyRepresentative: Экологичная архитектура и растительность — визуальная утопия соларпанка.
   summary: >
     Оптимистичная противоположность киберпанку: солнечные панели, сады на небоскрёбах и модерн из зелени.
   description: |
@@ -839,6 +877,25 @@
       16.10.2026 проверены исторические отношения и связанные с ними контексты и сопоставления; границы
       подтверждения указаны у каждой записи. Даты, описание и изображения карточки полностью не проверялись.
   parents: []
+  gallery:
+    - asset: assets/works/coquette-1.jpg
+      title: "Кокетт: банты"
+      author: Неизвестный автор
+      year: 2020-е
+      credit: Aesthetic archive
+      license: ©; образовательное использование
+      nonfree: true
+      reference: https://en.wikipedia.org/wiki/Coquette_aesthetic
+      whyRepresentative: Розовые банты и кружево — базовые мотивы кокетт-эстетики.
+    - asset: assets/works/coquette-2.jpg
+      title: "Кокетт: паттерн"
+      author: Неизвестный автор
+      year: 2020-е
+      credit: Aesthetic archive
+      license: ©; образовательное использование
+      nonfree: true
+      reference: https://en.wikipedia.org/wiki/Coquette_aesthetic
+      whyRepresentative: Повторяющиеся банты и пастель — характерный паттерн кокетт.
   summary: >
     Банты, кружево, жемчуг и бледно-розовый: рококо, пересобранное для TikTok.
   description: |
@@ -966,6 +1023,25 @@
         - developments-special-offer
   origin: unknown
   parents: []
+  gallery:
+    - asset: assets/works/brat-1.jpg
+      title: "Brat: зелёная обложка"
+      author: Charli XCX
+      year: "2024"
+      credit: Atlantic Records
+      license: © Atlantic Records
+      nonfree: true
+      reference: https://en.wikipedia.org/wiki/Brat_(album)
+      whyRepresentative: Кислотно-зелёный квадрат с размытым словом brat — икона эстетики.
+    - asset: assets/works/brat-2.jpg
+      title: "Brat: альтернативная обложка"
+      author: Charli XCX
+      year: "2024"
+      credit: Atlantic Records
+      license: © Atlantic Records
+      nonfree: true
+      reference: https://en.wikipedia.org/wiki/Brat_(album)
+      whyRepresentative: Тот же зелёный код и намеренно небрежная типографика — продолжение визуальной формулы.
   summary: >-
     Лаймовый фон и размытая строчная надпись: визуальная идентичность альбома Charli XCX и летней
     интернет-волны 2024 года.
@@ -1130,6 +1206,25 @@
         исторической связи.
       sources:
         - ra26-d4-aliencore-glossy
+  gallery:
+    - asset: assets/works/alien-1.jpg
+      title: "Элиенкор: пейзаж"
+      author: Неизвестный автор
+      year: 2020-е
+      credit: Aesthetic archive
+      license: ©; образовательное использование
+      nonfree: true
+      reference: https://aesthetics.fandom.com/wiki/Aliencore
+      whyRepresentative: Фиолетовая планета, НЛО и неземные формы — визуальное ядро элиенкора.
+    - asset: assets/works/alien-2.jpg
+      title: "Элиенкор: образ"
+      author: Неизвестный автор
+      year: 2020-е
+      credit: Aesthetic archive
+      license: ©; образовательное использование
+      nonfree: true
+      reference: https://aesthetics.fandom.com/wiki/Aliencore
+      whyRepresentative: Зелёный грим, антенны и глитч — характерный элиенкор-образ.
   summary: >-
     Опалесцентные переливы, биоморфные формы и макияж с внеземными ассоциациями; один из мотивов прогноза
     Pinterest на 2026 год.

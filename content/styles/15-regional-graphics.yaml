@@ -1472,6 +1472,24 @@
   medium:
     - painting
   gallery:
+    - asset: assets/works/bengal-1.jpg
+      title: "Патaчитра: Дурга"
+      author: Мастера патачитры
+      year: XX век
+      credit: Patachitra artists
+      license: ©; образовательное использование
+      nonfree: true
+      reference: https://en.wikipedia.org/wiki/Patachitra
+      whyRepresentative: Плоские фигуры, плотный контур и декоративный фон — язык бенгальской патачитры.
+    - asset: assets/works/bengal-2.jpg
+      title: "Патaчитра: фигуры"
+      author: Мастера патачитры
+      year: XX век
+      credit: Patachitra artists
+      license: ©; образовательное использование
+      nonfree: true
+      reference: https://en.wikipedia.org/wiki/Patachitra
+      whyRepresentative: Симметричная композиция и яркие локальные цвета — характерная патачитра.
     - file: File:Bengal Patachitra 2.jpg
       title: Bengal Patachitra 2
       author: বাক্যবাগীশ
@@ -1718,6 +1736,24 @@
     - painting
     - decorative-arts
   gallery:
+    - asset: assets/works/warli-circular.jpg
+      title: "Варли: круговой мотив"
+      author: Мастера варли
+      year: XX век
+      credit: Warli artists
+      license: ©; образовательное использование
+      nonfree: true
+      reference: https://en.wikipedia.org/wiki/Warli_painting
+      whyRepresentative: Круг из фигур и точек — устойчивый композиционный мотив росписи варли.
+    - asset: assets/works/warli-yellow.jpg
+      title: "Варли: дерево и фигуры"
+      author: Мастера варли
+      year: XX век
+      credit: Warli artists
+      license: ©; образовательное использование
+      nonfree: true
+      reference: https://en.wikipedia.org/wiki/Warli_painting
+      whyRepresentative: Плоские белые фигуры на цветном фоне и ритмические ряды — язык варли.
     - file: File:A Warli painting by Jivya Soma Mashe, Thane district.jpg
       title: A Warli painting by Jivya Soma Mashe, Thane district
       author: "[ https://www.flickr.com/people/72746018@N00 Jean-Pierre Dalb�ra] from Paris, France"

@@ -192,6 +192,25 @@
   dateKind: practice
   origin: unknown
   parents: []
+  gallery:
+    - asset: assets/works/emily-painting-1.jpg
+      title: Эмили Кнгваррей. Картина
+      author: Эмили Кам Кнгваррей
+      year: 1990-е
+      credit: Emily Kame Kngwarreye Estate / Tate
+      license: © Emily Kame Kngwarreye Estate
+      nonfree: true
+      reference: https://www.tate.org.uk/
+      whyRepresentative: Точечная живопись и органические поля цвета — язык Эмили Кнгваррей.
+    - asset: assets/works/emily-painting-2.jpg
+      title: Эмили Кнгваррей. Полотно
+      author: Эмили Кам Кнгваррей
+      year: 1990-е
+      credit: Emily Kame Kngwarreye Estate / NGV
+      license: © Emily Kame Kngwarreye Estate
+      nonfree: true
+      reference: https://www.ngv.vic.gov.au/
+      whyRepresentative: Плотная точечная фактура и ритм — характерная живопись художницы.
   summary: >-
     Ритмические живописные поля, в которых точечные слои, полосы и переплетения линий связаны с Country и
     личной практикой автора.
@@ -527,6 +546,24 @@
   origin: unknown
   parents: []
   gallery:
+    - asset: assets/works/shahzia-miniature-1.jpg
+      title: Шахзия Сикандер. Миниатюра
+      author: Шахзия Сикандер
+      year: 1990-е
+      credit: Shahzia Sikander / Whitney
+      license: © Shahzia Sikander
+      nonfree: true
+      reference: https://whitney.org/
+      whyRepresentative: Персидская миниатюра переосмыслена в современном рисунке — фирменный приём Сикандер.
+    - asset: assets/works/shahzia-miniature-2.jpg
+      title: Шахзия Сикандер. Работа на бумаге
+      author: Шахзия Сикандер
+      year: 2000-е
+      credit: Shahzia Sikander / MoMA
+      license: © Shahzia Sikander
+      nonfree: true
+      reference: https://www.moma.org/
+      whyRepresentative: Миниатюрная традиция и современная композиция соединены в работе на бумаге.
     - file: Shahzia Sikander Witness.jpg
       title: Witness
       author: Shahzia Sikander
@@ -907,6 +944,24 @@
   origin: unknown
   parents: []
   gallery:
+    - asset: assets/works/kawakubo-dress-1.jpg
+      title: "Comme des Garçons: платье"
+      author: Рэй Кавакубо
+      year: 1980–1990-е
+      credit: Comme des Garçons / The Met
+      license: © Comme des Garçons
+      nonfree: true
+      reference: https://www.metmuseum.org/exhibitions/listings/2017/rei-kawakubo
+      whyRepresentative: Асимметрия, объём и разрушение привычного силуэта — метод Кавакубо.
+    - asset: assets/works/kawakubo-dress-2.jpg
+      title: "Comme des Garçons: розовое платье"
+      author: Рэй Кавакубо
+      year: 2010-е
+      credit: Comme des Garçons / The Met
+      license: © Comme des Garçons
+      nonfree: true
+      reference: https://www.metmuseum.org/exhibitions/listings/2017/rei-kawakubo
+      whyRepresentative: Скульптурный объём и цвет — поздний пример преобразования силуэта у Кавакубо.
     - file: File:Dresses by Rei Kawakubo - Sarah Stierch 03.jpg
       title: Dresses by Rei Kawakubo - Sarah Stierch 03
       author: Sarah Stierch
@@ -1286,6 +1341,24 @@
   origin: unknown
   parents: []
   gallery:
+    - asset: assets/works/esther-mural.jpg
+      title: "Эстер Махлангу: мурал"
+      author: Эстер Махлангу
+      year: 2010-е
+      credit: Esther Mahlangu
+      license: © Esther Mahlangu
+      nonfree: true
+      reference: https://www.esthermahlangu.com/
+      whyRepresentative: Геометрические поля и чёрные контуры на стене — монументальная версия ндебеле.
+    - asset: assets/works/esther-pattern.jpg
+      title: "Эстер Махлангу: паттерн"
+      author: Эстер Махлангу
+      year: 2010-е
+      credit: Esther Mahlangu
+      license: © Esther Mahlangu
+      nonfree: true
+      reference: https://www.esthermahlangu.com/
+      whyRepresentative: Сетка цветных ромбов и полос — фирменный геометрический паттерн художницы.
     - file: File:BMW 525i Art Car - Esther Mahlangu (1991).jpg
       title: BMW 525i Art Car - Esther Mahlangu (1991)
       author: User:Strainu
@@ -1467,6 +1540,25 @@
   dateKind: practice
   origin: unknown
   parents: []
+  gallery:
+    - asset: assets/works/reko-1.jpg
+      title: "Реко Ренни: инсталляция"
+      author: Реко Ренни
+      year: 2010-е
+      credit: Reko Rennie
+      license: © Reko Rennie
+      nonfree: true
+      reference: https://en.wikipedia.org/wiki/Reko_Rennie
+      whyRepresentative: Неон, камуфляж и знаки аборигенной идентичности — публичный язык Ренни.
+    - asset: assets/works/reko-2.jpg
+      title: "Реко Ренни: скульптура"
+      author: Реко Ренни
+      year: 2010-е
+      credit: Reko Rennie
+      license: © Reko Rennie
+      nonfree: true
+      reference: https://en.wikipedia.org/wiki/Reko_Rennie
+      whyRepresentative: Геометрическая скульптура и яркий цвет — продолжение его визуальных знаков.
   summary: >-
     Лаконичные эмблемы, яркая окраска и переработанный камуфляж делают личную и культурную принадлежность
     публично видимой.
