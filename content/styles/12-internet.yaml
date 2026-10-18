@@ -75,6 +75,10 @@
     author: Macintosh Plus (Vektroid)
     year: 2011
   gallery:
+    - file: Back to the 80s.png
+      title: "Vaporwave: назад в 80-е"
+    - file: Nine lives vaporwave.jpg
+      title: "Vaporwave: Nine Lives"
     - file: Vaporwave art example.png
       title: Пример вейпорвейв-коллажа
       year: 2017
@@ -129,6 +133,11 @@
       sources:
         - ra26-d3-wilde
         - ra26-d3-shattered-release
+  gallery:
+    - file: Archura Catharsis.jpg
+      title: "Synthwave: Catharsis"
+    - file: Darkold - 'Deleted' photo session.jpg
+      title: "Synthwave: Deleted"
   summary: >
     Неоновый закат над бесконечной сеткой, хромированные буквы и спортивная машина: 80-е, какими их помнит VHS.
   description: |
@@ -199,6 +208,11 @@
       16.10.2026 проверены исторические отношения и связанные с ними контексты и сопоставления; границы
       подтверждения указаны у каждой записи. Даты, описание и изображения карточки полностью не проверялись.
   parents: []
+  gallery:
+    - file: Corporate Memphis - Generalitat de Catalunya (2024), 2.png
+      title: "Corporate Memphis: Generalitat"
+    - file: Corporate Memphis - Diada de Sant Jordi - Ajuntament de Barcelona.jpg
+      title: "Corporate Memphis: Барселона"
   summary: >
     Плоские человечки с крошечными головами и длинными фиолетовыми руками на сайтах всех стартапов мира.
   description: |
@@ -254,6 +268,11 @@
         - ra26-symbolism
   origin: unknown
   parents: []
+  gallery:
+    - file: Ästhetik Blumen im Sonnenuntergang Cottagecore So.05.18.jpg
+      title: "Cottagecore: цветы на закате"
+    - file: Hand Embroidery .jpg
+      title: "Cottagecore: вышивка"
   summary: >
     Идиллия сельской жизни: домашний хлеб, полевые цветы, льняные платья и коттедж с соломенной крышей.
   description: |
@@ -320,6 +339,11 @@
         - ra26-d4-dark-friedrich
   origin: unknown
   parents: []
+  gallery:
+    - file: Dark Academia Aesthetic.jpg
+      title: Dark Academia
+    - file: Catherine M. Wood Old books.jpg
+      title: "Dark Academia: старые книги"
   summary: >
     Романтика старых университетов: готические галереи, библиотеки, твид, свечи и греческая поэзия.
   description: |
@@ -390,6 +414,11 @@
       16.10.2026 проверены исторические отношения и связанные с ними контексты и сопоставления; границы
       подтверждения указаны у каждой записи. Даты, описание и изображения карточки полностью не проверялись.
   parents: []
+  gallery:
+    - file: Maximalist necklace, unknown designer, produced by Pull&Bear, circa 2023, 70% acrylic, 10% glass, 10% ceramic, 5% zinc, 5% iron, Ref. 7991507 (01).jpg
+      title: "Kidcore: максималистское ожерелье"
+    - file: Rainbow bead necklace - heart shaped.jpg
+      title: "Kidcore: радужные бусы"
   summary: >
     Детство 90-х и нулевых как эстетика: основные цвета, наклейки, мелки, детские передачи и бусины.
   description: |
@@ -471,6 +500,10 @@
     year: 2020-е
     whyRepresentative: Пустой транзитный коридор, искусственный свет, ни одного человека.
   gallery:
+    - file: Dülmen, Heilig-Kreuz-Kirche, Innenansicht -- 2019 -- 3022-6.jpg
+      title: "Лиминальное пространство: церковь"
+    - file: Abandoned building, Kolmannskuppe, Namibia.jpg
+      title: "Лиминальное пространство: заброшенное здание"
     - { file: "Corridor Stanley Hotel Estes Park Colorado 2024.jpg", title: "Коридор отеля «Стэнли»", year: "2024" }
   wiki: { en: Liminal space (aesthetic), ru: Лиминальное пространство }
   links:
@@ -520,6 +553,11 @@
       16.10.2026 проверены исторические отношения и связанные с ними контексты и сопоставления; границы
       подтверждения указаны у каждой записи. Даты, описание и изображения карточки полностью не проверялись.
   parents: []
+  gallery:
+    - file: Weirdcore 1379258.jpg
+      title: Weirdcore
+    - file: Weirdcore 2766.jpg
+      title: "Weirdcore: интерьер"
   summary: >
     Тревожные «воспоминания, которых не было»: пустые комнаты, шумные фото низкого качества,
     глаза в небе и подписи вроде «ты здесь уже был».
@@ -579,6 +617,11 @@
         - ra26-dreamcore
   origin: unknown
   parents: []
+  gallery:
+    - file: Dreamcore2.jpg
+      title: Dreamcore
+    - file: Dreamcore image.jpg
+      title: "Dreamcore: образ"
   summary: >-
     Сновидческие коллажи: знакомые пространства становятся невозможными, вызывая ностальгию, удивление или
     тревогу.
@@ -883,6 +926,8 @@
     - { title: "Barbiecore", url: "https://aesthetics.fandom.com/wiki/Barbiecore", src: "Aesthetics Wiki", lang: en }
   gallery:
     - file: Interior of the Barbie Cafe.jpg
+      title: "Barbiecore: кафе Barbie"
+    - file: Interior of the Barbie Cafe.jpg
       title: Кафе в стиле Барби
       year: 2013 (фотография)
       role: precursor
@@ -1026,6 +1071,8 @@
     author: Obvious (GAN)
     year: 2018
   gallery:
+    - file: New customer for the "Beloved Brethren Moratorium" (Ubik AI art).jpg
+      title: "AI-эстетика: Ubik"
     - file: "\"Mona Lisa\" with DeepDream effect using VGG16 network trained on ImageNet.jpg"
       title: «Мона Лиза» после DeepDream
       year: 2021
