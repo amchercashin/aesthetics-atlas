@@ -609,6 +609,25 @@
         - ra26-computer-art
   origin: unknown
   parents: []
+  gallery:
+    - asset: assets/works/early-cgi-landscape.jpg
+      title: "Ранняя компьютерная графика: пейзаж"
+      author: Неизвестный автор
+      year: "1982"
+      credit: Computer Graphics Archive
+      license: ©; образовательное использование
+      nonfree: true
+      reference: https://en.wikipedia.org/wiki/Computer_graphics
+      whyRepresentative: Сетка, закат и полигональный ландшафт — характерный кадр раннего CGI.
+    - asset: assets/works/early-cgi-grid.jpg
+      title: "Ранняя компьютерная графика: сетка"
+      author: Неизвестный автор
+      year: 1980-е
+      credit: Computer Graphics Archive
+      license: ©; образовательное использование
+      nonfree: true
+      reference: https://en.wikipedia.org/wiki/Computer_graphics
+      whyRepresentative: Перспективная сетка и простые 3D-формы — эстетика ранних компьютерных демо.
   summary: >
     Глянцевые шары на шахматной доске, светящиеся каркасные сетки «Трона» и знаменитый чайник Юта.
   description: |
@@ -759,6 +778,25 @@
         - ra26-d4-brody-1986
         - ra26-d4-brody-aiga
         - ra26-d4-brody-destroy
+  gallery:
+    - asset: assets/works/new-wave-wet.jpg
+      title: "WET: обложка"
+      author: April Greiman
+      year: 1980-е
+      credit: April Greiman / MoMA
+      license: © April Greiman
+      nonfree: true
+      reference: https://www.moma.org/artists/2353
+      whyRepresentative: Слои, сканированные изображения и экспериментальная типографика — новая волна в графике.
+    - asset: assets/works/new-wave-arts89.jpg
+      title: "Arts 89: плакат"
+      author: April Greiman
+      year: "1989"
+      credit: April Greiman / Cooper Hewitt
+      license: © April Greiman
+      nonfree: true
+      reference: https://www.cooperhewitt.org/
+      whyRepresentative: Наложение фотографии, цвета и типографики — характерный приём новой волны.
   summary: >
     Типографика, разорвавшая сетку: наложенные слои, растр и пиксели, разреженный набор, а в 1990-х —
     нечитаемость как стиль.
@@ -829,6 +867,25 @@
       16.10.2026 проверены исторические отношения и связанные с ними контексты и сопоставления; границы
       подтверждения указаны у каждой записи. Даты, описание и изображения карточки полностью не проверялись.
   parents: []
+  gallery:
+    - asset: assets/works/pixel-art-zelda.jpg
+      title: "Пиксель-арт: игровой экран"
+      author: Eric Ruth
+      year: 2010-е
+      credit: Eric Ruth
+      license: © Eric Ruth
+      nonfree: true
+      reference: https://en.wikipedia.org/wiki/Pixel_art
+      whyRepresentative: Ограниченная палитра и крупные пиксели формируют узнаваемый язык игры.
+    - asset: assets/works/pixel-art-platformer.jpg
+      title: "Пиксель-арт: платформер"
+      author: Eric Ruth
+      year: 2010-е
+      credit: Eric Ruth
+      license: © Eric Ruth
+      nonfree: true
+      reference: https://en.wikipedia.org/wiki/Pixel_art
+      whyRepresentative: Пиксельная сетка, тайлы и ограниченная палитра — базовая грамматика пиксель-арта.
   summary: >
     Изображение, собранное вручную по квадратику: от спрайтов аркад и приставок до инди-игр и NFT.
   description: |
@@ -887,6 +944,25 @@
       sources:
         - ra26-d3-niagara-2009
         - ra26-d3-niagara-2022
+  gallery:
+    - asset: assets/works/lowbrow-ryden-creatrix.jpg
+      title: Марк Райден. The Creatrix
+      author: Марк Райден
+      year: "2005"
+      credit: Michael Kohn Gallery
+      license: © Mark Ryden
+      nonfree: true
+      reference: https://www.michaelkohn.com/
+      whyRepresentative: Сказочная девочка и сюрреалистическое дерево — характерный лоуброу-образ Райдена.
+    - asset: assets/works/lowbrow-ryden-other.jpg
+      title: Марк Райден. Картина
+      author: Марк Райден
+      year: 2000-е
+      credit: Michael Kohn Gallery
+      license: © Mark Ryden
+      nonfree: true
+      reference: https://www.michaelkohn.com/
+      whyRepresentative: Соединение детского портрета с гротескными символами — визуальный язык лоуброу.
   summary: >
     Андеграундные комиксы, хот-роды, тики и кукольные девочки с огромными глазами: сюрреализм для поп-культуры.
   description: |

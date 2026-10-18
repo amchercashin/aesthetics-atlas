@@ -1854,6 +1854,25 @@
   dateKind: practice
   origin: unknown
   parents: []
+  gallery:
+    - asset: assets/works/norshtein-hedgehog.jpg
+      title: Ёжик в тумане
+      author: Юрий Норштейн, Франческа Ярбусова
+      year: "1975"
+      credit: Союзмультфильм
+      license: © Союзмультфильм
+      nonfree: true
+      reference: https://www.soyuzmultfilm.ru/
+      whyRepresentative: Туман, многослойная глубина и одинокая фигура — фирменный экранный язык Норштейна.
+    - asset: assets/works/norshtein-horse.jpg
+      title: "Ёжик в тумане: лошадь"
+      author: Юрий Норштейн, Франческа Ярбусова
+      year: "1975"
+      credit: Союзмультфильм
+      license: © Союзмультфильм
+      nonfree: true
+      reference: https://www.soyuzmultfilm.ru/
+      whyRepresentative: Мягкий свет и растворение силуэта в тумане — пример живописной анимации Норштейна.
   summary: Фактурный рисунок, светлое или туманное поле и выразительный силуэт соединяются в перекладочной анимации.
   description: >-
     Карточка сопоставляет визуальную организацию трёх фильмов 1974–1979 годов. В опубликованных кадрах рисунок
