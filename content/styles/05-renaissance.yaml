@@ -155,6 +155,25 @@
         развитие внутри этой периодизации, не как происхождение независимого движения.
       sources:
         - ra26-highrenaissance
+  gallery:
+    - asset: assets/works/school-of-athens.jpg
+      title: Афинская школа
+      author: Рафаэль Санти
+      year: 1510–1511
+      place: Ватикан, Станца делла Сеньятура
+      credit: Vatican Museums
+      license: Public domain
+      reference: https://www.museivaticani.va/content/museivaticani/en/collezioni/musei/le-stanze-di-raffaello/stanza-della-segnatura/scuola-di-atene.html
+      whyRepresentative: Уравновешенная многофигурная композиция с центральной перспективой и идеализированными фигурами — программный пример Высокого Возрождения.
+    - asset: assets/works/creation-of-adam.jpg
+      title: Сотворение Адама
+      author: Микеланджело Буонарроти
+      year: 1511–1512
+      place: Сикстинская капелла, Ватикан
+      credit: Vatican Museums
+      license: Public domain
+      reference: https://www.museivaticani.va/content/museivaticani/en/collezioni/musei/cappella-sistina/volta.html
+      whyRepresentative: Монументальная фреска с анатомически убедительными фигурами и ясной композиционной связью жеста.
   summary: >
     Леонардо, Микеланджело и Рафаэль строят крупные уравновешенные композиции, моделируют форму светом
     и тенью и работают в монументальном масштабе.
