@@ -117,6 +117,16 @@
     year: 1982
     place: Портленд, США
   gallery:
+    - asset: assets/works/postmodern-550-madison.jpg
+      title: 550 Madison Avenue (AT&T Building)
+      author: Филип Джонсон, Джон Бёрджи
+      year: 1984
+      place: Нью-Йорк
+      credit: SOM / Britannica
+      license: © SOM; образовательное использование
+      nonfree: true
+      reference: https://www.som.com/projects/550-madison-avenue/
+      whyRepresentative: Небоскрёб с разорванным фронтоном и историческими цитатами — икона постмодернистской архитектуры.
     - { file: "Piazza d'Italia, New Orleans, from Commerce Street, 22 May 2024.jpg", title: "Пьяцца д'Италия", author: "Чарльз Мур", year: "1978" }
   wiki: Postmodern architecture
   links:
@@ -239,6 +249,16 @@
     year: 1981
     place: Музей декоративного искусства, Париж
   gallery:
+    - asset: assets/works/memphis-ashoka-lamp.jpg
+      title: Лампа Ashoka
+      author: Этторе Соттсасс
+      year: 1981
+      place: Memphis Milano
+      credit: Memphis Milano / Wright
+      license: © Memphis Milano
+      nonfree: true
+      reference: https://www.memphis-milano.com/
+      whyRepresentative: Асимметричная конструкция с яркими геометрическими элементами — программный объект мемфисского дизайна.
     - { file: "Memphis-Milano Movement.jpg", title: "Предметы группы Memphis" }
   wiki: Memphis Group
   links: []
@@ -292,6 +312,16 @@
     author: Джейми Рид для Sex Pistols
     year: 1977
   gallery:
+    - asset: assets/works/punk-never-mind.jpg
+      title: Never Mind the Bollocks, Here’s the Sex Pistols
+      author: Jamie Reid / Sex Pistols
+      year: 1977
+      place: Virgin Records
+      credit: Virgin Records / V&A
+      license: © Virgin Records; образовательное использование
+      nonfree: true
+      reference: https://www.vam.ac.uk/articles/punk
+      whyRepresentative: Рваная типографика, ксероксная фактура и кислотный цвет — визуальный канон панк-графики.
     - file: UK and US zines.jpg
       title: Британские и американские зины
       year: 1994–2004
@@ -526,6 +556,16 @@
     author: Ридли Скотт, художник Сид Мид
     year: 1982
   gallery:
+    - asset: assets/works/cyberpunk-2077-alley.jpg
+      title: "Найт-Сити: переулок"
+      author: CD Projekt Red
+      year: 2020
+      place: Cyberpunk 2077
+      credit: CD Projekt Red
+      license: © CD Projekt Red
+      nonfree: true
+      reference: https://www.cyberpunk.net/
+      whyRepresentative: Неоновый дождь, тесный переулок и высокие технологии — визуальная формула киберпанка в игровой среде.
     - file: Hong Kong night street.jpg
       title: Ночная улица Гонконга
       year: 2013 (фотография)

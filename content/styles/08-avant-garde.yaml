@@ -897,6 +897,16 @@
   gallery:
     - file: enwiki:George_Grosz_-_Metropolis_(1916-17).jpg
       title: Грос. Метрополис
+    - asset: assets/works/dix-skat-players.jpg
+      title: Дикс. Игроки в скат
+      author: Отто Дикс
+      year: 1920
+      place: Новая национальная галерея, Берлин
+      credit: Staatliche Museen zu Berlin / Neue Nationalgalerie
+      license: © Otto Dix / VG Bild-Kunst
+      nonfree: true
+      reference: https://search.smb.museum/object/obj-962482
+      whyRepresentative: Три инвалида войны за карточной игрой — программный образ новой вещественности с холодной детализацией и гротескной композицией.
   summary: >
     Холодный, едкий реализм Веймарской Германии: кабаре, инвалиды войны и портреты с беспощадной точностью.
   description: |

@@ -547,6 +547,16 @@
     - Square Word Calligraphy
     - Book from the Sky
   gallery:
+    - asset: assets/works/xu-bing-phoenix.jpg
+      title: Феникс
+      author: Сюй Бин
+      year: 2007–2011
+      place: Проект Phoenix
+      credit: Xu Bing Studio
+      license: © Xu Bing
+      nonfree: true
+      reference: https://www.xubing.com/
+      whyRepresentative: Скульптурные птицы из строительного мусора продолжают тему письма и культурного перевода в пространственной форме.
     - file: EnglishChinaWriting.jpg
       title: English China Writing
       author: Xu Bing
