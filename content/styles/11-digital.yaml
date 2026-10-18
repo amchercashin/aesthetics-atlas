@@ -446,6 +446,11 @@
         эффекты. Различать скевоморфизм и декоративный реализм.
       sources:
         - ra26-flat
+  gallery:
+    - file: Android Auto icon (2026 update).png
+      title: "Flat design: иконка Android Auto"
+    - file: Material RangeSlider.png
+      title: "Flat design: слайдер"
   summary: >-
     Чистые цветные плоскости, простые значки и типографика без буквальной имитации кожи, дерева и объёма
     предметов.
@@ -550,6 +555,8 @@
   links:
     - { title: "Material Design", url: "https://m3.material.io/", src: "Google", lang: en }
   gallery:
+    - file: Material RangeSlider.png
+      title: "Material You: тёмная тема"
     - file: enwiki:Flat widgets.png
       title: Элементы интерфейса Material Design
       author: Totie
@@ -604,6 +611,11 @@
       16.10.2026 проверены исторические отношения и связанные с ними контексты и сопоставления; границы
       подтверждения указаны у каждой записи. Даты, описание и изображения карточки полностью не проверялись.
   parents: []
+  gallery:
+    - file: XVALA's Post-Internet street artt sticker on a San Francisco newspaper vending machine in 2011.jpg
+      title: "Post-Internet: XVALA"
+    - file: The BieberBot (side view) in artist space, South Los Angeles, California, 2012.jpg
+      title: "Post-Internet: BieberBot"
   summary: >
     Искусство после интернета: стоковые фото, корпоративный глянец и 3D-рендеры как материал для галерей.
   description: |
@@ -647,6 +659,11 @@
         - ra26-y2k
   origin: unknown
   parents: []
+  gallery:
+    - file: Geek Fashion Show 2013 - Mermaid Atlantis (8844815861).jpg
+      title: "Seapunk: Mermaid Atlantis"
+    - file: Geek Fashion Show 2013 - Mermaid Atlantis (8845437566).jpg
+      title: "Seapunk: Atlantis"
   summary: >
     Подводный мир из 3D-графики 90-х: дельфины, бирюзовые волосы, инь-ян и голографические волны.
   description: |
