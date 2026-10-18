@@ -39,6 +39,25 @@
       16.10.2026 проверены исторические отношения и связанные с ними контексты и сопоставления; границы
       подтверждения указаны у каждой записи. Даты, описание и изображения карточки полностью не проверялись.
   parents: []
+  gallery:
+    - asset: assets/works/web1-sugarcubes.jpg
+      title: "GeoCities: Sugar Cubes"
+      author: Неизвестный автор
+      year: 1990-е
+      credit: GeoCities archive
+      license: ©; образовательное использование
+      nonfree: true
+      reference: https://en.wikipedia.org/wiki/Web_1.0
+      whyRepresentative: Яркие фоны, таблицы и декоративные гифки — эстетика домашних страниц 1990-х.
+    - asset: assets/works/web1-shrine.jpg
+      title: "GeoCities: домашняя страница"
+      author: Неизвестный автор
+      year: 1990-е
+      credit: GeoCities archive
+      license: ©; образовательное использование
+      nonfree: true
+      reference: https://en.wikipedia.org/wiki/Web_1.0
+      whyRepresentative: Центрированный заголовок, счётчики и наивная вёрстка — язык Web 1.0.
   summary: >
     Домашние страницы 90-х: мигающие GIF, счётчики посетителей, фоны со звёздами и вечное «Under construction».
   description: |
@@ -138,6 +157,25 @@
       sources:
         - ra26-d4-wipeout-original
         - ra26-d4-y2k-collins
+  gallery:
+    - asset: assets/works/y2k-imac-1.jpg
+      title: "Y2K: iMac G3"
+      author: Apple
+      year: 1998–2001
+      credit: Apple
+      license: © Apple
+      nonfree: true
+      reference: https://en.wikipedia.org/wiki/Y2K_aesthetic
+      whyRepresentative: Прозрачный цветной корпус и округлые формы — предметный символ Y2K.
+    - asset: assets/works/y2k-imac-2.jpg
+      title: "Y2K: розовый iMac"
+      author: Apple
+      year: 1999–2001
+      credit: Apple
+      license: © Apple
+      nonfree: true
+      reference: https://en.wikipedia.org/wiki/Y2K_aesthetic
+      whyRepresentative: Кислотные цвета и глянцевый пластик — характерная палитра Y2K.
   summary: >
     Оптимистичный цифровой футуризм рубежа тысячелетий: прозрачный цветной пластик, хром, пузыри и голограммы.
   description: |
@@ -271,6 +309,25 @@
       16.10.2026 проверены исторические отношения и связанные с ними контексты и сопоставления; границы
       подтверждения указаны у каждой записи. Даты, описание и изображения карточки полностью не проверялись.
   parents: []
+  gallery:
+    - asset: assets/works/skeuo-1.jpg
+      title: "Скевоморфизм: интерфейс"
+      author: Неизвестный автор
+      year: 2010-е
+      credit: UI archive
+      license: ©; образовательное использование
+      nonfree: true
+      reference: https://en.wikipedia.org/wiki/Skeuomorphism
+      whyRepresentative: Кожа, бумага и металл в интерфейсе — имитация реальных материалов.
+    - asset: assets/works/skeuo-2.jpg
+      title: "Скевоморфизм: сравнение"
+      author: Неизвестный автор
+      year: 2010-е
+      credit: UI archive
+      license: ©; образовательное использование
+      nonfree: true
+      reference: https://en.wikipedia.org/wiki/Skeuomorphism
+      whyRepresentative: Объёмные кнопки и текстуры противопоставлены плоскому дизайну.
   summary: >
     Интерфейсы, имитирующие реальные вещи: кожаный календарь, деревянная книжная полка и жёлтая бумага заметок.
   description: |
@@ -339,6 +396,25 @@
         программным/сетевым корпусом; не объявлять всё интернет-искусство продолжением одного концептуализма.
       sources:
         - ra26-d2-net-conceptual
+  gallery:
+    - asset: assets/works/netart-1.jpg
+      title: "Net.art: веб-страница"
+      author: JODI
+      year: 1990-е
+      credit: JODI / net.art archive
+      license: © JODI
+      nonfree: true
+      reference: https://en.wikipedia.org/wiki/Net_art
+      whyRepresentative: Сырой HTML, тёмный фон и намеренно сломанная навигация — эстетика net.art.
+    - asset: assets/works/netart-2.jpg
+      title: "Net.art: коллаж"
+      author: Неизвестный автор
+      year: 1990-е
+      credit: net.art archive
+      license: ©; образовательное использование
+      nonfree: true
+      reference: https://en.wikipedia.org/wiki/Net_art
+      whyRepresentative: Перегруженный интерфейс и найденные изображения — сетевое искусство 1990-х.
   summary: >
     Искусство, которое существует только в браузере: гиперссылки, фреймы и ошибки как материал.
   description: |
@@ -393,6 +469,25 @@
         - ra26-glitch
   origin: unknown
   parents: []
+  gallery:
+    - asset: assets/works/glitch-1.jpg
+      title: "Глитч-арт: портрет"
+      author: Неизвестный автор
+      year: 2010-е
+      credit: Glitch art archive
+      license: ©; образовательное использование
+      nonfree: true
+      reference: https://en.wikipedia.org/wiki/Glitch_art
+      whyRepresentative: Цветовые сдвиги и цифровые артефакты разрушают изображение — язык глитч-арта.
+    - asset: assets/works/glitch-2.jpg
+      title: "Глитч-арт: лицо"
+      author: Неизвестный автор
+      year: 2010-е
+      credit: Glitch art archive
+      license: ©; образовательное использование
+      nonfree: true
+      reference: https://en.wikipedia.org/wiki/Glitch_art
+      whyRepresentative: Сканлайны и расслоение каналов — типичный глитч-эффект.
   summary: >
     Красота сбоя: разломанные JPEG, сдвинутые RGB-каналы и рассыпающиеся видеокадры.
   description: |
@@ -737,6 +832,25 @@
         ограничением интерфейсными приёмами точнее revival всей эстетики GeoCities.
       sources:
         - ra26-brutalist-web
+  gallery:
+    - asset: assets/works/webbru-1.jpg
+      title: "Веб-брутализм: коллаж"
+      author: Неизвестный автор
+      year: 2020-е
+      credit: Brutalist Websites
+      license: ©; образовательное использование
+      nonfree: true
+      reference: https://brutalistwebsites.com/
+      whyRepresentative: Сырая типографика, перегруженная сетка и намеренная грубость — язык веб-брутализма.
+    - asset: assets/works/webbru-2.jpg
+      title: "Веб-брутализм: страница"
+      author: Неизвестный автор
+      year: 2020-е
+      credit: Brutalist Websites
+      license: ©; образовательное использование
+      nonfree: true
+      reference: https://brutalistwebsites.com/
+      whyRepresentative: Открытая структура, моноширинный шрифт и отсутствие декора — характерная страница направления.
   summary: >
     Сырые сайты наперекор гладким шаблонам: системные шрифты, толстые рамки, синие ссылки и резкие тени.
   description: |
@@ -794,6 +908,25 @@
       16.10.2026 проверены исторические отношения и связанные с ними контексты и сопоставления; границы
       подтверждения указаны у каждой записи. Даты, описание и изображения карточки полностью не проверялись.
   parents: []
+  gallery:
+    - asset: assets/works/superflat-1.jpg
+      title: "Superflat: цветок"
+      author: Такаси Мураками
+      year: 2000-е
+      credit: Takashi Murakami / Kaikai Kiki
+      license: © Takashi Murakami
+      nonfree: true
+      reference: https://en.wikipedia.org/wiki/Superflat
+      whyRepresentative: Плоский цветок с улыбкой — поп-иконография superflat.
+    - asset: assets/works/superflat-2.jpg
+      title: "Superflat: цветочное поле"
+      author: Такаси Мураками
+      year: 2000-е
+      credit: Takashi Murakami / Kaikai Kiki
+      license: © Takashi Murakami
+      nonfree: true
+      reference: https://en.wikipedia.org/wiki/Superflat
+      whyRepresentative: Повторяющиеся цветы и плоская графика — характерный мир Мураками.
   summary: >
     Улыбающиеся цветы, аниме и логотипы Louis Vuitton: Такаси Мураками соединяет укиё-э, мангу и поп-арт.
   description: |
