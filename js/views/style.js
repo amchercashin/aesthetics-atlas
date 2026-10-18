@@ -73,10 +73,10 @@ function paletteBlock(s, img) {
   const p = s.palette;
   if (!p) return '';
   const editorial = p.source === 'editorial';
-  const label = editorial ? 'Редакторская подборка цветов' : 'Цвета этого изображения';
+  const label = editorial ? 'Редакторская подборка цветов' : 'Цвета всех изображений';
   const hint = editorial
     ? p.note ?? 'Цвета подобраны редакцией по признакам стиля.'
-    : 'Пять цветов, которые алгоритм нашёл на главной иллюстрации. Это не палитра всего стиля.';
+    : 'Пять цветов, которые алгоритм нашёл по всем изображениям карточки. Это не палитра всего стиля.';
   return html`<p class="pal-label">${label}</p>
     <div class="palette-strip" role="group" aria-label="${label}">
       ${p.colors.map((c) => html`<button type="button" class="pal" style="--c:${c}" data-hex="${c}" title="Скопировать ${c}"><span class="visually-hidden">Скопировать цвет ${c}</span></button>`)}
@@ -150,7 +150,7 @@ export default {
         </figure>
         ${thumbItems.length || galleryRefs.length ? html`<div class="room-thumbs" role="group" aria-label="Другие изображения этого стиля">
           ${thumbItems.map((g) => html`<button class="room-thumb" type="button" data-gallery="${lightboxItems.findIndex((x) => x.img.page === g.img.page)}" aria-label="Открыть крупно: ${g.title ?? ''}">
-            <img src="${g.img.src[250]}" alt="${g.title ?? ''}" loading="lazy">
+            <img src="${g.img.src[250]}" alt="${g.title ?? ''}">
             <span class="room-thumb-cap">${g.title ?? ''}</span>
           </button>`)}
           ${galleryRefs.map((g) => html`<a class="room-thumb room-thumb-ref" href="${safeUrl(g.external.page)}" target="_blank" rel="noopener">
