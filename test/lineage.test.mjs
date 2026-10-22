@@ -10,9 +10,9 @@ test('the route labels every incoming edge with its own type and verification st
     parents: i ? [{ id: i === 1 ? 'root' : types[i - 2], type: types[i - 1], status: i === 2 ? 'verified' : 'unverified' }] : [],
   }));
   const markup = String(lineageStrip(line, 'revival'));
-  for (const type of types) assert.match(markup, new RegExp(`${RELATION[type].label} ·`));
-  assert.equal((markup.match(/class="st st-unverified"/g) ?? []).length, 3);
-  assert.equal((markup.match(/class="st st-verified"/g) ?? []).length, 1);
+  for (const type of types) assert.match(markup, new RegExp(`<span class="ls-rel">${RELATION[type].label}</span>`));
+  assert.equal((markup.match(/class="ls-state st st-unverified"/g) ?? []).length, 3);
+  assert.equal((markup.match(/class="ls-state st st-verified"/g) ?? []).length, 1);
   assert.equal((markup.match(/Начало маршрута/g) ?? []).length, 1);
   assert.equal((markup.match(/aria-current="page"/g) ?? []).length, 1);
 });
