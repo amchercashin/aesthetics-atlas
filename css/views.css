@@ -485,6 +485,8 @@ body[data-view="style"] .room, body[data-view="style"] .site-footer {
 .e-sum { margin-top: 8px; color: var(--ink-2); max-width: 60ch; line-height: 1.5; }
 .e-from { padding-left: calc(clamp(130px, 18vw, 220px) + clamp(16px, 2.6vw, 32px)); font-size: var(--t-sm); color: var(--ink-3); }
 .e-from a { color: var(--ink-2); }
+/* Длинные однословные названия («Палеолитические», «Средневековье») на узком телефоне переносятся, а не раздвигают страницу */
+.chapter-title, .e-name, .e-orig { hyphens: auto; overflow-wrap: anywhere; }
 
 @media (max-width: 860px) {
   .tl { grid-template-columns: 1fr; }

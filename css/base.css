@@ -49,15 +49,15 @@ ul, ol { margin: 0; padding: 0; }
   border-bottom: 1px solid var(--rule);
 }
 .brand {
-  display: flex; align-items: center; gap: 10px;
+  flex: none; display: flex; align-items: center; gap: 10px;
   text-decoration: none; white-space: nowrap;
   font-family: var(--serif); font-size: var(--t-xl); font-weight: 500; letter-spacing: -0.01em;
 }
 .brand svg { width: 22px; height: 22px; color: var(--accent); }
 
-.main-nav { display: flex; gap: 4px; }
+.main-nav { flex: none; display: flex; gap: 4px; }
 .main-nav a {
-  text-decoration: none; color: var(--ink-2);
+  white-space: nowrap; text-decoration: none; color: var(--ink-2);
   padding: 7px 12px; border-radius: var(--radius-chip);
   font-size: var(--t-sm); font-weight: 500;
 }
@@ -65,17 +65,17 @@ ul, ol { margin: 0; padding: 0; }
 .main-nav a[aria-current="page"] { color: var(--ink); background: color-mix(in oklab, var(--ink) 9%, transparent); }
 .main-nav svg { display: none; }
 
-.header-tools { margin-left: auto; display: flex; align-items: center; gap: 8px; }
+.header-tools { margin-left: auto; min-width: 0; display: flex; align-items: center; gap: 8px; }
 .search-trigger {
   display: flex; align-items: center; gap: 10px;
-  min-width: 260px; height: 38px; padding: 0 10px 0 12px;
+  flex: 0 1 260px; width: 260px; min-width: 0; height: 38px; padding: 0 10px 0 12px;
   border: 1px solid var(--rule-strong); border-radius: var(--radius-ui);
   background: var(--paper-2); color: var(--ink-3);
   font-size: var(--t-sm); text-align: left;
 }
 .search-trigger:hover { border-color: var(--ink-3); color: var(--ink-2); }
 .search-trigger svg { width: 16px; height: 16px; flex: none; }
-.search-trigger span { flex: 1; }
+.search-trigger span { flex: 1; min-width: 0; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
 kbd {
   font-family: var(--sans); font-size: 11px; line-height: 1;
   padding: 3px 6px; border: 1px solid var(--rule-strong); border-radius: 4px; color: var(--ink-3);
@@ -94,13 +94,17 @@ kbd {
   :root:not([data-theme="light"]) .theme-toggle .moon { display: block; }
 }
 
+/* Поле поиска с подписью помещается рядом с меню только от 1000 px; уже — одна лупа */
+@media (max-width: 1000px) {
+  .search-trigger { flex: none; width: 38px; padding: 0; justify-content: center; border-color: transparent; background: none; }
+  .search-trigger span, .search-trigger kbd { display: none; }
+}
+
 /* Мобильная навигация — нижняя панель */
 @media (max-width: 760px) {
   :root { --header-h: 54px; }
   /* backdrop-filter у шапки сделал бы её контейнером для fixed-навигации — на мобильном фон сплошной */
   .site-header { backdrop-filter: none; -webkit-backdrop-filter: none; background: var(--wall, var(--paper)); }
-  .search-trigger { min-width: 0; width: 38px; padding: 0; justify-content: center; border-color: transparent; background: none; }
-  .search-trigger span, .search-trigger kbd { display: none; }
   .main-nav {
     position: fixed; left: 0; right: 0; bottom: 0; z-index: 45;
     justify-content: space-around; gap: 0;
