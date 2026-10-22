@@ -3,10 +3,11 @@
 import { html, mount, safeUrl } from '../html.js';
 import { fmtDates, fmtYear, RELATION, DOMAIN, KIND, DATE_KIND, REL_STATUS, roleLabel, plural } from '../format.js?v=regional-01';
 import { frame, credit } from '../ui/image.js?v=author-pilot';
-import { eraTag, thumb, footer } from '../ui/common.js?v=author-pilot';
+import { eraTag, thumb, footer } from '../ui/common.js?v=links-1';
 import { toast } from '../ui/toast.js';
 import notfound from './notfound.js';
 import { authorshipSection, corpusSection, contextSection } from '../ui/corpus.js';
+import { directLinks, linkStep, linkKey, egoMap, mountEgoMap } from '../ui/ego-map.js?v=links-1';
 
 const ARROW_L = html`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>`;
 const ARROW_R = html`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>`;
@@ -26,16 +27,21 @@ function sourceLinks(store, ids) {
   return html`<p class="ego-src">Источник: ${list.map((src, i) => html`${i ? '; ' : ''}<a href="${safeUrl(src.url)}" target="_blank" rel="noopener">${src.publisher ?? src.title}</a>`)}</p>`;
 }
 
-function relCard(store, rel, dir) {
-  const s = store.get(rel.id);
-  if (!s) return '';
-  const label = RELATION[rel.type]?.[dir] ?? '';
-  return html`<li class="ego-item rel-${rel.type} st-${rel.status}">
-    <span class="ego-rel">${label} · <span class="st st-${rel.status}">${REL_STATUS[rel.status]}</span></span>
-    <a class="ego-link" href="#/s/${s.id}">${thumb(s, 44)}<span><span class="ego-name">${s.name}</span><span class="ego-dates">${fmtDates(s)}</span></span></a>
-    ${rel.note ? html`<p class="ego-note">${rel.note}</p>` : ''}
-    ${sourceLinks(store, rel.sources)}
-  </li>`;
+// Пояснения к прямым связям: строка на связь, текст свёрнут до двух строк, источники — при раскрытии.
+// Порядок и ключи те же, что у мини-карты, поэтому наведение подсвечивает связь и там, и здесь.
+function linkNotes(store, s, { from, to }) {
+  const rows = [
+    ...from.map((x, i) => ({ key: linkKey('f', i), a: x.style, b: s, rel: x.rel })),
+    ...to.map((x, i) => ({ key: linkKey('t', i), a: s, b: x.style, rel: x.rel })),
+  ];
+  if (!rows.length) return '';
+  const head = (r) => html`<span class="em-line"><span class="em-pair">${r.a.name} → ${r.b.name}</span><span class="em-type">${RELATION[r.rel.type]?.label} · <span class="st st-${r.rel.status}">${REL_STATUS[r.rel.status]}</span></span></span>${r.rel.note ? html`<span class="em-note">${r.rel.note}</span>` : ''}`;
+  return html`<div class="em-why">
+    <h3 class="em-why-title">Почему связаны</h3>
+    <ul>${rows.map((r) => html`<li data-link="${r.key}">${r.rel.sources?.length
+      ? html`<details><summary>${head(r)}</summary>${sourceLinks(store, r.rel.sources)}</details>`
+      : html`<div class="em-row">${head(r)}</div>`}</li>`)}</ul>
+  </div>`;
 }
 
 // Первый parent задаёт маршрут, но каждый переход сохраняет собственный тип и статус.
@@ -117,8 +123,9 @@ export default {
     const thumbItems = galleryImgs.filter((g) => !cover || g.img.page !== cover.page);
     const galleryRefs = s.gallery.filter((g) => !g.img && g.external);
     const line = store.mainLine(s.id);
-    const prev = store.prev(s.id);
-    const next = store.next(s.id);
+    const direct = directLinks(store, s);
+    const linkCount = direct.from.length + direct.to.length;
+    const keys = [s.parents.length ? html`<kbd>←</kbd> главный предок` : '', s.children.length ? html`<kbd>→</kbd> ближайшее продолжение` : ''].filter(Boolean);
     const role = roleLabel(ex.role);
     const evidence = s.evidence.map((e) => ({ ...e, src: store.source(e.source) })).filter((e) => e.src);
 
@@ -194,30 +201,31 @@ export default {
 
       <section class="lineage">
         <div class="lineage-head">
-          <div><p class="lineage-kicker">Маршрут</p><h2 class="section-title">Цепочка связей</h2></div>
-          ${line.length > 1 ? html`<p class="lineage-count">${line.length} ${plural(line.length, 'стиль', 'стиля', 'стилей')} · ${line.length - 1} ${plural(line.length - 1, 'переход', 'перехода', 'переходов')}</p>` : ''}
+          <div><p class="lineage-kicker">Родословная</p><h2 class="section-title">Связи</h2></div>
+          ${linkCount ? html`<p class="lineage-count">${direct.from.length} ${plural(direct.from.length, 'предшественник', 'предшественника', 'предшественников')} · ${direct.to.length} ${plural(direct.to.length, 'продолжение', 'продолжения', 'продолжений')}</p>` : ''}
         </div>
-        ${line.length > 1 ? html`<p class="lineage-lead">Один из редакционных маршрутов по атласу, по первой связи каждой карточки. Для переходов показаны тип и степень проверки: влияние, реакция и возрождение не означают прямого происхождения.</p>
+        ${line.length > 1 ? html`<div class="lineage-sub">
+          <h3>Линия по первому предку</h3>
+          <p class="lineage-count">${line.length} ${plural(line.length, 'стиль', 'стиля', 'стилей')} · ${line.length - 1} ${plural(line.length - 1, 'переход', 'перехода', 'переходов')}</p>
+        </div>
+        <p class="lineage-lead">Один из редакционных маршрутов по атласу, по первой связи каждой карточки. Для переходов показаны тип и степень проверки: влияние, реакция и возрождение не означают прямого происхождения.</p>
         <div class="lineage-rail">
           <button class="line-nav line-prev" type="button" data-line-prev aria-label="Предыдущие стили">${ARROW_L}</button>
           ${lineageStrip(line, s.id)}
           <button class="line-nav line-next" type="button" data-line-next aria-label="Следующие стили">${ARROW_R}</button>
           <div class="line-progress" aria-hidden="true"><span></span></div>
-        </div>` : s.origin === 'unknown'
+        </div>` : linkCount ? '' : s.origin === 'unknown'
           ? html`<p class="lineage-lead">Связи происхождения пока не представлены на карте.${s.comparisons.length ? ' Похожие по виду стили — в разделе «Визуальные сопоставления».' : ''}</p>`
-          : html`<p class="lineage-lead">Один из независимых истоков в атласе: предшественников у этого стиля здесь нет.</p>`}
-        <div class="ego">
-          <div class="ego-col">
-            <h3 class="ego-title">Откуда</h3>
-            ${s.parents.length ? html`<ul>${s.parents.map((r) => relCard(store, r, 'from'))}</ul>` : html`<p class="muted">${s.origin === 'unknown' ? 'Связи пока не показаны' : 'Исток'}</p>`}
-          </div>
-          <div class="ego-center" aria-hidden="true"><span>${s.name}</span></div>
-          <div class="ego-col">
-            <h3 class="ego-title">Куда</h3>
-            ${s.children.length ? html`<ul>${s.children.map((r) => relCard(store, r, 'to'))}</ul>` : html`<p class="muted">Продолжения пока не появились или ещё не описаны в атласе.</p>`}
-          </div>
+          : html`<p class="lineage-lead">Один из независимых истоков в атласе: связей с другими стилями здесь пока нет.</p>`}
+        ${linkCount ? html`<div class="lineage-sub"><h3>Прямые связи</h3></div>
+        <p class="lineage-lead">Слева — из чего вырос стиль, справа — что выросло из него. Тип связи подписан у каждого стиля, дальние поколения — на карте.</p>
+        ${egoMap(store, s)}
+        ${linkNotes(store, s, direct)}` : ''}
+        <div class="em-actions">
+          <a class="btn ghost" href="#/map?s=${s.id}">Показать на карте</a>
+          ${line.length > 1 ? html`<a class="em-more" href="#/map?s=${s.id}&view=line">Вся родословная на карте</a>` : ''}
+          ${keys.length ? html`<p class="em-keys">${keys.map((k, i) => html`${i ? ' · ' : ''}${k}`)}</p>` : ''}
         </div>
-        <a class="btn ghost" href="#/map?s=${s.id}">Показать на карте</a>
       </section>
 
       ${s.comparisons.length ? html`<section class="compare">
@@ -256,10 +264,6 @@ export default {
         </ul>
       </section>
 
-      <nav class="room-pager" aria-label="Соседние стили по времени">
-        ${prev ? html`<a class="pager-prev" href="#/s/${prev.id}">${ARROW_L}<span><span class="pg-label">Раньше</span><span class="pg-name">${prev.name}</span></span></a>` : html`<span></span>`}
-        ${next ? html`<a class="pager-next" href="#/s/${next.id}"><span><span class="pg-label">Позже</span><span class="pg-name">${next.name}</span></span>${ARROW_R}</a>` : html`<span></span>`}
-      </nav>
     </article>
     ${footer(store)}`);
 
@@ -283,10 +287,12 @@ export default {
     const onKey = (e) => {
       if (e.defaultPrevented || e.metaKey || e.ctrlKey || e.altKey) return;
       if (/^(INPUT|TEXTAREA)$/.test(document.activeElement?.tagName) || document.querySelector('dialog[open]')) return;
-      if (e.key === 'ArrowLeft' && prev) location.hash = `#/s/${prev.id}`;
-      if (e.key === 'ArrowRight' && next) location.hash = `#/s/${next.id}`;
+      // Стрелки ходят по связям, как на карте: ← главный предок, → ближайшее продолжение.
+      const to = linkStep(store, s, e.key);
+      if (to) location.hash = `#/s/${to}`;
     };
     document.addEventListener('keydown', onKey);
+    const unmountEgo = mountEgoMap(root);
 
     // Полоса родословной: центрируем текущий стиль и управляем прокруткой.
     const strip = root.querySelector('.line-strip');
@@ -326,6 +332,7 @@ export default {
         document.removeEventListener('keydown', onKey);
         if (strip) strip.removeEventListener('scroll', onRailScroll);
         railObserver?.disconnect();
+        unmountEgo();
       },
     };
   },

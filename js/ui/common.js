@@ -15,9 +15,10 @@ export function styleLink(s) {
   return html`<a href="#/s/${s.id}">${s.name}</a>`;
 }
 
-export function thumb(s, size = 52) {
+// res — ширина исходника: крупным кругам мало 250 px.
+export function thumb(s, size = 52, res = 250) {
   const im = s.example.img ?? s.gallery?.find((g) => g.img)?.img ?? null;
-  return html`<span class="thumb" style="--ph:${frameBg(s)}">${im ? html`<img src="${im.src[250]}" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer" width="${size}" height="${size}">` : ''}</span>`;
+  return html`<span class="thumb" style="--ph:${frameBg(s)}">${im ? html`<img src="${im.src[res] ?? im.src[250]}" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer" width="${size}" height="${size}">` : ''}</span>`;
 }
 
 function frameBg(s) {
