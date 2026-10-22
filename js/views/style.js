@@ -9,8 +9,8 @@ import { toast } from '../ui/toast.js';
 import notfound from './notfound.js';
 import { authorshipSection, corpusSection, contextSection } from '../ui/corpus.js';
 import { directLinks, linkStep, linkKey, egoMap, mountEgoMap } from '../ui/ego-map.js?v=links-1';
-import { promptFor, styleAnchor, pickOther } from '../prompt.js';
-import { aiHead, aiPromptBody, mountAiPrompt } from '../ui/ai-prompt.js?v=ai-2';
+import { promptFor, styleAnchor, pickOther } from '../prompt.js?v=ai-4';
+import { aiHead, aiPromptBody, mountAiPrompt } from '../ui/ai-prompt.js?v=ai-4';
 
 const ARROW_L = html`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>`;
 const ARROW_R = html`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>`;
