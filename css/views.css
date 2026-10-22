@@ -5,23 +5,24 @@
 /* =================== Главная =================== */
 .hero {
   display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(280px, 1fr); gap: clamp(24px, 5vw, 80px);
-  align-items: end; padding-bottom: clamp(28px, 4vw, 48px);
+  align-items: start; padding-bottom: clamp(28px, 4vw, 48px);
 }
 .hero-title {
   font-family: var(--serif); font-weight: 400;
   font-size: clamp(2.4rem, 1.2rem + 4.6vw, 5.4rem); line-height: 1.02; letter-spacing: -0.025em;
   text-wrap: balance;
 }
-.hero-side { display: grid; gap: 22px; padding-bottom: 8px; }
+.hero-side { display: grid; gap: 22px; padding-top: 0.6em; }
 .hero-lead { font-family: var(--serif); font-size: var(--t-xl); line-height: 1.5; color: var(--ink-2); max-width: 36ch; }
-.hero-search {
-  display: flex; align-items: center; gap: 12px; height: 54px; padding: 0 16px;
-  border: 1px solid var(--ink); border-radius: var(--radius-ui); background: var(--paper-2);
-  font-size: var(--t-lg); color: var(--ink-3); text-align: left;
+/* «Удиви меня» в первом экране: карточка-приглашение; после нажатия раскрывается промт. */
+.hero-ai {
+  max-width: 520px; padding: 16px 18px 18px;
+  border: 1px solid var(--rule); border-left: 3px solid var(--accent); border-radius: var(--radius-ui);
+  background: var(--paper-2);
 }
-.hero-search:hover { color: var(--ink-2); box-shadow: 0 0 0 3px color-mix(in oklab, var(--accent) 22%, transparent); }
-.hero-search svg { width: 20px; height: 20px; color: var(--ink); }
-.hero-search span { flex: 1; }
+.hero-ai-intro { display: grid; gap: 14px; justify-items: start; margin-top: 6px; }
+.hero-ai-lead { font-size: var(--t-sm); line-height: 1.5; color: var(--ink-2); max-width: 44ch; }
+.hero-ai-body { margin-top: 12px; }
 
 .frieze { border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); padding: 28px 0 0; background: color-mix(in oklab, var(--paper-3) 45%, var(--paper)); }
 .frieze-track {
@@ -151,6 +152,8 @@ body[data-view="style"] .room, body[data-view="style"] .site-footer {
 @media (min-width: 900px) {
   .room-art { display: flex; gap: 10px; align-items: flex-start; }
   .room-work { flex: 0 1 auto; width: auto; max-width: 100%; margin: 0; }
+  /* Рамка по ширине самой работы (как .art-frame), чтобы миниатюры стояли вплотную, без зазора. */
+  .room-work[style*="--cover-ar"] { width: min(100%, calc(78vh * var(--cover-ar)), var(--cover-max, 100%)); }
   .room-work .art-frame:has(img) { margin-inline: 0; }
   .room-thumbs {
     flex: 0 0 112px; flex-direction: column; overflow-x: hidden; overflow-y: auto; max-height: min(78vh, 760px);
@@ -160,12 +163,16 @@ body[data-view="style"] .room, body[data-view="style"] .site-footer {
   .room-thumb img { height: 72px; }
 }
 
-.wall-label {
-  position: sticky; top: calc(var(--header-h) + 24px);
+.room-main { min-width: 0; }
+/* Этикетка главной работы — под ней, как подписи миниатюр. */
+.work-label { margin-top: 18px; max-width: 68ch; }
+.work-label .ego-src, .work-label .credit { margin-top: 8px; }
+.style-panel {
   background: var(--paper-2); padding: 22px 22px 20px; border: 1px solid var(--rule);
   box-shadow: 0 1px 0 var(--rule);
 }
-.wl-title { font-family: var(--serif); font-size: var(--t-2xl); line-height: 1.2; }
+.sp-summary { font-family: var(--serif); font-size: var(--t-lg); line-height: 1.5; }
+.wl-title { font-family: var(--serif); font-size: var(--t-xl); line-height: 1.25; }
 .wl-author { margin-top: 6px; font-weight: 500; }
 .wl-facts { margin-top: 2px; color: var(--ink-2); font-size: var(--t-sm); }
 .wl-note { margin-top: 10px; color: var(--ink-3); font-size: var(--t-sm); }
@@ -175,7 +182,6 @@ body[data-view="style"] .room, body[data-view="style"] .site-footer {
 .wl-why strong { font-weight: 600; color: var(--ink); }
 .pal-label { margin-top: 18px; font-size: var(--t-sm); font-weight: 600; }
 .pal-label + .palette-strip { margin-top: 8px; }
-.wl-summary { margin-top: 18px; padding-top: 16px; border-top: 1px solid var(--rule); font-family: var(--serif); font-size: var(--t-lg); line-height: 1.5; }
 .palette-strip { display: grid; grid-template-columns: repeat(5, 1fr); margin-top: 18px; height: 40px; border-radius: 3px; overflow: hidden; }
 .pal { border: 0; padding: 0; background: var(--c); }
 .pal:hover { transform: scaleY(1.12); }
@@ -436,7 +442,6 @@ body[data-view="style"] .room, body[data-view="style"] .site-footer {
 
 @media (max-width: 1000px) {
   .room-hang, .room-body { grid-template-columns: 1fr; }
-  .wall-label { position: static; }
 }
 @media (max-width: 680px) {
   .links a { grid-template-columns: 1fr 18px; }
@@ -445,34 +450,34 @@ body[data-view="style"] .room, body[data-view="style"] .site-footer {
   .room-text p { font-size: var(--t-lg); }
 }
 
-/* =================== Нарисовать с ИИ: зал и «Удиви меня» на главной =================== */
-.ai-draw { margin-top: clamp(48px, 7vw, 104px); }
-.ai-card {
-  max-width: 880px; padding: clamp(18px, 2.6vw, 28px);
-  border: 1px solid var(--rule); border-left: 3px solid var(--accent); border-radius: var(--radius-ui);
-  background: color-mix(in oklab, var(--paper-2) 70%, transparent);
+/* =================== Нарисовать с ИИ: в зале под палитрой, на главной в первом экране =================== */
+/* Компактно: начало промта видно сразу, целиком — по «Весь промт»; блок не спорит с работой и палитрой. */
+.style-panel .ai-block { margin-top: 20px; padding-top: 18px; border-top: 1px solid var(--rule); }
+.ai-head { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 4px 16px; }
+.ai-title { font-family: var(--sans); font-size: var(--t-sm); font-weight: 600; }
+.ai-next, .ai-more {
+  padding: 0; border: 0; background: none; color: var(--ink-2); cursor: pointer;
+  text-decoration: underline; text-decoration-color: var(--rule-strong); text-decoration-thickness: 1px; text-underline-offset: 0.2em;
 }
-.ai-prompt { font-family: var(--serif); font-size: var(--t-lg); line-height: 1.55; overflow-wrap: anywhere; }
-.ai-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px; }
-.ai-hint { margin-top: 12px; max-width: 64ch; font-size: var(--t-xs); line-height: 1.45; color: var(--ink-3); }
-.ai-style a { display: inline-grid; grid-template-columns: 40px auto; gap: 12px; align-items: center; text-decoration: none; }
-.ai-style .thumb { width: 40px; height: 40px; display: block; overflow: hidden; border-radius: 3px; background: var(--ph); }
+.ai-next { display: inline-flex; align-items: center; gap: 6px; font-size: var(--t-sm); }
+.ai-next svg { width: 15px; height: 15px; flex: none; }
+.ai-next:hover, .ai-more:hover { color: var(--ink); text-decoration-color: currentColor; }
+.ai-prompt {
+  margin-top: 10px; font-family: var(--serif); font-size: var(--t-md); line-height: 1.5; overflow-wrap: anywhere;
+  display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 3; line-clamp: 3; overflow: hidden;
+}
+.ai-prompt.is-open { display: block; -webkit-line-clamp: unset; line-clamp: none; }
+.ai-more { margin-top: 4px; font-size: var(--t-xs); color: var(--ink-3); }
+.ai-actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+.ai-actions .btn { height: 36px; padding: 0 14px; }
+.ai-hint { margin-top: 10px; font-size: var(--t-xs); line-height: 1.45; color: var(--ink-3); }
+.ai-style a { display: inline-grid; grid-template-columns: 36px auto; gap: 10px; align-items: center; text-decoration: none; }
+.ai-style .thumb { width: 36px; height: 36px; display: block; overflow: hidden; border-radius: 3px; background: var(--ph); }
 .ai-style .thumb img { width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity 0.4s; }
 .ai-style .thumb img.is-loaded { opacity: 1; }
-.ai-style-name { display: block; font-family: var(--serif); font-size: var(--t-xl); line-height: 1.2; }
+.ai-style-name { display: block; font-family: var(--serif); font-size: var(--t-lg); line-height: 1.2; }
 .ai-style a:hover .ai-style-name { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 0.18em; }
 .ai-style-dates { display: block; font-size: var(--t-xs); color: var(--ink-3); }
-.ai-style + .ai-prompt { margin-top: 16px; padding-top: 16px; border-top: 1px solid var(--rule); }
-
-.day:has(+ .surprise) { padding-bottom: clamp(40px, 6vw, 72px); }
-.surprise { display: grid; gap: 24px clamp(24px, 5vw, 72px); align-items: start; padding-top: 0; }
-.surprise-intro { display: grid; gap: 16px; justify-items: start; border-top: 1px solid var(--rule); padding-top: clamp(28px, 4vw, 44px); }
-.surprise-intro .day-kicker { margin: 0; }
-.surprise-lead { max-width: 40ch; font-family: var(--serif); font-size: var(--t-xl); line-height: 1.5; color: var(--ink-2); }
-@media (min-width: 900px) {
-  .surprise:has(.surprise-box:not([hidden])) { grid-template-columns: minmax(0, 1fr) minmax(0, 1.6fr); }
-  .surprise-box { margin-top: clamp(28px, 4vw, 44px); }
-}
 @media (max-width: 480px) {
   .ai-actions .btn { flex: 1 1 auto; justify-content: center; }
 }

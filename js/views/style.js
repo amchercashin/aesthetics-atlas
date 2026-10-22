@@ -1,4 +1,5 @@
-// Зал стиля: стена тонируется палитрой, работа висит с этикеткой, ниже — текст, родословная, ссылки.
+// Зал стиля: стена тонируется палитрой, под работой — её этикетка; рядом — суть стиля, цвета и «Нарисовать с ИИ».
+// Ниже — текст, родословная, ссылки.
 // Статус проверки карточки и связей виден сразу; источники утверждений — под раскрытием.
 import { html, mount, safeUrl } from '../html.js';
 import { fmtDates, fmtYear, RELATION, DOMAIN, KIND, DATE_KIND, REL_STATUS, roleLabel, plural } from '../format.js?v=regional-01';
@@ -9,7 +10,7 @@ import notfound from './notfound.js';
 import { authorshipSection, corpusSection, contextSection } from '../ui/corpus.js';
 import { directLinks, linkStep, linkKey, egoMap, mountEgoMap } from '../ui/ego-map.js?v=links-1';
 import { promptFor, styleAnchor, pickOther } from '../prompt.js';
-import { aiPromptBody, mountAiPrompt } from '../ui/ai-prompt.js';
+import { aiHead, aiPromptBody, mountAiPrompt } from '../ui/ai-prompt.js?v=ai-2';
 
 const ARROW_L = html`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>`;
 const ARROW_R = html`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>`;
@@ -150,8 +151,9 @@ export default {
       </header>
 
       <div class="room-hang">
+        <div class="room-main">
         <div class="room-art">
-        <figure class="room-work"${cover ? html` style="--cover-ar:${(cover.w / cover.h).toFixed(4)}"` : ''}>
+        <figure class="room-work"${cover ? html` style="--cover-ar:${(cover.w / cover.h).toFixed(4)}${cover.w < 700 ? `;--cover-max:${Math.round(cover.w * 1.6)}px` : ''}"` : ''}>
           ${cover ? html`<button class="work-zoom" type="button" aria-label="Открыть работу крупно">
             ${frame(cover, p, { sizes: '(min-width: 1100px) 58vw, 100vw', eager: true, size: 960, alt: coverTitle ?? '', note: galleryCover ? 'Пример традиции; основная работа — по ссылке' : img.local ? 'Локальная репродукция; источник — по ссылке' : ex.external ? 'Репродукция — у источника' : ex.note, capUpscale: true })}
           </button>` : ex.external?.reference ? html`<div class="reference-work">
@@ -173,7 +175,7 @@ export default {
           </a>`)}
         </div>` : ''}
         </div>
-        <aside class="wall-label" aria-label="Этикетка">
+        <div class="work-label">
           ${role ? html`<p class="wl-role">${role}</p>` : ''}
           <p class="wl-title">${ex.title}</p>
           ${ex.author ? html`<p class="wl-author">${ex.author}</p>` : ''}
@@ -184,8 +186,15 @@ export default {
           ${sourceLinks(store, ex.sources)}
           ${credit(cover)}
           ${ex.external ? html`<p class="credit"><a href="${safeUrl(ex.external.page)}" target="_blank" rel="noopener">${ex.external.reference ? 'Посмотреть работу у источника' : 'Открыть изображение на странице файла'}</a></p>` : ''}
-          <p class="wl-summary">${s.summary}</p>
+        </div>
+        </div>
+        <aside class="style-panel" aria-label="О стиле">
+          <p class="sp-summary">${s.summary}</p>
           ${paletteBlock(s, img)}
+          ${subject ? html`<section class="ai-block" aria-labelledby="ai-title">
+            ${aiHead('ai-title')}
+            ${aiPromptBody(promptFor(store, s, subject), { id: 'ai-text', note: anchor ? `Имя автора в промт не входит: он просит рисовать в духе ${anchor}.` : '' })}
+          </section>` : ''}
         </aside>
       </div>
 
@@ -198,12 +207,6 @@ export default {
           ${datesBlock(store, s)}
         </aside>
       </section>
-
-      ${subject ? html`<section class="ai-draw" aria-labelledby="ai-draw-title">
-        <div class="lineage-head"><div><p class="lineage-kicker">Мастерская</p><h2 class="section-title" id="ai-draw-title">Нарисовать с ИИ</h2></div></div>
-        <p class="lineage-lead">Промт для генератора картинок: случайный предмет в этом стиле по признакам и палитре карточки.${anchor ? ` Название карточки и имя автора в промт не входят: он просит рисовать в духе ${anchor} по признакам.` : ''}</p>
-        <div class="ai-card">${aiPromptBody(promptFor(store, s, subject))}</div>
-      </section>` : ''}
 
       ${authorshipSection(store, s)}
       ${corpusSection(store, s)}
@@ -303,7 +306,7 @@ export default {
     };
     document.addEventListener('keydown', onKey);
     const unmountEgo = mountEgoMap(root);
-    const aiBox = root.querySelector('.ai-card');
+    const aiBox = root.querySelector('.ai-block');
     const ai = aiBox && mountAiPrompt(aiBox, {
       next: () => promptFor(store, s, (subject = pickOther(store.promptSubjects, Math.random, subject))),
     });
