@@ -8,6 +8,8 @@ import { toast } from '../ui/toast.js';
 import notfound from './notfound.js';
 import { authorshipSection, corpusSection, contextSection } from '../ui/corpus.js';
 import { directLinks, linkStep, linkKey, egoMap, mountEgoMap } from '../ui/ego-map.js?v=links-1';
+import { promptFor, styleAnchor, pickOther } from '../prompt.js';
+import { aiPromptBody, mountAiPrompt } from '../ui/ai-prompt.js';
 
 const ARROW_L = html`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>`;
 const ARROW_R = html`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>`;
@@ -128,6 +130,8 @@ export default {
     const keys = [s.parents.length ? html`<kbd>←</kbd> главный предок` : '', s.children.length ? html`<kbd>→</kbd> ближайшее продолжение` : ''].filter(Boolean);
     const role = roleLabel(ex.role);
     const evidence = s.evidence.map((e) => ({ ...e, src: store.source(e.source) })).filter((e) => e.src);
+    let subject = pickOther(store.promptSubjects);
+    const anchor = styleAnchor(store, s);
 
     mount(root, html`
     <article class="room">
@@ -194,6 +198,12 @@ export default {
           ${datesBlock(store, s)}
         </aside>
       </section>
+
+      ${subject ? html`<section class="ai-draw" aria-labelledby="ai-draw-title">
+        <div class="lineage-head"><div><p class="lineage-kicker">Мастерская</p><h2 class="section-title" id="ai-draw-title">Нарисовать с ИИ</h2></div></div>
+        <p class="lineage-lead">Промт для генератора картинок: случайный предмет в этом стиле по признакам и палитре карточки.${anchor ? ` Название карточки и имя автора в промт не входят: он просит рисовать в духе ${anchor} по признакам.` : ''}</p>
+        <div class="ai-card">${aiPromptBody(promptFor(store, s, subject))}</div>
+      </section>` : ''}
 
       ${authorshipSection(store, s)}
       ${corpusSection(store, s)}
@@ -293,6 +303,10 @@ export default {
     };
     document.addEventListener('keydown', onKey);
     const unmountEgo = mountEgoMap(root);
+    const aiBox = root.querySelector('.ai-card');
+    const ai = aiBox && mountAiPrompt(aiBox, {
+      next: () => promptFor(store, s, (subject = pickOther(store.promptSubjects, Math.random, subject))),
+    });
 
     // Полоса родословной: центрируем текущий стиль и управляем прокруткой.
     const strip = root.querySelector('.line-strip');
@@ -333,6 +347,7 @@ export default {
         if (strip) strip.removeEventListener('scroll', onRailScroll);
         railObserver?.disconnect();
         unmountEgo();
+        ai?.destroy();
       },
     };
   },

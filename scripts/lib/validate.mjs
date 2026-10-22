@@ -286,3 +286,19 @@ export function validate(styles, eras, sources = []) {
 
   return { errors, warnings };
 }
+
+// Предметы для промта «Нарисовать с ИИ» (content/prompt-subjects.yaml): 40–60 разных фраз в винительном падеже.
+export function validatePromptSubjects(list) {
+  if (!Array.isArray(list)) return ['prompt subjects: expected a list'];
+  const errors = [];
+  if (list.length < 40 || list.length > 60) errors.push(`prompt subjects: ${list.length} items, expected 40–60`);
+  const seen = new Set();
+  for (const item of list) {
+    const t = typeof item === 'string' ? item.trim() : '';
+    if (!t) { errors.push(`prompt subjects: empty or non-string item ${JSON.stringify(item)}`); continue; }
+    if (/^\p{Lu}/u.test(t) || /[.!?;]$/.test(t)) errors.push(`prompt subjects: "${t}" — lowercase, no final punctuation`);
+    if (seen.has(t)) errors.push(`prompt subjects: duplicate "${t}"`);
+    seen.add(t);
+  }
+  return errors;
+}

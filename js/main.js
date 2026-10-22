@@ -1,5 +1,5 @@
 // Точка входа: данные, тема, поиск, роутинг между видами.
-import { loadAtlas } from './store.js?v=chain-author-map4';
+import { loadAtlas } from './store.js?v=ai-1';
 import { parseHash } from './router.js?v=map4';
 import { initTheme } from './theme.js';
 import { initSearch } from './ui/search-dialog.js?v=regional-01';
@@ -32,7 +32,7 @@ async function route(base, { first = false } = {}) {
     current.instance.update({ ...base, ...r });
     return;
   }
-  const mod = await import(`./views/${r.view}.js?v=links-1`);
+  const mod = await import(`./views/${r.view}.js?v=ai-1`);
   if (seq !== routeSeq) return;
   const swap = () => {
     current?.instance?.destroy?.();
