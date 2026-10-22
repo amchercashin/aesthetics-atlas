@@ -167,10 +167,13 @@ body[data-view="style"] .room, body[data-view="style"] .site-footer {
 /* Этикетка главной работы — под ней, как подписи миниатюр. */
 .work-label { margin-top: 18px; max-width: 68ch; }
 .work-label .ego-src, .work-label .credit { margin-top: 8px; }
-.style-panel {
+.room-aside { display: grid; gap: 16px; align-content: start; min-width: 0; }
+.style-panel, .ai-panel {
   background: var(--paper-2); padding: 22px 22px 20px; border: 1px solid var(--rule);
   box-shadow: 0 1px 0 var(--rule);
 }
+/* Активный блок отделён от описания и помечен акцентом стиля — как карточка «Удиви меня» на главной. */
+.ai-panel { border-left: 3px solid var(--accent); }
 .sp-summary { font-family: var(--serif); font-size: var(--t-lg); line-height: 1.5; }
 .wl-title { font-family: var(--serif); font-size: var(--t-xl); line-height: 1.25; }
 .wl-author { margin-top: 6px; font-weight: 500; }
@@ -451,8 +454,8 @@ body[data-view="style"] .room, body[data-view="style"] .site-footer {
 }
 
 /* =================== Нарисовать с ИИ: в зале под палитрой, на главной в первом экране =================== */
-/* Компактно: начало промта видно сразу, целиком — по «Весь промт»; блок не спорит с работой и палитрой. */
-.style-panel .ai-block { margin-top: 20px; padding-top: 18px; border-top: 1px solid var(--rule); }
+/* Компактно: начало промта видно сразу, целиком — по «Весь промт»; копирование — значком в углу промта.
+   Кнопки сервисов — в их фирменных цветах (так их узнают быстрее); у каждой под ней короткая пометка. */
 .ai-head { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 4px 16px; }
 .ai-title { font-family: var(--sans); font-size: var(--t-sm); font-weight: 600; }
 .ai-next, .ai-more {
@@ -462,14 +465,38 @@ body[data-view="style"] .room, body[data-view="style"] .site-footer {
 .ai-next { display: inline-flex; align-items: center; gap: 6px; font-size: var(--t-sm); }
 .ai-next svg { width: 15px; height: 15px; flex: none; }
 .ai-next:hover, .ai-more:hover { color: var(--ink); text-decoration-color: currentColor; }
+.ai-prompt-box {
+  position: relative; margin-top: 10px; padding: 9px 40px 9px 12px;
+  border: 1px solid var(--rule); border-radius: 4px; background: var(--wall, var(--paper));
+}
+.ai-copy {
+  position: absolute; top: 5px; right: 5px; display: grid; place-items: center; width: 30px; height: 30px;
+  padding: 0; border: 0; border-radius: 4px; background: none; color: var(--ink-3); cursor: pointer;
+}
+.ai-copy:hover { background: var(--paper-3); color: var(--ink); }
+.ai-copy svg { width: 17px; height: 17px; grid-area: 1 / 1; }
+.ai-check-icon, .ai-copy.is-done .ai-copy-icon { display: none; }
+.ai-copy.is-done .ai-check-icon { display: block; }
+.ai-copied {
+  position: absolute; right: calc(100% + 4px); top: 50%; translate: 0 -50%; padding: 2px 7px; border-radius: 3px;
+  background: var(--ink); color: var(--paper); font-size: var(--t-xs); white-space: nowrap;
+  opacity: 0; pointer-events: none; transition: opacity 0.15s;
+}
+.ai-copy.is-done .ai-copied { opacity: 1; }
 .ai-prompt {
-  margin-top: 10px; font-family: var(--serif); font-size: var(--t-md); line-height: 1.5; overflow-wrap: anywhere;
+  font-family: var(--serif); font-size: var(--t-md); line-height: 1.5; overflow-wrap: anywhere;
   display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 3; line-clamp: 3; overflow: hidden;
 }
 .ai-prompt.is-open { display: block; -webkit-line-clamp: unset; line-clamp: none; }
 .ai-more { margin-top: 4px; font-size: var(--t-xs); color: var(--ink-3); }
-.ai-actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
-.ai-actions .btn { height: 36px; padding: 0 14px; }
+.ai-services { list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(96px, 1fr)); gap: 10px 8px; margin-top: 14px; }
+.ai-services li { display: grid; gap: 5px; align-content: start; min-width: 0; }
+.ai-svc { justify-content: center; height: 36px; padding: 0 12px; border-color: var(--svc-bg); background: var(--svc-bg); color: var(--svc-ink); }
+.ai-svc:hover { background: var(--svc-bg); filter: brightness(1.12); }
+.ai-svc-chatgpt { --svc-bg: #000000; --svc-ink: #ffffff; }
+.ai-svc-shedevrum { --svc-bg: #d83a14; --svc-ink: #ffffff; }   /* оранжево-красный Шедеврума, чуть темнее ради контраста текста */
+.ai-svc-giga { --svc-bg: #1fcca0; --svc-ink: #0d1f1a; }        /* бирюзовый ГигаЧата */
+.ai-svc-note { font-size: var(--t-xs); line-height: 1.3; color: var(--ink-3); }
 .ai-hint { margin-top: 10px; font-size: var(--t-xs); line-height: 1.45; color: var(--ink-3); }
 .ai-style a { display: inline-grid; grid-template-columns: 36px auto; gap: 10px; align-items: center; text-decoration: none; }
 .ai-style .thumb { width: 36px; height: 36px; display: block; overflow: hidden; border-radius: 3px; background: var(--ph); }
@@ -479,8 +506,13 @@ body[data-view="style"] .room, body[data-view="style"] .site-footer {
 .ai-style a:hover .ai-style-name { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 0.18em; }
 .ai-style-dates { display: block; font-size: var(--t-xs); color: var(--ink-3); }
 @media (max-width: 480px) {
-  .ai-actions .btn { flex: 1 1 auto; justify-content: center; }
+  .ai-services { grid-template-columns: 1fr; gap: 8px; }
+  .ai-services li { grid-template-columns: 132px 1fr; align-items: center; gap: 12px; }
 }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .ai-svc-chatgpt { --svc-bg: #ffffff; --svc-ink: #000000; }
+}
+:root[data-theme="dark"] .ai-svc-chatgpt { --svc-bg: #ffffff; --svc-ink: #000000; }
 
 /* =================== Хронология =================== */
 .tl { display: grid; grid-template-columns: 200px minmax(0, 1fr); gap: clamp(24px, 4vw, 64px); max-width: 1320px; margin: 0 auto; padding: 0 var(--gutter); }

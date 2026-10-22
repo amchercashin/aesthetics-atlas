@@ -4,7 +4,7 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import yaml from 'js-yaml';
 import { createStore } from '../js/store.js';
-import { buildPrompt, promptFor, styleAnchor, chatgptUrl, pickOther, PROMPT_LIMIT } from '../js/prompt.js';
+import { buildPrompt, promptFor, styleAnchor, chatgptUrl, shedevrumUrl, pickOther, PROMPT_LIMIT } from '../js/prompt.js';
 import { validatePromptSubjects } from '../scripts/lib/validate.mjs';
 
 const subjects = yaml.load(fs.readFileSync(new URL('../content/prompt-subjects.yaml', import.meta.url), 'utf8'));
@@ -103,6 +103,15 @@ test('the ChatGPT link carries the prompt URL-encoded', () => {
   assert.equal(new URL(url).searchParams.get('q'), p);
   assert.ok(!/[\s#«»;:&]/.test(url.slice('https://chatgpt.com/?q='.length)), url);
   assert.equal(url, `https://chatgpt.com/?q=${encodeURIComponent(p)}`);
+});
+
+test('the Shedevrum link opens its text-to-image form with the prompt filled in', () => {
+  const p = buildPrompt(card(), 'городскую улицу под дождём');
+  const url = shedevrumUrl(p);
+  assert.ok(url.startsWith('https://shedevrum.ai/text-to-image/?prompt='), url);
+  assert.equal(new URL(url).searchParams.get('prompt'), p);
+  // Поле запроса в Шедевруме принимает до 1000 знаков (maxlength, проверено 22.10.2026).
+  assert.ok(PROMPT_LIMIT <= 1000);
 });
 
 test('another variant never repeats the previous one', () => {

@@ -65,6 +65,10 @@ export function buildPrompt(s, subject, { anchor = null, limit = PROMPT_LIMIT } 
 export const promptFor = (store, s, subject) => buildPrompt(s, subject, { anchor: styleAnchor(store, s) });
 
 export const chatgptUrl = (prompt) => `https://chatgpt.com/?q=${encodeURIComponent(prompt)}`;
+// Шедеврум (Яндекс) подставляет ?prompt= в поле запроса формы «Создать картинку».
+export const shedevrumUrl = (prompt) => `https://shedevrum.ai/text-to-image/?prompt=${encodeURIComponent(prompt)}`;
+// ГигаЧат не принимает текст в адресе (проверено 22.10.2026): промт копируется, остаётся вставить.
+export const GIGACHAT_URL = 'https://giga.chat/';
 
 // Случайный элемент, отличный от предыдущего (если есть из чего выбрать).
 export function pickOther(list, rng = Math.random, prev = undefined) {
