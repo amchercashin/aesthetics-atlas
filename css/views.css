@@ -445,6 +445,38 @@ body[data-view="style"] .room, body[data-view="style"] .site-footer {
   .room-text p { font-size: var(--t-lg); }
 }
 
+/* =================== Нарисовать с ИИ: зал и «Удиви меня» на главной =================== */
+.ai-draw { margin-top: clamp(48px, 7vw, 104px); }
+.ai-card {
+  max-width: 880px; padding: clamp(18px, 2.6vw, 28px);
+  border: 1px solid var(--rule); border-left: 3px solid var(--accent); border-radius: var(--radius-ui);
+  background: color-mix(in oklab, var(--paper-2) 70%, transparent);
+}
+.ai-prompt { font-family: var(--serif); font-size: var(--t-lg); line-height: 1.55; overflow-wrap: anywhere; }
+.ai-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px; }
+.ai-hint { margin-top: 12px; max-width: 64ch; font-size: var(--t-xs); line-height: 1.45; color: var(--ink-3); }
+.ai-style a { display: inline-grid; grid-template-columns: 40px auto; gap: 12px; align-items: center; text-decoration: none; }
+.ai-style .thumb { width: 40px; height: 40px; display: block; overflow: hidden; border-radius: 3px; background: var(--ph); }
+.ai-style .thumb img { width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity 0.4s; }
+.ai-style .thumb img.is-loaded { opacity: 1; }
+.ai-style-name { display: block; font-family: var(--serif); font-size: var(--t-xl); line-height: 1.2; }
+.ai-style a:hover .ai-style-name { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 0.18em; }
+.ai-style-dates { display: block; font-size: var(--t-xs); color: var(--ink-3); }
+.ai-style + .ai-prompt { margin-top: 16px; padding-top: 16px; border-top: 1px solid var(--rule); }
+
+.day:has(+ .surprise) { padding-bottom: clamp(40px, 6vw, 72px); }
+.surprise { display: grid; gap: 24px clamp(24px, 5vw, 72px); align-items: start; padding-top: 0; }
+.surprise-intro { display: grid; gap: 16px; justify-items: start; border-top: 1px solid var(--rule); padding-top: clamp(28px, 4vw, 44px); }
+.surprise-intro .day-kicker { margin: 0; }
+.surprise-lead { max-width: 40ch; font-family: var(--serif); font-size: var(--t-xl); line-height: 1.5; color: var(--ink-2); }
+@media (min-width: 900px) {
+  .surprise:has(.surprise-box:not([hidden])) { grid-template-columns: minmax(0, 1fr) minmax(0, 1.6fr); }
+  .surprise-box { margin-top: clamp(28px, 4vw, 44px); }
+}
+@media (max-width: 480px) {
+  .ai-actions .btn { flex: 1 1 auto; justify-content: center; }
+}
+
 /* =================== Хронология =================== */
 .tl { display: grid; grid-template-columns: 200px minmax(0, 1fr); gap: clamp(24px, 4vw, 64px); max-width: 1320px; margin: 0 auto; padding: 0 var(--gutter); }
 .tl > * { min-width: 0; }

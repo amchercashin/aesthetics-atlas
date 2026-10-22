@@ -34,6 +34,7 @@ export function createStore(data) {
     eras,
     builtAt: data.builtAt,
     resources: data.resources ?? [],
+    promptSubjects: data.promptSubjects ?? [],
     get: (id) => byId.get(id) ?? byId.get(former.get(id)),
     has: (id) => byId.has(id) || former.has(id),
     resolve: (id) => (byId.has(id) ? id : former.get(id) ?? null),

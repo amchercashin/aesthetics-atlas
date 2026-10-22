@@ -1,10 +1,14 @@
-// Главная: заголовок, поиск, лента эпох (вся история одной полосой), три входа и стиль дня.
+// Главная: заголовок, поиск, лента эпох (вся история одной полосой), три входа, стиль дня и «Удиви меня».
 import { html, mount } from '../html.js';
 import { fmtDates, fmtYear, plural } from '../format.js?v=audit';
 import { frame } from '../ui/image.js?v=audit-p1p2';
 import { footer, thumb } from '../ui/common.js?v=audit-p1p2';
 import { createTimeScale, segmentWidths } from '../timescale.js';
 import { layoutRows } from '../layout.js';
+import { promptFor, pickOther } from '../prompt.js';
+import { aiPromptBody, mountAiPrompt } from '../ui/ai-prompt.js';
+
+const DICE = html`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="3"/><g fill="currentColor" stroke="none"><circle cx="8.5" cy="8.5" r="1.3"/><circle cx="15.5" cy="15.5" r="1.3"/><circle cx="12" cy="12" r="1.3"/></g></svg>`;
 
 function miniMap(store) {
   const breaks = [...store.eras.map((e) => e.start), store.now + 1];
@@ -101,7 +105,30 @@ export default {
         </div>
       </div>
     </section>
+
+    ${store.promptSubjects.length ? html`<section class="surprise page" aria-labelledby="surprise-title">
+      <div class="surprise-intro">
+        <h2 class="day-kicker" id="surprise-title">Нарисовать с ИИ</h2>
+        <p class="surprise-lead">Случайный стиль атласа и случайный предмет: промт для генератора картинок из признаков и палитры карточки.</p>
+        <button class="btn" type="button" data-surprise aria-controls="surprise-box">${DICE}Удиви меня</button>
+      </div>
+      <div class="ai-card surprise-box" id="surprise-box" hidden>
+        <p class="ai-style" data-ai-style></p>
+        ${aiPromptBody()}
+      </div>
+    </section>` : ''}
     ${footer(store)}`);
+
+    // «Удиви меня» и «Другой вариант» меняют и стиль, и предмет.
+    const box = root.querySelector('.surprise-box');
+    let pick = null;
+    const surprise = () => {
+      const style = pickOther(store.styles, Math.random, pick?.style);
+      pick = { style, subject: pickOther(store.promptSubjects, Math.random, pick?.subject) };
+      mount(box.querySelector('[data-ai-style]'), html`<a href="#/s/${style.id}">${thumb(style, 40)}<span><span class="ai-style-name">${style.name}</span><span class="ai-style-dates">${fmtDates(style)} · открыть зал</span></span></a>`);
+      return promptFor(store, style, pick.subject);
+    };
+    const ai = box && mountAiPrompt(box, { next: surprise });
 
     const track = root.querySelector('.frieze-track');
     const onClick = (e) => {
@@ -109,8 +136,12 @@ export default {
       if (b) track.scrollBy({ left: Number(b.dataset.scroll) * track.clientWidth * 0.8, behavior: 'smooth' });
       const r = e.target.closest('[data-random]');
       if (r) r.href = `#/s/${store.random().id}`;
+      if (e.target.closest('[data-surprise]')) {
+        ai.set(surprise());
+        box.hidden = false;
+      }
     };
     root.addEventListener('click', onClick);
-    return { destroy() { root.removeEventListener('click', onClick); } };
+    return { destroy() { root.removeEventListener('click', onClick); ai?.destroy(); } };
   },
 };

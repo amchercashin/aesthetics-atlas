@@ -6,7 +6,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import yaml from 'js-yaml';
 import { validateNebulae, resolveNebulae } from './lib/nebulae.mjs';
-import { validate, ymd } from './lib/validate.mjs';
+import { validate, validatePromptSubjects, ymd } from './lib/validate.mjs';
 import { buildRecord, childrenOf, comparisonsOf, contextsOf } from './lib/record.mjs';
 import { resolveFiles, resolveWiki, commonsCategories, commonsCategoriesExist, saveCache } from './lib/wikimedia.mjs';
 import { downloadThumb, paletteFromImages, paletteFromHexList, mapLimit } from './lib/palette.mjs';
@@ -22,6 +22,7 @@ const eras = readYaml(path.join(ROOT, 'content/eras.yaml'));
 const resources = readYaml(path.join(ROOT, 'content/resources.yaml')) ?? [];
 const sources = readYaml(path.join(ROOT, 'content/sources.yaml')) ?? [];
 const nebulaDoc = readYaml(path.join(ROOT, 'content/nebulae.yaml')) ?? { nebulae: [], free: [] };
+const promptSubjects = readYaml(path.join(ROOT, 'content/prompt-subjects.yaml')) ?? [];
 const styleDir = path.join(ROOT, 'content/styles');
 const styles = fs.readdirSync(styleDir).filter((f) => f.endsWith('.yaml')).sort()
   .flatMap((f) => (readYaml(path.join(styleDir, f)) ?? []).map((s) => ({ ...s, _file: f })));
@@ -32,6 +33,7 @@ console.log(`Loaded ${styles.length} styles, ${eras.length} eras, ${sources.leng
 const { errors, warnings } = validate(styles, eras, sources);
 const nb = validateNebulae(nebulaDoc, styles);
 errors.push(...nb.errors); warnings.push(...nb.warnings);
+errors.push(...validatePromptSubjects(promptSubjects));
 
 // 2. Картинки
 const fileRefs = styles.flatMap((s) => worksOf(s).map((g) => g.file)).filter(Boolean);
@@ -163,6 +165,7 @@ const atlas = {
   builtAt: new Date().toISOString().slice(0, 10),
   eras: eras.map((e) => ({ ...e, intro: String(e.intro ?? '').trim() })),
   resources,
+  promptSubjects: promptSubjects.map((t) => String(t).trim()),
   nebulae,
   sources: sources.map(({ id, title, url, publisher, sourceType, published, checked, note }) => ({
     id, title, url, publisher: publisher ?? null, sourceType, published: ymd(published),
