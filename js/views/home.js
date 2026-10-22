@@ -1,4 +1,5 @@
-// Главная: заголовок, поиск, лента эпох (вся история одной полосой), три входа, стиль дня и «Удиви меня».
+// Главная: заголовок с «Удиви меня» (промт для генератора картинок), лента эпох (вся история одной полосой), три входа и стиль дня.
+// Поиск — в шапке, на главной он не дублируется.
 import { html, mount } from '../html.js';
 import { fmtDates, fmtYear, plural } from '../format.js?v=audit';
 import { frame } from '../ui/image.js?v=audit-p1p2';
@@ -6,7 +7,7 @@ import { footer, thumb } from '../ui/common.js?v=audit-p1p2';
 import { createTimeScale, segmentWidths } from '../timescale.js';
 import { layoutRows } from '../layout.js';
 import { promptFor, pickOther } from '../prompt.js';
-import { aiPromptBody, mountAiPrompt } from '../ui/ai-prompt.js';
+import { aiHead, aiPromptBody, mountAiPrompt } from '../ui/ai-prompt.js?v=ai-2';
 
 const DICE = html`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="3"/><g fill="currentColor" stroke="none"><circle cx="8.5" cy="8.5" r="1.3"/><circle cx="15.5" cy="15.5" r="1.3"/><circle cx="12" cy="12" r="1.3"/></g></svg>`;
 
@@ -48,10 +49,17 @@ export default {
       <h1 class="hero-title">Как люди придумывали красоту: от пещеры Ласко до уирдкора</h1>
       <div class="hero-side">
         <p class="hero-lead">${n} ${plural(n, 'визуальный стиль', 'визуальных стиля', 'визуальных стилей')} — от трафаретов ладоней, которым не меньше 67 тысяч лет, до интернет-эстетик. Для каждого — откуда он, по версии атласа, произошёл, как его узнать, главная работа и что почитать дальше.</p>
-        <button class="hero-search" type="button" data-open-search>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4.5 4.5"/></svg>
-          <span>Стиль, художник или год</span><kbd>/</kbd>
-        </button>
+        ${store.promptSubjects.length ? html`<section class="hero-ai" aria-labelledby="hero-ai-title">
+          ${aiHead('hero-ai-title', { nextHidden: true })}
+          <div class="hero-ai-intro" data-ai-intro>
+            <p class="hero-ai-lead">Случайный стиль атласа и случайный предмет — готовый промт для генератора картинок.</p>
+            <button class="btn" type="button" data-surprise aria-controls="hero-ai-body">${DICE}Удиви меня</button>
+          </div>
+          <div class="hero-ai-body" id="hero-ai-body" hidden>
+            <p class="ai-style" data-ai-style></p>
+            ${aiPromptBody('', { id: 'hero-ai-text' })}
+          </div>
+        </section>` : ''}
       </div>
     </section>
 
@@ -106,21 +114,10 @@ export default {
       </div>
     </section>
 
-    ${store.promptSubjects.length ? html`<section class="surprise page" aria-labelledby="surprise-title">
-      <div class="surprise-intro">
-        <h2 class="day-kicker" id="surprise-title">Нарисовать с ИИ</h2>
-        <p class="surprise-lead">Случайный стиль атласа и случайный предмет: промт для генератора картинок из признаков и палитры карточки.</p>
-        <button class="btn" type="button" data-surprise aria-controls="surprise-box">${DICE}Удиви меня</button>
-      </div>
-      <div class="ai-card surprise-box" id="surprise-box" hidden>
-        <p class="ai-style" data-ai-style></p>
-        ${aiPromptBody()}
-      </div>
-    </section>` : ''}
     ${footer(store)}`);
 
-    // «Удиви меня» и «Другой вариант» меняют и стиль, и предмет.
-    const box = root.querySelector('.surprise-box');
+    // «Удиви меня» раскрывает блок; «Другой вариант» меняет и стиль, и предмет.
+    const box = root.querySelector('.hero-ai');
     let pick = null;
     const surprise = () => {
       const style = pickOther(store.styles, Math.random, pick?.style);
@@ -138,7 +135,11 @@ export default {
       if (r) r.href = `#/s/${store.random().id}`;
       if (e.target.closest('[data-surprise]')) {
         ai.set(surprise());
-        box.hidden = false;
+        box.querySelector('[data-ai-intro]').hidden = true;
+        box.querySelector('#hero-ai-body').hidden = false;
+        box.querySelector('[data-ai-next]').hidden = false;
+        // Кнопка исчезла — фокус на сам промт, чтобы с клавиатуры продолжить к «Открыть в ChatGPT».
+        box.querySelector('[data-ai-text]').focus({ preventScroll: true });
       }
     };
     root.addEventListener('click', onClick);
