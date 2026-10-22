@@ -1,4 +1,4 @@
-// Зал стиля: стена тонируется палитрой, под работой — её этикетка; рядом — суть стиля, цвета и «Нарисовать с ИИ».
+// Зал стиля: стена тонируется палитрой, под работой — её этикетка; рядом — суть стиля и цвета, отдельным блоком — «Нарисовать с ИИ».
 // Ниже — текст, родословная, ссылки.
 // Статус проверки карточки и связей виден сразу; источники утверждений — под раскрытием.
 import { html, mount, safeUrl } from '../html.js';
@@ -188,14 +188,16 @@ export default {
           ${ex.external ? html`<p class="credit"><a href="${safeUrl(ex.external.page)}" target="_blank" rel="noopener">${ex.external.reference ? 'Посмотреть работу у источника' : 'Открыть изображение на странице файла'}</a></p>` : ''}
         </div>
         </div>
-        <aside class="style-panel" aria-label="О стиле">
-          <p class="sp-summary">${s.summary}</p>
-          ${paletteBlock(s, img)}
-          ${subject ? html`<section class="ai-block" aria-labelledby="ai-title">
+        <div class="room-aside">
+          <aside class="style-panel" aria-label="О стиле">
+            <p class="sp-summary">${s.summary}</p>
+            ${paletteBlock(s, img)}
+          </aside>
+          ${subject ? html`<section class="ai-block ai-panel" aria-labelledby="ai-title">
             ${aiHead('ai-title')}
             ${aiPromptBody(promptFor(store, s, subject), { id: 'ai-text', note: anchor ? `Имя автора в промт не входит: он просит рисовать в духе ${anchor}.` : '' })}
           </section>` : ''}
-        </aside>
+        </div>
       </div>
 
       <section class="room-body">

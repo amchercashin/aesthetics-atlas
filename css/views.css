@@ -167,10 +167,13 @@ body[data-view="style"] .room, body[data-view="style"] .site-footer {
 /* Этикетка главной работы — под ней, как подписи миниатюр. */
 .work-label { margin-top: 18px; max-width: 68ch; }
 .work-label .ego-src, .work-label .credit { margin-top: 8px; }
-.style-panel {
+.room-aside { display: grid; gap: 16px; align-content: start; min-width: 0; }
+.style-panel, .ai-panel {
   background: var(--paper-2); padding: 22px 22px 20px; border: 1px solid var(--rule);
   box-shadow: 0 1px 0 var(--rule);
 }
+/* Активный блок отделён от описания и помечен акцентом стиля — как карточка «Удиви меня» на главной. */
+.ai-panel { border-left: 3px solid var(--accent); }
 .sp-summary { font-family: var(--serif); font-size: var(--t-lg); line-height: 1.5; }
 .wl-title { font-family: var(--serif); font-size: var(--t-xl); line-height: 1.25; }
 .wl-author { margin-top: 6px; font-weight: 500; }
@@ -452,7 +455,6 @@ body[data-view="style"] .room, body[data-view="style"] .site-footer {
 
 /* =================== Нарисовать с ИИ: в зале под палитрой, на главной в первом экране =================== */
 /* Компактно: начало промта видно сразу, целиком — по «Весь промт»; блок не спорит с работой и палитрой. */
-.style-panel .ai-block { margin-top: 20px; padding-top: 18px; border-top: 1px solid var(--rule); }
 .ai-head { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 4px 16px; }
 .ai-title { font-family: var(--sans); font-size: var(--t-sm); font-weight: 600; }
 .ai-next, .ai-more {
