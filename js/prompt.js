@@ -1,6 +1,8 @@
 // «Нарисовать с ИИ»: промт для генератора картинок из данных карточки. Чистые функции без DOM;
 // случайность приходит снаружи (rng), поэтому сборку можно проверить тестами.
-// Признаки и палитра — только из карточки. Ссылки на изображения в промт не идут: генераторы надёжнее понимают слова.
+// Описание стиля — только из карточки: визуальные подсказки promptCues, а без них — признаки «Как узнать».
+// Палитра в промт не идёт: это статистика по изображениям карточки, а не палитра стиля, и hex генераторы понимают плохо.
+// Ссылки на изображения тоже не идут: генераторы надёжнее понимают слова.
 
 export const PROMPT_LIMIT = 600;
 const MAX_TRAITS = 5;
@@ -18,6 +20,8 @@ function lower(t) {
 }
 
 const quote = (name) => (/^«.*»$/.test(name) ? name : `«${name.replace(/«/g, '„').replace(/»/g, '“')}»`);
+// Служебный хвост названия («Графика Торресова пролива: обзор») генератору ничего не говорит.
+const plainName = (name) => String(name).replace(/\s*:\s*обзор\s*$/iu, '');
 
 // Основы имён авторов: без двух последних букв, чтобы ловить падежи («Хокусая», «Билибина»).
 function nameStems(s) {
@@ -35,24 +39,23 @@ export function styleAnchor(store, s) {
   const linked = [...(s.contexts ?? []).filter((c) => c.direction !== 'in'), ...(s.parents ?? [])]
     .map((r) => store.get(r.id))
     .find((o) => o && !isAuthor(o));
-  if (linked) return quote(linked.name);
+  if (linked) return quote(plainName(linked.name));
   const era = store.era(s.era);
   return era ? `эпохи ${quote(era.name)}` : null;
 }
 
-// Не длиннее limit: сначала убираем признаки с конца (до трёх), затем палитру, затем режем последний признак по слову.
+// Не длиннее limit: сначала убираем признаки с конца (до трёх), затем режем последний по слову.
 export function buildPrompt(s, subject, { anchor = null, limit = PROMPT_LIMIT } = {}) {
   const author = isAuthor(s);
   const stems = author ? nameStems(s) : [];
   const head = author
     ? `Нарисуй ${subject}${anchor ? ` в духе ${anchor}` : ''}`
-    : `Нарисуй ${subject} в стиле ${quote(s.name)}`;
-  let traits = (s.traits ?? []).map(lower).filter((t) => t && !mentions(t, stems)).slice(0, MAX_TRAITS);
-  let palette = s.palette?.colors?.length ? ` Палитра: ${s.palette.colors.join(', ')}.` : '';
-  const compose = () => `${head}${traits.length ? `: ${traits.join('; ')}` : ''}.${palette}`;
+    : `Нарисуй ${subject} в стиле ${quote(plainName(s.name))}`;
+  const source = s.promptCues?.length ? s.promptCues : s.traits ?? [];
+  let traits = source.map(lower).filter((t) => t && !mentions(t, stems)).slice(0, MAX_TRAITS);
+  const compose = () => `${head}${traits.length ? `: ${traits.join('; ')}` : ''}.`;
 
   while (compose().length > limit && traits.length > MIN_TRAITS) traits = traits.slice(0, -1);
-  if (compose().length > limit) palette = '';
   if (compose().length > limit && traits.length) {
     const budget = limit - head.length - ': '.length - '….'.length;
     const text = traits.join('; ').slice(0, Math.max(0, budget + 1));
@@ -69,6 +72,10 @@ export const chatgptUrl = (prompt) => `https://chatgpt.com/?q=${encodeURICompone
 export const shedevrumUrl = (prompt) => `https://shedevrum.ai/text-to-image/?prompt=${encodeURIComponent(prompt)}`;
 // ГигаЧат не принимает текст в адресе (проверено 22.10.2026): промт копируется, остаётся вставить.
 export const GIGACHAT_URL = 'https://giga.chat/';
+
+// «Удиви меня» выбирает только среди неавторских карточек: у авторских промт без названия слишком размыт.
+// В залах авторских карточек блок остаётся.
+export const surprisePool = (styles) => styles.filter((s) => !isAuthor(s));
 
 // Случайный элемент, отличный от предыдущего (если есть из чего выбрать).
 export function pickOther(list, rng = Math.random, prev = undefined) {

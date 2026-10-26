@@ -4,7 +4,7 @@
 // ГигаЧат не принимает текст в адресе — его кнопка копирует промт и открывает сайт.
 // Что считать «другим вариантом», решает вызывающий.
 import { html } from '../html.js';
-import { chatgptUrl, shedevrumUrl, GIGACHAT_URL } from '../prompt.js?v=ai-4';
+import { chatgptUrl, shedevrumUrl, GIGACHAT_URL } from '../prompt.js?v=ai-5';
 import { toast } from './toast.js';
 
 const SHUFFLE = html`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h3.5c2 0 3.2 1 4.3 2.7l1.4 2.2c1.1 1.7 2.3 2.6 4.3 2.6H20M4 16.5h3.5c1.2 0 2.1-.3 2.9-1M14.6 8.6c.8-.9 1.7-1.6 2.9-1.6H20M17.5 4.5 20 7l-2.5 2.5M17.5 14 20 16.5 17.5 19"/></svg>`;

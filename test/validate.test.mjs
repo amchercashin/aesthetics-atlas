@@ -141,3 +141,11 @@ test('formerIds may not shadow an active id', () => {
   const r = validate([root, base({ formerIds: ['root'] })], eras);
   assert.ok(r.errors.some((e) => e.includes('still an active id')));
 });
+
+test('promptCues are optional, but when present they are 3–4 non-empty phrases', () => {
+  const ok = base({ promptCues: ['Плоский цвет', 'Чёткий контур', 'Смелое кадрирование'] });
+  assert.deepEqual(validate([root, ok], eras).errors, []);
+  for (const promptCues of [['один', 'два'], ['1', '2', '3', '4', '5'], ['a', '', 'c'], 'строка']) {
+    assert.ok(validate([root, base({ promptCues })], eras).errors.some((e) => e.includes('promptCues')), JSON.stringify(promptCues));
+  }
+});

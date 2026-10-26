@@ -103,6 +103,16 @@ body[data-view="style"] .room, body[data-view="style"] .site-footer {
 .room-scope { margin-top: 14px; max-width: var(--measure); color: var(--ink-2); line-height: 1.5; }
 .room-scope strong { font-weight: 600; color: var(--ink); }
 .review { margin-top: 14px; max-width: var(--measure); padding-left: 12px; border-left: 3px solid var(--rule-strong); font-size: var(--t-sm); color: var(--ink-2); line-height: 1.45; }
+/* Свёрнуто до одной строки; «подробнее» раскрывает, что именно сверено. */
+.review summary { display: block; cursor: pointer; list-style: none; }
+.review summary::-webkit-details-marker { display: none; }
+.review summary::after {
+  content: "подробнее"; margin-left: 8px; color: var(--ink-3);
+  text-decoration: underline; text-decoration-color: var(--rule-strong); text-underline-offset: 0.2em;
+}
+.review[open] summary::after { content: "свернуть"; }
+.review summary:hover::after { color: var(--ink); text-decoration-color: currentColor; }
+.review p { margin-top: 6px; }
 .review.st-partial { border-left-color: var(--accent); }
 .review.st-reviewed { border-left-color: var(--accent); color: var(--ink); }
 .review a { color: inherit; }

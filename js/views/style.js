@@ -9,8 +9,8 @@ import { toast } from '../ui/toast.js';
 import notfound from './notfound.js';
 import { authorshipSection, corpusSection, contextSection } from '../ui/corpus.js';
 import { directLinks, linkStep, linkKey, egoMap, mountEgoMap } from '../ui/ego-map.js?v=links-1';
-import { promptFor, styleAnchor, pickOther } from '../prompt.js?v=ai-4';
-import { aiHead, aiPromptBody, mountAiPrompt } from '../ui/ai-prompt.js?v=ai-4';
+import { promptFor, styleAnchor, pickOther } from '../prompt.js?v=ai-5';
+import { aiHead, aiPromptBody, mountAiPrompt } from '../ui/ai-prompt.js?v=ai-5';
 
 const ARROW_L = html`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>`;
 const ARROW_R = html`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>`;
@@ -63,11 +63,14 @@ export function lineageStrip(line, currentId) {
   })}</ol>`;
 }
 
+// Статус проверки — короткой пометкой; подробности (что именно сверено) раскрываются по нажатию.
 function reviewLine(s) {
   const r = s.review;
-  if (r.status === 'reviewed') return html`<p class="review st-reviewed">Сверено с источниками ${fmtDay(r.date)}.${r.note ? ` ${r.note}` : ''}</p>`;
-  if (r.status === 'partial') return html`<p class="review st-partial">Частично сверено с источниками ${fmtDay(r.date)}. ${r.note ?? ''}</p>`;
-  return html`<p class="review st-legacy">Черновая карточка: даты, связи и формулировки ещё не сверены с источниками. <a href="#/about">Как устроена проверка</a></p>`;
+  const about = html`<a href="#/about">Как устроена проверка</a>`;
+  const [cls, head, body] = r.status === 'reviewed' ? ['st-reviewed', `Сверено с источниками · ${fmtDay(r.date)}`, r.note]
+    : r.status === 'partial' ? ['st-partial', `Частично сверено с источниками · ${fmtDay(r.date)}`, r.note]
+    : ['st-legacy', 'Черновая карточка', 'Даты, связи и формулировки ещё не сверены с источниками.'];
+  return html`<details class="review ${cls}"><summary>${head}</summary><p>${body ? html`${body} ` : ''}${about}</p></details>`;
 }
 
 function datesBlock(store, s) {
