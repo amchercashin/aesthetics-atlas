@@ -81,18 +81,21 @@ export function layoutLanes(nodes, x, { lanes, laneOf, now = 2026, dot = 14, gap
 //   longGap — разрыв (px), после которого связь рисуется отростками и не занимает строку предка.
 //   reach (у узла, необязательно) — сколько px строки занять от точки: место под подпись на обзоре,
 //   где масштаб мельче рабочего, а подпись того же размера.
-export function layoutGenealogy(nodes, x, { now = 2026, dot = 16, gap = 22, tail = 26, passes = 6, center = 0.08, longGap = Infinity } = {}) {
+const byStart = (a, b) => a.start - b.start || a.tier - b.tier || (a.id < b.id ? -1 : a.id > b.id ? 1 : 0);
+
+// Главный предок (parents[0]) и потомки по нему; от них рисуются ветви древа.
+function primaryTree(nodes) {
   const byId = new Map(nodes.map((n) => [n.id, n]));
-  const cmp = (a, b) => a.start - b.start || a.tier - b.tier || (a.id < b.id ? -1 : a.id > b.id ? 1 : 0);
   const primary = (n) => (n.parents?.[0] && byId.has(n.parents[0]) && n.parents[0] !== n.id ? n.parents[0] : null);
   const kids = new Map(nodes.map((n) => [n.id, []]));
-  const roots = [];
-  for (const n of nodes) { const p = primary(n); if (p) kids.get(p).push(n); else roots.push(n); }
-  for (const k of kids.values()) k.sort(cmp);
-  roots.sort(cmp);
+  for (const n of nodes) { const p = primary(n); if (p) kids.get(p).push(n); }
+  for (const k of kids.values()) k.sort(byStart);
+  return { primary, kids };
+}
 
-  // Занятый интервал: точка, подпись и ствол плюс «хвост», чтобы чужой стиль на той же строке
-  // не выглядел продолжением ствола.
+// Занятый интервал: точка, подпись и ствол плюс «хвост», чтобы чужой стиль на той же строке
+// не выглядел продолжением ствола.
+function occupancy(nodes, x, kids, { now, dot, gap, tail, longGap }) {
   const intervals = new Map();
   for (const n of nodes) {
     const xs = x(n.start), xe = x(n.end ?? now);
@@ -100,6 +103,27 @@ export function layoutGenealogy(nodes, x, { now = 2026, dot = 16, gap = 22, tail
     for (const k of kids.get(n.id)) { const xk = x(k.start); if (xk - xe <= longGap) end = Math.max(end, xk - dot); }
     intervals.set(n.id, [xs - dot, Math.max(xs + dot + n.width + gap, end + tail, xs + (n.reach ?? 0))]);
   }
+  return intervals;
+}
+
+export function layoutGenealogy(nodes, x, { now = 2026, dot = 16, gap = 22, tail = 26, passes = 6, center = 0.08, longGap = Infinity } = {}) {
+  const { primary, kids } = primaryTree(nodes);
+  const intervals = occupancy(nodes, x, kids, { now, dot, gap, tail, longGap });
+  const rowOf = treeRows(nodes, intervals, primary, { passes, center });
+  const used = [...new Set(rowOf.values())].sort((a, b) => a - b);
+  const remap = new Map(used.map((r, i) => [r, i]));
+  const pos = new Map([...rowOf].map(([id, r]) => [id, remap.get(r)]));
+  return { pos, count: used.length, intervals, primary: new Map(nodes.map((n) => [n.id, primary(n)])) };
+}
+
+// Строки древа (без сжатия номеров): потомок у строки предка, которого называет primary(n).
+function treeRows(nodes, intervals, primary, { passes, center }) {
+  const cmp = byStart;
+  const kids = new Map(nodes.map((n) => [n.id, []]));
+  const roots = [];
+  for (const n of nodes) { const p = primary(n); if (p && kids.has(p)) kids.get(p).push(n); else roots.push(n); }
+  for (const k of kids.values()) k.sort(cmp);
+  roots.sort(cmp);
 
   // Обход в ширину; циклы и висячие ссылки не ломают обход.
   const seq = [];
@@ -140,7 +164,7 @@ export function layoutGenealogy(nodes, x, { now = 2026, dot = 16, gap = 22, tail
   const cost = (n, r) => {
     let c = 0;
     const p = primary(n);
-    if (p) c += Math.abs(r - rowOf.get(p));
+    if (p && rowOf.has(p)) c += Math.abs(r - rowOf.get(p));
     for (const k of kids.get(n.id)) c += Math.abs(r - rowOf.get(k.id));
     return c;
   };
@@ -165,11 +189,162 @@ export function layoutGenealogy(nodes, x, { now = 2026, dot = 16, gap = 22, tail
     }
     if (!moved) break;
   }
+  return rowOf;
+}
 
-  const used = [...new Set(rowOf.values())].sort((a, b) => a - b);
-  const remap = new Map(used.map((r, i) => [r, i]));
-  const pos = new Map([...rowOf].map(([id, r]) => [id, remap.get(r)]));
-  return { pos, count: used.length, intervals, primary: new Map(nodes.map((n) => [n.id, primary(n)])) };
+// ---------------------------------------------------------------------------
+// Раскладка по областям (карта, версия 5). Море рисуется облаком вокруг своих карточек, поэтому
+// карточки одного моря должны лежать рядом: иначе море рвётся на острова среди чужих.
+// Каждое море — блок: строки × время. Блоки разных морей не пересекаются и разделены зазором
+// (sep: строки по вертикали и px по времени). Внутри моря так же блоками лежат его части, внутри
+// части — прежнее древо. Узел тянется к строке предка из своего блока; связи между блоками решают,
+// где блок встанет. lay.primary — по-прежнему parents[0]: от него рисуются ветви.
+//   levels — ключи блоков сверху вниз (море, часть); ключ null — карточка сама по себе блок.
+// У блока нет вертикальных дыр: чужой узел не встанет между строками моря в то же время.
+export function layoutRegions(nodes, x, { now = 2026, dot = 16, gap = 22, tail = 26, passes = 6, center = 0.08, longGap = Infinity, levels = [], sep = { rows: 1, x: 0 }, gather = 1 } = {}) {
+  const { primary, kids } = primaryTree(nodes);
+  const intervals = occupancy(nodes, x, kids, { now, dot, gap, tail, longGap });
+
+  const leaf = (members) => {
+    const ids = new Set(members.map((n) => n.id));
+    const local = (n) => (n.parents ?? []).find((p) => p !== n.id && ids.has(p)) ?? null;
+    const rowOf = treeRows(members, intervals, local, { passes, center });
+    const used = [...new Set(rowOf.values())].sort((a, b) => a - b);
+    const remap = new Map(used.map((r, i) => [r, i]));
+    const rows = new Map([...rowOf].map(([id, r]) => [id, remap.get(r)]));
+    const raw = new Map();
+    for (const [id, r] of rows) { if (!raw.has(r)) raw.set(r, []); raw.get(r).push(intervals.get(id)); }
+    return { members, rows, h: used.length, shape: solidShape(raw) };
+  };
+  const build = (members, depth) => {
+    if (depth >= levels.length) return leaf(members);
+    const groups = new Map();
+    for (const n of [...members].sort(byStart)) {
+      const k = levels[depth](n) ?? `#${n.id}`;
+      if (!groups.has(k)) groups.set(k, []);
+      groups.get(k).push(n);
+    }
+    const blocks = [...groups.values()].map((g) => build(g, depth + 1));
+    return blocks.length === 1 ? blocks[0] : packBlocks(blocks, depth === 0 ? sep : { rows: 0, x: 0 }, { passes, gather });
+  };
+  const top = build(nodes, 0);
+  return { pos: top.rows, count: top.h, intervals, primary: new Map(nodes.map((n) => [n.id, primary(n)])) };
+}
+
+// Область блока без вертикальных дыр: в каждом промежутке времени заняты все строки
+// между верхней и нижней строкой блока. raw: строка → [[x0, x1], …].
+export function solidShape(raw) {
+  const xs = [...new Set([...raw.values()].flat(2))].sort((a, b) => a - b);
+  const out = new Map();
+  for (let k = 0; k + 1 < xs.length; k++) {
+    const a = xs[k], b = xs[k + 1];
+    let lo = Infinity, hi = -Infinity;
+    for (const [r, ivs] of raw) if (ivs.some(([c, d]) => c <= a && d >= b)) { lo = Math.min(lo, r); hi = Math.max(hi, r); }
+    for (let r = lo; r <= hi; r++) {
+      if (!out.has(r)) out.set(r, []);
+      const row = out.get(r), last = row[row.length - 1];
+      if (last && last[1] === a) last[1] = b; else row.push([a, b]);
+    }
+  }
+  return out;
+}
+
+// Укладка блоков друг под другом: каждый блок у строк своих родственников в других блоках,
+// без пересечений областей и с зазором sep. Затем, как у древа, несколько проходов уплотнения.
+function packBlocks(blocks, sep, { passes, gather }) {
+  const where = new Map();
+  blocks.forEach((b, i) => { for (const n of b.members) where.set(n.id, i); });
+  // Связи между блоками: главный предок весит больше остальных.
+  const links = blocks.map(() => []);
+  blocks.forEach((b, i) => {
+    for (const n of b.members) (n.parents ?? []).forEach((p, pi) => {
+      const j = where.get(p);
+      if (j === undefined || j === i) return;
+      const w = pi === 0 ? 1 : 0.25;
+      links[i].push({ mine: b.rows.get(n.id), other: j, theirs: blocks[j].rows.get(p), w });
+      links[j].push({ mine: blocks[j].rows.get(p), other: i, theirs: b.rows.get(n.id), w });
+    });
+  });
+  const first = (b) => Math.min(...b.members.map((n) => n.start));
+  const width = (b) => Math.max(...[...b.shape.values()].flat().map((iv) => iv[1])) - Math.min(...[...b.shape.values()].flat().map((iv) => iv[0]));
+  const by = (key) => blocks.map((_, i) => i).sort((i, j) => key(blocks[i], blocks[j]) || i - j);
+  // Жадная укладка зависит от порядка: пробуем несколько и берём самую низкую карту,
+  // при равной высоте — с более короткими связями между блоками.
+  const orders = [
+    by((a, b) => first(a) - first(b) || b.members.length - a.members.length),
+    by((a, b) => b.h * width(b) - a.h * width(a)),
+    by((a, b) => b.members.length - a.members.length || first(a) - first(b)),
+  ];
+  let best = null;
+  for (const order of orders) {
+    const off = place(order);
+    const lo = Math.min(...off), h = Math.max(...blocks.map((b, i) => off[i] - lo + b.h));
+    let len = 0;
+    blocks.forEach((b, i) => { for (const l of links[i]) len += l.w * Math.abs(off[i] + l.mine - off[l.other] - l.theirs); });
+    if (!best || h < best.h || (h === best.h && len < best.len - 1e-9)) best = { off, h, len };
+  }
+  const off = best.off;
+
+  function place(order) {
+    const off = blocks.map(() => null);
+    const occ = new Map(); // строка → [[x0, x1, блок]]
+    const put = (i) => { for (const [r, ivs] of blocks[i].shape) { const R = off[i] + r; if (!occ.has(R)) occ.set(R, []); for (const [a, b] of ivs) occ.get(R).push([a, b, i]); } };
+    const take = (i) => { for (const [r] of blocks[i].shape) { const R = off[i] + r; occ.set(R, occ.get(R).filter((e) => e[2] !== i)); } };
+    const free = (i, o) => {
+      for (const [r, ivs] of blocks[i].shape) for (const [a, b] of ivs) {
+        for (let R = o + r - sep.rows; R <= o + r + sep.rows; R++) {
+          for (const [c, d, j] of occ.get(R) ?? []) if (j !== i && a - sep.x < d && c < b + sep.x) return false;
+        }
+      }
+      return true;
+    };
+    // Средняя длина связей блока с уже поставленными родственниками, в строках.
+    const pull = (i, o) => { let c = 0, w = 0; for (const l of links[i]) if (off[l.other] !== null) { c += l.w * Math.abs(o + l.mine - off[l.other] - l.theirs); w += l.w; } return w ? c / w : 0; };
+
+    // Блок встаёт у родственников, уже стоящих на карте; без них — у середины. Направление поиска
+    // чередуется, чтобы карта росла в обе стороны.
+    order.forEach((i, k) => {
+      let sw = 0, sp = 0;
+      for (const l of links[i]) if (off[l.other] !== null) { sw += l.w; sp += l.w * (off[l.other] + l.theirs - l.mine); }
+      const pref = sw ? Math.round(sp / sw) : -Math.floor(blocks[i].h / 2);
+      const up = k % 2 === 1;
+      for (let d = 0; off[i] === null; d++) {
+        for (const o of d === 0 ? [pref] : up ? [pref - d, pref + d] : [pref + d, pref - d]) if (free(i, o)) { off[i] = o; break; }
+      }
+      put(i);
+    });
+
+    // Уплотнение: блок ближе к родственникам и к середине карты.
+    for (let it = 0; it < passes; it++) {
+      let moved = 0;
+      const lo = Math.min(...off), hi = Math.max(...blocks.map((b, i) => off[i] + b.h - 1));
+      const mid = (lo + hi) / 2;
+      const total = (i, o) => pull(i, o) + gather * Math.abs(o + (blocks[i].h - 1) / 2 - mid);
+      for (const i of order) {
+        take(i);
+        let to = off[i], bc = total(i, off[i]);
+        for (let o = lo - blocks[i].h - sep.rows; o <= hi + 1 + sep.rows; o++) {
+          if (o === off[i] || !free(i, o)) continue;
+          const c = total(i, o);
+          if (c < bc - 1e-9) { bc = c; to = o; }
+        }
+        if (to !== off[i]) moved++;
+        off[i] = to;
+        put(i);
+      }
+      if (!moved) break;
+    }
+    return off;
+  }
+
+  const lo = Math.min(...off);
+  const rows = new Map(), raw = new Map();
+  blocks.forEach((b, i) => {
+    for (const [id, r] of b.rows) rows.set(id, off[i] - lo + r);
+    for (const [r, ivs] of b.shape) { const R = off[i] - lo + r; if (!raw.has(R)) raw.set(R, []); raw.get(R).push(...ivs); }
+  });
+  const h = Math.max(...blocks.map((b, i) => off[i] - lo + b.h));
+  return { members: blocks.flatMap((b) => b.members), rows, h, shape: solidShape(raw) };
 }
 
 // Трассировка ветвей древа в обход подписей.

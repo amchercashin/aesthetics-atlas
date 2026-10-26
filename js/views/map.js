@@ -1,13 +1,14 @@
-// Карта родословной. Время — по горизонтали; по вертикали — родословное древо: потомок стоит рядом
-// с главным предком, ветви расходятся вверх и вниз. Каждый стиль — точка зарождения, подпись и ствол
+// Карта родословной. Время — по горизонтали; по вертикали — моря и их части блоками (js/map-layout.js),
+// внутри части — родословное древо: потомок стоит рядом с предком. Каждый стиль — точка зарождения, подпись и ствол
 // до последнего потомка; длительность видна только у выбранного стиля (и в датах подписи).
 // Ветви древа обходят подписи и на пересечениях проходят «над» чужими линиями (подложка цвета бумаги).
 // Уровни: моря → части → эстетики → связи и детали. Клик по стилю — крупный план ближайших связей,
 // с подписями типов связей и метками дальних родственников на краю экрана; полная родословная — по запросу.
 import { html, mount, safeUrl } from '../html.js';
 import { fmtDates, fmtYear, RELATION, REL_STATUS, CONTEXT, DOMAIN, KIND, KIND_FAMILY, plural } from '../format.js?v=regional-01';
-import { createTimeScale, segmentWidths, segmentTicks } from '../timescale.js';
-import { layoutGenealogy, routeBranches } from '../layout.js?v=sparse';
+import { segmentTicks } from '../timescale.js';
+import { routeBranches } from '../layout.js?v=seas-1';
+import { OV_K, LONG, R, mapTimeScale, mapLayoutNodes, layoutMap } from '../map-layout.js?v=seas-1';
 import { frame, markLoaded } from '../ui/image.js?v=author-pilot';
 import { eraTag, thumb } from '../ui/common.js?v=author-pilot';
 import { replaceParams, pushParams } from '../router.js?v=map4';
@@ -27,16 +28,13 @@ const ROW = 44;         // высота строки при рабочем ма�
 const PAD = 26;         // поля сверху и снизу полотна (в координатах раскладки)
 const K_DETAIL = 1;     // масштаб, при котором строки раскрыты полностью
 const MAX_K = 2;        // дальше растёт только пустое расстояние между датами
-const OV_K = 0.2;       // просторный обзор (вид по умолчанию): раскладка оставляет место под все подписи
 const SY_OV = 0.8;      // высота строки на просторном обзоре — доля рабочей
 const Z2_K = 0.42;      // с этого масштаба — крупный план: миниатюры и даты под названием
 const FONT = { 1: '600 16px Spectral', 2: '500 14px "Golos Text"', 3: '400 13px "Golos Text"' };
 const FONT_PX = { 1: 16, 2: 14, 3: 13 };
 const DATE_FONT = '400 11px "Golos Text"';
-const R = { z0: { 1: 3.6, 2: 2.8, 3: 2.4 }, z1: { 1: 6, 2: 5, 3: 4.2 }, z2: { 1: 15, 2: 13, 3: 11 } };
 const DASH = { evolved: '', influence: '', reaction: '6 4', revival: '1.5 4' };
 const NEB_PADX = 60, NEB_PADY = 70;   // поля поля плотности туманностей в обзорных единицах
-const LONG = 1200;      // разрыв во времени (px рабочего масштаба), после которого связь рисуется парными отростками
 const reduceMotion = () => window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 const clamp = (v, a, b) => Math.min(b, Math.max(a, v));
 // Карточка может не иметь главной работы, но иметь галерейный пример — он и служит обложкой.
@@ -261,8 +259,7 @@ export default {
       const measure = (font, text) => { canvas.font = font; return canvas.measureText(text); };
       labelMeasure = (font, text) => measure(font, text).width;
 
-      const breaks = [...store.eras.map((e) => e.start), store.now + 1];
-      sc = createTimeScale(breaks, segmentWidths(breaks, store.styles.map((s) => s.start), { base: 60, perItem: 76, min: 170 }));
+      sc = mapTimeScale(store.eras, store.styles, store.now);
 
       const meta = new Map(store.styles.map((s) => {
         const name = measure(FONT[s.tier], s.name), dates = measure(DATE_FONT, fmtDates(s));
@@ -271,14 +268,8 @@ export default {
           descent: name.fontBoundingBoxDescent ?? FONT_PX[s.tier] * 0.55,
           dateDescent: dates.fontBoundingBoxDescent ?? 5 }];
       }));
-      const layNodes = store.styles.map((s) => ({
-        id: s.id, start: s.start, end: s.end, tier: s.tier,
-        width: R.z2[s.tier] + 8 + Math.max(meta.get(s.id).w, meta.get(s.id).wd),
-        parents: s.parents.map((p) => p.id),
-        // На просторном обзоре подпись того же размера, а масштаб мельче: строка держит место под неё.
-        reach: ((s.tier === 1 ? 11 : R.z1[s.tier]) + 7 + meta.get(s.id).w + 12) / OV_K,
-      }));
-      const lay = layoutGenealogy(layNodes, sc.x, { now: store.now, dot: 16, gap: 22, tail: 28, longGap: LONG });
+      const layNodes = mapLayoutNodes(store.styles, (s) => meta.get(s.id));
+      const lay = layoutMap(layNodes, sc.x, store.now);
       primaryOf = lay.primary;
       // Коридоры ищутся при масштабе обзора: свободный там — свободен и при любом более крупном.
       const routes = routeBranches(layNodes, sc.x, lay, { now: store.now, dot: 16, scale: OV_K, extent: (n) => n.reach });
