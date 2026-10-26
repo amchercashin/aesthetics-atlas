@@ -44,6 +44,21 @@ test('images described as precursors, reconstructions or renders carry a matchin
   }
 });
 
+// Миниатюра карточки — картинка примера, а если её нельзя встроить, первая встраиваемая картинка галереи
+// (как thumb() в js/ui/common.js). Одна и та же миниатюра у двух карточек сбивает с толку в каталоге и на карте.
+test('card thumbnails are not repeated across cards', () => {
+  const embeds = (im) => (im?.file || im?.asset) && im.rights?.embed !== false;
+  const key = (im) => String(im.file ?? im.asset).replace(/^File:/i, '').replace(/_/g, ' ').trim().toLowerCase();
+  const owner = new Map();
+  for (const s of styles) {
+    const cover = embeds(s.example) ? s.example : (s.gallery ?? []).find(embeds);
+    if (!cover) continue;
+    const k = key(cover);
+    assert.ok(!owner.has(k), `[${s.id}] повторяет миниатюру [${owner.get(k)}]: ${cover.file ?? cover.asset}`);
+    owner.set(k, s.id);
+  }
+});
+
 test('old URLs keep working: former ids resolve and split overviews keep their id', () => {
   const store = createStore({ eras, styles: styles.map((s, i) => ({ ...buildRecord(s), order: i })) });
   assert.ok(store.get('mesoamerican-art'), 'mesoamerican-art must stay addressable');

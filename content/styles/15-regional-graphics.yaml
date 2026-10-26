@@ -278,15 +278,52 @@
     - print
     - illustration
   gallery:
-    - file: "'Honourable_Offspring_after_Another'._Yangliuqing_New_Year_Picture.jpg"
-      title: Янлюцинская новогодняя картина
-    - file: 1900s Nianhua Three Deities colored woodblock print.jpg
-      title: "Няньхуа: три божества"
-    - file: 1900. Няньхуа.jpg
-      title: Няньхуа, 1900
-      author: Unknown author
-      whyRepresentative: Парные дверные божества; другой центр няньхуа, не Янлюцин.
-      note: Другой центр няньхуа; показан как широкий жанровый контекст.
+    - file: 中國楊柳青木版年畫 忠义堂 (2).jpg
+      title: Чжунъи тан / 忠義堂 — Зал верности и справедливости
+      author: Янлюцинская мастерская; мастер не установлен
+      year: Эпоха Цин — по описанию файла
+      whyRepresentative: >-
+        Герои «Речных заводей» выстроены перед залом как на сцене: театральный грим, флажки за плечами
+        военачальников, подписи имён у фигур.
+      note: >-
+        Музей и инвентарный номер в описании файла не указаны, источник файла — публикация в WeChat; дата
+        оттиска не проверена по музейной записи.
+    - asset: assets/works/ylq-danao-tiangong.jpg
+      title: Danao tiangong / 大闹天宫 — Переполох в Небесном дворце, LDM G-6195
+      author: Мастерская Yixinghe (义兴合画店; Isinghe в подписи статьи)
+      year: Конец XIX — начало XX века
+      place: Lietuvos dailės muziejus (LDM; название в публикации)
+      credit: Lietuvos dailės muziejus; репродукция — M. Lebednykaitė, Acta Academiae Artium Vilnensis
+      license: © Acta Academiae Artium Vilnensis, 2020; репродукция из статьи
+      nonfree: true
+      reference: https://aaav.vda.lt/journal/article/download/52/52/74#page=14
+      sources:
+        - aaav-yangliuqing-theatre
+      rights:
+        basis: Решение редакции атласа — публикация не содержит запрета на воспроизведение
+        reviewed: "2026-10-26"
+      whyRepresentative: >-
+        Эпизод «Путешествия на Запад» в оперной постановке: фигуры в сценических костюмах, с лентами и
+        оружием разведены по двору, архитектура обрамляет действие, название пьесы — в верхнем поле.
+      note: Лист корпуса этой карточки; репродукция из исследования невысокого разрешения.
+    - asset: assets/works/ylq-qu-feng-ming-guan.jpg
+      title: Qu feng ming guan / 取凤鸣关 — Взятие перевала Фэнмин, ČDM Tt-5844
+      author: Мастерская Yixinghe (Isinghe в подписи статьи)
+      year: Конец XIX — начало XX века
+      place: M. K. Čiurlionis National Museum of Art (ČDM)
+      credit: Nacionalinis M. K. Čiurlionio dailės muziejus; репродукция — M. Lebednykaitė, Acta Academiae Artium Vilnensis
+      license: © Acta Academiae Artium Vilnensis, 2020; репродукция из статьи
+      nonfree: true
+      reference: https://aaav.vda.lt/journal/article/download/52/52/74#page=25
+      sources:
+        - aaav-yangliuqing-theatre
+      rights:
+        basis: Решение редакции атласа — публикация не содержит запрета на воспроизведение
+        reviewed: "2026-10-26"
+      whyRepresentative: >-
+        Сцена из «Троецарствия» как на подмостках: военачальники с флажками за спиной, гримом и оружием
+        выстроены активными диагоналями на свободном поле.
+      note: Главная работа карточки; репродукция из исследования невысокого разрешения.
   summary: >-
     Раскрашенные печатные листы переводят театральную сцену в ясное расположение фигур, выразительные жесты и
     подробный костюм.
