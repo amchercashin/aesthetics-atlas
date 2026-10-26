@@ -183,6 +183,9 @@ export function validate(styles, eras, sources = []) {
 
     if (!Array.isArray(s.traits) || s.traits.length < 3) errors.push(`${at} needs ≥3 traits`);
     else if (s.traits.length > 6) warnings.push(`${at} more than 6 traits`);
+    // Необязательные визуальные подсказки для промта «Нарисовать с ИИ»: 3–4 непустые фразы.
+    if (s.promptCues != null && (!Array.isArray(s.promptCues) || s.promptCues.length < 3 || s.promptCues.length > 4
+      || s.promptCues.some((c) => typeof c !== 'string' || !c.trim()))) errors.push(`${at} promptCues: 3–4 non-empty phrases`);
 
     const hasImage = (typeof s.example?.file === 'string' && s.example.file.trim()) || isLocalAsset(s.example?.asset);
     const hasPalette = Array.isArray(s.palette) && s.palette.length >= 3 && s.palette.every((h) => HEX.test(h));

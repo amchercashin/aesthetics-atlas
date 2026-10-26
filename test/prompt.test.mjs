@@ -4,7 +4,7 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import yaml from 'js-yaml';
 import { createStore } from '../js/store.js';
-import { buildPrompt, promptFor, styleAnchor, chatgptUrl, shedevrumUrl, pickOther, PROMPT_LIMIT } from '../js/prompt.js';
+import { buildPrompt, promptFor, styleAnchor, chatgptUrl, shedevrumUrl, pickOther, surprisePool, PROMPT_LIMIT } from '../js/prompt.js';
 import { validatePromptSubjects } from '../scripts/lib/validate.mjs';
 
 const subjects = yaml.load(fs.readFileSync(new URL('../content/prompt-subjects.yaml', import.meta.url), 'utf8'));
@@ -32,20 +32,23 @@ function authorStore() {
   return createStore({ styles, eras: [{ id: 'fin', name: 'Рубеж веков' }] });
 }
 
-test('the prompt names the subject, the style, its traits and its palette', () => {
+test('the prompt names the subject, the style and its traits', () => {
   assert.equal(buildPrompt(card(), 'маяк на скале'),
-    'Нарисуй маяк на скале в стиле «Импрессионизм»: короткие раздельные мазки; свет важнее контура; пленэр. Палитра: #aabbcc, #112233.');
+    'Нарисуй маяк на скале в стиле «Импрессионизм»: короткие раздельные мазки; свет важнее контура; пленэр.');
+});
+
+test('the palette never enters the prompt: hex codes are image statistics, not the style', () => {
+  const p = buildPrompt(card(), 'чайник');
+  assert.ok(!p.includes('#') && !/палитр/i.test(p), p);
+});
+
+test('visual promptCues replace traits when the card has them', () => {
+  const p = buildPrompt(card({ promptCues: ['Дробный мазок чистого цвета', 'Цветные тени', 'Мерцающий воздух'] }), 'чайник');
+  assert.equal(p, 'Нарисуй чайник в стиле «Импрессионизм»: дробный мазок чистого цвета; цветные тени; мерцающий воздух.');
 });
 
 test('without traits the prompt still builds on the name alone', () => {
-  assert.equal(buildPrompt(card({ traits: [], palette: null }), 'чайник'), 'Нарисуй чайник в стиле «Импрессионизм».');
-  assert.equal(buildPrompt(card({ traits: [] }), 'чайник'), 'Нарисуй чайник в стиле «Импрессионизм». Палитра: #aabbcc, #112233.');
-});
-
-test('without a palette there is no palette clause', () => {
-  const p = buildPrompt(card({ palette: null }), 'чайник');
-  assert.ok(!/палитра/i.test(p), p);
-  assert.ok(p.endsWith('пленэр.'), p);
+  assert.equal(buildPrompt(card({ traits: [] }), 'чайник'), 'Нарисуй чайник в стиле «Импрессионизм».');
 });
 
 test('acronyms and quoted words keep their meaning when lowercased', () => {
@@ -63,17 +66,12 @@ test('at most five traits are used', () => {
   assert.ok(!p.includes('а6'));
 });
 
-test('a long card is trimmed: traits down to three, then the palette, then the last trait at a word', () => {
+test('a long card is trimmed: traits down to three, then the last trait at a word', () => {
   const long = (n) => `признак ${n} ` + 'очень длинное описание '.repeat(4).trim();
   const many = card({ traits: [1, 2, 3, 4, 5].map(long) });
   const p1 = buildPrompt(many, 'чайник', { limit: 400 });
   assert.ok(p1.length <= 400, p1.length);
   assert.ok(p1.includes('признак 3') && !p1.includes('признак 4'), p1);
-  assert.ok(p1.includes('Палитра'), p1);
-
-  const p2 = buildPrompt(many, 'чайник', { limit: 360 });
-  assert.ok(p2.length <= 360, p2.length);
-  assert.ok(p2.includes('признак 3') && !p2.includes('Палитра'), p2);
 
   const p3 = buildPrompt(many, 'чайник', { limit: 200 });
   assert.ok(p3.length <= 200, p3.length);
@@ -85,15 +83,30 @@ test('an author-style card is drawn after its tradition, never by its name or it
   const s = store.get('hokusai');
   assert.equal(styleAnchor(store, s), '«Укиё-э»');
   const p = promptFor(store, s, 'маяк на скале');
-  assert.equal(p, 'Нарисуй маяк на скале в духе «Укиё-э»: крупный передний план и малая дальняя Фудзи; дуги и диагонали. Палитра: #102030.');
+  assert.equal(p, 'Нарисуй маяк на скале в духе «Укиё-э»: крупный передний план и малая дальняя Фудзи; дуги и диагонали.');
   assert.ok(!p.includes('Хокус'));
 });
 
 test('an author-style card without links falls back to its era', () => {
   const store = authorStore();
   const p = promptFor(store, store.get('bilibin'), 'чайник');
-  assert.equal(p, 'Нарисуй чайник в духе эпохи «Рубеж веков»: контурная линия держит силуэт. Палитра: #102030.');
+  assert.equal(p, 'Нарисуй чайник в духе эпохи «Рубеж веков»: контурная линия держит силуэт.');
   assert.equal(styleAnchor(store, store.get('ukiyo-e')), null);
+});
+
+test('the anchor drops service tails such as «: обзор» from the linked card name', () => {
+  const store = authorStore();
+  store.get('ukiyo-e').name = 'Графика Торресова пролива: обзор';
+  assert.equal(styleAnchor(store, store.get('hokusai')), '«Графика Торресова пролива»');
+  for (const s of real.styles) assert.ok(!/:\s*обзор/i.test(styleAnchor(real, s) ?? ''), s.id);
+});
+
+test('«Удиви меня» never picks an author-style card; the hall still offers the block', () => {
+  const pool = surprisePool(real.styles);
+  assert.ok(pool.length > 0 && pool.every((s) => !s.kind.includes('author-style')));
+  assert.equal(pool.length, real.styles.filter((s) => !s.kind.includes('author-style')).length);
+  const author = real.styles.find((s) => s.kind.includes('author-style'));
+  assert.ok(promptFor(real, author, 'чайник').startsWith('Нарисуй чайник'));
 });
 
 test('the ChatGPT link carries the prompt URL-encoded', () => {
@@ -135,6 +148,8 @@ test('every card with every subject fits the limit', () => {
       const p = promptFor(real, s, subj);
       assert.ok(p.length <= PROMPT_LIMIT, `${s.id}: ${p.length}`);
       assert.ok(p.startsWith(`Нарисуй ${subj} в `), `${s.id}: ${p}`);
+      assert.ok(!p.includes('#'), `${s.id}: ${p}`);
+      assert.ok(!/:\s*обзор»/i.test(p), `${s.id}: ${p}`);
     }
   }
 });

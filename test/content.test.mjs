@@ -87,3 +87,20 @@ test('macro-region rules: spread vs origin, multi-region and nothing unclassifie
   assert.deepEqual(macroRegions('Интернет'), ['global']);
   for (const s of styles) assert.ok(!macroRegions(s.region).includes('unknown'), `[${s.id}] ${s.region}`);
 });
+
+test('every tier-1 card has visual promptCues without names of artists', () => {
+  const tier1 = styles.filter((s) => s.tier === 1);
+  assert.ok(tier1.length > 0);
+  for (const s of tier1) {
+    assert.ok(Array.isArray(s.promptCues) && s.promptCues.length >= 3 && s.promptCues.length <= 4, `${s.id}: promptCues`);
+    // Подсказки чисто визуальные: ни имён из «Ключевых имён», ни авторов.
+    const stems = [...(s.names ?? []), ...(s.creators ?? []).map((c) => c.name)]
+      .flatMap((n) => String(n).split(/[^\p{L}]+/u))
+      .filter((w) => w.length >= 4 && /^\p{Lu}/u.test(w))
+      .map((w) => (w.length > 5 ? w.slice(0, -2) : w));
+    for (const cue of s.promptCues) {
+      const words = cue.split(/[^\p{L}]+/u);
+      for (const st of stems) assert.ok(!words.some((w) => w.startsWith(st)), `${s.id}: «${st}» в «${cue}»`);
+    }
+  }
+});
