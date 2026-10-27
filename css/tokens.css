@@ -49,6 +49,7 @@
   --gutter: clamp(16px, 4vw, 48px);
   --measure: 68ch;
   --header-h: 60px;
+  --header-top: var(--header-h); /* край, под которым встают липкие панели; 0, когда шапка уехала вверх */
   --radius-chip: 999px;
   --radius-ui: 6px;
   --ease: cubic-bezier(0.2, 0.7, 0.2, 1);

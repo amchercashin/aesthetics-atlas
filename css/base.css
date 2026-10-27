@@ -116,6 +116,10 @@ kbd {
   .main-nav a { display: grid; justify-items: center; gap: 2px; padding: 6px 10px; font-size: 11px; border-radius: 10px; }
   .main-nav svg { display: block; width: 22px; height: 22px; }
   body { padding-bottom: calc(64px + env(safe-area-inset-bottom)); }
+  /* При прокрутке вниз шапка уезжает вверх (js/ui/header.js), липкие панели встают на её место */
+  .site-header { transition: top 0.25s var(--ease); }
+  :root.header-away { --header-top: 0px; }
+  :root.header-away .site-header { top: calc(-1 * var(--header-h) - 1px); }
 }
 
 /* ---------- Общие элементы ---------- */
@@ -140,7 +144,8 @@ kbd {
   background: transparent; color: var(--ink-2);
   font-size: var(--t-sm); text-decoration: none; white-space: nowrap;
 }
-a.chip:hover, button.chip:hover { border-color: var(--ink-2); color: var(--ink); }
+/* Наведение не трогает нажатый чип: иначе тёмная надпись ложится на тёмную заливку (на телефоне наведение «залипает» после касания) */
+:is(a, button).chip:not([aria-pressed="true"]):hover { border-color: var(--ink-2); color: var(--ink); }
 .chip[aria-pressed="true"] { background: var(--ink); border-color: var(--ink); color: var(--paper); }
 .chip .count { color: var(--ink-3); font-size: var(--t-xs); }
 .chip[aria-pressed="true"] .count { color: color-mix(in oklab, var(--paper) 70%, transparent); }

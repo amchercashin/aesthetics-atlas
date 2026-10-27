@@ -5,6 +5,7 @@ import { initTheme } from './theme.js';
 import { initSearch } from './ui/search-dialog.js?v=regional-01';
 import { initLightbox } from './ui/lightbox.js?v=lineage-2';
 import { initImageEvents, markLoaded } from './ui/image.js?v=author-pilot';
+import { initHeaderAutoHide } from './ui/header.js?v=mob-1';
 import { html, mount } from './html.js';
 
 const app = document.getElementById('app');
@@ -32,7 +33,7 @@ async function route(base, { first = false } = {}) {
     current.instance.update({ ...base, ...r });
     return;
   }
-  const mod = await import(`./views/${r.view}.js?v=cues-1`);
+  const mod = await import(`./views/${r.view}.js?v=mob-1`);
   if (seq !== routeSeq) return;
   const swap = () => {
     current?.instance?.destroy?.();
@@ -58,6 +59,7 @@ async function route(base, { first = false } = {}) {
 
 async function boot() {
   initTheme(document.querySelector('.theme-toggle'));
+  initHeaderAutoHide(document.querySelector('.site-header'));
   initImageEvents();
   let store;
   try {
