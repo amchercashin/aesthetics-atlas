@@ -146,6 +146,7 @@ export default {
       root.querySelector('.cat-bar-count').textContent = String(list.length);
       replaceParams('catalog', stateParams(state));
       fitRows();
+      revealPressed();
     }
 
     // Панель фильтров стоит в начале страницы и не липнет: с рядами сюжетов и техники она выше экрана ноутбука.
@@ -207,15 +208,37 @@ export default {
         more.setAttribute('aria-expanded', String(open));
       }
     }
+    // Телефон: ряды панели прокручиваются вбок, и выбранный чип может оказаться за краем — например,
+    // при открытии ссылки с фильтром. Тогда ряд подъезжает к нему; если выбранное уже видно, ряд стоит.
+    // Ряд двигается, только когда изменился выбор в нём самом, и не на resize: иначе ряд, прокрученный
+    // вручную, отскакивал бы назад. Снятый выбор (например, эпох) возвращает ряд к началу.
+    const shownPressed = new Map();
+    function revealPressed() {
+      if (!narrow.matches) return;
+      for (const row of panel.querySelectorAll('.filter-row, .era-bar')) {
+        const pressed = [...row.querySelectorAll('[aria-pressed="true"]')];
+        const key = pressed.map((el) => el.dataset.v ?? el.dataset.era ?? el.dataset.sort).join(',');
+        if (shownPressed.get(row) === key) continue;
+        shownPressed.set(row, key);
+        if (!pressed.length) { row.scrollLeft = 0; continue; }
+        const view = row.getBoundingClientRect();
+        const fade = 28; // угасающий правый край ряда (views.css)
+        if (pressed.some((el) => { const r = el.getBoundingClientRect(); return r.left >= view.left && r.right <= view.right - fade; })) continue;
+        const start = view.left + (parseFloat(getComputedStyle(row).paddingLeft) || 0);
+        row.scrollLeft += pressed[0].getBoundingClientRect().left - start;
+      }
+    }
     const onResize = () => { fitRows(); onScroll(); };
 
     toggle.addEventListener('click', () => setOpen(openedAt === null));
     scrim.addEventListener('click', () => setOpen(false));
     window.addEventListener('scroll', onScroll, { passive: true });
     window.addEventListener('resize', onResize);
-    narrow.addEventListener('change', onResize);
+    const onNarrow = () => { onResize(); shownPressed.clear(); revealPressed(); };
+    narrow.addEventListener('change', onNarrow);
     document.addEventListener('keydown', onKey);
-    document.fonts?.ready.then(() => { if (root.contains(panel)) fitRows(); });
+    // Шрифт меняет ширину чипов: после его загрузки подгоняем ряды заново.
+    document.fonts?.ready.then(() => { if (root.contains(panel)) { fitRows(); shownPressed.clear(); revealPressed(); } });
 
     const onClick = (e) => {
       if (e.target.closest('[data-any-toggle]')) {
@@ -246,7 +269,7 @@ export default {
         root.removeEventListener('click', onClick);
         window.removeEventListener('scroll', onScroll);
         window.removeEventListener('resize', onResize);
-        narrow.removeEventListener('change', onResize);
+        narrow.removeEventListener('change', onNarrow);
         document.removeEventListener('keydown', onKey);
         cancelAnimationFrame(raf);
       },

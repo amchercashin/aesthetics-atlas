@@ -681,6 +681,8 @@ button.chip.more:hover { text-decoration-color: currentColor; }
     mask-image: linear-gradient(to right, #000 calc(100% - 28px), transparent);
   }
   .cat-filters .filter-row::-webkit-scrollbar, .cat-filters .era-bar::-webkit-scrollbar { display: none; }
+  /* Запас в конце ряда: при полной прокрутке последний чип выходит из-под угасающего края */
+  .cat-filters .filter-row::after, .cat-filters .era-bar::after { content: ""; flex: none; width: 12px; }
   .cat-filters .chip { flex: none; }
   .cat-filters .era-bar { gap: 4px; }
   .cat-filters .era-seg { flex: none; min-width: 64px; }
