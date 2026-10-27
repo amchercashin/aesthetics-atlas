@@ -64,7 +64,7 @@
   dates: ок. 1886 – 1905
   era: fin-de-siecle
   domain: [art]
-  medium: [painting]
+  medium: [painting, print]
   subjects: [landscape, portrait, still-life, everyday-life, any]
   region: Франция
   tier: 1
@@ -635,7 +635,7 @@
   dates: 1905 – 1925
   era: fin-de-siecle
   domain: [art]
-  medium: [painting]
+  medium: [painting, print, moving-image, architecture]
   subjects: [landscape, portrait, city, any]
   region: Германия, Австрия, Скандинавия
   tier: 1

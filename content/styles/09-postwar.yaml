@@ -380,7 +380,7 @@
   dates: 1945 – 1965
   era: postwar
   domain: [architecture, design]
-  medium: [architecture]
+  medium: [architecture, graphic-design]
   subjects: [city, any]
   region: США
   tier: 3
@@ -836,7 +836,7 @@
   dates: 1960 – 1975
   era: postwar
   domain: [art, design]
-  medium: [sculpture, installation]
+  medium: [sculpture, installation, painting]
   subjects: [abstraction, any]
   region: США
   tier: 2
@@ -1107,7 +1107,7 @@
   dates: 1968 – 1980
   era: postwar
   domain: [art]
-  medium: [installation]
+  medium: [installation, sculpture]
   subjects: [landscape]
   region: США, Великобритания
   tier: 3

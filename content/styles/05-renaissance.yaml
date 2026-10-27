@@ -241,7 +241,7 @@
   dates: ок. 1430 – 1580
   era: renaissance
   domain: [art]
-  medium: [painting]
+  medium: [painting, print]
   subjects: [landscape, portrait, everyday-life, religion-myth, any]
   region: Нидерланды, Германия
   tier: 2
@@ -312,7 +312,7 @@
   approx: true
   era: renaissance
   domain: [art]
-  medium: [painting]
+  medium: [painting, sculpture]
   subjects: [portrait, religion-myth, figure, any]
   region: Италия, затем Европа
   tier: 2
@@ -507,7 +507,7 @@
   dates: ок. 1600 – 1672
   era: renaissance
   domain: [art]
-  medium: [painting]
+  medium: [painting, print]
   subjects: [landscape, portrait, still-life, everyday-life, city, any]
   region: Нидерланды
   tier: 2

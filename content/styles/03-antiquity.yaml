@@ -67,7 +67,7 @@
   dates: 480 – 323 до н. э.
   era: antiquity
   domain: [art, architecture]
-  medium: [sculpture, architecture]
+  medium: [sculpture, architecture, relief, ceramics]
   subjects: [city, religion-myth, figure, any]
   region: Греция
   tier: 1
@@ -135,7 +135,7 @@
   dates: 323 – 31 до н. э.
   era: antiquity
   domain: [art]
-  medium: [sculpture]
+  medium: [sculpture, relief]
   subjects: [religion-myth, figure, any]
   region: Восточное Средиземноморье
   tier: 2
@@ -322,7 +322,7 @@
   dates: ок. I в. до н. э. – V в. н. э.
   era: antiquity
   domain: [art]
-  medium: [sculpture]
+  medium: [sculpture, relief]
   subjects: [religion-myth, figure]
   region: Пакистан, Афганистан
   tier: 3

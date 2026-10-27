@@ -7,7 +7,7 @@
   dates: 1907 – 1925
   era: avant-garde
   domain: [art]
-  medium: [painting]
+  medium: [painting, sculpture]
   subjects: [portrait, still-life, figure, any]
   region: Франция
   tier: 1
@@ -362,7 +362,7 @@
   dates: 1915 – 1935
   era: avant-garde
   domain: [art, design]
-  medium: [painting]
+  medium: [painting, ceramics]
   subjects: [abstraction, any]
   region: Россия
   tier: 1
@@ -427,7 +427,7 @@
   dates: 1915 – 1934
   era: avant-garde
   domain: [design, architecture, art]
-  medium: [graphic-design, typography, architecture]
+  medium: [graphic-design, typography, architecture, photography]
   subjects: [city, abstraction, any]
   region: СССР
   tier: 1
@@ -648,7 +648,7 @@
   dates: 1924 – 1966
   era: avant-garde
   domain: [art]
-  medium: [painting]
+  medium: [painting, photography]
   subjects: [landscape, any]
   region: Франция, затем весь мир
   tier: 1
@@ -875,7 +875,7 @@
   dates: 1920 – 1940
   era: avant-garde
   domain: [design, architecture]
-  medium: [architecture, decorative-arts, interior]
+  medium: [architecture, decorative-arts, interior, graphic-design]
   subjects: [city, ornament, figure, any]
   region: Франция, США, весь мир
   tier: 1
@@ -959,7 +959,7 @@
   dates: 1920 – 1933
   era: avant-garde
   domain: [art]
-  medium: [painting]
+  medium: [painting, photography]
   subjects: [portrait, everyday-life, city, any]
   region: Германия
   tier: 3
@@ -1243,7 +1243,7 @@
   dates: 1932 – 1980-е
   era: avant-garde
   domain: [art]
-  medium: [painting, sculpture]
+  medium: [painting, sculpture, graphic-design]
   subjects: [portrait, everyday-life, figure, any]
   region: СССР и соцстраны
   tier: 2
