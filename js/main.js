@@ -2,7 +2,7 @@
 import { loadAtlas } from './store.js?v=ai-1';
 import { parseHash } from './router.js?v=map4';
 import { initTheme } from './theme.js';
-import { initSearch } from './ui/search-dialog.js?v=regional-01';
+import { initSearch } from './ui/search-dialog.js?v=subjects-2';
 import { initLightbox } from './ui/lightbox.js?v=lineage-2';
 import { initImageEvents, markLoaded } from './ui/image.js?v=author-pilot';
 import { initHeaderAutoHide } from './ui/header.js?v=mob-1';

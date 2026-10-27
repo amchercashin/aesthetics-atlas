@@ -6,7 +6,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import yaml from 'js-yaml';
 import { buildRecord } from '../scripts/lib/record.mjs';
-import { readState, stateParams, emptyState, isFiltered, filterStyles, facetCounts, matches } from '../js/catalog-filter.js';
+import { readState, stateParams, emptyState, isFiltered, filterStyles, facetCounts, matches, facetHits, FACET_STEMS } from '../js/catalog-filter.js';
 import { DOMAIN, KIND_FAMILY, SUBJECT, MEDIUM } from '../js/format.js';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
@@ -78,4 +78,34 @@ test('reset state shows everything and nothing counts as filtered', () => {
   }
   assert.equal(isFiltered(state({ sort: 'az' })), false);
   assert.ok(styles.every((s) => matches(s, emptyState())));
+});
+
+// Поиск предлагает фильтр каталога, когда запрос — слово из словаря сюжетов или техник.
+const hits = (q) => facetHits(q).map((h) => `${h.key}:${h.v}`);
+
+test('search suggests the catalog filter for the words people actually type', () => {
+  for (const [q, want] of [
+    ['барельеф', 'medium:relief'], ['все барельефы', 'medium:relief'], ['горельеф', 'medium:relief'], ['bas-relief', 'medium:relief'],
+    ['скульптуры', 'medium:sculpture'], ['стили скульптуры', 'medium:sculpture'], ['скульп', 'medium:sculpture'], ['sculpture', 'medium:sculpture'],
+    ['пейзаж', 'subject:landscape'], ['пейзажи', 'subject:landscape'], ['landscapes', 'subject:landscape'],
+    ['портреты', 'subject:portrait'], ['portrait', 'subject:portrait'], ['натюрморт', 'subject:still-life'], ['still life', 'subject:still-life'],
+    ['гравюра', 'medium:print'], ['животные', 'subject:animals'], ['мифы', 'subject:religion-myth'],
+  ]) assert.ok(hits(q).includes(want), `${q} → ${want}, получено ${hits(q)}`);
+  assert.equal(facetHits('барельеф')[0].href, '#/catalog?m=relief');
+  assert.equal(facetHits('пейзажи')[0].href, '#/catalog?t=landscape');
+});
+
+test('every subject and technique is reachable from search by its own label, and every value has stems', () => {
+  for (const [key, dict] of [['subject', SUBJECT], ['medium', MEDIUM]]) {
+    assert.deepEqual(Object.keys(FACET_STEMS[key]).sort(), Object.keys(dict).sort(), key);
+    for (const [v, label] of Object.entries(dict)) assert.ok(hits(label).includes(`${key}:${v}`), `«${label}»`);
+  }
+});
+
+test('style names and ordinary queries do not trigger a filter by accident', () => {
+  for (const q of ['Городецкая роспись', 'Модерн', 'Ар-деко', 'Готика', 'Кубизм', 'Малевич', 'импрессионизм', '1920', 'нюанс', 'Супрематизм', 'Барокко']) {
+    assert.deepEqual(hits(q), [], q);
+  }
+  // Каждый результат — по порядку словарей и без повторов.
+  assert.deepEqual(hits('наскальная живопись'), ['medium:painting', 'medium:rock-art']);
 });
