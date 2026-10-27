@@ -229,7 +229,7 @@
     - { start: 2020, note: "Ностальгическое возвращение в интернет-сообществах" }
   era: digital
   domain: [design, internet]
-  medium: [ui, graphic-design, digital-art]
+  medium: [ui, graphic-design, digital-art, typography]
   subjects: [landscape, any]
   region: Весь мир
   tier: 1
@@ -470,7 +470,7 @@
   dates: 2000-е – наши дни
   era: digital
   domain: [art, internet]
-  medium: [digital-art]
+  medium: [digital-art, moving-image]
   subjects: [any]
   region: Весь мир
   tier: 2
@@ -557,7 +557,7 @@
   dates: 2010-е – наши дни
   era: digital
   domain: [design, internet]
-  medium: [ui, graphic-design]
+  medium: [ui, graphic-design, illustration]
   subjects: [any]
   region: Весь мир
   tier: 1
@@ -858,7 +858,7 @@
   dates: 2014 – наши дни
   era: digital
   domain: [design, internet]
-  medium: [web]
+  medium: [web, typography]
   subjects: [any]
   region: Интернет
   tier: 3
@@ -936,7 +936,7 @@
   dates: 2000 – наши дни
   era: digital
   domain: [art, design]
-  medium: [painting]
+  medium: [painting, sculpture]
   subjects: [ornament, any]
   region: Япония
   tier: 3

@@ -2,7 +2,7 @@
 // Ниже — текст, родословная, ссылки.
 // Статус проверки карточки и связей виден сразу; источники утверждений — под раскрытием.
 import { html, mount, safeUrl } from '../html.js';
-import { fmtDates, fmtYear, RELATION, DOMAIN, KIND, DATE_KIND, REL_STATUS, SUBJECT, MEDIUM, roleLabel, plural, reviewScopeText } from '../format.js?v=subjects-3';
+import { fmtDates, fmtYear, RELATION, DOMAIN, KIND, DATE_KIND, REL_STATUS, SUBJECT, MEDIUM, roleLabel, plural, reviewScopeText } from '../format.js?v=subjects-4';
 import { frame, credit } from '../ui/image.js?v=author-pilot';
 import { eraTag, thumb, footer } from '../ui/common.js?v=links-1';
 import { toast } from '../ui/toast.js';

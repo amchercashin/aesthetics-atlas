@@ -132,3 +132,10 @@ test('catalog labels cover exactly the validator vocabularies', () => {
   assert.deepEqual(Object.keys(SUBJECT).sort(), [...SUBJECTS].sort());
   assert.deepEqual(Object.keys(MEDIUM).sort(), [...MEDIUMS].sort());
 });
+
+// Область «Архитектура» без техники «архитектура» означала бы, что стиль не найдётся среди архитектурных.
+test('every card in the architecture domain lists architecture among its techniques', () => {
+  for (const s of styles.filter((x) => x.domain.includes('architecture'))) {
+    assert.ok([].concat(s.medium).includes('architecture'), s.id);
+  }
+});

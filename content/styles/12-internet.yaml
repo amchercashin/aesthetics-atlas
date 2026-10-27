@@ -114,7 +114,7 @@
   dates: 2008 – наши дни
   era: internet
   domain: [internet, design]
-  medium: [digital-art]
+  medium: [digital-art, graphic-design]
   subjects: [landscape, city, any]
   region: Франция, интернет
   tier: 2
@@ -903,7 +903,7 @@
   dates: 2022 – наши дни
   era: internet
   domain: [internet, design]
-  medium: [fashion]
+  medium: [fashion, photography]
   subjects: [any]
   region: TikTok
   tier: 3
@@ -983,7 +983,7 @@
   dateNote: Даты — пик внимания в моде, рекламе и соцсетях вокруг фильма «Барби»; розовый в моде после этого никуда не исчез.
   era: internet
   domain: [internet, design]
-  medium: [fashion, interior]
+  medium: [fashion, interior, photography]
   subjects: [any]
   region: Весь мир
   tier: 3

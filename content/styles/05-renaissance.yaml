@@ -7,7 +7,7 @@
   dates: ок. 1280 – 1400
   era: renaissance
   domain: [art]
-  medium: [painting]
+  medium: [painting, sculpture, relief]
   subjects: [religion-myth, any]
   region: Италия
   tier: 3
@@ -73,7 +73,7 @@
   dates: ок. 1400 – 1490
   era: renaissance
   domain: [art, architecture]
-  medium: [painting, sculpture, architecture]
+  medium: [painting, sculpture, architecture, relief]
   subjects: [portrait, religion-myth, figure, any]
   region: Флоренция, Италия
   tier: 1
@@ -150,7 +150,7 @@
     условна — часть исследователей не видит резкого стилистического перелома около 1520 года.
   era: renaissance
   domain: [art, architecture]
-  medium: [painting, sculpture, architecture]
+  medium: [painting, sculpture, architecture, drawing]
   subjects: [portrait, religion-myth, figure, any]
   region: Рим, Флоренция, Милан, Венеция
   tier: 1
@@ -507,7 +507,7 @@
   dates: ок. 1600 – 1672
   era: renaissance
   domain: [art]
-  medium: [painting, print]
+  medium: [painting, print, ceramics]
   subjects: [landscape, portrait, still-life, everyday-life, city, any]
   region: Нидерланды
   tier: 2
@@ -639,7 +639,7 @@
   dates: ок. 1730 – 1780
   era: renaissance
   domain: [art, design, architecture]
-  medium: [painting, interior, decorative-arts]
+  medium: [painting, interior, decorative-arts, architecture, ceramics]
   subjects: [portrait, everyday-life, religion-myth, ornament, any]
   region: Франция, Германия, Европа
   tier: 2
@@ -758,7 +758,7 @@
   dates: ок. 1660 – 1900
   era: renaissance
   domain: [art, design]
-  medium: [print]
+  medium: [print, painting]
   subjects: [landscape, portrait, everyday-life, animals, any]
   region: Япония
   tier: 1

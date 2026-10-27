@@ -149,7 +149,7 @@
   dates: ок. 1790 – 1850
   era: xix
   domain: [art]
-  medium: [painting]
+  medium: [painting, print]
   subjects: [landscape, any]
   region: Германия, Англия, Франция
   tier: 1
@@ -269,7 +269,7 @@
   dates: ок. 1820 – 1900
   era: xix
   domain: [art]
-  medium: [painting]
+  medium: [painting, drawing]
   subjects: [religion-myth, figure, any]
   region: Франция, Европа, Россия
   tier: 2
@@ -523,7 +523,7 @@
   dates: ок. 1830 – 1910
   era: xix
   domain: [architecture, design]
-  medium: [architecture]
+  medium: [architecture, sculpture]
   subjects: [city]
   region: Европа, Америка, Россия
   tier: 3
@@ -591,7 +591,7 @@
   dates: ок. 1860 – 1900
   era: xix
   domain: [art, design]
-  medium: [painting, interior, decorative-arts]
+  medium: [painting, interior, decorative-arts, print]
   subjects: [any]
   region: Великобритания
   tier: 3
@@ -715,7 +715,7 @@
   dates: 1790-е – 1900-е
   era: xix
   domain: [architecture, design]
-  medium: [architecture]
+  medium: [architecture, stained-glass]
   subjects: [city]
   region: Великобритания, затем весь мир
   tier: 2
@@ -784,7 +784,7 @@
   dates: 1840-е – 1880-е
   era: xix
   domain: [art]
-  medium: [painting]
+  medium: [painting, print]
   subjects: [landscape, everyday-life, any]
   region: Франция
   tier: 1
@@ -857,7 +857,7 @@
   dates: 1860-е – 1910-е
   era: xix
   domain: [design]
-  medium: [decorative-arts, textile, architecture]
+  medium: [decorative-arts, textile, architecture, stained-glass, typography]
   subjects: [city, ornament, any]
   region: Великобритания, США
   tier: 2

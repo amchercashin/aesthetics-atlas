@@ -289,7 +289,7 @@
   dates: 1976 – 1990
   era: postmodern
   domain: [design, art]
-  medium: [graphic-design, typography, print]
+  medium: [graphic-design, typography, print, fashion]
   subjects: [any]
   region: Великобритания, США
   tier: 2
@@ -674,7 +674,7 @@
   dates: 1975 – 1995
   era: postmodern
   domain: [internet, design]
-  medium: [digital-art]
+  medium: [digital-art, moving-image]
   subjects: [any]
   region: США, Япония
   tier: 2
@@ -1007,7 +1007,7 @@
   dates: 1970-е – наши дни
   era: postmodern
   domain: [art]
-  medium: [painting]
+  medium: [painting, illustration]
   subjects: [any]
   region: Калифорния, США
   tier: 3

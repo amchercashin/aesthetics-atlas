@@ -7,7 +7,7 @@
   dates: ок. 3500 – 539 до н. э.
   era: ancient
   domain: [art, architecture]
-  medium: [relief, sculpture, architecture]
+  medium: [relief, sculpture, architecture, ceramics, mosaic]
   subjects: [city, religion-myth, animals, any]
   region: Междуречье (Ирак, Сирия)
   tier: 2
@@ -56,7 +56,7 @@
   dates: ок. 3100 – 30 до н. э.
   era: ancient
   domain: [art, architecture]
-  medium: [painting, relief, sculpture, architecture]
+  medium: [painting, relief, sculpture, architecture, metalwork, manuscript]
   subjects: [portrait, everyday-life, city, religion-myth, any]
   region: Египет
   tier: 1
@@ -116,7 +116,7 @@
   dates: ок. 2000 – 1450 до н. э.
   era: ancient
   domain: [art]
-  medium: [painting, ceramics]
+  medium: [painting, ceramics, sculpture]
   subjects: [animals, figure, any]
   region: Крит
   tier: 3
@@ -186,7 +186,7 @@
   dates: ок. 1600 до н. э. – 220 н. э.
   era: ancient
   domain: [art]
-  medium: [metalwork, sculpture, ceramics]
+  medium: [metalwork, sculpture, ceramics, painting, calligraphy, decorative-arts]
   subjects: [ornament, figure, any]
   region: Китай
   tier: 2
@@ -245,7 +245,7 @@
   dates: 550 – 330 до н. э.
   era: ancient
   domain: [art, architecture]
-  medium: [architecture, relief]
+  medium: [architecture, relief, metalwork, ceramics]
   subjects: [city, animals, figure, any]
   region: Иран
   tier: 3
@@ -371,7 +371,7 @@
   approx: true
   era: ancient
   domain: [art, architecture]
-  medium: [sculpture, relief, architecture]
+  medium: [sculpture, relief, architecture, ceramics, painting, manuscript]
   subjects: [city, religion-myth, ornament, any]
   region: Мексика и Центральная Америка
   tier: 2

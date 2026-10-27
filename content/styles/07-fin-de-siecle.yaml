@@ -128,7 +128,7 @@
   dates: ок. 1880 – 1910
   era: fin-de-siecle
   domain: [art]
-  medium: [painting]
+  medium: [painting, print]
   subjects: [religion-myth, any]
   region: Франция, Бельгия, Германия, Россия
   tier: 2
@@ -195,7 +195,7 @@
   dates: 1888 – 1900
   era: fin-de-siecle
   domain: [art, design]
-  medium: [painting, print]
+  medium: [painting, print, graphic-design]
   subjects: [landscape, everyday-life, any]
   region: Франция
   tier: 3
@@ -256,7 +256,7 @@
   dates: ок. 1890 – 1910
   era: fin-de-siecle
   domain: [design, architecture, art]
-  medium: [graphic-design, architecture, decorative-arts]
+  medium: [graphic-design, architecture, decorative-arts, stained-glass, metalwork, ceramics, interior]
   subjects: [city, ornament, figure, any]
   region: Европа, Россия, США
   tier: 1
@@ -361,7 +361,7 @@
   dates: 1897 – 1910-е
   era: fin-de-siecle
   domain: [art, design, architecture]
-  medium: [painting, architecture, decorative-arts]
+  medium: [painting, architecture, decorative-arts, graphic-design, mosaic]
   subjects: [portrait, ornament, any]
   region: Австрия
   tier: 2
@@ -435,7 +435,7 @@
   dates: 1898 – 1927
   era: fin-de-siecle
   domain: [art, design]
-  medium: [painting, illustration, drawing]
+  medium: [painting, illustration, drawing, graphic-design, fashion]
   subjects: [any]
   region: Россия
   tier: 3

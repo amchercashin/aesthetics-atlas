@@ -7,7 +7,7 @@
   dates: 330 – 1453
   era: medieval
   domain: [art, architecture]
-  medium: [painting, decorative-arts, architecture]
+  medium: [painting, decorative-arts, architecture, mosaic, manuscript]
   subjects: [city, religion-myth, any]
   region: Восточная Римская империя
   tier: 1
@@ -134,7 +134,7 @@
   dates: ок. 600 – 900
   era: medieval
   domain: [art, design]
-  medium: [manuscript]
+  medium: [manuscript, metalwork, relief, calligraphy]
   subjects: [religion-myth, animals, ornament]
   region: Ирландия, Британия
   tier: 3
@@ -258,7 +258,7 @@
   dates: ок. 1000 – 1200
   era: medieval
   domain: [architecture, art]
-  medium: [architecture, relief]
+  medium: [architecture, relief, painting, sculpture]
   subjects: [city, religion-myth]
   region: Западная Европа
   tier: 2
@@ -325,7 +325,7 @@
   dates: ок. 1140 – 1500
   era: medieval
   domain: [architecture, art]
-  medium: [architecture, sculpture, relief]
+  medium: [architecture, sculpture, relief, stained-glass]
   subjects: [city, religion-myth]
   region: Франция, затем вся Европа
   tier: 1
@@ -446,7 +446,7 @@
   dates: VII век – наши дни
   era: medieval
   domain: [art, architecture, design]
-  medium: [architecture, ceramics, textile, decorative-arts]
+  medium: [architecture, ceramics, textile, decorative-arts, calligraphy, mosaic]
   subjects: [city, ornament]
   region: От Испании до Индии
   tier: 1
@@ -590,7 +590,7 @@
   dates: X век – наши дни
   era: medieval
   domain: [art]
-  medium: [painting]
+  medium: [painting, calligraphy]
   subjects: [landscape]
   region: Китай
   tier: 2
@@ -668,7 +668,7 @@
   dates: X – XIX века (обзор до конца Эдо)
   era: medieval
   domain: [art]
-  medium: [painting]
+  medium: [painting, manuscript]
   subjects: [landscape, everyday-life, any]
   region: Япония
   tier: 3

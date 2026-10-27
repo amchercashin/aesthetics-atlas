@@ -151,3 +151,22 @@ test('styles known for a subject are in its main list; styles tied to one subjec
   assert.ok(extra('portrait').includes('pixel-art') && extra('landscape').includes('pixel-art'));
   assert.ok(main('any').includes('pixel-art') && !main('any').includes('gothic'));
 });
+
+// У стиля может быть несколько техник: он находится под каждой, и ни под какой другой.
+test('a style with several techniques is found under each of them', () => {
+  const egypt = styles.find((s) => s.id === 'ancient-egypt');
+  assert.ok(egypt.medium.length >= 4);
+  for (const m of Object.keys(MEDIUM)) {
+    const found = ids(filterStyles(styles, state({ medium: m }))).includes('ancient-egypt');
+    assert.equal(found, egypt.medium.includes(m), m);
+  }
+  assert.ok(styles.filter((s) => s.medium.length > 1).length > styles.length / 2);
+});
+
+test('mosaic, stained glass and calligraphy find their classic styles', () => {
+  const by = (m) => ids(filterStyles(styles, state({ medium: m })));
+  for (const id of ['byzantine-art', 'ancient-rome', 'hellenistic-art', 'islamic-art', 'soviet-modernism']) assert.ok(by('mosaic').includes(id), id);
+  for (const id of ['gothic', 'gothic-revival', 'art-nouveau']) assert.ok(by('stained-glass').includes(id), id);
+  for (const id of ['islamic-art', 'xu-bing-writing-systems', 'shan-shui']) assert.ok(by('calligraphy').includes(id), id);
+  for (const [q, want] of [['мозаика', 'medium:mosaic'], ['витражи', 'medium:stained-glass'], ['каллиграфия', 'medium:calligraphy']]) assert.ok(hits(q).includes(want), q);
+});
