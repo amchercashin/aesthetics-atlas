@@ -10,6 +10,8 @@
   dates: 2011 – наши дни
   era: internet
   domain: [internet, design]
+  medium: [digital-art, graphic-design]
+  subjects: []
   region: Интернет
   tier: 1
   kind: internet-aesthetic
@@ -112,6 +114,8 @@
   dates: 2008 – наши дни
   era: internet
   domain: [internet, design]
+  medium: [digital-art]
+  subjects: [landscape, city]
   region: Франция, интернет
   tier: 2
   kind: internet-aesthetic
@@ -186,6 +190,8 @@
   dates: 2017 – наши дни
   era: internet
   domain: [design]
+  medium: [illustration]
+  subjects: [figure]
   region: Кремниевая долина, весь мир
   tier: 2
   kind: trend
@@ -256,6 +262,8 @@
   dates: 2018 – наши дни
   era: internet
   domain: [internet, design]
+  medium: [photography, fashion]
+  subjects: [landscape, still-life, everyday-life]
   region: Tumblr, TikTok
   tier: 2
   kind: internet-aesthetic
@@ -324,6 +332,8 @@
   dates: 2015 – наши дни
   era: internet
   domain: [internet, design]
+  medium: [photography, fashion, interior]
+  subjects: [city, still-life]
   region: Tumblr, TikTok
   tier: 3
   kind: internet-aesthetic
@@ -397,6 +407,8 @@
   dates: 2017 – наши дни
   era: internet
   domain: [internet]
+  medium: [photography, fashion]
+  subjects: []
   region: Интернет
   tier: 3
   kind: internet-aesthetic
@@ -471,6 +483,7 @@
   era: internet
   domain: [internet]
   medium: [photography, digital-art]
+  subjects: [city]
   region: Интернет
   tier: 1
   kind: internet-aesthetic
@@ -534,6 +547,8 @@
   dates: 2019 – наши дни
   era: internet
   domain: [internet]
+  medium: [photography, digital-art]
+  subjects: []
   region: Интернет
   tier: 1
   kind: internet-aesthetic
@@ -616,6 +631,8 @@
   dates: 2020-е – наши дни
   era: internet
   domain: [internet]
+  medium: [digital-art, photography]
+  subjects: []
   region: Интернет
   tier: 2
   kind: internet-aesthetic
@@ -702,6 +719,7 @@
   era: internet
   domain: [design, internet]
   medium: [ui]
+  subjects: []
   region: Весь мир
   tier: 3
   kind: [design-system, trend]
@@ -787,6 +805,7 @@
   era: internet
   domain: [internet, art, architecture]
   medium: [illustration, architecture, digital-art]
+  subjects: [city]
   region: Интернет
   tier: 2
   kind: [internet-aesthetic, movement]
@@ -884,6 +903,8 @@
   dates: 2022 – наши дни
   era: internet
   domain: [internet, design]
+  medium: [fashion]
+  subjects: [ornament]
   region: TikTok
   tier: 3
   kind: internet-aesthetic
@@ -962,6 +983,8 @@
   dateNote: Даты — пик внимания в моде, рекламе и соцсетях вокруг фильма «Барби»; розовый в моде после этого никуда не исчез.
   era: internet
   domain: [internet, design]
+  medium: [fashion, interior]
+  subjects: []
   region: Весь мир
   tier: 3
   kind: trend
@@ -1037,6 +1060,8 @@
   dateNote: Даты — волна мемов и брендовых подражаний после выхода альбома летом 2024 года, а не срок жизни приёма.
   era: internet
   domain: [internet, design]
+  medium: [graphic-design, typography]
+  subjects: []
   region: Весь мир
   tier: 3
   kind: trend
@@ -1121,6 +1146,8 @@
   dates: 2015 – наши дни
   era: internet
   domain: [internet, art]
+  medium: [digital-art]
+  subjects: []
   region: Весь мир
   tier: 1
   kind: [technique, trend]
@@ -1223,6 +1250,8 @@
   dateKind: popularity
   era: internet
   domain: [internet, design]
+  medium: [digital-art]
+  subjects: []
   region: Интернет
   tier: 2
   kind: trend

@@ -97,6 +97,49 @@ export const DOMAIN = {
   internet: 'Интернет и цифра',
 };
 
+// Сюжеты, характерные для стиля (поле subjects), в порядке фильтра каталога.
+export const SUBJECT = {
+  landscape: 'Пейзаж',
+  portrait: 'Портрет',
+  'still-life': 'Натюрморт',
+  'everyday-life': 'Бытовые сцены',
+  city: 'Город и архитектура',
+  'religion-myth': 'Религия и мифы',
+  animals: 'Животные',
+  ornament: 'Орнамент и узор',
+  abstraction: 'Абстракция',
+  figure: 'Фигура и тело',
+};
+
+// Техника (поле medium): от изобразительных искусств к ремёслам, дизайну и цифре; узкие — в конце.
+// В свёрнутом ряду каталога видно начало списка, поэтому скульптура и рельеф стоят рано.
+export const MEDIUM = {
+  painting: 'Живопись',
+  drawing: 'Рисунок',
+  print: 'Печатная графика',
+  illustration: 'Иллюстрация',
+  sculpture: 'Скульптура',
+  relief: 'Рельеф',
+  architecture: 'Архитектура',
+  interior: 'Интерьер',
+  'decorative-arts': 'Декоративное искусство',
+  ceramics: 'Керамика',
+  textile: 'Текстиль',
+  metalwork: 'Металл',
+  fashion: 'Мода',
+  'graphic-design': 'Графический дизайн',
+  typography: 'Типографика',
+  'product-design': 'Предметный дизайн',
+  photography: 'Фотография',
+  'moving-image': 'Кино и анимация',
+  installation: 'Инсталляция',
+  'digital-art': 'Цифровое искусство',
+  ui: 'Интерфейсы',
+  web: 'Веб',
+  manuscript: 'Рукописная книга',
+  'rock-art': 'Наскальное искусство',
+};
+
 export function plural(n, one, few, many) {
   const m10 = n % 10, m100 = n % 100;
   if (m10 === 1 && m100 !== 11) return one;

@@ -9,6 +9,8 @@
   dates: ок. 1750 – 1830
   era: xix
   domain: [art, architecture]
+  medium: [painting, sculpture, architecture]
+  subjects: [figure, city]
   region: Франция, Европа, Россия
   tier: 1
   kind: movement
@@ -89,6 +91,8 @@
   dates: ок. 1800 – 1830
   era: xix
   domain: [architecture, design]
+  medium: [architecture, interior, decorative-arts]
+  subjects: [city, ornament]
   region: Франция, Россия, Европа
   tier: 2
   kind: period
@@ -145,6 +149,8 @@
   dates: ок. 1790 – 1850
   era: xix
   domain: [art]
+  medium: [painting]
+  subjects: [landscape]
   region: Германия, Англия, Франция
   tier: 1
   kind: movement
@@ -205,6 +211,8 @@
   dates: 1815 – 1848
   era: xix
   domain: [design, art]
+  medium: [painting, interior]
+  subjects: [everyday-life]
   region: Германия, Австрия
   tier: 3
   kind: period
@@ -261,6 +269,8 @@
   dates: ок. 1820 – 1900
   era: xix
   domain: [art]
+  medium: [painting]
+  subjects: [religion-myth, figure]
   region: Франция, Европа, Россия
   tier: 2
   kind: school
@@ -316,6 +326,8 @@
   dates: ок. 1830 – 1870
   era: xix
   domain: [art]
+  medium: [painting]
+  subjects: [landscape, everyday-life]
   region: Франция
   tier: 3
   kind: school
@@ -380,6 +392,8 @@
   dates: 1848 – 1900
   era: xix
   domain: [art]
+  medium: [painting]
+  subjects: [religion-myth, figure]
   region: Великобритания
   tier: 2
   kind: school
@@ -443,6 +457,8 @@
   dates: 1870 – 1923
   era: xix
   domain: [art]
+  medium: [painting]
+  subjects: [everyday-life, landscape, portrait]
   region: Россия
   tier: 2
   kind: school
@@ -507,6 +523,8 @@
   dates: ок. 1830 – 1910
   era: xix
   domain: [architecture, design]
+  medium: [architecture]
+  subjects: [city]
   region: Европа, Америка, Россия
   tier: 3
   kind: period
@@ -573,6 +591,8 @@
   dates: ок. 1860 – 1900
   era: xix
   domain: [art, design]
+  medium: [painting, interior, decorative-arts]
+  subjects: [landscape, ornament]
   region: Великобритания
   tier: 3
   kind: movement
@@ -637,6 +657,8 @@
   dates: ок. 1860 – 1910
   era: xix
   domain: [art, design]
+  medium: [painting, print, decorative-arts]
+  subjects: []
   region: Франция, Европа
   tier: 3
   kind: tradition
@@ -693,6 +715,8 @@
   dates: 1790-е – 1900-е
   era: xix
   domain: [architecture, design]
+  medium: [architecture]
+  subjects: [city]
   region: Великобритания, затем весь мир
   tier: 2
   kind: movement
@@ -760,6 +784,8 @@
   dates: 1840-е – 1880-е
   era: xix
   domain: [art]
+  medium: [painting]
+  subjects: [everyday-life]
   region: Франция
   tier: 1
   kind: movement
@@ -831,6 +857,8 @@
   dates: 1860-е – 1910-е
   era: xix
   domain: [design]
+  medium: [decorative-arts, textile, architecture]
+  subjects: [ornament, animals]
   region: Великобритания, США
   tier: 2
   kind: movement
@@ -898,6 +926,8 @@
   dates: 1867 – 1886
   era: xix
   domain: [art]
+  medium: [painting]
+  subjects: [landscape, everyday-life, city]
   region: Франция
   tier: 1
   kind: movement

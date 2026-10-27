@@ -7,6 +7,8 @@
   dates: 1943 – 1965
   era: postwar
   domain: [art]
+  medium: [painting]
+  subjects: [abstraction]
   region: США
   tier: 1
   kind: movement
@@ -80,6 +82,8 @@
   dates: 1948 – 1970
   era: postwar
   domain: [art]
+  medium: [painting]
+  subjects: [abstraction]
   region: США
   tier: 3
   kind: movement
@@ -148,6 +152,8 @@
   dates: 1950 – 1970-е
   era: postwar
   domain: [design]
+  medium: [graphic-design, typography]
+  subjects: []
   region: Швейцария, затем весь мир
   tier: 2
   kind: movement
@@ -220,6 +226,8 @@
   dates: 1953 – 1968
   era: postwar
   domain: [design]
+  medium: [product-design]
+  subjects: []
   region: Германия
   tier: 3
   kind: school
@@ -302,6 +310,8 @@
   dates: 1945 – 1969
   era: postwar
   domain: [design, architecture]
+  medium: [product-design, architecture, interior]
+  subjects: [city]
   region: США, Скандинавия
   tier: 1
   kind: period
@@ -370,6 +380,8 @@
   dates: 1945 – 1965
   era: postwar
   domain: [architecture, design]
+  medium: [architecture]
+  subjects: [city]
   region: США
   tier: 3
   kind: period
@@ -432,6 +444,8 @@
   dates: 1950 – 1980
   era: postwar
   domain: [architecture]
+  medium: [architecture]
+  subjects: [city]
   region: Великобритания, весь мир
   tier: 1
   kind: movement
@@ -493,6 +507,8 @@
   dates: 1955 – 1991
   era: postwar
   domain: [architecture]
+  medium: [architecture]
+  subjects: [city]
   region: СССР
   tier: 3
   kind: period
@@ -560,6 +576,8 @@
   dates: 1959 – 1970-е
   era: postwar
   domain: [architecture]
+  medium: [architecture]
+  subjects: [city]
   region: Япония
   tier: 3
   kind: school
@@ -608,6 +626,8 @@
   dates: 1955 – 1970
   era: postwar
   domain: [art, design]
+  medium: [painting, print]
+  subjects: [portrait, still-life]
   region: Великобритания, США
   tier: 1
   kind: movement
@@ -678,6 +698,8 @@
   dates: 1960 – 1970
   era: postwar
   domain: [art, design]
+  medium: [painting]
+  subjects: [abstraction]
   region: Европа, США
   tier: 2
   kind: movement
@@ -745,6 +767,8 @@
   dates: 1950 – 1970-е
   era: postwar
   domain: [art]
+  medium: [sculpture, installation]
+  subjects: [abstraction]
   region: Европа, США, Латинская Америка
   tier: 3
   kind: movement
@@ -812,6 +836,8 @@
   dates: 1960 – 1975
   era: postwar
   domain: [art, design]
+  medium: [sculpture, installation]
+  subjects: [abstraction]
   region: США
   tier: 2
   kind: movement
@@ -879,6 +905,8 @@
   dates: 1960 – 1980
   era: postwar
   domain: [art]
+  medium: [installation]
+  subjects: []
   region: США, Европа, СССР
   tier: 2
   kind: movement
@@ -943,6 +971,8 @@
   dates: 1965 – 1972
   era: postwar
   domain: [art, design]
+  medium: [graphic-design, typography]
+  subjects: [ornament]
   region: США, Великобритания
   tier: 2
   kind: movement
@@ -1012,6 +1042,8 @@
   dates: 1957 – 1975
   era: postwar
   domain: [design, architecture]
+  medium: [product-design, architecture, fashion]
+  subjects: [city]
   region: Европа, США
   tier: 3
   kind: period
@@ -1075,6 +1107,8 @@
   dates: 1968 – 1980
   era: postwar
   domain: [art]
+  medium: [installation]
+  subjects: [landscape]
   region: США, Великобритания
   tier: 3
   kind: movement
@@ -1140,6 +1174,8 @@
   dates: 1960 – 1990
   era: postwar
   domain: [art, internet]
+  medium: [digital-art, drawing]
+  subjects: [abstraction]
   region: Германия, Великобритания, США
   tier: 2
   kind:

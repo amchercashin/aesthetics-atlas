@@ -96,7 +96,7 @@ export default {
       <a class="way" href="#/catalog">
         <span class="way-visual way-mosaic">${mosaic.map((s) => thumb(s, 120))}</span>
         <span class="way-title">Каталог</span>
-        <span class="way-text">Все стили одной сеткой работ, с фильтрами по эпохам и областям: искусство, архитектура, дизайн, интернет.</span>
+        <span class="way-text">Все стили одной сеткой работ. Фильтры по эпохе, области, сюжету и технике: например, все стили для пейзажа или все рельефы.</span>
       </a>
     </section>
 

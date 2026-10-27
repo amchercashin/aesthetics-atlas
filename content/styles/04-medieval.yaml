@@ -7,6 +7,8 @@
   dates: 330 – 1453
   era: medieval
   domain: [art, architecture]
+  medium: [painting, decorative-arts, architecture]
+  subjects: [religion-myth, city]
   region: Восточная Римская империя
   tier: 1
   kind: overview
@@ -73,6 +75,8 @@
   dates: 988 – XVII век
   era: medieval
   domain: [art]
+  medium: [painting]
+  subjects: [religion-myth]
   region: Русь
   tier: 2
   kind: tradition
@@ -130,6 +134,8 @@
   dates: ок. 600 – 900
   era: medieval
   domain: [art, design]
+  medium: [manuscript]
+  subjects: [ornament, religion-myth]
   region: Ирландия, Британия
   tier: 3
   kind: tradition
@@ -195,6 +201,8 @@
   dates: ок. 750 – 1100
   era: medieval
   domain: [art, design]
+  medium: [relief, metalwork, decorative-arts]
+  subjects: [animals, ornament]
   region: Скандинавия
   tier: 3
   kind: tradition
@@ -250,6 +258,8 @@
   dates: ок. 1000 – 1200
   era: medieval
   domain: [architecture, art]
+  medium: [architecture, relief]
+  subjects: [city, religion-myth]
   region: Западная Европа
   tier: 2
   kind: period
@@ -315,6 +325,8 @@
   dates: ок. 1140 – 1500
   era: medieval
   domain: [architecture, art]
+  medium: [architecture, sculpture]
+  subjects: [city, religion-myth]
   region: Франция, затем вся Европа
   tier: 1
   kind: period
@@ -376,6 +388,8 @@
   dates: ок. 1375 – 1450
   era: medieval
   domain: [art]
+  medium: [painting, manuscript]
+  subjects: [religion-myth, landscape, everyday-life]
   region: Франция, Бургундия, Богемия, Италия
   tier: 3
   kind: period
@@ -432,6 +446,8 @@
   dates: VII век – наши дни
   era: medieval
   domain: [art, architecture, design]
+  medium: [architecture, ceramics, textile, decorative-arts]
+  subjects: [ornament, city]
   region: От Испании до Индии
   tier: 1
   kind: overview
@@ -503,6 +519,8 @@
   dates: XIII – XVII века
   era: medieval
   domain: [art]
+  medium: [painting, manuscript]
+  subjects: [landscape, city, everyday-life]
   region: Иран, Средняя Азия
   tier: 3
   kind: tradition
@@ -572,6 +590,8 @@
   dates: X век – наши дни
   era: medieval
   domain: [art]
+  medium: [painting]
+  subjects: [landscape]
   region: Китай
   tier: 2
   kind: tradition
@@ -648,6 +668,8 @@
   dates: X – XIX века (обзор до конца Эдо)
   era: medieval
   domain: [art]
+  medium: [painting]
+  subjects: [landscape, everyday-life]
   region: Япония
   tier: 3
   kind: tradition
@@ -728,6 +750,8 @@
   dates: XV век – наши дни
   era: medieval
   domain: [art, design]
+  medium: [ceramics, decorative-arts]
+  subjects: []
   region: Япония
   tier: 2
   kind: tradition
@@ -786,6 +810,8 @@
   dates: IX – XV века (ангкорский период)
   era: medieval
   domain: [architecture, art]
+  medium: [architecture, relief, sculpture]
+  subjects: [religion-myth, city]
   region: Камбоджа, кхмерский мир
   tier: 3
   kind: tradition

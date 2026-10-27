@@ -15,6 +15,7 @@
   era: prehistory
   domain: [art]
   medium: [rock-art, painting]
+  subjects: [animals]
   region: Европа, Индонезия, Урал
   tier: 1
   kind: overview
@@ -85,6 +86,8 @@
   dates: ок. 35 000 – 11 000 до н. э.
   era: prehistory
   domain: [art]
+  medium: [sculpture]
+  subjects: [figure]
   region: Европа, Сибирь
   tier: 2
   kind: tradition
@@ -135,6 +138,8 @@
   dates: ок. 12 000 – 1000 до н. э.
   era: prehistory
   domain: [art]
+  medium: [rock-art]
+  subjects: [animals, everyday-life]
   region: По всему миру
   tier: 3
   kind: [technique, overview]
@@ -203,6 +208,8 @@
   dates: ок. 10 000 – 3000 до н. э.
   era: prehistory
   domain: [art, design]
+  medium: [ceramics, decorative-arts]
+  subjects: [ornament]
   region: Евразия
   tier: 2
   kind: overview
@@ -270,6 +277,7 @@
   era: prehistory
   domain: [architecture]
   medium: [architecture]
+  subjects: [city]
   region: Европа, Средиземноморье, Кавказ
   tier: 2
   kind: tradition
@@ -340,6 +348,8 @@
   dates: ок. 28 000 до н. э. – наши дни
   era: prehistory
   domain: [art]
+  medium: [rock-art, painting]
+  subjects: [animals, religion-myth]
   region: Австралия
   tier: 2
   kind: tradition

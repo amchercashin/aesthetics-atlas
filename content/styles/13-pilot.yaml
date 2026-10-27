@@ -9,6 +9,7 @@
     - art
   medium:
     - decorative-arts
+  subjects: [ornament]
   region: "Нижегородское Заволжье, Россия: Семёнов, Сёмино и связанные мастерские"
   tier: 2
   dateKind: practice
@@ -188,6 +189,7 @@
   medium:
     - painting
     - drawing
+  subjects: []
   region: Alhalker / Alhalkere, регион Утопия, Северная территория, Австралия; Anmatyerr
   tier: 3
   dateKind: practice
@@ -378,6 +380,7 @@
   medium:
     - painting
     - drawing
+  subjects: [portrait]
   region: Москва, СССР / Россия
   tier: 3
   dateKind: practice
@@ -543,6 +546,7 @@
     - painting
     - drawing
     - manuscript
+  subjects: [figure]
   region: Лахор, Пакистан; Провиденс, Хьюстон и Нью-Йорк, США
   tier: 3
   dateKind: practice
@@ -747,6 +751,7 @@
   medium:
     - drawing
     - painting
+  subjects: [landscape, animals]
   region: Карролап, земли нунгар, Западная Австралия; дети нунгар и других коренных сообществ
   tier: 2
   dateKind: practice
@@ -943,6 +948,7 @@
   medium:
     - fashion
     - textile
+  subjects: [figure]
   region: Токио, Япония; коллекции представлены в Париже
   tier: 3
   dateKind: practice
@@ -1144,6 +1150,7 @@
   medium:
     - painting
     - textile
+  subjects: [ornament]
   region: >-
     Филиппины, Юго-Восточная Азия; США и международная практика художницы; ткани из разных мест и семейного
     собрания
@@ -1342,6 +1349,7 @@
   medium:
     - painting
     - decorative-arts
+  subjects: [ornament]
   region: Ндебеле, Мпумаланга, Южная Африка; международные проекты
   tier: 3
   dateKind: practice
@@ -1543,6 +1551,7 @@
     - installation
     - painting
     - moving-image
+  subjects: []
   region: Мельбурн и Kamilaroi Country, Новый Южный Уэльс, Австралия
   tier: 3
   dateKind: practice
@@ -1765,6 +1774,7 @@
     - art
   medium:
     - print
+  subjects: [landscape]
   region: Эдо, Япония; печатное производство укиё-э
   tier: 3
   dateKind: practice
@@ -1951,6 +1961,7 @@
   medium:
     - moving-image
     - drawing
+  subjects: [animals, landscape]
   region: Москва, СССР; студия «Союзмультфильм»
   tier: 3
   dateKind: practice
@@ -2166,6 +2177,7 @@
     - illustration
     - print
     - graphic-design
+  subjects: [religion-myth, ornament]
   region: Санкт-Петербург, Россия; книжное производство начала XX века
   tier: 3
   dateKind: practice

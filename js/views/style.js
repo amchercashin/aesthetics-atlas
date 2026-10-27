@@ -2,7 +2,7 @@
 // Ниже — текст, родословная, ссылки.
 // Статус проверки карточки и связей виден сразу; источники утверждений — под раскрытием.
 import { html, mount, safeUrl } from '../html.js';
-import { fmtDates, fmtYear, RELATION, DOMAIN, KIND, DATE_KIND, REL_STATUS, roleLabel, plural, reviewScopeText } from '../format.js?v=review-1';
+import { fmtDates, fmtYear, RELATION, DOMAIN, KIND, DATE_KIND, REL_STATUS, SUBJECT, MEDIUM, roleLabel, plural, reviewScopeText } from '../format.js?v=subjects-1';
 import { frame, credit } from '../ui/image.js?v=author-pilot';
 import { eraTag, thumb, footer } from '../ui/common.js?v=links-1';
 import { toast } from '../ui/toast.js';
@@ -84,6 +84,17 @@ function datesBlock(store, s) {
     ${s.dateNote ? html`<p class="dates-note">${s.dateNote}</p>` : ''}
     ${term ? html`<p class="dates-note">Слово документировано к ${fmtYear(term.year)} году${src ? html` — <a href="${safeUrl(src.url)}" target="_blank" rel="noopener">${src.publisher ?? src.title}</a>` : ''}.${term.note ? ` ${term.note}` : ''}</p>` : ''}
     ${s.revivals.map((r) => html`<p class="dates-note">Возвращение: ${fmtYear(r.start)}${r.end ? `–${fmtYear(r.end)}` : '-е'}${r.note ? ` — ${r.note.toLowerCase()}` : ''}.</p>`)}`;
+}
+
+// Сюжеты и техника — ссылками на каталог с тем же фильтром: видно, почему стиль там найдётся.
+function facetsBlock(s) {
+  // Порядок — как в фильтрах каталога, а не как записано в карточке.
+  const links = (dict, key, ids) => Object.keys(dict).filter((id) => ids.includes(id))
+    .map((id, i) => html`${i ? ', ' : ''}<a href="#/catalog?${key}=${id}">${dict[id].toLowerCase()}</a>`);
+  if (!s.subjects.length && !s.medium.length) return '';
+  return html`<h2 class="side-title">В каталоге</h2>
+    ${s.subjects.length ? html`<p class="names">Сюжеты: ${links(SUBJECT, 't', s.subjects)}</p>` : ''}
+    ${s.medium.length ? html`<p class="names">Техника: ${links(MEDIUM, 'm', s.medium)}</p>` : ''}`;
 }
 
 function paletteBlock(s, img) {
@@ -211,6 +222,7 @@ export default {
           <h2 class="side-title">Как узнать</h2>
           <ul class="traits">${s.traits.map((t) => html`<li>${t}</li>`)}</ul>
           ${s.names.length ? html`<h2 class="side-title">Ключевые имена</h2><p class="names">${s.names.join(', ')}</p>` : ''}
+          ${facetsBlock(s)}
           ${datesBlock(store, s)}
         </aside>
       </section>

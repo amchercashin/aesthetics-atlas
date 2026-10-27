@@ -29,7 +29,7 @@ test('corpus dates survive into display without turning unknown work dates into 
 
 test('new model fields survive into the output record', () => {
   const r = buildRecord(card({
-    kind: ['internet-aesthetic', 'movement'], kindNote: 'kn', scopeNote: 'scope', searchKeywords: ['k'], medium: 'ui',
+    kind: ['internet-aesthetic', 'movement'], kindNote: 'kn', scopeNote: 'scope', searchKeywords: ['k'], medium: 'ui', subjects: ['abstraction'],
     dateKind: 'practice', approx: true, dateNote: 'dn', termAttested: { year: 2008, source: 'src', note: 'tn' },
     revivals: [{ start: 2020, note: 'rv' }], formerIds: ['old'],
     evidence: [{ claim: 'c', field: 'dates', source: 'src' }],
@@ -43,6 +43,7 @@ test('new model fields survive into the output record', () => {
   assert.equal(r.scopeNote, 'scope');
   assert.deepEqual(r.searchKeywords, ['k']);
   assert.deepEqual(r.medium, ['ui']);
+  assert.deepEqual(r.subjects, ['abstraction']);
   assert.deepEqual(r.formerIds, ['old']);
   assert.equal(r.dateKind, 'practice');
   assert.equal(r.approx, true);
@@ -68,6 +69,7 @@ test('legacy cards get explicit "unverified" and "legacy" defaults, not "verifie
   assert.equal(r.review.status, 'legacy');
   assert.deepEqual(r.review.scope, []);
   assert.deepEqual(r.kind, []);
+  assert.deepEqual(r.subjects, []);
   assert.equal(r.example.role, 'work');
 });
 

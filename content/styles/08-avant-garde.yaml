@@ -7,6 +7,8 @@
   dates: 1907 – 1925
   era: avant-garde
   domain: [art]
+  medium: [painting]
+  subjects: [still-life, portrait, figure]
   region: Франция
   tier: 1
   kind: movement
@@ -69,6 +71,8 @@
   dates: 1909 – 1944
   era: avant-garde
   domain: [art, design]
+  medium: [painting, sculpture]
+  subjects: [city]
   region: Италия, Россия
   tier: 1
   kind: movement
@@ -140,6 +144,8 @@
   dates: 1912 – 1915
   era: avant-garde
   domain: [art]
+  medium: [painting]
+  subjects: []
   region: Россия
   tier: 2
   kind: movement
@@ -204,6 +210,8 @@
   dates: 1912 – 1914
   era: avant-garde
   domain: [art]
+  medium: [painting]
+  subjects: [abstraction, city]
   region: Франция
   tier: 3
   kind: movement
@@ -261,6 +269,8 @@
   dates: 1910 – 1940
   era: avant-garde
   domain: [art]
+  medium: [painting]
+  subjects: [abstraction]
   region: Германия, Россия, Франция
   tier: 1
   kind: overview
@@ -352,6 +362,8 @@
   dates: 1915 – 1935
   era: avant-garde
   domain: [art, design]
+  medium: [painting]
+  subjects: [abstraction]
   region: Россия
   tier: 1
   kind: movement
@@ -415,6 +427,8 @@
   dates: 1915 – 1934
   era: avant-garde
   domain: [design, architecture, art]
+  medium: [graphic-design, typography, architecture]
+  subjects: [abstraction, city]
   region: СССР
   tier: 1
   kind: movement
@@ -499,6 +513,8 @@
   dates: 1916 – 1924
   era: avant-garde
   domain: [art, design]
+  medium: [sculpture, photography, typography]
+  subjects: []
   region: Цюрих, Берлин, Париж, Нью-Йорк
   tier: 1
   kind: movement
@@ -573,6 +589,8 @@
   dates: 1911 – 1920
   era: avant-garde
   domain: [art]
+  medium: [painting]
+  subjects: [city]
   region: Италия
   tier: 2
   kind: movement
@@ -630,6 +648,8 @@
   dates: 1924 – 1966
   era: avant-garde
   domain: [art]
+  medium: [painting]
+  subjects: [landscape]
   region: Франция, затем весь мир
   tier: 1
   kind: movement
@@ -706,6 +726,8 @@
   dates: 1917 – 1931
   era: avant-garde
   domain: [art, design, architecture]
+  medium: [painting, architecture, product-design]
+  subjects: [abstraction]
   region: Нидерланды
   tier: 1
   kind: school
@@ -770,6 +792,8 @@
   dates: 1919 – 1933
   era: avant-garde
   domain: [design, architecture]
+  medium: [architecture, product-design, typography, graphic-design]
+  subjects: [abstraction, city]
   region: Германия
   tier: 1
   kind: school
@@ -851,6 +875,8 @@
   dates: 1920 – 1940
   era: avant-garde
   domain: [design, architecture]
+  medium: [architecture, decorative-arts, interior]
+  subjects: [city, ornament]
   region: Франция, США, весь мир
   tier: 1
   kind: period
@@ -933,6 +959,8 @@
   dates: 1920 – 1933
   era: avant-garde
   domain: [art]
+  medium: [painting]
+  subjects: [portrait, city, everyday-life]
   region: Германия
   tier: 3
   kind: movement
@@ -1006,6 +1034,8 @@
   dates: 1925 – 1965
   era: avant-garde
   domain: [architecture]
+  medium: [architecture]
+  subjects: [city]
   region: Европа, США, весь мир
   tier: 1
   kind: movement
@@ -1087,6 +1117,8 @@
   dates: 1900 – 1960
   era: avant-garde
   domain: [architecture, design]
+  medium: [architecture]
+  subjects: [city, landscape]
   region: США, Финляндия
   tier: 3
   kind: movement
@@ -1152,6 +1184,8 @@
   dates: 1930 – 1945
   era: avant-garde
   domain: [design, architecture]
+  medium: [product-design, architecture]
+  subjects: [city]
   region: США
   tier: 3
   kind: period
@@ -1209,6 +1243,8 @@
   dates: 1932 – 1980-е
   era: avant-garde
   domain: [art]
+  medium: [painting, sculpture]
+  subjects: [figure, portrait]
   region: СССР и соцстраны
   tier: 2
   kind: movement
@@ -1277,6 +1313,8 @@
   dates: 1933 – 1955
   era: avant-garde
   domain: [architecture]
+  medium: [architecture]
+  subjects: [city]
   region: СССР
   tier: 2
   kind: period
@@ -1334,6 +1372,8 @@
   dates: 1920 – 1970
   era: avant-garde
   domain: [art]
+  medium: [painting]
+  subjects: [figure]
   region: Мексика, США
   tier: 3
   kind: movement

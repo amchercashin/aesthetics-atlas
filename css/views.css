@@ -589,12 +589,20 @@ body[data-view="style"] .room, body[data-view="style"] .site-footer {
 .cat-title { font-family: var(--serif); font-weight: 400; font-size: clamp(2.6rem, 1rem + 4vw, 5rem); letter-spacing: -0.03em; line-height: 1; }
 .cat-count { color: var(--ink-3); }
 .cat-filters {
-  position: sticky; top: var(--header-h); z-index: 5; display: grid; gap: 12px;
-  margin: 24px calc(-1 * var(--gutter)) 28px; padding: 14px var(--gutter);
-  background: color-mix(in oklab, var(--paper) 92%, transparent); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+  display: grid; gap: 12px;
+  margin: 24px calc(-1 * var(--gutter)) 28px; padding: 14px var(--gutter) 18px;
   border-bottom: 1px solid var(--rule);
 }
 .filter-row { display: flex; flex-wrap: wrap; gap: 8px; }
+/* При остальных фильтрах здесь ничего нет: чип остаётся нажимаемым, но отступает на второй план */
+.chip.is-empty:not([aria-pressed="true"]) { color: var(--ink-3); border-style: dashed; }
+.chip.is-empty:not([aria-pressed="true"]) .count { opacity: 0.7; }
+/* «Ещё N» / «Свернуть» у свёрнутого ряда техник — ссылка, а не ещё один вариант */
+button.chip.more, button.chip.more:hover {
+  border-color: transparent; color: var(--ink);
+  text-decoration: underline; text-decoration-color: var(--rule-strong); text-underline-offset: 3px;
+}
+button.chip.more:hover { text-decoration-color: currentColor; }
 .era-bar { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 3px; }
 .era-seg { display: grid; gap: 5px; padding: 0; border: 0; background: none; text-align: left; color: var(--ink-3); font-size: 11px; min-width: 0; }
 .seg-bar { height: 8px; background: color-mix(in oklab, var(--c) 34%, var(--paper)); border-radius: 2px; transition: background 0.2s; }
@@ -621,16 +629,44 @@ body[data-view="style"] .room, body[data-view="style"] .site-footer {
   .cat-grid { gap: 18px 12px; }
 }
 
-/* Телефон: фильтры в начале страницы не липнут, а при прокрутке их заменяет полоска «Фильтры»
-   с листом под ней (catalog.js). На широком экране полоски и листа нет. */
-.cat-bar, .cat-sheet, .cat-scrim { display: none; }
+/* Фильтры в начале страницы не липнут: при прокрутке их заменяет полоска «Фильтры» с листом под ней
+   (catalog.js). Содержимое полоски и листа выровнено по странице шириной до 1440px. */
+.catalog { --cat-bar-h: 45px; --cat-inline: max(var(--gutter), calc(50% - 720px + var(--gutter))); }
+.cat-bar {
+  position: fixed; left: 0; right: 0; top: var(--header-top); z-index: 30;
+  background: color-mix(in oklab, var(--paper) 94%, transparent);
+  backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--rule);
+  transform: translateY(-100%); visibility: hidden;
+  transition: top 0.25s var(--ease), transform 0.2s var(--ease), visibility 0.2s;
+}
+.cat-bar.is-shown { transform: none; visibility: visible; }
+.cat-bar-toggle {
+  display: flex; align-items: center; gap: 10px; width: 100%; height: calc(var(--cat-bar-h) - 1px); padding: 0 var(--cat-inline);
+  border: 0; background: none; color: var(--ink); font-size: var(--t-sm); text-align: left;
+}
+.cat-bar-toggle > svg { width: 18px; height: 18px; flex: none; color: var(--ink-2); }
+.cat-bar-text { flex: 1; min-width: 0; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+.cat-bar-label { font-weight: 600; }
+.cat-bar-summary { color: var(--ink-2); }
+.cat-bar-count { flex: none; color: var(--ink-3); font-size: var(--t-xs); font-variant-numeric: tabular-nums; }
+.cat-bar-chevron { transition: transform 0.2s var(--ease); }
+.cat-bar.is-open .cat-bar-chevron { transform: rotate(180deg); }
+.cat-sheet:not([hidden]) {
+  display: grid; gap: 12px; position: fixed; left: 0; right: 0; z-index: 29;
+  top: calc(var(--header-top) + var(--cat-bar-h));
+  max-height: calc(100dvh - var(--header-top) - var(--cat-bar-h) - 80px - env(safe-area-inset-bottom));
+  overflow-y: auto; overscroll-behavior: contain;
+  padding: 14px var(--cat-inline) 18px; background: var(--paper);
+  border-bottom: 1px solid var(--rule); box-shadow: 0 18px 30px -18px rgb(0 0 0 / 0.35);
+}
+.cat-scrim:not([hidden]) { display: block; position: fixed; inset: 0; z-index: 28; background: rgb(0 0 0 / 0.2); }
+
+/* Телефон: каждый ряд панели — одна строка с горизонтальной прокруткой; в листе ряды переносятся */
 @media (max-width: 760px) {
-  .catalog { --cat-bar-h: 45px; }
-  .cat-filters {
-    position: static; gap: 10px; margin: 18px calc(-1 * var(--gutter)) 22px; padding: 0 0 14px;
-    background: none; backdrop-filter: none; -webkit-backdrop-filter: none;
-  }
-  /* Каждый ряд — одна строка с горизонтальной прокруткой; угасающий край подсказывает продолжение */
+  .catalog { --cat-inline: var(--gutter); }
+  .cat-filters { gap: 10px; margin: 18px calc(-1 * var(--gutter)) 22px; padding: 0 0 14px; }
+  /* Угасающий край подсказывает продолжение ряда */
   .cat-filters .filter-row, .cat-filters .era-bar {
     display: flex; flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; padding: 0 var(--gutter);
     -webkit-mask-image: linear-gradient(to right, #000 calc(100% - 28px), transparent);
@@ -641,37 +677,6 @@ body[data-view="style"] .room, body[data-view="style"] .site-footer {
   .cat-filters .era-bar { gap: 4px; }
   .cat-filters .era-seg { flex: none; min-width: 64px; }
   .cat-filters .seg-name { overflow: visible; }
-
-  .cat-bar {
-    display: block; position: fixed; left: 0; right: 0; top: var(--header-top); z-index: 30;
-    background: color-mix(in oklab, var(--paper) 94%, transparent);
-    backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
-    border-bottom: 1px solid var(--rule);
-    transform: translateY(-100%); visibility: hidden;
-    transition: top 0.25s var(--ease), transform 0.2s var(--ease), visibility 0.2s;
-  }
-  .cat-bar.is-shown { transform: none; visibility: visible; }
-  .cat-bar-toggle {
-    display: flex; align-items: center; gap: 10px; width: 100%; height: calc(var(--cat-bar-h) - 1px); padding: 0 var(--gutter);
-    border: 0; background: none; color: var(--ink); font-size: var(--t-sm); text-align: left;
-  }
-  .cat-bar-toggle > svg { width: 18px; height: 18px; flex: none; color: var(--ink-2); }
-  .cat-bar-text { flex: 1; min-width: 0; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
-  .cat-bar-label { font-weight: 600; }
-  .cat-bar-summary { color: var(--ink-2); }
-  .cat-bar-count { flex: none; color: var(--ink-3); font-size: var(--t-xs); font-variant-numeric: tabular-nums; }
-  .cat-bar-chevron { transition: transform 0.2s var(--ease); }
-  .cat-bar.is-open .cat-bar-chevron { transform: rotate(180deg); }
-
-  .cat-sheet:not([hidden]) {
-    display: grid; gap: 12px; position: fixed; left: 0; right: 0; z-index: 29;
-    top: calc(var(--header-top) + var(--cat-bar-h));
-    max-height: calc(100dvh - var(--header-top) - var(--cat-bar-h) - 80px - env(safe-area-inset-bottom));
-    overflow-y: auto; overscroll-behavior: contain;
-    padding: 14px var(--gutter) 18px; background: var(--paper);
-    border-bottom: 1px solid var(--rule); box-shadow: 0 18px 30px -18px rgb(0 0 0 / 0.35);
-  }
-  .cat-scrim:not([hidden]) { display: block; position: fixed; inset: 0; z-index: 28; background: rgb(0 0 0 / 0.2); }
 }
 
 /* =================== О проекте =================== */

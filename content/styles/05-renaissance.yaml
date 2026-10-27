@@ -7,6 +7,8 @@
   dates: ок. 1280 – 1400
   era: renaissance
   domain: [art]
+  medium: [painting]
+  subjects: [religion-myth]
   region: Италия
   tier: 3
   kind: period
@@ -71,6 +73,8 @@
   dates: ок. 1400 – 1490
   era: renaissance
   domain: [art, architecture]
+  medium: [painting, sculpture, architecture]
+  subjects: [religion-myth, portrait, figure]
   region: Флоренция, Италия
   tier: 1
   kind: period
@@ -147,6 +151,7 @@
   era: renaissance
   domain: [art, architecture]
   medium: [painting, sculpture, architecture]
+  subjects: [religion-myth, portrait, figure]
   region: Рим, Флоренция, Милан, Венеция
   tier: 1
   kind: period
@@ -236,6 +241,8 @@
   dates: ок. 1430 – 1580
   era: renaissance
   domain: [art]
+  medium: [painting]
+  subjects: [portrait, landscape, everyday-life, religion-myth]
   region: Нидерланды, Германия
   tier: 2
   kind: period
@@ -305,6 +312,8 @@
   approx: true
   era: renaissance
   domain: [art]
+  medium: [painting]
+  subjects: [religion-myth, figure]
   region: Италия, затем Европа
   tier: 2
   kind: period
@@ -367,6 +376,8 @@
   dates: ок. 1595 – 1650
   era: renaissance
   domain: [art]
+  medium: [painting]
+  subjects: [religion-myth, everyday-life]
   region: Рим, затем вся Европа
   tier: 2
   kind: school
@@ -423,6 +434,8 @@
   dates: ок. 1600 – 1750
   era: renaissance
   domain: [art, architecture]
+  medium: [painting, sculpture, architecture]
+  subjects: [religion-myth, figure, city]
   region: Европа и Латинская Америка
   tier: 1
   kind: period
@@ -494,6 +507,8 @@
   dates: ок. 1600 – 1672
   era: renaissance
   domain: [art]
+  medium: [painting]
+  subjects: [still-life, landscape, everyday-life, portrait]
   region: Нидерланды
   tier: 2
   kind: period
@@ -559,6 +574,8 @@
   dates: XVI – XVIII века
   era: renaissance
   domain: [architecture]
+  medium: [architecture]
+  subjects: [city]
   region: Италия, Англия, Россия, США
   tier: 3
   kind: movement
@@ -622,6 +639,8 @@
   dates: ок. 1730 – 1780
   era: renaissance
   domain: [art, design, architecture]
+  medium: [painting, interior, decorative-arts]
+  subjects: [everyday-life, religion-myth, ornament]
   region: Франция, Германия, Европа
   tier: 2
   kind: period
@@ -677,6 +696,8 @@
   dates: XVIII век
   era: renaissance
   domain: [design, architecture]
+  medium: [interior, decorative-arts, ceramics, architecture]
+  subjects: [ornament, city]
   region: Европа
   tier: 3
   kind: tradition
@@ -737,6 +758,8 @@
   dates: ок. 1660 – 1900
   era: renaissance
   domain: [art, design]
+  medium: [print]
+  subjects: [portrait, everyday-life, landscape]
   region: Япония
   tier: 1
   kind: tradition
@@ -799,6 +822,8 @@
   dates: XVI – XIX века
   era: renaissance
   domain: [art]
+  medium: [painting, manuscript]
+  subjects: [portrait, animals]
   region: Индия
   tier: 3
   kind: tradition
