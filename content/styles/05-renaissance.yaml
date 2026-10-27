@@ -8,7 +8,7 @@
   era: renaissance
   domain: [art]
   medium: [painting]
-  subjects: [religion-myth]
+  subjects: [religion-myth, any]
   region: Италия
   tier: 3
   kind: period
@@ -74,7 +74,7 @@
   era: renaissance
   domain: [art, architecture]
   medium: [painting, sculpture, architecture]
-  subjects: [religion-myth, portrait, figure]
+  subjects: [portrait, religion-myth, figure, any]
   region: Флоренция, Италия
   tier: 1
   kind: period
@@ -151,7 +151,7 @@
   era: renaissance
   domain: [art, architecture]
   medium: [painting, sculpture, architecture]
-  subjects: [religion-myth, portrait, figure]
+  subjects: [portrait, religion-myth, figure, any]
   region: Рим, Флоренция, Милан, Венеция
   tier: 1
   kind: period
@@ -242,7 +242,7 @@
   era: renaissance
   domain: [art]
   medium: [painting]
-  subjects: [portrait, landscape, everyday-life, religion-myth]
+  subjects: [landscape, portrait, everyday-life, religion-myth, any]
   region: Нидерланды, Германия
   tier: 2
   kind: period
@@ -313,7 +313,7 @@
   era: renaissance
   domain: [art]
   medium: [painting]
-  subjects: [religion-myth, figure]
+  subjects: [portrait, religion-myth, figure, any]
   region: Италия, затем Европа
   tier: 2
   kind: period
@@ -377,7 +377,7 @@
   era: renaissance
   domain: [art]
   medium: [painting]
-  subjects: [religion-myth, everyday-life]
+  subjects: [everyday-life, religion-myth, any]
   region: Рим, затем вся Европа
   tier: 2
   kind: school
@@ -435,7 +435,7 @@
   era: renaissance
   domain: [art, architecture]
   medium: [painting, sculpture, architecture]
-  subjects: [religion-myth, figure, city]
+  subjects: [portrait, city, religion-myth, figure, any]
   region: Европа и Латинская Америка
   tier: 1
   kind: period
@@ -508,7 +508,7 @@
   era: renaissance
   domain: [art]
   medium: [painting]
-  subjects: [still-life, landscape, everyday-life, portrait]
+  subjects: [landscape, portrait, still-life, everyday-life, city, any]
   region: Нидерланды
   tier: 2
   kind: period
@@ -640,7 +640,7 @@
   era: renaissance
   domain: [art, design, architecture]
   medium: [painting, interior, decorative-arts]
-  subjects: [everyday-life, religion-myth, ornament]
+  subjects: [portrait, everyday-life, religion-myth, ornament, any]
   region: Франция, Германия, Европа
   tier: 2
   kind: period
@@ -697,7 +697,7 @@
   era: renaissance
   domain: [design, architecture]
   medium: [interior, decorative-arts, ceramics, architecture]
-  subjects: [ornament, city]
+  subjects: [city, ornament, any]
   region: Европа
   tier: 3
   kind: tradition
@@ -759,7 +759,7 @@
   era: renaissance
   domain: [art, design]
   medium: [print]
-  subjects: [portrait, everyday-life, landscape]
+  subjects: [landscape, portrait, everyday-life, animals, any]
   region: Япония
   tier: 1
   kind: tradition
@@ -823,7 +823,7 @@
   era: renaissance
   domain: [art]
   medium: [painting, manuscript]
-  subjects: [portrait, animals]
+  subjects: [portrait, animals, any]
   region: Индия
   tier: 3
   kind: tradition

@@ -15,7 +15,7 @@
   era: prehistory
   domain: [art]
   medium: [rock-art, painting]
-  subjects: [animals]
+  subjects: [animals, any]
   region: Европа, Индонезия, Урал
   tier: 1
   kind: overview
@@ -139,7 +139,7 @@
   era: prehistory
   domain: [art]
   medium: [rock-art]
-  subjects: [animals, everyday-life]
+  subjects: [animals, figure, any]
   region: По всему миру
   tier: 3
   kind: [technique, overview]
@@ -349,7 +349,7 @@
   era: prehistory
   domain: [art]
   medium: [rock-art, painting]
-  subjects: [animals, religion-myth]
+  subjects: [religion-myth, animals, any]
   region: Австралия
   tier: 2
   kind: tradition

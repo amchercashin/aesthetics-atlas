@@ -8,7 +8,7 @@
   era: fin-de-siecle
   domain: [art]
   medium: [painting]
-  subjects: [everyday-life, landscape]
+  subjects: [landscape, everyday-life, any]
   region: Франция
   tier: 2
   kind: movement
@@ -65,7 +65,7 @@
   era: fin-de-siecle
   domain: [art]
   medium: [painting]
-  subjects: [landscape, everyday-life]
+  subjects: [landscape, portrait, still-life, everyday-life, any]
   region: Франция
   tier: 1
   kind: period
@@ -129,7 +129,7 @@
   era: fin-de-siecle
   domain: [art]
   medium: [painting]
-  subjects: [religion-myth]
+  subjects: [religion-myth, any]
   region: Франция, Бельгия, Германия, Россия
   tier: 2
   kind: movement
@@ -196,7 +196,7 @@
   era: fin-de-siecle
   domain: [art, design]
   medium: [painting, print]
-  subjects: [everyday-life]
+  subjects: [landscape, everyday-life, any]
   region: Франция
   tier: 3
   kind: school
@@ -257,7 +257,7 @@
   era: fin-de-siecle
   domain: [design, architecture, art]
   medium: [graphic-design, architecture, decorative-arts]
-  subjects: [ornament, figure, city]
+  subjects: [city, ornament, figure, any]
   region: Европа, Россия, США
   tier: 1
   kind: movement
@@ -362,7 +362,7 @@
   era: fin-de-siecle
   domain: [art, design, architecture]
   medium: [painting, architecture, decorative-arts]
-  subjects: [ornament, portrait]
+  subjects: [portrait, ornament, any]
   region: Австрия
   tier: 2
   kind: school
@@ -436,7 +436,7 @@
   era: fin-de-siecle
   domain: [art, design]
   medium: [painting, illustration, drawing]
-  subjects: []
+  subjects: [any]
   region: Россия
   tier: 3
   kind: school
@@ -565,7 +565,7 @@
   era: fin-de-siecle
   domain: [art]
   medium: [painting]
-  subjects: [figure, portrait]
+  subjects: [landscape, portrait, any]
   region: Франция
   tier: 1
   kind: movement
@@ -636,7 +636,7 @@
   era: fin-de-siecle
   domain: [art]
   medium: [painting]
-  subjects: [city, figure, animals]
+  subjects: [landscape, portrait, city, any]
   region: Германия, Австрия, Скандинавия
   tier: 1
   kind: movement

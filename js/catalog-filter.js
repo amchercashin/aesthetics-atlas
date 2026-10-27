@@ -1,5 +1,5 @@
 // Фильтры каталога: чистые функции, чтобы отбор, счётчики и адрес проверялись тестами (test/catalog-filter.test.mjs).
-import { DOMAIN, KIND_FAMILY, SUBJECT, MEDIUM } from './format.js?v=subjects-1';
+import { DOMAIN, KIND_FAMILY, SUBJECT, MEDIUM } from './format.js?v=subjects-3';
 import { normalize } from './search.js?v=author-pilot';
 
 // Каждый ряд фильтров — одно условие на карточку. Эпохи — отдельно: их можно выбрать несколько.
@@ -42,6 +42,13 @@ export function matches(s, st, skip = null) {
 
 export const filterStyles = (styles, st) => styles.filter((s) => matches(s, st));
 
+// Универсальные стили под выбранным сюжетом: им этот сюжет не главный, но их приёмы переносятся на любой.
+// Остальные фильтры действуют как обычно. Каталог показывает их отдельным разделом после основного списка.
+export function universalExtras(styles, st) {
+  if (!st.subject || st.subject === 'any') return [];
+  return styles.filter((s) => !s.subjects.includes(st.subject) && matches(s, { ...st, subject: 'any' }));
+}
+
 // Число на чипе: сколько стилей покажет каталог, если выбрать это значение при остальных фильтрах.
 export function facetCounts(styles, st, key) {
   const pool = styles.filter((s) => matches(s, st, key));
@@ -63,6 +70,7 @@ const STEMS = {
     ornament: ['орнамент', 'орнаментальн', 'узор', 'узорчат', 'паттерн', 'ornament', 'pattern'],
     abstraction: ['абстракц', 'абстрактн', 'беспредметн', 'abstract', 'abstraction'],
     figure: ['фигур', 'тело', 'тела', 'обнажен', 'ню', 'figure', 'body', 'nude'],
+    any: ['универсальн', 'любой сюжет', 'universal', 'any subject'],
   },
   medium: {
     painting: ['живопис', 'painting'],

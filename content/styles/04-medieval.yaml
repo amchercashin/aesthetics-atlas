@@ -8,7 +8,7 @@
   era: medieval
   domain: [art, architecture]
   medium: [painting, decorative-arts, architecture]
-  subjects: [religion-myth, city]
+  subjects: [city, religion-myth, any]
   region: Восточная Римская империя
   tier: 1
   kind: overview
@@ -135,7 +135,7 @@
   era: medieval
   domain: [art, design]
   medium: [manuscript]
-  subjects: [ornament, religion-myth]
+  subjects: [religion-myth, animals, ornament]
   region: Ирландия, Британия
   tier: 3
   kind: tradition
@@ -389,7 +389,7 @@
   era: medieval
   domain: [art]
   medium: [painting, manuscript]
-  subjects: [religion-myth, landscape, everyday-life]
+  subjects: [landscape, everyday-life, religion-myth, any]
   region: Франция, Бургундия, Богемия, Италия
   tier: 3
   kind: period
@@ -447,7 +447,7 @@
   era: medieval
   domain: [art, architecture, design]
   medium: [architecture, ceramics, textile, decorative-arts]
-  subjects: [ornament, city]
+  subjects: [city, ornament]
   region: От Испании до Индии
   tier: 1
   kind: overview
@@ -520,7 +520,7 @@
   era: medieval
   domain: [art]
   medium: [painting, manuscript]
-  subjects: [landscape, city, everyday-life]
+  subjects: [landscape, religion-myth, any]
   region: Иран, Средняя Азия
   tier: 3
   kind: tradition
@@ -669,7 +669,7 @@
   era: medieval
   domain: [art]
   medium: [painting]
-  subjects: [landscape, everyday-life]
+  subjects: [landscape, everyday-life, any]
   region: Япония
   tier: 3
   kind: tradition
@@ -751,7 +751,7 @@
   era: medieval
   domain: [art, design]
   medium: [ceramics, decorative-arts]
-  subjects: []
+  subjects: [any]
   region: Япония
   tier: 2
   kind: tradition
@@ -811,7 +811,7 @@
   era: medieval
   domain: [architecture, art]
   medium: [architecture, relief, sculpture]
-  subjects: [religion-myth, city]
+  subjects: [city, religion-myth]
   region: Камбоджа, кхмерский мир
   tier: 3
   kind: tradition

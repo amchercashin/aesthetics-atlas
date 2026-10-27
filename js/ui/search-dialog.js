@@ -2,10 +2,10 @@
 // Слово вроде «барельеф» или «пейзажи» сначала предлагает фильтр каталога, затем — карточки по тексту.
 import { html, mount } from '../html.js';
 import { buildIndex, search, parseYear } from '../search.js?v=author-pilot';
-import { fmtDates, fmtYear, plural } from '../format.js?v=subjects-1';
+import { fmtDates, fmtYear, plural } from '../format.js?v=subjects-3';
 import { thumb } from './common.js?v=author-pilot';
 import { markLoaded } from './image.js?v=author-pilot';
-import { facetHits, facetCounts, emptyState } from '../catalog-filter.js?v=subjects-2';
+import { facetHits, facetCounts, emptyState } from '../catalog-filter.js?v=subjects-3';
 
 const FILTER_ICON = html`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><path d="M4 6h16M7 12h10M10 18h4"/></svg>`;
 const FACET_KIND = { subject: 'Сюжет', medium: 'Техника' };

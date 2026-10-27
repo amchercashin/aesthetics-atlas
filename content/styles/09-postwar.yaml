@@ -8,7 +8,7 @@
   era: postwar
   domain: [art]
   medium: [painting]
-  subjects: [abstraction]
+  subjects: [abstraction, any]
   region: США
   tier: 1
   kind: movement
@@ -83,7 +83,7 @@
   era: postwar
   domain: [art]
   medium: [painting]
-  subjects: [abstraction]
+  subjects: [abstraction, any]
   region: США
   tier: 3
   kind: movement
@@ -153,7 +153,7 @@
   era: postwar
   domain: [design]
   medium: [graphic-design, typography]
-  subjects: []
+  subjects: [any]
   region: Швейцария, затем весь мир
   tier: 2
   kind: movement
@@ -227,7 +227,7 @@
   era: postwar
   domain: [design]
   medium: [product-design]
-  subjects: []
+  subjects: [any]
   region: Германия
   tier: 3
   kind: school
@@ -311,7 +311,7 @@
   era: postwar
   domain: [design, architecture]
   medium: [product-design, architecture, interior]
-  subjects: [city]
+  subjects: [city, any]
   region: США, Скандинавия
   tier: 1
   kind: period
@@ -381,7 +381,7 @@
   era: postwar
   domain: [architecture, design]
   medium: [architecture]
-  subjects: [city]
+  subjects: [city, any]
   region: США
   tier: 3
   kind: period
@@ -627,7 +627,7 @@
   era: postwar
   domain: [art, design]
   medium: [painting, print]
-  subjects: [portrait, still-life]
+  subjects: [portrait, still-life, any]
   region: Великобритания, США
   tier: 1
   kind: movement
@@ -699,7 +699,7 @@
   era: postwar
   domain: [art, design]
   medium: [painting]
-  subjects: [abstraction]
+  subjects: [abstraction, any]
   region: Европа, США
   tier: 2
   kind: movement
@@ -768,7 +768,7 @@
   era: postwar
   domain: [art]
   medium: [sculpture, installation]
-  subjects: [abstraction]
+  subjects: [abstraction, any]
   region: Европа, США, Латинская Америка
   tier: 3
   kind: movement
@@ -837,7 +837,7 @@
   era: postwar
   domain: [art, design]
   medium: [sculpture, installation]
-  subjects: [abstraction]
+  subjects: [abstraction, any]
   region: США
   tier: 2
   kind: movement
@@ -906,7 +906,7 @@
   era: postwar
   domain: [art]
   medium: [installation]
-  subjects: []
+  subjects: [any]
   region: США, Европа, СССР
   tier: 2
   kind: movement
@@ -972,7 +972,7 @@
   era: postwar
   domain: [art, design]
   medium: [graphic-design, typography]
-  subjects: [ornament]
+  subjects: [ornament, any]
   region: США, Великобритания
   tier: 2
   kind: movement
@@ -1043,7 +1043,7 @@
   era: postwar
   domain: [design, architecture]
   medium: [product-design, architecture, fashion]
-  subjects: [city]
+  subjects: [city, any]
   region: Европа, США
   tier: 3
   kind: period
@@ -1175,7 +1175,7 @@
   era: postwar
   domain: [art, internet]
   medium: [digital-art, drawing]
-  subjects: [abstraction]
+  subjects: [abstraction, any]
   region: Германия, Великобритания, США
   tier: 2
   kind:

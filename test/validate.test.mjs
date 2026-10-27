@@ -158,10 +158,11 @@ test('review must say what was checked', () => {
   }
 });
 
-test('subjects come only from the fixed vocabulary; an empty list is allowed', () => {
+test('subjects come only from the fixed vocabulary; any marks a universal style; an empty list is an error', () => {
   assert.deepEqual(validate([root, base({ subjects: ['landscape', 'portrait'] })], eras).errors, []);
-  assert.deepEqual(validate([root, base({ subjects: [] })], eras).errors, []);
-  for (const [subjects, msg] of [[['пейзаж'], 'bad subject'], [['seascape'], 'bad subject'], [['animals', 'animals'], 'duplicate subject'], ['landscape', 'must be a list']]) {
+  assert.deepEqual(validate([root, base({ subjects: ['landscape', 'any'] })], eras).errors, []);
+  assert.deepEqual(validate([root, base({ subjects: ['any'] })], eras).errors, []);
+  for (const [subjects, msg] of [[[], 'list the style\'s subjects or any'], [['пейзаж'], 'bad subject'], [['seascape'], 'bad subject'], [['animals', 'animals'], 'duplicate subject'], ['landscape', 'must be a list']]) {
     assert.ok(validate([root, base({ subjects })], eras).errors.some((e) => e.includes(msg)), JSON.stringify(subjects));
   }
   assert.ok(validate([root, base({ medium: ['relief', 'relief'] })], eras).errors.some((e) => e.includes('duplicate medium')));

@@ -11,7 +11,7 @@
   era: internet
   domain: [internet, design]
   medium: [digital-art, graphic-design]
-  subjects: []
+  subjects: [any]
   region: Интернет
   tier: 1
   kind: internet-aesthetic
@@ -115,7 +115,7 @@
   era: internet
   domain: [internet, design]
   medium: [digital-art]
-  subjects: [landscape, city]
+  subjects: [landscape, city, any]
   region: Франция, интернет
   tier: 2
   kind: internet-aesthetic
@@ -191,7 +191,7 @@
   era: internet
   domain: [design]
   medium: [illustration]
-  subjects: [figure]
+  subjects: [figure, any]
   region: Кремниевая долина, весь мир
   tier: 2
   kind: trend
@@ -263,7 +263,7 @@
   era: internet
   domain: [internet, design]
   medium: [photography, fashion]
-  subjects: [landscape, still-life, everyday-life]
+  subjects: [landscape, still-life, everyday-life, any]
   region: Tumblr, TikTok
   tier: 2
   kind: internet-aesthetic
@@ -333,7 +333,7 @@
   era: internet
   domain: [internet, design]
   medium: [photography, fashion, interior]
-  subjects: [city, still-life]
+  subjects: [still-life, city, any]
   region: Tumblr, TikTok
   tier: 3
   kind: internet-aesthetic
@@ -408,7 +408,7 @@
   era: internet
   domain: [internet]
   medium: [photography, fashion]
-  subjects: []
+  subjects: [any]
   region: Интернет
   tier: 3
   kind: internet-aesthetic
@@ -548,7 +548,7 @@
   era: internet
   domain: [internet]
   medium: [photography, digital-art]
-  subjects: []
+  subjects: [any]
   region: Интернет
   tier: 1
   kind: internet-aesthetic
@@ -632,7 +632,7 @@
   era: internet
   domain: [internet]
   medium: [digital-art, photography]
-  subjects: []
+  subjects: [any]
   region: Интернет
   tier: 2
   kind: internet-aesthetic
@@ -719,7 +719,7 @@
   era: internet
   domain: [design, internet]
   medium: [ui]
-  subjects: []
+  subjects: [any]
   region: Весь мир
   tier: 3
   kind: [design-system, trend]
@@ -805,7 +805,7 @@
   era: internet
   domain: [internet, art, architecture]
   medium: [illustration, architecture, digital-art]
-  subjects: [city]
+  subjects: [city, any]
   region: Интернет
   tier: 2
   kind: [internet-aesthetic, movement]
@@ -904,7 +904,7 @@
   era: internet
   domain: [internet, design]
   medium: [fashion]
-  subjects: [ornament]
+  subjects: [any]
   region: TikTok
   tier: 3
   kind: internet-aesthetic
@@ -984,7 +984,7 @@
   era: internet
   domain: [internet, design]
   medium: [fashion, interior]
-  subjects: []
+  subjects: [any]
   region: Весь мир
   tier: 3
   kind: trend
@@ -1061,7 +1061,7 @@
   era: internet
   domain: [internet, design]
   medium: [graphic-design, typography]
-  subjects: []
+  subjects: [any]
   region: Весь мир
   tier: 3
   kind: trend
@@ -1147,7 +1147,7 @@
   era: internet
   domain: [internet, art]
   medium: [digital-art]
-  subjects: []
+  subjects: [any]
   region: Весь мир
   tier: 1
   kind: [technique, trend]
@@ -1251,7 +1251,7 @@
   era: internet
   domain: [internet, design]
   medium: [digital-art]
-  subjects: []
+  subjects: [any]
   region: Интернет
   tier: 2
   kind: trend

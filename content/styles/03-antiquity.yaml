@@ -8,7 +8,7 @@
   era: antiquity
   domain: [art]
   medium: [sculpture, ceramics]
-  subjects: [figure, religion-myth, ornament]
+  subjects: [religion-myth, ornament, figure, any]
   region: Греция
   tier: 2
   kind: period
@@ -68,7 +68,7 @@
   era: antiquity
   domain: [art, architecture]
   medium: [sculpture, architecture]
-  subjects: [figure, city, religion-myth]
+  subjects: [city, religion-myth, figure, any]
   region: Греция
   tier: 1
   kind: period
@@ -136,7 +136,7 @@
   era: antiquity
   domain: [art]
   medium: [sculpture]
-  subjects: [figure, religion-myth]
+  subjects: [religion-myth, figure, any]
   region: Восточное Средиземноморье
   tier: 2
   kind: period
@@ -193,7 +193,7 @@
   era: antiquity
   domain: [architecture, art]
   medium: [architecture, sculpture, relief, painting]
-  subjects: [city, portrait]
+  subjects: [portrait, city, any]
   region: Римская империя
   tier: 1
   kind: overview

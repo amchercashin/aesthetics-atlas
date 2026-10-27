@@ -10,7 +10,7 @@
   era: xix
   domain: [art, architecture]
   medium: [painting, sculpture, architecture]
-  subjects: [figure, city]
+  subjects: [portrait, city, religion-myth, any]
   region: Франция, Европа, Россия
   tier: 1
   kind: movement
@@ -150,7 +150,7 @@
   era: xix
   domain: [art]
   medium: [painting]
-  subjects: [landscape]
+  subjects: [landscape, any]
   region: Германия, Англия, Франция
   tier: 1
   kind: movement
@@ -212,7 +212,7 @@
   era: xix
   domain: [design, art]
   medium: [painting, interior]
-  subjects: [everyday-life]
+  subjects: [portrait, everyday-life, any]
   region: Германия, Австрия
   tier: 3
   kind: period
@@ -270,7 +270,7 @@
   era: xix
   domain: [art]
   medium: [painting]
-  subjects: [religion-myth, figure]
+  subjects: [religion-myth, figure, any]
   region: Франция, Европа, Россия
   tier: 2
   kind: school
@@ -327,7 +327,7 @@
   era: xix
   domain: [art]
   medium: [painting]
-  subjects: [landscape, everyday-life]
+  subjects: [landscape, everyday-life, animals]
   region: Франция
   tier: 3
   kind: school
@@ -393,7 +393,7 @@
   era: xix
   domain: [art]
   medium: [painting]
-  subjects: [religion-myth, figure]
+  subjects: [portrait, religion-myth, any]
   region: Великобритания
   tier: 2
   kind: school
@@ -458,7 +458,7 @@
   era: xix
   domain: [art]
   medium: [painting]
-  subjects: [everyday-life, landscape, portrait]
+  subjects: [landscape, portrait, everyday-life, any]
   region: Россия
   tier: 2
   kind: school
@@ -592,7 +592,7 @@
   era: xix
   domain: [art, design]
   medium: [painting, interior, decorative-arts]
-  subjects: [landscape, ornament]
+  subjects: [any]
   region: Великобритания
   tier: 3
   kind: movement
@@ -658,7 +658,7 @@
   era: xix
   domain: [art, design]
   medium: [painting, print, decorative-arts]
-  subjects: []
+  subjects: [any]
   region: Франция, Европа
   tier: 3
   kind: tradition
@@ -785,7 +785,7 @@
   era: xix
   domain: [art]
   medium: [painting]
-  subjects: [everyday-life]
+  subjects: [landscape, everyday-life, any]
   region: Франция
   tier: 1
   kind: movement
@@ -858,7 +858,7 @@
   era: xix
   domain: [design]
   medium: [decorative-arts, textile, architecture]
-  subjects: [ornament, animals]
+  subjects: [city, ornament, any]
   region: Великобритания, США
   tier: 2
   kind: movement
@@ -927,7 +927,7 @@
   era: xix
   domain: [art]
   medium: [painting]
-  subjects: [landscape, everyday-life, city]
+  subjects: [landscape, everyday-life, city, any]
   region: Франция
   tier: 1
   kind: movement

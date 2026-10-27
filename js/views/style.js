@@ -2,7 +2,7 @@
 // Ниже — текст, родословная, ссылки.
 // Статус проверки карточки и связей виден сразу; источники утверждений — под раскрытием.
 import { html, mount, safeUrl } from '../html.js';
-import { fmtDates, fmtYear, RELATION, DOMAIN, KIND, DATE_KIND, REL_STATUS, SUBJECT, MEDIUM, roleLabel, plural, reviewScopeText } from '../format.js?v=subjects-1';
+import { fmtDates, fmtYear, RELATION, DOMAIN, KIND, DATE_KIND, REL_STATUS, SUBJECT, MEDIUM, roleLabel, plural, reviewScopeText } from '../format.js?v=subjects-3';
 import { frame, credit } from '../ui/image.js?v=author-pilot';
 import { eraTag, thumb, footer } from '../ui/common.js?v=links-1';
 import { toast } from '../ui/toast.js';
@@ -92,8 +92,13 @@ function facetsBlock(s) {
   const links = (dict, key, ids) => Object.keys(dict).filter((id) => ids.includes(id))
     .map((id, i) => html`${i ? ', ' : ''}<a href="#/catalog?${key}=${id}">${dict[id].toLowerCase()}</a>`);
   if (!s.subjects.length && !s.medium.length) return '';
+  // any — не сюжет, а пометка «подходит к любому сюжету»: пишется отдельной фразой.
+  const main = s.subjects.filter((x) => x !== 'any');
+  const universal = s.subjects.includes('any');
+  const anyLink = html`<a href="#/catalog?t=any">универсальный стиль</a>`;
   return html`<h2 class="side-title">В каталоге</h2>
-    ${s.subjects.length ? html`<p class="names">Сюжеты: ${links(SUBJECT, 't', s.subjects)}</p>` : ''}
+    ${main.length ? html`<p class="names">Сюжеты: ${links(SUBJECT, 't', main)}${universal ? html`; ${anyLink} — подходит и к другим` : ''}</p>`
+      : universal ? html`<p class="names">Сюжет: любой — ${anyLink}</p>` : ''}
     ${s.medium.length ? html`<p class="names">Техника: ${links(MEDIUM, 'm', s.medium)}</p>` : ''}`;
 }
 

@@ -1,11 +1,11 @@
 // Каталог: «шпалерная» сетка работ (строки выравниваются по ширине), фильтры по области, типу, сюжету, технике и эпохам.
 // Отбор, счётчики и параметры адреса — чистые функции в js/catalog-filter.js.
 import { html, mount } from '../html.js';
-import { fmtDates, DOMAIN, KIND, KIND_FAMILY, SUBJECT, MEDIUM, plural } from '../format.js?v=subjects-1';
+import { fmtDates, DOMAIN, KIND, KIND_FAMILY, SUBJECT, MEDIUM, plural } from '../format.js?v=subjects-3';
 import { frame, markLoaded } from '../ui/image.js?v=author-pilot';
 import { footer } from '../ui/common.js?v=author-pilot';
 import { replaceParams } from '../router.js?v=map4';
-import { readState, stateParams, emptyState, isFiltered, filterStyles, facetCounts } from '../catalog-filter.js?v=subjects-1';
+import { readState, stateParams, emptyState, isFiltered, filterStyles, facetCounts, universalExtras } from '../catalog-filter.js?v=subjects-3';
 
 const clampAr = (img) => (img ? Math.min(2.1, Math.max(0.62, img.w / img.h)) : 0.8);
 
@@ -67,26 +67,64 @@ export default {
         <p>Под эти фильтры ничего не подходит.</p>
         <button class="btn ghost" type="button" data-reset>Сбросить фильтры</button>
       </div>
+      <section class="cat-any" aria-labelledby="cat-any-title" hidden>
+        <div class="cat-any-head">
+          <h2 class="cat-any-title" id="cat-any-title">Универсальные стили <span class="count"></span></h2>
+          <p class="cat-any-note"></p>
+          <button class="btn ghost" type="button" data-any-toggle aria-expanded="false" aria-controls="cat-any-grid"></button>
+        </div>
+        <div class="cat-grid" id="cat-any-grid" hidden></div>
+      </section>
     </div>
     ${footer(store)}`);
 
     const grid = root.querySelector('.cat-grid');
     const count = root.querySelector('.cat-count');
+    const anyBox = root.querySelector('.cat-any');
+    const anyGrid = root.querySelector('#cat-any-grid');
+    const anyToggle = anyBox.querySelector('[data-any-toggle]');
+    let anyOpen = false, anyFor = '';
+
+    const tiles = (list) => html`${list.map((s) => {
+      const cover = s.example.img ?? s.gallery.find((g) => g.img)?.img ?? null;
+      const ar = clampAr(cover);
+      return html`<a class="tile" href="#/s/${s.id}" style="--ar:${ar.toFixed(3)}">
+        ${frame(cover, s.palette, { ratio: ar.toFixed(3), sizes: `${Math.round(ar * 240)}px`, alt: '', size: ar > 1.3 ? 960 : 500, note: !cover && s.example.external ? 'Репродукция — у источника' : '' })}
+        <span class="tile-cap"><span class="swatch" style="--c:var(--era-${s.era})"></span><span class="tile-name">${s.name}</span><span class="tile-dates">${s.kind[0] ? `${KIND[s.kind[0]]}, ` : ''}${fmtDates(s)}</span></span>
+      </a>`;
+    })}`;
+    const sorted = (list) => (state.sort === 'az' ? [...list].sort((a, b) => a.name.localeCompare(b.name, 'ru')) : list);
+
+    // Под выбранным сюжетом — универсальные стили, свёрнутые. Если стилей, известных этим сюжетом,
+    // при остальных фильтрах нет, раздел раскрыт сразу. Плитки строятся только при раскрытии.
+    function renderAny(main, extras) {
+      if (state.subject !== anyFor) { anyOpen = false; anyFor = state.subject; }
+      const forced = !main.length && extras.length > 0;
+      const open = forced || anyOpen;
+      anyBox.hidden = !extras.length;
+      if (!extras.length) { mount(anyGrid, ''); return; }
+      const label = SUBJECT[state.subject];
+      anyBox.querySelector('.count').textContent = String(extras.length);
+      anyBox.querySelector('.cat-any-note').textContent = forced
+        ? `Стилей, которым сюжет «${label}» главный, при этих фильтрах нет. Подойдут универсальные: их приёмы переносятся на любой сюжет.`
+        : `Сюжет «${label}» им не главный, но их приёмы переносятся на любой сюжет.`;
+      anyToggle.hidden = forced;
+      anyToggle.textContent = open ? 'Свернуть' : `Показать ${extras.length}`;
+      anyToggle.setAttribute('aria-expanded', String(open));
+      anyGrid.hidden = !open;
+      mount(anyGrid, open ? tiles(extras) : '');
+      if (open) markLoaded(anyGrid);
+    }
 
     function apply() {
-      let list = filterStyles(store.styles, state);
-      if (state.sort === 'az') list = [...list].sort((a, b) => a.name.localeCompare(b.name, 'ru'));
-      mount(grid, html`${list.map((s) => {
-        const cover = s.example.img ?? s.gallery.find((g) => g.img)?.img ?? null;
-        const ar = clampAr(cover);
-        return html`<a class="tile" href="#/s/${s.id}" style="--ar:${ar.toFixed(3)}">
-          ${frame(cover, s.palette, { ratio: ar.toFixed(3), sizes: `${Math.round(ar * 240)}px`, alt: '', size: ar > 1.3 ? 960 : 500, note: !cover && s.example.external ? 'Репродукция — у источника' : '' })}
-          <span class="tile-cap"><span class="swatch" style="--c:var(--era-${s.era})"></span><span class="tile-name">${s.name}</span><span class="tile-dates">${s.kind[0] ? `${KIND[s.kind[0]]}, ` : ''}${fmtDates(s)}</span></span>
-        </a>`;
-      })}`);
+      const list = sorted(filterStyles(store.styles, state));
+      const extras = sorted(universalExtras(store.styles, state));
+      mount(grid, tiles(list));
       markLoaded(grid);
-      count.textContent = `${list.length} ${plural(list.length, 'стиль', 'стиля', 'стилей')} из ${store.styles.length}`;
-      root.querySelector('.cat-empty').hidden = list.length > 0;
+      count.textContent = `${list.length} ${plural(list.length, 'стиль', 'стиля', 'стилей')} из ${store.styles.length}`
+        + (extras.length ? ` · ещё ${extras.length} ${plural(extras.length, 'универсальный', 'универсальных', 'универсальных')}` : '');
+      root.querySelector('.cat-empty').hidden = list.length > 0 || extras.length > 0;
+      renderAny(list, extras);
       // Число на чипе — сколько стилей останется, если выбрать его при остальных фильтрах; ноль приглушён.
       for (const row of ROWS) {
         const counts = facetCounts(store.styles, state, row.key);
@@ -180,6 +218,11 @@ export default {
     document.fonts?.ready.then(() => { if (root.contains(panel)) fitRows(); });
 
     const onClick = (e) => {
+      if (e.target.closest('[data-any-toggle]')) {
+        anyOpen = !anyOpen;
+        renderAny(filterStyles(store.styles, state), sorted(universalExtras(store.styles, state)));
+        return;
+      }
       const more = e.target.closest('[data-more]');
       if (more) { more.closest('.filter-row').classList.toggle('is-open'); fitRows(); return; }
       const f = e.target.closest('[data-f]');

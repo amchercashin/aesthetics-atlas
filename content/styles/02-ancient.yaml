@@ -8,7 +8,7 @@
   era: ancient
   domain: [art, architecture]
   medium: [relief, sculpture, architecture]
-  subjects: [animals, religion-myth, city]
+  subjects: [city, religion-myth, animals, any]
   region: Междуречье (Ирак, Сирия)
   tier: 2
   kind: overview
@@ -57,7 +57,7 @@
   era: ancient
   domain: [art, architecture]
   medium: [painting, relief, sculpture, architecture]
-  subjects: [religion-myth, figure, portrait, city]
+  subjects: [portrait, everyday-life, city, religion-myth, any]
   region: Египет
   tier: 1
   kind: overview
@@ -117,7 +117,7 @@
   era: ancient
   domain: [art]
   medium: [painting, ceramics]
-  subjects: [animals, figure]
+  subjects: [animals, figure, any]
   region: Крит
   tier: 3
   kind: tradition
@@ -187,7 +187,7 @@
   era: ancient
   domain: [art]
   medium: [metalwork, sculpture, ceramics]
-  subjects: [ornament, figure, religion-myth]
+  subjects: [ornament, figure, any]
   region: Китай
   tier: 2
   kind: overview
@@ -246,7 +246,7 @@
   era: ancient
   domain: [art, architecture]
   medium: [architecture, relief]
-  subjects: [city, figure, animals]
+  subjects: [city, animals, figure, any]
   region: Иран
   tier: 3
   kind: period
@@ -372,7 +372,7 @@
   era: ancient
   domain: [art, architecture]
   medium: [sculpture, relief, architecture]
-  subjects: [religion-myth, ornament, city]
+  subjects: [city, religion-myth, ornament, any]
   region: Мексика и Центральная Америка
   tier: 2
   kind: overview
@@ -433,7 +433,7 @@
   era: ancient
   domain: [art, architecture]
   medium: [textile, ceramics, metalwork, architecture]
-  subjects: [ornament, animals, portrait]
+  subjects: [animals, ornament, any]
   region: Перу, Боливия, Эквадор, север Чили
   tier: 2
   kind: overview
@@ -494,7 +494,7 @@
   era: ancient
   domain: [art, architecture]
   medium: [sculpture, relief, architecture]
-  subjects: [animals, religion-myth, figure]
+  subjects: [religion-myth, animals, figure, any]
   region: Индия, Пакистан
   tier: 3
   kind: overview

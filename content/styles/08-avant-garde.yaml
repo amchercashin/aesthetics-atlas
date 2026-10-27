@@ -8,7 +8,7 @@
   era: avant-garde
   domain: [art]
   medium: [painting]
-  subjects: [still-life, portrait, figure]
+  subjects: [portrait, still-life, figure, any]
   region: Франция
   tier: 1
   kind: movement
@@ -72,7 +72,7 @@
   era: avant-garde
   domain: [art, design]
   medium: [painting, sculpture]
-  subjects: [city]
+  subjects: [city, any]
   region: Италия, Россия
   tier: 1
   kind: movement
@@ -145,7 +145,7 @@
   era: avant-garde
   domain: [art]
   medium: [painting]
-  subjects: []
+  subjects: [any]
   region: Россия
   tier: 2
   kind: movement
@@ -211,7 +211,7 @@
   era: avant-garde
   domain: [art]
   medium: [painting]
-  subjects: [abstraction, city]
+  subjects: [city, abstraction, any]
   region: Франция
   tier: 3
   kind: movement
@@ -270,7 +270,7 @@
   era: avant-garde
   domain: [art]
   medium: [painting]
-  subjects: [abstraction]
+  subjects: [abstraction, any]
   region: Германия, Россия, Франция
   tier: 1
   kind: overview
@@ -363,7 +363,7 @@
   era: avant-garde
   domain: [art, design]
   medium: [painting]
-  subjects: [abstraction]
+  subjects: [abstraction, any]
   region: Россия
   tier: 1
   kind: movement
@@ -428,7 +428,7 @@
   era: avant-garde
   domain: [design, architecture, art]
   medium: [graphic-design, typography, architecture]
-  subjects: [abstraction, city]
+  subjects: [city, abstraction, any]
   region: СССР
   tier: 1
   kind: movement
@@ -514,7 +514,7 @@
   era: avant-garde
   domain: [art, design]
   medium: [sculpture, photography, typography]
-  subjects: []
+  subjects: [any]
   region: Цюрих, Берлин, Париж, Нью-Йорк
   tier: 1
   kind: movement
@@ -590,7 +590,7 @@
   era: avant-garde
   domain: [art]
   medium: [painting]
-  subjects: [city]
+  subjects: [city, any]
   region: Италия
   tier: 2
   kind: movement
@@ -649,7 +649,7 @@
   era: avant-garde
   domain: [art]
   medium: [painting]
-  subjects: [landscape]
+  subjects: [landscape, any]
   region: Франция, затем весь мир
   tier: 1
   kind: movement
@@ -727,7 +727,7 @@
   era: avant-garde
   domain: [art, design, architecture]
   medium: [painting, architecture, product-design]
-  subjects: [abstraction]
+  subjects: [city, abstraction, any]
   region: Нидерланды
   tier: 1
   kind: school
@@ -793,7 +793,7 @@
   era: avant-garde
   domain: [design, architecture]
   medium: [architecture, product-design, typography, graphic-design]
-  subjects: [abstraction, city]
+  subjects: [city, any]
   region: Германия
   tier: 1
   kind: school
@@ -876,7 +876,7 @@
   era: avant-garde
   domain: [design, architecture]
   medium: [architecture, decorative-arts, interior]
-  subjects: [city, ornament]
+  subjects: [city, ornament, figure, any]
   region: Франция, США, весь мир
   tier: 1
   kind: period
@@ -960,7 +960,7 @@
   era: avant-garde
   domain: [art]
   medium: [painting]
-  subjects: [portrait, city, everyday-life]
+  subjects: [portrait, everyday-life, city, any]
   region: Германия
   tier: 3
   kind: movement
@@ -1118,7 +1118,7 @@
   era: avant-garde
   domain: [architecture, design]
   medium: [architecture]
-  subjects: [city, landscape]
+  subjects: [city]
   region: США, Финляндия
   tier: 3
   kind: movement
@@ -1185,7 +1185,7 @@
   era: avant-garde
   domain: [design, architecture]
   medium: [product-design, architecture]
-  subjects: [city]
+  subjects: [city, any]
   region: США
   tier: 3
   kind: period
@@ -1244,7 +1244,7 @@
   era: avant-garde
   domain: [art]
   medium: [painting, sculpture]
-  subjects: [figure, portrait]
+  subjects: [portrait, everyday-life, figure, any]
   region: СССР и соцстраны
   tier: 2
   kind: movement
@@ -1373,7 +1373,7 @@
   era: avant-garde
   domain: [art]
   medium: [painting]
-  subjects: [figure]
+  subjects: [everyday-life, figure, any]
   region: Мексика, США
   tier: 3
   kind: movement
