@@ -8,7 +8,7 @@
   era: digital
   domain: [internet, design]
   medium: [web]
-  subjects: []
+  subjects: [any]
   region: Интернет
   tier: 2
   kind: period
@@ -103,7 +103,7 @@
   era: digital
   domain: [design, internet]
   medium: [product-design, digital-art]
-  subjects: []
+  subjects: [any]
   region: США, Япония, весь мир
   tier: 1
   kind: [period, internet-aesthetic]
@@ -230,7 +230,7 @@
   era: digital
   domain: [design, internet]
   medium: [ui, graphic-design, digital-art]
-  subjects: [landscape]
+  subjects: [landscape, any]
   region: Весь мир
   tier: 1
   kind: [period, internet-aesthetic]
@@ -317,7 +317,7 @@
   era: digital
   domain: [design, internet]
   medium: [ui]
-  subjects: []
+  subjects: [any]
   region: США
   tier: 2
   kind: design-system
@@ -388,7 +388,7 @@
   era: digital
   domain: [art, internet]
   medium: [web]
-  subjects: []
+  subjects: [any]
   region: Европа, Россия, США
   tier: 3
   kind: movement
@@ -471,7 +471,7 @@
   era: digital
   domain: [art, internet]
   medium: [digital-art]
-  subjects: []
+  subjects: [any]
   region: Весь мир
   tier: 2
   kind: technique
@@ -558,7 +558,7 @@
   era: digital
   domain: [design, internet]
   medium: [ui, graphic-design]
-  subjects: []
+  subjects: [any]
   region: Весь мир
   tier: 1
   kind: design-system
@@ -652,7 +652,7 @@
   era: digital
   domain: [design, internet]
   medium: [ui]
-  subjects: []
+  subjects: [any]
   region: Весь мир
   tier: 3
   kind: design-system
@@ -734,7 +734,7 @@
   era: digital
   domain: [art, internet]
   medium: [installation, digital-art, photography]
-  subjects: []
+  subjects: [any]
   region: Нью-Йорк, Берлин
   tier: 3
   kind: movement
@@ -793,7 +793,7 @@
   era: digital
   domain: [internet]
   medium: [digital-art]
-  subjects: [animals]
+  subjects: [any]
   region: Tumblr, интернет
   tier: 3
   kind: internet-aesthetic
@@ -859,7 +859,7 @@
   era: digital
   domain: [design, internet]
   medium: [web]
-  subjects: []
+  subjects: [any]
   region: Интернет
   tier: 3
   kind: design-system
@@ -937,7 +937,7 @@
   era: digital
   domain: [art, design]
   medium: [painting]
-  subjects: [ornament]
+  subjects: [ornament, any]
   region: Япония
   tier: 3
   kind: movement

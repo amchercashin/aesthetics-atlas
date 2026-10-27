@@ -189,7 +189,7 @@
   medium:
     - painting
     - drawing
-  subjects: []
+  subjects: [any]
   region: Alhalker / Alhalkere, регион Утопия, Северная территория, Австралия; Anmatyerr
   tier: 3
   dateKind: practice
@@ -546,7 +546,7 @@
     - painting
     - drawing
     - manuscript
-  subjects: [figure]
+  subjects: [figure, any]
   region: Лахор, Пакистан; Провиденс, Хьюстон и Нью-Йорк, США
   tier: 3
   dateKind: practice
@@ -1150,7 +1150,7 @@
   medium:
     - painting
     - textile
-  subjects: [ornament]
+  subjects: [ornament, any]
   region: >-
     Филиппины, Юго-Восточная Азия; США и международная практика художницы; ткани из разных мест и семейного
     собрания
@@ -1551,7 +1551,7 @@
     - installation
     - painting
     - moving-image
-  subjects: []
+  subjects: [any]
   region: Мельбурн и Kamilaroi Country, Новый Южный Уэльс, Австралия
   tier: 3
   dateKind: practice
@@ -1961,7 +1961,7 @@
   medium:
     - moving-image
     - drawing
-  subjects: [animals, landscape]
+  subjects: [landscape, animals, any]
   region: Москва, СССР; студия «Союзмультфильм»
   tier: 3
   dateKind: practice
@@ -2177,7 +2177,7 @@
     - illustration
     - print
     - graphic-design
-  subjects: [religion-myth, ornament]
+  subjects: [religion-myth, ornament, any]
   region: Санкт-Петербург, Россия; книжное производство начала XX века
   tier: 3
   dateKind: practice

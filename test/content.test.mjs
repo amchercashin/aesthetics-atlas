@@ -114,17 +114,18 @@ test('every review lists its scope, and no gallery is claimed as checked yet', (
   }
 });
 
-// Каталог фильтрует по сюжету и технике: каждая карточка явно размечена. Пустой subjects — решение
-// «сюжет не выражен», а не забытое поле; medium нужен, чтобы находились «все рельефы» и «вся скульптура».
-test('every card states its subjects (from the vocabulary, possibly none) and its technique', () => {
+// Каталог фильтрует по сюжету и технике: каждая карточка явно размечена. Стиль либо привязан к своим
+// сюжетам, либо помечен any (универсальный), либо и то и другое; medium нужен, чтобы находились «все рельефы».
+test('every card states its subjects (from the vocabulary, at least any) and its technique', () => {
   for (const s of styles) {
-    assert.ok(Array.isArray(s.subjects), `${s.id}: subjects`);
+    assert.ok(Array.isArray(s.subjects) && s.subjects.length > 0, `${s.id}: subjects — свои сюжеты или any`);
     for (const x of s.subjects) assert.ok(SUBJECTS.includes(x), `${s.id}: subject "${x}"`);
     const medium = [].concat(s.medium ?? []);
     assert.ok(medium.length > 0, `${s.id}: medium`);
     for (const m of medium) assert.ok(MEDIUMS.includes(m), `${s.id}: medium "${m}"`);
   }
-  assert.ok(styles.filter((s) => s.subjects.length).length > styles.length / 2);
+  // Привязанных к своим сюжетам и универсальных — оба множества не пусты.
+  assert.ok(styles.some((s) => !s.subjects.includes('any')) && styles.some((s) => s.subjects.includes('any')));
 });
 
 test('catalog labels cover exactly the validator vocabularies', () => {

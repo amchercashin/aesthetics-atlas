@@ -52,8 +52,9 @@ const facet = (title, field, dict, intro) => {
 };
 const withMedium = styles.filter((s) => s.medium.length);
 facet('Техника', 'medium', MEDIUM, `Поле \`medium\` заполнено у ${withMedium.length} из ${styles.length} карточек; по нему работает фильтр каталога «Техника».`);
-const noSubject = styles.filter((s) => !s.subjects.length);
-facet('Сюжет', 'subjects', SUBJECT, `Поле \`subjects\` — сюжеты, характерные для стиля по описанию и работам карточки; по нему работает фильтр каталога «Сюжет». Пустой список означает, что сюжет не выражен или неясен (${noSubject.length}): ${noSubject.map((s) => s.id).join(', ') || '—'}.`);
+const onlyAny = styles.filter((s) => s.subjects.length === 1 && s.subjects[0] === 'any');
+const tied = styles.filter((s) => !s.subjects.includes('any'));
+facet('Сюжет', 'subjects', SUBJECT, `Поле \`subjects\` — сюжеты, которыми стиль известен, и пометка \`any\` («Универсальные»): приёмы стиля переносятся на любой сюжет. По нему работает фильтр каталога «Сюжет»; универсальные стили показываются отдельным разделом под каждым сюжетом. Только своими сюжетами ограничены ${tied.length} стилей, ${styles.length - tied.length} универсальны, из них ${onlyAny.length} без главного сюжета. Правила и оценка — [docs/subjects-2026-10-27.md](subjects-2026-10-27.md).`);
 
 lines.push('## Тип карточки × эпоха', '');
 const kinds = [...new Set(styles.map((s) => s.kind[0] ?? '—'))];

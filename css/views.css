@@ -622,6 +622,14 @@ button.chip.more:hover { text-decoration-color: currentColor; }
 .tile-name { font-family: var(--serif); font-size: var(--t-lg); line-height: 1.2; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .tile-dates { grid-column: 2; font-size: var(--t-xs); color: var(--ink-3); }
 .cat-empty { padding: 60px 0; text-align: center; color: var(--ink-2); display: grid; justify-items: center; gap: 16px; }
+/* Универсальные стили под выбранным сюжетом: отдельный раздел после основного списка (catalog.js) */
+.cat-any { margin-top: 56px; padding-top: 28px; border-top: 1px solid var(--rule); }
+.cat-grid:empty + .cat-empty[hidden] + .cat-any { margin-top: 0; padding-top: 0; border-top: 0; }
+.cat-any-head { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 24px; }
+.cat-any-title { font-family: var(--serif); font-weight: 400; font-size: var(--t-2xl); line-height: 1.2; }
+.cat-any-title .count { margin-left: 4px; font-family: var(--sans); font-size: var(--t-sm); color: var(--ink-3); }
+.cat-any-note { flex: 1 1 320px; max-width: var(--measure); color: var(--ink-2); line-height: 1.45; }
+.cat-any > .cat-grid { margin-top: 28px; }
 
 @media (max-width: 760px) {
   .tile { flex-basis: calc(var(--ar) * 150px); }

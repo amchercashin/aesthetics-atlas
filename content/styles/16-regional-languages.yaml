@@ -372,7 +372,7 @@
   dates: манера конца 1920-х и последующих десятилетий; работы корпуса не датированы
   medium:
     - painting
-  subjects: [figure, animals]
+  subjects: [animals, figure, any]
   region: Бенгалия, Индия; Колката и её художественная среда
   aliases:
     - Джамини Рой
@@ -545,7 +545,7 @@
     - print
     - installation
     - typography
-  subjects: []
+  subjects: [any]
   region: Китай и США; печатная книга и музейная инсталляция
   aliases:
     - Сюй Бин
@@ -763,7 +763,7 @@
     - sculpture
     - ceramics
     - metalwork
-  subjects: []
+  subjects: [portrait]
   region: Иле-Ифе, йоруба, Нигерия
   aliases:
     - Ифе
@@ -950,7 +950,7 @@
     - sculpture
     - installation
     - metalwork
-  subjects: []
+  subjects: [abstraction, any]
   region: Нсукка, Нигерия; культурный контекст — Гана
   aliases:
     - Эль Анацуи
@@ -1330,7 +1330,7 @@
   dates: 1999–2020; выбранные листы трёх художников
   medium:
     - print
-  subjects: [figure, ornament]
+  subjects: [ornament, any]
   region: >-
     Острова Торресова пролива и материковый Квинсленд, Австралия; Баду, Моа и связанные авторские
     практики
@@ -1552,7 +1552,7 @@
   dates: 1999–2006; три выбранные гравюры
   medium:
     - print
-  subjects: [figure, ornament]
+  subjects: [ornament, any]
   region: Баду и другие острова Торресова пролива, Австралия; работы из собрания Cairns
   aliases:
     - Алик Типоти

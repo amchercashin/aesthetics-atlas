@@ -17,9 +17,10 @@ export const MEDIUMS = [
   'product-design', 'interior', 'decorative-arts', 'ceramics', 'textile', 'metalwork', 'manuscript', 'print',
   'ui', 'web', 'digital-art', 'installation', 'moving-image', 'rock-art', 'drawing', 'fashion',
 ];
-// Сюжеты, характерные для стиля (фильтр каталога «Сюжет»). Словарь закрытый; пустой список — сюжет не выражен.
+// Сюжеты (фильтр каталога «Сюжет»). Словарь закрытый. Конкретные значения — сюжеты, которыми стиль известен;
+// any — универсальный стиль: его приёмы переносятся на любой сюжет. Стиль может иметь и то и другое.
 export const SUBJECTS = [
-  'landscape', 'portrait', 'still-life', 'everyday-life', 'city', 'religion-myth', 'animals', 'ornament', 'abstraction', 'figure',
+  'landscape', 'portrait', 'still-life', 'everyday-life', 'city', 'religion-myth', 'animals', 'ornament', 'abstraction', 'figure', 'any',
 ];
 export const SOURCE_TYPES = ['museum', 'scholarly', 'primary', 'official', 'encyclopedia', 'community', 'press', 'catalog'];
 export const REVIEW_STATUS = ['reviewed', 'partial'];
@@ -133,6 +134,8 @@ export function validate(styles, eras, sources = []) {
     if (s.subjects != null) {
       if (!Array.isArray(s.subjects)) errors.push(`${at} subjects must be a list`);
       else {
+        // Пустой список оставил бы стиль вне любого сюжета: нужен хотя бы any.
+        if (!s.subjects.length) errors.push(`${at} subjects: list the style's subjects or any`);
         for (const x of s.subjects) if (!SUBJECTS.includes(x)) errors.push(`${at} bad subject "${x}"`);
         if (new Set(s.subjects).size !== s.subjects.length) errors.push(`${at} duplicate subject`);
       }

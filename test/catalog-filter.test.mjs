@@ -6,7 +6,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import yaml from 'js-yaml';
 import { buildRecord } from '../scripts/lib/record.mjs';
-import { readState, stateParams, emptyState, isFiltered, filterStyles, facetCounts, matches, facetHits, FACET_STEMS } from '../js/catalog-filter.js';
+import { readState, stateParams, emptyState, isFiltered, filterStyles, facetCounts, matches, facetHits, FACET_STEMS, universalExtras } from '../js/catalog-filter.js';
 import { DOMAIN, KIND_FAMILY, SUBJECT, MEDIUM } from '../js/format.js';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
@@ -108,4 +108,41 @@ test('style names and ordinary queries do not trigger a filter by accident', () 
   }
   // Каждый результат — по порядку словарей и без повторов.
   assert.deepEqual(hits('наскальная живопись'), ['medium:painting', 'medium:rock-art']);
+});
+
+// Под выбранным сюжетом сначала стили, которым он главный, ниже — универсальные (any).
+test('universal styles form a separate section under every subject, without repeating the main list', () => {
+  for (const subject of Object.keys(SUBJECT).filter((v) => v !== 'any')) {
+    const st = state({ subject });
+    const main = filterStyles(styles, st);
+    const extra = universalExtras(styles, st);
+    assert.ok(extra.length > 0, subject);
+    for (const s of extra) assert.ok(s.subjects.includes('any') && !s.subjects.includes(subject), `${subject}: ${s.id}`);
+    assert.ok(!main.some((s) => extra.includes(s)), subject);
+    // Вне обоих списков остаются только стили, привязанные к другим сюжетам.
+    for (const s of styles) if (!main.includes(s) && !extra.includes(s)) assert.ok(!s.subjects.includes('any'), `${subject}: ${s.id}`);
+  }
+  assert.deepEqual(universalExtras(styles, emptyState()), []);
+  assert.deepEqual(universalExtras(styles, state({ subject: 'any' })), []);
+});
+
+test('universal section obeys the other filters, so an empty main list still offers something', () => {
+  const st = state({ subject: 'portrait', domain: 'internet' });
+  assert.deepEqual(filterStyles(styles, st), []);
+  const extra = ids(universalExtras(styles, st));
+  for (const id of ['glitch-art', 'ai-aesthetic', 'pixel-art', 'vaporwave']) assert.ok(extra.includes(id), id);
+  assert.ok(universalExtras(styles, st).every((s) => s.domain.includes('internet')));
+});
+
+test('styles known for a subject are in its main list; styles tied to one subject stay out of the others', () => {
+  const main = (subject) => ids(filterStyles(styles, state({ subject })));
+  const extra = (subject) => ids(universalExtras(styles, state({ subject })));
+  for (const id of ['fayum-portraits', 'mannerism', 'baroque', 'zverev-portrait-graphics', 'ife-sculpture']) assert.ok(main('portrait').includes(id), id);
+  for (const id of ['fauvism', 'nabis', 'expressionism', 'shan-shui', 'hokusai-landscape-prints']) assert.ok(main('landscape').includes(id), id);
+  assert.ok(main('still-life').includes('post-impressionism'));
+  // Шань-шуй и фаюмский портрет — только своим сюжетом; пиксель-арт — универсальный, без главного сюжета.
+  assert.ok(!main('portrait').includes('shan-shui') && !extra('portrait').includes('shan-shui'));
+  assert.ok(!main('landscape').includes('fayum-portraits') && !extra('landscape').includes('fayum-portraits'));
+  assert.ok(extra('portrait').includes('pixel-art') && extra('landscape').includes('pixel-art'));
+  assert.ok(main('any').includes('pixel-art') && !main('any').includes('gothic'));
 });

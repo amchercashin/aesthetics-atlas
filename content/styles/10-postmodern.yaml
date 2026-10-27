@@ -13,7 +13,7 @@
   era: postmodern
   domain: [art]
   medium: [painting]
-  subjects: [city, portrait]
+  subjects: [portrait, still-life, city, any]
   region: США
   tier: 3
   kind: movement
@@ -213,7 +213,7 @@
   era: postmodern
   domain: [design]
   medium: [product-design]
-  subjects: [ornament]
+  subjects: [ornament, any]
   region: Италия
   tier: 1
   kind: school
@@ -290,7 +290,7 @@
   era: postmodern
   domain: [design, art]
   medium: [graphic-design, typography, print]
-  subjects: []
+  subjects: [any]
   region: Великобритания, США
   tier: 2
   kind: movement
@@ -368,7 +368,7 @@
   era: postmodern
   domain: [art]
   medium: [painting]
-  subjects: []
+  subjects: [any]
   region: Нью-Йорк, затем весь мир
   tier: 1
   kind: technique
@@ -424,7 +424,7 @@
   era: postmodern
   domain: [art]
   medium: [painting]
-  subjects: [figure]
+  subjects: [figure, any]
   region: США, Германия, Италия
   tier: 3
   kind: movement
@@ -588,7 +588,7 @@
   era: postmodern
   domain: [design, art]
   medium: [illustration, moving-image, digital-art]
-  subjects: [city]
+  subjects: [city, any]
   region: США, Япония
   tier: 1
   kind: movement
@@ -675,7 +675,7 @@
   era: postmodern
   domain: [internet, design]
   medium: [digital-art]
-  subjects: []
+  subjects: [any]
   region: США, Япония
   tier: 2
   kind: technique
@@ -755,7 +755,7 @@
   era: postmodern
   domain: [art, design]
   medium: [digital-art, moving-image, fashion]
-  subjects: []
+  subjects: [any]
   region: США, Африка
   tier: 3
   kind: movement
@@ -831,7 +831,7 @@
   era: postmodern
   domain: [design]
   medium: [graphic-design, typography]
-  subjects: []
+  subjects: [any]
   region: Швейцария, США
   tier: 3
   kind: movement
@@ -945,7 +945,7 @@
   era: postmodern
   domain: [internet, design]
   medium: [digital-art]
-  subjects: []
+  subjects: [any]
   region: США, Япония, весь мир
   tier: 2
   kind: technique
@@ -1008,7 +1008,7 @@
   era: postmodern
   domain: [art]
   medium: [painting]
-  subjects: [figure]
+  subjects: [any]
   region: Калифорния, США
   tier: 3
   kind: movement
