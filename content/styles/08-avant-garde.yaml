@@ -71,7 +71,7 @@
   dates: 1909 – 1944
   era: avant-garde
   domain: [art, design]
-  medium: [painting, sculpture]
+  medium: [painting, sculpture, typography]
   subjects: [city, any]
   region: Италия, Россия
   tier: 1
@@ -144,7 +144,7 @@
   dates: 1912 – 1915
   era: avant-garde
   domain: [art]
-  medium: [painting]
+  medium: [painting, illustration]
   subjects: [any]
   region: Россия
   tier: 2
@@ -210,7 +210,7 @@
   dates: 1912 – 1914
   era: avant-garde
   domain: [art]
-  medium: [painting]
+  medium: [painting, textile, fashion]
   subjects: [city, abstraction, any]
   region: Франция
   tier: 3
@@ -362,7 +362,7 @@
   dates: 1915 – 1935
   era: avant-garde
   domain: [art, design]
-  medium: [painting, ceramics]
+  medium: [painting, ceramics, graphic-design]
   subjects: [abstraction, any]
   region: Россия
   tier: 1
@@ -427,7 +427,7 @@
   dates: 1915 – 1934
   era: avant-garde
   domain: [design, architecture, art]
-  medium: [graphic-design, typography, architecture, photography]
+  medium: [graphic-design, typography, architecture, photography, sculpture, textile]
   subjects: [city, abstraction, any]
   region: СССР
   tier: 1
@@ -648,7 +648,7 @@
   dates: 1924 – 1966
   era: avant-garde
   domain: [art]
-  medium: [painting, photography]
+  medium: [painting, photography, sculpture, moving-image]
   subjects: [landscape, any]
   region: Франция, затем весь мир
   tier: 1
@@ -792,7 +792,7 @@
   dates: 1919 – 1933
   era: avant-garde
   domain: [design, architecture]
-  medium: [architecture, product-design, typography, graphic-design]
+  medium: [architecture, product-design, typography, graphic-design, textile, photography]
   subjects: [city, any]
   region: Германия
   tier: 1
@@ -875,7 +875,7 @@
   dates: 1920 – 1940
   era: avant-garde
   domain: [design, architecture]
-  medium: [architecture, decorative-arts, interior, graphic-design]
+  medium: [architecture, decorative-arts, interior, graphic-design, painting, fashion]
   subjects: [city, ornament, figure, any]
   region: Франция, США, весь мир
   tier: 1
@@ -1243,7 +1243,7 @@
   dates: 1932 – 1980-е
   era: avant-garde
   domain: [art]
-  medium: [painting, sculpture, graphic-design]
+  medium: [painting, sculpture, graphic-design, mosaic]
   subjects: [portrait, everyday-life, figure, any]
   region: СССР и соцстраны
   tier: 2
@@ -1313,7 +1313,7 @@
   dates: 1933 – 1955
   era: avant-garde
   domain: [architecture]
-  medium: [architecture]
+  medium: [architecture, mosaic, sculpture]
   subjects: [city]
   region: СССР
   tier: 2

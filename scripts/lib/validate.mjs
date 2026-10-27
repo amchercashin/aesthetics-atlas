@@ -16,6 +16,7 @@ export const MEDIUMS = [
   'painting', 'sculpture', 'relief', 'architecture', 'graphic-design', 'typography', 'illustration', 'photography',
   'product-design', 'interior', 'decorative-arts', 'ceramics', 'textile', 'metalwork', 'manuscript', 'print',
   'ui', 'web', 'digital-art', 'installation', 'moving-image', 'rock-art', 'drawing', 'fashion',
+  'mosaic', 'stained-glass', 'calligraphy',
 ];
 // Сюжеты (фильтр каталога «Сюжет»). Словарь закрытый. Конкретные значения — сюжеты, которыми стиль известен;
 // any — универсальный стиль: его приёмы переносятся на любой сюжет. Стиль может иметь и то и другое.

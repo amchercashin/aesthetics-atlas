@@ -1,11 +1,11 @@
 // Каталог: «шпалерная» сетка работ (строки выравниваются по ширине), фильтры по области, типу, сюжету, технике и эпохам.
 // Отбор, счётчики и параметры адреса — чистые функции в js/catalog-filter.js.
 import { html, mount } from '../html.js';
-import { fmtDates, DOMAIN, KIND, KIND_FAMILY, SUBJECT, MEDIUM, plural } from '../format.js?v=subjects-3';
+import { fmtDates, DOMAIN, KIND, KIND_FAMILY, SUBJECT, MEDIUM, plural } from '../format.js?v=subjects-4';
 import { frame, markLoaded } from '../ui/image.js?v=author-pilot';
 import { footer } from '../ui/common.js?v=author-pilot';
 import { replaceParams } from '../router.js?v=map4';
-import { readState, stateParams, emptyState, isFiltered, filterStyles, facetCounts, universalExtras } from '../catalog-filter.js?v=subjects-3';
+import { readState, stateParams, emptyState, isFiltered, filterStyles, facetCounts, universalExtras } from '../catalog-filter.js?v=subjects-4';
 
 const clampAr = (img) => (img ? Math.min(2.1, Math.max(0.62, img.w / img.h)) : 0.8);
 

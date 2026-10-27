@@ -1,5 +1,5 @@
 // Фильтры каталога: чистые функции, чтобы отбор, счётчики и адрес проверялись тестами (test/catalog-filter.test.mjs).
-import { DOMAIN, KIND_FAMILY, SUBJECT, MEDIUM } from './format.js?v=subjects-3';
+import { DOMAIN, KIND_FAMILY, SUBJECT, MEDIUM } from './format.js?v=subjects-4';
 import { normalize } from './search.js?v=author-pilot';
 
 // Каждый ряд фильтров — одно условие на карточку. Эпохи — отдельно: их можно выбрать несколько.
@@ -81,6 +81,8 @@ const STEMS = {
     relief: ['рельеф', 'барельеф', 'горельеф', 'relief'],
     architecture: ['архитектур', 'зодчеств', 'architecture'],
     interior: ['интерьер', 'interior'],
+    mosaic: ['мозаик', 'мозаичн', 'смальт', 'mosaic'],
+    'stained-glass': ['витраж', 'stained glass'],
     'decorative-arts': ['декоративн', 'прикладн', 'decorative'],
     ceramics: ['керамик', 'фарфор', 'гончарн', 'майолик', 'ceramic', 'ceramics', 'pottery', 'porcelain'],
     textile: ['текстил', 'ткан', 'ткач', 'ткачеств', 'гобелен', 'textile', 'fabric'],
@@ -88,6 +90,7 @@ const STEMS = {
     fashion: ['мода', 'моды', 'одежд', 'костюм', 'fashion'],
     'graphic-design': ['графический дизайн', 'плакат', 'постер', 'афиш', 'graphic design', 'poster'],
     typography: ['типограф', 'шрифт', 'typography', 'font'],
+    calligraphy: ['каллиграф', 'calligraphy'],
     'product-design': ['предметный дизайн', 'промышленный дизайн', 'мебел', 'product design', 'furniture'],
     photography: ['фото', 'фотограф', 'photo', 'photography'],
     'moving-image': ['кино', 'фильм', 'анимац', 'мультфильм', 'мультипликац', 'film', 'animation', 'movie'],

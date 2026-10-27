@@ -226,7 +226,7 @@
   dates: 1953 – 1968
   era: postwar
   domain: [design]
-  medium: [product-design]
+  medium: [product-design, graphic-design]
   subjects: [any]
   region: Германия
   tier: 3
@@ -507,7 +507,7 @@
   dates: 1955 – 1991
   era: postwar
   domain: [architecture]
-  medium: [architecture]
+  medium: [architecture, mosaic]
   subjects: [city]
   region: СССР
   tier: 3
@@ -626,7 +626,7 @@
   dates: 1955 – 1970
   era: postwar
   domain: [art, design]
-  medium: [painting, print]
+  medium: [painting, print, sculpture]
   subjects: [portrait, still-life, any]
   region: Великобритания, США
   tier: 1
@@ -698,7 +698,7 @@
   dates: 1960 – 1970
   era: postwar
   domain: [art, design]
-  medium: [painting]
+  medium: [painting, sculpture, fashion]
   subjects: [abstraction, any]
   region: Европа, США
   tier: 2
@@ -905,7 +905,7 @@
   dates: 1960 – 1980
   era: postwar
   domain: [art]
-  medium: [installation]
+  medium: [installation, photography]
   subjects: [any]
   region: США, Европа, СССР
   tier: 2
@@ -1107,7 +1107,7 @@
   dates: 1968 – 1980
   era: postwar
   domain: [art]
-  medium: [installation, sculpture]
+  medium: [installation, sculpture, photography]
   subjects: [landscape]
   region: США, Великобритания
   tier: 3
