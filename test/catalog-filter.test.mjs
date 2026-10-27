@@ -29,6 +29,11 @@ test('technique filter finds all sculpture and all reliefs', () => {
   const relief = filterStyles(styles, state({ medium: 'relief' }));
   for (const id of ['ancient-egypt', 'mesopotamian-art', 'achaemenid-art', 'romanesque', 'khmer-temple-art', 'maori-whakairo']) assert.ok(ids(relief).includes(id), id);
   assert.ok(relief.every((s) => s.medium.includes('relief')));
+  // Техника — то, чем стиль известен, а не только примеры карточки: фриз Парфенона, тимпаны готики, гравюры Дюрера.
+  for (const id of ['classical-greece', 'hellenistic-art', 'gandhara', 'gothic']) assert.ok(ids(relief).includes(id), id);
+  for (const id of ['cubism', 'mannerism', 'hyperrealism']) assert.ok(ids(sculpture).includes(id), id);
+  const print = ids(filterStyles(styles, state({ medium: 'print' })));
+  for (const id of ['northern-renaissance', 'dutch-golden-age', 'expressionism', 'post-impressionism', 'ukiyo-e']) assert.ok(print.includes(id), id);
 });
 
 test('filters combine: subject, technique, domain, type and eras all have to match', () => {
