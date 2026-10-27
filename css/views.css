@@ -678,7 +678,7 @@ body[data-view="style"] .room, body[data-view="style"] .site-footer {
 .about { max-width: 900px; }
 .about-title { font-family: var(--serif); font-weight: 400; font-size: clamp(2.6rem, 1rem + 4vw, 5rem); letter-spacing: -0.03em; line-height: 1; }
 .about-lead { margin-top: 18px; font-family: var(--serif); font-size: var(--t-2xl); line-height: 1.45; color: var(--ink-2); }
-.about-sec { margin-top: 56px; }
+.about-sec { margin-top: 56px; scroll-margin-top: calc(var(--header-h) + 16px); }
 .about-sec > p { font-family: var(--serif); font-size: var(--t-lg); line-height: 1.65; max-width: var(--measure); }
 .about-sec > p + p { margin-top: 0.9em; }
 .legend { list-style: none; display: grid; gap: 14px; margin: 22px 0; }

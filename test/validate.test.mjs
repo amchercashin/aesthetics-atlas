@@ -149,3 +149,11 @@ test('promptCues are optional, but when present they are 3–4 non-empty phrases
     assert.ok(validate([root, base({ promptCues })], eras).errors.some((e) => e.includes('promptCues')), JSON.stringify(promptCues));
   }
 });
+
+test('review must say what was checked', () => {
+  const review = (scope) => base({ review: { status: 'partial', date: '2026-10-16', scope } });
+  assert.deepEqual(validate([root, review(['relations', 'dates'])], eras).errors, []);
+  for (const [scope, msg] of [[undefined, 'must list'], [[], 'must list'], [['images', 'photos'], 'bad review.scope'], [['text', 'text'], 'duplicate review.scope']]) {
+    assert.ok(validate([root, review(scope)], eras).errors.some((e) => e.includes(msg)), JSON.stringify(scope));
+  }
+});

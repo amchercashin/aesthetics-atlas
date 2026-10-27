@@ -24,6 +24,14 @@ export const RELATION = {
 
 export const REL_STATUS = { verified: 'подтверждено', unverified: 'не проверено' };
 
+// Что сверено в карточке (review.scope), в порядке показа.
+export const REVIEW_SCOPE = { relations: 'связи', dates: 'даты', text: 'описание', corpus: 'корпус работ', images: 'главная иллюстрация', gallery: 'галерея' };
+// «связи, даты и описание»
+export const reviewScopeText = (scope = []) => {
+  const list = Object.keys(REVIEW_SCOPE).filter((k) => scope.includes(k)).map((k) => REVIEW_SCOPE[k]);
+  return list.length > 1 ? `${list.slice(0, -1).join(', ')} и ${list.at(-1)}` : list[0] ?? '';
+};
+
 // Тип карточки: что именно описывает карточка.
 export const KIND = {
   overview: 'Обзор',

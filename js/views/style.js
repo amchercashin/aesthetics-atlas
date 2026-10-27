@@ -2,7 +2,7 @@
 // Ниже — текст, родословная, ссылки.
 // Статус проверки карточки и связей виден сразу; источники утверждений — под раскрытием.
 import { html, mount, safeUrl } from '../html.js';
-import { fmtDates, fmtYear, RELATION, DOMAIN, KIND, DATE_KIND, REL_STATUS, roleLabel, plural } from '../format.js?v=regional-01';
+import { fmtDates, fmtYear, RELATION, DOMAIN, KIND, DATE_KIND, REL_STATUS, roleLabel, plural, reviewScopeText } from '../format.js?v=review-1';
 import { frame, credit } from '../ui/image.js?v=author-pilot';
 import { eraTag, thumb, footer } from '../ui/common.js?v=links-1';
 import { toast } from '../ui/toast.js';
@@ -63,14 +63,16 @@ export function lineageStrip(line, currentId) {
   })}</ol>`;
 }
 
-// Статус проверки — короткой пометкой; подробности (что именно сверено) раскрываются по нажатию.
+// Статус проверки — короткой пометкой: что именно сверено и когда; подробности раскрываются по нажатию.
 function reviewLine(s) {
   const r = s.review;
-  const about = html`<a href="#/about">Как устроена проверка</a>`;
-  const [cls, head, body] = r.status === 'reviewed' ? ['st-reviewed', `Сверено с источниками · ${fmtDay(r.date)}`, r.note]
-    : r.status === 'partial' ? ['st-partial', `Частично сверено с источниками · ${fmtDay(r.date)}`, r.note]
-    : ['st-legacy', 'Черновая карточка', 'Даты, связи и формулировки ещё не сверены с источниками.'];
-  return html`<details class="review ${cls}"><summary>${head}</summary><p>${body ? html`${body} ` : ''}${about}</p></details>`;
+  const about = html`<a href="#/about?s=review">Что значат эти отметки</a>`;
+  if (r.status === 'legacy') {
+    return html`<details class="review st-legacy"><summary>Черновая карточка</summary><p>Даты, связи и формулировки ещё не сверены с источниками. ${about}</p></details>`;
+  }
+  // Галереи добавлены после всех сверок — говорим об этом, пока их не сверят.
+  const gallery = s.gallery.length && !r.scope.includes('gallery') ? ' Галерея добавлена позже и с источниками не сверялась.' : '';
+  return html`<details class="review st-${r.status}"><summary>Сверено: ${reviewScopeText(r.scope)} · ${fmtDay(r.date)}</summary><p>${r.note ?? ''}${gallery} ${about}</p></details>`;
 }
 
 function datesBlock(store, s) {

@@ -19,6 +19,8 @@ export const MEDIUMS = [
 ];
 export const SOURCE_TYPES = ['museum', 'scholarly', 'primary', 'official', 'encyclopedia', 'community', 'press', 'catalog'];
 export const REVIEW_STATUS = ['reviewed', 'partial'];
+// Что именно сверено: заголовок отметки на странице собирается из этого списка.
+export const REVIEW_SCOPE = ['relations', 'dates', 'text', 'corpus', 'images', 'gallery'];
 const HEX = /^#[0-9a-f]{6}$/i;
 const ID = /^[a-z0-9]+(-[a-z0-9]+)*$/;
 const DATE = /^\d{4}(-\d{2}(-\d{2})?)?$/;
@@ -179,6 +181,12 @@ export function validate(styles, eras, sources = []) {
     if (s.review != null) {
       if (!REVIEW_STATUS.includes(s.review.status)) errors.push(`${at} bad review.status "${s.review.status}"`);
       if (!DATE.test(ymd(s.review.date) ?? '')) errors.push(`${at} review.date must be YYYY-MM-DD`);
+      const scope = s.review.scope;
+      if (!Array.isArray(scope) || !scope.length) errors.push(`${at} review.scope must list what was checked`);
+      else {
+        for (const x of scope) if (!REVIEW_SCOPE.includes(x)) errors.push(`${at} bad review.scope "${x}"`);
+        if (new Set(scope).size !== scope.length) errors.push(`${at} duplicate review.scope`);
+      }
     }
 
     if (!Array.isArray(s.traits) || s.traits.length < 3) errors.push(`${at} needs ≥3 traits`);

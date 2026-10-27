@@ -122,7 +122,7 @@ export function buildRecord(s, { links = [], palette = null, paletteFromImages =
     corpus: (s.corpus ?? []).map((w) => imageRecord(w, img(w.file ?? w.asset))),
     palette: paletteRecord(s, palette, example, paletteFromImages),
     evidence: (s.evidence ?? []).map((e) => ({ claim: str(e.claim), field: str(e.field), source: e.source, note: str(e.note) })),
-    review: s.review ? { status: s.review.status, date: ymd(s.review.date), note: str(s.review.note) } : { status: 'legacy', date: null, note: null },
+    review: s.review ? { status: s.review.status, date: ymd(s.review.date), scope: s.review.scope ?? [], note: str(s.review.note) } : { status: 'legacy', date: null, scope: [], note: null },
     links,
   };
 }

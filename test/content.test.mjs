@@ -104,3 +104,11 @@ test('every tier-1 card has visual promptCues without names of artists', () => {
     }
   }
 });
+
+test('every review lists its scope, and no gallery is claimed as checked yet', () => {
+  for (const s of styles.filter((x) => x.review)) {
+    assert.ok(Array.isArray(s.review.scope) && s.review.scope.length, `${s.id} review.scope`);
+    // Галереи добавлены 17–18.10.2026, после всех сверок; снять это условие, когда их сверят.
+    assert.ok(!s.review.scope.includes('gallery'), `${s.id} gallery is not reviewed yet`);
+  }
+});
