@@ -33,7 +33,7 @@ test('new model fields survive into the output record', () => {
     dateKind: 'practice', approx: true, dateNote: 'dn', termAttested: { year: 2008, source: 'src', note: 'tn' },
     revivals: [{ start: 2020, note: 'rv' }], formerIds: ['old'],
     evidence: [{ claim: 'c', field: 'dates', source: 'src' }],
-    review: { status: 'partial', date: new Date('2026-10-13'), note: 'rn' },
+    review: { status: 'partial', date: new Date('2026-10-13'), scope: ['relations', 'dates'], note: 'rn' },
     parents: [{ id: 'p', type: 'revival', status: 'verified', sources: ['src'], note: 'why' }],
     example: { file: 'X.jpg', title: 't', role: 'illustration', whyRepresentative: 'видно', rights: { note: 'фото ≠ работа' } },
     paletteNote: 'pn',
@@ -51,7 +51,7 @@ test('new model fields survive into the output record', () => {
   assert.deepEqual(r.revivals, [{ start: 2020, end: null, note: 'rv' }]);
   assert.equal(r.endKind, 'ongoing');
   assert.deepEqual(r.evidence, [{ claim: 'c', field: 'dates', source: 'src', note: null }]);
-  assert.deepEqual(r.review, { status: 'partial', date: '2026-10-13', note: 'rn' });
+  assert.deepEqual(r.review, { status: 'partial', date: '2026-10-13', scope: ['relations', 'dates'], note: 'rn' });
   assert.deepEqual(r.parents, [{ id: 'p', type: 'revival', status: 'verified', note: 'why', sources: ['src'] }]);
   assert.equal(r.example.role, 'illustration');
   assert.equal(r.example.why, 'видно');
@@ -66,6 +66,7 @@ test('legacy cards get explicit "unverified" and "legacy" defaults, not "verifie
   const r = buildRecord(card(), { img });
   assert.equal(r.parents[0].status, 'unverified');
   assert.equal(r.review.status, 'legacy');
+  assert.deepEqual(r.review.scope, []);
   assert.deepEqual(r.kind, []);
   assert.equal(r.example.role, 'work');
 });
