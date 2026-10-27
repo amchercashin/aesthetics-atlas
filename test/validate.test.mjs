@@ -157,3 +157,13 @@ test('review must say what was checked', () => {
     assert.ok(validate([root, review(scope)], eras).errors.some((e) => e.includes(msg)), JSON.stringify(scope));
   }
 });
+
+test('subjects come only from the fixed vocabulary; an empty list is allowed', () => {
+  assert.deepEqual(validate([root, base({ subjects: ['landscape', 'portrait'] })], eras).errors, []);
+  assert.deepEqual(validate([root, base({ subjects: [] })], eras).errors, []);
+  for (const [subjects, msg] of [[['пейзаж'], 'bad subject'], [['seascape'], 'bad subject'], [['animals', 'animals'], 'duplicate subject'], ['landscape', 'must be a list']]) {
+    assert.ok(validate([root, base({ subjects })], eras).errors.some((e) => e.includes(msg)), JSON.stringify(subjects));
+  }
+  assert.ok(validate([root, base({ medium: ['relief', 'relief'] })], eras).errors.some((e) => e.includes('duplicate medium')));
+  assert.deepEqual(validate([root, base({ medium: ['sculpture', 'relief'] })], eras).errors, []);
+});

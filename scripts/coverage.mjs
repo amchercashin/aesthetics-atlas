@@ -1,9 +1,10 @@
-// Матрица покрытия: регион × эпоха × область/медиум по data/atlas.json → docs/coverage.md
+// Матрица покрытия: регион × эпоха × область, техника и сюжет по data/atlas.json → docs/coverage.md
 //   node scripts/coverage.mjs        (сначала npm run build)
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { MACRO, macroRegions } from './lib/regions.mjs';
+import { SUBJECT, MEDIUM } from '../js/format.js';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const atlas = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/atlas.json'), 'utf8'));
@@ -38,16 +39,21 @@ lines.push(row(['---', ...eras.map(() => '---:')]));
 for (const [d, name] of Object.entries(DOMAIN)) lines.push(row([name, ...eras.map((e) => cell(styles.filter((s) => s.era === e.id && s.domain.includes(d))))]));
 lines.push('');
 
-const withMedium = styles.filter((s) => s.medium.length);
-lines.push('## Медиум', '');
-lines.push(`Поле \`medium\` заполнено у ${withMedium.length} из ${styles.length} карточек (пилот), поэтому для остальных медиум пока заменяет область (\`domain\`).`, '');
-const media = [...new Set(withMedium.flatMap((s) => s.medium))].sort();
-if (media.length) {
-  lines.push(row(['Медиум', 'Карточки']));
-  lines.push(row(['---', '---']));
-  for (const m of media) lines.push(row([m, withMedium.filter((s) => s.medium.includes(m)).map((s) => s.id).join(', ')]));
+// Поля фильтров каталога «Техника» и «Сюжет»: у карточки может быть несколько значений.
+const facet = (title, field, dict, intro) => {
+  lines.push(`## ${title}`, '', intro, '');
+  lines.push(row([title, 'Карточек', 'Карточки']));
+  lines.push(row(['---', '---:', '---']));
+  for (const [v, name] of Object.entries(dict)) {
+    const mine = styles.filter((s) => s[field].includes(v));
+    lines.push(row([`${name} (\`${v}\`)`, String(mine.length), mine.map((s) => s.id).join(', ') || '·']));
+  }
   lines.push('');
-}
+};
+const withMedium = styles.filter((s) => s.medium.length);
+facet('Техника', 'medium', MEDIUM, `Поле \`medium\` заполнено у ${withMedium.length} из ${styles.length} карточек; по нему работает фильтр каталога «Техника».`);
+const noSubject = styles.filter((s) => !s.subjects.length);
+facet('Сюжет', 'subjects', SUBJECT, `Поле \`subjects\` — сюжеты, характерные для стиля по описанию и работам карточки; по нему работает фильтр каталога «Сюжет». Пустой список означает, что сюжет не выражен или неясен (${noSubject.length}): ${noSubject.map((s) => s.id).join(', ') || '—'}.`);
 
 lines.push('## Тип карточки × эпоха', '');
 const kinds = [...new Set(styles.map((s) => s.kind[0] ?? '—'))];

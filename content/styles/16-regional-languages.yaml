@@ -18,6 +18,7 @@
   medium:
     - decorative-arts
     - painting
+  subjects: [animals, ornament]
   region: Палащелье и Мезенский уезд, Архангельская губерния, Русский Север, Россия
   aliases:
     - Мезенская роспись
@@ -203,6 +204,7 @@
   medium:
     - sculpture
     - metalwork
+  subjects: [religion-myth, figure]
   region: Тамилнад, Южная Индия; период Чола
   aliases:
     - Бронзы Чола
@@ -370,6 +372,7 @@
   dates: манера конца 1920-х и последующих десятилетий; работы корпуса не датированы
   medium:
     - painting
+  subjects: [figure, animals]
   region: Бенгалия, Индия; Колката и её художественная среда
   aliases:
     - Джамини Рой
@@ -542,6 +545,7 @@
     - print
     - installation
     - typography
+  subjects: []
   region: Китай и США; печатная книга и музейная инсталляция
   aliases:
     - Сюй Бин
@@ -759,6 +763,7 @@
     - sculpture
     - ceramics
     - metalwork
+  subjects: []
   region: Иле-Ифе, йоруба, Нигерия
   aliases:
     - Ифе
@@ -945,6 +950,7 @@
     - sculpture
     - installation
     - metalwork
+  subjects: []
   region: Нсукка, Нигерия; культурный контекст — Гана
   aliases:
     - Эль Анацуи
@@ -1152,7 +1158,9 @@
   dates: XIX век; три выбранных предмета
   medium:
     - sculpture
+    - relief
     - decorative-arts
+  subjects: [ornament, figure]
   region: Аотеароа / Новая Зеландия; маори; Ротоити и другие контексты выбранного корпуса
   aliases:
     - Маорийская резьба
@@ -1322,6 +1330,7 @@
   dates: 1999–2020; выбранные листы трёх художников
   medium:
     - print
+  subjects: [figure, ornament]
   region: >-
     Острова Торресова пролива и материковый Квинсленд, Австралия; Баду, Моа и связанные авторские
     практики
@@ -1543,6 +1552,7 @@
   dates: 1999–2006; три выбранные гравюры
   medium:
     - print
+  subjects: [figure, ornament]
   region: Баду и другие острова Торресова пролива, Австралия; работы из собрания Cairns
   aliases:
     - Алик Типоти
@@ -1762,6 +1772,7 @@
   medium:
     - ceramics
     - decorative-arts
+  subjects: [ornament]
   region: Изник, Османская Анатолия; современная Турция
   aliases:
     - Изникская керамика

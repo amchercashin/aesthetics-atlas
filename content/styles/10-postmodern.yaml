@@ -12,6 +12,8 @@
   dates: 1968 – 2000-е
   era: postmodern
   domain: [art]
+  medium: [painting]
+  subjects: [city, portrait]
   region: США
   tier: 3
   kind: movement
@@ -70,6 +72,8 @@
   dates: 1972 – 1990-е
   era: postmodern
   domain: [architecture, design]
+  medium: [architecture]
+  subjects: [city]
   region: США, Европа
   tier: 2
   kind: movement
@@ -143,6 +147,8 @@
   dates: 1970 – 2000-е
   era: postmodern
   domain: [architecture]
+  medium: [architecture]
+  subjects: [city]
   region: Великобритания, Франция, весь мир
   tier: 2
   kind: movement
@@ -206,6 +212,8 @@
   dates: 1981 – 1988
   era: postmodern
   domain: [design]
+  medium: [product-design]
+  subjects: [ornament]
   region: Италия
   tier: 1
   kind: school
@@ -281,6 +289,8 @@
   dates: 1976 – 1990
   era: postmodern
   domain: [design, art]
+  medium: [graphic-design, typography, print]
+  subjects: []
   region: Великобритания, США
   tier: 2
   kind: movement
@@ -357,6 +367,8 @@
   dates: 1970 – наши дни
   era: postmodern
   domain: [art]
+  medium: [painting]
+  subjects: []
   region: Нью-Йорк, затем весь мир
   tier: 1
   kind: technique
@@ -411,6 +423,8 @@
   dates: 1978 – 1990
   era: postmodern
   domain: [art]
+  medium: [painting]
+  subjects: [figure]
   region: США, Германия, Италия
   tier: 3
   kind: movement
@@ -489,6 +503,8 @@
   dates: 1980-е – наши дни
   era: postmodern
   domain: [architecture]
+  medium: [architecture]
+  subjects: [city]
   region: Весь мир
   tier: 2
   kind: movement
@@ -571,6 +587,8 @@
   dates: 1982 – наши дни
   era: postmodern
   domain: [design, art]
+  medium: [illustration, moving-image, digital-art]
+  subjects: [city]
   region: США, Япония
   tier: 1
   kind: movement
@@ -656,6 +674,8 @@
   dates: 1975 – 1995
   era: postmodern
   domain: [internet, design]
+  medium: [digital-art]
+  subjects: []
   region: США, Япония
   tier: 2
   kind: technique
@@ -734,6 +754,8 @@
   dates: 1970-е – наши дни
   era: postmodern
   domain: [art, design]
+  medium: [digital-art, moving-image, fashion]
+  subjects: []
   region: США, Африка
   tier: 3
   kind: movement
@@ -809,6 +831,7 @@
   era: postmodern
   domain: [design]
   medium: [graphic-design, typography]
+  subjects: []
   region: Швейцария, США
   tier: 3
   kind: movement
@@ -921,6 +944,8 @@
   dates: 1975 – наши дни
   era: postmodern
   domain: [internet, design]
+  medium: [digital-art]
+  subjects: []
   region: США, Япония, весь мир
   tier: 2
   kind: technique
@@ -982,6 +1007,8 @@
   dates: 1970-е – наши дни
   era: postmodern
   domain: [art]
+  medium: [painting]
+  subjects: [figure]
   region: Калифорния, США
   tier: 3
   kind: movement

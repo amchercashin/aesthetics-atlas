@@ -5,10 +5,11 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import yaml from 'js-yaml';
-import { validate } from '../scripts/lib/validate.mjs';
+import { validate, SUBJECTS, MEDIUMS } from '../scripts/lib/validate.mjs';
 import { buildRecord } from '../scripts/lib/record.mjs';
 import { createStore } from '../js/store.js';
 import { buildIndex, search } from '../js/search.js';
+import { SUBJECT, MEDIUM } from '../js/format.js';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const read = (p) => yaml.load(fs.readFileSync(path.join(ROOT, p), 'utf8'));
@@ -111,4 +112,22 @@ test('every review lists its scope, and no gallery is claimed as checked yet', (
     // Галереи добавлены 17–18.10.2026, после всех сверок; снять это условие, когда их сверят.
     assert.ok(!s.review.scope.includes('gallery'), `${s.id} gallery is not reviewed yet`);
   }
+});
+
+// Каталог фильтрует по сюжету и технике: каждая карточка явно размечена. Пустой subjects — решение
+// «сюжет не выражен», а не забытое поле; medium нужен, чтобы находились «все рельефы» и «вся скульптура».
+test('every card states its subjects (from the vocabulary, possibly none) and its technique', () => {
+  for (const s of styles) {
+    assert.ok(Array.isArray(s.subjects), `${s.id}: subjects`);
+    for (const x of s.subjects) assert.ok(SUBJECTS.includes(x), `${s.id}: subject "${x}"`);
+    const medium = [].concat(s.medium ?? []);
+    assert.ok(medium.length > 0, `${s.id}: medium`);
+    for (const m of medium) assert.ok(MEDIUMS.includes(m), `${s.id}: medium "${m}"`);
+  }
+  assert.ok(styles.filter((s) => s.subjects.length).length > styles.length / 2);
+});
+
+test('catalog labels cover exactly the validator vocabularies', () => {
+  assert.deepEqual(Object.keys(SUBJECT).sort(), [...SUBJECTS].sort());
+  assert.deepEqual(Object.keys(MEDIUM).sort(), [...MEDIUMS].sort());
 });

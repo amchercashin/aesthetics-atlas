@@ -7,6 +7,8 @@
   dates: ок. 800 – 480 до н. э.
   era: antiquity
   domain: [art]
+  medium: [sculpture, ceramics]
+  subjects: [figure, religion-myth, ornament]
   region: Греция
   tier: 2
   kind: period
@@ -65,6 +67,8 @@
   dates: 480 – 323 до н. э.
   era: antiquity
   domain: [art, architecture]
+  medium: [sculpture, architecture]
+  subjects: [figure, city, religion-myth]
   region: Греция
   tier: 1
   kind: period
@@ -131,6 +135,8 @@
   dates: 323 – 31 до н. э.
   era: antiquity
   domain: [art]
+  medium: [sculpture]
+  subjects: [figure, religion-myth]
   region: Восточное Средиземноморье
   tier: 2
   kind: period
@@ -186,6 +192,8 @@
   dates: ок. 200 до н. э. – 476 н. э.
   era: antiquity
   domain: [architecture, art]
+  medium: [architecture, sculpture, relief, painting]
+  subjects: [city, portrait]
   region: Римская империя
   tier: 1
   kind: overview
@@ -248,6 +256,8 @@
   dates: I – III века
   era: antiquity
   domain: [art]
+  medium: [painting]
+  subjects: [portrait]
   region: Римский Египет
   tier: 3
   kind: tradition
@@ -312,6 +322,8 @@
   dates: ок. I в. до н. э. – V в. н. э.
   era: antiquity
   domain: [art]
+  medium: [sculpture]
+  subjects: [religion-myth, figure]
   region: Пакистан, Афганистан
   tier: 3
   kind: tradition
@@ -380,6 +392,8 @@
   dates: ок. 500 до н. э. – I век н. э.
   era: antiquity
   domain: [art, design]
+  medium: [metalwork, decorative-arts]
+  subjects: [ornament]
   region: Западная и Центральная Европа
   tier: 3
   kind: tradition

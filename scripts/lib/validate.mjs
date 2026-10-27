@@ -13,9 +13,13 @@ export const DATE_KINDS = ['archaeological', 'period', 'institution', 'practice'
 export const END_KINDS = ['ongoing', 'unknown'];
 export const IMAGE_ROLES = ['work', 'precursor', 'revival', 'reconstruction', 'illustration', 'portrait'];
 export const MEDIUMS = [
-  'painting', 'sculpture', 'architecture', 'graphic-design', 'typography', 'illustration', 'photography',
+  'painting', 'sculpture', 'relief', 'architecture', 'graphic-design', 'typography', 'illustration', 'photography',
   'product-design', 'interior', 'decorative-arts', 'ceramics', 'textile', 'metalwork', 'manuscript', 'print',
   'ui', 'web', 'digital-art', 'installation', 'moving-image', 'rock-art', 'drawing', 'fashion',
+];
+// Сюжеты, характерные для стиля (фильтр каталога «Сюжет»). Словарь закрытый; пустой список — сюжет не выражен.
+export const SUBJECTS = [
+  'landscape', 'portrait', 'still-life', 'everyday-life', 'city', 'religion-myth', 'animals', 'ornament', 'abstraction', 'figure',
 ];
 export const SOURCE_TYPES = ['museum', 'scholarly', 'primary', 'official', 'encyclopedia', 'community', 'press', 'catalog'];
 export const REVIEW_STATUS = ['reviewed', 'partial'];
@@ -125,6 +129,14 @@ export function validate(styles, eras, sources = []) {
     if (asList(s.kind).length > 2) errors.push(`${at} kind: at most primary + secondary`);
     if (s.kindNote != null && !s.kind) errors.push(`${at} kindNote without kind`);
     for (const m of asList(s.medium)) if (!MEDIUMS.includes(m)) errors.push(`${at} bad medium "${m}"`);
+    if (new Set(asList(s.medium)).size !== asList(s.medium).length) errors.push(`${at} duplicate medium`);
+    if (s.subjects != null) {
+      if (!Array.isArray(s.subjects)) errors.push(`${at} subjects must be a list`);
+      else {
+        for (const x of s.subjects) if (!SUBJECTS.includes(x)) errors.push(`${at} bad subject "${x}"`);
+        if (new Set(s.subjects).size !== s.subjects.length) errors.push(`${at} duplicate subject`);
+      }
+    }
     for (const f of ['aliases', 'searchKeywords', 'formerIds']) if (s[f] != null && !Array.isArray(s[f])) errors.push(`${at} ${f} must be a list`);
     if (s.labelStatus != null && !LABEL_STATUS.includes(s.labelStatus)) errors.push(`${at} bad labelStatus`);
     if (s.maturity != null && !MATURITY.includes(s.maturity)) errors.push(`${at} bad maturity`);

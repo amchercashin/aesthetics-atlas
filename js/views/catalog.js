@@ -1,35 +1,31 @@
-// Каталог: «шпалерная» сетка работ (строки выравниваются по ширине), фильтры по областям и эпохам.
+// Каталог: «шпалерная» сетка работ (строки выравниваются по ширине), фильтры по области, типу, сюжету, технике и эпохам.
+// Отбор, счётчики и параметры адреса — чистые функции в js/catalog-filter.js.
 import { html, mount } from '../html.js';
-import { fmtDates, DOMAIN, KIND, KIND_FAMILY, plural } from '../format.js?v=author-pilot';
+import { fmtDates, DOMAIN, KIND, KIND_FAMILY, SUBJECT, MEDIUM, plural } from '../format.js?v=subjects-1';
 import { frame, markLoaded } from '../ui/image.js?v=author-pilot';
 import { footer } from '../ui/common.js?v=author-pilot';
 import { replaceParams } from '../router.js?v=map4';
+import { readState, stateParams, emptyState, isFiltered, filterStyles, facetCounts } from '../catalog-filter.js?v=subjects-1';
 
-// Карточка попадает в семейство по основному типу (первому в списке kind).
-const inFamily = (s, fam) => !fam || KIND_FAMILY[fam].kinds.includes(s.kind[0]);
 const clampAr = (img) => (img ? Math.min(2.1, Math.max(0.62, img.w / img.h)) : 0.8);
 
-function readState(params) {
-  return {
-    domain: params.get('d') || '',
-    family: KIND_FAMILY[params.get('k')] ? params.get('k') : '',
-    eras: new Set((params.get('e') || '').split(',').filter(Boolean)),
-    sort: params.get('sort') === 'az' ? 'az' : 'time',
-  };
-}
+// Ряды с одним выбором: «Все» и значения словаря. Длинный ряд техник на широком экране свёрнут в одну строку.
+const ROWS = [
+  { key: 'domain', label: 'Область', all: 'Все', items: Object.entries(DOMAIN).map(([v, name]) => ({ v, name })) },
+  { key: 'family', label: 'Тип карточки', all: 'Все типы', items: Object.entries(KIND_FAMILY).map(([v, f]) => ({ v, name: f.label, title: f.kinds.map((x) => KIND[x]).join(', ') })) },
+  { key: 'subject', label: 'Сюжет', all: 'Все сюжеты', items: Object.entries(SUBJECT).map(([v, name]) => ({ v, name })) },
+  { key: 'medium', label: 'Техника', all: 'Любая техника', collapse: true, items: Object.entries(MEDIUM).map(([v, name]) => ({ v, name })) },
+];
 
-// Ряды фильтров. На телефоне они показаны дважды: в начале страницы и в листе под полоской
-// «Фильтры», которая появляется при прокрутке. Кнопки связаны через data-атрибуты, состояние общее.
+// Ряды фильтров. На телефоне и при прокрутке они показаны дважды: в начале страницы и в листе под полоской
+// «Фильтры». Кнопки связаны через data-атрибуты, состояние общее. Числа на чипах ставит apply().
 function filterRows(store) {
   return html`
-    <div class="filter-row" role="group" aria-label="Область">
-      <button class="chip" type="button" data-domain="">Все</button>
-      ${Object.entries(DOMAIN).map(([k, v]) => html`<button class="chip" type="button" data-domain="${k}">${v} <span class="count">${store.styles.filter((s) => s.domain.includes(k)).length}</span></button>`)}
-    </div>
-    <div class="filter-row" role="group" aria-label="Тип карточки">
-      <button class="chip" type="button" data-family="">Все типы</button>
-      ${Object.entries(KIND_FAMILY).map(([k, f]) => html`<button class="chip" type="button" data-family="${k}" title="${f.kinds.map((x) => KIND[x]).join(', ')}">${f.label} <span class="count">${store.styles.filter((s) => inFamily(s, k)).length}</span></button>`)}
-    </div>
+    ${ROWS.map((row) => html`<div class="filter-row${row.collapse ? ' is-collapsible' : ''}" role="group" aria-label="${row.label}">
+      <button class="chip" type="button" data-f="${row.key}" data-v="">${row.all}</button>
+      ${row.items.map((it) => html`<button class="chip" type="button" data-f="${row.key}" data-v="${it.v}"${it.title ? html` title="${it.title}"` : ''}>${it.name} <span class="count"></span></button>`)}
+      ${row.collapse ? html`<button class="chip more" type="button" data-more aria-expanded="false" hidden></button>` : ''}
+    </div>`)}
     <div class="era-bar" role="group" aria-label="Эпохи">
       ${store.eras.map((e) => html`<button type="button" class="era-seg" data-era="${e.id}" style="--c:var(--era-${e.id})" title="${e.name}">
         <span class="seg-bar"></span><span class="seg-name">${e.short}</span>
@@ -78,7 +74,7 @@ export default {
     const count = root.querySelector('.cat-count');
 
     function apply() {
-      let list = store.styles.filter((s) => (!state.domain || s.domain.includes(state.domain)) && inFamily(s, state.family) && (!state.eras.size || state.eras.has(s.era)));
+      let list = filterStyles(store.styles, state);
       if (state.sort === 'az') list = [...list].sort((a, b) => a.name.localeCompare(b.name, 'ru'));
       mount(grid, html`${list.map((s) => {
         const cover = s.example.img ?? s.gallery.find((g) => g.img)?.img ?? null;
@@ -91,22 +87,32 @@ export default {
       markLoaded(grid);
       count.textContent = `${list.length} ${plural(list.length, 'стиль', 'стиля', 'стилей')} из ${store.styles.length}`;
       root.querySelector('.cat-empty').hidden = list.length > 0;
-      root.querySelectorAll('[data-domain]').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.domain === state.domain)));
-      root.querySelectorAll('[data-family]').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.family === state.family)));
+      // Число на чипе — сколько стилей останется, если выбрать его при остальных фильтрах; ноль приглушён.
+      for (const row of ROWS) {
+        const counts = facetCounts(store.styles, state, row.key);
+        root.querySelectorAll(`[data-f="${row.key}"]`).forEach((b) => {
+          const v = b.dataset.v;
+          b.setAttribute('aria-pressed', String(v === state[row.key]));
+          if (!v) return;
+          const n = counts.get(v);
+          b.querySelector('.count').textContent = String(n);
+          b.classList.toggle('is-empty', n === 0);
+        });
+      }
       root.querySelectorAll('[data-era]').forEach((b) => b.setAttribute('aria-pressed', String(state.eras.has(b.dataset.era))));
       root.querySelectorAll('[data-sort]').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.sort === state.sort)));
-      root.querySelectorAll('.reset').forEach((b) => { b.hidden = !(state.domain || state.family || state.eras.size || state.sort !== 'time'); });
+      root.querySelectorAll('.reset').forEach((b) => { b.hidden = !(isFiltered(state) || state.sort !== 'time'); });
       const eras = store.eras.filter((e) => state.eras.has(e.id)).map((e) => e.short);
-      const summary = [DOMAIN[state.domain], KIND_FAMILY[state.family]?.label, eras.length > 2 ? `${eras.slice(0, 2).join(', ')} и ещё ${eras.length - 2}` : eras.join(', '), state.sort === 'az' ? 'по алфавиту' : ''].filter(Boolean);
+      const summary = [DOMAIN[state.domain], KIND_FAMILY[state.family]?.label, SUBJECT[state.subject], MEDIUM[state.medium], eras.length > 2 ? `${eras.slice(0, 2).join(', ')} и ещё ${eras.length - 2}` : eras.join(', '), state.sort === 'az' ? 'по алфавиту' : ''].filter(Boolean);
       root.querySelector('.cat-bar-summary').textContent = summary.length ? summary.join(' · ') : 'все стили';
       root.querySelector('.cat-bar-count').textContent = String(list.length);
-      replaceParams('catalog', { d: state.domain, k: state.family, e: [...state.eras].join(','), sort: state.sort === 'az' ? 'az' : '' });
+      replaceParams('catalog', stateParams(state));
+      fitRows();
     }
 
-    // Телефон: панель фильтров стоит в начале страницы и не липнет. Когда она уходит под шапку,
-    // сверху появляется тонкая полоска «Фильтры»; нажатие раскрывает под ней те же фильтры листом.
-    // Лист закрывается повторным нажатием, тапом мимо, Esc или прокруткой страницы.
-    const narrow = matchMedia('(max-width: 760px)');
+    // Панель фильтров стоит в начале страницы и не липнет: с рядами сюжетов и техники она выше экрана ноутбука.
+    // Когда она уходит под шапку, сверху появляется тонкая полоска «Фильтры»; нажатие раскрывает под ней те же
+    // фильтры листом. Лист закрывается повторным нажатием, тапом мимо, Esc или прокруткой страницы.
     const header = document.querySelector('.site-header');
     const panel = root.querySelector('.cat-filters');
     const bar = root.querySelector('.cat-bar');
@@ -125,7 +131,7 @@ export default {
     const syncBar = () => {
       raf = 0;
       const headerBottom = document.documentElement.classList.contains('header-away') ? 0 : header.offsetHeight;
-      const shown = narrow.matches && panel.getBoundingClientRect().bottom <= headerBottom + bar.offsetHeight;
+      const shown = panel.getBoundingClientRect().bottom <= headerBottom + bar.offsetHeight;
       bar.classList.toggle('is-shown', shown);
       if (openedAt !== null && (!shown || Math.abs(window.scrollY - openedAt) > 48)) setOpen(false);
     };
@@ -138,22 +144,51 @@ export default {
       if (window.scrollY > top) window.scrollTo(0, top);
       openedAt = window.scrollY;
     };
+    // Свёрнутый ряд: на широком экране в панели видна одна строка, остальное — по кнопке «Ещё N».
+    // Выбранный чип не прячется: вместо него уходят соседние. На телефоне ряд прокручивается вбок,
+    // а в листе переносится целиком.
+    const narrow = matchMedia('(max-width: 760px)');
+    function fitRows() {
+      for (const row of panel.querySelectorAll('.is-collapsible')) {
+        const chips = [...row.querySelectorAll('[data-f]')];
+        const more = row.querySelector('[data-more]');
+        chips.forEach((c) => { c.hidden = false; });
+        more.hidden = true;
+        const top = chips[0].offsetTop;
+        if (narrow.matches || chips.at(-1).offsetTop === top) continue;
+        more.hidden = false;
+        more.textContent = 'Ещё 00'; // ширина подписи, пока подбираем строку
+        const open = row.classList.contains('is-open');
+        let hidden = 0;
+        for (let i = chips.length - 1; !open && i > 0 && more.offsetTop !== top; i--) {
+          if (chips[i].getAttribute('aria-pressed') === 'true') continue;
+          chips[i].hidden = true;
+          hidden++;
+        }
+        more.textContent = open ? 'Свернуть' : `Ещё ${hidden}`;
+        more.setAttribute('aria-expanded', String(open));
+      }
+    }
+    const onResize = () => { fitRows(); onScroll(); };
+
     toggle.addEventListener('click', () => setOpen(openedAt === null));
     scrim.addEventListener('click', () => setOpen(false));
     window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onResize);
+    narrow.addEventListener('change', onResize);
     document.addEventListener('keydown', onKey);
-    narrow.addEventListener('change', onScroll);
+    document.fonts?.ready.then(() => { if (root.contains(panel)) fitRows(); });
 
     const onClick = (e) => {
-      const d = e.target.closest('[data-domain]');
-      const fam = e.target.closest('[data-family]');
+      const more = e.target.closest('[data-more]');
+      if (more) { more.closest('.filter-row').classList.toggle('is-open'); fitRows(); return; }
+      const f = e.target.closest('[data-f]');
       const er = e.target.closest('[data-era]');
       const so = e.target.closest('[data-sort]');
-      if (d) state.domain = d.dataset.domain;
-      else if (fam) state.family = fam.dataset.family;
+      if (f) state[f.dataset.f] = f.dataset.v;
       else if (er) { const id = er.dataset.era; state.eras.has(id) ? state.eras.delete(id) : state.eras.add(id); }
       else if (so) state.sort = so.dataset.sort;
-      else if (e.target.closest('[data-reset]')) state = { domain: '', family: '', eras: new Set(), sort: 'time' };
+      else if (e.target.closest('[data-reset]')) state = emptyState();
       else return;
       apply();
       if (e.target.closest('.cat-sheet')) toResults();
@@ -167,8 +202,9 @@ export default {
       destroy() {
         root.removeEventListener('click', onClick);
         window.removeEventListener('scroll', onScroll);
+        window.removeEventListener('resize', onResize);
+        narrow.removeEventListener('change', onResize);
         document.removeEventListener('keydown', onKey);
-        narrow.removeEventListener('change', onScroll);
         cancelAnimationFrame(raf);
       },
     };

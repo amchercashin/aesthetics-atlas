@@ -111,7 +111,7 @@ export function buildRecord(s, { links = [], palette = null, paletteFromImages =
     endKind: s.end == null ? s.endKind ?? 'ongoing' : null,
     termAttested: s.termAttested ? { year: s.termAttested.year, source: s.termAttested.source, note: str(s.termAttested.note) } : null,
     revivals: (s.revivals ?? []).map((r) => ({ start: r.start, end: r.end ?? null, note: str(r.note) })),
-    era: s.era, domain: s.domain, medium: asList(s.medium), region: s.region ?? null, tier: s.tier,
+    era: s.era, domain: s.domain, medium: asList(s.medium), subjects: asList(s.subjects), region: s.region ?? null, tier: s.tier,
     root: !!s.root, origin: s.origin ?? null, row: s.row ?? null,
     parents: (s.parents ?? []).map(relation), children, comparisons,
     contexts: contexts ?? (s.contexts ?? []).map((c) => ({ ...relation(c), direction: 'out' })),

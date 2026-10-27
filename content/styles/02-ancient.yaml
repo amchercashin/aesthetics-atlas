@@ -7,6 +7,8 @@
   dates: ок. 3500 – 539 до н. э.
   era: ancient
   domain: [art, architecture]
+  medium: [relief, sculpture, architecture]
+  subjects: [animals, religion-myth, city]
   region: Междуречье (Ирак, Сирия)
   tier: 2
   kind: overview
@@ -54,6 +56,8 @@
   dates: ок. 3100 – 30 до н. э.
   era: ancient
   domain: [art, architecture]
+  medium: [painting, relief, sculpture, architecture]
+  subjects: [religion-myth, figure, portrait, city]
   region: Египет
   tier: 1
   kind: overview
@@ -112,6 +116,8 @@
   dates: ок. 2000 – 1450 до н. э.
   era: ancient
   domain: [art]
+  medium: [painting, ceramics]
+  subjects: [animals, figure]
   region: Крит
   tier: 3
   kind: tradition
@@ -180,6 +186,8 @@
   dates: ок. 1600 до н. э. – 220 н. э.
   era: ancient
   domain: [art]
+  medium: [metalwork, sculpture, ceramics]
+  subjects: [ornament, figure, religion-myth]
   region: Китай
   tier: 2
   kind: overview
@@ -237,6 +245,8 @@
   dates: 550 – 330 до н. э.
   era: ancient
   domain: [art, architecture]
+  medium: [architecture, relief]
+  subjects: [city, figure, animals]
   region: Иран
   tier: 3
   kind: period
@@ -300,6 +310,8 @@
   dates: ок. 700 – 200 до н. э.
   era: ancient
   domain: [art, design]
+  medium: [metalwork, decorative-arts]
+  subjects: [animals, ornament]
   region: Евразийская степь — от Дуная до Алтая
   tier: 3
   kind: tradition
@@ -359,7 +371,8 @@
   approx: true
   era: ancient
   domain: [art, architecture]
-  medium: [sculpture, architecture]
+  medium: [sculpture, relief, architecture]
+  subjects: [religion-myth, ornament, city]
   region: Мексика и Центральная Америка
   tier: 2
   kind: overview
@@ -420,6 +433,7 @@
   era: ancient
   domain: [art, architecture]
   medium: [textile, ceramics, metalwork, architecture]
+  subjects: [ornament, animals, portrait]
   region: Перу, Боливия, Эквадор, север Чили
   tier: 2
   kind: overview
@@ -479,6 +493,8 @@
   dates: ок. 2600 до н. э. – 320 н. э.
   era: ancient
   domain: [art, architecture]
+  medium: [sculpture, relief, architecture]
+  subjects: [animals, religion-myth, figure]
   region: Индия, Пакистан
   tier: 3
   kind: overview

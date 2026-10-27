@@ -28,6 +28,7 @@
   medium:
     - decorative-arts
     - painting
+  subjects: [still-life, ornament]
   gallery:
     - file: Zhostovo Painter 01.jpg
       title: Жостовский мастер за работой
@@ -268,6 +269,7 @@
   medium:
     - painting
     - decorative-arts
+  subjects: [everyday-life, religion-myth]
   gallery:
     - file: Palekh miniature.jpg
       title: Палехская миниатюра
@@ -487,6 +489,7 @@
     - textile
     - decorative-arts
     - painting
+  subjects: [ornament]
   gallery:
     - file: Siapo 'elei (bark cloth) from Samoa, 20th century, Honolulu Museum of Art.JPG
       title: Сиапо, Гонолулу
@@ -697,6 +700,7 @@
     - textile
     - decorative-arts
     - painting
+  subjects: [ornament]
   gallery:
     - file: Tapa 'ngatu' doek 'Ko e kalauni', asset n2LVR8nESHbRSZ5X7WeEMIOn.jpg
       title: Нгату «Корона»
@@ -878,6 +882,7 @@
   medium:
     - painting
     - drawing
+  subjects: [religion-myth, animals, ornament]
   gallery:
     - asset: assets/works/mithila-1.jpg
       title: "Митхила: птицы и богиня"
@@ -1119,6 +1124,7 @@
   medium:
     - painting
     - drawing
+  subjects: [religion-myth, everyday-life]
   summary: >-
     Выразительная линия, крупные силуэты и свободный фон делают религиозные и городские сцены компактными
     самостоятельными изображениями.
@@ -1343,6 +1349,7 @@
   region: Асанте, Гана; Кумаси, Бонвире и связанные ткацкие центры
   medium:
     - textile
+  subjects: [ornament]
   gallery:
     - file: Kent_wove.jpg
       title: Кенте
@@ -1561,6 +1568,7 @@
   medium:
     - textile
     - painting
+  subjects: [ornament]
   gallery:
     - file: BogolanMali4.JPG
       title: Боголанфини
@@ -1772,6 +1780,7 @@
     - textile
     - decorative-arts
     - painting
+  subjects: [ornament]
   gallery:
     - file: Masi (barkcloth) from Fiji, Honolulu Museum of Art.JPG
       title: Маси, Гонолулу
@@ -2006,6 +2015,7 @@
     - painting
     - decorative-arts
     - drawing
+  subjects: [animals, everyday-life, ornament]
   gallery:
     - file: Gorodetskaya_rospis_02.jpg
       title: Городецкая роспись

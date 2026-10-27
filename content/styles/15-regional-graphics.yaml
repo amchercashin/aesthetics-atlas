@@ -27,6 +27,7 @@
   medium:
     - print
     - illustration
+  subjects: [religion-myth, everyday-life, animals]
   gallery:
     - file: BearWedding.jpg
       title: Свадьба медведя
@@ -278,6 +279,7 @@
   medium:
     - print
     - illustration
+  subjects: [figure]
   gallery:
     - file: 中國楊柳青木版年畫 忠义堂 (2).jpg
       title: Чжунъи тан / 忠義堂 — Зал верности и справедливости
@@ -567,6 +569,7 @@
   region: Китай; выбранный корпус — Янчжоу и Фошань, один комплект хранится в Тяньцзине
   medium:
     - decorative-arts
+  subjects: [ornament, animals]
   gallery:
     - file: Chinese_Paper_Cutting.png
       title: Китайская бумажная вырезка
@@ -800,6 +803,7 @@
   medium:
     - textile
     - drawing
+  subjects: [ornament]
   gallery:
     - file: Gyaman Adinkra Symbols.jpg
       title: Символы адинкра
@@ -1027,6 +1031,7 @@
     - painting
     - architecture
     - decorative-arts
+  subjects: [ornament]
   gallery:
     - asset: assets/works/ndebele-house-mural.jpg
       title: Настенная роспись ндебеле
@@ -1265,6 +1270,7 @@
   region: "Польша: Лович, Злакув-Боровы и Стшалки в регионе Курпе"
   medium:
     - decorative-arts
+  subjects: [ornament, everyday-life]
   gallery:
     - file: Wycinanka lowicka. 1909 (106673350).jpg
       title: Выцинанка, Лович, 1909
@@ -1514,6 +1520,7 @@
   region: Индия, Западная Бенгалия; корпус современных свитков патуа
   medium:
     - painting
+  subjects: [religion-myth]
   gallery:
     - asset: assets/works/bengal-1.jpg
       title: "Патaчитра: Дурга"
@@ -1779,6 +1786,7 @@
   medium:
     - painting
     - decorative-arts
+  subjects: [everyday-life, animals]
   gallery:
     - asset: assets/works/warli-circular.jpg
       title: "Варли: круговой мотив"
@@ -2044,6 +2052,7 @@
   medium:
     - print
     - illustration
+  subjects: [religion-myth]
   gallery:
     - file: "'Honourable_Offspring_after_Another'._Yangliuqing_New_Year_Picture.jpg"
       title: Янлюцинская новогодняя картина
@@ -2303,6 +2312,7 @@
   region: "Вьетнам: деревня Донгхо, север страны"
   medium:
     - print
+  subjects: [animals, everyday-life]
   gallery:
     - file: Tranh Đông Hồ Ông Táo.jpg
       title: Донгхо. Он Тао
