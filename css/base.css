@@ -242,13 +242,21 @@ dialog { color: var(--ink); }
   background: rgb(10 10 11 / 0.96); color: #eee; overflow: hidden;
 }
 .lightbox[open] { display: grid; grid-template-rows: minmax(0, 1fr) auto; }
+/* Картинка занимает всё, что оставила подпись: высота строки сетки, а не фиксированный отступ. */
 .lightbox img {
-  width: min(86vw, 1200px); height: calc(100vh - 108px); max-width: calc(100vw - 160px); max-height: calc(100vh - 108px);
+  width: min(86vw, 1200px); height: 100%; max-width: calc(100vw - 160px); max-height: 100%; min-height: 0;
   margin: auto; object-fit: contain; grid-row: 1; user-select: none; touch-action: pan-y;
 }
 .lb-bar { display: flex; flex-direction: column; align-items: center; gap: 2px; padding: 8px 56px 18px; }
 .lb-count { min-height: 1.4em; font-size: var(--t-xs); letter-spacing: .06em; color: #aaa; font-variant-numeric: tabular-nums; }
 .lightbox .lb-caption { margin: 0; padding: 0; text-align: center; font-size: var(--t-sm); line-height: 1.4; color: #ddd; max-width: 82ch; }
+/* «Что здесь видно», источник подписи, автор снимка и лицензия: длинный текст прокручивается, картинка остаётся главной. */
+.lb-details { max-width: 82ch; max-height: 22vh; overflow-y: auto; text-align: center; font-size: var(--t-xs); line-height: 1.45; color: #bbb; }
+.lb-details:empty { display: none; }
+.lb-details p { margin: 4px 0 0; }
+.lb-details a { color: #ddd; }
+.lb-details .credit { color: #999; }
+.lightbox .badge-fair { border-color: rgb(255 255 255 / .3); color: #ddd; }
 .lightbox .icon-btn { position: absolute; top: 14px; right: 14px; color: #eee; z-index: 2; }
 .lightbox .lb-close { background: rgb(255 255 255 / .08); border: 1px solid rgb(255 255 255 / .16); border-radius: 50%; }
 .lb-nav {
@@ -264,7 +272,8 @@ dialog { color: var(--ink); }
 .lb-next { right: 18px; }
 .lightbox[data-single] .lb-nav { display: none; }
 @media (max-width: 700px) {
-  .lightbox img { width: calc(100vw - 20px); height: calc(100vh - 96px); max-width: calc(100vw - 20px); max-height: calc(100vh - 96px); }
+  .lightbox img { width: calc(100vw - 20px); max-width: calc(100vw - 20px); }
+  .lb-details { max-height: 26vh; }
   .lb-nav { width: 36px; height: 36px; }
   .lb-nav svg { width: 18px; height: 18px; }
   .lb-prev { left: 8px; } .lb-next { right: 8px; }

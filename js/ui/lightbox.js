@@ -4,6 +4,7 @@ export function initLightbox() {
   if (!dlg) return () => {};
   const img = dlg.querySelector('img');
   const cap = dlg.querySelector('.lb-caption');
+  const details = dlg.querySelector('.lb-details');
   const count = dlg.querySelector('.lb-count');
   const prev = dlg.querySelector('[data-prev]');
   const next = dlg.querySelector('[data-next]');
@@ -16,6 +17,8 @@ export function initLightbox() {
     img.src = item.img.src[1280] ?? item.img.src[960] ?? item.img.src[500];
     img.alt = item.caption || '';
     cap.textContent = item.caption || '';
+    // «Что здесь видно», источники и сведения о файле — уже экранированный шаблон из artItem().
+    if (details) { details.innerHTML = String(item.details ?? ''); details.scrollTop = 0; }
     count.textContent = items.length > 1 ? `${index + 1} / ${items.length}` : '';
     dlg.toggleAttribute('data-single', items.length <= 1);
     prev.disabled = index === 0;
