@@ -9,6 +9,7 @@
     "find": "node scripts/find-media.mjs",
     "test": "node --test test/*.test.mjs",
     "coverage": "node scripts/coverage.mjs",
+    "diff-atlas": "node scripts/diff-atlas.mjs",
     "research:check": "node scripts/check-research.mjs"
   },
   "devDependencies": {
