@@ -120,8 +120,11 @@ export function cleanArtist(text) {
   t = t.replace(/\[https?:\/\/\S+ ([^\]]+)\]/g, '$1');
   // Голый адрес профиля → имя пользователя из последнего сегмента.
   if (/^https?:\/\/\S+$/.test(t)) {
-    const seg = decodeURIComponent(new URL(t).pathname.split('/').filter(Boolean).pop() ?? '').replace(/^User:/i, '');
-    return seg || null;
+    const seg = new URL(t).pathname.split('/').filter(Boolean).pop() ?? '';
+    // Битая %-последовательность не должна ронять сборку: тогда имя остаётся как есть.
+    let name = seg;
+    try { name = decodeURIComponent(seg); } catch { /* оставляем сегмент */ }
+    return name.replace(/^User:/i, '') || null;
   }
   return t;
 }

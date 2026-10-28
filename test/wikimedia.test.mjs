@@ -51,6 +51,7 @@ test('service strings in the Artist field become a plain statement or nothing', 
   assert.equal(cleanArtist('[https://www.flickr.com/people/72746018@N00 Jean-Pierre Dalbéra] from Paris, France'), 'Jean-Pierre Dalbéra from Paris, France');
   assert.equal(cleanArtist('https://www.flickr.com/people/sweet_child_of_mine/'), 'sweet_child_of_mine');
   assert.equal(cleanArtist('http://en.wikipedia.org/wiki/User:I%40n'), 'I@n');
+  assert.equal(cleanArtist('https://example.org/people/Bad%E0%A4%A'), 'Bad%E0%A4%A');
   // Обычные имена не трогаем.
   assert.equal(cleanArtist('Museo de Altamira y D. Rodríguez'), 'Museo de Altamira y D. Rodríguez');
   assert.equal(cleanArtist('Anonymous folk artist'), 'Anonymous folk artist');
