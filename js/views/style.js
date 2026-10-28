@@ -73,6 +73,10 @@ function reviewLine(s) {
   }
   // Галереи добавлены после всех сверок — говорим об этом, пока их не сверят.
   const gallery = s.gallery.length && !r.scope.includes('gallery') ? ' Галерея добавлена позже и с источниками не сверялась.' : '';
+  // reviewed — полная сверка (это проверяет валидатор), список частей уходит в раскрытие.
+  if (r.status === 'reviewed') {
+    return html`<details class="review st-reviewed"><summary>Сверено полностью · ${fmtDay(r.date)}</summary><p>Сверено: ${reviewScopeText(r.scope)}. ${r.note ?? ''} ${about}</p></details>`;
+  }
   return html`<details class="review st-${r.status}"><summary>Сверено: ${reviewScopeText(r.scope)} · ${fmtDay(r.date)}</summary><p>${r.note ?? ''}${gallery} ${about}</p></details>`;
 }
 
