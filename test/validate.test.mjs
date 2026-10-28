@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { validate, relationDateIssue } from '../scripts/lib/validate.mjs';
+import { validate, relationDateIssue, applicableScope, reviewTraceIssues, REVIEW_STANDARD_FROM } from '../scripts/lib/validate.mjs';
 
 const eras = [{ id: 'a', name: 'A', start: -50000, end: 0 }, { id: 'b', name: 'B', start: 0, end: 2030 }];
 const base = (over = {}) => ({
@@ -167,4 +167,55 @@ test('subjects come only from the fixed vocabulary; any marks a universal style;
   }
   assert.ok(validate([root, base({ medium: ['relief', 'relief'] })], eras).errors.some((e) => e.includes('duplicate medium')));
   assert.deepEqual(validate([root, base({ medium: ['sculpture', 'relief'] })], eras).errors, []);
+});
+
+// Сверка: reviewed — только полная; с REVIEW_STANDARD_FROM каждая заявленная часть оставляет следы в данных.
+const reviewSources = [{ id: 'src', title: 'Музей', url: 'https://museum.example/', sourceType: 'museum' }];
+const g = (over = {}) => ({ file: 'G.jpg', title: 'Ваза', author: 'мастер неизвестен', year: 'ок. 500 до н. э.', whyRepresentative: 'Чернофигурная роспись по оранжевой глине.', ...over });
+const traced = (scope, over = {}) => base({
+  parents: [{ id: 'root', type: 'evolved', status: 'verified', sources: ['src'] }],
+  dateKind: 'period',
+  evidence: [{ claim: 'Даты', field: 'dates', source: 'src' }, { claim: 'Описание', field: 'description', source: 'src' }],
+  example: { file: 'X.jpg', title: 't', whyRepresentative: 'Видны признаки.', sources: ['src'] },
+  gallery: [g()],
+  review: { status: 'partial', date: REVIEW_STANDARD_FROM, scope },
+  ...over,
+});
+const reviewErrors = (s) => validate([root, s], eras, reviewSources).errors.filter((e) => e.includes('review'));
+
+test('applicable review scope includes corpus and gallery only when the card has them', () => {
+  assert.deepEqual(applicableScope({}), ['relations', 'dates', 'text', 'images']);
+  assert.deepEqual(applicableScope({ corpus: [{}], gallery: [{}] }), ['relations', 'dates', 'text', 'corpus', 'images', 'gallery']);
+  assert.deepEqual(applicableScope({ corpus: [], gallery: [] }), ['relations', 'dates', 'text', 'images']);
+});
+
+test('status reviewed requires every applicable part of the scope', () => {
+  const full = ['relations', 'dates', 'text', 'images', 'gallery'];
+  assert.deepEqual(reviewErrors(traced(full, { review: { status: 'reviewed', date: REVIEW_STANDARD_FROM, scope: full } })), []);
+  const short = reviewErrors(traced(['relations', 'text'], { review: { status: 'reviewed', date: '2026-10-14', scope: ['relations', 'text'] } }));
+  assert.ok(short.some((e) => e.includes('not checked: dates, images, gallery')), short.join('\n'));
+  // partial с неполной сверкой — нормальное состояние.
+  assert.deepEqual(reviewErrors(traced(['relations'])), []);
+});
+
+test('review traces are enforced from the standard date, not for older reviews', () => {
+  const bare = { parents: [{ id: 'root', type: 'evolved' }], dateKind: undefined, evidence: [], example: { file: 'X.jpg', title: 't' }, gallery: [g({ author: 'Unknown authorUnknown author', year: null, whyRepresentative: 'Ваза' })] };
+  const scope = ['relations', 'dates', 'text', 'images', 'gallery'];
+  const old = traced(scope, { ...bare, review: { status: 'partial', date: '2026-10-16', scope } });
+  assert.deepEqual(reviewErrors(old), []);
+  const fresh = reviewErrors(traced(scope, bare));
+  for (const part of ['explicit status', 'dateKind', 'field "dates"', 'evidence for the text', 'whyRepresentative', 'caption sources', 'author of the work', 'needs a year', 'not the title']) {
+    assert.ok(fresh.some((e) => e.includes(part)), `${part}\n${fresh.join('\n')}`);
+  }
+});
+
+test('review traces accept corpus dates, termAttested and honest unknowns', () => {
+  const corpus = [{ workId: 'w', file: 'C.jpg', title: 'Работа', author: 'мастер неизвестен', year: 1900, sources: ['src'], whyRepresentative: 'Узор.' }];
+  assert.deepEqual(reviewTraceIssues({ review: { scope: ['dates'] }, dateKind: 'corpus', corpus }), []);
+  assert.deepEqual(reviewTraceIssues({ review: { scope: ['dates'] }, dateKind: 'popularity', termAttested: { year: 2014, source: 'src' } }), []);
+  assert.deepEqual(reviewTraceIssues({ review: { scope: ['gallery'] }, gallery: [g({ author: 'автор неизвестен', year: 'дата неизвестна' })] }), []);
+  // Локальная копия или ссылка на работу без источника подписи не проходит.
+  const local = g({ file: undefined, asset: 'assets/works/a.jpg' });
+  assert.ok(reviewTraceIssues({ review: { scope: ['gallery'] }, gallery: [local] }).some((e) => e.includes('caption sources')));
+  assert.deepEqual(reviewTraceIssues({ review: { scope: ['gallery'] }, gallery: [{ ...local, sources: ['src'] }] }), []);
 });

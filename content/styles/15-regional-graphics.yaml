@@ -1726,7 +1726,7 @@
       - qagoma-jaba-nirbhaya-2013
       - banglanatak-swarna-colour-process
   review:
-    status: reviewed
+    status: partial
     date: "2026-10-14"
     scope: [dates, corpus]
     note: >-

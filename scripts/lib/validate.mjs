@@ -27,6 +27,9 @@ export const SOURCE_TYPES = ['museum', 'scholarly', 'primary', 'official', 'ency
 export const REVIEW_STATUS = ['reviewed', 'partial'];
 // Что именно сверено: заголовок отметки на странице собирается из этого списка.
 export const REVIEW_SCOPE = ['relations', 'dates', 'text', 'corpus', 'images', 'gallery'];
+// С этой даты отметка о сверке должна оставлять следы в данных (reviewTraceIssues). Более ранние отметки
+// ставились до правил; порог снимается, когда пройдут все партии (docs/superpowers/plans/2026-10-28-card-review.md).
+export const REVIEW_STANDARD_FROM = '2026-10-28';
 const HEX = /^#[0-9a-f]{6}$/i;
 const ID = /^[a-z0-9]+(-[a-z0-9]+)*$/;
 const DATE = /^\d{4}(-\d{2}(-\d{2})?)?$/;
@@ -55,6 +58,50 @@ export function relationDateIssue(parent, child, type, now = 2026) {
     return `${type === 'influence' ? 'влияние' : 'реакция на'} "${parent.id}", начавшийся после конца стиля (${parent.start} > ${child.end ?? now})`;
   }
   return null;
+}
+
+// Части сверки, которые есть у этой карточки: корпус и галерея — только если они заполнены.
+export const applicableScope = (s) => REVIEW_SCOPE.filter((k) => (k === 'corpus' ? s.corpus?.length : k === 'gallery' ? s.gallery?.length : true));
+
+// Служебные строки вместо автора: метки и текст шаблонов Commons, вики-разметка.
+const SERVICE_AUTHOR = /unknown (?:author|artist)|^anonymous$|photo of 2D work|\{\{|\[\[|^\[https?:/i;
+const filled = (v) => v != null && String(v).trim() !== '';
+const sameText = (a, b) => String(a ?? '').trim().toLowerCase().replace(/[«»"'.]/g, '') === String(b ?? '').trim().toLowerCase().replace(/[«»"'.]/g, '');
+const isReference = (im) => /^assets\/works\//.test(im.asset ?? '') || im.reference != null;
+
+// Следы сверки: что должно быть в данных у каждой части review.scope. Структура — не доказательство
+// проверки, но заявить часть без единого источника или подписи нельзя.
+export function reviewTraceIssues(s) {
+  const scope = s.review?.scope ?? [];
+  const out = [];
+  if (scope.includes('relations')) {
+    for (const p of s.parents ?? []) if (!p.status) out.push(`relations: relation to "${p.id}" needs an explicit status`);
+  }
+  if (scope.includes('dates')) {
+    if (!s.dateKind) out.push('dates: dateKind is missing');
+    const corpusDated = s.dateKind === 'corpus' && (s.corpus ?? []).length > 0;
+    const dated = (s.evidence ?? []).some((e) => e.field === 'dates') || s.termAttested;
+    if (!dated && !corpusDated) out.push('dates: needs evidence with field "dates" or termAttested');
+  }
+  if (scope.includes('text')) {
+    const nonText = new Set(['dates', 'termAttested', 'example', 'gallery', 'corpus']);
+    if (!(s.evidence ?? []).some((e) => e.field && !nonText.has(e.field))) out.push('text: needs evidence for the text (summary, description, scope, traits…)');
+  }
+  if (scope.includes('images')) {
+    const ex = s.example ?? {};
+    if (!filled(ex.whyRepresentative)) out.push('images: example needs whyRepresentative');
+    if (!asList(ex.sources).length) out.push('images: example needs caption sources');
+  }
+  if (scope.includes('gallery')) {
+    (s.gallery ?? []).forEach((g, i) => {
+      const at = `gallery[${i}] «${g.title ?? ''}»`;
+      if (!filled(g.author) || SERVICE_AUTHOR.test(String(g.author))) out.push(`${at}: needs the author of the work (or «автор неизвестен»)`);
+      if (!filled(g.year)) out.push(`${at}: needs a year (or «дата неизвестна»)`);
+      if (!filled(g.whyRepresentative) || sameText(g.whyRepresentative, g.title)) out.push(`${at}: needs whyRepresentative that is not the title`);
+      if (isReference(g) && !asList(g.sources).length) out.push(`${at}: local copy or reference needs caption sources`);
+    });
+  }
+  return out;
 }
 
 function checkImage(at, im, where, sourceIds, errors) {
@@ -202,6 +249,10 @@ export function validate(styles, eras, sources = []) {
       else {
         for (const x of scope) if (!REVIEW_SCOPE.includes(x)) errors.push(`${at} bad review.scope "${x}"`);
         if (new Set(scope).size !== scope.length) errors.push(`${at} duplicate review.scope`);
+        // reviewed — полная сверка: все части, которые есть у карточки. Иначе partial.
+        const missing = applicableScope(s).filter((k) => !scope.includes(k));
+        if (s.review.status === 'reviewed' && missing.length) errors.push(`${at} review.status reviewed, but not checked: ${missing.join(', ')}`);
+        if ((ymd(s.review.date) ?? '') >= REVIEW_STANDARD_FROM) for (const issue of reviewTraceIssues(s)) errors.push(`${at} review ${issue}`);
       }
     }
 

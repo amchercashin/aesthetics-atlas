@@ -137,7 +137,7 @@
       field: corpus
       source: rusmuseum-khokhloma-dish
   review:
-    status: reviewed
+    status: partial
     date: "2026-10-14"
     scope: [text, corpus]
     note: >-
@@ -320,7 +320,7 @@
       field: corpus
       source: ngv-kngwarray-awely
   review:
-    status: reviewed
+    status: partial
     date: "2026-10-14"
     scope: [text, corpus]
     note: >-
@@ -491,7 +491,7 @@
       field: corpus
       source: az-zverev-portrait-corpus
   review:
-    status: reviewed
+    status: partial
     date: "2026-10-14"
     scope: [text, corpus]
     note: >-
@@ -685,7 +685,7 @@
       field: corpus
       source: cincinnati-sikander-audio
   review:
-    status: reviewed
+    status: partial
     date: "2026-10-14"
     scope: [text, corpus]
     note: >-
@@ -875,7 +875,7 @@
       field: dates
       source: curtin-carrolup-transfer
   review:
-    status: reviewed
+    status: partial
     date: "2026-10-14"
     scope: [text, corpus]
     note: >-
@@ -1087,7 +1087,7 @@
       field: corpus
       source: met-kawakubo-2015
   review:
-    status: reviewed
+    status: partial
     date: "2026-10-14"
     scope: [text, corpus]
     note: >-
@@ -1297,7 +1297,7 @@
       field: corpus
       source: walker-abad-liberty
   review:
-    status: reviewed
+    status: partial
     date: "2026-10-14"
     scope: [text, corpus]
     note: >-
@@ -1488,7 +1488,7 @@
       field: corpus
       source: espacio-mahlangu-2016
   review:
-    status: reviewed
+    status: partial
     date: "2026-10-14"
     scope: [text, corpus]
     note: >-
@@ -1698,7 +1698,7 @@
       field: creators
       source: ngv-rennie-initiation
   review:
-    status: reviewed
+    status: partial
     date: "2026-10-14"
     scope: [dates, corpus]
     note: >-
@@ -1898,7 +1898,7 @@
       field: corpus
       source: met-hokusai-kajikazawa
   review:
-    status: reviewed
+    status: partial
     date: "2026-10-14"
     scope: [text, corpus]
     note: >-
@@ -2106,7 +2106,7 @@
       field: creators
       source: animator-norstein-tales
   review:
-    status: reviewed
+    status: partial
     date: "2026-10-14"
     scope: [corpus]
     note: >-
