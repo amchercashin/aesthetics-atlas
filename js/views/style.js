@@ -4,6 +4,7 @@
 import { html, mount, safeUrl } from '../html.js';
 import { fmtDates, fmtYear, RELATION, DOMAIN, KIND, DATE_KIND, REL_STATUS, SUBJECT, MEDIUM, roleLabel, plural, reviewScopeText } from '../format.js?v=subjects-4';
 import { frame, credit } from '../ui/image.js?v=author-pilot';
+import { artItem } from '../ui/art-item.js?v=review-0';
 import { eraTag, thumb, footer } from '../ui/common.js?v=links-1';
 import { toast } from '../ui/toast.js';
 import notfound from './notfound.js';
@@ -72,6 +73,10 @@ function reviewLine(s) {
   }
   // Галереи добавлены после всех сверок — говорим об этом, пока их не сверят.
   const gallery = s.gallery.length && !r.scope.includes('gallery') ? ' Галерея добавлена позже и с источниками не сверялась.' : '';
+  // reviewed — полная сверка (это проверяет валидатор), список частей уходит в раскрытие.
+  if (r.status === 'reviewed') {
+    return html`<details class="review st-reviewed"><summary>Сверено полностью · ${fmtDay(r.date)}</summary><p>Сверено: ${reviewScopeText(r.scope)}. ${r.note ?? ''} ${about}</p></details>`;
+  }
   return html`<details class="review st-${r.status}"><summary>Сверено: ${reviewScopeText(r.scope)} · ${fmtDay(r.date)}</summary><p>${r.note ?? ''}${gallery} ${about}</p></details>`;
 }
 
@@ -135,14 +140,12 @@ export default {
     const galleryCover = img ? null : s.gallery.find((g) => g.img) ?? null;
     const cover = img ?? galleryCover?.img ?? null;
     const coverTitle = img ? ex.title : galleryCover?.title ?? null;
-    const coverAuthor = img ? ex.author : galleryCover?.author ?? null;
-    const coverYear = img ? ex.year : galleryCover?.year ?? null;
     const galleryImgs = s.gallery.filter((g) => g.img);
     const lightboxItems = [];
-    if (cover) lightboxItems.push({ img: cover, caption: [coverTitle, coverAuthor, coverYear].filter(Boolean).join(' · ') });
+    if (cover) lightboxItems.push(artItem(img ? ex : galleryCover, store, cover));
     for (const g of galleryImgs) {
       if (cover && g.img.page === cover.page) continue;
-      lightboxItems.push({ img: g.img, caption: [g.title, g.author, g.year, g.place].filter(Boolean).join(' · ') });
+      lightboxItems.push(artItem(g, store));
     }
     const thumbItems = galleryImgs.filter((g) => !cover || g.img.page !== cover.page);
     const galleryRefs = s.gallery.filter((g) => !g.img && g.external);

@@ -3,7 +3,7 @@ import { loadAtlas } from './store.js?v=ai-1';
 import { parseHash } from './router.js?v=map4';
 import { initTheme } from './theme.js';
 import { initSearch } from './ui/search-dialog.js?v=subjects-4';
-import { initLightbox } from './ui/lightbox.js?v=lineage-2';
+import { initLightbox } from './ui/lightbox.js?v=review-0';
 import { initImageEvents, markLoaded } from './ui/image.js?v=author-pilot';
 import { initHeaderAutoHide } from './ui/header.js?v=mob-1';
 import { html, mount } from './html.js';
@@ -33,7 +33,7 @@ async function route(base, { first = false } = {}) {
     current.instance.update({ ...base, ...r });
     return;
   }
-  const mod = await import(`./views/${r.view}.js?v=subjects-5`);
+  const mod = await import(`./views/${r.view}.js?v=review-0`);
   if (seq !== routeSeq) return;
   const swap = () => {
     current?.instance?.destroy?.();

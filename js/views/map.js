@@ -10,6 +10,7 @@ import { segmentTicks } from '../timescale.js';
 import { routeBranches } from '../layout.js?v=seas-1';
 import { OV_K, LONG, R, mapTimeScale, mapLayoutNodes, layoutMap } from '../map-layout.js?v=seas-1';
 import { frame, markLoaded } from '../ui/image.js?v=author-pilot';
+import { artItem } from '../ui/art-item.js?v=review-0';
 import { eraTag, thumb } from '../ui/common.js?v=author-pilot';
 import { replaceParams, pushParams } from '../router.js?v=map4';
 import { pushStep, toParam, parseTrail } from '../trail.js?v=map4';
@@ -1441,13 +1442,13 @@ export default {
       const nRel = s.parents.length + s.children.length + s.comparisons.length + (s.contexts?.length ?? 0);
       const arts = [];
       const seen = new Set();
-      const addArt = (img, title, author, year, place) => {
-        if (!img || seen.has(img.page)) return;
-        seen.add(img.page);
-        arts.push({ img, caption: [title, author, year, place].filter(Boolean).join(' · ') });
+      const addArt = (work) => {
+        if (!work?.img || seen.has(work.img.page)) return;
+        seen.add(work.img.page);
+        arts.push(artItem(work, store));
       };
-      addArt(s.example.img, s.example.title, s.example.author, s.example.year, s.example.place);
-      for (const g of s.gallery ?? []) addArt(g.img, g.title, g.author, g.year, g.place);
+      addArt(s.example);
+      for (const g of s.gallery ?? []) addArt(g);
       const cover = arts[0]?.img ?? null;
       mount(panel, html`
         <button class="icon-btn mp-close" type="button" data-close-panel aria-label="Закрыть и вернуться к прежнему виду"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg></button>

@@ -59,6 +59,25 @@ function apiUrl(site, params) {
   return u.toString();
 }
 
+// Ответ API без нужного раздела (ошибка, лимит запросов) — сбой запроса, а не «страницы нет».
+// Такой ответ нельзя класть в кэш: иначе существующий файл навсегда станет «отсутствующим».
+export function apiProblem(resp, key = 'query') {
+  if (resp?.error) return `${resp.error.code ?? 'error'}${resp.error.info ? `: ${resp.error.info}` : ''}`;
+  if (!resp || typeof resp !== 'object' || !(key in resp)) return `no "${key}" in response`;
+  return null;
+}
+
+async function fetchApi(url, key = 'query', tries = 5) {
+  let delay = 2000;
+  for (let i = 0; ; i++) {
+    const resp = await fetchWithRetry(url);
+    const problem = apiProblem(resp, key);
+    if (!problem) return resp;
+    if (i === tries - 1) throw new Error(`Wikimedia API: ${problem} (${url})`);
+    await sleep(delay); delay *= 2;
+  }
+}
+
 // ---------- HTML → plain text (метаданные Commons приходят HTML-фрагментами) ----------
 const ENTITIES = { amp: '&', lt: '<', gt: '>', quot: '"', apos: "'", nbsp: ' ', ndash: '–', mdash: '—', hellip: '…' };
 export function htmlToText(html) {
@@ -85,6 +104,31 @@ export function firstHref(html) {
   return href;
 }
 
+// Поле Artist на Commons иногда содержит не имя, а служебный текст шаблона, ссылку или склейку
+// двух меток. null — автор не указан.
+const UNKNOWN = /^(?:unknown (?:author|artist)|anonymous|author unknown)$/i;
+export function cleanArtist(text) {
+  let t = String(text ?? '').replace(/\s+/g, ' ').trim();
+  if (!t || /^photo of 2D work/i.test(t)) return null;
+  // «Unknown authorUnknown author» и «Anonymous (Moche culture)Unknown author»: метка шаблона, склеенная без пробела.
+  t = t.replace(/(\S)(Unknown (?:author|artist))+$/i, '$1').replace(/^(Unknown (?:author|artist))\1+$/i, '$1').trim();
+  if (UNKNOWN.test(t)) return 'автор неизвестен';
+  // «No machine-readable author provided. X assumed (based on copyright claims).»
+  const assumed = /^No machine-readable author provided\. (.+?) assumed \(based on copyright claims\)\.?$/i.exec(t);
+  if (assumed) return `${assumed[1].replace(/~commonswiki$/, '')} (предположительно)`;
+  // Вики-ссылка «[https://… Имя] from …» → «Имя from …».
+  t = t.replace(/\[https?:\/\/\S+ ([^\]]+)\]/g, '$1');
+  // Голый адрес профиля → имя пользователя из последнего сегмента.
+  if (/^https?:\/\/\S+$/.test(t)) {
+    const seg = new URL(t).pathname.split('/').filter(Boolean).pop() ?? '';
+    // Битая %-последовательность не должна ронять сборку: тогда имя остаётся как есть.
+    let name = seg;
+    try { name = decodeURIComponent(seg); } catch { /* оставляем сегмент */ }
+    return name.replace(/^User:/i, '') || null;
+  }
+  return t;
+}
+
 // ---------- Файлы ----------
 // ref: "Имя файла.jpg" (Commons) или "enwiki:Имя файла.jpg" (локальный файл en.wikipedia, обычно fair use)
 export function parseFileRef(ref) {
@@ -109,28 +153,45 @@ export async function resolveFiles(refs, { offline = false, refresh = false, log
   }
   for (const site of Object.keys(todo)) {
     const list = todo[site];
-    for (let i = 0; i < list.length; i += 40) {
-      const batch = list.slice(i, i + 40);
-      log(`  wikimedia: ${site} files ${i + 1}–${i + batch.length} of ${list.length}`);
-      const titles = batch.map((b) => 'File:' + b.name).join('|');
-      const perWidth = {};
-      for (const w of THUMB_WIDTHS) {
-        perWidth[w] = await fetchWithRetry(apiUrl(site, {
-          action: 'query', titles, prop: 'imageinfo',
-          iiprop: w === THUMB_WIDTHS[0] ? 'url|size|mime|extmetadata' : 'url',
-          iiurlwidth: String(w),
-          iiextmetadatafilter: 'Artist|LicenseShortName|LicenseUrl|NonFree|Credit|UsageTerms|ObjectName|DateTimeOriginal',
-        }));
-      }
+    const retry = [];
+    const settle = (batch, perWidth) => {
       for (const b of batch) {
-        const rec = buildFileRecord(b, perWidth);
+        const status = fileStatus(b.name, perWidth);
+        if (status === 'retry') { retry.push(b); continue; }
+        const rec = status === 'ok' ? buildFileRecord(b, perWidth) : { missing: true, site: b.site, name: b.name };
         c['file:' + b.key] = rec;
         out.set(b.ref, rec);
       }
       saveCache();
+    };
+    for (let i = 0; i < list.length; i += 40) {
+      const batch = list.slice(i, i + 40);
+      log(`  wikimedia: ${site} files ${i + 1}–${i + batch.length} of ${list.length}`);
+      settle(batch, await fetchFiles(site, batch));
     }
+    // Файлы без imageinfo, которые API не назвал отсутствующими (ответ обрезан или сбой), — по одному.
+    for (const b of retry.splice(0)) {
+      log(`  wikimedia: retry ${site} file "${b.name}"`);
+      settle([b], await fetchFiles(site, [b]));
+    }
+    // Не разрешились и по одному: в кэш не пишем, сборка покажет ошибку для этого файла.
+    for (const b of retry) out.set(b.ref, { missing: true, error: 'no imageinfo in API response', site: b.site, name: b.name });
   }
   return out;
+}
+
+async function fetchFiles(site, batch) {
+  const titles = batch.map((b) => 'File:' + b.name).join('|');
+  const perWidth = {};
+  for (const w of THUMB_WIDTHS) {
+    perWidth[w] = await fetchApi(apiUrl(site, {
+      action: 'query', titles, prop: 'imageinfo',
+      iiprop: w === THUMB_WIDTHS[0] ? 'url|size|mime|extmetadata' : 'url',
+      iiurlwidth: String(w),
+      iiextmetadatafilter: 'Artist|LicenseShortName|LicenseUrl|NonFree|Credit|UsageTerms|ObjectName|DateTimeOriginal',
+    }));
+  }
+  return perWidth;
 }
 
 function findPage(resp, name) {
@@ -139,18 +200,25 @@ function findPage(resp, name) {
   return resp.query?.pages?.find((p) => p.title === norm) ?? null;
 }
 
+// ok — у файла есть imageinfo во всех ответах; missing — API прямо говорит, что файла нет;
+// retry — сведений нет, но и отсутствие не подтверждено (обрезанный ответ, сбой).
+// Файл с Commons, запрошенный через en.wikipedia, приходит с missing:true, но с imageinfo
+// (imagerepository: "shared") — это валидный файл.
+export function fileStatus(name, perWidth) {
+  const pages = THUMB_WIDTHS.map((w) => findPage(perWidth[w] ?? {}, name));
+  const info = (p) => p?.imageinfo?.[0];
+  if (pages.every((p) => info(p)?.url && !info(p).filemissing)) return 'ok';
+  const base = pages[0];
+  if (base && !info(base)?.url && (base.missing || base.invalid || info(base)?.filemissing)) return 'missing';
+  return 'retry';
+}
+
 function buildFileRecord(b, perWidth) {
   const base = findPage(perWidth[THUMB_WIDTHS[0]], b.name);
-  // Файл с Commons, запрошенный через en.wikipedia, приходит с missing:true, но с imageinfo
-  // (imagerepository: "shared") — это валидный файл.
-  if (!base || !base.imageinfo?.length) return { missing: true, site: b.site, name: b.name };
   const ii = base.imageinfo[0];
   const em = ii.extmetadata ?? {};
   const thumbs = {};
-  for (const w of THUMB_WIDTHS) {
-    const p = findPage(perWidth[w], b.name);
-    thumbs[w] = p?.imageinfo?.[0]?.thumburl ?? ii.url;
-  }
+  for (const w of THUMB_WIDTHS) thumbs[w] = findPage(perWidth[w], b.name).imageinfo[0].thumburl ?? ii.url;
   const nonfree = String(pickMeta(em, 'NonFree') ?? '').toLowerCase() === 'true';
   return {
     site: b.site,
@@ -183,23 +251,26 @@ export async function resolveWiki(entries, { offline = false, refresh = false, l
   for (const site of ['enwiki', 'ruwiki']) {
     const titles = [...need[site]];
     const todo = titles.filter((t) => refresh || !c[`wiki:${site}:${t}`]);
+    // Неразрешённое в этот раз (офлайн, сбой) в кэш не пишется: следующая сборка спросит снова.
+    const transient = new Map();
     if (offline) {
-      for (const t of todo) c[`wiki:${site}:${t}`] ??= { missing: true, error: 'not cached (offline)' };
+      for (const t of todo) if (!c[`wiki:${site}:${t}`]) transient.set(t, { missing: true, error: 'not cached (offline)' });
     } else {
       for (let i = 0; i < todo.length; i += 40) {
         const batch = todo.slice(i, i + 40);
         log(`  wikimedia: ${site} articles ${i + 1}–${i + batch.length} of ${todo.length}`);
-        const resp = await fetchWithRetry(apiUrl(site, {
+        const resp = await fetchApi(apiUrl(site, {
           action: 'query', titles: batch.join('|'), redirects: '1',
           prop: 'info|langlinks|pageprops', ppprop: 'wikibase_item', inprop: 'url', lllang: site === 'enwiki' ? 'ru' : 'en', lllimit: 'max',
         }));
-        const norm = new Map((resp.query?.normalized ?? []).map((n) => [n.from, n.to]));
-        const redir = new Map((resp.query?.redirects ?? []).map((n) => [n.from, n.to]));
+        const norm = new Map((resp.query.normalized ?? []).map((n) => [n.from, n.to]));
+        const redir = new Map((resp.query.redirects ?? []).map((n) => [n.from, n.to]));
         for (const t of batch) {
           let tt = norm.get(t) ?? t;
           tt = redir.get(tt) ?? tt;
-          const page = resp.query?.pages?.find((p) => p.title === tt);
-          if (!page || page.missing || page.invalid) { c[`wiki:${site}:${t}`] = { missing: true }; continue; }
+          const page = resp.query.pages?.find((p) => p.title === tt);
+          if (!page) { transient.set(t, { missing: true, error: 'not in API response' }); continue; }
+          if (page.missing || page.invalid) { c[`wiki:${site}:${t}`] = { missing: true }; continue; }
           const ll = page.langlinks?.[0];
           c[`wiki:${site}:${t}`] = {
             title: page.title,
@@ -211,21 +282,21 @@ export async function resolveWiki(entries, { offline = false, refresh = false, l
         saveCache();
       }
     }
-    for (const t of titles) out.set(`${site}:${t}`, c[`wiki:${site}:${t}`]);
+    for (const t of titles) out.set(`${site}:${t}`, transient.get(t) ?? c[`wiki:${site}:${t}`]);
   }
   return out;
 }
 
 // ---------- Поиск кандидатов (для подбора картинок вручную) ----------
 export async function searchCommons(query, limit = 15) {
-  const resp = await fetchWithRetry(apiUrl('commons', {
+  const resp = await fetchApi(apiUrl('commons', {
     action: 'query', list: 'search', srsearch: query, srnamespace: '6', srlimit: String(limit),
   }));
   return (resp.query?.search ?? []).map((s) => s.title.replace(/^File:/, ''));
 }
 
 export async function articleImages(site, title) {
-  const resp = await fetchWithRetry(apiUrl(site, {
+  const resp = await fetchApi(apiUrl(site, {
     action: 'query', titles: title, redirects: '1', prop: 'images|pageimages', imlimit: 'max', piprop: 'name',
   }));
   const page = resp.query?.pages?.[0];
@@ -239,12 +310,12 @@ export async function commonsCategoriesExist(names, { offline = false } = {}) {
   if (!offline) {
     for (let i = 0; i < todo.length; i += 40) {
       const batch = todo.slice(i, i + 40);
-      const resp = await fetchWithRetry(apiUrl('commons', { action: 'query', titles: batch.map((n) => 'Category:' + n).join('|'), prop: 'info' }));
-      const norm = new Map((resp.query?.normalized ?? []).map((x) => [x.from, x.to]));
+      const resp = await fetchApi(apiUrl('commons', { action: 'query', titles: batch.map((n) => 'Category:' + n).join('|'), prop: 'info' }));
+      const norm = new Map((resp.query.normalized ?? []).map((x) => [x.from, x.to]));
       for (const n of batch) {
         const t = norm.get('Category:' + n) ?? 'Category:' + n;
-        const page = resp.query?.pages?.find((p) => p.title === t);
-        c['cat:' + n] = !!page && !page.missing;
+        const page = resp.query.pages?.find((p) => p.title === t);
+        if (page) c['cat:' + n] = !page.missing;
       }
       saveCache();
     }
@@ -260,7 +331,7 @@ export async function commonsCategories(qids, { offline = false } = {}) {
   if (!offline) {
     for (let i = 0; i < todo.length; i += 45) {
       const batch = todo.slice(i, i + 45);
-      const resp = await fetchWithRetry(`https://www.wikidata.org/w/api.php?action=wbgetentities&format=json&props=claims&ids=${batch.join('|')}`);
+      const resp = await fetchApi(`https://www.wikidata.org/w/api.php?action=wbgetentities&format=json&props=claims&ids=${batch.join('|')}`, 'entities');
       for (const q of batch) {
         const v = resp.entities?.[q]?.claims?.P373?.[0]?.mainsnak?.datavalue?.value ?? null;
         c['p373:' + q] = v;

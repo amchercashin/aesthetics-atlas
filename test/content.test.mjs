@@ -5,7 +5,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import yaml from 'js-yaml';
-import { validate, SUBJECTS, MEDIUMS } from '../scripts/lib/validate.mjs';
+import { validate, reviewTraceIssues, SUBJECTS, MEDIUMS } from '../scripts/lib/validate.mjs';
 import { buildRecord } from '../scripts/lib/record.mjs';
 import { createStore } from '../js/store.js';
 import { buildIndex, search } from '../js/search.js';
@@ -106,11 +106,14 @@ test('every tier-1 card has visual promptCues without names of artists', () => {
   }
 });
 
-test('every review lists its scope, and no gallery is claimed as checked yet', () => {
+// Правила следов сверки (reviewTraceIssues) валидатор применяет к отметкам с REVIEW_STANDARD_FROM.
+// Здесь — что сверенная галерея действительно подписана: этот тест заменил запрет на gallery в scope.
+test('every review lists its scope, and a checked gallery carries its captions', () => {
   for (const s of styles.filter((x) => x.review)) {
     assert.ok(Array.isArray(s.review.scope) && s.review.scope.length, `${s.id} review.scope`);
-    // Галереи добавлены 17–18.10.2026, после всех сверок; снять это условие, когда их сверят.
-    assert.ok(!s.review.scope.includes('gallery'), `${s.id} gallery is not reviewed yet`);
+    if (!s.review.scope.includes('gallery')) continue;
+    const issues = reviewTraceIssues({ ...s, review: { scope: ['gallery'] } });
+    assert.deepEqual(issues, [], `${s.id}: ${issues.join('; ')}`);
   }
 });
 

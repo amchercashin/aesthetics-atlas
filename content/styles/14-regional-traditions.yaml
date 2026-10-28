@@ -203,7 +203,7 @@
       reviewed: "2026-10-14"
       note: Репродукция доступна на предметной странице источника.
   review:
-    status: reviewed
+    status: partial
     date: "2026-10-14"
     scope: [dates, corpus]
     note: >-
@@ -437,7 +437,7 @@
       reviewed: "2026-10-14"
       note: Репродукция доступна на предметной странице источника.
   review:
-    status: reviewed
+    status: partial
     date: "2026-10-14"
     scope: [dates, corpus]
     note: >-
@@ -827,7 +827,7 @@
       reviewed: "2026-10-14"
       note: Репродукция доступна на предметной странице источника.
   review:
-    status: reviewed
+    status: partial
     date: "2026-10-14"
     scope: [dates, corpus]
     note: >-
@@ -1290,7 +1290,7 @@
       - vam-kalighat
       - vam-kipling-popular-art
   review:
-    status: reviewed
+    status: partial
     date: "2026-10-14"
     scope: [corpus]
     note: >-
@@ -1506,7 +1506,7 @@
       - met-asante-wrapper-316800
       - met-african-textiles-2008
   review:
-    status: reviewed
+    status: partial
     date: "2026-10-14"
     scope: [corpus]
     note: >-
@@ -1721,7 +1721,7 @@
       - cma-diarra-2016-49
       - met-african-textiles-2008
   review:
-    status: reviewed
+    status: partial
     date: "2026-10-14"
     scope: [dates, corpus]
     note: >-
@@ -2186,7 +2186,7 @@
       reviewed: "2026-10-14"
       note: Репродукция доступна на предметной странице источника.
   review:
-    status: reviewed
+    status: partial
     date: "2026-10-14"
     scope: [dates, corpus]
     note: >-

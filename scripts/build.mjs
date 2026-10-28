@@ -8,7 +8,7 @@ import yaml from 'js-yaml';
 import { validateNebulae, resolveNebulae } from './lib/nebulae.mjs';
 import { validate, validatePromptSubjects, ymd } from './lib/validate.mjs';
 import { buildRecord, childrenOf, comparisonsOf, contextsOf } from './lib/record.mjs';
-import { resolveFiles, resolveWiki, commonsCategories, commonsCategoriesExist, saveCache } from './lib/wikimedia.mjs';
+import { resolveFiles, resolveWiki, commonsCategories, commonsCategoriesExist, saveCache, cleanArtist } from './lib/wikimedia.mjs';
 import { downloadThumb, paletteFromImages, paletteFromHexList, mapLimit } from './lib/palette.mjs';
 import { resolveLocalAssets } from './lib/local-images.mjs';
 import { worksOf, imageUsage } from './lib/works.mjs';
@@ -47,7 +47,7 @@ try {
 for (const s of styles) {
   for (const ref of worksOf(s).map((g) => g.file).filter(Boolean)) {
     const m = media.get(ref);
-    if (!m || m.missing) errors.push(`[${s.id}] image not found on Wikimedia: "${ref}"`);
+    if (!m || m.missing) errors.push(`[${s.id}] image ${m?.error ? `not resolved (${m.error})` : 'not found'} on Wikimedia: "${ref}"`);
   }
 }
 
@@ -62,8 +62,9 @@ function wikiLinks(s) {
   const links = [];
   let en = w.en ? wiki.get(`enwiki:${w.en}`) : null;
   let ru = w.ru ? wiki.get(`ruwiki:${w.ru}`) : null;
-  if (w.en && (!en || en.missing)) { errors.push(`[${s.id}] en.wikipedia article not found: "${w.en}"`); en = null; }
-  if (w.ru && (!ru || ru.missing)) { errors.push(`[${s.id}] ru.wikipedia article not found: "${w.ru}"`); ru = null; }
+  const notFound = (r) => (r?.error ? `not resolved (${r.error})` : 'not found');
+  if (w.en && (!en || en.missing)) { errors.push(`[${s.id}] en.wikipedia article ${notFound(en)}: "${w.en}"`); en = null; }
+  if (w.ru && (!ru || ru.missing)) { errors.push(`[${s.id}] ru.wikipedia article ${notFound(ru)}: "${w.ru}"`); ru = null; }
   const ruLink = ru ? { title: ru.title, url: ru.url } : en?.other;
   const enLink = en ? { title: en.title, url: en.url } : ru?.other;
   if (ruLink) links.push({ title: ruLink.title, url: ruLink.url, src: 'Википедия', lang: 'ru' });
@@ -118,7 +119,7 @@ const img = (ref) => {
   return {
     ...(m.local ? { local: true, kind: m.kind } : {}),
     w: m.width, h: m.height, src: m.thumbs, page: m.page,
-    artist: m.artist, artistUrl: m.artistUrl, license: m.license, licenseUrl: m.licenseUrl,
+    artist: m.local ? m.artist : cleanArtist(m.artist), artistUrl: m.artistUrl, license: m.license, licenseUrl: m.licenseUrl,
     credit: m.credit, nonfree: m.nonfree,
   };
 };
