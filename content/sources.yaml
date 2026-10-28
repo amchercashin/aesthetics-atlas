@@ -9,8 +9,8 @@
   url: https://doi.org/10.1038/s41586-025-09968-y
   sourceType: scholarly
   published: 2026-01-21
-  checked: 2026-10-13
-  note: "Аннотация (PubMed 41565802). U-серия по кальциту поверх трафарета ладони в Лианг-Метандуно (о. Муна) — 71,6 ± 3,8 тыс. лет; минимальный возраст изображения 67,8 тыс. лет. Методика в атласе не анализировалась."
+  checked: 2026-10-28
+  note: "Аннотация (PubMed 41565802; перечитана через Europe PMC). U-серия по кальциту поверх трафарета ладони в Лианг-Метандуно (о. Муна) — 71,6 ± 3,8 тыс. лет; минимальный возраст изображения 67,8 тыс. лет — на 1,1 тыс. лет больше опубликованного минимума испанского трафарета, приписываемого неандертальцам. Методика в атласе не анализировалась."
 
 - id: unesco-gobekli-tepe
   title: "Göbekli Tepe"
@@ -26,8 +26,8 @@
   url: https://doi.org/10.1073/pnas.1813268116
   sourceType: scholarly
   published: 2019-02-11
-  checked: 2026-10-13
-  note: "Аннотация (PubMed 30808740). Мегалитические гробницы Европы появились во второй половине V тыс. до н. э. на северо-западе Франции, в Средиземноморье и на атлантическом побережье Иберии; распространение морским путём в три фазы."
+  checked: 2026-10-28
+  note: "Аннотация (PubMed 30808740; перечитана через Europe PMC). Мегалитические гробницы Европы появились за 200–300 лет во второй половине V тыс. до н. э. на северо-западе Франции, в Средиземноморье и на атлантическом побережье Иберии; распространение морским путём в три фазы."
 
 - id: met-jomon
   title: "Jōmon Culture (ca. 10,500–ca. 300 B.C.)"
@@ -194,24 +194,24 @@
   publisher: "Ministère de la Culture / Centre national de préhistoire — Lascaux"
   url: https://archeologie.culture.gouv.fr/lascaux/en/dating-figures-lascaux
   sourceType: official
-  checked: 2026-10-13
-  note: "Радиоуглеродные даты угля из пещеры — примерно 21 000–18 000 лет назад (BP); датировка изображений обсуждается со времён открытия."
+  checked: 2026-10-28
+  note: "Ранние радиоуглеродные даты угля (Глори) — около 21 000–18 000 лет назад (BP); AMS-даты 1998 и 2002 годов — 23 500–22 000 BP; проект LAsCO — 21 500–21 000 BP. Датировка изображений обсуждается со времён открытия."
 
 - id: eh-stonehenge-history
   title: History of Stonehenge
   publisher: English Heritage
   url: https://www.english-heritage.org.uk/visit/places/stonehenge/history-and-stories/history/
   sourceType: official
-  checked: 2026-10-13
-  note: "Ров и вал — около 3000 года до н. э.; камни в центре поставлены около 2500 года до н. э."
+  checked: 2026-10-28
+  note: "Ров и вал — около 3000 года до н. э.; камни в центре поставлены около 2500 года до н. э.: сарсены — внутренняя «подкова» и внешний круг, «голубые камни» — двойная дуга между ними."
 
 - id: eh-understanding-stonehenge
   title: Understanding Stonehenge
   publisher: English Heritage
   url: https://www.english-heritage.org.uk/visit/places/stonehenge/history-and-stories/understanding-stonehenge/
   sourceType: official
-  checked: 2026-10-13
-  note: "Памятник ориентирован на солнцестояния: летний восход у Пяточного камня, зимний закат между столбами самого высокого трилита."
+  checked: 2026-10-28
+  note: "Памятник ориентирован на солнцестояния: летний восход у Пяточного камня, зимний закат между столбами самого высокого трилита; камни, обрамляющие ось солнцестояния, обтёсаны тщательнее остальных."
 
 - id: met-andes-1000bc
   title: "Central and Southern Andes, 1000 B.C.–1 A.D."
@@ -422,10 +422,13 @@
   publisher: National Park Service, Chaco Culture
   url: https://www.nps.gov/chcu/learn/historyculture/petroglyphs-pictographs.htm
   sourceType: official
-  checked: '2026-10-14'
+  checked: '2026-10-28'
   note: >-
-    Петроглиф — удаление материала поверхности, пиктограмма — нанесение пигмента. Сосуществование техник не
-    задаёт всеобщей эволюционной последовательности.
+    Петроглифы выбивают, процарапывают, шлифуют или сверлят; пиктограммы пишут пигментом. В Чако обе техники
+    встречаются рядом, часто 3–4 техники в одном изображении; точного способа датировать петроглифы пока нет —
+    применяют относительную датировку, наложения и стилистическую хронологию.
+    Страница о Чако не утверждает ничего о всеобщей последовательности техник — вывод об её отсутствии
+    атласа, а не источника.
 - id: commons-dreamcore
   title: File:Dreamcore (cropped).jpg
   publisher: Wikimedia Commons
@@ -4144,3 +4147,330 @@
     биоморфной / опалесцентной образности. Дата статьи задаёт верхнюю границу существования ярлыка, не точную
     дату рождения.
   published: "2023-03-29"
+
+# Сверка карточек, партия 01-prehistory (28.10.2026)
+- id: hoffmann-2018
+  title: "U-Th dating of carbonate crusts reveals Neandertal origin of Iberian cave art"
+  publisher: "Science 359 (6378), 912–915 · Hoffmann D. L. et al."
+  url: https://doi.org/10.1126/science.aap7778
+  sourceType: scholarly
+  published: 2018-02-23
+  checked: 2026-10-28
+  note: >-
+    Аннотация (Europe PMC, PMID 29472483) и рис. 2 статьи (PDF в базе CRC 806, Кёльн). Изображения в Ла-Пасьеге,
+    Мальтравьесо и Ардалесе старше 64 800 лет; трафарет ладони GS3b в Мальтравьесо — минимальный возраст
+    66 700 лет. Авторы делают вывод об авторстве неандертальцев; сама атрибуция оспаривается (см. hoffmann-2020-response).
+- id: hoffmann-2020-response
+  title: "Response to White et al.'s reply: 'Still no archaeological evidence that Neanderthals created Iberian cave art'"
+  publisher: "Journal of Human Evolution 144, 102810 · Hoffmann D. L. et al."
+  url: https://doi.org/10.1016/j.jhevol.2020.102810
+  sourceType: scholarly
+  published: 2020-05-22
+  checked: 2026-10-28
+  note: >-
+    Открыта только библиографическая запись (Europe PMC, PMID 32451090), аннотации нет. Подтверждает лишь то,
+    что неандертальская атрибуция иберийской живописи оспорена (реплика White et al. 2020) и авторы на неё ответили.
+- id: chauvet-official
+  title: "Chauvet-Pont d'Arc cave"
+  publisher: "Ministère de la Culture (Франция)"
+  url: https://archeologie.culture.gouv.fr/chauvet/en
+  sourceType: official
+  checked: 2026-10-28
+  note: "Официальный сайт пещеры: возраст росписей — около 36 000 лет. Даты по фазам на открытых страницах не приведены."
+- id: boe-altamira-2026
+  title: "Real Decreto 531/2026, de 24 de junio, por el que se modifica la categoría, de Monumento a Zona Arqueológica, y se define la delimitación de la cueva de Altamira"
+  publisher: "Boletín Oficial del Estado 154 (25.06.2026), BOE-A-2026-13873 · Ministerio de Cultura (Испания)"
+  url: https://www.boe.es/boe/dias/2026/06/25/pdfs/BOE-A-2026-13873.pdf
+  sourceType: official
+  published: 2026-06-25
+  checked: 2026-10-28
+  note: >-
+    Полихромные бизоны Альтамиры — около 14 500 лет (радиоуглерод); знак на потолке Зала полихромов — не моложе
+    35 500 лет (U-Th); бизон — главный мотив пещеры; полихромные росписи в 1879 году увидела Мария, дочь
+    Марселино Санса де Саутуолы.
+- id: lascaux-raw-materials
+  title: "Raw materials"
+  publisher: "Ministère de la Culture — Lascaux"
+  url: https://archeologie.culture.gouv.fr/lascaux/en/raw-materials
+  sourceType: official
+  checked: 2026-10-28
+  note: "Пигменты Ласко — оксиды железа и марганца и уголь: красные — гематит, жёлтые — гётит, чёрные в регионе — в основном марганец."
+- id: lascaux-lighting
+  title: "Lighting"
+  publisher: "Ministère de la Culture — Lascaux"
+  url: https://archeologie.culture.gouv.fr/lascaux/en/lighting
+  sourceType: official
+  checked: 2026-10-28
+  note: "В Ласко найдено больше сотни ламп, в основном известняковые плитки с углублением для топлива; одна лампа из красного песчаника. Само топливо на странице не названо."
+- id: lascaux-rock-support
+  title: "The rock support"
+  publisher: "Ministère de la Culture — Lascaux"
+  url: https://archeologie.culture.gouv.fr/lascaux/en/rock-support
+  sourceType: official
+  checked: 2026-10-28
+  note: "Природные формы стены иногда дополняют силуэт, но число таких фигур «крайне ограничено»."
+- id: lascaux-construction-panels
+  title: "Construction of the panels"
+  publisher: "Ministère de la Culture — Lascaux"
+  url: https://archeologie.culture.gouv.fr/lascaux/en/construction-panels
+  sourceType: official
+  checked: 2026-10-28
+  note: "Панно создавались в несколько этапов, обычно в порядке лошади → быки → олени."
+- id: lascaux-interpretations
+  title: "Interpretations"
+  publisher: "Ministère de la Culture — Lascaux"
+  url: https://archeologie.culture.gouv.fr/lascaux/en/interpretations
+  sourceType: official
+  checked: 2026-10-28
+  note: "Обзор толкований: охотничья магия, плодородие и тотемизм, структурализм Леруа-Гурана, шаманизм, космогонические прочтения. Смысл остаётся спорным."
+- id: lascaux-ii-iii
+  title: "Lascaux II and III"
+  publisher: "Ministère de la Culture — Lascaux"
+  url: https://archeologie.culture.gouv.fr/lascaux/en/lascaux-ii-and-iii
+  sourceType: official
+  checked: 2026-10-28
+  note: "Ласко II — факсимиле Зала быков и Осевой галереи, открыто в 1983 году."
+- id: brumm-2021
+  title: "Oldest cave art found in Sulawesi"
+  publisher: "Science Advances 7 (3), eabd4648 · Brumm A. et al."
+  url: https://doi.org/10.1126/sciadv.abd4648
+  sourceType: scholarly
+  published: 2021-01-13
+  checked: 2026-10-28
+  note: "Аннотация (Europe PMC, PMID 33523879): роспись сулавесского бородавчатого кабана в Леанг-Тедонгнге — минимальный возраст 45 500 лет."
+- id: conard-2009
+  title: "A female figurine from the basal Aurignacian of Hohle Fels Cave in southwestern Germany"
+  publisher: "Nature 459 (7244), 248–252 · Conard N. J."
+  url: https://doi.org/10.1038/nature07995
+  sourceType: scholarly
+  published: 2009-05-14
+  checked: 2026-10-28
+  note: >-
+    Аннотация (Europe PMC, PMID 19444215): женская фигурка из бивня мамонта из базального ориньяка Холе-Фельс
+    сделана не позже 35 000 календарных лет назад; один из древнейших известных примеров фигуративного искусства;
+    древнее граветтских венер минимум на 5000 лет.
+- id: weber-2022
+  title: "The microstructure and the origin of the Venus from Willendorf"
+  publisher: "Scientific Reports 12, 2926 · Weber G. W. et al."
+  url: https://doi.org/10.1038/s41598-022-06799-z
+  sourceType: scholarly
+  published: 2022-02-28
+  checked: 2026-10-28
+  note: >-
+    Полный текст (PMC8885675). Возраст около 30 000 лет; найдена 7 августа 1908 года; Музей естествознания, Вена;
+    высота 110 мм; оолитовый известняк, окрашена в красный; безликая, с преувеличенными формами и «причёской»
+    или головным убором; граветт.
+- id: mzm-venuse-2019
+  title: "Věstonická venuše — tisková zpráva"
+  publisher: "Moravské zemské muzeum, 26.11.2019"
+  url: https://www.mzm.cz/fileadmin/user_upload/tiskova-zprava/2019/VestonickaVenuse_TZ_MZM.pdf
+  sourceType: museum
+  published: 2019-11-26
+  checked: 2026-10-28
+  note: >-
+    Пресс-релиз музея-хранителя: Вестоницкая Венера — около 29 000 лет, обожжённая глина, высота 11,5 см,
+    найдена 13 июля 1925 года; специалисты музея связывают её с шаманистской картиной мира.
+- id: man-brassempouy-2025
+  title: "La Dame à la capuche de Brassempouy"
+  publisher: "Musée d'Archéologie nationale — Domaine national de Saint-Germain-en-Laye, 2025"
+  url: https://musee-archeologienationale.fr/sites/archeonat/files/documents/250527_ODM_2506_brassempouy_DROPS-WEB.pdf
+  sourceType: museum
+  published: 2025-05
+  checked: 2026-10-28
+  note: >-
+    Документ музея-хранителя: «Дама с капюшоном», грот Папы в Брассемпуи (Ланды), бивень, верхний палеолит
+    (граветт), раскопки Эдуара Пиетта 1894 года, инв. MAN 47019. Абсолютной даты нет.
+- id: lbova-2021
+  title: "The Siberian Paleolithic site of Mal'ta: a unique source for the study of childhood archaeology"
+  publisher: "Evolutionary Human Sciences 3, e9 · Lbova L."
+  url: https://doi.org/10.1017/ehs.2021.5
+  sourceType: scholarly
+  published: 2021-01-28
+  checked: 2026-10-28
+  note: >-
+    Полный текст (PDF Cambridge). Мальта в Прибайкалье: жилища 19–23 тыс. некалиброванных лет назад; антропоморфные
+    фигурки из бивня; часть их, по Лбовой, изображает детей разного возраста — это интерпретация автора.
+- id: mic-naquane
+  title: "Parco nazionale delle Incisioni rupestri"
+  publisher: "Ministero della cultura (Италия)"
+  url: https://cultura.gov.it/luogo/parco-nazionale-delle-incisioni-rupestri
+  sourceType: official
+  checked: 2026-10-28
+  note: >-
+    Наскальное искусство Валь-Камоники — от конца верхнего палеолита (13 000–10 000 лет назад) до железного века
+    (I тыс. до н. э.), продолжалось в римское время, средневековье и новое время; 104 скалы парка — песчаник,
+    отшлифованный ледником; Большая скала Накуане — более 2000 изображений от позднего неолита до раннего железного
+    века; на скале 50 — «оранты» и всадники на охоте. Отдельной даты сцены охоты на оленя нет.
+- id: poikalainen-1999
+  title: "Some statistics about rock-carvings of Lake Onega"
+  publisher: "Folklore: Electronic Journal of Folklore 11 (1999) · Poikalainen V."
+  url: https://www.folklore.ee/folklore/vol11/carvings.htm
+  sourceType: scholarly
+  published: 1999
+  checked: 2026-10-28
+  note: >-
+    Онежские петроглифы оставили неолитические племена культуры ямочно-гребенчатой керамики (неолит — V–III тыс.
+    до н. э., по Лобановой 1988); традиция угасла к середине III тыс. до н. э., когда уровень озера поднялся и вода
+    почти на тысячу лет скрыла изображения (по Панкрушеву 1984); мотивы — птицы, солярные и лунарные знаки, лодки;
+    в 1935 году группу из 83 петроглифов с Пери Нос III вывезли в Эрмитаж. Абсолютных дат в статье нет.
+- id: dilernia-2010
+  title: "The date and context of Neolithic rock art in the Sahara: engravings and ceremonial monuments from Messak Settafet (south-west Libya)"
+  publisher: "Antiquity 84 (326), 954–975 · di Lernia S., Gallinaro M."
+  url: https://doi.org/10.1017/S0003598X00067016
+  sourceType: scholarly
+  published: 2010-12
+  checked: 2026-10-28
+  note: >-
+    Аннотация: гравюры пастушеского стиля с быками стоят на обрядовых площадках Месак-Сеттафет в 5430–5150 BP
+    и, вероятно, раньше. Не датирует гравюру «Меркатце» в Вади-Меткандуш.
+- id: blyshko-2021
+  title: "Глыба, нависающая над водой: виртуальная реконструкция первоначального положения плиты с петроглифами из коллекции Национального музея Республики Карелия на мысе Пери Нос III по архивным данным"
+  publisher: "Первобытная археология. Журнал междисциплинарных исследований, 2021, № 1, 87–106 · Блышко Д. В."
+  url: https://old.archeo.ru/izdaniya-1/pazhmi-pajis/issues/pdf/blyshko-d.-v.-glyba-navisayuschaya-nad-vodoi-virtualnaya-rekonstrukciya-pervonachalnogo-polozheniya-plity-s-petroglifami-iz-kollekcii-nacionalnogo-muzeya-respubliki-kareliya-na-myse-peri-nos-iii-po-arhivnym-dannym-pervobytnaya-arheologiya.-zhurnal
+  sourceType: scholarly
+  published: 2021
+  checked: 2026-10-28
+  note: >-
+    Полный текст (PDF на сайте ИИМК РАН; DOI 10.31600/2658-3925-2021-1-87-106 ведёт на eLibrary). Плита из
+    Национального музея Республики Карелия — подлинная, с мыса Пери Нос III. Статья приводит годы вывоза
+    из литературы (1927, 1928, 1934, конец 1920-х) и по архивным данным приходит к 1935 году. Даты самих
+    изображений статья не даёт.
+- id: craig-2013
+  title: "Earliest evidence for the use of pottery"
+  publisher: "Nature 496 (7445), 351–354 · Craig O. E. et al."
+  url: https://doi.org/10.1038/nature12109
+  sourceType: scholarly
+  published: 2013-04-10
+  checked: 2026-10-28
+  note: >-
+    Аннотация (Europe PMC, PMID 23575637): керамика впервые появилась у охотников-собирателей Восточной Азии
+    20 000–12 000 калиброванных лет назад; керамика начального дзёмона — около 15 000–11 800 cal BP.
+- id: jta-umataka
+  title: "Umataka Jomon Museum Captions"
+  publisher: "Japan Tourism Agency, база многоязычных пояснений"
+  url: https://www.mlit.go.jp/tagengo-db/en/R2-01251.html
+  sourceType: official
+  checked: 2026-10-28
+  note: >-
+    Тексты музея Уматака (Нагаока): сосуды «пламенного» типа — средний дзёмон, около 5000 лет назад; признаки —
+    четыре гребневидных выступа и зубчатые выступы по кромке; у поздних сосудов Уматаки и Иванохары край
+    сильно раскрыт наружу; нагар говорит о приготовлении пищи; находки сосредоточены в бассейне Синано.
+- id: nagaoka-2022
+  title: "英国の世界遺産ストーンヘンジで長岡の火焔型土器を展示！"
+  publisher: "Город Нагаока, материалы пресс-конференции, 26.09.2022"
+  url: https://www.city.nagaoka.niigata.jp/shityo/kaiken_i/file/20220926-2-1.pdf
+  sourceType: official
+  published: 2022-09-26
+  checked: 2026-10-28
+  note: >-
+    Сосуд «пламенного» типа с памятника Иванохара (Нагаока), хранящийся в Уматака-Дзёмон-кан, показан на выставке
+    «Circles of Stone» у Стоунхенджа (30.09.2022–31.08.2023); время «пламенных» сосудов — около 5000 лет назад.
+    Тот ли это сосуд, что на снимке Commons, документ не говорит.
+- id: maa-cucuteni-sherds
+  title: "Accession No. 1927.1698 — sherds, Cucuteni A type"
+  publisher: "Museum of Archaeology and Anthropology, University of Cambridge"
+  url: https://collections.maa.cam.ac.uk/objects/454368/
+  sourceType: museum
+  checked: 2026-10-28
+  note: "Черепки керамики Кукутени A из Незвиско (Украина), поздний неолит — энеолит, Кукутени-Триполье; часть расписана тёмно-коричневыми линиями и спиралями."
+- id: lacma-yangshao-jar
+  title: "Neolithic China (Yangshao) Painted Pottery Jar"
+  publisher: "Los Angeles County Museum of Art, M.2021.259.8"
+  url: https://collections.lacma.org/object/267995
+  sourceType: museum
+  checked: 2026-10-28
+  note: "Предметная запись: расписной керамический сосуд культуры Яншао, Китай, 4800–3070 до н. э. Изображения в записи нет."
+- id: carnac-spr-2020
+  title: "SPR de Carnac — Diagnostic et rapport de présentation. Le contexte historique"
+  publisher: "Ville de Carnac, UDAP du Morbihan, 2020"
+  url: https://www.carnac.fr/content/download/15558/203991/version/1/file/4%20-%20Le%20contexte%20historique.pdf
+  sourceType: official
+  published: 2020-02-14
+  checked: 2026-10-28
+  note: >-
+    Мегалиты Карнака — неолит (около 5000–2000 до н. э.); аллеи Ле-Менек (1099 менгиров), Кермарио (982)
+    и Керлескан (258); Ле-Менек — 11 рядов на протяжении больше километра между двумя каменными оградами;
+    толкование рядов неуверенно, вероятно, разметка территории; курган Сен-Мишель — около 4700–4500 до н. э.
+- id: bse-dolmen
+  title: "Дольмен"
+  publisher: "Большая советская энциклопедия, 3-е изд. · Монгайт А. Л."
+  url: https://booksite.ru/FullText/1/001/008/031/434.htm
+  sourceType: encyclopedia
+  checked: 2026-10-28
+  note: >-
+    Текст статьи на сайте-зеркале. Дольмены сложены из вертикальных глыб и плит до нескольких десятков тонн,
+    накрытых одной или несколькими плитами; на Черноморском побережье Кавказа их строили в ранней и средней
+    бронзе (III–II тыс. до н. э.). Энциклопедия 1970-х годов: дат конкретных дольменов не даёт.
+- id: david-2013
+  title: "A 28,000 year old excavated painted rock from Nawarla Gabarnmang, northern Australia"
+  publisher: "Journal of Archaeological Science 40 (5), 2493–2501 · David B. et al."
+  url: https://researchonline.jcu.edu.au/37163/
+  sourceType: scholarly
+  published: 2013
+  checked: 2026-10-28
+  note: >-
+    Аннотация в репозитории JCU: фрагмент рисунка углём на плитке, упавшей с потолка навеса Наварла-Габарнманг,
+    вероятно, около 28 000 лет (стратиграфия — 15 600–45 600 cal BP); древнейшая подтверждённая пиктограмма Австралии.
+- id: finch-2020
+  title: "12,000-Year-old Aboriginal rock art from the Kimberley region, Western Australia"
+  publisher: "Science Advances 6 (6), eaay3922 · Finch D. et al."
+  url: https://doi.org/10.1126/sciadv.aay3922
+  sourceType: scholarly
+  published: 2020-02-05
+  checked: 2026-10-28
+  note: "Аннотация (Europe PMC, PMID 32076647): фигуры стиля Гвион в основном созданы около 12 000 лет назад."
+- id: finch-2021
+  title: "Ages for Australia's oldest rock paintings"
+  publisher: "Nature Human Behaviour 5, 310–318 · Finch D. et al."
+  url: https://doi.org/10.1038/s41562-020-01041-0
+  sourceType: scholarly
+  published: 2021-02-22
+  checked: 2026-10-28
+  note: >-
+    Аннотация (Europe PMC, PMID 33619375): натуралистичные животные Кимберли — 17 000–13 000 лет назад; роспись
+    кенгуру — 17 500–17 100 лет назад, древнейшая радиометрически датированная in situ роспись Австралии.
+- id: may-2019
+  title: "'This is my father's painting': a first-hand account of the creation of the most iconic rock art in Kakadu National Park"
+  publisher: "Rock Art Research 36 (2), 199–213 · May S. K. et al."
+  url: https://rockartresearch.com/index.php/rock/article/download/199/194
+  sourceType: scholarly
+  published: 2019
+  checked: 2026-10-28
+  note: >-
+    Полный текст. Верхний слой галереи Анбангбанг написан в сезон дождей 1963/64 Наёмболми и Джимонгурром поверх
+    более ранних росписей в сходном стиле; Намандьолк (Набилил) с головным украшением dabberrk из перьев белого
+    какаду, Намарркон, Барркинь, три «рентгеновские» рыбы саратога, ряд человеческих фигур; связующее — сок орхидеи.
+- id: kakadu-burrungkuy
+  title: "Burrungkuy (Nourlangie)"
+  publisher: "Kakadu National Park, Parks Australia"
+  url: https://www.kakadu.gov.au/do/rock-art/burrungkuy
+  sourceType: official
+  checked: 2026-10-28
+  note: "Галерея Анбангбанг — главный сайт росписей Буррунгкуй (Нурланджи) в Какаду; на росписях — предки, в том числе Намарргон."
+- id: kakadu-rock-art
+  title: "Rock art"
+  publisher: "Kakadu National Park, Parks Australia"
+  url: https://www.kakadu.gov.au/do/rock-art
+  sourceType: official
+  checked: 2026-10-28
+  note: >-
+    В Какаду — натуралистичные животные, традиционные «рентгеновские» росписи и сюжеты первых контактов; краску
+    готовили, растирая минералы и смешивая их с водой; дольше всех держится красный гематит; старые росписи часто
+    перекрыты новыми, потому что сам акт росписи важнее изображения. Некоторым росписям до 20 000 лет.
+- id: kakadu-ubirr
+  title: "Ubirr"
+  publisher: "Kakadu National Park, Parks Australia"
+  url: https://www.kakadu.gov.au/do/rock-art/ubirr
+  sourceType: official
+  checked: 2026-10-28
+  note: "Большинство «рентгеновских» росписей «этой галереи» Убирра (какой именно, страница не уточняет) — последних 1500 лет; на них рыбы, водоплавающие птицы, валлаби и другая пища. Отдельных дат конкретных росписей нет."
+- id: papunya-tula-history
+  title: "History"
+  publisher: "Papunya Tula Artists"
+  url: https://papunyatula.com.au/pages/history
+  sourceType: primary
+  checked: 2026-10-28
+  note: >-
+    История компании от неё самой: движение началось в 1971 году, когда учитель Джеффри Бардон предложил мужчинам
+    Папуньи расписать стену школы; в 1972 году художники основали компанию; живопись выросла из росписи тела
+    и рисунков на песке.
