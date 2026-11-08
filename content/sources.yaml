@@ -160,8 +160,8 @@
   publisher: "Asia Society Museum"
   url: https://asiasocietymuseum.com/buddhist_trade/indian.html
   sourceType: museum
-  checked: 2026-10-13
-  note: "Неизвестно точно, когда и где было создано первое изображение Будды в облике человека: вероятно, в районе Матхуры или в Гандхаре."
+  checked: "2026-11-08"
+  note: "Неизвестно точно, когда и где было создано первое изображение Будды в облике человека: вероятно, в районе Матхуры или в Гандхаре. Перечитано 08.11.2026."
 
 - id: vam-arts-and-crafts
   title: "Arts and Crafts: an introduction"
@@ -2144,11 +2144,12 @@
   title: Roman Copies of Greek Statues — The Met
   url: https://www.metmuseum.org/fr/essays/roman-copies-of-greek-statues
   sourceType: museum
-  checked: "2026-10-15"
+  checked: "2026-11-08"
   publisher: metmuseum.org
   note: >-
     Римские копии и рецепция греческих оригиналов; подтверждает влияние, не исключительное происхождение всей
     римской культуры. Изучена содержательная индексированная выдержка; не весь текст
+    Перечитано 08.11.2026: экспансия Рима с конца IV века до н. э., победители вывозят греческое искусство, копии статуй по заказу.
 - id: ra26-icons-rus
   title: Древнерусская живопись XIV – начала XV века. Вторая встреча с Византией — Третьяковская галерея
   url: >-
@@ -2393,20 +2394,22 @@
   title: Ancient Faces — The Met
   url: https://www.metmuseum.org/exhibitions/listings/2000/mummy-portraits
   sourceType: museum
-  checked: "2026-10-15"
+  checked: "2026-11-08"
   publisher: metmuseum.org
   note: >-
     Портреты на мумиях соединяют греческую живописную традицию, римскую моду и египетское погребение. Изучена
     содержательная индексированная выдержка; не весь текст
+    Перечитано 08.11.2026: с I по III век, греко-римская манера при египетском назначении.
 - id: ra26-gandhara
   title: Gandhara — The Met
   url: https://www.metmuseum.org/de/essays/gandhara
   sourceType: museum
-  checked: "2026-10-15"
+  checked: "2026-11-08"
   publisher: metmuseum.org
   note: >-
     Описаны буддийская религиозная среда и конкретные греко-римские формы, мотивы и местные преобразования.
     Изучена содержательная индексированная выдержка; не весь текст
+    Перечитано 08.11.2026 полностью: Александр в 330 до н. э., индогреки, широкая буддийская поддержка с I века н. э., большинство центров при Кушанах во II веке, стукко вместо сланца, завоевание в середине V века.
 - id: ra26-byzantium
   title: The Arts of Byzantium — The Met
   url: >-
@@ -4912,3 +4915,222 @@
   sourceType: encyclopedia
   checked: 2026-11-08
   note: "Начало эры Гуптов — около 319 года, связывается с коронацией или женитьбой Чандрагупты I."
+
+# Партия 03 (08.11.2026)
+- id: met-greek-archaic
+  title: Greek Art in the Archaic Period
+  publisher: The Metropolitan Museum of Art, Heilbrunn Timeline of Art History
+  url: https://www.metmuseum.org/essays/greek-art-in-the-archaic-period
+  sourceType: museum
+  checked: 2026-11-08
+  note: "Геометрический узор — ок. 1050–700 до н. э.; в VII веке сменяется более натуралистичным стилем с влияниями Ближнего Востока и Египта. Куросы и коры VI века в святилищах и на кладбищах; вазописцы Афин — мифологические сцены."
+- id: smarthistory-exekias
+  title: "Exekias, Attic black figure amphora with Ajax and Achilles playing a game"
+  publisher: Smarthistory
+  url: https://smarthistory.org/exekias-attic-black-figure-amphora-with-ajax-and-achilles-playing-a-game/
+  sourceType: encyclopedia
+  checked: 2026-11-08
+  note: "Ок. 540–530 до н. э., 61,1 см, найдена в Вульчи; Григорианский этрусский музей, Ватикан."
+- id: smarthistory-anavysos
+  title: Anavysos Kouros
+  publisher: Smarthistory
+  url: https://smarthistory.org/anavysos-kouros/
+  sourceType: encyclopedia
+  checked: 2026-11-08
+  note: "Ок. 530 до н. э., мрамор, Национальный археологический музей, Афины; надмогильная статуя Кройса."
+- id: britannica-archaic-smile
+  title: Archaic smile
+  publisher: Encyclopaedia Britannica
+  url: https://www.britannica.com/art/Archaic-smile
+  sourceType: encyclopedia
+  checked: 2026-11-08
+  note: "Улыбка, характерная для статуй архаики (ок. 650–480 до н. э.), особенно второй четверти VI века до н. э."
+- id: met-classical-greece
+  title: The Art of Classical Greece (ca. 480–323 B.C.)
+  publisher: The Metropolitan Museum of Art, Heilbrunn Timeline of Art History
+  url: https://www.metmuseum.org/essays/the-art-of-classical-greece-ca-480-323-b-c
+  sourceType: museum
+  checked: 2026-11-08
+  note: "Победа над персами в 479 до н. э.; Перикл перестраивает Акрополь; в IV веке контрапост и коринфский ордер; Александр умер в 323 до н. э.; эллинистический период — ок. 323–31 до н. э."
+- id: smarthistory-doryphoros
+  title: "Polykleitos, Doryphoros (Spear-Bearer)"
+  publisher: Smarthistory
+  url: https://smarthistory.org/polykleitos-doryphoros-spear-bearer/
+  sourceType: encyclopedia
+  checked: 2026-11-08
+  note: "Римская мраморная копия с бронзы ок. 450–440 до н. э., Неаполь; Поликлет написал книгу «Канон» и подкрепил её статуей; подлинники утрачены."
+- id: smarthistory-polychromy
+  title: "In full color, ancient sculpture reimagined"
+  publisher: Smarthistory
+  url: https://smarthistory.org/in-full-color-ancient-sculpture-reimagined/
+  sourceType: encyclopedia
+  checked: 2026-11-08
+  note: "Мраморная и бронзовая скульптура античности была ярко раскрашена, хотя в музеях мы видим её белой."
+- id: britannica-parthenon
+  title: Parthenon
+  publisher: Encyclopaedia Britannica
+  url: https://www.britannica.com/topic/Parthenon
+  sourceType: encyclopedia
+  checked: 2026-11-08
+  note: "Начат в 447 до н. э. архитекторами Иктином и Калликратом под надзором Фидия; в основном завершён к 438, внешняя отделка продолжалась до 432 до н. э."
+- id: britannica-myron
+  title: Myron
+  publisher: Encyclopaedia Britannica
+  url: https://www.britannica.com/biography/Myron
+  sourceType: encyclopedia
+  checked: 2026-11-08
+  note: "Работал в основном в бронзе; Дискобол известен по римским копиям и датируется около 450 до н. э. Статья читалась выборочно."
+- id: britannica-hellenistic
+  title: "Western sculpture: Hellenistic period"
+  publisher: Encyclopaedia Britannica
+  url: https://www.britannica.com/art/Western-sculpture/Hellenistic-period
+  sourceType: encyclopedia
+  checked: 2026-11-08
+  note: "Пергамская скульптура и Ника Самофракийская — бурное действие и чувства, преувеличенная анатомия, движение волос и драпировок; «Лаокоон» — вероятно, I век н. э., по образцам I века до н. э."
+- id: smarthistory-nike
+  title: Nike (Winged Victory) of Samothrace
+  publisher: Smarthistory
+  url: https://smarthistory.org/nike-winged-victory-of-samothrace/
+  sourceType: encyclopedia
+  checked: 2026-11-08
+  note: "Ок. 190 до н. э., фигура из паросского мрамора, корабль из лартосского, Лувр."
+- id: smarthistory-laocoon
+  title: "Athanadoros, Hagesandros, and Polydoros of Rhodes, Laocoön and his Sons"
+  publisher: Smarthistory
+  url: https://smarthistory.org/athanadoros-hagesandros-and-polydoros-of-rhodes-laocoon-and-his-sons/
+  sourceType: encyclopedia
+  checked: 2026-11-08
+  note: "Группа названа по именам трёх мастеров с Родоса; найдена в 1506 году на Эсквилине."
+- id: smarthistory-dying-gaul
+  title: Dying Gaul and Ludovisi Gaul
+  publisher: Smarthistory
+  url: https://smarthistory.org/dying-gaul/
+  sourceType: encyclopedia
+  checked: 2026-11-08
+  note: "Римские копии I–II веков н. э. с бронз III века до н. э. из Пергама; Капитолийские музеи."
+- id: louvre-venus-milo
+  title: "Vénus de Milo, −150/−125"
+  publisher: Musée du Louvre, site des collections
+  url: https://collections.louvre.fr/en/ark:/53355/cl010277627
+  sourceType: museum
+  checked: 2026-11-08
+  note: "Датировка — III четверть II века до н. э."
+- id: britannica-romulus-augustulus
+  title: Romulus Augustulus
+  publisher: Encyclopaedia Britannica
+  url: https://www.britannica.com/biography/Romulus-Augustulus
+  sourceType: encyclopedia
+  checked: 2026-11-08
+  note: "Последний император Запада, 475–476; законным восточный император его не признавал."
+- id: britannica-colosseum
+  title: Colosseum
+  publisher: Encyclopaedia Britannica
+  url: https://www.britannica.com/topic/Colosseum
+  sourceType: encyclopedia
+  checked: 2026-11-08
+  note: "Камень, бетон и туф; строительство начато при Веспасиане в 70–72, открыт Титом в 80 году."
+- id: britannica-pantheon
+  title: Pantheon
+  publisher: Encyclopaedia Britannica
+  url: https://www.britannica.com/topic/Pantheon-building-Rome-Italy
+  sourceType: encyclopedia
+  checked: 2026-11-08
+  note: "Перестроен Адрианом между 118 и 128 годами; купол около 43 м в диаметре."
+- id: smarthistory-pantheon
+  title: The Pantheon, Rome
+  publisher: Smarthistory
+  url: https://smarthistory.org/the-pantheon/
+  sourceType: encyclopedia
+  checked: 2026-11-08
+  note: "Ок. 125 года; конструкция опирается на бетон, а не на декоративные колонны."
+- id: britannica-trajans-column
+  title: Trajan’s Column
+  publisher: Encyclopaedia Britannica
+  url: https://www.britannica.com/topic/Trajans-Column
+  sourceType: encyclopedia
+  checked: 2026-11-08
+  note: "Поставлена в 106–113 годах; спиральная лента рельефа рассказывает о дакийских походах."
+- id: met-boscoreale-cubiculum
+  title: "Cubiculum (bedroom) from the Villa of P. Fannius Synistor at Boscoreale (03.14.13a–g)"
+  publisher: The Metropolitan Museum of Art
+  url: https://www.metmuseum.org/art/collection/search/247017
+  sourceType: museum
+  checked: 2026-11-08
+  note: "Ок. 50–40 до н. э., фреска; на боковых стенах нарисованы дворы, ротонды и колоннады. Вилла под Помпеями погребена в 79 году."
+- id: smarthistory-roman-patrician
+  title: Head of a Roman Patrician
+  publisher: Smarthistory
+  url: https://smarthistory.org/head-of-a-roman-patrician/
+  sourceType: encyclopedia
+  checked: 2026-11-08
+  note: "Голова из Отриколи, ок. 75–50 до н. э., Палаццо Торлония; морщины и обвисшие щёки передают строгость и заслуги."
+- id: bm-fayum-ea74716
+  title: "Mummy-portrait of a woman (EA74716), AD 55–70"
+  publisher: The British Museum
+  url: https://www.britishmuseum.org/collection/object/Y_EA74716
+  sourceType: museum
+  checked: 2026-11-08
+  note: "Энкаустика на липовой доске; раскопан Петри в Хаваре."
+- id: louvre-europeenne
+  title: "L’Européenne (MND 2047), 100–150"
+  publisher: Musée du Louvre, site des collections
+  url: https://collections.louvre.fr/en/ark:/53355/cl010451181
+  sourceType: museum
+  checked: 2026-11-08
+  note: "Из Антинополя (по стилю; происхождение сообщено антикваром), римское время."
+- id: met-eutyches
+  title: "Portrait of the Boy Eutyches (18.9.2), 100–150 CE"
+  publisher: The Metropolitan Museum of Art
+  url: https://www.metmuseum.org/art/collection/search/547951
+  sourceType: museum
+  checked: 2026-11-08
+  note: "Энкаустика на дереве, Римский Египет. Данные из открытого API музея."
+- id: bm-kanishka-electrotype
+  title: "Reliquary casket, replica of the so-called Kanishka reliquary (1880.270)"
+  publisher: The British Museum
+  url: https://www.britishmuseum.org/collection/object/A_1880-270
+  sourceType: museum
+  checked: 2026-11-08
+  note: "Гальванокопия, сделана в Британском музее; оригинал ок. 100 года, из холма Шах-джи-ки-Дхери близ Пешавара. На крышке Будда между Брахмой и Индрой."
+- id: bm-bimaran
+  title: "Bimaran reliquary (1900,0209.1)"
+  publisher: The British Museum
+  url: https://www.britishmuseum.org/collection/object/A_1900-0209-1
+  sourceType: museum
+  checked: 2026-11-08
+  note: "Золото с гранатами, ок. I века, найден в ступе 2 в Бимаране (Афганистан); восемь заострённых арок."
+- id: commons-tnm-standing-buddha
+  title: "File:Gandhara Buddha (tnm).jpeg"
+  publisher: Wikimedia Commons (данные собрания — Токийский национальный музей, TC-733)
+  url: https://commons.wikimedia.org/wiki/File:Gandhara_Buddha_(tnm).jpeg
+  sourceType: catalog
+  checked: 2026-11-08
+  note: "Страница файла: Будда из Гандхары, I–II век, около 1 м, Токийский национальный музей; номер по категории TC-733. Запись музея прочитать не удалось."
+- id: britannica-la-tene
+  title: La Tène culture
+  publisher: Encyclopaedia Britannica
+  url: https://www.britannica.com/topic/La-Tene-culture
+  sourceType: encyclopedia
+  checked: 2026-11-08
+  note: "Возникает в середине V века до н. э. при контактах кельтов с греками и этрусками; проходит этапы в течение следующих четырёх веков; стиль соединяет текучие растительные линии и образы зверей. Полной статьи нет, страница — подборка выдержек."
+- id: britannica-gundestrup
+  title: Gundestrup Caldron
+  publisher: Encyclopaedia Britannica
+  url: https://www.britannica.com/topic/Gundestrup-Caldron
+  sourceType: encyclopedia
+  checked: 2026-11-08
+  note: "Серебряный сосуд, найден в Ютландии, около I века до н. э. Полной статьи нет, страница — подборка выдержек."
+- id: bm-battersea-shield
+  title: "Battersea Shield (1857,0715.1), 350–50 BC"
+  publisher: The British Museum
+  url: https://www.britishmuseum.org/collection/object/H_1857-0715-1
+  sourceType: museum
+  checked: 2026-11-08
+  note: "Бронзовая облицовка щита, чеканные спирали и 27 вставок из красного стекла; железный век, Ла-Тен; найден в Темзе."
+- id: bm-basse-yutz
+  title: "Basse-Yutz flagon (1929,0511.1), 420–360 BC"
+  publisher: The British Museum
+  url: https://www.britishmuseum.org/collection/object/H_1929-0511-1
+  sourceType: museum
+  checked: 2026-11-08
+  note: "Один из пары кувшинов; форма подражает этрусским; инкрустации из коралла и красного стекла; Ла-Тен I."
