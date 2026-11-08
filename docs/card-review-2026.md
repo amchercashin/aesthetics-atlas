@@ -12,7 +12,7 @@
 | 1 | `01-prehistory.yaml` (пилот) | [#56](https://github.com/amchercashin/aesthetics-atlas/pull/56) | 28.10.2026 | 6 | 14 (было 15) | слита |
 | 02 | `02-ancient.yaml` | [#58](https://github.com/amchercashin/aesthetics-atlas/pull/58) | 08.11.2026 | 9 | 22 (было 21) | слита |
 | 03 | `03-antiquity.yaml` | [#59](https://github.com/amchercashin/aesthetics-atlas/pull/59) | 08.11.2026 | 7 | 17 (было 16) | слита |
-| 04 | `04-medieval.yaml` | | | 13 | 28 | не начата |
+| 04 | `04-medieval.yaml` | [#60](https://github.com/amchercashin/aesthetics-atlas/pull/60) | 08.11.2026 | 13 | 28 | слита |
 | 05 | `05-renaissance.yaml` | | | 13 | 26 | не начата |
 | 06a | `06-xix.yaml`: neoclassicism … peredvizhniki | | | 8 | 16 | не начата |
 | 06b | `06-xix.yaml`: historicism … impressionism | | | 7 | 14 | не начата |
@@ -243,7 +243,7 @@
 ### Время
 Около 25 минут от начала партии до журнала: примерно 3,5 минуты на карточку.
 
-## Партия 04. `04-medieval.yaml` (08.11.2026)
+## Партия 04. `04-medieval.yaml` (08.11.2026, [#60](https://github.com/amchercashin/aesthetics-atlas/pull/60))
 
 Карточек: 13, все переведены в `reviewed` с полным `scope`; изображений: 13 главных и 28 в галереях; новых источников: 46, открыто заново 3 старых; контрольная выборка: 5 утверждений из 27 и 5 изображений из 40.
 
