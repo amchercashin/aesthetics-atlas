@@ -218,16 +218,16 @@
   publisher: The Metropolitan Museum of Art, Heilbrunn Timeline of Art History
   url: https://www.metmuseum.org/toah/ht/04/sac
   sourceType: museum
-  checked: 2026-10-13
-  note: "Культуры Чавин — 1000–500 до н. э.; образы, связанные с Чавин-де-Уантаром, распространяются по побережью и нагорью на керамике, тканях, золоте и камне; культура Котош — 2200–900 до н. э."
+  checked: 2026-11-08
+  note: "Культуры Чавин — 1000–500 до н. э.; образы, связанные с Чавин-де-Уантаром, распространяются по побережью и нагорью на керамике, тканях, золоте и камне; культура Котош — 2200–900 до н. э. Открыто заново 08.11.2026; карта охватывает Боливию, северо-запад Аргентины, Чили и Перу."
 
 - id: cleveland-inca-tunic
   title: "Tunic, Peru, Inca, c. 1400–1540 (1957.136)"
   publisher: Cleveland Museum of Art
   url: https://clevelandart.org/art/1957.136
   sourceType: museum
-  checked: 2026-10-13
-  note: "Гобеленовые туники — привилегия знати империи инков, государство раздавало их как дар; узор «инкский ключ» — один из самых распространённых. Данные из открытого API музея."
+  checked: 2026-11-08
+  note: "Гобеленовые туники — привилегия знати империи инков, государство раздавало их как дар; узор «инкский ключ» — один из самых распространённых. Данные из открытого API музея. Запись API перечитана 08.11.2026."
 
 - id: met-yamato-e
   title: Yamato-e Painting
@@ -3160,13 +3160,14 @@
   title: PERSEPOLIS — A. Shapur Shahbazi, Encyclopaedia Iranica
   url: https://www.iranicaonline.org/articles/persepolis/
   sourceType: encyclopedia
-  checked: "2026-10-16"
+  checked: "2026-11-08"
   publisher: iranicaonline.org
   note: >-
     Названы египетские архитектурные детали Тачары; вывод ограничен этими деталями, а не всей ахеменидской
     культурой. Локатор: The Palace of Darius (the Tačara); Some Technical and art historical details. The
     Palace of Darius (the Tačara); Some Technical and art historical details Прочитана содержательная часть
     страницы
+    08.11.2026 раздел о Тачаре прочитан заново: древнейший дворец Персеполя, окна и ниши с египетским карнизом.
 - id: ra26-d2-scythians
   title: SCYTHIANS — Askold Ivantchik, Encyclopaedia Iranica
   url: https://www.iranicaonline.org/articles/scythians/
@@ -4715,3 +4716,199 @@
   sourceType: museum
   checked: 2026-11-08
   note: "Ранняя Западная Хань; из гробницы №1 в Мавандуе, раскопана в 1972 году; погребальный стяг, делится на мир небесный, людской и подземный."
+- id: met-achaemenid
+  title: The Achaemenid Persian Empire (550–330 B.C.)
+  publisher: The Metropolitan Museum of Art, Heilbrunn Timeline of Art History
+  url: https://www.metmuseum.org/essays/the-achaemenid-persian-empire-550-330-b-c
+  sourceType: museum
+  checked: 2026-11-08
+  note: "Формирование державы начинается в 550 до н. э.; Дарий I (522–486 до н. э.) строит в Сузах и Персеполе; рельефы показывают данников; Дарий III убит, Александр получает державу (336–330 до н. э.)."
+- id: smarthistory-persepolis
+  title: "Persepolis: The Audience Hall of Darius and Xerxes"
+  publisher: Smarthistory
+  url: https://smarthistory.org/persepolis-the-audience-hall-of-darius-and-xerxes/
+  sourceType: encyclopedia
+  checked: 2026-11-08
+  note: "Держава ок. 550–330 до н. э.; Персеполь отмечен Дарием в 518 до н. э., сожжён при Александре в 330 до н. э.; Ападана — колонный зал; капители — двуглавые быки, орлы или львы; лестницы, ок. 520–465 до н. э., — посланцы 23 подвластных народов; Кир основал Пасаргады."
+- id: iranica-naqsh-rostam
+  title: "NAQŠ-E ROSTAM"
+  publisher: Encyclopaedia Iranica
+  url: https://www.iranicaonline.org/articles/naqs-e-rostam/
+  sourceType: encyclopedia
+  checked: 2026-11-08
+  note: "Кааба-йе Зардошт — около 500 до н. э.; четыре царские гробницы в скале, гробница I надписями отнесена к Дарию I, остальные — предположительно. Читался только раздел о гробницах и башне."
+- id: unesco-persepolis
+  title: Persepolis
+  publisher: UNESCO World Heritage Centre
+  url: https://whc.unesco.org/en/list/114/
+  sourceType: official
+  checked: 2026-11-08
+  note: "Основан Дарием I в 518 до н. э., дворцовый комплекс на террасе следует месопотамским образцам."
+- id: britannica-scythian-art
+  title: Scythian art
+  publisher: Encyclopaedia Britannica
+  url: https://www.britannica.com/art/Scythian-art
+  sourceType: encyclopedia
+  checked: 2026-11-08
+  note: "Оружие, украшения, конская сбруя; звери в схватках и одиночные фигуры; скифы контролировали равнину к северу от Чёрного моря уже с IX века до н. э. и были постепенно вытеснены сарматами в период от IV века до н. э. до II века н. э."
+- id: hermitage-arzhan-exhibition
+  title: "Arzhan. The Source in the Valley of Kings. Archeological discoveries in Tuva"
+  publisher: The State Hermitage Museum
+  url: https://www.hermitagemuseum.org/what-s-on/114a86de23ca855d9f7a0ccf33b0f3eb?lng=en
+  sourceType: museum
+  checked: 2026-11-08
+  note: "Подпись: «Олень — верх убора», вторая половина VII века до н. э.; памятник — курган Аржан-2. Ранняя публикация Эрмитажа (2001) датировала погребение VI–V веками до н. э."
+- id: hermitage-arzhan-dress
+  title: Presentation of a reconstruction of the ceremonial dress of the Arzhan-2 Queen
+  publisher: The State Hermitage Museum
+  url: https://hermitagemuseum.org/news/hm11_3_29?lng=en
+  sourceType: museum
+  checked: 2026-11-08
+  note: "Женский убор увенчан золотыми булавками в скифском зверином стиле, одна — фигурка стоящего оленя; погребение в Туве не разграблено."
+- id: hermitage-scythians
+  title: Scythians
+  publisher: The State Hermitage Museum
+  url: https://www.hermitagemuseum.org/explore/collections/category_1/element_14?lng=en
+  sourceType: museum
+  checked: 2026-11-08
+  note: "Коллекция: предметы звериного стиля и вещи греческих мастеров для скифской знати; курганы вождей V–IV веков до н. э. — греко-скифский стиль (гребень из Солохи, сосуды из Куль-Обы и Частых курганов)."
+- id: hermitage-room-96
+  title: "Kings, Warriors and Priests: Scythian Tumuli and Their Treasures (Room 96)"
+  publisher: The State Hermitage Museum
+  url: https://hermitagemuseum.org/explore/buildings/rooms/room_96?lng=en
+  sourceType: museum
+  checked: 2026-11-08
+  note: "IV–III века до н. э. — расцвет кочевой культуры; украшения работы греческих, персидских и других мастеров попадали к скифам как заказы, подарки, покупки или добыча; курган Куль-Оба связан с Боспором."
+- id: met-mesoamerica-2000bc
+  title: "Mesoamerica and Central America, 2000–1000 B.C."
+  publisher: The Metropolitan Museum of Art, Heilbrunn Timeline of Art History
+  url: https://www.metmuseum.org/toah/ht/03/ca.html
+  sourceType: museum
+  checked: 2026-11-08
+  note: "Быстрый рост ольмекского центра Сан-Лоренсо после 1200 до н. э., массивная базальтовая скульптура."
+- id: smarthistory-olmec-heads
+  title: Olmec Colossal Heads
+  publisher: Smarthistory
+  url: https://smarthistory.org/olmec-colossal-heads/
+  sourceType: encyclopedia
+  checked: 2026-11-08
+  note: "Ольмекская крупная скульптура — примерно 1600–350 до н. э.; голова 4 из Сан-Лоренсо — до 900 до н. э., базальт, Музей антропологии Халапы."
+- id: smarthistory-teotihuacan
+  title: "Pyramid of the Moon and Pyramid of the Sun, Teotihuacan"
+  publisher: Smarthistory
+  url: https://smarthistory.org/moon-and-sun-pyramid-teotihuacan/
+  sourceType: encyclopedia
+  checked: 2026-11-08
+  note: "Пирамиды Луны и Солнца, ок. I века н. э."
+- id: smarthistory-sun-stone
+  title: "The Sun Stone (or The Calendar Stone) (Aztec)"
+  publisher: Smarthistory
+  url: https://smarthistory.org/the-sun-stone-the-calendar-stone-aztec/
+  sourceType: encyclopedia
+  checked: 2026-11-08
+  note: "При Моктесуме II (1502–1520), найден в 1790 году, незавершён, 358 см в диаметре, Национальный музей антропологии, Мехико. Читалась подпись к работе."
+- id: met-aztec-sculpture
+  title: Aztec Stone Sculpture
+  publisher: The Metropolitan Museum of Art, Heilbrunn Timeline of Art History
+  url: https://www.metmuseum.org/toah/hd/azss/hd_azss.htm
+  sourceType: museum
+  checked: 2026-11-08
+  note: "Скульпторы ацтекской державы вырезали изображения богов для храмов и общественных мест священного участка Теночтитлана."
+- id: unesco-tikal
+  title: Tikal National Park
+  publisher: UNESCO World Heritage Centre
+  url: https://whc.unesco.org/en/list/64/
+  sourceType: official
+  checked: 2026-11-08
+  note: "Город майя, заселён с VI века до н. э. по X век н. э.; храмы, дворцы и площади."
+- id: britannica-tenochtitlan
+  title: Tenochtitlán
+  publisher: Encyclopaedia Britannica
+  url: https://www.britannica.com/place/Tenochtitlan
+  sourceType: encyclopedia
+  checked: 2026-11-08
+  note: "Разрушен испанцами под командованием Кортеса в 1521 году."
+- id: britannica-inca
+  title: Inca
+  publisher: Encyclopaedia Britannica
+  url: https://www.britannica.com/topic/Inca
+  sourceType: encyclopedia
+  checked: 2026-11-08
+  note: "К моменту испанского завоевания в 1532 году империя простиралась от севера нынешнего Эквадора до реки Мауле в Чили."
+- id: unesco-nasca
+  title: Lines and Geoglyphs of Nasca and Palpa
+  publisher: UNESCO World Heritage Centre
+  url: https://whc.unesco.org/en/list/700/
+  sourceType: official
+  checked: 2026-11-08
+  note: "Геоглифы прочерчены между 500 до н. э. и 500 н. э.; живые существа, стилизованные растения, геометрические фигуры."
+- id: unesco-machu-picchu
+  title: Historic Sanctuary of Machu Picchu
+  publisher: UNESCO World Heritage Centre
+  url: https://whc.unesco.org/en/list/274/
+  sourceType: official
+  checked: 2026-11-08
+  note: "Город империи инков в её расцвет; стены, террасы и пандусы, вырезанные в склоне."
+- id: walters-moche-vessel
+  title: "Portrait Vessel, 50–800 CE (48.2827)"
+  publisher: The Walters Art Museum
+  url: https://art.thewalters.org/object/48.2827/
+  sourceType: museum
+  checked: 2026-11-08
+  note: "Мочика, глина с белым и красным ангобом; сосуды в форме голов похожи на портреты реальных людей; лицо этого обобщённо, вероятно, правитель."
+- id: brooklyn-paracas-mantle
+  title: "Mantle, Nasca; Paracas, 0–100 C.E. (34.1560)"
+  publisher: Brooklyn Museum
+  url: https://www.brooklynmuseum.org/opencollection/objects/4717
+  sourceType: museum
+  checked: 2026-11-08
+  note: "Хлопок и шерсть верблюдовых, 300 × 162 см; найдена в некрополе Паракас, южное побережье Перу."
+- id: met-indus-seal
+  title: "Stamp seal and modern impression: unicorn and incense burner (?) (49.40.1), ca. 2600–1900 BCE"
+  publisher: The Metropolitan Museum of Art
+  url: https://www.metmuseum.org/art/collection/search/324062
+  sourceType: museum
+  checked: 2026-11-08
+  note: "Зрелая хараппская культура, долина Инда, обожжённый стеатит. Данные из открытого API музея."
+- id: smarthistory-indus-seal
+  title: An Indus Seal
+  publisher: Smarthistory
+  url: https://smarthistory.org/indus-seal/
+  sourceType: encyclopedia
+  checked: 2026-11-08
+  note: "Печать из стеатита, 2500–2400 до н. э., Мохенджо-Даро; вокруг сидящей фигуры — буйвол, носорог, слон, тигр."
+- id: natmus-india-anubhav
+  title: "Anubhav: A Tactile Experience — Dancing Girl"
+  publisher: National Museum, New Delhi
+  url: https://nationalmuseumindia.gov.in/en/anubhav-a-tactile-experience
+  sourceType: museum
+  checked: 2026-11-08
+  note: "«Танцовщица» — статуэтка возрастом около 4500 лет, найдена в 1926 году в Мохенджо-Даро; бронза, выплавляемая модель; хранится в зале долины Инда."
+- id: britannica-sarnath
+  title: Sarnath
+  publisher: Encyclopaedia Britannica
+  url: https://www.britannica.com/place/Sarnath
+  sourceType: encyclopedia
+  checked: 2026-11-08
+  note: "Ашока (III век до н. э.) поставил колонну с капителью из четырёх львов; оригинал в музее Сарнатха; основа государственного герба Индии."
+- id: unesco-sanchi
+  title: Buddhist Monuments at Sanchi
+  publisher: UNESCO World Heritage Centre
+  url: https://whc.unesco.org/en/list/524/
+  sourceType: official
+  checked: 2026-11-08
+  note: "Ступа 1: при Шунгах ступа расширена, четыре тораны позднее украшены при Сатаваханах в I веке н. э.; памятники от III века до н. э. до XII века."
+- id: smarthistory-didarganj-yakshi
+  title: The Didarganj Yakshi
+  publisher: Smarthistory
+  url: https://smarthistory.org/didarganj-yakshi/
+  sourceType: encyclopedia
+  checked: 2026-11-08
+  note: "Якшини, III век до н. э., песчаник из Чунара, отполированный до блеска; Бихарский музей, Патна."
+- id: britannica-gupta
+  title: Gupta dynasty
+  publisher: Encyclopaedia Britannica
+  url: https://www.britannica.com/topic/Gupta-dynasty
+  sourceType: encyclopedia
+  checked: 2026-11-08
+  note: "Начало эры Гуптов — около 319 года, связывается с коронацией или женитьбой Чандрагупты I."
