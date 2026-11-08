@@ -417,8 +417,8 @@
   publisher: The Metropolitan Museum of Art
   url: https://www.metmuseum.org/departments/islamic-art
   sourceType: museum
-  checked: '2026-10-14'
-  note: Собрание охватывает VII–XXI века; термин не ограничен религиозными объектами или XIX веком.
+  checked: 2026-11-08
+  note: "Собрание охватывает VII–XXI века; термин не ограничен религиозными объектами или XIX веком. Перечитано 08.11.2026."
 - id: nps-rock-art-techniques
   title: Petroglyphs and Pictographs
   publisher: National Park Service, Chaco Culture
@@ -5101,13 +5101,6 @@
   sourceType: museum
   checked: 2026-11-08
   note: "Золото с гранатами, ок. I века, найден в ступе 2 в Бимаране (Афганистан); восемь заострённых арок."
-- id: commons-tnm-standing-buddha
-  title: "File:Gandhara Buddha (tnm).jpeg"
-  publisher: Wikimedia Commons (данные собрания — Токийский национальный музей, TC-733)
-  url: https://commons.wikimedia.org/wiki/File:Gandhara_Buddha_(tnm).jpeg
-  sourceType: catalog
-  checked: 2026-11-08
-  note: "Страница файла: Будда из Гандхары, I–II век, около 1 м, Токийский национальный музей; номер по категории TC-733. Запись музея прочитать не удалось."
 - id: britannica-la-tene
   title: La Tène culture
   publisher: Encyclopaedia Britannica
@@ -5404,13 +5397,6 @@
   sourceType: catalog
   checked: 2026-11-08
   note: "BnF Supplément Persan 1113, л. 72r, Герат, ок. 1430–1434, вероятно Сайф аль-Вахиди; год в имени файла (1305) неверен."
-- id: commons-tnm-amadera
-  title: "File:Tea Bowl, Named “Amadera (Nunnery)”.jpg"
-  publisher: Wikimedia Commons (данные собрания — Токийский национальный музей, G-4836)
-  url: https://commons.wikimedia.org/wiki/File:Tea_Bowl,_Named_%E2%80%9CAmadera_(Nunnery)%E2%80%9D.jpg
-  sourceType: catalog
-  checked: 2026-11-08
-  note: "Глазурованная керамика, мастерская Тёдзиро, чёрное раку, конец XVI века, инв. G-4836. Запись музея прочитать не удалось: страница отдаётся только через JS."
 - id: smarthistory-fan-kuan
   title: "Neo-Confucianism and Fan Kuan, Travelers by Streams and Mountains"
   publisher: Smarthistory
@@ -5460,3 +5446,24 @@
   sourceType: encyclopedia
   checked: 2026-11-08
   note: "Рельефная скульптура на сюжеты появляется на Бантей-Срей (X век)."
+- id: tnm-standing-buddha
+  title: "Buddha (TC-733)"
+  publisher: Tokyo National Museum, ColBase
+  url: https://colbase.nich.go.jp/collection_items/tnm/TC-733?locale=en
+  sourceType: museum
+  checked: 2026-11-08
+  note: "Кушанская династия, II–III век; окрестности Пешавара; сланец. Классические черты — резкие черты лица, волнистые волосы, драпировка."
+- id: tnm-amadera
+  title: "Tea Bowl, Named “Amadera (Nunnery)” (G-4836)"
+  publisher: Tokyo National Museum, ColBase
+  url: https://colbase.nich.go.jp/collection_items/tnm/G-4836?locale=en
+  sourceType: museum
+  checked: 2026-11-08
+  note: "Мастерская Тёдзиро, чёрное раку, период Адзути-Момояма, XVI век; глазурованная керамика. Раку — керамика киотского гончара Тёдзиро конца XVI века, чаши формовали вручную."
+- id: britannica-novgorod-school
+  title: Novgorod school
+  publisher: Encyclopaedia Britannica
+  url: https://www.britannica.com/topic/Novgorod-school
+  sourceType: encyclopedia
+  checked: 2026-11-08
+  note: "Подпись: чудо Георгия о змие, анонимный мастер новгородской школы, яичная темпера на доске, начало XV века; Третьяковская галерея, собрание И. С. Остроухова. Школа — XII–XVI века."
