@@ -234,10 +234,11 @@
   publisher: The Metropolitan Museum of Art
   url: https://www.metmuseum.org/essays/yamato-e-painting
   sourceType: museum
-  checked: '2026-10-14'
+  checked: 2026-11-08
   note: >-
     Японские сюжеты, цветные и композиционные приёмы, развитие в эпоху Эдо. Не подтверждает отдельное
     происхождение от шань-шуй.
+    Перечитано 08.11.2026: расцвет в период Хэйан.
 - id: met-genji-yadorigi
   title: Trees Encoiled in Vines of Ivy (Yadorigi), 2006.570
   publisher: The Metropolitan Museum of Art
@@ -392,10 +393,11 @@
   publisher: UNESCO World Heritage Centre
   url: https://whc.unesco.org/en/list/668/
   sourceType: official
-  checked: '2026-10-14'
+  checked: 2026-11-08
   note: >-
     Ансамбли кхмерских столиц IX–XV веков: Ангкор-Ват, Байон и другие памятники. Общее индийское влияние не
     доказывает отдельного пути через Гандхару.
+    Перечитано 08.11.2026.
 - id: unesco-borobudur
   title: Borobudur Temple Compounds
   publisher: UNESCO World Heritage Centre
@@ -408,8 +410,8 @@
   publisher: The Metropolitan Museum of Art
   url: https://www.metmuseum.org/essays/landscape-painting-in-chinese-art
   sourceType: museum
-  checked: '2026-10-14'
-  note: Длительная традиция пейзажа; рубеж XVII века не является её прекращением.
+  checked: 2026-11-08
+  note: "Длительная традиция пейзажа; рубеж XVII века не является её прекращением. Перечитано 08.11.2026: к концу Тан пейзаж — самостоятельный жанр."
 - id: met-islamic-art
   title: Islamic Art — Curatorial Department
   publisher: The Metropolitan Museum of Art
@@ -5134,3 +5136,327 @@
   sourceType: museum
   checked: 2026-11-08
   note: "Один из пары кувшинов; форма подражает этрусским; инкрустации из коралла и красного стекла; Ла-Тен I."
+
+# Партия 04 (08.11.2026)
+- id: smarthistory-byzantine-art
+  title: Byzantine art, an introduction
+  publisher: Smarthistory
+  url: https://smarthistory.org/a-beginners-guide-to-byzantine-art/
+  sourceType: encyclopedia
+  checked: 2026-11-08
+  note: "В 330 году столица перенесена в Константинополь; поздний византийский период 1261–1453; в Сан-Витале фигуры словно парят на золотом фоне, не похожем на земное пространство."
+- id: britannica-san-vitale
+  title: Church of San Vitale
+  publisher: Encyclopaedia Britannica
+  url: https://www.britannica.com/place/Church-of-San-Vitale
+  sourceType: encyclopedia
+  checked: 2026-11-08
+  note: "Начата в 526 году епископом Экклезием, освящена в 547 году; мозаики испытали сильное влияние Константинополя."
+- id: britannica-hagia-sophia
+  title: Hagia Sophia
+  publisher: Encyclopaedia Britannica
+  url: https://www.britannica.com/topic/Hagia-Sophia
+  sourceType: encyclopedia
+  checked: 2026-11-08
+  note: "Основная часть здания завершена при Юстиниане, в основном в 532–537 годах."
+- id: unesco-hosios-loukas
+  title: "Monasteries of Daphni, Hosios Loukas and Nea Moni of Chios"
+  publisher: UNESCO World Heritage Centre
+  url: https://whc.unesco.org/en/list/537/
+  sourceType: official
+  checked: 2026-11-08
+  note: "Крестово-купольные церкви с большим куполом; в XI–XII веках украшены мрамором и мозаикой на золоте, второй золотой век византийского искусства."
+- id: smarthistory-kievan-rus
+  title: "Byzantium, Kyivan Rus’, and their contested legacies"
+  publisher: Smarthistory
+  url: https://smarthistory.org/byzantium-kievan-rus/
+  sourceType: encyclopedia
+  checked: 2026-11-08
+  note: "Владимир крестился в 988 году; Владимирская икона написана в XII веке в Константинополе, попала в Киев около 1131 года; Третьяковская галерея."
+- id: britannica-old-testament-trinity
+  title: The Old Testament Trinity
+  publisher: Encyclopaedia Britannica
+  url: https://www.britannica.com/topic/The-Old-Testament-Trinity
+  sourceType: encyclopedia
+  checked: 2026-11-08
+  note: "Темпера, около 1410 года; Рублёв смягчил суровость византийского письма; в 2023 году передана РПЦ и выставлялась в храме Христа Спасителя. Источник называет передачу в Третьяковскую галерею 1920 годом, тогда как `currenttime-trinity-2023` — 1929."
+- id: britannica-hiberno-saxon
+  title: Hiberno-Saxon style
+  publisher: Encyclopaedia Britannica
+  url: https://www.britannica.com/art/Hiberno-Saxon-style
+  sourceType: encyclopedia
+  checked: 2026-11-08
+  note: "Ирландские монахи приходят в Северную Англию в 635 году; кельтский криволинейный орнамент; у англосаксов плетёнка, в том числе звериная."
+- id: britannica-book-of-kells
+  title: Book of Kells
+  publisher: Encyclopaedia Britannica
+  url: https://www.britannica.com/topic/Book-of-Kells
+  sourceType: encyclopedia
+  checked: 2026-11-08
+  note: "MS A.I.6, Тринити-колледж; начата вероятно в конце VIII века на Ионе, завершена в Келлсе в начале IX века; островной стиль сочетает ирландские, саксонские и средиземноморские черты."
+- id: britannica-book-of-durrow
+  title: Book of Durrow
+  publisher: Encyclopaedia Britannica
+  url: https://www.britannica.com/topic/Book-of-Durrow
+  sourceType: encyclopedia
+  checked: 2026-11-08
+  note: "Иллюминированное Евангелие, около 700 года, гиберно-саксонский стиль."
+- id: britannica-lindisfarne-gospels
+  title: Lindisfarne Gospels
+  publisher: Encyclopaedia Britannica
+  url: https://www.britannica.com/topic/Lindisfarne-Gospels
+  sourceType: encyclopedia
+  checked: 2026-11-08
+  note: "MS Cotton Nero D.IV, конец VII или VIII век, гиберно-саксонский стиль."
+- id: britannica-viking
+  title: Viking
+  publisher: Encyclopaedia Britannica
+  url: https://www.britannica.com/topic/Viking-people
+  sourceType: encyclopedia
+  checked: 2026-11-08
+  note: "Скандинавские морские воины, совершавшие набеги и основывавшие поселения в Европе в IX–XI веках."
+- id: britannica-oseberg-ship
+  title: Oseberg ship
+  publisher: Encyclopaedia Britannica
+  url: https://www.britannica.com/topic/Oseberg-ship
+  sourceType: encyclopedia
+  checked: 2026-11-08
+  note: "Корабль IX века, найден в 1903 году в кургане, выставлен в Осло."
+- id: unesco-urnes
+  title: Urnes Stave Church
+  publisher: UNESCO World Heritage Centre
+  url: https://whc.unesco.org/en/list/58/
+  sourceType: official
+  checked: 2026-11-08
+  note: "Церковь построена в XII–XIII веках; соединяет черты кельтского искусства, традиций викингов и романских структур."
+- id: bm-pitney-brooch
+  title: "Pitney brooch (1979,1101.1)"
+  publisher: The British Museum
+  url: https://www.britishmuseum.org/collection/object/H_1979-1101-1
+  sourceType: museum
+  checked: 2026-11-08
+  note: "Позолоченная брошь в стиле Урнес: свёрнутый ленточный зверь в схватке со змеёй; с островными чертами."
+- id: met-romanesque
+  title: Romanesque Art
+  publisher: The Metropolitan Museum of Art, Heilbrunn Timeline of Art History
+  url: https://www.metmuseum.org/essays/romanesque-art
+  sourceType: museum
+  checked: 2026-11-08
+  note: "Монашество — главная сила подъёма XI–XII веков; Радульф Глабер о «белом покрове церквей»; термин охватывает искусство XI–XII веков."
+- id: britannica-romanesque
+  title: Romanesque art
+  publisher: Encyclopaedia Britannica
+  url: https://www.britannica.com/art/Romanesque-art
+  sourceType: encyclopedia
+  checked: 2026-11-08
+  note: "Примерно 1000–1150 годы; полукруглые арки, цилиндрические своды, массивные опоры и стены."
+- id: unesco-speyer
+  title: Speyer Cathedral
+  publisher: UNESCO World Heritage Centre
+  url: https://whc.unesco.org/en/list/168/
+  sourceType: official
+  checked: 2026-11-08
+  note: "Основан Конрадом II в 1030 году, перестроен в конце XI века; базилика с четырьмя башнями и двумя куполами."
+- id: unesco-durham
+  title: Durham Castle and Cathedral
+  publisher: UNESCO World Heritage Centre
+  url: https://whc.unesco.org/en/list/370/
+  sourceType: official
+  checked: 2026-11-08
+  note: "Построен в конце XI – начале XII века; крупнейший образец норманнской архитектуры в Англии; своды предвосхищают готику."
+- id: unesco-pisa
+  title: "Piazza del Duomo, Pisa"
+  publisher: UNESCO World Heritage Centre
+  url: https://whc.unesco.org/en/list/395/
+  sourceType: official
+  checked: 2026-11-08
+  note: "Ансамбль площади Чудес XI–XIV веков; попечительство (Opera) учреждено в 1063 году. Страница не называет архитектора собора."
+- id: britannica-gothic
+  title: Gothic architecture
+  publisher: Encyclopaedia Britannica
+  url: https://www.britannica.com/art/Gothic-architecture
+  sourceType: encyclopedia
+  checked: 2026-11-08
+  note: "Нервюрный свод, аркбутан и стрельчатая арка позволили поднять здание и сохранить свет; одно из первых зданий стиля — аббатство Сен-Дени."
+- id: unesco-chartres
+  title: Chartres Cathedral
+  publisher: UNESCO World Heritage Centre
+  url: https://whc.unesco.org/en/list/81/
+  sourceType: official
+  checked: 2026-11-08
+  note: "Частично построен с 1145 года, перестроен за 26 лет после пожара 1194 года; порталы середины XII века, витражи XII–XIII веков."
+- id: unesco-cologne
+  title: Cologne Cathedral
+  publisher: UNESCO World Heritage Centre
+  url: https://whc.unesco.org/en/list/292/
+  sourceType: official
+  checked: 2026-11-08
+  note: "Начат в 1248 году и завершён только в 1880 году."
+- id: britannica-notre-dame
+  title: Notre-Dame de Paris
+  publisher: Encyclopaedia Britannica
+  url: https://www.britannica.com/topic/Notre-Dame-de-Paris
+  sourceType: encyclopedia
+  checked: 2026-11-08
+  note: "Начат в 1163 году, пристройки до 1330 года; пожар в апреле 2019 года, вновь открыт 8 декабря 2024 года."
+- id: britannica-international-gothic
+  title: "Western painting: International Gothic"
+  publisher: Encyclopaedia Britannica
+  url: https://www.britannica.com/art/Western-painting/International-Gothic
+  sourceType: encyclopedia
+  checked: 2026-11-08
+  note: "Вторая половина XIV – начало XV века; фигуры изящны, но несколько искусственны; растёт интерес к реальным деталям."
+- id: britannica-limbourg
+  title: Limbourg brothers
+  publisher: Encyclopaedia Britannica
+  url: https://www.britannica.com/biography/Limbourg-brothers
+  sourceType: encyclopedia
+  checked: 2026-11-08
+  note: "Братья умерли в 1416 году, часослов остался незавершённым и закончен около 1485 года Жаном Коломбом."
+- id: uffizi-gentile
+  title: Adoration of the Magi by Gentile da Fabriano
+  publisher: Gallerie degli Uffizi
+  url: https://www.uffizi.it/en/artworks/adoration-of-the-magi
+  sourceType: museum
+  checked: 2026-11-08
+  note: "Джентиле да Фабриано, 1423 год."
+- id: ng-wilton-diptych
+  title: "English or French (?), The Wilton Diptych, about 1395–9"
+  publisher: The National Gallery, London
+  url: https://www.nationalgallery.org.uk/paintings/english-or-french-the-wilton-diptych
+  sourceType: museum
+  checked: 2026-11-08
+  note: "Переносной диптих для Ричарда II, около 1395–1399; яичная темпера на дубе."
+- id: met-nature-islamic-art
+  title: The Nature of Islamic Art
+  publisher: The Metropolitan Museum of Art, Heilbrunn Timeline of Art History
+  url: https://www.metmuseum.org/essays/the-nature-of-islamic-art
+  sourceType: museum
+  checked: 2026-11-08
+  note: "Термин охватывает искусство земель под властью мусульман; ранние памятники опирались на местные техники, стили и формы, византийские и иранские."
+- id: met-geometric-patterns-islamic
+  title: Geometric Patterns in Islamic Art
+  publisher: The Metropolitan Museum of Art, Heilbrunn Timeline of Art History
+  url: https://www.metmuseum.org/essays/geometric-patterns-in-islamic-art
+  sourceType: museum
+  checked: 2026-11-08
+  note: "Геометрические узоры — один из трёх неизобразительных видов декора наряду с каллиграфией и растительным узором; популярно связываются с исламским искусством из-за неизобразительности."
+- id: unesco-isfahan
+  title: "Meidan Emam, Esfahan"
+  publisher: UNESCO World Heritage Centre
+  url: https://whc.unesco.org/en/list/115/
+  sourceType: official
+  checked: 2026-11-08
+  note: "Создан шахом Аббасом I в начале XVII века; площадь известна Царской мечетью."
+- id: britannica-dome-of-the-rock
+  title: Dome of the Rock
+  publisher: Encyclopaedia Britannica
+  url: https://www.britannica.com/topic/Dome-of-the-Rock
+  sourceType: encyclopedia
+  checked: 2026-11-08
+  note: "Построен в конце VII века халифом Абд аль-Маликом; древнейший сохранившийся исламский памятник."
+- id: unesco-cordoba
+  title: Historic Centre of Cordoba
+  publisher: UNESCO World Heritage Centre
+  url: https://whc.unesco.org/en/list/313/
+  sourceType: official
+  checked: 2026-11-08
+  note: "Расцвет с VIII века; в XIII веке при Фердинанде III Большая мечеть обращена в собор."
+- id: met-ilkhanid-book
+  title: The Art of the Book in the Ilkhanid Period
+  publisher: The Metropolitan Museum of Art, Heilbrunn Timeline of Art History
+  url: https://www.metmuseum.org/essays/the-art-of-the-book-in-the-ilkhanid-period
+  sourceType: museum
+  checked: 2026-11-08
+  note: "Книжное искусство при Ильханидах достигло небывалого уровня; столицы Мерага, Тебриз, Багдад; Шахнаме как династическая история."
+- id: met-iran-1600-1800
+  title: "The Arts of Iran, 1600–1800"
+  publisher: The Metropolitan Museum of Art, Heilbrunn Timeline of Art History
+  url: https://www.metmuseum.org/essays/the-arts-of-iran-1600-1800
+  sourceType: museum
+  checked: 2026-11-08
+  note: "Реза Аббаси (ок. 1565–1635) ввёл новые сюжеты: полуобнажённые женщины, томные юноши, влюблённые."
+- id: met-riza-lovers
+  title: "The Lovers (50.164), 1039 AH/1630 CE"
+  publisher: The Metropolitan Museum of Art
+  url: https://www.metmuseum.org/art/collection/search/451023
+  sourceType: museum
+  checked: 2026-11-08
+  note: "Непрозрачная акварель, тушь и золото на бумаге, Исфахан. Данные из открытого API."
+- id: commons-khamseh-or2265
+  title: "File:Khamseh Nizami 001.jpg"
+  publisher: Wikimedia Commons (данные собрания — Британская библиотека, Or. 2265)
+  url: https://commons.wikimedia.org/wiki/File:Khamseh_Nizami_001.jpg
+  sourceType: catalog
+  checked: 2026-11-08
+  note: "«Султан Санджар и старуха», Султан Мухаммад, 1539–1543, Or. 2265, л. 18r; поля заменены в XVII веке."
+- id: commons-court-gayumars
+  title: "File:The Court of Gayumars.jpg"
+  publisher: Wikimedia Commons (данные собрания Ага Хана)
+  url: https://commons.wikimedia.org/wiki/File:The_Court_of_Gayumars.jpg
+  sourceType: catalog
+  checked: 2026-11-08
+  note: "«Двор Каюмарса», приписывается Султану Мухаммаду, ок. 1522–1525."
+- id: commons-mongol-soldiers
+  title: "File:Mongol soldiers by Rashid al-Din 1305.JPG"
+  publisher: Wikimedia Commons (данные собрания — Национальная библиотека Франции)
+  url: https://commons.wikimedia.org/wiki/File:Mongol_soldiers_by_Rashid_al-Din_1305.JPG
+  sourceType: catalog
+  checked: 2026-11-08
+  note: "BnF Supplément Persan 1113, л. 72r, Герат, ок. 1430–1434, вероятно Сайф аль-Вахиди; год в имени файла (1305) неверен."
+- id: commons-tnm-amadera
+  title: "File:Tea Bowl, Named “Amadera (Nunnery)”.jpg"
+  publisher: Wikimedia Commons (данные собрания — Токийский национальный музей, G-4836)
+  url: https://commons.wikimedia.org/wiki/File:Tea_Bowl,_Named_%E2%80%9CAmadera_(Nunnery)%E2%80%9D.jpg
+  sourceType: catalog
+  checked: 2026-11-08
+  note: "Глазурованная керамика, мастерская Тёдзиро, чёрное раку, конец XVI века, инв. G-4836. Запись музея прочитать не удалось: страница отдаётся только через JS."
+- id: smarthistory-fan-kuan
+  title: "Neo-Confucianism and Fan Kuan, Travelers by Streams and Mountains"
+  publisher: Smarthistory
+  url: https://smarthistory.org/neo-confucianism-fan-kuan-travelers-by-streams-and-mountains/
+  sourceType: encyclopedia
+  checked: 2026-11-08
+  note: "Тушь на шёлке, около 1000 года, 206,3 × 103,3 см, Национальный дворцовый музей, Тайбэй."
+- id: npm-trio-treasures
+  title: "A Trio of National Treasures: Fan Kuan, Guo Xi, and Li Tang"
+  publisher: National Palace Museum, Taipei
+  url: https://www.npm.gov.tw/Articles.aspx?l=2&sno=04012769
+  sourceType: museum
+  checked: 2026-11-08
+  note: "«Ранняя весна» Го Си — один из трёх шедевров северосунского пейзажа; хранится в музее."
+- id: britannica-wabi-sabi
+  title: Wabi-sabi
+  publisher: Encyclopaedia Britannica
+  url: https://www.britannica.com/art/wabi-sabi
+  sourceType: encyclopedia
+  checked: 2026-11-08
+  note: "Японский взгляд, находящий красоту в несовершенстве и непостоянстве."
+- id: met-japanese-tea
+  title: The Japanese Tea Ceremony
+  publisher: The Metropolitan Museum of Art, Heilbrunn Timeline of Art History
+  url: https://www.metmuseum.org/essays/the-japanese-tea-ceremony
+  sourceType: museum
+  checked: 2026-11-08
+  note: "Сдвиг в середине XVI века, Сэн-но Рикю (1522–1591); эстетика ваби — строгость, спонтанность, безыскусность."
+- id: britannica-angkor
+  title: Angkor
+  publisher: Encyclopaedia Britannica
+  url: https://www.britannica.com/place/Angkor
+  sourceType: encyclopedia
+  checked: 2026-11-08
+  note: "Столица империи кхмеров с IX по XV век; задуман как символическая вселенная по индийской космологии; Ангкор-Ват — XII век."
+- id: britannica-banteay-srei
+  title: Banteay Srei
+  publisher: Encyclopaedia Britannica
+  url: https://www.britannica.com/place/Banteay-Srei
+  sourceType: encyclopedia
+  checked: 2026-11-08
+  note: "Частная постройка брахмана в 12 милях от Ангкора; сооружения из песчаника с обильным орнаментом и рельефной скульптурой."
+- id: britannica-southeast-asian-khmer
+  title: "Southeast Asian arts: Khmer Kingdom, 9th–13th century"
+  publisher: Encyclopaedia Britannica
+  url: https://www.britannica.com/art/Southeast-Asian-arts/Kingdom-of-Khmer-9th-13th-century
+  sourceType: encyclopedia
+  checked: 2026-11-08
+  note: "Рельефная скульптура на сюжеты появляется на Бантей-Срей (X век)."
