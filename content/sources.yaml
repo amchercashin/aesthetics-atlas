@@ -2174,11 +2174,9 @@
   title: К 160-летию создания Петербургской Артели художников и бунта 14-ти — Русский музей
   url: https://rusmuseum.ru/news/k-160-letiyu-sozdaniya-peterburgskoy-arteli-khudozhnikov-i-bunta-14-ti/
   sourceType: museum
-  checked: "2026-10-15"
+  checked: 2026-11-09
   publisher: rusmuseum.ru
-  note: >-
-    Академический конфликт, Артель и предыстория передвижных выставок; реалистическая программа
-    рассматривается в культурной среде 1860-х. Изучена содержательная индексированная выдержка; не весь текст
+  note: "Академический конфликт, Артель и предыстория передвижных выставок; реалистическая программа рассматривается в культурной среде 1860-х. Изучена содержательная индексированная выдержка; не весь текст Перечитано 09.11.2026: бунт 9 ноября 1863 года, сюжет из скандинавской мифологии."
 - id: ra26-mir-iskusstva
   title: Стили и направления. Символизм и модерн — Третьяковская галерея
   url: https://www.tretyakovgallery.ru/edu/o/simvolizm-i-modern/
@@ -2271,11 +2269,9 @@
   title: Romanticism — The Met
   url: https://www.metmuseum.org/fr/essays/romanticism
   sourceType: museum
-  checked: "2026-10-15"
+  checked: 2026-11-09
   publisher: metmuseum.org
-  note: >-
-    Часть французских романтиков сформирована мастерской Давида; простая оппозиция неоклассицизму не
-    исчерпывает отношения. Изучена содержательная индексированная выдержка; не весь текст
+  note: "Часть французских романтиков сформирована мастерской Давида; простая оппозиция неоклассицизму не исчерпывает отношения. Изучена содержательная индексированная выдержка; не весь текст Перечитано 09.11.2026: около 1800 года и до середины столетия; Тёрнер, Жерико."
 - id: ra26-revivalism
   title: European Revivalism — Sara J. Oshinsky, The Met (2006)
   url: https://www.metmuseum.org/essays/european-revivalism
@@ -2557,38 +2553,30 @@
   title: Neoclassicism — The Met
   url: https://www.metmuseum.org/pt/essays/neoclassicism
   sourceType: museum
-  checked: "2026-10-15"
+  checked: 2026-11-09
   publisher: metmuseum.org
-  note: >-
-    Возобновление интереса к античной гармонии, простоте и пропорциям, в том числе через ренессансных и
-    позднейших мастеров. Изучена содержательная индексированная выдержка; не весь текст
+  note: "Возобновление интереса к античной гармонии, простоте и пропорциям, в том числе через ренессансных и позднейших мастеров. Изучена содержательная индексированная выдержка; не весь текст Перечитано 09.11.2026: вторая половина XVIII века, раскопки, Винкельман."
 - id: ra26-empire
   title: Empire Style, 1800–1815 — The Met
   url: https://www.metmuseum.org/de/essays/empire-style-1800-1815
   sourceType: museum
-  checked: "2026-10-15"
+  checked: 2026-11-09
   publisher: metmuseum.org
-  note: >-
-    Ампир и сосуществующий с ним бидермайер; сосуществование само по себе не доказывает происхождение второго
-    от первого. Изучена содержательная индексированная выдержка; не весь текст
+  note: "Ампир и сосуществующий с ним бидермайер; сосуществование само по себе не доказывает происхождение второго от первого. Изучена содержательная индексированная выдержка; не весь текст Перечитано 09.11.2026: ампир 1800–1815, имперские символы, Персье и Фонтен, особенно Россия."
 - id: ra26-barbizon
   title: "The Barbizon School: French Painters of Nature — The Met"
   url: https://www.metmuseum.org/essays/the-barbizon-school-french-painters-of-nature
   sourceType: museum
-  checked: "2026-10-15"
+  checked: 2026-11-09
   publisher: metmuseum.org
-  note: >-
-    Прямо названы голландский и фламандский пейзаж, Констебл и работа с натуры; барбизонцы не единая стадия
-    романтизма. Прочитана содержательная часть страницы
+  note: "Прямо названы голландский и фламандский пейзаж, Констебл и работа с натуры; барбизонцы не единая стадия романтизма. Прочитана содержательная часть страницы Перечитано 09.11.2026: Барбизон с 1820-х годов, Лувр, иерархия Академии."
 - id: ra26-preraphaelites
   title: The Pre-Raphaelites — The Met
   url: https://www.metmuseum.org/fr/essays/the-pre-raphaelites
   sourceType: museum
-  checked: "2026-10-15"
+  checked: 2026-11-09
   publisher: metmuseum.org
-  note: >-
-    Отказ от академической практики и обращение к раннему Возрождению; названы конкретные художественные
-    ориентиры. Изучена содержательная индексированная выдержка; не весь текст
+  note: "Отказ от академической практики и обращение к раннему Возрождению; названы конкретные художественные ориентиры. Изучена содержательная индексированная выдержка; не весь текст Перечитано 09.11.2026: 1848 год, распад к началу 1850-х, белый грунт."
 - id: ra26-preraphaelite-legacy
   title: The Pre-Raphaelite Legacy — The Met
   url: https://www.metmuseum.org/exhibitions/listings/2014/preraphaelite-legacy
@@ -5908,3 +5896,208 @@
   sourceType: museum
   checked: 2026-11-09
   note: "Караваджо, 1603–1604, масло на холсте. Сам каталог закрыт проверкой Cloudflare."
+
+# Партия 06a (09.11.2026)
+- id: met-436105
+  title: The Death of Socrates
+  publisher: The Metropolitan Museum of Art
+  url: https://www.metmuseum.org/art/collection/search/436105
+  sourceType: museum
+  checked: 2026-11-09
+  note: "Давид, 1787, масло на холсте, 31.45."
+- id: louvre-horatii
+  title: Le serment des Horaces, entre les mains de leur père
+  publisher: Musée du Louvre, Collections
+  url: https://collections.louvre.fr/en/ark:/53355/cl010062239
+  sourceType: museum
+  checked: 2026-11-09
+  note: "Давид, 1784, INV 3692; заказ Людовика XVI через д'Анживилье."
+- id: britannica-arc-carrousel
+  title: Arc de Triomphe du Carrousel
+  publisher: Encyclopaedia Britannica
+  url: https://www.britannica.com/place/Arc-de-Triomphe-du-Carrousel
+  sourceType: encyclopedia
+  checked: 2026-11-09
+  note: "Заказана Наполеоном в 1806 году, проект Персье и Фонтена, образец — арка Септимия Севера."
+- id: britannica-st-petersburg
+  title: St. Petersburg, City layout
+  publisher: Encyclopaedia Britannica
+  url: https://www.britannica.com/place/St-Petersburg-Russia/City-layout
+  sourceType: encyclopedia
+  checked: 2026-11-09
+  note: "Главный штаб Росси, 1811–1829."
+- id: britannica-furniture-neoclassical
+  title: Furniture, 18th century, the Neoclassical style
+  publisher: Encyclopaedia Britannica
+  url: https://www.britannica.com/technology/furniture/18th-century-the-Neoclassical-style
+  sourceType: encyclopedia
+  checked: 2026-11-09
+  note: "Ампирная мебель из красного дерева с золочёной бронзой; бидермайер — примерно 1815–1848."
+- id: britannica-biedermeier
+  title: Biedermeier style
+  publisher: Encyclopaedia Britannica
+  url: https://www.britannica.com/art/Biedermeier-style
+  sourceType: encyclopedia
+  checked: 2026-11-09
+  note: "Рост в 1825–1835 годах; насмешливое имя; семья и домашние занятия; светлые местные породы; жанровая живопись, Шпицвег."
+- id: britannica-barbizon
+  title: Barbizon school
+  publisher: Encyclopaedia Britannica
+  url: https://www.britannica.com/art/Barbizon-school
+  sourceType: encyclopedia
+  checked: 2026-11-09
+  note: "Школа середины XIX века, пейзаж ради него самого, вклад в реализм."
+- id: britannica-peredvizhniki
+  title: Peredvizhniki
+  publisher: Encyclopaedia Britannica
+  url: https://www.britannica.com/art/Peredvizhniki
+  sourceType: encyclopedia
+  checked: 2026-11-09
+  note: "Отказ от академического классицизма, реализм и общественные идеалы; выставки с 1870 года; почти 30 лет ведущего положения."
+- id: bre-tphv
+  title: Товарищество передвижных художественных выставок
+  publisher: Большая российская энциклопедия
+  url: https://bigenc.ru/c/tovarishchestvo-peredvizhnykh-khudozhestvennykh-vystavok-189327
+  sourceType: encyclopedia
+  checked: 2026-11-09
+  note: "Основано в 1870 году, выставки 1871–1923, распалось в 1923 году."
+- id: clark-snake-charmer
+  title: Snake Charmer
+  publisher: Clark Art Institute
+  url: https://www.clarkart.edu/artpiece/detail/snake-charmer
+  sourceType: museum
+  checked: 2026-11-09
+  note: "Жером, около 1879 года, масло на холсте, 1955.51."
+- id: commons-repin-barge
+  title: File:Ilya Repin - Barge Haulers on the Volga - Google Art Project.jpg
+  publisher: Wikimedia Commons
+  url: https://commons.wikimedia.org/wiki/File:Ilya_Repin_-_Barge_Haulers_on_the_Volga_-_Google_Art_Project.jpg
+  sourceType: catalog
+  checked: 2026-11-09
+  note: "Репин, 1870–1873, данные Google Art Project; на странице Русского музея год не указан."
+- id: rusmuseum-burlaki
+  title: Бурлаки на Волге
+  publisher: Государственный Русский музей
+  url: https://rusmuseum.ru/collections/painting-of-the-second-half-of-the-xix-century-beginning-of-xxi-century/burlaki-na-volge/
+  sourceType: museum
+  checked: 2026-11-09
+  note: "Репин, холст, масло, 132×283."
+- id: hamburg-wanderer
+  title: Wanderer über dem Nebelmeer
+  publisher: Hamburger Kunsthalle
+  url: https://online-sammlung.hamburger-kunsthalle.de/en/objekt/HK-5161
+  sourceType: museum
+  checked: 2026-11-09
+  note: "Фридрих, около 1817 года; вершина, единение с природой, одиночество."
+- id: louvre-bain-turc
+  title: Le bain turc
+  publisher: Musée du Louvre, Collections
+  url: https://collections.louvre.fr/en/ark:/53355/cl010066606
+  sourceType: museum
+  checked: 2026-11-09
+  note: "Энгр, 1862, RF 1934."
+- id: louvre-corot
+  title: Souvenir de Mortefontaine (Oise)
+  publisher: Musée du Louvre, Collections
+  url: https://collections.louvre.fr/en/ark:/53355/cl010066968
+  sourceType: museum
+  checked: 2026-11-09
+  note: "Коро, MI 692 bis; куплена Наполеоном III на Салоне 1864 года."
+- id: louvre-medusa
+  title: Le radeau de la Méduse
+  publisher: Musée du Louvre, Collections
+  url: https://collections.louvre.fr/en/ark:/53355/cl010059199
+  sourceType: museum
+  checked: 2026-11-09
+  note: "Жерико, 1818–1819, INV 4884."
+- id: met-salon-academy
+  title: The Salon and the Royal Academy in the Nineteenth Century
+  publisher: The Metropolitan Museum of Art
+  url: https://www.metmuseum.org/essays/the-salon-and-the-royal-academy-in-the-nineteenth-century
+  sourceType: museum
+  checked: 2026-11-09
+  note: "Академии 1648 и 1768 годов; монополия на вкус и заказ; академическое искусство держалось весь XIX век."
+- id: met-sketch-aesthetic
+  title: The Aesthetic of the Sketch in Nineteenth-Century France
+  publisher: The Metropolitan Museum of Art
+  url: https://www.metmuseum.org/essays/the-aesthetic-of-the-sketch-in-nineteenth-century-france
+  sourceType: museum
+  checked: 2026-11-09
+  note: "Свобода эскиза как противоположность утончённо законченным картинам Академии."
+- id: napoleon-madeleine
+  title: Church of the Madeleine
+  publisher: Fondation Napoléon
+  url: https://www.napoleon.org/en/magazine/places/church-of-the-madeleine/
+  sourceType: scholarly
+  checked: 2026-11-09
+  note: "Декрет 2 декабря 1806 года о храме славы армии; проект поручен Виньону."
+- id: napoleon-vendome
+  title: Vendôme Column
+  publisher: Fondation Napoléon
+  url: https://www.napoleon.org/en/magazine/places/vendome-column/
+  sourceType: scholarly
+  checked: 2026-11-09
+  note: "Декрет 1806 года, проект Лепера и Гондуэна, бронза трофейных пушек."
+- id: orsay-birth-of-venus
+  title: Naissance de Vénus
+  publisher: Musée d'Orsay
+  url: https://www.musee-orsay.fr/en/artworks/naissance-de-venus-16649
+  sourceType: museum
+  checked: 2026-11-09
+  note: "Бугро, 1879, масло на холсте; покупка у художника в 1879 году."
+- id: orsay-gleaners
+  title: Des glaneuses
+  publisher: Musée d'Orsay
+  url: https://www.musee-orsay.fr/en/artworks/des-glaneuses-342
+  sourceType: museum
+  checked: 2026-11-09
+  note: "Милле, 1857; итог десяти лет работы над темой крестьянской жизни."
+- id: orsay-angelus
+  title: L'Angélus
+  publisher: Musée d'Orsay
+  url: https://www.musee-orsay.fr/en/artworks/langelus-345
+  sourceType: museum
+  checked: 2026-11-09
+  note: "Милле, 1857–1859."
+- id: pinakothek-poor-poet
+  title: Der arme Poet
+  publisher: Bayerische Staatsgemäldesammlungen
+  url: https://www.sammlung.pinakothek.de/en/artwork/9pL3KbKLeb
+  sourceType: museum
+  checked: 2026-11-09
+  note: "Шпицвег, 1839, 36,2×44,6 см; поэт в мансарде держит зонт от капающей воды."
+- id: prado-third-of-may
+  title: The 3rd of May 1808 in Madrid, or "The Executions"
+  publisher: Museo Nacional del Prado, снимок веб-архива 31.08.2026
+  url: https://web.archive.org/web/20260831223553/https://www.museodelprado.es/en/the-collection/art-work/the-3rd-of-may-1808-in-madrid-or-the-executions/5e177409-2993-4240-97fb-847a02c6496c
+  sourceType: museum
+  checked: 2026-11-09
+  note: "Гойя, 1814, масло на холсте, P000749. Сама страница Прадо закрыта проверкой Cloudflare."
+- id: tate-ophelia
+  title: Ophelia
+  publisher: Tate
+  url: https://www.tate.org.uk/art/artworks/millais-ophelia-n01506
+  sourceType: museum
+  checked: 2026-11-09
+  note: "Милле, 1851–1852."
+- id: tate-ecce-ancilla
+  title: Ecce Ancilla Domini! (The Annunciation)
+  publisher: Tate
+  url: https://www.tate.org.uk/art/artworks/rossetti-ecce-ancilla-domini-the-annunciation-n01210
+  sourceType: museum
+  checked: 2026-11-09
+  note: "Россетти, 1849–1850."
+- id: tate-awakening-conscience
+  title: The Awakening Conscience
+  publisher: Tate
+  url: https://www.tate.org.uk/art/artworks/hunt-the-awakening-conscience-t02075
+  sourceType: museum
+  checked: 2026-11-09
+  note: "Холман Хант, 1853."
+- id: tate-pre-raphaelite
+  title: Pre-Raphaelite
+  publisher: Tate
+  url: https://www.tate.org.uk/art/art-terms/p/pre-raphaelite
+  sourceType: museum
+  checked: 2026-11-09
+  note: "Тайное общество молодых художников, основано в Лондоне в 1848 году, против Королевской академии."
