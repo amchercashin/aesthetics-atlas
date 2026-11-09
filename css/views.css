@@ -94,8 +94,7 @@ body[data-view="style"] .room, body[data-view="style"] .site-footer {
 .room-meta { display: flex; flex-wrap: wrap; gap: 6px 22px; align-items: center; color: var(--ink-2); font-size: var(--t-sm); }
 .room-title {
   margin-top: 14px; font-family: var(--serif); font-weight: 400;
-  font-size: clamp(2.6rem, 1rem + 5.4vw, 6rem); line-height: 1; letter-spacing: -0.03em; text-wrap: balance;
-}
+  font-size: clamp(2.6rem, 1rem + 5.4vw, 6rem); line-height: 1; letter-spacing: -0.03em; text-wrap: balance; overflow-wrap: break-word; hyphens: auto; }
 .room-orig { margin-top: 10px; font-family: var(--serif); font-style: italic; font-size: var(--t-2xl); color: var(--ink-3); }
 .room-kind { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 10px; margin-top: 18px; font-size: var(--t-sm); color: var(--ink-2); }
 .kind-badge { padding: 2px 9px; border: 1px solid var(--rule-strong); border-radius: 999px; color: var(--ink); }

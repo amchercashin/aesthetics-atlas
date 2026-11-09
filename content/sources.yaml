@@ -250,10 +250,8 @@
   publisher: Mucha Foundation
   url: https://www.muchafoundation.org/en/gallery/browse-works/object/45
   sourceType: museum
-  checked: '2026-10-14'
-  note: >-
-    Композиция выбранного файла соответствует большому плакату 1898 года, а не версии 1896 года; дата Commons
-    конфликтует с каталогом фонда.
+  checked: 2026-11-09
+  note: "Композиция выбранного файла соответствует большому плакату 1898 года, а не версии 1896 года; дата Commons конфликтует с каталогом фонда. Перечитано 09.11.2026: плакат JOB, 1898."
 - id: hfg-ulm-history
   title: 'Permanent exhibition: HfG Ulm'
   publisher: HfG-Archiv / Museum Ulm
@@ -342,8 +340,8 @@
   publisher: Belvedere
   url: https://www.belvedere.at/en/press/digital-declaration-love
   sourceType: museum
-  checked: '2026-10-14'
-  note: В музейном описании «Поцелуй» датирован 1908/09.
+  checked: 2026-11-09
+  note: "В музейном описании «Поцелуй» датирован 1908/09. Перечитано 09.11.2026: «Поцелуй», 1908/1909."
 - id: commons-bank-georgia
   title: File:Bank-of-georgia-hq.jpg
   publisher: Wikimedia Commons
@@ -2164,11 +2162,9 @@
   title: "Neo-Impressionism: Paul Signac and His Circle — The Met"
   url: https://www.metmuseum.org/exhibitions/listings/2001/paul-signac-circle
   sourceType: museum
-  checked: "2026-10-15"
+  checked: 2026-11-09
   publisher: metmuseum.org
-  note: >-
-    Синьяк и неоимпрессионистическая техника в опытах Матисса. Изучена содержательная индексированная
-    выдержка; не весь текст
+  note: "Синьяк и неоимпрессионистическая техника в опытах Матисса. Изучена содержательная индексированная выдержка; не весь текст Перечитано 09.11.2026: 1886–1906; термин Фенеона."
 - id: ra26-peredvizhniki
   title: К 160-летию создания Петербургской Артели художников и бунта 14-ти — Русский музей
   url: https://rusmuseum.ru/news/k-160-letiyu-sozdaniya-peterburgskoy-arteli-khudozhnikov-i-bunta-14-ti/
@@ -2616,57 +2612,44 @@
   title: Post-Impressionism — The Met
   url: https://www.metmuseum.org/fr/essays/post-impressionism
   sourceType: museum
-  checked: "2026-10-15"
+  checked: 2026-11-09
   publisher: metmuseum.org
-  note: >-
-    Разные ответы на импрессионизм у Сезанна, Гогена, Ван Гога и Сёра; не единая школа. Изучена содержательная
-    индексированная выдержка; не весь текст
+  note: "Разные ответы на импрессионизм у Сезанна, Гогена, Ван Гога и Сёра; не единая школа. Изучена содержательная индексированная выдержка; не весь текст Перечитано 09.11.2026: термин Фрая 1910 года; оптические теории Сёра."
 - id: ra26-nabis
   title: The Nabis and Decorative Painting — The Met
   url: https://www.metmuseum.org/es/essays/the-nabis-and-decorative-painting
   sourceType: museum
-  checked: "2026-10-15"
+  checked: 2026-11-09
   publisher: metmuseum.org
-  note: >-
-    Серюзье передавал группе идеи Гогена; влияние следует ограничить его практикой. Изучена содержательная
-    индексированная выдержка; не весь текст
+  note: "Серюзье передавал группе идеи Гогена; влияние следует ограничить его практикой. Изучена содержательная индексированная выдержка; не весь текст Перечитано 09.11.2026: братство осени 1888 года; «Талисман»."
 - id: ra26-symbolism
   title: Symbolism — Nicole Myers, The Met (2007)
   url: https://www.metmuseum.org/essays/symbolism
   sourceType: museum
-  checked: "2026-10-16"
+  checked: 2026-11-09
   publisher: metmuseum.org
-  note: >-
-    Символисты возвращаются к личной выразительности романтиков; это эстетическая рецепция, а не единая
-    линейная эволюция. Локатор: Начало эссе, абзац о личной выразительности романтиков. Начало эссе, абзац о
-    личной выразительности романтиков Прочитана содержательная часть страницы
+  note: "Символисты возвращаются к личной выразительности романтиков; это эстетическая рецепция, а не единая линейная эволюция. Локатор: Начало эссе, абзац о личной выразительности романтиков. Начало эссе, абзац о личной выразительности романтиков Прочитана содержательная часть страницы Перечитано 09.11.2026: манифест Мореаса 1886 года."
 - id: ra26-art-nouveau
   title: Art Nouveau — The Met
   url: https://www.metmuseum.org/essays/art-nouveau
   sourceType: museum
-  checked: "2026-10-15"
+  checked: 2026-11-09
   publisher: metmuseum.org
-  note: >-
-    Прямо описаны Arts and Crafts, эстетизм, Моррис и связь живописи с декоративной реформой. Прочитана
-    содержательная часть страницы
+  note: "Прямо описаны Arts and Crafts, эстетизм, Моррис и связь живописи с декоративной реформой. Прочитана содержательная часть страницы Перечитано 09.11.2026: 1880-е до Первой мировой; «удар бича»; Тассель 1893–1895."
 - id: ra26-secession
   title: Art Nouveau – an international style — V&A
   url: https://www.vam.ac.uk/articles/art-nouveau-an-international-style
   sourceType: museum
-  checked: "2026-10-15"
+  checked: 2026-11-09
   publisher: vam.ac.uk
-  note: >-
-    Венский сецессион соотнесён с австрийским ар-нуво; принадлежность не тождественна одностороннему
-    происхождению. Изучена содержательная индексированная выдержка; не весь текст
+  note: "Венский сецессион соотнесён с австрийским ар-нуво; принадлежность не тождественна одностороннему происхождению. Изучена содержательная индексированная выдержка; не весь текст Перечитано 09.11.2026: сецессионный стиль; Климт, Ольбрих, Мозер, Хоффман."
 - id: ra26-fauvism
   title: Fauvism — The Met
   url: https://www.metmuseum.org/essays/fauvism
   sourceType: museum
-  checked: "2026-10-15"
+  checked: 2026-11-09
   publisher: metmuseum.org
-  note: >-
-    Поздний XIX век и Ван Гог — общие предшественники фовизма и экспрессионизма; сходство не равно влиянию
-    одного на другой. Прочитана содержательная часть страницы
+  note: "Поздний XIX век и Ван Гог — общие предшественники фовизма и экспрессионизма; сходство не равно влиянию одного на другой. Прочитана содержательная часть страницы Перечитано 09.11.2026: лето 1905 года; 1908 год и кубизм."
 - id: ra26-cubism
   title: Cubism — The Met
   url: https://www.metmuseum.org/essays/cubism
@@ -3309,13 +3292,9 @@
   title: "Decadence: Aspects of Austrian Symbolism — Belvedere (2013)"
   url: https://www.belvedere.at/en/decadence-aspects-austrian-symbolism
   sourceType: museum
-  checked: "2026-10-16"
+  checked: 2026-11-09
   publisher: belvedere.at
-  note: >-
-    Названы Klinger, Stuck, Khnopff и Toorop, канал Vienna Secession, рецепция у Klimt и Moser. Не всё
-    объединение тождественно символизму. Локатор: Описание выставки, абзац о распространении символистской
-    эстетики. Описание выставки, абзац о распространении символистской эстетики Прочитана содержательная часть
-    страницы
+  note: "Названы Klinger, Stuck, Khnopff и Toorop, канал Vienna Secession, рецепция у Klimt и Moser. Не всё объединение тождественно символизму. Локатор: Описание выставки, абзац о распространении символистской эстетики. Описание выставки, абзац о распространении символистской эстетики Прочитана содержательная часть страницы Перечитано 09.11.2026: символизм шёл через Сецессион."
 - id: ra26-d2-sullivan
   title: Louis Sullivan — Joseph M. Siry, Oxford Bibliographies in Architecture (2020; version 2024)
   url: https://academic.oup.com/reference/62283/reference-article-abstract/551788629?login=false
@@ -6240,3 +6219,187 @@
   sourceType: official
   checked: 2026-11-09
   note: "Сикардсбург и ван дер Нюль; открытие 25 мая 1869 года."
+
+# Партия 07 (09.11.2026)
+- id: ng-bathers
+  title: Bathers at Asnières
+  publisher: The National Gallery, London
+  url: https://www.nationalgallery.org.uk/paintings/georges-seurat-bathers-at-asnieres
+  sourceType: museum
+  checked: 2026-11-09
+  note: "Сёра, первая большая композиция; отвергнута Салоном 1884 года."
+- id: commons-grande-jatte
+  title: File:A Sunday on La Grande Jatte, Georges Seurat, 1884.jpg
+  publisher: Wikimedia Commons
+  url: https://commons.wikimedia.org/wiki/File:A_Sunday_on_La_Grande_Jatte,_Georges_Seurat,_1884.jpg
+  sourceType: catalog
+  checked: 2026-11-09
+  note: "Сёра, 1884–1886, Чикагский институт искусств; сайт музея из этой сети не открывается."
+- id: tate-neo-impressionism
+  title: Neo-impressionism
+  publisher: Tate
+  url: https://www.tate.org.uk/art/art-terms/n/neo-impressionism
+  sourceType: museum
+  checked: 2026-11-09
+  note: "Сёра, Синьяк и последователи; мелкие соседние мазки, оптическая теория."
+- id: moma-starry-night
+  title: The Starry Night
+  publisher: The Museum of Modern Art
+  url: https://www.moma.org/collection/works/79802
+  sourceType: museum
+  checked: 2026-11-09
+  note: "Ван Гог, Сен-Реми, июнь 1889 года."
+- id: tate-post-impressionism
+  title: Post-impressionism
+  publisher: Tate
+  url: https://www.tate.org.uk/art/art-terms/p/post-impressionism
+  sourceType: museum
+  checked: 2026-11-09
+  note: "Перемены в импрессионизме примерно с 1886 года; Сезанн, Гоген, Сёра, Ван Гог."
+- id: commons-toteninsel
+  title: File:Arnold Böcklin - Die Toteninsel III (Alte Nationalgalerie, Berlin).jpg
+  publisher: Wikimedia Commons
+  url: https://commons.wikimedia.org/wiki/File:Arnold_B%C3%B6cklin_-_Die_Toteninsel_III_(Alte_Nationalgalerie,_Berlin).jpg
+  sourceType: catalog
+  checked: 2026-11-09
+  note: "Бёклин, 1883, Старая национальная галерея, Берлин."
+- id: tate-symbolism
+  title: Symbolism
+  publisher: Tate
+  url: https://www.tate.org.uk/art/art-terms/s/symbolism
+  sourceType: museum
+  checked: 2026-11-09
+  note: "Термин Мореаса 1886 года; воображаемые миры; Моро, Редон, Кнопф."
+- id: tate-nabis
+  title: Les Nabis
+  publisher: Tate
+  url: https://www.tate.org.uk/art/art-terms/n/nabis
+  sourceType: museum
+  checked: 2026-11-09
+  note: "1888–1900; плоские пятна цвета, жирный контур, упрощённый рисунок."
+- id: britannica-nabis
+  title: Nabis
+  publisher: Encyclopaedia Britannica
+  url: https://www.britannica.com/art/Nabis-French-artists
+  sourceType: encyclopedia
+  checked: 2026-11-09
+  note: "«Талисман» 1888 года; изречение Дени."
+- id: casabatllo-history
+  title: Casa Batlló
+  publisher: Casa Batlló
+  url: https://www.casabatllo.es/en/antoni-gaudi/casa-batllo/
+  sourceType: official
+  checked: 2026-11-09
+  note: "Полная реконструкция Гауди, 1904–1906."
+- id: unesco-horta
+  title: Major Town Houses of the Architect Victor Horta (Brussels)
+  publisher: UNESCO World Heritage Centre
+  url: https://whc.unesco.org/en/list/1005/
+  sourceType: official
+  checked: 2026-11-09
+  note: "Отель Тассель, Орта — один из зачинателей ар-нуво."
+- id: tate-art-nouveau
+  title: Art nouveau
+  publisher: Tate
+  url: https://www.tate.org.uk/art/art-terms/a/art-nouveau
+  sourceType: museum
+  checked: 2026-11-09
+  note: "Стиль возник в 1890-х годах; выставка 1900 года."
+- id: secession-at
+  title: Secession, History
+  publisher: Wiener Secession
+  url: https://secession.at/en/history
+  sourceType: official
+  checked: 2026-11-09
+  note: "Объединение художников с 1897 года."
+- id: commons-bakst-supper
+  title: File:Bakst Uzhin.jpg
+  publisher: Wikimedia Commons
+  url: https://commons.wikimedia.org/wiki/File:Bakst_Uzhin.jpg
+  sourceType: catalog
+  checked: 2026-11-09
+  note: "Бакст, «Ужин», 1902. Собрание на странице не указано."
+- id: bre-mir-iskusstva
+  title: Мир искусства (объединение)
+  publisher: Большая российская энциклопедия, снимок веб-архива 09.06.2026
+  url: https://web.archive.org/web/20260609234815/https://old.bigenc.ru/fine_art/text/2216763
+  sourceType: encyclopedia
+  checked: 2026-11-09
+  note: "Первая выставка 1898 года; союз до 1903 года; возрождён в 1910 году; последняя выставка 1927 года в Париже."
+- id: bre-mir-iskusstva-journal
+  title: Мир искусства (журнал)
+  publisher: Большая российская энциклопедия, снимок веб-архива 24.04.2026
+  url: https://web.archive.org/web/20260424195730/https://old.bigenc.ru/fine_art/text/2216779
+  sourceType: encyclopedia
+  checked: 2026-11-09
+  note: "Журнал 1898/99–1904; за свободу искусства и чистую красоту."
+- id: britannica-home-insurance
+  title: Home Insurance Company Building
+  publisher: Encyclopaedia Britannica
+  url: https://www.britannica.com/place/Home-Insurance-Company-Building
+  sourceType: encyclopedia
+  checked: 2026-11-09
+  note: "1884–1885, Дженни; первый высокий дом с внутренним металлическим каркасом."
+- id: britannica-reliance
+  title: Reliance Building
+  publisher: Encyclopaedia Britannica
+  url: https://www.britannica.com/place/Reliance-Building
+  sourceType: encyclopedia
+  checked: 2026-11-09
+  note: "1895, Чарльз Этвуд, главный проектировщик Бёрнема."
+- id: britannica-sullivan
+  title: Louis Sullivan
+  publisher: Encyclopaedia Britannica
+  url: https://www.britannica.com/biography/Louis-Sullivan
+  sourceType: encyclopedia
+  checked: 2026-11-09
+  note: "Форма следует функции; Уэйнрайт-билдинг, 1890–1891; Райт шесть лет у Салливана."
+- id: britannica-chicago-school
+  title: Chicago School
+  publisher: Encyclopaedia Britannica
+  url: https://www.britannica.com/topic/Chicago-School-architecture
+  sourceType: encyclopedia
+  checked: 2026-11-09
+  note: "Архитекторы и инженеры конца XIX века, разработавшие небоскрёб."
+- id: tate-fauvism
+  title: Fauvism
+  publisher: Tate
+  url: https://www.tate.org.uk/art/art-terms/f/fauvism
+  sourceType: museum
+  checked: 2026-11-09
+  note: "Примерно 1905–1910; Воксель, Осенний салон 1905 года."
+- id: commons-scream
+  title: File:Edvard Munch, 1893, The Scream, oil, tempera and pastel on cardboard, 91 x 73 cm, National Gallery of Norway.jpg
+  publisher: Wikimedia Commons
+  url: https://commons.wikimedia.org/wiki/File:Edvard_Munch,_1893,_The_Scream,_oil,_tempera_and_pastel_on_cardboard,_91_x_73_cm,_National_Gallery_of_Norway.jpg
+  sourceType: catalog
+  checked: 2026-11-09
+  note: "Мунк, 1893, Национальная галерея Норвегии."
+- id: britannica-expressionism
+  title: Expressionism
+  publisher: Encyclopaedia Britannica
+  url: https://www.britannica.com/art/Expressionism
+  sourceType: encyclopedia
+  checked: 2026-11-09
+  note: "Корни у Ван Гога, Мунка и Энсора; основная волна около 1905 года."
+- id: tate-expressionism
+  title: Expressionism
+  publisher: Tate
+  url: https://www.tate.org.uk/art/art-terms/e/expressionism
+  sourceType: museum
+  checked: 2026-11-09
+  note: "Субъективные чувства; неестественный цвет, искажённые формы, свободный мазок."
+- id: britannica-die-brucke
+  title: Die Brücke
+  publisher: Encyclopaedia Britannica
+  url: https://www.britannica.com/topic/Die-Brucke
+  sourceType: encyclopedia
+  checked: 2026-11-09
+  note: "1905–1913, основана в Дрездене, Кирхнер."
+- id: britannica-blaue-reiter
+  title: Der Blaue Reiter
+  publisher: Encyclopaedia Britannica
+  url: https://www.britannica.com/topic/Der-Blaue-Reiter
+  sourceType: encyclopedia
+  checked: 2026-11-09
+  note: "Кандинский, Марк; выставки 1911–1914 годов; абстракция."
