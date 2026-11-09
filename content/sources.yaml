@@ -804,10 +804,9 @@
   publisher: Museum of the Moving Image
   url: https://movingimage.org/event/the-films-of-yuri-norstein/2026-01-30/
   sourceType: museum
-  checked: '2026-10-14'
+  checked: '2026-11-09'
   note: >-
-    Кураторская программа охватывает 1968–1979 годы и рассматривает перекладочную анимацию. Текст был доступен
-    в поисковом представлении; прямой браузерный доступ ограничен Cloudflare. Даты и производственные роли
+    Кураторская программа охватывает 1968–1979 годы и рассматривает перекладочную анимацию. Страница открыта и прочитана в браузере 09.11.2026. Даты и производственные роли
     подтверждены отдельными записями Аниматор.ру.
 - id: curtin-carrolup-transfer
   title: Stolen Generation artwork to transfer to Western Australia
@@ -825,11 +824,10 @@
   publisher: Государственная Третьяковская галерея
   url: https://www.tretyakovgallery.ru/events/o/i-ya-bilibin-illyustrator-russkikh-skazok/
   sourceType: museum
-  checked: '2026-10-14'
+  checked: '2026-11-09'
   note: >-
     Кураторское описание книги как единого организма из иллюстраций, заставок, буквиц и орнаментов.
-    Перечислены Царевна-лягушка, Василиса Прекрасная и Белая уточка. Доступен текст поискового представления;
-    прямой браузерный запрос завершался таймаутом.
+    Перечислены Царевна-лягушка, Василиса Прекрасная и Белая уточка. Страница открыта и прочитана в браузере 09.11.2026.
 - id: commons-bilibin-frog-1901
   title: Оцифрованная иллюстрация к «Царевне-лягушке»
   publisher: Wikimedia Commons / Ivan Bilibin
@@ -1344,10 +1342,8 @@
   publisher: China Paper Cutting Museum, Yangzhou / Google Arts & Culture
   url: https://artsandculture.google.com/asset/four-panel-decorative-screen/0wHFEaRZ7BJBQA
   sourceType: museum
-  checked: '2026-10-14'
-  note: >-
-    Автор, 2007, Type: Paper Cutting. На доступной репродукции видна одна панель описанного четырёхчастного
-    набора. Комплект считается одним произведением; дата рождения автора 1943.12 не перенесена на работу.
+  checked: 2026-11-09
+  note: "Автор, 2007, Type: Paper Cutting. На доступной репродукции видна одна панель описанного четырёхчастного набора. Комплект считается одним произведением; дата рождения автора 1943.12 не перенесена на работу. Перечитано 09.11.2026: перечитан 09.11.2026."
 - id: yangzhou-zhang-cranes
   title: Zhang Xiufang. Cranes Flying Around Clouds, 2007
   publisher: China Paper Cutting Museum, Yangzhou / Google Arts & Culture
@@ -1376,18 +1372,16 @@
   publisher: The Metropolitan Museum of Art
   url: https://www.metmuseum.org/art/collection/search/687569
   sourceType: museum
-  checked: '2026-10-14'
-  note: >-
-    Прочитаны предметная запись и кураторский текст; просмотрено полотно. Асанте-акан, Гана, хлопок, шерсть и
-    краситель. Узор нанесён штампами на готовую ткань; дата дара 2015 не подменяет изготовление в 1960-е.
+  checked: 2026-11-09
+  note: "Прочитаны предметная запись и кураторский текст; просмотрено полотно. Асанте-акан, Гана, хлопок, шерсть и краситель. Узор нанесён штампами на готовую ткань; дата дара 2015 не подменяет изготовление в 1960-е. Перечитано 09.11.2026: перечитан 09.11.2026 через API музея."
 - id: bm-adinkra-1935-1005-2
   title: Adinkra cloth, Af1935,1005.2
   publisher: The British Museum
   url: https://www.britishmuseum.org/collection/object/E_Af1935-1005-2
   sourceType: museum
-  checked: '2026-10-14'
+  checked: '2026-11-09'
   note: >-
-    Предметный текст прочитан в поисковом извлечении: production date 1934, Asante, хлопок, окраска и
+    Предметная запись открыта и прочитана в браузере 09.11.2026: production date 1934, Asante, хлопок, окраска и
     штампование. В музейном каталоге Met/British Museum 2008 тот же предмет датирован первой четвертью XX
     века. Разница оставлена явно; A. F. Kerr — собиратель и даритель, не автор ткани.
 - id: 89plus-glover-sankofa
@@ -1495,11 +1489,8 @@
   url: >-
     https://artsandculture.google.com/asset/the-fight-between-goddess-durga-and-goddess-ganga-jaba-chitrakar/9AHooVbb7MYcrQ?hl=en
   sourceType: museum
-  checked: '2026-10-14'
-  note: >-
-    Прочитана предметная запись и просмотрен целый свиток. Указаны 2010, 344 × 56 см, натуральные краски на
-    фабричной бумаге с тканевой подложкой. Куратор выделяет более свободный ход последовательности вместо
-    постоянного разделения на кадры. Приобретение и выставка 2015–2016 не подменяют год произведения.
+  checked: 2026-11-09
+  note: "Прочитана предметная запись и просмотрен целый свиток. Указаны 2010, 344 × 56 см, натуральные краски на фабричной бумаге с тканевой подложкой. Куратор выделяет более свободный ход последовательности вместо постоянного разделения на кадры. Приобретение и выставка 2015–2016 не подменяют год произведения. Перечитано 09.11.2026: перечитан 09.11.2026."
 - id: qagoma-monimala-santhal-2014
   title: Monimala Chitrakar. Santhal Story of Origin, 2014
   publisher: Queensland Art Gallery & Gallery of Modern Art / Google Arts & Culture
@@ -1537,10 +1528,8 @@
   publisher: Museum of Art & Photography / Google Arts & Culture
   url: https://artsandculture.google.com/asset/untitled-warli-painting-jivya-soma-mashe/qgF8F8jGsjAQRw
   sourceType: museum
-  checked: '2026-10-14'
-  note: >-
-    Прочитана предметная запись и просмотрено произведение целиком. Указаны около 1990, 63,5 × 91,5 см,
-    natural pigments on cloth. Биографические годы не используются как даты возникновения варли.
+  checked: 2026-11-09
+  note: "Прочитана предметная запись и просмотрено произведение целиком. Указаны около 1990, 63,5 × 91,5 см, natural pigments on cloth. Биографические годы не используются как даты возникновения варли. Перечитано 09.11.2026: перечитан 09.11.2026."
 - id: crafts-museum-vangad-ladke-warli
   title: Rajesh Chaitya Vangad, Balu Ladke. Warli Painting
   publisher: National Crafts Museum, New Delhi / Google Arts & Culture
@@ -1557,12 +1546,8 @@
   publisher: Fondation Cartier pour l’art contemporain
   url: https://www.fondationcartier.com/en/collection/artists/jivya-soma-mashe
   sourceType: museum
-  checked: '2026-10-14'
-  note: >-
-    Прочитан текст и подпись Fishnet, 2009; просмотрена соответствующая фотография выставки. В alt она названа
-    видом выставки 2025: год фотографии не заменяет год картины. Посетительница закрывает часть нижней
-    композиции. Материалы отдельной работы не уточнены; общие или очень ранние датировки традиции из вводного
-    текста не перенесены в карточку.
+  checked: 2026-11-09
+  note: "Прочитан текст и подпись Fishnet, 2009; просмотрена соответствующая фотография выставки. В alt она названа видом выставки 2025: год фотографии не заменяет год картины. Посетительница закрывает часть нижней композиции. Материалы отдельной работы не уточнены; общие или очень ранние датировки традиции из вводного текста не перенесены в карточку. Перечитано 09.11.2026: перечитан 09.11.2026."
 - id: banglanatak-warli-wedding-process
   title: A Wedding Depiction Underway, фотодокументация 2025
   publisher: Banglanatak / Google Arts & Culture
@@ -1600,10 +1585,8 @@
   publisher: Hong Kong Baptist University Library
   url: https://bcc.lib.hkbu.edu.hk/artcollection/j218-3-h47e/
   sourceType: primary
-  checked: '2026-10-14'
-  note: >-
-    胡明貴; издатель 绵竹胡氏画坊. Два листа составляют одну парную композицию. Год [19--?] не уточнён; copyright 2022
-    сайта не датирует оттиск. Репродукция просмотрена.
+  checked: 2026-11-09
+  note: "胡明貴; издатель 绵竹胡氏画坊. Два листа составляют одну парную композицию. Год [19--?] не уточнён; copyright 2022 сайта не датирует оттиск. Репродукция просмотрена. Перечитано 09.11.2026: перечитан 09.11.2026."
 - id: hkbu-li-gourd-boys
   title: 金瓜童子 / A pair of servant boys with gourd
   publisher: Hong Kong Baptist University Library
@@ -1629,11 +1612,8 @@
   publisher: Fukuoka Asian Art Museum
   url: https://faam.city.fukuoka.lg.jp/en/exhibition/20238/
   sourceType: museum
-  checked: '2026-10-14'
-  note: >-
-    Описание бумаги Dó, раковинного покрытия и последовательности цветной печати. Подпись Nguyen Thi Oanh, The
-    Marriage of a Mouse, unknown проверена по data-caption соответствующего изображения IMG_4759; файл F07
-    относится к Guang Renqian и исключён. Дар 2022 и выставка 2024 не являются датами оттиска.
+  checked: 2026-11-09
+  note: "Описание бумаги Dó, раковинного покрытия и последовательности цветной печати. Подпись Nguyen Thi Oanh, The Marriage of a Mouse, unknown проверена по data-caption соответствующего изображения IMG_4759; файл F07 относится к Guang Renqian и исключён. Дар 2022 и выставка 2024 не являются датами оттиска. Перечитано 09.11.2026: перечитан 09.11.2026."
 - id: faam-dongho-modernization-2973
   title: Modernization (Hunter and Bicycle Rider), 2973
   publisher: Fukuoka Asian Art Museum
