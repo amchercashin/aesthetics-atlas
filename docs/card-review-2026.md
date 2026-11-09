@@ -37,6 +37,7 @@
 | 08b | `08-avant-garde.yaml: de-stijl … mexican-muralism` | [#67](https://github.com/amchercashin/aesthetics-atlas/pull/67) | 09.11.2026 | 10 | 21 | слита |
 | 09a | `09-postwar.yaml: abstract-expressionism … metabolism` | [#68](https://github.com/amchercashin/aesthetics-atlas/pull/68) | 09.11.2026 | 9 | 19 | слита |
 | 09b | `09-postwar.yaml: pop-art … computer-art` | [#69](https://github.com/amchercashin/aesthetics-atlas/pull/69) | 09.11.2026 | 9 | 18 | слита |
+| 10 | `10-postmodern.yaml` | [#70](https://github.com/amchercashin/aesthetics-atlas/pull/70) | 09.11.2026 | 14 | 28 | слита |
 
 ## Партия 0. Подготовка (28.10.2026)
 
@@ -876,7 +877,7 @@
 ### Время
 Около часа на партию; замер приблизительный.
 
-## Партия 10. `10-postmodern.yaml` (09.11.2026)
+## Партия 10. `10-postmodern.yaml` (09.11.2026, [#70](https://github.com/amchercashin/aesthetics-atlas/pull/70))
 
 Карточек: 14, все переведены в `reviewed` с полным `scope`; изображений: 14 главных и 28 в галереях; новых источников: 38, повторно прочитано 3.
 
