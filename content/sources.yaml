@@ -159,9 +159,8 @@
   publisher: "Victoria and Albert Museum"
   url: https://www.vam.ac.uk/articles/arts-and-crafts-an-introduction
   sourceType: museum
-  checked: 2026-10-13
-  note: "В Европе честность выражения в работах «Искусств и ремёсел» стала катализатором радикальных форм модернизма. О модерне и Баухаусе статья не говорит."
-
+  checked: 2026-11-09
+  note: "В Европе честность выражения в работах «Искусств и ремёсел» стала катализатором радикальных форм модернизма. О модерне и Баухаусе статья не говорит. Перечитано 09.11.2026: 1860–1870-е, Общество 1887 года; катализатор модернизма."
 - id: currenttime-trinity-2023
   title: "Решение о передаче «Троицы» Рублёва РПЦ"
   publisher: "Настоящее время"
@@ -2260,11 +2259,9 @@
   title: Nineteenth-Century French Realism — The Met
   url: https://www.metmuseum.org/essays/nineteenth-century-french-realism
   sourceType: museum
-  checked: "2026-10-15"
+  checked: 2026-11-09
   publisher: metmuseum.org
-  note: >-
-    Прямо описан отказ от экзотических сюжетов романтизма и академической идеализации; Милле в Барбизоне
-    входит в реалистическую среду. Прочитана содержательная часть страницы
+  note: "Прямо описан отказ от экзотических сюжетов романтизма и академической идеализации; Милле в Барбизоне входит в реалистическую среду. Прочитана содержательная часть страницы Перечитано 09.11.2026: около 1840 года и до конца XIX века; Курбе."
 - id: ra26-romanticism
   title: Romanticism — The Met
   url: https://www.metmuseum.org/fr/essays/romanticism
@@ -2276,12 +2273,9 @@
   title: European Revivalism — Sara J. Oshinsky, The Met (2006)
   url: https://www.metmuseum.org/essays/european-revivalism
   sourceType: museum
-  checked: "2026-10-16"
+  checked: 2026-11-09
   publisher: metmuseum.org
-  note: >-
-    Неоклассические образцы входят в многосоставный набор исторических возрождений; историзм не имеет
-    единственного такого родителя. Локатор: Вступление и абзацы о классических и готических возрождениях.
-    Вступление и абзацы о классических и готических возрождениях Прочитана содержательная часть страницы
+  note: "Неоклассические образцы входят в многосоставный набор исторических возрождений; историзм не имеет единственного такого родителя. Локатор: Вступление и абзацы о классических и готических возрождениях. Вступление и абзацы о классических и готических возрождениях Прочитана содержательная часть страницы Перечитано 09.11.2026: стилевые возрождения XIX века; готика как национальный стиль."
 - id: ra26-artdeco-intro
   title: An introduction to Art Deco — V&A
   url: https://www.vam.ac.uk/articles/an-introduction-to-art-deco
@@ -2590,11 +2584,9 @@
   title: An introduction to the Aesthetic Movement — V&A
   url: https://www.vam.ac.uk/articles/an-introduction-to-the-aesthetic-movement
   sourceType: museum
-  checked: "2026-10-15"
+  checked: 2026-11-09
   publisher: vam.ac.uk
-  note: >-
-    Роль Россетти, Морриса и Бёрн-Джонса; несколько пересекающихся художественных кругов. Изучена
-    содержательная индексированная выдержка; не весь текст
+  note: "Роль Россетти, Морриса и Бёрн-Джонса; несколько пересекающихся художественных кругов. Изучена содержательная индексированная выдержка; не весь текст Перечитано 09.11.2026: 1860–1900; красота вместо смысла."
 - id: ra26-morris
   title: William Morris and the V&A — V&A
   url: https://www.vam.ac.uk/articles/william-morris-and-the-va/
@@ -2617,11 +2609,9 @@
   title: Japonisme — The Met
   url: https://www.metmuseum.org/essays/japonisme
   sourceType: museum
-  checked: "2026-10-15"
+  checked: 2026-11-09
   publisher: metmuseum.org
-  note: >-
-    Прямо описано действие укиё-э на Дега, Кассат и других европейских художников. Прочитана содержательная
-    часть страницы
+  note: "Прямо описано действие укиё-э на Дега, Кассат и других европейских художников. Прочитана содержательная часть страницы Перечитано 09.11.2026: порты 1853 года; выставка 1867 года; Дега."
 - id: ra26-post-impressionism
   title: Post-Impressionism — The Met
   url: https://www.metmuseum.org/fr/essays/post-impressionism
@@ -6101,3 +6091,152 @@
   sourceType: museum
   checked: 2026-11-09
   note: "Тайное общество молодых художников, основано в Лондоне в 1848 году, против Королевской академии."
+
+# Партия 06b (09.11.2026)
+- id: britannica-gothic-revival
+  title: Gothic Revival
+  publisher: Encyclopaedia Britannica
+  url: https://www.britannica.com/art/Gothic-Revival
+  sourceType: encyclopedia
+  checked: 2026-11-09
+  note: "Началось в Англии в XVIII веке, заметно к 1820-м годам, потеряло силу после третьей четверти XIX века."
+- id: britannica-western-arch-19c
+  title: Western architecture, From the 19th to the early 20th century
+  publisher: Encyclopaedia Britannica
+  url: https://www.britannica.com/art/Western-architecture/From-the-19th-to-the-early-20th-century
+  sourceType: encyclopedia
+  checked: 2026-11-09
+  note: "1836: готический проект Бэрри для Вестминстера; детали Пьюджина; Сент-Клотильда Гау и Баллю, завершена в 1857 году."
+- id: britannica-whistler
+  title: James McNeill Whistler
+  publisher: Encyclopaedia Britannica
+  url: https://www.britannica.com/biography/James-McNeill-Whistler
+  sourceType: encyclopedia
+  checked: 2026-11-09
+  note: "Музыкальные названия с 1860–1870-х годов; ноктюрны; «Павлинья комната», 1876–1877."
+- id: commons-impression-sunrise
+  title: File:Claude Monet, Impression, soleil levant.jpg
+  publisher: Wikimedia Commons
+  url: https://commons.wikimedia.org/wiki/File:Claude_Monet,_Impression,_soleil_levant.jpg
+  sourceType: catalog
+  checked: 2026-11-09
+  note: "Моне, 1872, Музей Мармоттан-Моне; подпись и год видны на холсте."
+- id: dia-falling-rocket
+  title: Nocturne in Black and Gold, the Falling Rocket
+  publisher: Detroit Institute of Arts
+  url: https://dia.org/collection/nocturne-black-and-gold-falling-rocket/64931
+  sourceType: museum
+  checked: 2026-11-09
+  note: "Уистлер, 1875; фейерверк в садах Креморн; дело о клевете, один фартинг."
+- id: historicengland-st-pancras
+  title: St Pancras Station and Former Midland Grand Hotel (1342037)
+  publisher: Historic England, снимок веб-архива 13.01.2026
+  url: https://web.archive.org/web/20260113034903/https://historicengland.org.uk/listing/the-list/list-entry/1342037
+  sourceType: official
+  checked: 2026-11-09
+  note: "Отель 1868–1876, Джордж Гилберт Скотт."
+- id: met-impressionism
+  title: "Impressionism: Art and Modernity"
+  publisher: The Metropolitan Museum of Art
+  url: https://www.metmuseum.org/essays/impressionism-art-and-modernity
+  sourceType: museum
+  checked: 2026-11-09
+  note: "Выставка 1874 года, Леруа, короткие мазки, чистые цвета, цветные тени; восемь выставок до 1886 года; обсуждения с 1867 года."
+- id: nationaltrust-red-house
+  title: The history of Red House
+  publisher: National Trust, снимок веб-архива 04.10.2026
+  url: https://web.archive.org/web/20261004034054/https://www.nationaltrust.org.uk/visit/london/red-house/the-history-of-red-house
+  sourceType: official
+  checked: 2026-11-09
+  note: "Заказ 1859 года Филипу Уэббу; Моррисы въехали в июне 1860 года."
+- id: neuschwanstein-history
+  title: Neuschwanstein Castle, history
+  publisher: Bayerische Schlösserverwaltung
+  url: https://www.neuschwanstein.de/englisch/palace/history.htm
+  sourceType: official
+  checked: 2026-11-09
+  note: "Закладка 5 сентября 1869 года."
+- id: nga-white-girl
+  title: "Symphony in White, No. 1: The White Girl"
+  publisher: National Gallery of Art, Washington
+  url: https://www.nga.gov/artworks/12198-symphony-white-no-1-white-girl
+  sourceType: museum
+  checked: 2026-11-09
+  note: "Уистлер, 1861–1863, 1872, масло на холсте."
+- id: operadeparis-garnier
+  title: Palais Garnier
+  publisher: Opéra national de Paris
+  url: https://www.operadeparis.fr/en/about/theaters-and-workshops/palais-garnier
+  sourceType: official
+  checked: 2026-11-09
+  note: "Конкурс выигран 30 мая 1861 года; открытие 1875 года."
+- id: orsay-burial
+  title: Un enterrement à Ornans
+  publisher: Musée d'Orsay
+  url: https://www.musee-orsay.fr/en/artworks/un-enterrement-ornans-924
+  sourceType: museum
+  checked: 2026-11-09
+  note: "Курбе, 1849–1850."
+- id: orsay-moulin-galette
+  title: Bal du moulin de la Galette
+  publisher: Musée d'Orsay
+  url: https://www.musee-orsay.fr/en/artworks/bal-du-moulin-de-la-galette-497
+  sourceType: museum
+  checked: 2026-11-09
+  note: "Ренуар, 1876."
+- id: orsay-olympia
+  title: Olympia
+  publisher: Musée d'Orsay
+  url: https://www.musee-orsay.fr/en/artworks/olympia-712
+  sourceType: museum
+  checked: 2026-11-09
+  note: "Мане, 1863; скандал на Салоне 1865 года."
+- id: tate-aesthetic
+  title: Aesthetic movement
+  publisher: Tate
+  url: https://www.tate.org.uk/art/art-terms/a/aesthetic-movement
+  sourceType: museum
+  checked: 2026-11-09
+  note: "«Искусство для искусства», расцвет в 1870–1880-х годах; Уистлер, Мур, японское влияние."
+- id: tate-impressionism
+  title: Impressionism
+  publisher: Tate
+  url: https://www.tate.org.uk/art/art-terms/i/impressionism
+  sourceType: museum
+  checked: 2026-11-09
+  note: "Работа на открытом воздухе, мимолётные эффекты света, дробный мазок; с начала 1860-х годов."
+- id: tate-realism
+  title: Realism
+  publisher: Tate
+  url: https://www.tate.org.uk/art/art-terms/r/realism
+  sourceType: museum
+  checked: 2026-11-09
+  note: "Термин Шанфлёри 1840-х годов; Курбе; сюжеты из жизни крестьян и горожан."
+- id: unesco-westminster
+  title: Palace of Westminster and Westminster Abbey
+  publisher: UNESCO World Heritage Centre
+  url: https://whc.unesco.org/en/list/426/
+  sourceType: official
+  checked: 2026-11-09
+  note: "Дворец перестроен с 1840 года, образец неоготики."
+- id: vam-strawberry-thief
+  title: Strawberry Thief
+  publisher: Victoria and Albert Museum
+  url: https://collections.vam.ac.uk/item/O78889/strawberry-thief-furnishing-fabric-morris-william/
+  sourceType: museum
+  checked: 2026-11-09
+  note: "Моррис, рисунок 1883 года, ткань 1883–1919."
+- id: vgm-flowering-plum
+  title: Flowering Plum Orchard (after Hiroshige)
+  publisher: Van Gogh Museum
+  url: https://www.vangoghmuseum.nl/en/collection/s0115V1962
+  sourceType: museum
+  checked: 2026-11-09
+  note: "Ван Гог, октябрь–ноябрь 1887 года; три картины по японским гравюрам из его собрания."
+- id: wiener-staatsoper-history
+  title: History of the Vienna State Opera
+  publisher: Wiener Staatsoper
+  url: https://www.wiener-staatsoper.at/en/history/
+  sourceType: official
+  checked: 2026-11-09
+  note: "Сикардсбург и ван дер Нюль; открытие 25 мая 1869 года."
