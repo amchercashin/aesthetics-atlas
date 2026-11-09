@@ -44,6 +44,7 @@
 | 13 | `13-pilot.yaml` | [#74](https://github.com/amchercashin/aesthetics-atlas/pull/74) | 09.11.2026 | 12 | 29 | слита |
 | 14 | `14-regional-traditions.yaml` | [#75](https://github.com/amchercashin/aesthetics-atlas/pull/75) | 09.11.2026 | 10 | 28 | слита |
 | 15 | `15-regional-graphics.yaml` | [#76](https://github.com/amchercashin/aesthetics-atlas/pull/76) | 09.11.2026 | 10 | 29 | слита |
+| 16 | `16-regional-languages.yaml` | [#77](https://github.com/amchercashin/aesthetics-atlas/pull/77) | 09.11.2026 | 10 | 27 | слита |
 
 ## Партия 0. Подготовка (28.10.2026)
 
@@ -1354,7 +1355,7 @@
 ### Время
 Около часа на партию; замер приблизительный.
 
-## Партия 16. `16-regional-languages.yaml` (09.11.2026)
+## Партия 16. `16-regional-languages.yaml` (09.11.2026, [#77](https://github.com/amchercashin/aesthetics-atlas/pull/77))
 
 Карточек: 10, все переведены в `reviewed` с полным `scope` и корпусом; изображений: 10 главных и 27 в галереях; новых источников: 3, повторно прочитано 19.
 
