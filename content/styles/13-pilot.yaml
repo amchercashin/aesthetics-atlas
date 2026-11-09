@@ -18,9 +18,19 @@
   parents: []
   gallery:
     - file: Khohloma_set_1996.JPG
-      title: Хохломской набор
+      title: Набор поставцов
+      author: Юлия Отвагина
+      year: 1996
+      place: Семёнов
+      note: Снимок 2011 года.
+      whyRepresentative: >-
+        Золотистая поверхность и красно-чёрное травное письмо обходят круглую форму поставцов.
     - file: Khokhloma spoon.jpg
       title: Хохломская ложка
+      author: мастер не указан
+      year: снимок 2017 года
+      whyRepresentative: >-
+        Ягоды и листья на чёрно-золотом поле согласованы с малой округлой формой предмета.
   summary: >-
     Роспись деревянных предметов, в которой золотистая поверхность, травный орнамент и форма вещи образуют
     общую композицию.
@@ -33,7 +43,7 @@
 
     Сравнение чаши XIX века, ковша 1920–1930-х и блюда 1969 года показывает изменения внутри традиции. Декор
     может быть редким или плотным, геометрически расчленённым или свободно растительным. Старые покрытия
-    темнеют, поэтому одинаковая современная палитра не должна становиться тестом подлинности. Ключевы связь
+    темнеют, поэтому одинаковая современная палитра не должна становиться тестом подлинности. Ключевые признаки — связь
     рисунка с объёмом и система орнаментального письма.
   traits:
     - Золотистая поверхность в сочетании с красным, чёрным и меняющимися оттенками старого покрытия
@@ -136,13 +146,13 @@
     - claim: Блюдо 1969 года атрибутировано Н. И. Ивановой и Н. П. Сальниковой.
       field: corpus
       source: rusmuseum-khokhloma-dish
+    - { claim: "Технология грунта с металлическим порошком и прозрачным покрытием; не настоящее золото", field: description, source: rusmuseum-khokhloma-bowl }
   review:
-    status: partial
-    date: "2026-10-14"
-    scope: [text, corpus]
+    status: reviewed
+    date: "2026-11-09"
+    scope: [relations, dates, text, images, gallery, corpus]
     note: >-
-      Сверены указанный корпус, атрибуции и пределы текста; репродукции корпуса просмотрены. Историческая
-      генеалогия не утверждается.
+      Корпус — 14.10.2026; родство не утверждается, контексты у записей. 09.11.2026: описание и даты — Русский музей, сайт на техническом обслуживании, страница прочитана в снимке веб-архива; галерея — страницы файлов, подписаны авторы и годы; исправлена опечатка в тексте.
   maturity: established
   labelStatus: historical
   dates: с XVII века; традиция продолжается
@@ -200,21 +210,25 @@
     - asset: assets/works/emily-painting-1.jpg
       title: Эмили Кнгваррей. Картина
       author: Эмили Кам Кнгваррей
-      year: 1990-е
-      credit: Emily Kame Kngwarreye Estate / Tate
-      license: © Emily Kame Kngwarreye Estate
+      year: 1990-е (по прежней записи)
+      credit: источник копии не установлен
+      license: права не установлены; образовательное использование
       nonfree: true
-      reference: https://www.tate.org.uk/
-      whyRepresentative: Точечная живопись и органические поля цвета — язык Эмили Кнгваррей.
+      reference: https://www.ngv.vic.gov.au/explore/collection/work/57498/
+      note: Название работы не установлено.
+      whyRepresentative: Точки и органические цветовые поля заполняют всю поверхность без центра.
+      sources: [ngv-kngwarray-big-yam]
     - asset: assets/works/emily-painting-2.jpg
       title: Эмили Кнгваррей. Полотно
       author: Эмили Кам Кнгваррей
-      year: 1990-е
-      credit: Emily Kame Kngwarreye Estate / NGV
-      license: © Emily Kame Kngwarreye Estate
+      year: 1990-е (по прежней записи)
+      credit: источник копии не установлен
+      license: права не установлены; образовательное использование
       nonfree: true
-      reference: https://www.ngv.vic.gov.au/
-      whyRepresentative: Плотная точечная фактура и ритм — характерная живопись художницы.
+      reference: https://www.ngv.vic.gov.au/explore/collection/work/57498/
+      note: Название работы не установлено.
+      whyRepresentative: Плотная точечная фактура и неровный ритм держат всю плоскость холста.
+      sources: [ngv-kngwarray-big-yam]
   summary: >-
     Ритмические живописные поля, в которых точечные слои, полосы и переплетения линий связаны с Country и
     личной практикой автора.
@@ -319,13 +333,13 @@
     - claim: "Body paint: Awely — работа на бумаге 1993 года."
       field: corpus
       source: ngv-kngwarray-awely
+    - { claim: "Работы связаны с Alhalker и anwerlarr; разные этапы живописи", field: description, source: ngv-kngwarray-big-yam }
   review:
-    status: partial
-    date: "2026-10-14"
-    scope: [text, corpus]
+    status: reviewed
+    date: "2026-11-09"
+    scope: [relations, dates, text, images, gallery, corpus]
     note: >-
-      Сверены указанный корпус, атрибуции и пределы текста; репродукции корпуса просмотрены. Историческая
-      генеалогия не утверждается.
+      Корпус — 14.10.2026; родство не утверждается, контексты у записей. 09.11.2026: описание и даты — NGV; галерея: указанные прежде Tate и NGV как источники копий не подтверждены, источник не установлен, названия работ неизвестны.
   maturity: established
   labelStatus: editorial-scope-title
   scopeNote: >-
@@ -389,13 +403,19 @@
   parents: []
   gallery:
     - file: enwiki:Zverev Kostakis.jpg
-      title: Зверев. Портрет Костиса
-    - file: enwiki:Anatoly Zverev.jpg
-      title: Анатолий Зверев
+      title: Зверев. Портрет Костаки
+      author: Анатолий Зверев
+      year: год на странице файла не указан
+      note: Имя модели дано по названию файла.
+      whyRepresentative: >-
+        Глаза и рот выделены чёрными пятнами туши, контур лица размыт и прерывист.
     - file: File:Anatoly Zverev. Portrait of Alyona Basilova.jpg
-      title: Anatoly Zverev. Portrait of Alyona Basilova
-      author: Aleksei Svetailo
-      whyRepresentative: Экспрессивный портрет со свободными мазками и сдвинутой композицией.
+      title: Зверев. Портрет Алёны Басиловой
+      author: Анатолий Зверев
+      year: год на странице файла не указан
+      note: Снимок Алексея Светайло 2016 года; после смерти модели портрет находится в РГАЛИ.
+      whyRepresentative: >-
+        Экспрессивный портрет со свободными мазками и сдвинутой композицией.
   summary: >-
     Портретный образ собирается стремительной линией, открытым пятном и несколькими выразительными акцентами
     лица.
@@ -490,13 +510,14 @@
     - claim: Музей AZ публикует женский портрет 1967 года и портрет Саши Бахмутской 1964 года с именными подписями.
       field: corpus
       source: az-zverev-portrait-corpus
+    - { claim: "Портрет 1958 года, гуашь на бумаге; нижняя граница корпуса", field: dates, source: az-zverev-portrait-1958 }
+    - { claim: "Выбранный музейный корпус портретов", field: description, source: az-zverev-portrait-1958 }
   review:
-    status: partial
-    date: "2026-10-14"
-    scope: [text, corpus]
+    status: reviewed
+    date: "2026-11-09"
+    scope: [relations, dates, text, images, gallery, corpus]
     note: >-
-      Сверены указанный корпус, атрибуции и пределы текста; репродукции корпуса просмотрены. Историческая
-      генеалогия не утверждается.
+      Корпус — 14.10.2026; родство не утверждается, контексты у записей. 09.11.2026: описание и даты — Музей AZ; галерея: снята фотография самого художника (Р2), у портрета Басиловой исправлен автор: снимок Светайло, работа Зверева.
   maturity: established
   labelStatus: editorial-scope-title
   scopeNote: >-
@@ -557,26 +578,33 @@
     - asset: assets/works/shahzia-miniature-1.jpg
       title: Шахзия Сикандер. Миниатюра
       author: Шахзия Сикандер
-      year: 1990-е
-      credit: Shahzia Sikander / Whitney
-      license: © Shahzia Sikander
+      year: 1990-е (по прежней записи)
+      credit: источник копии не установлен
+      license: права не установлены; образовательное использование
       nonfree: true
-      reference: https://whitney.org/
-      whyRepresentative: Персидская миниатюра переосмыслена в современном рисунке — фирменный приём Сикандер.
+      reference: https://www.cincinnatiartmuseum.org/art/exhibitions/exhibition-archive/2025/shahzia-sikander-collective-behavior/audio-exhibition/
+      note: Название работы не установлено.
+      whyRepresentative: Фигуры в стиле миниатюры перекрывают друг друга, образы разного масштаба сходятся на листе.
+      sources: [cincinnati-sikander-audio]
     - asset: assets/works/shahzia-miniature-2.jpg
       title: Шахзия Сикандер. Работа на бумаге
       author: Шахзия Сикандер
-      year: 2000-е
-      credit: Shahzia Sikander / MoMA
-      license: © Shahzia Sikander
+      year: 2000-е (по прежней записи)
+      credit: источник копии не установлен
+      license: права не установлены; образовательное использование
       nonfree: true
-      reference: https://www.moma.org/
-      whyRepresentative: Миниатюрная традиция и современная композиция соединены в работе на бумаге.
+      reference: https://www.cincinnatiartmuseum.org/art/exhibitions/exhibition-archive/2025/shahzia-sikander-collective-behavior/audio-exhibition/
+      note: Название работы не установлено.
+      whyRepresentative: Орнаментальная рамка окружает архитектурную сцену, как на странице рукописи.
+      sources: [cincinnati-sikander-audio]
     - file: Shahzia Sikander Witness.jpg
       title: Witness
-      author: Shahzia Sikander
-      whyRepresentative: Публичная скульптура с растительными и каллиграфическими мотивами; не миниатюра на бумаге.
-      note: Публичная работа, а не миниатюра; показана как контекст практики.
+      author: Шахзия Сикандер
+      year: 2023
+      place: Мэдисон-сквер-парк, Нью-Йорк
+      note: Снимок Эллисон Мейер; скульптура позже рамок корпуса карточки.
+      whyRepresentative: >-
+        Купол с растительными и каллиграфическими мотивами переносит язык страницы в городскую среду.
   summary: >-
     Рукописная страница становится пространством разрывов, повторяющихся фигур, изменённых рамок и
     неоднозначного чтения.
@@ -684,13 +712,13 @@
         актуальных музейных подписей.
       field: corpus
       source: cincinnati-sikander-audio
+    - { claim: "Датировки The Scroll, Perilous Order и Usurpia", field: dates, source: cincinnati-sikander-audio }
   review:
-    status: partial
-    date: "2026-10-14"
-    scope: [text, corpus]
+    status: reviewed
+    date: "2026-11-09"
+    scope: [relations, dates, text, images, gallery, corpus]
     note: >-
-      Сверены указанный корпус, атрибуции и пределы текста; репродукции корпуса просмотрены. Историческая
-      генеалогия не утверждается.
+      Корпус — 14.10.2026; родство не утверждается, контексты у записей. 09.11.2026: даты — Музей искусства Цинциннати; галерея: указанные прежде Whitney и MoMA как источники копий не подтверждены; у скульптуры указаны автор и год.
   maturity: established
   labelStatus: editorial-scope-title
   scopeNote: >-
@@ -759,14 +787,21 @@
   origin: unknown
   parents: []
   gallery:
-    - file: Carrolup River Native Settlement.jpg
-      title: Энни Лок, Карролап
     - file: Rabbits-enemies-003799d.jpg
-      title: Карролап. Кролики
-    - file: File:Rabbits-enemies-003799d.jpg
-      title: Rabbits-enemies-003799d
-      author: Неизвестный автор
-      whyRepresentative: Детский рисунок с животными и подписями; линейная манера школы Карролап.
+      title: «Враги кроликов», Карролап
+      author: ученик поселения Карролап, имя не указано
+      year: 1950
+      note: Подпись по собранию Battye, 003799d.
+      whyRepresentative: >-
+        Животные и подписи складываются в учебный лист с уверенным силуэтным рисунком.
+    - file: Carrolup River Native Settlement.jpg
+      title: Поселение Карролап
+      author: автор снимка не указан
+      year: около 1951
+      role: illustration
+      note: Исторический снимок, не произведение школы; прежняя подпись называла имя Энни Лок без основания.
+      whyRepresentative: >-
+        Дети перед зданием поселения показывают среду, где создавались рисунки.
   summary: >-
     Пейзажные рисунки детей Карролап соединяют выразительный цвет земли, тёмные силуэты деревьев и ритм фигур
     и животных.
@@ -875,12 +910,11 @@
       field: dates
       source: curtin-carrolup-transfer
   review:
-    status: partial
-    date: "2026-10-14"
-    scope: [text, corpus]
+    status: reviewed
+    date: "2026-11-09"
+    scope: [relations, dates, text, images, gallery, corpus]
     note: >-
-      Сверены указанный корпус, атрибуции и пределы текста; репродукции корпуса просмотрены. Историческая
-      генеалогия не утверждается.
+      Корпус — 14.10.2026; родство не утверждается, контексты у записей. 09.11.2026: описание и даты — Кёртинский университет; галерея: убрано двойное вхождение рисунка, снимок поселения подписан как исторический, ошибочное имя снято.
   maturity: established
   labelStatus: historical
   dateNote: >-
@@ -959,25 +993,32 @@
     - asset: assets/works/kawakubo-dress-1.jpg
       title: "Comme des Garçons: платье"
       author: Рэй Кавакубо
-      year: 1980–1990-е
-      credit: Comme des Garçons / The Met
-      license: © Comme des Garçons
+      year: год не установлен
+      credit: источник копии не установлен
+      license: права не установлены; образовательное использование
       nonfree: true
       reference: https://www.metmuseum.org/exhibitions/listings/2017/rei-kawakubo
-      whyRepresentative: Асимметрия, объём и разрушение привычного силуэта — метод Кавакубо.
+      whyRepresentative: Прозрачная многослойная оболочка меняет очертания тела.
+      sources: [met-kawakubo-galleries]
     - asset: assets/works/kawakubo-dress-2.jpg
-      title: "Comme des Garçons: розовое платье"
+      title: "Comme des Garçons: красное платье"
       author: Рэй Кавакубо
-      year: 2010-е
-      credit: Comme des Garçons / The Met
-      license: © Comme des Garçons
+      year: год не установлен
+      credit: источник копии не установлен
+      license: права не установлены; образовательное использование
       nonfree: true
       reference: https://www.metmuseum.org/exhibitions/listings/2017/rei-kawakubo
-      whyRepresentative: Скульптурный объём и цвет — поздний пример преобразования силуэта у Кавакубо.
+      note: Изображение совмещает платье и портрет дизайнера.
+      whyRepresentative: Широкая плоская форма с розовыми пятнами отрывает силуэт от контуров тела.
+      sources: [met-kawakubo-galleries]
     - file: File:Dresses by Rei Kawakubo - Sarah Stierch 03.jpg
-      title: Dresses by Rei Kawakubo - Sarah Stierch 03
-      author: Sarah Stierch
-      whyRepresentative: Скульптурные объёмы и асимметрия в коллекции Comme des Garçons.
+      title: Платья Рэй Кавакубо на выставке в Метрополитене
+      author: Рэй Кавакубо
+      year: снимок 2017 года
+      place: Метрополитен-музей, Нью-Йорк
+      note: Снимок Сары Стирч.
+      whyRepresentative: >-
+        Набивка и складки смещают привычные пропорции фигуры.
   summary: Одежда меняет очертания и пропорции тела через асимметрию, набивку и многослойный объём.
   description: >-
     Три музейных предмета из разных коллекций показывают несколько способов построить непривычный силуэт. В
@@ -1086,13 +1127,13 @@
     - claim: Ансамбль Ceremony of Separation датирован сезоном осень/зима 2015–2016.
       field: corpus
       source: met-kawakubo-2015
+    - { claim: "Платье осень/зима 1983–1984 и ансамбль осень/зима 2015–2016 задают границы корпуса", field: dates, source: met-kawakubo-1983 }
   review:
-    status: partial
-    date: "2026-10-14"
-    scope: [text, corpus]
+    status: reviewed
+    date: "2026-11-09"
+    scope: [relations, dates, text, images, gallery, corpus]
     note: >-
-      Сверены указанный корпус, атрибуции и пределы текста; репродукции корпуса просмотрены. Историческая
-      генеалогия не утверждается.
+      Корпус — 14.10.2026; родство не утверждается, контексты у записей. 09.11.2026: даты — Метрополитен; галерея: источник двух копий не установлен, прежние годы сняты; у снимка указан автор платьев, а не только фотограф.
   maturity: established
   labelStatus: editorial-scope-title
   scopeNote: >-
@@ -1163,21 +1204,25 @@
     - asset: assets/works/pacita-abad-trapunto.jpg
       title: Трапунто-панно
       author: Пасита Абад
-      year: 1980-е
-      place: Трапунто
-      credit: Pacita Abad Art Estate
-      license: © Pacita Abad Art Estate
+      year: 1980-е (по прежней записи)
+      credit: источник копии не установлен
+      license: права не установлены; образовательное использование
       nonfree: true
-      reference: https://www.pacitaabad.com/
-      whyRepresentative: Стежка, аппликация и живопись соединяются в объёмную поверхность — характерный приём Паситы Абад.
+      reference: https://www.walkerart.org/whats-on/pacita-abad/
+      whyRepresentative: Стежка и живопись соединяются в объёмную поверхность маски.
+      sources: [walker-abad-retrospective]
     - file: enwiki:Ati-Atihan (1983) by Pacita Abad.jpg
       title: Ati-Atihan, 1983
-      author: Pacita Abad
+      author: Пасита Абад
+      year: 1983
+      note: Акрил на прошитом и набитом холсте, по странице файла.
       whyRepresentative: Пёстрая тканевая композиция с фигуративными мотивами.
     - file: enwiki:Filipina - A racial identity crisis (1990) by Pacita Abad.jpg
       title: Filipina — A racial identity crisis, 1990
-      author: Pacita Abad
-      whyRepresentative: Текстильный коллаж с масками и узорными фрагментами.
+      author: Пасита Абад
+      year: 1990
+      note: Акрил, ткань, нити и бусины на прошитом и набитом холсте, по странице файла.
+      whyRepresentative: Текстильный коллаж с фигурами и узорными фрагментами.
   summary: >-
     Живопись, шитьё и собранные ткани образуют плотную цветовую поверхность с заметным рельефом и повтором
     деталей.
@@ -1296,13 +1341,13 @@
     - claim: L.A. Liberty датирована 1992 годом; запись подробно перечисляет материалы.
       field: corpus
       source: walker-abad-liberty
+    - { claim: "Работы 1988, 1992 и 1998 годов", field: dates, source: walker-abad-bacongo }
   review:
-    status: partial
-    date: "2026-10-14"
-    scope: [text, corpus]
+    status: reviewed
+    date: "2026-11-09"
+    scope: [relations, dates, text, images, gallery, corpus]
     note: >-
-      Сверены указанный корпус, атрибуции и пределы текста; репродукции корпуса просмотрены. Историческая
-      генеалогия не утверждается.
+      Корпус — 14.10.2026; родство не утверждается, контексты у записей. 09.11.2026: даты — Центр искусств Уокера; галерея: сайт наследия как источник копии не подтверждён, годы и техника работ — страницы файлов.
   maturity: established
   labelStatus: editorial-scope-title
   scopeNote: >-
@@ -1358,27 +1403,33 @@
   parents: []
   gallery:
     - asset: assets/works/esther-mural.jpg
-      title: "Эстер Махлангу: мурал"
-      author: Эстер Махлангу
-      year: 2010-е
-      credit: Esther Mahlangu
-      license: © Esther Mahlangu
+      title: Эстер Малангу. Роспись стены
+      author: Эстер Малангу
+      year: год не установлен
+      credit: источник копии не установлен
+      license: права не установлены; образовательное использование
       nonfree: true
-      reference: https://www.esthermahlangu.com/
-      whyRepresentative: Геометрические поля и чёрные контуры на стене — монументальная версия ндебеле.
+      reference: https://www.serpentinegalleries.org/whats-on/dr-esther-mahlangu-umuntu-ngumuntu-ngabantu/
+      whyRepresentative: Геометрические поля и чёрные контуры разворачиваются на всей стене.
+      sources: [serpentine-mahlangu-mural-2024]
     - asset: assets/works/esther-pattern.jpg
-      title: "Эстер Махлангу: паттерн"
-      author: Эстер Махлангу
-      year: 2010-е
-      credit: Esther Mahlangu
-      license: © Esther Mahlangu
+      title: Эстер Малангу. Серия панно
+      author: Эстер Малангу
+      year: год не установлен
+      credit: источник копии не установлен
+      license: права не установлены; образовательное использование
       nonfree: true
-      reference: https://www.esthermahlangu.com/
-      whyRepresentative: Сетка цветных ромбов и полос — фирменный геометрический паттерн художницы.
+      reference: https://www.iziko.org.za/news/iziko-museums-of-south-africa-presentsthen-i-knew-i-was-good-at-painting-esthermahlangu-a-retrospective/
+      whyRepresentative: Сетка небольших панно с ромбами и полосами показывает перестройку системы.
+      sources: [iziko-mahlangu-retrospective]
     - file: File:BMW 525i Art Car - Esther Mahlangu (1991).jpg
-      title: BMW 525i Art Car - Esther Mahlangu (1991)
-      author: User:Strainu
-      whyRepresentative: BMW Art Car с геометрической росписью ндебеле.
+      title: BMW 525i Art Car
+      author: Эстер Малангу — роспись; BMW — автомобиль
+      year: 1991
+      note: Снимок 2010 года.
+      whyRepresentative: >-
+        Цветные поля и чёрно-белые линии перестроены под изгибы кузова.
+      sources: [mahlangu-bmw-1991]
   summary: >-
     Геометрические поля с чёрно-белыми контурами переносятся между кузовом, прямоугольным холстом и круглой
     поверхностью.
@@ -1487,13 +1538,13 @@
     - claim: El Espacio 23 публикует Untitled 2016 года и указывает акрил и холст.
       field: corpus
       source: espacio-mahlangu-2016
+    - { claim: "BMW Art Car, 1991; Ndebele Abstract, 2023", field: dates, source: iziko-mahlangu-retrospective }
   review:
-    status: partial
-    date: "2026-10-14"
-    scope: [text, corpus]
+    status: reviewed
+    date: "2026-11-09"
+    scope: [relations, dates, text, images, gallery, corpus]
     note: >-
-      Сверены указанный корпус, атрибуции и пределы текста; репродукции корпуса просмотрены. Историческая
-      генеалогия не утверждается.
+      Корпус — 14.10.2026; родство не утверждается, контексты у записей. 09.11.2026: даты — официальный сайт художницы, прочитан в снимке веб-архива, и Изико; галерея: написание имени приведено к «Малангу», годы копий не установлены.
   maturity: established
   labelStatus: editorial-scope-title
   scopeNote: >-
@@ -1562,21 +1613,23 @@
     - asset: assets/works/reko-1.jpg
       title: "Реко Ренни: инсталляция"
       author: Реко Ренни
-      year: 2010-е
-      credit: Reko Rennie
-      license: © Reko Rennie
+      year: год не установлен
+      credit: источник копии не установлен
+      license: права не установлены; образовательное использование
       nonfree: true
-      reference: https://en.wikipedia.org/wiki/Reko_Rennie
-      whyRepresentative: Неон, камуфляж и знаки аборигенной идентичности — публичный язык Ренни.
+      reference: https://www.ngv.vic.gov.au/explore/collection/work/108708/
+      whyRepresentative: Переработанный камуфляж занимает всю стену, а фигуры выделены яркими панелями.
+      sources: [ngv-rennie-regalia]
     - asset: assets/works/reko-2.jpg
       title: "Реко Ренни: скульптура"
       author: Реко Ренни
-      year: 2010-е
-      credit: Reko Rennie
-      license: © Reko Rennie
+      year: год не установлен
+      credit: источник копии не установлен
+      license: права не установлены; образовательное использование
       nonfree: true
-      reference: https://en.wikipedia.org/wiki/Reko_Rennie
-      whyRepresentative: Геометрическая скульптура и яркий цвет — продолжение его визуальных знаков.
+      reference: https://www.ngv.vic.gov.au/explore/collection/work/108708/
+      whyRepresentative: Геометрическая форма в ярком розовом делает знак заметным в ландшафте.
+      sources: [ngv-rennie-regalia]
   summary: >-
     Лаконичные эмблемы, яркая окраска и переработанный камуфляж делают личную и культурную принадлежность
     публично видимой.
@@ -1698,12 +1751,11 @@
       field: creators
       source: ngv-rennie-initiation
   review:
-    status: partial
-    date: "2026-10-14"
-    scope: [dates, corpus]
+    status: reviewed
+    date: "2026-11-09"
+    scope: [relations, dates, text, images, gallery, corpus]
     note: >-
-      Сверены предметные записи, роли и датировки; просмотрены Regalia и опубликованные кадры двух видео.
-      Полный покадровый анализ видео не выполнялся; историческое влияние не утверждается.
+      Корпус — 14.10.2026; родство не утверждается, контексты у записей. 09.11.2026: описание — NGV и AGSA; галерея: ссылка на Википедию как источник копий снята, годы не установлены.
   maturity: established
   labelStatus: editorial-scope-title
   scopeNote: >-
@@ -1784,10 +1836,25 @@
   gallery:
     - file: 「富嶽三十六景_凱風快晴」-South_Wind,_Clear_Sky_(Gaifū_kaisei),_also_known_as_Red_Fuji,_from_the_series_Thirty-six_Views_of_Mount_Fuji_(Fugaku_sanjūrokkei)_MET_DP141062.jpg
       title: Хокусай. Красная Фудзи
+      author: Кацусика Хокусай
+      year: около 1830
+      place: Метрополитен-музей, Нью-Йорк
+      whyRepresentative: >-
+        Гора занимает почти весь лист и строится большими полями красного и синего.
     - file: Kajikazawa_in_Kai_Province_(Koshu_Kajikazawa).jpg
       title: Хокусай. Кадзикадзава
+      author: Кацусика Хокусай
+      year: около 1830–1832
+      whyRepresentative: >-
+        Рыбак на скале и линии лесы связывают передний план с дальней горой.
     - file: The Great Wave off Kanagawa.jpg
-      title: Хокусай. Большая волна в Канагаве
+      title: Большая волна в Канагаве, поздняя копия
+      author: по Кацусике Хокусаю
+      year: около 1930
+      role: reconstruction
+      note: Современная повторная резьба, по странице файла; музейный оттиск указан в главной иллюстрации.
+      whyRepresentative: >-
+        Копия сохраняет композицию: дуга волны над лодками и маленькая Фудзи вдали.
   summary: >-
     Фудзи становится постоянной точкой сравнения в композициях с крупным передним планом, резкими диагоналями
     и меняющимся масштабом.
@@ -1897,13 +1964,14 @@
     - claim: Оттиск Кадзикадзава в провинции Каи датирован около 1830–1832 и входит в ту же серию.
       field: corpus
       source: met-hokusai-kajikazawa
+    - { claim: "Оттиски около 1830–1832 годов", field: dates, source: met-hokusai-wave }
+    - { claim: "Роль печатника и различия между оттисками", field: description, source: chiba-hokusai-red-fuji }
   review:
-    status: partial
-    date: "2026-10-14"
-    scope: [text, corpus]
+    status: reviewed
+    date: "2026-11-09"
+    scope: [relations, dates, text, images, gallery, corpus]
     note: >-
-      Сверены указанный корпус, атрибуции и пределы текста; репродукции корпуса просмотрены. Историческая
-      генеалогия не утверждается.
+      Корпус — 14.10.2026; родство не утверждается, контексты у записей. 09.11.2026: даты — Метрополитен; галерея: «Большая волна» оказалась поздней копией около 1930 года, подпись и роль исправлены.
   maturity: established
   labelStatus: editorial-scope-title
   approx: true
@@ -1972,21 +2040,23 @@
     - asset: assets/works/norshtein-hedgehog.jpg
       title: Ёжик в тумане
       author: Юрий Норштейн, Франческа Ярбусова
-      year: "1975"
-      credit: Союзмультфильм
-      license: © Союзмультфильм
+      year: 1975
+      credit: источник копии не установлен
+      license: права не установлены; образовательное использование
       nonfree: true
-      reference: https://www.soyuzmultfilm.ru/
-      whyRepresentative: Туман, многослойная глубина и одинокая фигура — фирменный экранный язык Норштейна.
+      reference: https://animator.ru/db/?fid=2684&p=show_film
+      whyRepresentative: Туман, многослойная глубина и одинокая фигура создают воздушное пространство.
+      sources: [animator-norstein-hedgehog]
     - asset: assets/works/norshtein-horse.jpg
       title: "Ёжик в тумане: лошадь"
       author: Юрий Норштейн, Франческа Ярбусова
-      year: "1975"
-      credit: Союзмультфильм
-      license: © Союзмультфильм
+      year: 1975
+      credit: источник копии не установлен
+      license: права не установлены; образовательное использование
       nonfree: true
-      reference: https://www.soyuzmultfilm.ru/
-      whyRepresentative: Мягкий свет и растворение силуэта в тумане — пример живописной анимации Норштейна.
+      reference: https://animator.ru/db/?fid=2684&p=show_film
+      whyRepresentative: Мягкий свет растворяет силуэт лошади в тумане.
+      sources: [animator-norstein-hedgehog]
   summary: Фактурный рисунок, светлое или туманное поле и выразительный силуэт соединяются в перекладочной анимации.
   description: >-
     Карточка сопоставляет визуальную организацию трёх фильмов 1974–1979 годов. В опубликованных кадрах рисунок
@@ -2105,13 +2175,14 @@
     - claim: Оператор Сказки сказок — Игорь Скидан-Босин; дата фильма 1979, а не дата поздней реставрации.
       field: creators
       source: animator-norstein-tales
+    - { claim: "Цапля и журавль, 1974; Ёжик в тумане, 1975; Сказка сказок, 1979", field: dates, source: animator-norstein-heron }
+    - { claim: "Норштейн и Ярбусова, операторы фильмов", field: description, source: animator-norstein-heron }
   review:
-    status: partial
-    date: "2026-10-14"
-    scope: [corpus]
+    status: reviewed
+    date: "2026-11-09"
+    scope: [relations, dates, text, images, gallery, corpus]
     note: >-
-      Прочитаны профессиональные предметные записи, сверены роли и три репродукции кадров. Полный просмотр
-      фильмов и покадровый анализ монтажа не выполнялись; приёмы движения по кадрам не выводятся.
+      Корпус — 14.10.2026; родство не утверждается, контексты у записей. 09.11.2026: даты и описание — Аниматор.ру; полный просмотр фильмов не выполнялся; галерея: сайт студии как источник кадров не подтверждён, ссылка ведёт на запись фильма.
   maturity: established
   labelStatus: editorial-scope-title
   scopeNote: >-
@@ -2307,14 +2378,13 @@
         местонахождение не указано.
       field: corpus
       source: commons-bilibin-vasilisa-1900
+    - { claim: "Оформление сказок как целое", field: description, source: gtg-bilibin-book-design }
   review:
-    status: partial
-    date: "2026-10-14"
-    scope: [corpus]
+    status: reviewed
+    date: "2026-11-09"
+    scope: [relations, dates, text, images, gallery, corpus]
     note: >-
-      Просмотрены три разные композиции и обложка. Датировки двух рисунков известны по вторичному описанию
-      репродукций и требуют первичного подтверждения. Материалы оригиналов и год конкретного оттиска Белой
-      уточки не установлены; границы неизвестности отмечены в подписях.
+      Корпус — 14.10.2026; родство не утверждается, контексты у записей. 09.11.2026: описание — Третьяковская галерея; даты — как указано в примечании, требуются первичные записи; галерея: у «Ковра-самолёта» сказано, что работа вне корпуса.
   maturity: established
   labelStatus: editorial-scope-title
   scopeNote: >-
@@ -2331,20 +2401,17 @@
   gallery:
     - file: Ivan Bilibin - illustration-for-the-fairytale-magic-carpet1.jpg
       title: Билибин. Ковёр-самолёт
-    - workId: bi-vasilisa-cover
+      author: Иван Яковлевич Билибин
+      year: 1934
+      note: На листе подпись «Принц Али покупает ковёр»; работа вне корпуса 1900–1902 годов.
+      whyRepresentative: >-
+        Узорные плоскости ковров и одежд подчинены чёткому контуру.
+    - file: Vasilisa the Beautiful (Bilibin) - cover.jpg
       title: "«Василиса Прекрасная»: обложка"
       author: Иван Яковлевич Билибин
       year: 1902
-      medium: Оцифрованная книжная графика; материал оригинального рисунка в записи не установлен
-      sources:
-        - commons-bilibin-vasilisa-cover
-      whyRepresentative: Заглавие и декоративные изображения собраны в общую систему обрамления.
-      rights:
-        embed: true
-        reviewed: "2026-10-14"
-        basis: В описании файла Commons указано общественное достояние; атрибуция и тип репродукции просмотрены.
-        note: Год рисунка и год печатного оттиска различаются; неизвестное отмечено в подписи.
-      file: Vasilisa the Beautiful (Bilibin) - cover.jpg
+      whyRepresentative: Заглавие и декоративные изображения собраны в общую систему обложки.
+      sources: [commons-bilibin-vasilisa-cover]
   creators:
     - name: Иван Яковлевич Билибин
       orig: Ivan Yakovlevich Bilibin
