@@ -33,6 +33,7 @@
 | 06a | `06-xix.yaml: neoclassicism … peredvizhniki` | [#63](https://github.com/amchercashin/aesthetics-atlas/pull/63) | 09.11.2026 | 8 | 16 | слита |
 | 06b | `06-xix.yaml: historicism … impressionism` | [#64](https://github.com/amchercashin/aesthetics-atlas/pull/64) | 09.11.2026 | 7 | 14 | слита |
 | 07 | `07-fin-de-siecle.yaml` | [#65](https://github.com/amchercashin/aesthetics-atlas/pull/65) | 09.11.2026 | 10 | 20 | слита |
+| 08a | `08-avant-garde.yaml: cubism … surrealism` | [#66](https://github.com/amchercashin/aesthetics-atlas/pull/66) | 09.11.2026 | 10 | 20 | слита |
 
 ## Партия 0. Подготовка (28.10.2026)
 
@@ -611,7 +612,7 @@
 ### Время
 Около часа на партию; замер приблизительный.
 
-## Партия 08a. `08-avant-garde.yaml`: cubism … surrealism (09.11.2026)
+## Партия 08a. `08-avant-garde.yaml`: cubism … surrealism (09.11.2026, [#66](https://github.com/amchercashin/aesthetics-atlas/pull/66))
 
 Карточек: 10, все переведены в `reviewed` с полным `scope`; изображений: 10 главных и 20 в галереях; новых источников: 26, повторно прочитано 3.
 
