@@ -31,13 +31,27 @@
   subjects: [still-life, ornament]
   gallery:
     - file: Zhostovo Painter 01.jpg
-      title: Жостовский мастер за работой
+      title: Мастерская Жостовской фабрики
+      author: автор снимка не указан
+      year: год на странице файла не указан
+      role: illustration
+      note: Снимок из частного архива мастера; показывает работу, а не отдельное изделие.
+      whyRepresentative: >-
+        Мастера за отдельными столами расписывают подносы в общем цехе.
     - file: Zhostovo Painter 07.jpg
-      title: Роспись жостовского подноса
+      title: Роспись подносов в Жостове
+      author: автор снимка не указан
+      year: год на странице файла не указан
+      role: illustration
+      note: Снимок из частного архива мастера; за спинами учеников табличка «Эталоны».
+      whyRepresentative: >-
+        Подростки расписывают подносы рядом с образцами-эталонами.
     - file: File:Podnos.jpg
-      title: Podnos
-      author: Obersachse
-      whyRepresentative: Чёрный поднос с букетом и золотым орнаментом — другой предмет той же мастерской.
+      title: Поднос с букетом
+      author: мастер не указан
+      year: снимок 2007 года
+      whyRepresentative: >-
+        Чёрный поднос с букетом и золотым орнаментом показывает цветочную роспись на тёмном поле.
   summary: >-
     Мазковая цветочная живопись на металлических подносах соединяет объём лепестков, свободное поле и
     орнаментальное обрамление.
@@ -158,6 +172,7 @@
         различает региональные центры росписи по металлу.
       field: admission
       source: damuseum-metal-painting
+    - { claim: "Переход к металлу в 1830-е; знакомство с подносами Нижнего Тагила", field: description, source: rusmuseum-zhostovo-1880s }
   compare:
     - id: khokhloma
       note: >-
@@ -203,12 +218,11 @@
       reviewed: "2026-10-14"
       note: Репродукция доступна на предметной странице источника.
   review:
-    status: partial
-    date: "2026-10-14"
-    scope: [dates, corpus]
+    status: reviewed
+    date: "2026-11-09"
+    scope: [relations, dates, text, images, gallery, corpus]
     note: >-
-      Сверены указанные предметные записи, материалы и пределы датировок. Репродукции корпуса просмотрены;
-      формальные наблюдения относятся к выбранным примерам.
+      Корпус — 14.10.2026; родство не утверждается, связи у записей. 09.11.2026: описание и даты — Русский музей, сайт на обслуживании, страница прочитана в снимке веб-архива. Галерея: два снимка цеха помечены как иллюстрации, у подноса указан снимок.
   links:
     - title: Поднос, Р-3794, 1880-е
       url: https://rusmuseumvrm.ru/data/collections/folk_art/r_3794/index.php
@@ -271,14 +285,24 @@
     - decorative-arts
   subjects: [everyday-life, religion-myth, any]
   gallery:
-    - file: Palekh miniature.jpg
-      title: Палехская миниатюра
     - file: Battle,_Palekh_Miniature,_1930.jpg
       title: Палех. Битва, 1930
+      author: И. И. Голиков
+      year: 1930
+      whyRepresentative: >-
+        Вытянутые всадники и кони сплетаются в ритмичную схватку на портсигаре.
     - file: File:PalekhComintern.jpg
-      title: PalekhComintern
-      author: Ivan Ivanovich Golikov
-      whyRepresentative: Лаковая миниатюра с многофигурной сценой и золотым контуром.
+      title: Голиков. Третий Интернационал
+      author: И. И. Голиков
+      year: 1927
+      whyRepresentative: >-
+        Многофигурный круг на лаковой тарелке подчинён форме предмета, контур золотится.
+    - file: YermakPalekh.jpg
+      title: Хазов. Поход Ермака
+      author: Сергей Иванович Хазов
+      year: 1935
+      whyRepresentative: >-
+        Сцена с ладьями и фигурами занимает всю лаковую крышку.
   summary: >-
     Темперные повествования на лаковых предметах: тонкая линия, вытянутые фигуры, насыщенные цветовые поля и
     золочёные детали.
@@ -402,6 +426,7 @@
     - claim: Ларчик «Сказки Пушкина» атрибутирован Р. А. Смирновой и датирован 1994 годом.
       field: corpus
       source: rusmuseum-palekh-pushkin
+    - { claim: "Традиции иконописи и опыт Федоскина в изделиях из папье-маше", field: description, source: rusmuseum-palekh-koshba }
   admission:
     language: >-
       Повторяются тонкая линия, условное пространство, выразительные фигуры и орнаментальное объединение сцены
@@ -437,12 +462,11 @@
       reviewed: "2026-10-14"
       note: Репродукция доступна на предметной странице источника.
   review:
-    status: partial
-    date: "2026-10-14"
-    scope: [dates, corpus]
+    status: reviewed
+    date: "2026-11-09"
+    scope: [relations, dates, text, images, gallery, corpus]
     note: >-
-      Сверены указанные предметные записи, материалы и пределы датировок. Репродукции корпуса просмотрены;
-      формальные наблюдения относятся к выбранным примерам.
+      Корпус — 14.10.2026; родство не утверждается, связи у записей. 09.11.2026: описание и даты — Русский музей, страница прочитана в снимке веб-архива. Галерея: снимок титула книжного каталога заменён работой Хазова (Р2), подписаны авторы.
   links:
     - title: И. И. Голиков. Баул «Тройка», 1926
       url: https://rusmuseumvrm.ru/data/collections/folk_art/oni-r-1778/index.php
@@ -493,12 +517,25 @@
   gallery:
     - file: Siapo 'elei (bark cloth) from Samoa, 20th century, Honolulu Museum of Art.JPG
       title: Сиапо, Гонолулу
+      author: мастер не указан
+      year: XX век
+      place: Художественный музей Гонолулу
+      whyRepresentative: >-
+        Ряды тёмных вытянутых форм разделены сеткой на светлой основе.
     - file: Making siapo - scraping with shell.jpg
       title: Изготовление сиапо
+      author: Wainuiomartian
+      year: 2025
+      role: illustration
+      note: Снимок процесса, а не готовая работа.
+      whyRepresentative: >-
+        Луб скоблят раковиной, размягчая и растягивая волокна.
     - file: File:Siapo mamanu (tapa cloth) - Google Art Project.jpg
-      title: Siapo mamanu (tapa cloth) - Google Art Project
-      author: Unknown author
-      whyRepresentative: Сиапо с сеткой геометрических штампов и растительных мотивов.
+      title: Сиапо мамануу
+      author: мастер не указан
+      year: 1890-е
+      whyRepresentative: >-
+        Сиапо с сеткой геометрических форм и растительных мотивов.
   summary: >-
     Орнамент на лубяном полотне соединяет сетки, полосы, растительные силуэты и контраст коричневого рисунка
     со светлой основой.
@@ -612,6 +649,8 @@
     - claim: Обзор Te Papa называет сиапо, нгату и маси как локальные практики и представляет современных мастеров.
       field: admission
       source: tepapa-pacific-tapa
+    - { claim: "FE000825 датировано 1890-ми годами", field: dates, source: tepapa-siapo-825 }
+    - { claim: "Свободное письмо как техника предмета", field: description, source: tepapa-siapo-825 }
   admission:
     language: >-
       Проверяемые признаки — разделение плоскости на сетки и полосы, чередование светлой основы и коричневого
@@ -628,13 +667,11 @@
       - tepapa-siapo-elei-11577
       - tepapa-pacific-tapa
   review:
-    status: partial
-    date: "2026-10-14"
-    scope: [corpus]
+    status: reviewed
+    date: "2026-11-09"
+    scope: [relations, dates, text, images, gallery, corpus]
     note: >-
-      Просмотрены четыре репродукции и записи. В записи siapo elei написание имени в Production отличается от
-      подписи изображения; сохранена предметная атрибуция без объединения вариантов. Раннее происхождение и
-      общая хронология не установлены этим корпусом.
+      Корпус — 14.10.2026; родство не утверждается, связи у записей. 09.11.2026: описание и даты — Те Папа, сайт недоступен, запись прочитана в снимке веб-архива. Галерея: подписаны годы, снимок процесса помечен как иллюстрация.
   example:
     workId: siapo-fe825
     title: Siapo mamanu, FE000825
@@ -702,14 +739,21 @@
     - painting
   subjects: [ornament]
   gallery:
-    - file: Tapa 'ngatu' doek 'Ko e kalauni', asset n2LVR8nESHbRSZ5X7WeEMIOn.jpg
-      title: Нгату «Корона»
+    - file: Tapa 'ngatu' doek 'Ko e kalauni', asset ESEHDZoTGC9XmaLHbRt1qhqg.jpg
+      title: Нгату «Ко э калауни»
+      author: мастер не указан
+      year: 1900–1940
+      place: Музей MAS, Антверпен
+      whyRepresentative: >-
+        Корона в лавровом венке и ленты с надписями окружены фигурной рамкой.
     - file: Paint ngatu.jpg
       title: Роспись нгату
-    - file: Paint ngatu.jpg
-      title: Изготовление нгату
       author: James Foster
-      whyRepresentative: "Роспись полотна нгату: процесс нанесения узора на тапу."
+      year: 1987
+      role: illustration
+      note: Снимок процесса, а не готовая работа.
+      whyRepresentative: >-
+        Мастерица вручную наносит рисунок на расстеленное полотно.
   summary: >-
     Модульный декор лубяного полотна объединяет растирание по купеси, ручную дорисовку и мотивы общественных
     событий.
@@ -827,12 +871,11 @@
       reviewed: "2026-10-14"
       note: Репродукция доступна на предметной странице источника.
   review:
-    status: partial
-    date: "2026-10-14"
-    scope: [dates, corpus]
+    status: reviewed
+    date: "2026-11-09"
+    scope: [relations, dates, text, images, gallery, corpus]
     note: >-
-      Сверены указанные предметные записи, материалы и пределы датировок. Репродукции корпуса просмотрены;
-      формальные наблюдения относятся к выбранным примерам.
+      Корпус — 14.10.2026; родство не утверждается, связи у записей. 09.11.2026: описание и даты — Те Папа, записи прочитаны в снимке веб-архива там, где он есть. Галерея: снимок этикетки заменён изображением самого полотна (Р2), убрано двойное вхождение снимка процесса.
   links:
     - title: Ngatu, FE008723, около 1940-х
       url: https://collections.tepapa.govt.nz/object/83327
@@ -886,26 +929,30 @@
   gallery:
     - asset: assets/works/mithila-1.jpg
       title: "Митхила: птицы и богиня"
-      author: Мастера митхилы
-      year: XX век
-      credit: Madhubani artists
-      license: ©; образовательное использование
+      author: автор не установлен
+      year: год не установлен
+      credit: источник копии не установлен
+      license: права не установлены; образовательное использование
       nonfree: true
-      reference: https://en.wikipedia.org/wiki/Madhubani_art
-      whyRepresentative: Плотный орнамент, симметрия и мифологические фигуры — канон митхильской живописи.
+      reference: https://sarmaya.in/exhibitions/crossing-borders-with-mithila/
+      whyRepresentative: Плотный орнамент и симметричное расположение фигур заполняют всю поверхность.
+      sources: [sarmaya-mithila-exhibition]
     - asset: assets/works/mithila-2.jpg
       title: "Митхила: рыба"
-      author: Мастера митхилы
-      year: XX век
-      credit: Madhubani artists
-      license: ©; образовательное использование
+      author: автор не установлен
+      year: год не установлен
+      credit: источник копии не установлен
+      license: права не установлены; образовательное использование
       nonfree: true
-      reference: https://en.wikipedia.org/wiki/Madhubani_art
-      whyRepresentative: Зооморфный сюжет и декоративная рамка — характерный мотив Мадхубани.
+      reference: https://sarmaya.in/exhibitions/crossing-borders-with-mithila/
+      whyRepresentative: Животный мотив окружён декоративной рамкой и мелким штрихом.
+      sources: [sarmaya-mithila-exhibition]
     - file: File:Madhubani Painting.jpg
-      title: Madhubani Painting
-      author: Vinodtiwari2608
-      whyRepresentative: Плоскостная фигура в орнаментальной рамке.
+      title: Живопись Мадхубани
+      author: Vinodtiwari2608 (снимок)
+      year: снимок 2014 года
+      whyRepresentative: >-
+        Плоскостная фигура в орнаментальной рамке и насыщенный растительный фон.
   summary: >-
     Контур, штриховое заполнение и орнаментальные обрамления соединяют фигуры, растения, животных и
     повествовательные сцены.
@@ -1044,6 +1091,8 @@
         сообщают дату каждого произведения.
       field: corpus
       source: sarmaya-mithila-exhibition
+    - { claim: "Tree of Surya Mukhi, 1990; работы Ганги Деви, Ситы Деви", field: dates, source: sarmaya-mithila-exhibition }
+    - { claim: "Работы трёх авторов на совместной выставке", field: description, source: sarmaya-mithila-exhibition }
   admission:
     language: >-
       Контур, повторяющееся внутреннее заполнение и орнаментальная рамка связывают разные сюжеты, при заметных
@@ -1062,13 +1111,11 @@
       - sarmaya-mithila-exhibition
       - vam-kalighat
   review:
-    status: partial
-    date: "2026-10-14"
-    scope: [corpus]
+    status: reviewed
+    date: "2026-11-09"
+    scope: [relations, dates, text, images, gallery, corpus]
     note: >-
-      Просмотрены все пять репродукций и музейные подписи. Две работы не датированы, у трёх не указаны
-      материалы; эти сведения оставлены неизвестными. Корпус не обосновывает дату возникновения или полноту
-      региональной традиции.
+      Корпус — 14.10.2026; родство не утверждается, связи у записей. 09.11.2026: описание и даты — Сармая. Галерея: обобщённое «Madhubani artists» снято, источник и годы копий не установлены.
   example:
     workId: mithila-ganga-tree
     title: Tree of Surya Mukhi
@@ -1234,32 +1281,30 @@
   gallery:
     - file: Brooklyn Museum - Goddess Lakshmi with a Rose and a Peacock.jpg
       title: Лакшми с розой и павлином
-      author: Unknown author
-      whyRepresentative: "Женская фигура с павлином: локальные цвета и быстрый контур."
+      author: автор неизвестен
+      year: XIX–XX века
+      place: Бруклинский музей
+      whyRepresentative: Женская фигура с павлином — локальные цвета и быстрый контур.
     - file: Bengali Lady applying Kohl, Kalighat Painting.jpg
       title: Бенгальская дама подводит глаза
-      author: Rajan Guptta
+      author: мастер Калигхата, имя не указано
+      year: снимок 2023 года
+      note: Снимок Rajan Guptta.
       whyRepresentative: Крупный план лица и рук; характерная для Калигхата графическая манера.
     - file: A Dancing Courtesan.jpg
       title: Танцующая куртизанка
-      author: Rajan Guptta
+      author: мастер Калигхата, имя не указано
+      year: снимок 2024 года
+      note: Снимок Rajan Guptta.
       whyRepresentative: Движение и драпировка; плотный контур и локальные заливки.
-    - workId: kalighat-bribe-49
-      title: The policeman’s bribe, IS.49-2011
+    - title: The policeman’s bribe, IS.49-2011
       author: Анвар Читракар
       year: 2010
-      medium: Точные материалы в подписи не указаны
+      place: Victoria and Albert Museum
+      whyRepresentative: Современный пример с группой фигур и городской сценой; он показывает продолжение практики и не расширяет исторический корпус.
+      reference: https://www.vam.ac.uk/articles/kalighat-painting
       sources:
         - vam-kalighat
-      reference: https://www.vam.ac.uk/articles/kalighat-painting
-      whyRepresentative: >-
-        Современный пример с группой фигур и городской сценой; он показывает изменение композиционной
-        плотности за пределами исторического корпуса.
-      place: Victoria and Albert Museum
-      rights:
-        embed: false
-        reviewed: "2026-10-14"
-        note: Репродукция доступна на предметной странице источника.
   compare: []
   evidence:
     - claim: >-
@@ -1272,6 +1317,8 @@
         центров.
       field: authorship
       source: vam-kipling-popular-art
+    - { claim: "Работы около 1860–1870, около 1900 годов", field: dates, source: vam-kalighat }
+    - { claim: "Яркие цвета и смелые контуры; живопись XIX века в Калькутте", field: description, source: vam-kalighat }
   admission:
     language: >-
       Сокращённая композиция, крупный выразительный контур и свободное поле повторяются при разных персонажах
@@ -1290,13 +1337,11 @@
       - vam-kalighat
       - vam-kipling-popular-art
   review:
-    status: partial
-    date: "2026-10-14"
-    scope: [corpus]
+    status: reviewed
+    date: "2026-11-09"
+    scope: [relations, dates, text, images, gallery, corpus]
     note: >-
-      Просмотрены четыре исторические композиции и современный пример в музейных монтажах и репродукциях.
-      Неуказанные материалы не угаданы. Каждый номер обозначает отдельное произведение; повторная публикация
-      изображения не увеличивает корпус.
+      Корпус — 14.10.2026; родство не утверждается, связи у записей. 09.11.2026: описание и даты — Музей Виктории и Альберта. Галерея: у снимков работ указан автор как мастер Калигхата, а не фотограф.
   example:
     workId: kalighat-peacock-247
     title: A lady holding a peacock, IS.247-1953
@@ -1353,8 +1398,19 @@
   gallery:
     - file: Kent_wove.jpg
       title: Кенте
+      author: мастера не указаны
+      year: снимок 2010 года
+      whyRepresentative: >-
+        Узкие полосы сшиты в полотна с продольными линиями и поперечными блоками.
     - file: Kenteweaving.jpg
       title: Ткачество кенте в Бонвире
+      author: Andy Carvin (снимок)
+      year: снимок, год неполон на странице файла
+      place: Бонвире, Гана
+      role: illustration
+      note: Снимок процесса, а не готовая работа.
+      whyRepresentative: >-
+        Ткач на узком станке показывает, как рождается отдельная полоса.
   summary: >-
     Сшитые ткацкие полосы образуют сложный ритм продольных линий, поперечных блоков и геометрического
     заполнения.
@@ -1487,6 +1543,8 @@
         в этот корпус.
       field: scope
       source: met-african-textiles-2008
+    - { claim: "1972.56.1 датирован XIX веком", field: dates, source: met-asante-kente-85576 }
+    - { claim: "Атрибуция предметов асанте-акан", field: description, source: met-asante-kente-85576 }
   admission:
     language: Ритм сшитых полос и чередование продольного и поперечного рисунка создают узнаваемую тканую поверхность.
     corpus: >-
@@ -1506,13 +1564,11 @@
       - met-asante-wrapper-316800
       - met-african-textiles-2008
   review:
-    status: partial
-    date: "2026-10-14"
-    scope: [corpus]
+    status: reviewed
+    date: "2026-11-09"
+    scope: [relations, dates, text, images, gallery, corpus]
     note: >-
-      Прочитаны четыре записи и соответствующие разделы музейного каталога; просмотрены четыре полотна. Для
-      двух предметов доступно только небольшое превью, поэтому анализ ограничен общей композицией. Встроена
-      только проверенная CC0-репродукция 1972.56.1.
+      Корпус — 14.10.2026; родство не утверждается, связи у записей. 09.11.2026: описание и даты — Метрополитен. Галерея: подписаны снимки, ткачество помечено как иллюстрация.
   links:
     - title: Man’s kente, 1972.56.1, XIX век
       url: https://www.metmuseum.org/art/collection/search/85576
@@ -1572,12 +1628,18 @@
   gallery:
     - file: BogolanMali4.JPG
       title: Боголанфини
-    - file: Le Bogolan.jpg
-      title: Боголан в Мали
+      author: мастерская в селе Сангха, имя не указано
+      year: снимок 2007 года
+      place: Сангха, Мали
+      whyRepresentative: >-
+        Геометрические знаки на тёмном поле развешаны для просушки на стене.
     - file: File:Bògòlanfini.jpg
-      title: Bògòlanfini
-      author: Rhodapenmarck
-      whyRepresentative: Тёмное полотно с белыми геометрическими знаками.
+      title: Боголанфини из частного собрания
+      author: мастер не указан
+      year: снимок 2021 года
+      note: Куплено в Мали в 2018 году, по странице файла.
+      whyRepresentative: >-
+        Тёмное полотно с белыми геометрическими знаками.
   summary: >-
     Светлые геометрические формы и тёмные поля организуют расписное хлопчатое полотно, соединяя внутренний
     узор и разные по рисунку края.
@@ -1700,6 +1762,7 @@
         функцию всех полотен.
       field: scope
       source: cma-diarra-2016-48
+    - { claim: "Первая половина XX века", field: dates, source: met-bogolan-312395 }
   admission:
     language: >-
       Повторяются контраст светлых мотивов и тёмного поля, различение центра и краёв, плотный геометрический
@@ -1721,12 +1784,11 @@
       - cma-diarra-2016-49
       - met-african-textiles-2008
   review:
-    status: partial
-    date: "2026-10-14"
-    scope: [dates, corpus]
+    status: reviewed
+    date: "2026-11-09"
+    scope: [relations, dates, text, images, gallery, corpus]
     note: >-
-      Сверены указанные предметные записи, материалы и пределы датировок. Репродукции корпуса просмотрены;
-      формальные наблюдения относятся к выбранным примерам.
+      Корпус — 14.10.2026; родство не утверждается, связи у записей. 09.11.2026: описание и даты — Метрополитен и Кливлендский музей. Галерея: снимок человека в однотонной накидке снят (Р2): узора боголанфини на нём не видно.
   links:
     - title: Bògòlanfini, 1979.206.190, первая половина XX века
       url: https://www.metmuseum.org/art/collection/search/312395
@@ -1784,11 +1846,23 @@
   gallery:
     - file: Masi (barkcloth) from Fiji, Honolulu Museum of Art.JPG
       title: Маси, Гонолулу
+      author: мастер не указан
+      year: XX век
+      place: Художественный музей Гонолулу
+      whyRepresentative: >-
+        Блоки зигзагов, клеток и треугольников разделены рамками.
     - file: Masi kesa (painted Fijian bark cloth), 20th century, Honolulu Museum of Art.jpg
       title: Маси кеса
+      author: мастер не указан
+      year: XX век
+      place: Художественный музей Гонолулу
+      whyRepresentative: >-
+        Ряды звёзд и треугольников образуют чёткий трафаретный ритм.
     - file: File:Tapa, asset G1ejUDBXecRYZQSYBP6Y8Tmw.jpg
-      title: Tapa, asset G1ejUDBXecRYZQSYBP6Y8Tmw
-      author: onbekend (textielwerker)
+      title: Маси кеса, Антверпен
+      author: мастер не указан
+      year: 1973
+      place: Музей MAS, Антверпен
       whyRepresentative: Маси с плотным геометрическим трафаретным узором.
   summary: >-
     Повторяющиеся трафаретные мотивы, вложенные обрамления и контрастные поля соединяются на лубяном полотне;
@@ -1920,6 +1994,8 @@
     - claim: В предметной атрибуции That Vase указаны оба автора, 2019 год и материалы bark cloth, ink.
       field: authorship
       source: tepapa-masi-that-vase
+    - { claim: "Работа 2019 года", field: dates, source: tepapa-masi-that-vase }
+    - { claim: "Сочетание трафарета и свободного рисунка", field: description, source: tepapa-masi-mixed }
   admission:
     language: >-
       Трафаретный повтор, крупные вложенные обрамления и светло-тёмные поля связывают разные по назначению
@@ -1940,13 +2016,11 @@
       - tepapa-masi-that-vase
       - tepapa-masi-making-vase
   review:
-    status: partial
-    date: "2026-10-14"
-    scope: [corpus]
+    status: reviewed
+    date: "2026-11-09"
+    scope: [relations, dates, text, images, gallery, corpus]
     note: >-
-      Просмотрены четыре репродукции и прочитаны предметные тексты. Две даты изготовления неизвестны;
-      современная сцена не выдана за неизменный исторический канон. Анализ видео ограничен сопровождающим
-      музейным текстом.
+      Корпус — 14.10.2026; родство не утверждается, связи у записей. 09.11.2026: описание и даты — Те Папа, запись прочитана в снимке веб-архива. Галерея: подписаны авторы, годы и собрания.
   example:
     workId: masi-fe3272-1
     title: Masi kesa, FE003272/1
@@ -2018,13 +2092,24 @@
   subjects: [everyday-life, animals, ornament]
   gallery:
     - file: Gorodetskaya_rospis_02.jpg
-      title: Городецкая роспись
+      title: Городецкая роспись на выставке
+      author: ЗАО «Городецкая роспись»
+      year: 2010
+      note: Выставка «Ладья-2010».
+      whyRepresentative: >-
+        Сцены с фигурами и цветочные рамки покрывают поверхности изделий.
     - file: Folk_crafted_box_with_Gorodets_painting.jpg
       title: Шкатулка с городецкой росписью
+      author: мастер не указан
+      year: снимок 2019 года
+      whyRepresentative: >-
+        Многофигурный праздник окружён цветочной рамкой на крышке.
     - file: File:Distaff, Gorodets 01.jpg
-      title: Distaff, Gorodets 01
-      author: Nikolay Omonov
-      whyRepresentative: Расписное донце с фигурами, конями и цветочным орнаментом.
+      title: Донца прялок
+      author: мастера не указаны
+      year: конец XIX века
+      place: Краеведческий музей Пучежского района
+      whyRepresentative: Расписные донца с фигурами, конями и цветочным орнаментом.
   summary: >-
     Сюжетные сцены, кони, птицы и крупные цветы собраны в плоскостные композиции с выразительными цветовыми
     пятнами и тонкой прорисовкой.
@@ -2151,6 +2236,7 @@
     - claim: Предметное описание 1938 года рассматривает поиск новых изделий в городецком промысле.
       field: scope
       source: rusmuseum-gorodets-kryukov
+    - { claim: "Донце Мельникова, 1870-е", field: dates, source: rusmuseum-gorodets-melnikov }
   admission:
     language: >-
       Повторяются ясные цветовые пятна, линейная разделка, плоскостные группы и организация полей рамками и
@@ -2186,12 +2272,11 @@
       reviewed: "2026-10-14"
       note: Репродукция доступна на предметной странице источника.
   review:
-    status: partial
-    date: "2026-10-14"
-    scope: [dates, corpus]
+    status: reviewed
+    date: "2026-11-09"
+    scope: [relations, dates, text, images, gallery, corpus]
     note: >-
-      Сверены указанные предметные записи, материалы и пределы датировок. Репродукции корпуса просмотрены;
-      формальные наблюдения относятся к выбранным примерам.
+      Корпус — 14.10.2026; родство не утверждается, связи у записей. 09.11.2026: описание и даты — Русский музей, страница прочитана в снимке веб-архива. Галерея: подписаны авторы, годы и собрания.
   links:
     - title: А. В. Мельников. Донце прялки, 1870-е
       url: https://rusmuseumvrm.ru/data/collections/folk_art/onir-2888/index.php
