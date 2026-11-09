@@ -119,17 +119,8 @@
   publisher: "Musei Vaticani"
   url: https://www.museivaticani.va/content/museivaticani/en/collezioni/musei/cappella-sistina/volta.html
   sourceType: museum
-  checked: 2026-10-13
-  note: "Микеланджело расписывал свод в 1508–1512 годах."
-
-- id: louvre-mona-lisa
-  title: "From the Mona Lisa to The Wedding Feast at Cana"
-  publisher: "Musée du Louvre"
-  url: https://www.louvre.fr/en/explore/the-palace/from-the-mona-lisa-to-the-wedding-feast-at-cana
-  sourceType: museum
-  checked: 2026-10-13
-  note: "Сфумато — лессировки, создающие «дымчатый» эффект. Дату создания «Моны Лизы» страница не приводит."
-
+  checked: 2026-11-08
+  note: "Микеланджело расписывал свод в 1508–1512 годах. Перечитано 08.11.2026: контракт 8 мая 1508 года, роспись завершена к 31 октября 1512 года."
 - id: vice-backrooms-2022
   title: "The Backrooms: How a Creepy Office Photo Became an Internet Bogeyman"
   publisher: "VICE · Andrew Lloyd"
@@ -462,8 +453,8 @@
   publisher: Wikimedia Commons
   url: https://commons.wikimedia.org/wiki/File:Chinesisches_Haus_-_Park_Sanssouci_-_Potsdam_-_panoramio.jpg
   sourceType: catalog
-  checked: '2026-10-14'
-  note: Фотограф Jens Cederskjold, 2 июня 2016; CC BY 3.0. Дата фотографии отделена от прежней датировки здания.
+  checked: 2026-11-08
+  note: "Фотограф Jens Cederskjold, 2 июня 2016; CC BY 3.0. Дата фотографии отделена от прежней датировки здания. Перечитано 08.11.2026: страница файла даёт 1755–1764; годы подтверждены сообщением Фонда прусских дворцов."
 - id: commons-glasgow-quadrangle
   title: File:University of Glasgow Quadrangle.jpg
   publisher: Wikimedia Commons
@@ -2167,11 +2158,9 @@
   title: Italian Painting of the Later Middle Ages — The Met
   url: https://www.metmuseum.org/de/essays/italian-painting-of-the-later-middle-ages
   sourceType: museum
-  checked: "2026-10-15"
+  checked: 2026-11-08
   publisher: metmuseum.org
-  note: >-
-    Готические мотивы и художественные изменения в итальянской живописи XIV века. Изучена содержательная
-    индексированная выдержка; не весь текст
+  note: "Готические мотивы и художественные изменения в итальянской живописи XIV века. Изучена содержательная индексированная выдержка; не весь текст Перечитано 08.11.2026: Джотто, Каваллини и Дуччо на рубеже XIII–XIV веков; объём фигур и почти измеримая глубина у Джотто."
 - id: ra26-neoimpressionism
   title: "Neo-Impressionism: Paul Signac and His Circle — The Met"
   url: https://www.metmuseum.org/exhibitions/listings/2001/paul-signac-circle
@@ -2248,11 +2237,9 @@
   title: Early Renaissance — National Gallery
   url: https://www.nationalgallery.org.uk/paintings/glossary/early-renaissance
   sourceType: museum
-  checked: "2026-10-15"
+  checked: 2026-11-08
   publisher: nationalgallery.org.uk
-  note: >-
-    Early и High Renaissance описаны как два исторически выделяемых этапа; это условная периодизация. Изучена
-    содержательная индексированная выдержка; не весь текст
+  note: "Early и High Renaissance описаны как два исторически выделяемых этапа; это условная периодизация. Изучена содержательная индексированная выдержка; не весь текст Перечитано 08.11.2026: ранний этап совпадает примерно с XV веком; более реалистичный стиль Мазаччо и Донателло."
 - id: ra26-utrecht
   title: The Artistic Community of Seventeenth-Century Utrecht — The Met
   url: https://www.metmuseum.org/es/perspectives/the-artistic-community-of-seventeenthcentury-utrecht
@@ -2489,20 +2476,16 @@
   title: Duccio's Madonna and Child — The Met
   url: https://www.metmuseum.org/exhibitions/listings/2004/duccio
   sourceType: museum
-  checked: "2026-10-15"
+  checked: 2026-11-08
   publisher: metmuseum.org
-  note: >-
-    У Дуччо соединены византийское наследие, знание готики и переход к ренессансной живописи. Изучена
-    содержательная индексированная выдержка; не весь текст
+  note: "У Дуччо соединены византийское наследие, знание готики и переход к ренессансной живописи. Изучена содержательная индексированная выдержка; не весь текст Перечитано 08.11.2026: Джотто и Дуччо около 1290–1310 годов; капелла Скровеньи около 1305 года."
 - id: ra26-giotto
   title: Giotto — National Gallery
   url: https://www.nationalgallery.org.uk/artists/giotto
   sourceType: museum
-  checked: "2026-10-15"
+  checked: 2026-11-08
   publisher: nationalgallery.org.uk
-  note: >-
-    Джотто преобразовывал византийскую живописную традицию; описание не сводится к линейной смене стилей.
-    Изучена содержательная индексированная выдержка; не весь текст
+  note: "Джотто преобразовывал византийскую живописную традицию; описание не сводится к линейной смене стилей. Изучена содержательная индексированная выдержка; не весь текст Перечитано 08.11.2026: росписи капеллы, вероятно, незадолго до 1305 года; выразительные и трёхмерно весомые фигуры."
 - id: ra26-renaissance-antique
   title: The Rediscovery of Classical Antiquity — The Met
   url: https://www.metmuseum.org/ja/essays/the-rediscovery-of-classical-antiquity
@@ -2544,29 +2527,23 @@
   title: Palladianism – an introduction — V&A
   url: https://www.vam.ac.uk/articles/palladianism-an-introduction
   sourceType: museum
-  checked: "2026-10-15"
+  checked: 2026-11-08
   publisher: vam.ac.uk
-  note: >-
-    Римская архитектура, Витрувий, Палладио и позднейшая британская рецепция. Палладио относится к XVI веку.
-    Изучена содержательная индексированная выдержка; не весь текст
+  note: "Римская архитектура, Витрувий, Палладио и позднейшая британская рецепция. Палладио относится к XVI веку. Изучена содержательная индексированная выдержка; не весь текст Перечитано 08.11.2026: мода в Британии 1715–1760; «Четыре книги» 1570; Кэмпбелл, Бёрлингтон; Чизик начат в 1725 году."
 - id: ra26-rococo
   title: The Rococo style – an introduction — V&A
   url: https://www.vam.ac.uk/articles/the-rococo-style-an-introduction
   sourceType: museum
-  checked: "2026-10-15"
+  checked: 2026-11-08
   publisher: vam.ac.uk
-  note: >-
-    Рококо описано как позднее развитие барокко в декоративном искусстве. Изучена содержательная
-    индексированная выдержка; не весь текст
+  note: "Рококо описано как позднее развитие барокко в декоративном искусстве. Изучена содержательная индексированная выдержка; не весь текст Перечитано 08.11.2026: появилось во Франции в 1720–1730-х годах; асимметрия, раковины; часто — последнее выражение барокко."
 - id: ra26-chinoiserie
   title: Chinoiserie – an introduction — V&A
   url: https://www.vam.ac.uk/articles/chinoiserie-an-introduction
   sourceType: museum
-  checked: "2026-10-15"
+  checked: 2026-11-08
   publisher: vam.ac.uk
-  note: >-
-    Европейские фантазии об Азии и смешение с рококо; источник не ограничивает заимствования жанром шань-шуй.
-    Изучена содержательная индексированная выдержка; не весь текст
+  note: "Европейские фантазии об Азии и смешение с рококо; источник не ограничивает заимствования жанром шань-шуй. Изучена содержательная индексированная выдержка; не весь текст Перечитано 08.11.2026: импорт с начала XVI века; воображаемые мотивы; Чиппендейл; спад после Первой опиумной войны."
 - id: ra26-mughal
   title: Paintings of the Mughal and Deccani Courts — The Met
   url: https://resources.metmuseum.org/resources/metpublications/pdf/Indian_Skies_Hodgkin_Collection.pdf
@@ -3277,23 +3254,16 @@
   title: Caravaggist — National Gallery, glossary
   url: https://www.nationalgallery.org.uk/paintings/glossary/caravaggist
   sourceType: museum
-  checked: "2026-10-16"
+  checked: 2026-11-08
   publisher: nationalgallery.org.uk
-  note: >-
-    Обозначает международную рецепцию Караваджо в первой половине XVII века; это практика внутри эпохи
-    барокко, а не отдельный стиль-прародитель всей эпохи. Локатор: Определение Caravaggist. Определение
-    Caravaggist Прочитана содержательная часть страницы
+  note: "Обозначает международную рецепцию Караваджо в первой половине XVII века; это практика внутри эпохи барокко, а не отдельный стиль-прародитель всей эпохи. Локатор: Определение Caravaggist. Определение Caravaggist Прочитана содержательная часть страницы Перечитано 08.11.2026: термин начала XX века, первая половина XVII века, пик после 1610 года, спад к середине века."
 - id: ra26-d2-netherlandish
   title: Early Netherlandish Painting — Maryan W. Ainsworth, The Met (2009)
   url: https://www.metmuseum.org/essays/early-netherlandish-painting
   sourceType: museum
-  checked: "2026-10-16"
+  checked: 2026-11-08
   publisher: metmuseum.org
-  note: >-
-    Светские пейзажные, бытовые и натюрмортные элементы XVI века подготовили жанровые темы XVII; предел —
-    история жанров, не весь Dutch Golden Age. Локатор: The Sacred Realm: Religious Painting, ca.1500–1550,
-    последний абзац. The Sacred Realm: Religious Painting, ca.1500–1550, последний абзац Прочитана
-    содержательная часть страницы
+  note: "Светские пейзажные, бытовые и натюрмортные элементы XVI века подготовили жанровые темы XVII; предел — история жанров, не весь Dutch Golden Age. Локатор: The Sacred Realm: Religious Painting, ca.1500–1550, последний абзац. The Sacred Realm: Religious Painting, ca.1500–1550, последний абзац Прочитана содержательная часть страницы Перечитано 08.11.2026: детали почти микроскопического правдоподобия; Гентский алтарь завершён в 1432 году."
 - id: ra26-d2-palladio
   title: "Palladio and His Legacy: A Transatlantic Journey — Palladio Museum / RIBA (2010)"
   url: https://www.palladiomuseum.org/en/exhibitions/PalladioAndHisLegacy2
@@ -5467,3 +5437,474 @@
   sourceType: encyclopedia
   checked: 2026-11-08
   note: "Подпись: чудо Георгия о змие, анонимный мастер новгородской школы, яичная темпера на доске, начало XV века; Третьяковская галерея, собрание И. С. Остроухова. Школа — XII–XVI века."
+
+# Партия 05 (08.11.2026)
+- id: smarthistory-giotto-lamentation
+  title: Giotto, Arena (Scrovegni) Chapel (part 3 of 4)
+  publisher: Smarthistory
+  url: https://smarthistory.org/giotto-arena-scrovegni-chapel-part-3-of-4/
+  sourceType: scholarly
+  checked: 2026-11-08
+  note: "«Оплакивание», около 1305 года: простой пейзаж и толпа скорбящих направляют к горю Марии."
+- id: uffizi-primavera
+  title: Spring by Sandro Botticelli
+  publisher: Uffizi Galleries
+  url: https://www.uffizi.it/en/artworks/botticelli-spring
+  sourceType: museum
+  checked: 2026-11-08
+  note: "Боттичелли, около 1480 года, темпера на дереве."
+- id: uffizi-birth-of-venus
+  title: The Birth of Venus by Botticelli
+  publisher: Uffizi Galleries
+  url: https://www.uffizi.it/en/artworks/birth-of-venus
+  sourceType: museum
+  checked: 2026-11-08
+  note: "Около 1485 года, темпера на холсте; весьма вероятный заказ кого-то из Медичи, но документов раньше 1550 года нет."
+- id: uffizi-judith
+  title: Judith Beheading Holofernes by Artemisia Gentileschi
+  publisher: Uffizi Galleries
+  url: https://www.uffizi.it/en/artworks/judith-beheading-holofernes
+  sourceType: museum
+  checked: 2026-11-08
+  note: "Около 1620 года, масло на холсте."
+- id: uffizi-madonna-long-neck
+  title: The Madonna with the long neck by Parmigianino
+  publisher: Uffizi Galleries
+  url: https://www.uffizi.it/en/artworks/parmigianino-madonna-long-neck
+  sourceType: museum
+  checked: 2026-11-08
+  note: "1534–1540, масло на доске; неестественно вытянутые формы, незавершена к смерти художника в 1540 году."
+- id: smarthistory-masaccio-trinity
+  title: Masaccio, Holy Trinity
+  publisher: Smarthistory
+  url: https://smarthistory.org/masaccio-holy-trinity/
+  sourceType: scholarly
+  checked: 2026-11-08
+  note: "Около 1427 года, Санта-Мария-Новелла; первым применил линейную перспективу Брунеллески. Commons даёт 1425–1426."
+- id: britannica-brunelleschi
+  title: Filippo Brunelleschi
+  publisher: Encyclopaedia Britannica
+  url: https://www.britannica.com/biography/Filippo-Brunelleschi
+  sourceType: encyclopedia
+  checked: 2026-11-08
+  note: "Купол собора 1420–1436; «как говорят, заново открыл» принципы линейной перспективы."
+- id: britannica-donatello
+  title: Donatello
+  publisher: Encyclopaedia Britannica
+  url: https://www.britannica.com/biography/Donatello
+  sourceType: encyclopedia
+  checked: 2026-11-08
+  note: "«Давид» — первая со времён античности большая свободно стоящая обнажённая скульптура."
+- id: vatican-school-of-athens
+  title: School of Athens
+  publisher: Vatican Museums
+  url: https://www.museivaticani.va/content/museivaticani/en/collezioni/musei/stanze-di-raffaello/stanza-della-segnatura/scuola-di-atene.html
+  sourceType: museum
+  checked: 2026-11-08
+  note: "Описание фрески: Платон и Аристотель в центре. Дата на странице не указана."
+- id: smarthistory-school-of-athens
+  title: Raphael, School of Athens
+  publisher: Smarthistory
+  url: https://smarthistory.org/raphael-school-of-athens/
+  sourceType: scholarly
+  checked: 2026-11-08
+  note: "Фреска, 1509–1511, Станца делла Сеньятура."
+- id: britannica-high-renaissance
+  title: High Renaissance
+  publisher: Encyclopaedia Britannica
+  url: https://www.britannica.com/topic/High-Renaissance
+  sourceType: encyclopedia
+  checked: 2026-11-08
+  note: "Около 35 лет, от начала 1490-х годов до 1527 года; центрические композиции; Браманте и план Юлия II; «Афинская школа» в личных покоях папы."
+- id: ng-glossary-high-renaissance
+  title: High Renaissance
+  publisher: The National Gallery, London
+  url: https://www.nationalgallery.org.uk/paintings/glossary/high-renaissance
+  sourceType: museum
+  checked: 2026-11-08
+  note: "В живописи — первые десятилетия XVI века: Леонардо, Микеланджело, Рафаэль, Тициан. Определение спорно."
+- id: louvre-mona-lisa-record
+  title: Portrait de Lisa Gherardini, dit La Joconde ou Monna Lisa
+  publisher: Musée du Louvre, Collections
+  url: https://collections.louvre.fr/en/ark:/53355/cl010062370
+  sourceType: museum
+  checked: 2026-11-08
+  note: "1503–1519; начат около 1503 года, не завершён к смерти Леонардо. Лицо построено тонкими слоями лессировок, стирающими контуры, — сфумато."
+- id: prado-garden
+  title: The Garden of Earthly Delights Triptych
+  publisher: Museo Nacional del Prado
+  url: https://www.museodelprado.es/en/the-collection/art-work/the-garden-of-earthly-delights-triptych/02388242-6d6a-4e9e-a992-e1311eab3609
+  sourceType: museum
+  checked: 2026-11-08
+  note: "Босх, 1490–1500, масло и гризайль на дубовой доске."
+- id: prado-meninas
+  title: Las Meninas
+  publisher: Museo Nacional del Prado
+  url: https://www.museodelprado.es/en/the-collection/art-work/las-meninas/9fdc7800-9ade-48b0-ab8b-edee94ea877f
+  sourceType: museum
+  checked: 2026-11-08
+  note: "Веласкес, 1656, масло на холсте; написана в Алькасаре в Мадриде."
+- id: ng-arnolfini
+  title: The Arnolfini Portrait
+  publisher: The National Gallery, London
+  url: https://www.nationalgallery.org.uk/paintings/jan-van-eyck-the-arnolfini-portrait
+  sourceType: museum
+  checked: 2026-11-08
+  note: "Ян ван Эйк, 1434, масло на дереве; в выпуклом зеркале комната и две фигуры в дверях."
+- id: ng-bronzino-allegory
+  title: An Allegory with Venus and Cupid
+  publisher: The National Gallery, London
+  url: https://www.nationalgallery.org.uk/paintings/bronzino-an-allegory-with-venus-and-cupid
+  sourceType: museum
+  checked: 2026-11-08
+  note: "Бронзино, около 1545 года, масло на дереве; эмалевая поверхность, мраморные тела, строение рельефа."
+- id: ng-glossary-mannerism
+  title: Mannerism
+  publisher: The National Gallery, London
+  url: https://www.nationalgallery.org.uk/paintings/glossary/mannerism
+  sourceType: museum
+  checked: 2026-11-08
+  note: "Искусство XVI века, сперва Италия: изысканное, подчёркнуто стилизованное, неестественный цвет."
+- id: ng-glossary-baroque
+  title: Baroque
+  publisher: The National Gallery, London
+  url: https://www.nationalgallery.org.uk/paintings/glossary/baroque
+  sourceType: museum
+  checked: 2026-11-08
+  note: "Крупные работы, чаще XVII века, с диагоналями и иллюзионистическими эффектами; Рубенс и Бернини."
+- id: ng-glossary-rococo
+  title: Rococo
+  publisher: The National Gallery, London
+  url: https://www.nationalgallery.org.uk/paintings/glossary/rococo
+  sourceType: museum
+  checked: 2026-11-08
+  note: "Правление Людовика XV (1715–1774); от rocaille; асимметрия, изгибы, светлые цвета."
+- id: britannica-jan-van-eyck
+  title: Jan van Eyck
+  publisher: Encyclopaedia Britannica
+  url: https://www.britannica.com/biography/Jan-van-Eyck
+  sourceType: encyclopedia
+  checked: 2026-11-08
+  note: "Усовершенствовал масляную живопись; скрытые религиозные символы."
+- id: britannica-durer
+  title: Albrecht Dürer
+  publisher: Encyclopaedia Britannica
+  url: https://www.britannica.com/biography/Albrecht-Durer-German-artist
+  sourceType: encyclopedia
+  checked: 2026-11-08
+  note: "Первая поездка в Италию 1494–1495; переработка итальянских образцов."
+- id: britannica-bosch
+  title: Hieronymus Bosch
+  publisher: Encyclopaedia Britannica
+  url: https://www.britannica.com/biography/Hieronymus-Bosch
+  sourceType: encyclopedia
+  checked: 2026-11-08
+  note: "Фантастические существа и сюрреальные пейзажи."
+- id: britannica-bruegel
+  title: Pieter Bruegel the Elder
+  publisher: Encyclopaedia Britannica
+  url: https://www.britannica.com/biography/Pieter-Bruegel-the-Elder
+  sourceType: encyclopedia
+  checked: 2026-11-08
+  note: "Пейзажи и сцены крестьянской жизни."
+- id: finestre-pontormo
+  title: "Pontormo's Deposition, a nonconformist masterpiece that breaks with tradition"
+  publisher: Finestre sull'Arte
+  url: https://www.finestresullarte.info/en/works-and-artists/pontormo-s-deposition-a-nonconformist-masterpiece-that-breaks-with-tradition
+  sourceType: press
+  checked: 2026-11-08
+  note: "Алтарный образ в церкви Санта-Феличита во Флоренции; основополагающая работа маньеризма."
+- id: britannica-mannerism
+  title: Mannerism
+  publisher: Encyclopaedia Britannica
+  url: https://www.britannica.com/art/Mannerism
+  sourceType: encyclopedia
+  checked: 2026-11-08
+  note: "Италия, от 1520-х годов примерно до 1590 года; удлинённые конечности, сложные позы, сплющенное пространство, неестественный цвет."
+- id: vatican-caravaggio-deposition
+  title: Caravaggio, Deposition
+  publisher: Vatican Museums
+  url: https://www.museivaticani.va/content/museivaticani/en/collezioni/musei/la-pinacoteca/sala-xii---secolo-xvii/caravaggio--deposizione-dalla-croce.html
+  sourceType: museum
+  checked: 2026-11-08
+  note: "Заказ Джироламо Витриче для Кьеза-Нуова; Христа кладут на камень миропомазания. Дата на странице не указана."
+- id: smarthistory-caravaggio-calling
+  title: Caravaggio, Calling of Saint Matthew
+  publisher: Smarthistory
+  url: https://smarthistory.org/caravaggio-calling-of-st-matthew/
+  sourceType: scholarly
+  checked: 2026-11-08
+  note: "1599–1600, капелла Контарелли, Сан-Луиджи-деи-Франчези, Рим."
+- id: smarthistory-caravaggisti
+  title: Caravaggio and Caravaggisti in 17th-century Europe
+  publisher: Smarthistory
+  url: https://smarthistory.org/caravaggio-and-caravaggisti-in-17th-century-europe/
+  sourceType: scholarly
+  checked: 2026-11-08
+  note: "Последователи — итальянские, испанские, французские и нидерландские художники; тенебризм."
+- id: britannica-caravaggio
+  title: Caravaggio
+  publisher: Encyclopaedia Britannica
+  url: https://www.britannica.com/biography/Caravaggio
+  sourceType: encyclopedia
+  checked: 2026-11-08
+  note: "Отход от условностей позднего маньеризма; живые модели в современной одежде, рваная ткань, грязные ступни; резкий контраст света и тьмы."
+- id: smarthistory-bernini-teresa
+  title: Gian Lorenzo Bernini, Ecstasy of Saint Teresa
+  publisher: Smarthistory
+  url: https://smarthistory.org/bernini-ecstasy-of-st-teresa/
+  sourceType: scholarly
+  checked: 2026-11-08
+  note: "1647–1652, капелла Корнаро, Санта-Мария-делла-Виттория; «театр духовного переживания». Британника даёт 1645–1652."
+- id: britannica-baroque
+  title: Baroque art and architecture
+  publisher: Encyclopaedia Britannica
+  url: https://www.britannica.com/art/Baroque-period
+  sourceType: encyclopedia
+  checked: 2026-11-08
+  note: "Примерно XVII век, ранние проявления в конце XVI века, в Германии и Южной Америке — XVIII век; программа церкви после Тридентского собора."
+- id: britannica-rubens
+  title: Peter Paul Rubens
+  publisher: Encyclopaedia Britannica
+  url: https://www.britannica.com/biography/Peter-Paul-Rubens
+  sourceType: encyclopedia
+  checked: 2026-11-08
+  note: "Главный выразитель динамики, жизненной силы и чувственной избыточности барочной живописи."
+- id: rijksmuseum-night-watch
+  title: The Night Watch
+  publisher: Rijksmuseum
+  url: https://www.rijksmuseum.nl/en/collection/SK-C-5
+  sourceType: museum
+  checked: 2026-11-08
+  note: "Рембрандт, 1642, масло на холсте; первым написал фигуры группового портрета за действием."
+- id: rijksmuseum-milkmaid
+  title: The Milkmaid
+  publisher: Rijksmuseum
+  url: https://www.rijksmuseum.nl/en/collection/SK-A-2344
+  sourceType: museum
+  checked: 2026-11-08
+  note: "Вермеер, около 1660 года, масло на холсте; свет передан множеством цветных точек."
+- id: mauritshuis-girl-pearl
+  title: Girl with a Pearl Earring
+  publisher: Mauritshuis
+  url: https://www.mauritshuis.nl/en/our-collection/artworks/670-girl-with-a-pearl-earring/
+  sourceType: museum
+  checked: 2026-11-08
+  note: "Вермеер, около 1665 года; не портрет, а трони."
+- id: met-dutch-golden-age
+  title: "In Praise of Painting: Rethinking Art of the Dutch Golden Age at The Met"
+  publisher: The Metropolitan Museum of Art
+  url: https://www.metmuseum.org/perspectives/in-praise-of-painting-dutch-golden-age
+  sourceType: museum
+  checked: 2026-11-08
+  note: "Независимость 1648 года; экспериментальный и конкурентный художественный рынок."
+- id: met-genre-northern
+  title: Genre Painting in Northern Europe
+  publisher: The Metropolitan Museum of Art
+  url: https://www.metmuseum.org/essays/genre-painting-in-northern-europe
+  sourceType: museum
+  checked: 2026-11-08
+  note: "Специализация на сюжетах, интерьер в картине похож на тот, где она могла висеть."
+- id: rmg-queens-house-history
+  title: History of the Queen's House
+  publisher: Royal Museums Greenwich
+  url: https://www.rmg.co.uk/stories/royal-history/history-queens-house
+  sourceType: museum
+  checked: 2026-11-08
+  note: "Заказ 1616 года, работы с 1617 года, перерыв, возобновление в 1632 году, внешний объём завершён в 1635 году, интерьеры — около 1638 года."
+- id: rmg-palladio
+  title: Who was Andrea Palladio?
+  publisher: Royal Museums Greenwich
+  url: https://www.rmg.co.uk/stories/art-culture/andrea-palladio-1508-80
+  sourceType: museum
+  checked: 2026-11-08
+  note: "«Четыре книги» 1570 года; Иниго Джонс принёс идеи Палладио в Англию; Дом королевы."
+- id: britannica-palladianism
+  title: Palladianism
+  publisher: Encyclopaedia Britannica
+  url: https://www.britannica.com/art/Palladianism
+  sourceType: encyclopedia
+  checked: 2026-11-08
+  note: "Пик в XVIII веке; Англия, Ирландия, США, Германия; в Россию — через Камерона и Кваренги; Джефферсон."
+- id: unesco-vicenza
+  title: City of Vicenza and the Palladian Villas of the Veneto
+  publisher: UNESCO World Heritage Centre
+  url: https://whc.unesco.org/en/list/712/
+  sourceType: official
+  checked: 2026-11-08
+  note: "Палладио (1508–1580) опирался на подробное изучение римской архитектуры; стиль распространился в Англии, Европе и Северной Америке."
+- id: palladio-museum-rotonda
+  title: Villa Almerico Capra detta «la Rotonda», Vicenza
+  publisher: Palladio Museum, Mediateca
+  url: https://mediateca.palladiomuseum.org/palladio/opera.php?id=41
+  sourceType: museum
+  checked: 2026-11-08
+  note: "Проект 1566–1567, строительство 1567–1605; после 1580 года работами руководил Скамоцци."
+- id: louvre-embarkation
+  title: Pèlerinage à l'île de Cythère
+  publisher: Musée du Louvre, Collections
+  url: https://collections.louvre.fr/en/ark:/53355/cl010061995
+  sourceType: museum
+  checked: 2026-11-08
+  note: "Ватто, 1717, INV 8525."
+- id: smarthistory-fragonard-swing
+  title: Jean-Honoré Fragonard, The Swing
+  publisher: Smarthistory
+  url: https://smarthistory.org/jean-honore-fragonard-the-swing/
+  sourceType: scholarly
+  checked: 2026-11-08
+  note: "1767, собрание Уоллеса; женщина теряет туфельку, поклонник скрыт розовым кустом."
+- id: britannica-rococo
+  title: Rococo
+  publisher: Encyclopaedia Britannica
+  url: https://www.britannica.com/art/Rococo
+  sourceType: encyclopedia
+  checked: 2026-11-08
+  note: "Париж, начало XVIII века, реакция на Версаль Людовика XIV; пастель, белый, золото, зеркала; шутливые мифологические и любовные сюжеты."
+- id: rct-yellow-drawing-room
+  title: The Yellow Drawing Room at Buckingham Palace
+  publisher: Royal Collection Trust
+  url: https://www.rct.uk/collection/919924/the-yellow-drawing-room-at-buckingham-palace
+  sourceType: museum
+  checked: 2026-11-08
+  note: "Джеймс Робертс, подписано и датировано 1855; многое перенесено из Брайтонского павильона, китайские селадоновые канделябры."
+- id: unesco-drottningholm
+  title: Royal Domain of Drottningholm
+  publisher: UNESCO World Heritage Centre
+  url: https://whc.unesco.org/en/list/559/
+  sourceType: official
+  checked: 2026-11-08
+  note: "Китайский павильон — символ контактов Европы и Азии XVIII века. Точный год постройки на странице не указан."
+- id: spsg-chinese-house-press
+  title: Chinesisches Haus (пресс-сообщение, 02.08.2016)
+  publisher: Stiftung Preußische Schlösser und Gärten
+  url: https://www.spsg.de/presse-foto-film/2016-08-02-tina-cassati/
+  sourceType: official
+  checked: 2026-11-08
+  note: "Иоганн Готфрид Бюринг, 1755–1764; вкус шинуазри соединяет рококо с восточными элементами."
+- id: spsg-chinese-house
+  title: Chinese House in Sanssouci Park
+  publisher: Stiftung Preußische Schlösser und Gärten
+  url: https://www.spsg.de/en/palaces-gardens/object/chinese-house-in-sanssouci-park
+  sourceType: official
+  checked: 2026-11-08
+  note: "Позолоченные фигуры и колонны в виде пальм."
+- id: britannica-chinoiserie
+  title: Chinoiserie
+  publisher: Encyclopaedia Britannica
+  url: https://www.britannica.com/art/chinoiserie
+  sourceType: encyclopedia
+  checked: 2026-11-08
+  note: "Стиль XVII–XVIII веков; Фарфоровый Трианон 1670–1671; позолота, лак, бело-синяя гамма; пагоды и чайные павильоны в парках."
+- id: met-36490
+  title: South Wind, Clear Sky (Red Fuji)
+  publisher: The Metropolitan Museum of Art
+  url: https://www.metmuseum.org/art/collection/search/36490
+  sourceType: museum
+  checked: 2026-11-08
+  note: "Хокусай, около 1830–1832 годов, цветная ксилография, JP9."
+- id: met-45434
+  title: Under the Wave off Kanagawa (The Great Wave)
+  publisher: The Metropolitan Museum of Art
+  url: https://www.metmuseum.org/art/collection/search/45434
+  sourceType: museum
+  checked: 2026-11-08
+  note: "Хокусай, около 1830–1832 годов, JP1847."
+- id: met-55433
+  title: Sudden Shower over Shin-Ōhashi Bridge and Atake
+  publisher: The Metropolitan Museum of Art
+  url: https://www.metmuseum.org/art/collection/search/55433
+  sourceType: museum
+  checked: 2026-11-08
+  note: "Хиросигэ, 1857, JP2522, серия «Сто знаменитых видов Эдо»."
+- id: met-447743
+  title: The Spy Zambur Brings Mahiya to the City of Tawariq, Folio from a Hamzanama
+  publisher: The Metropolitan Museum of Art
+  url: https://www.metmuseum.org/art/collection/search/447743
+  sourceType: museum
+  checked: 2026-11-08
+  note: "Около 1570 года, ткань; приписывается Кесаву Дасу и Мах Мухаммаду."
+- id: met-ukiyo-prints
+  title: Woodblock Prints in the Ukiyo-e Style
+  publisher: The Metropolitan Museum of Art
+  url: https://www.metmuseum.org/essays/woodblock-prints-in-the-ukiyo-e-style
+  sourceType: museum
+  checked: 2026-11-08
+  note: "Многоцветные листы с 1765 года; сюжеты; художник, резчик, печатник, издатель."
+- id: met-pleasure-quarters
+  title: Art of the Pleasure Quarters and the Ukiyo-e Style
+  publisher: The Metropolitan Museum of Art
+  url: https://www.metmuseum.org/essays/art-of-the-pleasure-quarters-and-the-ukiyo-e-style
+  sourceType: museum
+  checked: 2026-11-08
+  note: "Слово ukiyo первоначально выражало буддийскую мысль о бренности."
+- id: met-japonisme
+  title: Japonisme
+  publisher: The Metropolitan Museum of Art
+  url: https://www.metmuseum.org/essays/japonisme
+  sourceType: museum
+  checked: 2026-11-08
+  note: "После открытия портов в 1853 году гравюры укиё-э изменили искусство импрессионистов и постимпрессионистов."
+- id: britannica-ukiyo-e
+  title: Ukiyo-e
+  publisher: Encyclopaedia Britannica
+  url: https://www.britannica.com/art/ukiyo-e
+  sourceType: encyclopedia
+  checked: 2026-11-08
+  note: "Один из важнейших жанров периода Токугава (1603–1867)."
+- id: freer-bichitr
+  title: Jahangir Preferring a Sufi Shaikh to Kings, from the St. Petersburg Album
+  publisher: National Museum of Asian Art, Smithsonian
+  url: https://asia.si.edu/explore-art-culture/collections/search/edanmdm:fsg_F1942.15a
+  sourceType: museum
+  checked: 2026-11-08
+  note: "Бичитр, около 1615–1618 годов, поля 1747–1748, F1942.15a."
+- id: smarthistory-bichitr
+  title: Bichitr, Jahangir Preferring a Sufi Shaikh to Kings
+  publisher: Smarthistory
+  url: https://smarthistory.org/bichtir-jahangir-preferring-a-sufi-shaikh-to-kings
+  sourceType: scholarly
+  checked: 2026-11-08
+  note: "Яков I в европейском костюме; путти и ангелы у пьедестала Джахангира."
+- id: met-mughals-before-1600
+  title: The Art of the Mughals before 1600
+  publisher: The Metropolitan Museum of Art
+  url: https://www.metmuseum.org/essays/the-art-of-the-mughals-before-1600
+  sourceType: museum
+  checked: 2026-11-08
+  note: "Акбар (1556–1605) и придворная мастерская; персидские, индийские и европейские элементы."
+- id: britannica-mughal-painting
+  title: Mughal painting
+  publisher: Encyclopaedia Britannica
+  url: https://www.britannica.com/art/Mughal-painting
+  sourceType: encyclopedia
+  checked: 2026-11-08
+  note: "XVI–XVIII века, затем упадок; Мир Сеид Али и Абд ас-Самад; Бишандас, Мансур."
+- id: louvre-jadrup
+  title: Visite de Jahangir à l'ascète Jadrup
+  publisher: Musée du Louvre, Collections
+  url: https://collections.louvre.fr/en/ark:/53355/cl010329628
+  sourceType: museum
+  checked: 2026-11-08
+  note: "Отдел искусств ислама, OA 7171, Петербургский альбом; XVII век, автор в записи не указан."
+- id: dekathedraal-raising
+  title: De Kruisoprichting
+  publisher: De Kathedraal (Antwerpen), снимок веб-архива 03.08.2025
+  url: https://web.archive.org/web/20250803204807/https://www.dekathedraal.be/nl/rubens-kruisoprichting
+  sourceType: official
+  checked: 2026-11-09
+  note: "Рубенс, 1609–1610, масло на доске. Сам сайт собора из этой сети не открывается, поэтому прочитан снимок."
+- id: kungligaslotten-chinese-pavilion
+  title: The Chinese Pavilion, history
+  publisher: Kungliga slotten, снимок веб-архива 20.04.2026
+  url: https://web.archive.org/web/20260420162534/https://www.kungligaslotten.se/english/royal-palaces-and-sites/the-chinese-pavilion/history.html
+  sourceType: official
+  checked: 2026-11-09
+  note: "Первый павильон 1753 года; нынешнее здание заложено в 1763 году, эскиз Карла Фредрика Адельскранца; рококо с отсылками к Китаю. Сам сайт из этой сети не открывается."
+- id: vatican-catalogue-deposition
+  title: "Pala d'altare: Deposizione di Cristo (MV.40386.0.0)"
+  publisher: Musei Vaticani, Catalogo Online, снимок веб-архива 15.10.2026
+  url: https://web.archive.org/web/20261015020358/https://catalogo.museivaticani.va/index.php/Detail/objects/MV.40386.0.0
+  sourceType: museum
+  checked: 2026-11-09
+  note: "Караваджо, 1603–1604, масло на холсте. Сам каталог закрыт проверкой Cloudflare."
