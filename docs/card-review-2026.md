@@ -38,6 +38,7 @@
 | 09a | `09-postwar.yaml: abstract-expressionism … metabolism` | [#68](https://github.com/amchercashin/aesthetics-atlas/pull/68) | 09.11.2026 | 9 | 19 | слита |
 | 09b | `09-postwar.yaml: pop-art … computer-art` | [#69](https://github.com/amchercashin/aesthetics-atlas/pull/69) | 09.11.2026 | 9 | 18 | слита |
 | 10 | `10-postmodern.yaml` | [#70](https://github.com/amchercashin/aesthetics-atlas/pull/70) | 09.11.2026 | 14 | 28 | слита |
+| 11 | `11-digital.yaml` | [#71](https://github.com/amchercashin/aesthetics-atlas/pull/71) | 09.11.2026 | 12 | 24 | слита |
 
 ## Партия 0. Подготовка (28.10.2026)
 
@@ -962,7 +963,7 @@
 ### Время
 Около полутора часов на партию; замер приблизительный.
 
-## Партия 11. `11-digital.yaml` (09.11.2026)
+## Партия 11. `11-digital.yaml` (09.11.2026, [#71](https://github.com/amchercashin/aesthetics-atlas/pull/71))
 
 Карточек: 12, все переведены в `reviewed` с полным `scope`; изображений: 12 главных и 24 в галереях; новых источников: 21, повторно прочитано 0.
 
