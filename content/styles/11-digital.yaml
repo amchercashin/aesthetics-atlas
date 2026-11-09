@@ -1,10 +1,15 @@
 - id: web-1-0
   name: Web 1.0 (эстетика GeoCities)
   orig: Web 1.0 / Old Web
-  aliases: [GeoCities, олдвеб, old web, веб 90-х, Netscape, under construction]
+  aliases: [GeoCities, олдвеб, old web, веб 90-х]
+  searchKeywords: [Netscape, under construction]
   start: 1994
   end: 2004
   dates: 1994 – 2004
+  approx: true
+  dateKind: period
+  dateNote: >
+    Отметка начала — запуск GeoCities в ноябре 1994 года. Сама служба в США работала до 2009 года; конец периода условен.
   era: digital
   domain: [internet, design]
   medium: [web]
@@ -35,45 +40,45 @@
         - ra26-d3-joe-geis
   origin: unknown
   review:
-    status: partial
-    date: "2026-10-16"
-    scope: [relations]
+    status: reviewed
+    date: "2026-11-09"
+    scope: [relations, dates, text, images, gallery]
     note: >-
-      16.10.2026 проверены исторические отношения и связанные с ними контексты и сопоставления; границы
-      подтверждения указаны у каждой записи. Даты, описание и изображения карточки полностью не проверялись.
+      Связи — 16.10.2026, границы у записи. 09.11.2026: даты — условные границы, опора на Википедию: музейного обзора не найдено; описание — 2 утверждения сверено; снято про Narod.ru, «веб-безопасные» цвета и возрождение в Neocities. Главная иллюстрация — схема редакции.
+      Галерея: обобщённое «GeoCities archive» снято, источник копий не установлен; страница катания на лыжах подписана по надписи на снимке. A03: связь с пиксель-артом у записи контекста оставлена как использование техники.
   parents: []
   gallery:
     - asset: assets/works/web1-sugarcubes.jpg
       title: "GeoCities: Sugar Cubes"
-      author: Неизвестный автор
-      year: 1990-е
-      credit: GeoCities archive
-      license: ©; образовательное использование
+      author: автор страницы не указан
+      year: снимок экрана, год не установлен
+      credit: источник копии не установлен
+      license: права не установлены; образовательное использование
       nonfree: true
-      reference: https://en.wikipedia.org/wiki/Web_1.0
-      whyRepresentative: Яркие фоны, таблицы и декоративные гифки — эстетика домашних страниц 1990-х.
+      reference: https://en.wikipedia.org/wiki/GeoCities
+      whyRepresentative: Розовый полосатый фон, блоки ссылок и приглашение подписать гостевую книгу создают любительскую страницу.
+      sources: [wiki-geocities]
     - asset: assets/works/web1-shrine.jpg
-      title: "GeoCities: домашняя страница"
-      author: Неизвестный автор
-      year: 1990-е
-      credit: GeoCities archive
-      license: ©; образовательное использование
+      title: "GeoCities: Welcome to Jesse’s Skiing page"
+      author: автор страницы не указан
+      year: снимок экрана, год не установлен
+      credit: источник копии не установлен
+      license: права не установлены; образовательное использование
       nonfree: true
-      reference: https://en.wikipedia.org/wiki/Web_1.0
-      whyRepresentative: Центрированный заголовок, счётчики и наивная вёрстка — язык Web 1.0.
+      reference: https://en.wikipedia.org/wiki/GeoCities
+      whyRepresentative: Заголовок по центру, полосы WARNING и плашка Under construction в окне Netscape показывают наивную вёрстку.
+      sources: [wiki-geocities]
   summary: >
-    Домашние страницы 90-х: мигающие GIF, счётчики посетителей, фоны со звёздами и вечное «Under construction».
+    Домашние страницы 90-х: яркие узорные фоны, счётчики посетителей и вечное «Under construction».
   description: |
-    Когда веб стал доступен всем, каждый мог сделать свою страницу на GeoCities или Narod.ru — без дизайнеров
-    и правил. Анимированные гифки, бегущие строки, таблицы, «веб-безопасные» кислотные цвета, гостевые книги
-    и счётчики посетителей. Это была DIY-культура интернета, которую через двадцать лет с нежностью
-    возродят Neocities, уирдкор и веб-брутализм.
+    GeoCities, запущенный в ноябре 1994 года, позволял бесплатно создавать сайты и размещать их по тематическим «городам». На любительских страницах таких служб сложился узнаваемый язык:
+    яркие фоны, таблицы, кнопки гостевых книг и плашки Under construction. В США служба GeoCities закрылась в октябре 2009 года.
   traits:
-    - Мигающие GIF и бегущие строки
-    - Кислотные «веб-безопасные» цвета на тёмных фонах
-    - Таблицы, рамки, счётчики посетителей
-    - Значки «Under construction» и «Best viewed in Netscape»
-  names: [GeoCities, Angelfire, Narod.ru, Netscape Navigator]
+    - Яркие узорные фоны и кричащий текст
+    - Таблицы, рамки, блоки ссылок
+    - Плашки Under construction
+    - Любительская вёрстка без дизайнеров
+  names: [GeoCities, Netscape Navigator]
   palette: ["#000080", "#00ffff", "#ff00ff", "#ffff00", "#c0c0c0"]
   paletteNote: Редакторская подборка из «веб-безопасной» палитры 216 цветов — тёмно-синий, циан, маджента, жёлтый, серый.
   example:
@@ -88,6 +93,10 @@
     whyRepresentative: >-
       Звёздный фон, ссылки, рамки, счётчик и плашка Under construction сведены в учебный макет. Мигающая
       анимация не воспроизводится.
+    sources: [wiki-geocities]
+  evidence:
+    - { claim: "GeoCities запущен в ноябре 1994 года, закрыт в США в октябре 2009 года", field: dates, source: wiki-geocities }
+    - { claim: "Бесплатные сайты и тематические города", field: description, source: wiki-geocities }
   wiki: GeoCities
   links:
     - { title: "Old Web", url: "https://aesthetics.fandom.com/wiki/Old_Web", src: "Aesthetics Wiki", lang: en }
@@ -96,10 +105,13 @@
 - id: y2k-aesthetic
   name: Y2K
   orig: Y2K aesthetic
-  aliases: [y2k, эстетика нулевых, миллениум, iMac G3, хром, Y2K futurism]
+  aliases: [y2k, эстетика нулевых, миллениум, Y2K futurism]
+  searchKeywords: [iMac G3, хром]
   start: 1997
   end: 2004
   dates: 1997 – 2004
+  approx: true
+  dateKind: period
   era: digital
   domain: [design, internet]
   medium: [product-design, digital-art, graphic-design, fashion]
@@ -123,7 +135,7 @@
     (1996) к Y2K. Это ранние примеры перед условным интервалом 1997–2004; киберпанковый визуальный мир этих игр
     не описывает всю эстетику.
   dateNote: >-
-    1997–2004 — условный интервал основного корпуса карточки. Ранние игровые примеры Wipeout (1995) и WipEout
+    1997–2004 — условный интервал основного корпуса карточки. CARI относит период актуальности к 1990-м годам; источники расходятся. Ранние игровые примеры Wipeout (1995) и WipEout
     2097 (1996) показаны как предыстория; год рождения единого стиля этим не устанавливается.
   evidence:
     - claim: Evan Collins включает Wipeout и WipEout 2097 в Y2K-корпус. Это ретроспективная классификация 2016 года.
@@ -134,13 +146,19 @@
         Anderson о графике tDR опубликовано отдельно.
       field: description
       source: ra26-d4-wipeout-original
+    - claim: Период актуальности у CARI и перечень образов
+      field: dates
+      source: cari-y2k
+    - claim: iMac G3, 1998, полупрозрачный цветной поликарбонат
+      field: traits
+      source: vam-imac
   review:
-    status: partial
-    date: "2026-10-16"
-    scope: [relations]
+    status: reviewed
+    date: "2026-11-09"
+    scope: [relations, dates, text, images, gallery]
     note: >-
-      16.10.2026 проверены исторические отношения и связанные с ними контексты и сопоставления; границы
-      подтверждения указаны у каждой записи. Даты, описание и изображения карточки полностью не проверялись.
+      Связи — 16.10.2026, границы у записи. 09.11.2026: даты — условный интервал сохранён, а расхождение с CARI названо в примечании; описание — 3 утверждения сверено; снято «последний момент, когда технологии казались праздником», «проблема 2000» и возрождение 2020-х. Главная иллюстрация — Музей Виктории и Альберта.
+      Галерея: источник копий не установлен, годы приведены к сроку выпуска модели.
   parents:
     - id: space-age
       type: influence
@@ -166,47 +184,51 @@
   gallery:
     - asset: assets/works/y2k-imac-1.jpg
       title: "Y2K: iMac G3"
-      author: Apple
-      year: 1998–2001
-      credit: Apple
-      license: © Apple
+      author: Apple, дизайнер Джонатан Айв
+      year: 1998–2003
+      credit: источник копии не установлен
+      license: права не установлены; образовательное использование
       nonfree: true
-      reference: https://en.wikipedia.org/wiki/Y2K_aesthetic
-      whyRepresentative: Прозрачный цветной корпус и округлые формы — предметный символ Y2K.
+      reference: https://collections.vam.ac.uk/item/O158296/imac-g3-personal-computer-ive-jonathan/
+      note: Экран с цветочной заставкой, модель на снимке не установлена.
+      whyRepresentative: Полупрозрачный корпус и округлые синие детали делают компьютер домашней вещью.
+      sources: [vam-imac]
     - asset: assets/works/y2k-imac-2.jpg
       title: "Y2K: розовый iMac"
-      author: Apple
-      year: 1999–2001
-      credit: Apple
-      license: © Apple
+      author: Apple, дизайнер Джонатан Айв
+      year: 1998–2003
+      credit: источник копии не установлен
+      license: права не установлены; образовательное использование
       nonfree: true
-      reference: https://en.wikipedia.org/wiki/Y2K_aesthetic
-      whyRepresentative: Кислотные цвета и глянцевый пластик — характерная палитра Y2K.
+      reference: https://collections.vam.ac.uk/item/O158296/imac-g3-personal-computer-ive-jonathan/
+      whyRepresentative: Розовый полупрозрачный пластик корпуса, клавиатуры и мыши показывает конфетную палитру.
+      sources: [vam-imac]
   summary: >
-    Оптимистичный цифровой футуризм рубежа тысячелетий: прозрачный цветной пластик, хром, пузыри и голограммы.
+    Цифровой футуризм рубежа тысячелетий: полупрозрачный цветной пластик, хром, блеск и капли.
   description: |
-    Накануне 2000 года мир ждал будущего — и одновременно боялся «проблемы 2000». Дизайн ответил прозрачным
-    цветным пластиком iMac G3 и Game Boy Color, хромированными 3D-шрифтами, капельками, голографическими
-    плёнками и серебристыми костюмами в клипах. Это был, пожалуй, последний момент, когда технологии
-    казались чистым праздником. С 2020-х эстетика переживает мощное возрождение.
+    Ретроспективное название потребительского и цифрового футуризма рубежа тысячелетий. iMac G3 Джонатана Айва (1998) заменил серый корпус полупрозрачным цветным поликарбонатом и повлиял на формы и цвета бытовой техники.
+    CARI описывает этот образ будущего так: кожаные брюки, серебристые тени, блестящая одежда, градиенты и округлая электроника.
 
     В игровом корпусе Wipeout и WipEout 2097 соединяют футуристические миры с графикой The Designers Republic. Evan Collins включает обе игры в свою Y2K-подборку; Nicky Place называет «Акиру» и «Бегущего по лезвию» источниками облика WipEout 2097.
   traits:
-    - Прозрачный цветной пластик
-    - Хром, жидкий металл, голограммы
-    - Капли, пузыри, сферы
-    - Серебристый, голубой, лаймовый и розовый
+    - Полупрозрачный цветной пластик
+    - Округлые корпуса
+    - Блеск, серебро, градиенты
+    - Голубой, розовый и другие конфетные цвета
   promptCues:
     - Прозрачный цветной пластик
     - Хром, жидкий металл и голограммы
     - Капли, пузыри и сферы
     - Серебристый, голубой, лаймовый и розовый
-  names: [Джонатан Айв, Hype Williams, Designers Republic]
+  names: [Джонатан Айв, Designers Republic]
   example:
     file: IMac G3 Bondi Blue, three-quarters view.png
     title: Компьютер iMac G3 Bondi Blue
     author: Apple, дизайнер Джонатан Айв
     year: 1998
+    whyRepresentative: >-
+      Полупрозрачный сине-зелёный корпус с округлой спиной заменил привычный серый ящик.
+    sources: [vam-imac]
   wiki: Y2K aesthetic
   links:
     - { title: "Y2K", url: "https://cari.institute/aesthetics/y2k-aesthetic", src: "CARI Institute", lang: en }
@@ -254,10 +276,8 @@
     Глянцевый оптимизм нулевых: пузыри, капли воды, зелёная трава, голубое небо и стеклянные кнопки Windows Vista.
   description: |
     Название соединяет шрифт Frutiger и дизайн-язык Windows Aero. Его придумали задним числом
-    исследователи Consumer Aesthetics Research Institute (CARI), чтобы описать визуальный язык
-    примерно 2005–2013 годов: прозрачные «аэро»-панели Windows Vista и 7, глянцевые иконки, обои с травой
-    и небом, рыбками и пузырями, гуманистические гротески в рекламе. Это была эстетика экологичной,
-    светлой цифровой утопии. В 2020-х она вернулась как ностальгия поколения, выросшего на этих экранах.
+    исследователи Consumer Aesthetics Research Institute (CARI), чтобы описать корпоративную технологическую эстетику
+    примерно 2005–2013 годов: прозрачные панели Windows Vista и 7, глянцевые иконки, обои с травой, небом и пузырями, гуманистические гротески в рекламе.
   traits:
     - Глянец, стекло, отражения
     - Вода, пузыри, трава, голубое небо, полярное сияние
@@ -271,32 +291,41 @@
   names: [Windows Vista, Windows 7, Nokia, Wii]
   evidence:
     - { claim: "Ретроспективный термин; период актуальности — середина 2000-х — начало 2010-х (около 2005–2013); название — от шрифта Frutiger и Windows Aero; авторы названия по CARI — Froyo Tam, Sofi Xian", field: dates, source: cari-frutiger-aero }
+    - { claim: "Корпоративная технологическая эстетика примерно 2005–2013 годов", field: description, source: cari-frutiger-aero }
   review:
-    status: partial
-    date: "2026-10-16"
-    scope: [relations, dates]
+    status: reviewed
+    date: "2026-11-09"
+    scope: [relations, dates, text, images, gallery]
     note: >-
-      Даты переведены в «период актуальности» по CARI; убрана неподтверждённая дата появления термина (было
-      «2017»). 16.10.2026 проверены исторические отношения и связанные с ними контексты и сопоставления; границы
-      подтверждения указаны у каждой записи.
+      Связи — 16.10.2026, границы у записи. 09.11.2026: описание — 2 утверждения сверено по CARI; снято «цифровая утопия» и возвращение 2020-х из текста: возвращение отмечено отдельным полем. Главная иллюстрация — указано, что это изображение нейросети. Галерея: «Frutiger Aero archive» снято, источник копии не установлен.
   example:
     file: Frutiger Aero Composite.jpg
     title: Композиция в стиле Frutiger Aero
     author: Aarón Ramirez
+    year: 2025
     role: illustration
+    note: Изображение создано нейросетью, по описанию на странице файла.
     whyRepresentative: Современная композиция из типичных мотивов — стекло, вода, пузыри, трава и небо. Не материал 2000-х.
+    sources: [cari-frutiger-aero]
   gallery:
     - asset: assets/works/frutiger-aero-landscape.jpg
       title: "Frutiger Aero: пейзаж"
-      author: Неизвестный автор
-      year: 2000-е
-      place: Frutiger Aero
-      credit: Frutiger Aero archive
-      license: ©; образовательное использование
+      author: автор не установлен
+      year: год не установлен
+      credit: источник копии не установлен
+      license: права не установлены; образовательное использование
       nonfree: true
-      reference: https://en.wikipedia.org/wiki/Frutiger_Aero
-      whyRepresentative: Глянцевые пузыри, вода, зелень и технологичный город — типичный набор мотивов Frutiger Aero.
-    - { file: "Frutiger Aero Bubbles And Grass.jpg", title: "Пузыри и трава", role: illustration }
+      reference: https://cari.institute/aesthetics/frutiger-aero
+      whyRepresentative: Глянцевые пузыри, чистая вода, зелень и город под голубым небом собирают мотивы стиля.
+      sources: [cari-frutiger-aero]
+    - file: Frutiger Aero Bubbles And Grass.jpg
+      title: Пузыри и трава
+      author: ThePixelman
+      year: 2014
+      role: illustration
+      note: Стоковое изображение, материал не из Windows Vista и 7.
+      whyRepresentative: >-
+        Трава крупным планом и радужные пузыри повторяют типичные мотивы обоев тех лет.
   wiki: Frutiger Aero
   links:
     - { title: "Frutiger Aero", url: "https://cari.institute/aesthetics/frutiger-aero", src: "CARI Institute", lang: en }
@@ -323,45 +352,48 @@
   kind: design-system
   origin: unknown
   review:
-    status: partial
-    date: "2026-10-16"
-    scope: [relations]
+    status: reviewed
+    date: "2026-11-09"
+    scope: [relations, dates, text, images, gallery]
     note: >-
-      16.10.2026 проверены исторические отношения и связанные с ними контексты и сопоставления; границы
-      подтверждения указаны у каждой записи. Даты, описание и изображения карточки полностью не проверялись.
+      Связи — 16.10.2026, границы у записи. 09.11.2026: даты — по Википедии и Группе Нильсена-Нормана; описание — 3 утверждения сверено; снят перечень приложений iPhone. Главная иллюстрация — схема редакции. Галерея: две копии оказались современными материалами, они помечены как иллюстрации, год 2010-е снят, «UI archive» снят.
   parents: []
   gallery:
     - asset: assets/works/skeuo-1.jpg
-      title: "Скевоморфизм: интерфейс"
-      author: Неизвестный автор
-      year: 2010-е
-      credit: UI archive
-      license: ©; образовательное использование
+      title: "Skeuomorphic UI Pack"
+      author: Ata (по надписи на изображении)
+      year: 2020-е, точный год не установлен
+      role: illustration
+      credit: источник копии не установлен
+      license: права не установлены; образовательное использование
       nonfree: true
-      reference: https://en.wikipedia.org/wiki/Skeuomorphism
-      whyRepresentative: Кожа, бумага и металл в интерфейсе — имитация реальных материалов.
+      reference: https://en.wikipedia.org/wiki/Skeuomorph
+      note: Современный набор элементов, не интерфейс 2007–2013 годов.
+      whyRepresentative: Красная кожа, карман кошелька и фактурные панели воспроизводят материалы в интерфейсе.
+      sources: [wiki-skeuomorph]
     - asset: assets/works/skeuo-2.jpg
-      title: "Скевоморфизм: сравнение"
-      author: Неизвестный автор
-      year: 2010-е
-      credit: UI archive
-      license: ©; образовательное использование
+      title: "What is Skeuomorphism?"
+      author: автор не установлен
+      year: 2020-е, точный год не установлен
+      role: illustration
+      credit: источник копии не установлен
+      license: права не установлены; образовательное использование
       nonfree: true
-      reference: https://en.wikipedia.org/wiki/Skeuomorphism
-      whyRepresentative: Объёмные кнопки и текстуры противопоставлены плоскому дизайну.
+      reference: https://en.wikipedia.org/wiki/Skeuomorph
+      note: Современный заголовочный баннер статьи, не интерфейс 2007–2013 годов.
+      whyRepresentative: Объёмные ручки и тумблеры с тенями имитируют физический прибор.
+      sources: [wiki-skeuomorph]
   summary: >
-    Интерфейсы, имитирующие реальные вещи: кожаный календарь, деревянная книжная полка и жёлтая бумага заметок.
+    Интерфейсы, имитирующие реальные вещи: кожа, дерево, бумага и физические кнопки на экране.
   description: |
-    В первых версиях iPhone Apple учила людей пользоваться сенсорным экраном с помощью знакомых материалов:
-    календарь в коже со строчкой, заметки на линованной бумаге, книжная полка из дерева, кнопки-тумблеры.
-    Скевоморфизм делал цифровое тактильным и понятным, но к 2013 году показался перегруженным — и iOS 7
-    резко перешла на плоский дизайн.
+    Скевоморфный дизайн наделяет цифровой объект декоративными чертами его реального прообраза, чтобы пользователь применил знакомый опыт: например, книжная полка с деревянной текстурой на планшете Kindle Fire.
+    При Стиве Джобсе такие решения широко применялись в Mac OS X и приложениях Apple. После ухода Скотта Форстолла часть его обязанностей принял Джонатан Айв, и с iOS 7 в 2013 году Apple перешла к более простому дизайну.
   traits:
     - Имитация кожи, дерева, металла, бумаги
     - Тени, блики, объёмные кнопки
     - Метафоры реальных предметов
-    - Подробные, «вкусные» иконки
-  names: [Скотт Форстолл, iPhone OS 1–6, Mac OS X Aqua]
+    - Подробная отделка значков и панелей
+  names: [Скотт Форстолл, Джонатан Айв, Mac OS X]
   palette: ["#6b4a2e", "#c9a46b", "#f3e7b6", "#3f5f3a", "#9aa3ab"]
   paletteNote: Редакторская подборка — оттенки кожи, дерева, жёлтой бумаги, сукна и металла, которые имитировали интерфейсы.
   example:
@@ -374,6 +406,10 @@
       Оригинальная схема, созданная для атласа в 2026 году; не исторический скриншот и не изображение
       реального продукта.
     whyRepresentative: Имитируются материалы, швы, тени и физические детали переплёта.
+    sources: [nngroup-flat, wiki-skeuomorph]
+  evidence:
+    - { claim: "Определение скевоморфного дизайна; пример книжной полки", field: description, source: nngroup-flat }
+    - { claim: "Apple при Джобсе, Форстолл, Айв; переход с iOS 7 в 2013 году", field: dates, source: wiki-skeuomorph }
   wiki: Skeuomorph
   links:
     - { title: "Skeuomorphism", url: "https://aesthetics.fandom.com/wiki/Skeuomorphism", src: "Aesthetics Wiki", lang: en }
@@ -381,10 +417,15 @@
 - id: net-art
   name: Net.art
   orig: Net art
-  aliases: [нет-арт, net.art, искусство интернета, Лялина, JODI]
+  aliases: [нет-арт, net.art, искусство интернета]
+  searchKeywords: [Лялина, JODI]
   start: 1994
   end: 2005
-  dates: 1994 – 2000-е
+  dates: 1990-е – 2000-е
+  approx: true
+  dateKind: period
+  dateNote: >
+    Тейт: сетевое искусство появилось в 1990-е годы. Отметки 1994 и 2005 условны.
   era: digital
   domain: [art, internet]
   medium: [web]
@@ -404,12 +445,11 @@
         - ra26-d2-chinese-web
         - ra26-d2-vernacular
   review:
-    status: partial
-    date: "2026-10-16"
-    scope: [relations]
+    status: reviewed
+    date: "2026-11-09"
+    scope: [relations, dates, text, images, gallery]
     note: >-
-      16.10.2026 проверены исторические отношения и связанные с ними контексты и сопоставления; границы
-      подтверждения указаны у каждой записи. Даты, описание и изображения карточки полностью не проверялись.
+      Связи — 16.10.2026, границы у записи. 09.11.2026: даты — по Тейт; описание — 3 утверждения сверено; снято про сайты, похожие на сломанный компьютер; JODI, Вук Чосич и Бантинг убраны из имён: открытых страниц о них нет. Главная иллюстрация — Rhizome. Галерея: «net.art archive» снято, автор первой копии не подтверждён, у второй принадлежность к нет-арту названа неподтверждённой.
   parents:
     - id: conceptual-art
       type: influence
@@ -423,40 +463,48 @@
   gallery:
     - asset: assets/works/netart-1.jpg
       title: "Net.art: веб-страница"
-      author: JODI
-      year: 1990-е
-      credit: JODI / net.art archive
-      license: © JODI
+      author: автор не подтверждён (ранее указан JODI)
+      year: год не установлен
+      credit: источник копии не установлен
+      license: права не установлены; образовательное использование
       nonfree: true
-      reference: https://en.wikipedia.org/wiki/Net_art
-      whyRepresentative: Сырой HTML, тёмный фон и намеренно сломанная навигация — эстетика net.art.
+      reference: https://www.tate.org.uk/art/art-terms/i/internet-art
+      whyRepresentative: Чёрная страница, ряд одинаковых кнопок и окно браузера делают интерфейс материалом работы.
+      sources: [tate-internet-art]
     - asset: assets/works/netart-2.jpg
-      title: "Net.art: коллаж"
-      author: Неизвестный автор
-      year: 1990-е
-      credit: net.art archive
-      license: ©; образовательное использование
+      title: Подборка любительских веб-страниц
+      author: автор не установлен
+      year: год не установлен
+      credit: источник копии не установлен
+      license: права не установлены; образовательное использование
       nonfree: true
-      reference: https://en.wikipedia.org/wiki/Net_art
-      whyRepresentative: Перегруженный интерфейс и найденные изображения — сетевое искусство 1990-х.
+      reference: https://www.tate.org.uk/art/art-terms/i/internet-art
+      note: Коллаж снимков страниц; принадлежность к нет-арту не подтверждена.
+      whyRepresentative: Сетка разноязыких страниц показывает, какой материал находили художники в раннем вебе.
+      sources: [tate-internet-art]
   summary: >
-    Искусство, которое существует только в браузере: гиперссылки, фреймы и ошибки как материал.
+    Искусство, сделанное в интернете и для него: гиперссылки, фреймы и браузер как материал.
   description: |
-    В середине 1990-х художники увидели во всемирной паутине новый медиум. Ольга Лялина в «Мой парень
-    вернулся с войны» рассказывает историю через расщепляющиеся чёрно-белые фреймы: зритель кликает и
-    сам собирает сюжет. Дуэт JODI делал сайты, похожие на сломанный компьютер, Алексей Шульгин и Вук Чосич —
-    концептуальные жесты о сети.
+    Сетевое искусство сделано в интернете и для него; оно появилось в 1990-е годы, когда художники увидели в сети инструмент, свободный от политических, социальных и культурных ограничений.
+    Ольга Лялина в работе «Мой парень вернулся с войны» (1996) рассказывает кинематографичную историю с помощью фреймов браузера, гипертекста и изображений. Алексей Шульгин в «Form Art» (1997) сделал материалом композиций кнопки и поля HTML.
   traits:
     - Браузер и гиперссылка как холст
-    - Фреймы, HTML, код, ошибки
+    - Фреймы, HTML, код
     - Интерактивность и нелинейность
-    - Минимализм ранних веб-страниц
-  names: [Ольга Лялина, JODI, Алексей Шульгин, Вук Чосич, Хит Бантинг]
+    - Простые средства ранних веб-страниц
+  names: [Ольга Лялина, Алексей Шульгин]
   example:
     file: "enwiki:My Boyfriend Came Back from the War screenshot.gif"
     title: Мой парень вернулся с войны
     author: Ольга Лялина
     year: 1996
+    whyRepresentative: >-
+      Чёрно-белые фреймы браузера дробят рассказ: зритель сам продвигает его по гиперссылкам.
+    sources: [rhizome-my-boyfriend]
+  evidence:
+    - { claim: "Сделано в интернете и для него; появилось в 1990-е", field: dates, source: tate-internet-art }
+    - { claim: "Лялина, 1996, фреймы и гипертекст", field: description, source: rhizome-my-boyfriend }
+    - { claim: "Form Art Шульгина, 1997, кнопки и поля HTML", field: description, source: rhizome-form-art }
   wiki: Net art
   links:
     - { title: "Net Art", url: "https://www.theartstory.org/movement/internet-art/", src: "The Art Story", lang: en }
@@ -464,10 +512,15 @@
 - id: glitch-art
   name: Глитч-арт
   orig: Glitch art
-  aliases: [глитч, сбой, датамошинг, пиксельный шум]
+  aliases: [глитч, сбой, датамошинг]
+  searchKeywords: [пиксельный шум]
   start: 2000
   end: null
   dates: 2000-е – наши дни
+  approx: true
+  dateKind: practice
+  dateNote: >
+    Первый симпозиум глитч-арта прошёл в Осло в январе 2002 года. Термин перешёл к визуальным художникам после глитч-музыки середины 1990-х. Источник — английская Википедия.
   era: digital
   domain: [art, internet]
   medium: [digital-art, moving-image]
@@ -498,59 +551,62 @@
   gallery:
     - asset: assets/works/glitch-1.jpg
       title: "Глитч-арт: портрет"
-      author: Неизвестный автор
-      year: 2010-е
-      credit: Glitch art archive
-      license: ©; образовательное использование
+      author: RAWVAMP (по надписи на изображении)
+      year: год не установлен
+      credit: источник копии не установлен
+      license: права не установлены; образовательное использование
       nonfree: true
       reference: https://en.wikipedia.org/wiki/Glitch_art
-      whyRepresentative: Цветовые сдвиги и цифровые артефакты разрушают изображение — язык глитч-арта.
+      whyRepresentative: Сдвинутые цветовые каналы и контрастные полосы разрушают изображение фигуры.
+      sources: [wiki-glitch-art]
     - asset: assets/works/glitch-2.jpg
       title: "Глитч-арт: лицо"
-      author: Неизвестный автор
-      year: 2010-е
-      credit: Glitch art archive
-      license: ©; образовательное использование
+      author: автор не установлен
+      year: год не установлен
+      credit: источник копии не установлен
+      license: права не установлены; образовательное использование
       nonfree: true
       reference: https://en.wikipedia.org/wiki/Glitch_art
-      whyRepresentative: Сканлайны и расслоение каналов — типичный глитч-эффект.
+      whyRepresentative: Горизонтальные разрывы и полосы рассыпают портрет на цифровые слои.
+      sources: [wiki-glitch-art]
   summary: >
-    Красота сбоя: разломанные JPEG, сдвинутые RGB-каналы и рассыпающиеся видеокадры.
+    Красота сбоя: разломанные файлы, сдвинутые цветовые каналы и рассыпающиеся кадры.
   description: |
-    Глитч-художники намеренно ломают файлы, сигналы и программы, чтобы увидеть, как выглядит ошибка машины.
-    Датамошинг склеивает видеокадры в текучие мазки, изменение байтов в JPEG даёт цветные полосы и смещения.
-    Как и дадаисты, глитч-арт ставит случайность и поломку в центр, а его приёмы давно ушли в музыку,
-    рекламу и вейпорвейв.
+    Глитч — неожиданный результат сбоя в программе, изображении или видео. Термин закрепился в экспериментальной музыке середины 1990-х, а затем его приняли визуальные художники; в январе 2002 года в Осло прошёл первый симпозиум глитч-арта.
+    Датамошинг меняет данные видео или изображения, а в работах Розы Менкман артефакты сжатия становятся визуальным приёмом.
   traits:
     - Разорванные, смещённые пиксели
-    - Разделённые RGB-каналы
+    - Разделённые цветовые каналы
     - Цифровой шум, полосы, артефакты сжатия
-    - Случайность и ошибка как метод
-  names: [Роза Менкман, Takeshi Murata, Ant Scott]
+    - Сбой как метод
+  names: [Роза Менкман]
   example:
     file: Glitch Art by James Connolly and Eric Pellegrino.jpg
     title: DIE COMPUTER / Southbridge Slow Electronics
     author: James Connolly, Eric Pellegrino
     year: 2010
+    note: Снимок выступления на старых мониторах.
+    whyRepresentative: >-
+      Цветные полосы сбоя заполняют экраны кинескопных мониторов: ошибка сигнала становится изображением.
     sources:
       - commons-glitch-art-example
+  evidence:
+    - { claim: "Термин из музыки середины 1990-х; симпозиум в Осло 2002 года", field: dates, source: wiki-glitch-art }
+    - { claim: "Датамошинг; артефакты сжатия у Менкман", field: description, source: wiki-glitch-art }
   wiki: Glitch art
   links:
     - { title: "Glitch Art", url: "https://aesthetics.fandom.com/wiki/Glitch_Art", src: "Aesthetics Wiki", lang: en }
   review:
-    status: partial
-    date: "2026-10-16"
-    scope: [relations, images]
+    status: reviewed
+    date: "2026-11-09"
+    scope: [relations, dates, text, images, gallery]
     note: >-
-      Подпись конкретного изображения дополнена по странице файла; это не полная верификация истории
-      направления. 16.10.2026 проверены исторические отношения и связанные с ними контексты и сопоставления;
-      границы подтверждения указаны у каждой записи.
+      Связи — 16.10.2026, границы у записи. 09.11.2026: даты — по Википедии: музейного обзора не найдено; описание — 3 утверждения сверено; снято сравнение с дадаистами и переход в рекламу и вейпорвейв, Мурата и Скотт убраны из имён. Главная иллюстрация — страница файла. Галерея: «Glitch art archive» снято, источник копий не установлен; год 2010-е снят.
 - id: flat-design
   name: Плоский дизайн
   orig: Flat design
   aliases:
     - флэт
-    - плоский дизайн
     - flat design
   start: 2010
   end: null
@@ -583,16 +639,24 @@
   gallery:
     - file: Android Auto icon (2026 update).png
       title: "Flat design: иконка Android Auto"
+      author: Google
+      year: 2026
+      note: Поздний пример.
+      whyRepresentative: >-
+        Значок из двух простых треугольных форм в нескольких оттенках, без фактуры и бликов.
     - file: Material RangeSlider.png
       title: "Flat design: слайдер"
+      author: Siegbert v2
+      year: 2024
+      note: Элемент в стиле Material; тень есть только у активного ползунка.
+      whyRepresentative: >-
+        Линия, две точки и подписи без имитации материала сведены к простой геометрии.
   summary: >-
     Чистые цветные плоскости, простые значки и типографика без буквальной имитации кожи, дерева и объёма
     предметов.
   description: |
-    Microsoft с интерфейсом Metro (Windows Phone, Windows 8) и Apple с iOS 7 в 2013 году отказались от
-    имитации материалов. Плоские цветные плитки, тонкие иконки, крупная типографика и много воздуха
-    вернули в цифровой дизайн принципы швейцарского стиля. Плоский дизайн быстро стал стандартом веба,
-    логотипов и иллюстрации.
+    Плоский дизайн обычно понимают как реакцию на объёмный и скевоморфный стиль. Выход Microsoft Metro и Windows 8 стал, по Группе Нильсена-Нормана, особенно важным для его распространения:
+    документация Microsoft называла стиль «подлинно цифровым». С iOS 7 в 2013 году к более простому дизайну перешла и Apple.
   traits:
     - Цветные плоскости без имитации физических материалов
     - Простые геометрические или линейные значки
@@ -603,7 +667,7 @@
     - Простые геометрические формы
     - Ограниченная яркая палитра
     - Чистая сетка и много свободного места
-  names: [Microsoft Metro, Джонатан Айв (iOS 7), Google]
+  names: [Microsoft Metro, Джонатан Айв (iOS 7)]
   example:
     asset: assets/illustrations/flat-design.svg
     title: "Плоский интерфейс: цвет, сетка и типографика"
@@ -616,6 +680,7 @@
     whyRepresentative: >-
       Однотонные блоки, простые знаки и шрифтовая иерархия; нет теней, фактур кожи и имитации объёмных
       кнопок.
+    sources: [nngroup-flat]
   wiki: Flat design
   links:
     - { title: "Flat Design", url: "https://aesthetics.fandom.com/wiki/Flat_Design", src: "Aesthetics Wiki", lang: en }
@@ -632,23 +697,29 @@
     - claim: Metro для Windows Phone 7 документирован Microsoft в марте 2010 года.
       field: dates
       source: microsoft-metro-2010
+    - claim: Реакция на объёмный и скевоморфный стиль; роль Metro и Windows 8
+      field: description
+      source: nngroup-flat
+    - claim: iOS 7 и переход Apple к более простому дизайну, 2013
+      field: traits
+      source: wiki-skeuomorph
   review:
-    status: partial
-    date: "2026-10-16"
-    scope: [relations, images]
+    status: reviewed
+    date: "2026-11-09"
+    scope: [relations, dates, text, images, gallery]
     note: >-
-      Проверен пример Metro 2010 года; основная иллюстрация заменена редакционной схемой. 16.10.2026 проверены
-      исторические отношения и связанные с ними контексты и сопоставления; границы подтверждения указаны у
-      каждой записи.
+      Связи — 16.10.2026, границы у записи. 09.11.2026: даты — Microsoft; описание — 3 утверждения сверено; снято «вернули принципы швейцарского стиля» и «стал стандартом». Главная иллюстрация — схема редакции. Галерея — страницы файлов, у слайдера сказано, что это элемент Material.
 - id: material-design
   name: Material Design
   orig: Material Design
   aliases:
     - материальный дизайн
-    - Material Design
   start: 2014
   end: null
   dates: 2014 – наши дни
+  dateKind: institution
+  dateNote: >
+    Система Google объявлена на конференции Google I/O в июне 2014 года; поколение Material You — май 2021 года.
   era: digital
   domain: [design, internet]
   medium: [ui]
@@ -669,18 +740,16 @@
   origin: unknown
   parents: []
   summary: >
-    Плоский дизайн с физикой: «цифровая бумага» с мягкими тенями, яркие акценты и осмысленная анимация Google.
+    Плоский интерфейс с физикой бумаги: слои, тени, яркие акценты и анимация.
   description: |
-    В 2014 году Google представила Material Design: интерфейс как слои бумаги, которые лежат друг на друге
-    и отбрасывают тени, подчиняясь свету. Яркие акцентные цвета, плавающая кнопка, сетка 8 пикселей
-    и анимации, объясняющие переходы. В 2021-м система стала персональной — Material You подстраивает
-    палитру под обои пользователя.
+    Google объявила Material Design на конференции I/O в июне 2014 года. В основе лежала бумага: команда вырезала значки из настоящей бумаги, чтобы понять свет и тени, и смотрела, как лист движется.
+    На конференции I/O в мае 2021 года Google показала Material You, где тема оформления может строиться по обоям пользователя.
   traits:
     - Слои «бумаги» с мягкими тенями
     - Яркие акцентные цвета
-    - Сетка с шагом 8 пикселей
-    - Осмысленная анимация переходов
-  names: [Маттиас Дуарте, Google Design, Android]
+    - Сетка и карточки
+    - Анимация переходов
+  names: [Матиас Дуарте, Google Design, Android]
   example:
     file: Material you light.png
     title: "Material You: светлая тема"
@@ -693,12 +762,20 @@
     whyRepresentative: Пастельные тональные поверхности и скруглённые формы показывают позднее поколение системы.
     sources:
       - commons-material-you
+  evidence:
+    - { claim: "Объявлена на Google I/O 25 июня 2014 года; Material You — май 2021 года", field: dates, source: wiki-material-design }
+    - { claim: "Бумага как метафора; значки из настоящей бумаги", field: description, source: google-material-launch }
   wiki: Material Design
   links:
     - { title: "Material Design", url: "https://m3.material.io/", src: "Google", lang: en }
   gallery:
     - file: Material RangeSlider.png
-      title: "Material You: тёмная тема"
+      title: Слайдер диапазона в стиле Material
+      author: Siegbert v2
+      year: 2024
+      note: Прежняя подпись называла изображение тёмной темой Material You, это не так.
+      whyRepresentative: >-
+        Ползунки с подсветкой активного состояния и цветной акцент показывают язык элементов управления.
     - file: enwiki:Flat widgets.png
       title: Элементы интерфейса Material Design
       author: Totie
@@ -707,6 +784,8 @@
       note: >-
         Учебная иллюстрация с тенями и приподнятыми элементами; эти свойства отличают её от строгого
         плоского дизайна.
+      whyRepresentative: >-
+        Приподнятые карточки и кнопки с тенями показывают идею слоёв.
       sources:
         - enwiki-material-widgets
   scopeNote: >-
@@ -717,20 +796,23 @@
     - Google
     - Android
   review:
-    status: partial
-    date: "2026-10-16"
-    scope: [relations, dates]
+    status: reviewed
+    date: "2026-11-09"
+    scope: [relations, dates, text, images, gallery]
     note: >-
-      Разведены поколения системы и даты иллюстраций; дата запуска отдельно не пересверена. 16.10.2026 проверены
-      исторические отношения и связанные с ними контексты и сопоставления; границы подтверждения указаны у
-      каждой записи.
+      Связи — 16.10.2026, границы у записи. 09.11.2026: даты — по Google Design и Википедии; описание — 3 утверждения сверено; снята «сетка 8 пикселей» и плавающая кнопка. Главная иллюстрация — страница файла. Галерея: подпись «Material You: тёмная тема» не совпадала со снимком слайдера, исправлена.
 - id: post-internet
   name: Пост-интернет
   orig: Post-Internet art
-  aliases: [пост-интернет, DIS, постинтернет-арт]
-  start: 2008
+  aliases: [постинтернет-арт, DIS]
+  searchKeywords: [пост-интернет]
+  start: 2006
   end: 2018
-  dates: 2008 – 2010-е
+  dates: 2006 – 2010-е
+  approx: true
+  dateKind: period
+  dateNote: >
+    Мариса Олсон ввела термин в 2006 году; конец условен. Источник — английская Википедия.
   era: digital
   domain: [art, internet]
   medium: [installation, digital-art, photography]
@@ -750,46 +832,65 @@
         - ra26-d2-rhizome-2013
   origin: unknown
   review:
-    status: partial
-    date: "2026-10-16"
-    scope: [relations]
+    status: reviewed
+    date: "2026-11-09"
+    scope: [relations, dates, text, images, gallery]
     note: >-
-      16.10.2026 проверены исторические отношения и связанные с ними контексты и сопоставления; границы
-      подтверждения указаны у каждой записи. Даты, описание и изображения карточки полностью не проверялись.
+      Связи — 16.10.2026, границы у записи. 09.11.2026: даты — по Википедии, начало сдвинуто с 2008 на 2006 год; описание — 3 утверждения сверено, музейного обзора не найдено; DIS — по журналу Frieze; снято про стоковые фото как общую черту, Кортрайт и переход в вейпорвейв. Главная иллюстрация — описание файла от DIS. Галерея — страницы файлов.
   parents: []
   gallery:
     - file: XVALA's Post-Internet street artt sticker on a San Francisco newspaper vending machine in 2011.jpg
       title: "Post-Internet: XVALA"
+      author: XVALA
+      year: 2011
+      place: Сан-Франциско
+      whyRepresentative: >-
+        Наклейка «fear Google» на газетном автомате переносит разговор о сети на улицу.
     - file: The BieberBot (side view) in artist space, South Los Angeles, California, 2012.jpg
       title: "Post-Internet: BieberBot"
+      author: XVALA
+      year: 2012
+      place: Лос-Анджелес
+      whyRepresentative: >-
+        Робот из мусорного бака поп-звезды делает предметом искусства следы онлайн-славы.
   summary: >
-    Искусство после интернета: стоковые фото, корпоративный глянец и 3D-рендеры как материал для галерей.
+    Искусство после интернета: работа с тем, как повсеместная сеть изменила культуру.
   description: |
-    Когда интернет стал повсеместным, художники перестали работать «в сети» и начали работать с тем, как
-    сеть изменила всё вокруг. Коллектив DIS, Райан Трекартин, Петра Кортрайт использовали стоковые
-    фотографии, бренды, рекламу и рендеры, превращая гладкую поверхность онлайн-культуры в иронический
-    материал. Многое из этого перешло в вейпорвейв.
+    Неопределённо очерченное движение XXI века об интернете, который перестал быть новинкой. Термин для своей практики в 2006 году предложила Мариса Олсон, затем его подхватил Джин Макхью.
+    Среди художников называют Джона Рафмана, Арти Вирканта и Райана Трекартина. На ярмарке Frieze London в 2012 году коллектив DIS снимал моделей с ящиком для произведений в глянцевой манере модной съёмки.
   traits:
-    - Стоковая фотография и рекламный глянец
-    - 3D-рендеры, бренды, гаджеты
-    - Ирония по отношению к корпоративной культуре
+    - Рекламный глянец и образы поп-культуры
+    - Предметы и бренды как материал
+    - Ирония по отношению к медиа
     - Галерея и интернет на равных
-  names: [DIS, Петра Кортрайт, Райан Трекартин, Арти Виркант, Джон Рафман]
+  names: [Мариса Олсон, Джин Макхью, DIS, Джон Рафман, Арти Виркант, Райан Трекартин]
   example:
     file: Fair Trade. Frieze Projects 2012.jpg
     title: Fair Trade, Frieze Projects
     author: DIS
     year: 2012
+    note: Снимок DIS.
+    whyRepresentative: >-
+      Постановочная группа в розовом перед чёрным экраном выглядит как рекламная съёмка внутри ярмарки.
+    sources: [frieze-open, commons-dis-fair-trade]
+  evidence:
+    - { claim: "Термин Олсон 2006 года; Макхью; художники", field: dates, source: wiki-post-internet }
+    - { claim: "Интернет больше не воспринимается как новинка", field: description, source: wiki-post-internet }
+    - { claim: "DIS, Fair Trade, Frieze London, 2012, съёмка в манере модного журнала", field: traits, source: frieze-open }
   wiki: Post-Internet
   links: []
 
 - id: seapunk
   name: Сипанк
   orig: Seapunk
-  aliases: [seapunk, сипанк, морской панк]
+  aliases: [seapunk, морской панк]
   start: 2011
   end: 2014
   dates: 2011 – 2014
+  approx: true
+  dateKind: popularity
+  dateNote: >
+    Начало — 2011 год, по английской Википедии. Конец условен: на карточке самое позднее изображение относится к 2014 году.
   era: digital
   domain: [internet]
   medium: [digital-art]
@@ -809,44 +910,58 @@
   parents: []
   gallery:
     - file: Geek Fashion Show 2013 - Mermaid Atlantis (8844815861).jpg
-      title: "Seapunk: Mermaid Atlantis"
+      title: Показ Mermaid Atlantis на Geek Fashion Show
+      author: снимок Jeffrey Kilmere
+      year: 2012–2013
+      role: illustration
+      note: Показ в духе Русалочки-панка; связь с сипанком редакционная, на странице файла его нет.
+      whyRepresentative: >-
+        Цветные волосы и морские мотивы костюмов близки к палитре сипанка.
     - file: Geek Fashion Show 2013 - Mermaid Atlantis (8845437566).jpg
-      title: "Seapunk: Atlantis"
+      title: Показ Mermaid Atlantis, крупный план
+      author: снимок Annette Wamser
+      year: 2013
+      place: Сан-Хосе
+      role: illustration
+      note: Связь с сипанком редакционная, на странице файла его нет.
+      whyRepresentative: >-
+        Красные, сиреневые и розовые волосы и ракушки на костюме повторяют морскую тему.
   summary: >
-    Подводный мир из 3D-графики 90-х: дельфины, бирюзовые волосы, инь-ян и голографические волны.
+    Подводный мир из ранней 3D-графики: дельфины, неоново-голубая вода и отсылки к 1990-м.
   description: |
-    Сипанк начался в 2011 году как шутка в Твиттере и быстро стал микрожанром музыки и эстетикой Tumblr:
-    бирюзовые и неоновые цвета, дельфины, ракушки, голограммы, низкополигональная вода и шрифты
-    из Windows 95. После того как образы позаимствовали Рианна и Azealia Banks, сипанк угас — но успел
-    пересечься в Tumblr с ранним вейпорвейвом.
+    Субкультура и интернет-эстетика, возникшая на Tumblr в 2011 году: морская тема в моде и 3D-графике и отсылки к популярной культуре 1990-х. Слово появилось в шутливом твите диджея Lil Internet.
+    В 2012 году образы сипанка использовали Азилия Бэнкс в клипе Atlantis и Рианна на шоу Saturday Night Live.
   traits:
     - Бирюзово-неоновая палитра
-    - Дельфины, волны, ракушки
-    - Ранняя 3D-графика и голограммы
-    - Ирония Tumblr-культуры
-  names: [Lil Internet, Zombelle, Ultrademon]
+    - Дельфины и вода
+    - Ранняя 3D-графика
+    - Отсылки к культуре 1990-х
+  names: [Lil Internet, Азилия Бэнкс, Рианна]
   example:
     file: Seapunk is Alive!.png
     title: Seapunk is Alive!
     author: Ridley369
     year: 2014
+    whyRepresentative: >-
+      Дельфины, пальмы и блестящая вода в ранней 3D-графике собирают главный набор мотивов.
     sources:
       - commons-seapunk-example
+  evidence:
+    - { claim: "Возникла на Tumblr в 2011 году; слово Lil Internet", field: dates, source: wiki-seapunk }
+    - { claim: "Бэнкс и Рианна, 2012", field: description, source: wiki-seapunk }
   wiki: Seapunk
   links:
     - { title: "Seapunk", url: "https://aesthetics.fandom.com/wiki/Seapunk", src: "Aesthetics Wiki", lang: en }
   review:
-    status: partial
-    date: "2026-10-16"
-    scope: [relations, images]
+    status: reviewed
+    date: "2026-11-09"
+    scope: [relations, dates, text, images, gallery]
     note: >-
-      Подпись конкретного изображения дополнена по странице файла; это не полная верификация истории
-      направления. 16.10.2026 проверены исторические отношения и связанные с ними контексты и сопоставления;
-      границы подтверждения указаны у каждой записи.
+      Связи — 16.10.2026, границы у записи. 09.11.2026: даты — по Википедии: музейного обзора не найдено; описание — 3 утверждения сверено; снято «угас» и пересечение с вейпорвейвом, Zombelle и Ultrademon убраны из имён. Главная иллюстрация — страница файла. Галерея: снимки показа подписаны как показ, связь с сипанком названа редакционной.
 - id: web-brutalism
   name: Веб-брутализм
   orig: Brutalist web design
-  aliases: [веб-брутализм, брутализм в вебе, web brutalism]
+  aliases: [брутализм в вебе, web brutalism]
   searchKeywords: [необрутализм, neubrutalism, антидизайн, brutalistwebsites]
   scopeNote: >
     Семейство из двух вариантов. Ранний веб-брутализм (с 2014 года) — нарочито «сырые» сайты на системных
@@ -856,6 +971,10 @@
   start: 2014
   end: null
   dates: 2014 – наши дни
+  approx: true
+  dateKind: practice
+  dateNote: >
+    Отметка 2014 условна: точную дату запуска сайта brutalistwebsites.com подтвердить по открытым страницам не удалось. Практика продолжается.
   era: digital
   domain: [design, internet]
   medium: [web, typography]
@@ -864,12 +983,11 @@
   tier: 3
   kind: design-system
   review:
-    status: partial
-    date: "2026-10-16"
-    scope: [relations]
+    status: reviewed
+    date: "2026-11-09"
+    scope: [relations, dates, text, images, gallery]
     note: >-
-      16.10.2026 проверены исторические отношения и связанные с ними контексты и сопоставления; границы
-      подтверждения указаны у каждой записи. Даты, описание и изображения карточки полностью не проверялись.
+      Связи — 16.10.2026, границы у записи. 09.11.2026: даты — по блогу Adobe; описание — 3 утверждения сверено; снято «весь веб стал одинаково аккуратным». Главная иллюстрация — схема редакции. Галерея: «Brutalist Websites» как источник снят, копии подписаны по тому, что на них видно.
   parents:
     - id: web-1-0
       type: influence
@@ -881,36 +999,36 @@
         - ra26-brutalist-web
   gallery:
     - asset: assets/works/webbru-1.jpg
-      title: "Веб-брутализм: коллаж"
-      author: Неизвестный автор
-      year: 2020-е
-      credit: Brutalist Websites
-      license: ©; образовательное использование
+      title: Подборка сайтов в духе необрутализма
+      author: автор не установлен
+      year: год не установлен
+      credit: источник копии не установлен
+      license: права не установлены; образовательное использование
       nonfree: true
-      reference: https://brutalistwebsites.com/
-      whyRepresentative: Сырая типографика, перегруженная сетка и намеренная грубость — язык веб-брутализма.
+      reference: https://www.nngroup.com/articles/neobrutalism/
+      whyRepresentative: Яркие блоки, толстые обводки и крупный шрифт собраны в наглядную подборку.
+      sources: [nngroup-neobrutalism]
     - asset: assets/works/webbru-2.jpg
-      title: "Веб-брутализм: страница"
-      author: Неизвестный автор
-      year: 2020-е
-      credit: Brutalist Websites
-      license: ©; образовательное использование
+      title: Страница сайта Disslist
+      author: автор не установлен
+      year: год не установлен
+      credit: источник копии не установлен
+      license: права не установлены; образовательное использование
       nonfree: true
       reference: https://brutalistwebsites.com/
-      whyRepresentative: Открытая структура, моноширинный шрифт и отсутствие декора — характерная страница направления.
+      whyRepresentative: Жирный заголовок, чёрно-белое фото и грубые рамки навигации отказываются от гладкости.
+      sources: [adobe-brutalist]
   summary: >
     Сырые сайты наперекор гладким шаблонам: системные шрифты, толстые рамки, синие ссылки и резкие тени.
   description: |
-    Когда весь веб стал одинаково аккуратным, дизайнеры начали делать нарочито грубые сайты: стандартный
-    Times или моноширинный шрифт, подчёркнутые синие ссылки, видимые рамки, кислотные плашки. Сайт
-    brutalistwebsites.com собрал примеры в 2014-м. Позже возник более дружелюбный «необрутализм» —
-    яркие плоские блоки с толстыми чёрными обводками и жёсткими тенями.
+    Паскаль Девиль одним из первых описал брутализм в вебе; его сайт brutalistwebsites.com собирает страницы, отказывающиеся от гладкости. На сайте такой брутализм назван реакцией молодого поколения на лёгкость и оптимизм веб-дизайна.
+    Позже возник необрутализм — визуальный стиль с высокой контрастностью, блочной вёрсткой, яркими цветами и толстыми обводками.
   traits:
     - Системные и моноширинные шрифты
     - Толстые чёрные рамки и жёсткие тени
     - Грубые цветные плашки
     - Нарочитая «несделанность»
-  names: [brutalistwebsites.com, Паскаль Девиль, Gumroad]
+  names: [brutalistwebsites.com, Паскаль Девиль, Gumroad, Figma]
   palette: ["#ffffff", "#000000", "#0000ee", "#ff4911", "#ffde59"]
   paletteNote: Редакторская подборка — белый фон, чёрные рамки, стандартный синий цвет ссылок и кислотные плашки.
   example:
@@ -923,6 +1041,11 @@
       Оригинальная схема, созданная для атласа в 2026 году; не исторический скриншот и не изображение
       реального продукта.
     whyRepresentative: Жёсткие линии таблицы, крупные заголовки, стандартные синие ссылки и контрастный фон.
+    sources: [nngroup-neobrutalism]
+  evidence:
+    - { claim: "Девиль и brutalistwebsites.com", field: dates, source: adobe-brutalist }
+    - { claim: "Реакция молодого поколения на лёгкость веб-дизайна", field: description, source: brutalistwebsites }
+    - { claim: "Необрутализм: контраст, блоки, яркие цвета, толстые обводки", field: traits, source: nngroup-neobrutalism }
   links:
     - { title: "Brutalist Websites", url: "https://brutalistwebsites.com/", src: "brutalistwebsites.com", lang: en }
     - { title: "Neubrutalism", url: "https://aesthetics.fandom.com/wiki/Neubrutalism", src: "Aesthetics Wiki", lang: en }
@@ -930,10 +1053,15 @@
 - id: superflat
   name: Суперплоский (Superflat)
   orig: Superflat
-  aliases: [superflat, Мураками, суперфлэт, каваии]
+  aliases: [superflat, суперфлэт]
+  searchKeywords: [Мураками, каваии]
   start: 2000
   end: null
   dates: 2000 – наши дни
+  approx: true
+  dateKind: period
+  dateNote: >
+    Выставка Superflat 2000 года, по Википедии; в MOCA Pacific Design Center она прошла с января по май 2001 года.
   era: digital
   domain: [art, design]
   medium: [painting, sculpture]
@@ -951,45 +1079,46 @@
         - ra26-superflat
   origin: unknown
   review:
-    status: partial
-    date: "2026-10-16"
-    scope: [relations]
+    status: reviewed
+    date: "2026-11-09"
+    scope: [relations, dates, text, images, gallery]
     note: >-
-      16.10.2026 проверены исторические отношения и связанные с ними контексты и сопоставления; границы
-      подтверждения указаны у каждой записи. Даты, описание и изображения карточки полностью не проверялись.
+      Связи — 16.10.2026, границы у записи. 09.11.2026: даты — по Википедии и MOCA; описание — 4 утверждения сверено; снято про укиё-э, «японского Уорхола» и обложки Канье Уэста, Нара, Аосима и Mr. убраны из имён. Главная иллюстрация — Британника. Галерея: подпись «цветок» не совпадала с изображением, годы не установлены, источник копий не установлен.
   parents: []
   gallery:
     - asset: assets/works/superflat-1.jpg
-      title: "Superflat: цветок"
+      title: Такаси Мураками. Панда и черепа
       author: Такаси Мураками
-      year: 2000-е
-      credit: Takashi Murakami / Kaikai Kiki
-      license: © Takashi Murakami
+      year: год не установлен
+      credit: источник копии не установлен
+      license: права не установлены; образовательное использование
       nonfree: true
-      reference: https://en.wikipedia.org/wiki/Superflat
-      whyRepresentative: Плоский цветок с улыбкой — поп-иконография superflat.
+      reference: https://www.britannica.com/biography/Murakami-Takashi
+      note: Название работы не установлено, прежняя подпись «цветок» не совпадала с изображением.
+      whyRepresentative: Панда над горой разноцветных черепов написана плоскими цветами с чётким контуром.
+      sources: [britannica-murakami]
     - asset: assets/works/superflat-2.jpg
-      title: "Superflat: цветочное поле"
+      title: Такаси Мураками. Персонажи среди цветов
       author: Такаси Мураками
-      year: 2000-е
-      credit: Takashi Murakami / Kaikai Kiki
-      license: © Takashi Murakami
+      year: год не установлен
+      credit: источник копии не установлен
+      license: права не установлены; образовательное использование
       nonfree: true
-      reference: https://en.wikipedia.org/wiki/Superflat
-      whyRepresentative: Повторяющиеся цветы и плоская графика — характерный мир Мураками.
+      reference: https://www.britannica.com/biography/Murakami-Takashi
+      note: Название работы не установлено.
+      whyRepresentative: Улыбающиеся цветы и персонажи заполняют плоскость повторяющимся узором.
+      sources: [britannica-murakami]
   summary: >
-    Улыбающиеся цветы, аниме и логотипы Louis Vuitton: Такаси Мураками соединяет укиё-э, мангу и поп-арт.
+    Улыбающиеся цветы, персонажи и логотипы моды: Такаси Мураками соединяет искусство и коммерцию.
   description: |
-    Выставка «Superflat» Такаси Мураками в 2000 году утверждала, что японская визуальная культура — от
-    гравюр укиё-э до аниме — всегда была «плоской», и эта плоскость отражает общество потребления. Мураками
-    стал японским Уорхолом: его разноцветные улыбающиеся цветы украшают и музеи, и сумки Louis Vuitton,
-    и обложки Канье Уэста.
+    Superflat основан Такаси Мураками и связан с мангой и аниме; этим словом он называет плоские формы японской графики, анимации, поп-культуры и изобразительного искусства, а также пустоту потребительской культуры.
+    Британника отмечает, что движение прославляло взаимодействие искусства и коммерции. В 2003 году Мураками начал работать с Louis Vuitton, а его образы прошли путь от улыбающихся цветов к черепам и чудовищам.
   traits:
     - Плоские яркие цвета, чёткий контур
-    - Аниме, манга, каваии
+    - Манга и аниме
     - Повтор и паттерн (цветы, черепа)
     - Стирание границы искусства и коммерции
-  names: [Такаси Мураками, Ёситомо Нара, Чихо Аосима, Mr.]
+  names: [Такаси Мураками]
   example:
     file: Takashi Murakami Mononoke Kyoto.jpg
     title: Экспозиция «Takashi Murakami Mononoke Kyoto»
@@ -1001,6 +1130,11 @@
     whyRepresentative: >-
       Показывает персонажей и выставочный контекст Мураками; плоскую цветовую композицию этот ракурс
       объясняет ограниченно.
+    sources: [britannica-murakami]
+  evidence:
+    - { claim: "Основан Мураками; манга и аниме; выставка 2000 года", field: dates, source: wiki-superflat }
+    - { claim: "Superflat и взаимодействие искусства и коммерции", field: description, source: britannica-superflat }
+    - { claim: "Louis Vuitton 2003; от цветов к черепам", field: traits, source: britannica-murakami }
   wiki: Superflat
   links:
     - { title: "Superflat", url: "https://www.theartstory.org/movement/superflat/", src: "The Art Story", lang: en }
