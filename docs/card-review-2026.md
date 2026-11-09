@@ -29,6 +29,7 @@
 | 14 | `14-regional-traditions.yaml` | [#75](https://github.com/amchercashin/aesthetics-atlas/pull/75) | 09.11.2026 | 10 | 28 | слита |
 | 15 | `15-regional-graphics.yaml` | [#76](https://github.com/amchercashin/aesthetics-atlas/pull/76) | 09.11.2026 | 10 | 29 | слита |
 | 16 | `16-regional-languages.yaml` | [#77](https://github.com/amchercashin/aesthetics-atlas/pull/77) | 09.11.2026 | 10 | 27 | слита |
+| фаза 3 | завершение: порог, тест, итоги | [#81](https://github.com/amchercashin/aesthetics-atlas/pull/81) | 09.11.2026 | — | — | слита |
 
 ## Партия 0. Подготовка (28.10.2026)
 
