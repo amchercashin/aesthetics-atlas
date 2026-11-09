@@ -256,8 +256,8 @@
   publisher: HfG-Archiv / Museum Ulm
   url: https://hfg-archiv.museumulm.de/en/permanent-exhibition/
   sourceType: museum
-  checked: '2026-10-14'
-  note: Школа работала в 1953–1968 годах; основатели — Инге Айхер-Шолль, Отль Айхер и Макс Билл.
+  checked: 2026-11-09
+  note: "Школа работала в 1953–1968 годах; основатели — Инге Айхер-Шолль, Отль Айхер и Макс Билл. Перечитано 09.11.2026: перечитан 09.11.2026: годы работы и основатели."
 - id: moma-max-bill-clock
   title: The Perfect Kitchen Clock
   publisher: The Museum of Modern Art
@@ -2778,11 +2778,9 @@
   title: Abstract Expressionism — The Met
   url: https://www.metmuseum.org/de/essays/abstract-expressionism
   sourceType: museum
-  checked: "2026-10-15"
+  checked: 2026-11-09
   publisher: metmuseum.org
-  note: >-
-    Сюрреалистические методы и ранняя абстракция — источники; Color Field описано как ветвь зрелого движения.
-    Изучена содержательная индексированная выдержка; не весь текст
+  note: "Сюрреалистические методы и ранняя абстракция — источники; Color Field описано как ветвь зрелого движения. Изучена содержательная индексированная выдержка; не весь текст Перечитано 09.11.2026: перечитан 09.11.2026: начало 1940-х годов, Нью-Йорк."
 - id: ra26-ulm
   title: Bauhaus Ulm — HfG-Archiv Ulm
   url: https://hfg-archiv.museumulm.de/ausstellung/bauhaus-ulm/
@@ -2824,11 +2822,9 @@
   title: "Architectural Sketches: Moscow Modernism — Garage"
   url: https://garagemca.org/en/course/course-architectural-sketches-moscow-modernism
   sourceType: museum
-  checked: "2026-10-15"
+  checked: 2026-11-09
   publisher: garagemca.org
-  note: >-
-    Советские архитекторы обращались к интернациональному стилю; курс не доказывает каждую локальную
-    родословную. Изучена содержательная индексированная выдержка; не весь текст
+  note: "Советские архитекторы обращались к интернациональному стилю; курс не доказывает каждую локальную родословную. Изучена содержательная индексированная выдержка; не весь текст Перечитано 09.11.2026: перечитан 09.11.2026: рамки 1955–1991 годов и постановление об излишествах."
 - id: ra26-pop
   title: What is Pop art? — MoMA
   url: https://mobile-api.moma.org/collection/terms/pop-art/consumer-goods-mass-media-and-popular-culture
@@ -3437,12 +3433,9 @@
   title: Bob’s Big Boy — Los Angeles Conservancy
   url: https://www.laconservancy.org/learn/historic-places/bobs-big-boy/
   sourceType: primary
-  checked: "2026-10-16"
+  checked: 2026-11-09
   publisher: laconservancy.org
-  note: >-
-    Прямо назван переходный проект: Streamline Moderne 1940-х соединён с приёмами будущих Googie coffee shops.
-    Локатор: Последний абзац описания здания Wayne McAllister (1949). Последний абзац описания здания Wayne
-    McAllister (1949) Прочитана содержательная часть страницы
+  note: "Прямо назван переходный проект: Streamline Moderne 1940-х соединён с приёмами будущих Googie coffee shops. Локатор: Последний абзац описания здания Wayne McAllister (1949). Последний абзац описания здания Wayne McAllister (1949) Прочитана содержательная часть страницы Перечитано 09.11.2026: перечитан 09.11.2026: Bob's Big Boy, 1949, переходный проект."
 - id: ra26-d2-brutalism-arquia
   title: Muerte y resurrección del Brutalismo — Pablo Olalquiaga Bescós, Fundación Arquia
   url: >-
@@ -6720,3 +6713,249 @@
   sourceType: catalog
   checked: 2026-11-09
   note: "Снимок Виллема ван де Полла, 1 августа 1937 года: статуя на павильоне СССР."
+# Партия 09a (09.11.2026)
+- id: tate-abstract-expressionism
+  title: "Abstract expressionism"
+  publisher: "Tate"
+  url: https://www.tate.org.uk/art/art-terms/a/abstract-expressionism
+  sourceType: museum
+  checked: 2026-11-09
+  note: "Формы абстрактного искусства 1940–1950-х; Нью-Йоркская школа; автоматизм; Поллок и холст на полу; Ротко, Ньюман, Стилл."
+- id: moma-abstract-expressionism
+  title: "Abstract Expressionism"
+  publisher: "MoMA"
+  url: https://www.moma.org/collection/terms/abstract-expressionism
+  sourceType: museum
+  checked: 2026-11-09
+  note: "Господствующее движение 1940–1950-х, первым вывело Нью-Йорк на передний край международного современного искусства."
+- id: met-autumn-rhythm
+  title: "Autumn Rhythm: Number 30, 1950"
+  publisher: "The Metropolitan Museum of Art"
+  url: https://www.metmuseum.org/art/collection/search/488978
+  sourceType: museum
+  checked: 2026-11-09
+  note: "Поллок, 1950; 269,9 × 528,3 см; инв. 57.92."
+- id: nga-lavender-mist
+  title: "Number 1, 1950 (Lavender Mist)"
+  publisher: "National Gallery of Art"
+  url: https://www.nga.gov/artworks/55819-number-1-1950-lavender-mist
+  sourceType: museum
+  checked: 2026-11-09
+  note: "Поллок, 1950; лавандовой краски в картине нет."
+- id: tate-colour-field
+  title: "Colour field painting"
+  publisher: "Tate"
+  url: https://www.tate.org.uk/art/art-terms/c/colour-field-painting
+  sourceType: museum
+  checked: 2026-11-09
+  note: "Термин применяли к Ротко, Ньюману, Стиллу примерно с 1950 года; Сэндлер; около 1960 года — Франкенталер, Луис, Ноланд и другие."
+- id: nga-rothko-no-9
+  title: "No. 9"
+  publisher: "National Gallery of Art"
+  url: https://www.nga.gov/artworks/67501-no-9
+  sourceType: museum
+  checked: 2026-11-09
+  note: "Ротко, 1948; масло и смешанная техника."
+- id: ngc-big-a
+  title: "Big A"
+  publisher: "National Gallery of Canada"
+  url: https://www.gallery.ca/node/340698
+  sourceType: museum
+  checked: 2026-11-09
+  note: "Джек Буш, 1968, акрил на холсте."
+- id: artchive-ocean-park
+  title: "Ocean Park #129 (1984) by Richard Diebenkorn"
+  publisher: "Artchive"
+  url: https://www.artchive.com/artwork/ocean-park-129-richard-diebenkorn-1984/
+  sourceType: community
+  checked: 2026-11-09
+  note: "Год и техника работы Дибенкорна; страница относит её к живописи цветового поля."
+- id: britannica-graphic-design-1945-75
+  title: "Graphic design: 1945–75"
+  publisher: "Encyclopaedia Britannica"
+  url: https://www.britannica.com/art/graphic-design/Graphic-design-1945-75
+  sourceType: encyclopedia
+  checked: 2026-11-09
+  note: "Швейцарский стиль после войны: нейтральность, модульные сетки, принятие корпорациями; Мюллер-Брокман."
+- id: cooperhewitt-hofmann
+  title: "A Harmony of Contrasts"
+  publisher: "Cooper Hewitt, Smithsonian Design Museum"
+  url: https://www.cooperhewitt.org/2018/08/05/aharmonyofcontrasts/
+  sourceType: museum
+  checked: 2026-11-09
+  note: "Швейцарский стиль сложился в 1940–1950-е; Хофман и базельская школа."
+- id: letterform-tm
+  title: "Legacies of Swiss Style: Typografische Monatsblätter"
+  publisher: "Letterform Archive"
+  url: https://letterformarchive.org/news/legacies-of-swiss-style-tyografische-monatsblatter/
+  sourceType: museum
+  checked: 2026-11-09
+  note: "Журнал TM и обложки Эмиля Рудера."
+- id: commons-hofmann-japan
+  title: "File:1959 - Gewerbemuseum Basel - Alte und neue Formen in Japan.jpg"
+  publisher: "Wikimedia Commons"
+  url: https://commons.wikimedia.org/wiki/File:1959_-_Gewerbemuseum_Basel_-_Alte_und_neue_Formen_in_Japan.jpg
+  sourceType: catalog
+  checked: 2026-11-09
+  note: "Плакат Армина Хофмана, 1959; источник файла — eMuseum.ch."
+- id: moma-sk4
+  title: "Radio-Phonograph (model SK 4/10)"
+  publisher: "MoMA"
+  url: https://www.moma.org/collection/works/2649
+  sourceType: museum
+  checked: 2026-11-09
+  note: "Рамс и Гугелот, 1956, Braun; белый металлический корпус, прозрачная крышка."
+- id: hfg-ulm-architecture
+  title: "Architecture"
+  publisher: "Stiftung Hochschule für Gestaltung HfG Ulm"
+  url: https://www.hfg-ulm.de/en/hfg-ulm/architecture/
+  sourceType: official
+  checked: 2026-11-09
+  note: "Комплекс спроектирован Максом Биллом, открыт 1–2 октября 1955 года."
+- id: laconservancy-stahl
+  title: "Stahl House (Case Study House #22)"
+  publisher: "Los Angeles Conservancy"
+  url: https://www.laconservancy.org/learn/historic-places/stahl-house-case-study-house-22/
+  sourceType: official
+  checked: 2026-11-09
+  note: "Пьер Кёниг, 1960, программа Case Study."
+- id: moma-eames-lounge
+  title: "Lounge Chair and Ottoman"
+  publisher: "MoMA"
+  url: https://www.moma.org/collection/works/3325
+  sourceType: museum
+  checked: 2026-11-09
+  note: "Чарльз и Рэй Имз, 1956, Herman Miller."
+- id: arnejacobsen-grand-prix
+  title: "Grand Prix"
+  publisher: "Arne Jacobsen Design Archives"
+  url: https://arnejacobsen.com/works/grand-prix/
+  sourceType: official
+  checked: 2026-11-09
+  note: "Стул 1957 года из формованного дерева; единственная оболочка Якобсена, задуманная не на стальных ножках."
+- id: neon-betty-willis
+  title: "Betty Willis: Neon Sign Artist"
+  publisher: "The Neon Museum"
+  url: https://neonmuseum.org/news/betty-willis-neon-sign-artist/
+  sourceType: museum
+  checked: 2026-11-09
+  note: "Уиллис спроектировала знак в Western Neon в 1959 году."
+- id: laconservancy-theme
+  title: "Theme Building"
+  publisher: "Los Angeles Conservancy"
+  url: https://www.laconservancy.org/learn/historic-places/theme-building/
+  sourceType: official
+  checked: 2026-11-09
+  note: "Завершён в 1961 году; фирма Pereira & Luckman; ресторан на скрещённых арках."
+- id: laconservancy-armet-davis
+  title: "Armet & Davis"
+  publisher: "Los Angeles Conservancy"
+  url: https://www.laconservancy.org/learn/architect-biographies/armet-davis/
+  sourceType: official
+  checked: 2026-11-09
+  note: "Фирма основана в 1947 году; название гуги — от кафе Лотнера."
+- id: hyperallergic-norms
+  title: "Threatened LA Googie Landmark Is Saved"
+  publisher: "Hyperallergic"
+  url: https://hyperallergic.com/210378/threatened-la-googie-landmark-is-saved/
+  sourceType: press
+  checked: 2026-11-09
+  note: "Norms La Cienega, Армет и Дэвис, 1957; автомобильная культура и футуризм."
+- id: tate-brutalism
+  title: "Brutalism"
+  publisher: "Tate"
+  url: https://www.tate.org.uk/art/art-terms/b/brutalism
+  sourceType: museum
+  checked: 2026-11-09
+  note: "Бэнем, Смитсоны, 1950–1960-е; béton brut."
+- id: britannica-brutalism
+  title: "Brutalism"
+  publisher: "Encyclopaedia Britannica"
+  url: https://www.britannica.com/art/Brutalism-architecture
+  sourceType: encyclopedia
+  checked: 2026-11-09
+  note: "New Brutalism — 1954 год; типы зданий и страны; спад в 1980-х."
+- id: col-barbican-history
+  title: "Barbican Estate history"
+  publisher: "City of London"
+  url: https://www.cityoflondon.gov.uk/services/barbican-estate/barbican-estate-history
+  sourceType: official
+  checked: 2026-11-09
+  note: "Строительство начато в 1965 году, длилось 11 лет; Chamberlin, Powell and Bon."
+- id: he-trellick
+  title: "Trellick Tower, list entry 1246688"
+  publisher: "Historic England"
+  url: https://historicengland.org.uk/listing/the-list/list-entry/1246688
+  sourceType: official
+  checked: 2026-11-09
+  note: "1968–1972, Голдфингер; бетон, обработанный бучардой; служебная башня."
+- id: archrecord-kallmann
+  title: "Gerhard Kallmann: 1915-2012"
+  publisher: "Architectural Record"
+  url: https://www.architecturalrecord.com/articles/2623-gerhard-kallmann-1915-2012
+  sourceType: press
+  checked: 2026-11-09
+  note: "Конкурс 1962 года; мэрия Бостона завершена в 1968 году."
+- id: mosru-pioneers-modernism
+  title: "«Пионеры советского модернизма»: в Музее архитектуры имени Щусева откроется новая выставка"
+  publisher: "Сайт Москвы"
+  url: https://www.mos.ru/news/item/55498073/
+  sourceType: official
+  checked: 2026-11-09
+  note: "Дворец пионеров, 1962; построен в стиле советского модернизма; архитекторы."
+- id: archlab-druzhba
+  title: "Druzhba Sanatorium / Igor Vasilevsky"
+  publisher: "Architecture Lab"
+  url: https://www.architecturelab.net/druzhba-sanatorium-igor-vasilevsky/
+  sourceType: community
+  checked: 2026-11-09
+  note: "Василевский, завершён в 1985 году."
+- id: taa-ministry-road
+  title: "Ministry of Road Construction"
+  publisher: "Tbilisi Architecture Archive"
+  url: https://taa.net.ge/en/archive-geo/ministry-of-road-construction/
+  sourceType: catalog
+  checked: 2026-11-09
+  note: "Чахава и Джалагания; проект 1969, строительство 1970–1975; метод «космического города»."
+- id: moma-metabolist
+  title: "Metabolist architecture"
+  publisher: "MoMA"
+  url: https://www.moma.org/collection/terms/metabolist-architecture
+  sourceType: museum
+  checked: 2026-11-09
+  note: "Движение 1960-х; органические образцы для городов."
+- id: britannica-metabolist
+  title: "Metabolist school"
+  publisher: "Encyclopaedia Britannica"
+  url: https://www.britannica.com/art/Metabolist-school
+  sourceType: encyclopedia
+  checked: 2026-11-09
+  note: "Проект Тангэ для Бостонской гавани, 1959; манифест 1960 года."
+- id: britannica-nakagin
+  title: "Nakagin Capsule Tower"
+  publisher: "Encyclopaedia Britannica"
+  url: https://www.britannica.com/place/Nakagin-Capsule-Tower
+  sourceType: encyclopedia
+  checked: 2026-11-09
+  note: "1972; 140 капсул, два ядра; сменные капсулы на 25 лет; башня Sony 1972–1976."
+- id: moma-nakagin
+  title: "The Many Lives of the Nakagin Capsule Tower"
+  publisher: "MoMA"
+  url: https://www.moma.org/calendar/exhibitions/5830
+  sourceType: museum
+  checked: 2026-11-09
+  note: "Завершена в 1972 году, снесена в 2022 году; капсула A1305."
+- id: metalocus-shizuoka
+  title: "Kenzo Tange's Shizuoka Press and Broadcasting Center renovated by Taisei"
+  publisher: "Metalocus"
+  url: https://www.metalocus.es/en/news/kenzo-tanges-shizuoka-press-and-broadcasting-center-renovated-taisei
+  sourceType: press
+  checked: 2026-11-09
+  note: "Тангэ, 1967; пример метаболизма."
+- id: erb-shizuoka
+  title: "The Shizuoka Press and Broadcasting Center is a Metabolist pearl"
+  publisher: "The European Review of Books"
+  url: https://europeanreviewofbooks.com/back-to-the-office-the-shizuoka-press-and-broadcasting-center/
+  sourceType: press
+  checked: 2026-11-09
+  note: "Тангэ не входил в группу метаболистов, но был её наставником."
