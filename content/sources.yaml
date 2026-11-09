@@ -526,24 +526,24 @@
   publisher: Государственный Русский музей
   url: https://rusmuseumvrm.ru/data/collections/folk_art/onir-1293/index.php
   sourceType: museum
-  checked: 2026-11-09
-  note: "Предмет XIX века из Семёновского уезда; материалы и техника. Кураторский текст описывает известность промысла с XVII века, грунт с оловянным порошком и изменение колорита старой олифы. Точный год происхождения не установлен. Перечитано 09.11.2026: перечитан 09.11.2026 в снимке веб-архива 08.06.2026: сайт на техническом обслуживании."
+  checked: "2026-11-09"
+  note: "Предмет XIX века из Семёновского уезда; материалы и техника. Кураторский текст описывает известность промысла с XVII века, грунт с оловянным порошком и изменение колорита старой олифы. Точный год происхождения не установлен. Перечитано напрямую 09.11.2026."
 - id: rusmuseum-khokhloma-ladle
   title: С. С. Юзиков. Ковш, ОНИ/Р-2376
   publisher: Государственный Русский музей
   url: https://rusmuseumvrm.ru/data/collections/folk_art/onir-2376/index.php
   sourceType: museum
-  checked: '2026-10-14'
-  note: Автор, Семёнов, 1920–1930-е, дерево и хохломская роспись.
+  checked: "2026-11-09"
+  note: Автор, Семёнов, 1920–1930-е, дерево и хохломская роспись. Перечитано напрямую 09.11.2026.
 - id: rusmuseum-khokhloma-dish
   title: Декоративное блюдо, Р-3479
   publisher: Государственный Русский музей
   url: https://rusmuseumvrm.ru/data/collections/folk_art/r_3479/index.php
   sourceType: museum
-  checked: '2026-10-14'
+  checked: "2026-11-09"
   note: >-
     Прочитана предметная запись: Н. И. Иванова и Н. П. Сальникова, Семёнов, 1969; дерево, токарная работа,
-    хохломская роспись. Описание кудрины и фонового письма; разделение операций между соавторами не указано.
+    хохломская роспись. Описание кудрины и фонового письма; разделение операций между соавторами не указано. Перечитано напрямую 09.11.2026.
 - id: ngv-kngwarray-after-rain
   title: Emily Kam Kngwarray. After rain, 1990
   publisher: National Gallery of Victoria
@@ -692,10 +692,10 @@
 - id: mahlangu-bmw-1991
   title: BMW Art Car, 1991
   publisher: Esther Mahlangu — official artist site
-  url: https://www.esthermahlangu.com/bmw-projects/bmw-art-car-1991
+  url: https://esthermahlangu.com/projects/bmw-art-car
   sourceType: primary
-  checked: 2026-11-09
-  note: "Документация росписи BMW 525i геометрическими мотивами. Источник автора подтверждает проект; внешнее музейное признание и коллективная традиция рассмотрены отдельно Iziko. Перечитано 09.11.2026: перечитан 09.11.2026 в снимке веб-архива 16.05.2026."
+  checked: "2026-11-09"
+  note: "Документация росписи BMW 525i геометрическими мотивами. Источник автора подтверждает проект; внешнее музейное признание и коллективная традиция рассмотрены отдельно Iziko. Сайт перенёс страницу на этот адрес; перечитано в браузере 09.11.2026."
 - id: espacio-mahlangu-2016
   title: Esther Mahlangu. Untitled, 2016
   publisher: El Espacio 23
@@ -875,35 +875,35 @@
   publisher: Государственный Русский музей
   url: https://rusmuseumvrm.ru/data/collections/folk_art/r_3794/index.php
   sourceType: museum
-  checked: 2026-11-09
-  note: "Прочитана предметная запись и кураторский текст: Московская губерния, 1880-е; металл, масло, бронза, лак. Автор предмета не назван. Текст относит поднос на белом фоне к Жостову, описывает переход к металлу в 1830-е и значение тагильских подносов. Имя основателя промысла в историческом тексте не является атрибуцией этого предмета. Перечитано 09.11.2026: перечитан 09.11.2026 в снимке веб-архива 19.06.2021: сайт на обслуживании."
+  checked: "2026-11-09"
+  note: "Прочитана предметная запись и кураторский текст: Московская губерния, 1880-е; металл, масло, бронза, лак. Автор предмета не назван. Текст относит поднос на белом фоне к Жостову, описывает переход к металлу в 1830-е и значение тагильских подносов. Имя основателя промысла в историческом тексте не является атрибуцией этого предмета. Перечитано напрямую 09.11.2026."
 - id: rusmuseum-zhostovo-rus
   title: Н. П. Антипов. «Русь», Р-4070, 1976
   publisher: Государственный Русский музей
   url: https://rusmuseumvrm.ru/data/collections/folk_art/r_4070/index.php
   sourceType: museum
-  checked: '2026-10-14'
+  checked: "2026-11-09"
   note: >-
     Именная атрибуция, Жостово, 1976; металл, масло, лак. Куратор рассматривает эмоциональную выразительность
-    большого подноса-панно.
+    большого подноса-панно. Перечитано напрямую 09.11.2026.
 - id: rusmuseum-zhostovo-radiant
   title: Н. Н. Гончарова. Поднос «Лучезарный», 1989
   publisher: Государственный Русский музей
   url: https://rusmuseumvrm.ru/data/collections/folk_art/onir-4922/index.php
   sourceType: museum
-  checked: '2026-10-14'
+  checked: "2026-11-09"
   note: >-
     В предметной записи указаны Н. Н. Гончарова, 1989, металл, масло, перламутр, поталь и лак. Инициалы
-    сохранены без биографического расширения и без отождествления с однофамильцами.
+    сохранены без биографического расширения и без отождествления с однофамильцами. Перечитано напрямую 09.11.2026.
 - id: rusmuseum-zhostovo-dandelions
   title: Б. В. Графов. «Одуванчики-близнецы», 1990
   publisher: Государственный Русский музей
   url: https://rusmuseumvrm.ru/data/collections/folk_art/onir-4923/index.php
   sourceType: museum
-  checked: '2026-10-14'
+  checked: "2026-11-09"
   note: >-
     Поднос-панно: автор Б. В. Графов, 1990, металл, масло, золотой порошок, лак. Предмет отличён от фотографий
-    других подносов с похожими названиями.
+    других подносов с похожими названиями. Перечитано напрямую 09.11.2026.
 - id: damuseum-metal-painting
   title: Художественная роспись по металлу
   publisher: Всероссийский музей декоративного искусства
@@ -920,107 +920,107 @@
   publisher: Государственный Русский музей
   url: https://rusmuseumvrm.ru/data/collections/folk_art/oni-r-1778/index.php
   sourceType: museum
-  checked: '2026-10-14'
-  note: 'Предмет ОНИ/Р-1778: папье-маше, темпера, золото, лак. Прочитана запись, просмотрена репродукция.'
+  checked: "2026-11-09"
+  note: 'Предмет ОНИ/Р-1778: папье-маше, темпера, золото, лак. Прочитана запись, просмотрена репродукция. Перечитано напрямую 09.11.2026.'
 - id: rusmuseum-palekh-koshba
   title: И. В. Маркичев. «Косьба», 1926
   publisher: Государственный Русский музей
   url: https://rusmuseumvrm.ru/data/collections/folk_art/oni-r-1796/index.php
   sourceType: museum
-  checked: 2026-11-09
-  note: "Предмет ОНИ/Р-1796. Кураторский текст описывает местную иконописную основу, использование федоскинского опыта папье-маше и артель 1924 года. Дата артели не перенесена на начало всей традиции. Перечитано 09.11.2026: перечитан 09.11.2026 в снимке веб-архива 15.08.2025."
+  checked: "2026-11-09"
+  note: "Предмет ОНИ/Р-1796. Кураторский текст описывает местную иконописную основу, использование федоскинского опыта папье-маше и артель 1924 года. Дата артели не перенесена на начало всей традиции. Перечитано напрямую 09.11.2026."
 - id: rusmuseum-palekh-pushkin
   title: Р. А. Смирнова. «Сказки Пушкина», 1994
   publisher: Государственный Русский музей
   url: https://rusmuseumvrm.ru/data/collections/folk_art/onir-5212/index.php
   sourceType: museum
-  checked: '2026-10-14'
-  note: 'ОНИ/Р-5212: папье-маше, темпера, золото, лак. Разные стороны одного ларчика считаются одним произведением.'
+  checked: "2026-11-09"
+  note: 'ОНИ/Р-5212: папье-маше, темпера, золото, лак. Разные стороны одного ларчика считаются одним произведением. Перечитано напрямую 09.11.2026.'
 - id: rusmuseum-palekh-library
   title: Е. Ф. Щаницына. «Библиотека Ивана IV», 1985
   publisher: Государственный Русский музей
   url: https://rusmuseumvrm.ru/data/collections/folk_art/oni-r-4953/index.php
   sourceType: museum
-  checked: '2026-10-14'
+  checked: "2026-11-09"
   note: >-
     ОНИ/Р-4953: папье-маше, темпера, лак, роспись, золочение. Музейное название не подтверждает историческую
-    реальность изображённого легендарного собрания.
+    реальность изображённого легендарного собрания. Перечитано напрямую 09.11.2026.
 - id: tepapa-siapo-825
   title: Siapo mamanu, FE000825, 1890-е
   publisher: Museum of New Zealand Te Papa Tongarewa
   url: https://collections.tepapa.govt.nz/object/162815
   sourceType: museum
-  checked: 2026-11-09
-  note: "Прочитана предметная запись и кураторский текст; автор не назван. Музей различает свободное письмо mamanu и перенос рельефного рисунка. Репродукция просмотрена. Перечитано 09.11.2026: перечитан 09.11.2026 в снимке веб-архива 11.09.2026: сайт недоступен."
+  checked: "2026-11-09"
+  note: "Прочитана предметная запись и кураторский текст; автор не назван. Музей различает свободное письмо mamanu и перенос рельефного рисунка. Репродукция просмотрена. Перечитано напрямую 09.11.2026."
 - id: tepapa-siapo-11611
   title: Siapo mamanu, FE011611, 1896
   publisher: Museum of New Zealand Te Papa Tongarewa
   url: https://collections.tepapa.govt.nz/object/531805
   sourceType: museum
-  checked: '2026-10-14'
+  checked: "2026-11-09"
   note: >-
     Использована текущая предметная датировка 1896, подтверждённая примечанием издания 2025 года; старые
-    альтернативные подписи изображений не выданы за актуальную атрибуцию. Дарители не названы художниками.
+    альтернативные подписи изображений не выданы за актуальную атрибуцию. Дарители не названы художниками. Перечитано напрямую 09.11.2026.
 - id: tepapa-siapo-1425
   title: Siapo mamanu, FE001425, 1900-е
   publisher: Museum of New Zealand Te Papa Tongarewa
   url: https://collections.tepapa.govt.nz/object/165412
   sourceType: museum
-  checked: '2026-10-14'
-  note: Автор не указан; tapa, bark cloth, dye. Год дарения 1917 не является датой изготовления.
+  checked: "2026-11-09"
+  note: Автор не указан; tapa, bark cloth, dye. Год дарения 1917 не является датой изготовления. Перечитано напрямую 09.11.2026.
 - id: tepapa-siapo-elei-11577
   title: Siapo elei, FE011577, 2000
   publisher: Museum of New Zealand Te Papa Tongarewa
   url: https://collections.tepapa.govt.nz/object/492398
   sourceType: museum
-  checked: '2026-10-14'
+  checked: "2026-11-09"
   note: >-
     Использовано имя Fa'amuli Salu из поля Production. Подпись изображения содержит другое написание —
     Moli-Salu, Va'amuli; варианты не объединены в проверенную биографическую запись. Репродукция доступна;
-    права ограничены.
+    права ограничены. Перечитано напрямую 09.11.2026.
 - id: tepapa-pacific-tapa
   title: 'Tapa: Barkcloth art in the Pacific'
   publisher: Museum of New Zealand Te Papa Tongarewa
   url: https://www.tepapa.govt.nz/digital-museum/explore-digital-museum/tapa-barkcloth-art-in-the-pacific
   sourceType: museum
-  checked: '2026-10-14'
+  checked: "2026-11-09"
   note: >-
     Прочитан обзор локальных названий и живых практик. Общий материал не превращён в единую островную
-    стилистику или доказанную генеалогию.
+    стилистику или доказанную генеалогию. Перечитано напрямую 09.11.2026.
 - id: tepapa-ngatu-aircraft
   title: Ngatu, FE008723, около 1940-х
   publisher: Museum of New Zealand Te Papa Tongarewa
   url: https://collections.tepapa.govt.nz/object/83327
   sourceType: museum
-  checked: '2026-10-14'
+  checked: "2026-11-09"
   note: >-
     Прочитаны запись и кураторский текст; самолёт соотнесён музеем с P-38 Lightning. Неуверенность о
-    размещении эскадрильи в Тонга сохранена; это не установленный факт истории предмета.
+    размещении эскадрильи в Тонга сохранена; это не установленный факт истории предмета. Перечитано напрямую 09.11.2026.
 - id: tepapa-ngatu-trophies
   title: Ngatu, FE008724, 1932?
   publisher: Museum of New Zealand Te Papa Tongarewa
   url: https://collections.tepapa.govt.nz/object/83325
   sourceType: museum
-  checked: '2026-10-14'
+  checked: "2026-11-09"
   note: >-
     В предметном поле Production указан вопросительный знак. Он сохранён, несмотря на более определённую фразу
-    в кураторском тексте. Изображение проверено отдельно после отложенной загрузки на странице.
+    в кураторском тексте. Изображение проверено отдельно после отложенной загрузки на странице. Перечитано напрямую 09.11.2026.
 - id: tepapa-ngatu-electricity
   title: Ngatu, FE010244, 1991
   publisher: Museum of New Zealand Te Papa Tongarewa
   url: https://collections.tepapa.govt.nz/object/76128
   sourceType: museum
-  checked: '2026-10-14'
+  checked: "2026-11-09"
   note: >-
     Запись связывает полотно с установкой электричества в деревне в 1991 году. Покупка музеем в 1993 году —
-    отдельная дата. Прочитан текст о купеси и дорисовке.
+    отдельная дата. Прочитан текст о купеси и дорисовке. Перечитано напрямую 09.11.2026.
 - id: tepapa-decorating-ngatu
   title: Decorating ngatu
   publisher: Museum of New Zealand Te Papa Tongarewa
   url: https://collections.tepapa.govt.nz/topic/1114
   sourceType: museum
-  checked: '2026-10-14'
-  note: Прочитан музейный материал о переносе рисунка с купеси, дорисовке, разделительных линиях и числах.
+  checked: "2026-11-09"
+  note: Прочитан музейный материал о переносе рисунка с купеси, дорисовке, разделительных линиях и числах. Перечитано напрямую 09.11.2026.
 
 # Региональные росписи, графика и текстиль: партия 1
 - id: sarmaya-mithila-exhibition
@@ -1150,44 +1150,44 @@
   publisher: Museum of New Zealand Te Papa Tongarewa
   url: https://collections.tepapa.govt.nz/object/150726
   sourceType: museum
-  checked: '2026-10-14'
+  checked: "2026-11-09"
   note: >-
     Прочитана предметная запись и описание трафаретного декора. Дата Production — 1890-е; коллекционирование в
-    тот же период описано отдельно. Просмотрена музейная репродукция.
+    тот же период описано отдельно. Просмотрена музейная репродукция. Перечитано напрямую 09.11.2026.
 - id: tepapa-masi-imanueli
   title: Kerela Imanueli. Ubi ni davodavo, FE011160
   publisher: Museum of New Zealand Te Papa Tongarewa
   url: https://collections.tepapa.govt.nz/object/337417
   sourceType: museum
-  checked: '2026-10-14'
+  checked: "2026-11-09"
   note: >-
     Автор назван, дата изготовления не указана. Приобретение 1998 не перенесено в год произведения. Получатели
-    свадебного дара не названы художниками.
+    свадебного дара не названы художниками. Перечитано напрямую 09.11.2026.
 - id: tepapa-masi-mixed
   title: Masi, FE012791, дата не указана
   publisher: Museum of New Zealand Te Papa Tongarewa
   url: https://collections.tepapa.govt.nz/object/1396687
   sourceType: museum
-  checked: 2026-11-09
-  note: "Прочитаны запись и кураторский текст о сочетании трафарета и свободного рисунка. Имена дарителей и владельца-миссионера не перенесены в авторство. Перечитано 09.11.2026: перечитан 09.11.2026 в снимке веб-архива 16.08.2025."
+  checked: "2026-11-09"
+  note: "Прочитаны запись и кураторский текст о сочетании трафарета и свободного рисунка. Имена дарителей и владельца-миссионера не перенесены в авторство. Перечитано напрямую 09.11.2026."
 - id: tepapa-masi-that-vase
   title: Dame Robin White и Tamari Cabeikanacea. That Vase, 2019
   publisher: Museum of New Zealand Te Papa Tongarewa
   url: https://collections.tepapa.govt.nz/object/1887935
   sourceType: museum
-  checked: '2026-10-14'
+  checked: "2026-11-09"
   note: >-
     Предмет 2020-0026-1: оба соавтора, 2019, Фиджи, лубяное полотно и чернила. Дата дара 2022 отличается от
-    даты работы. Просмотрена репродукция.
+    даты работы. Просмотрена репродукция. Перечитано напрямую 09.11.2026.
 - id: tepapa-masi-making-vase
   title: The making of ‘That Vase’
   publisher: Museum of New Zealand Te Papa Tongarewa
   url: https://www.tepapa.govt.nz/digital-museum/explore-digital-museum/art/watch-robin-white-making-vase
   sourceType: museum
-  checked: '2026-10-14'
+  checked: "2026-11-09"
   note: >-
     Прочитан музейный текст о работе в Лаутоке в 2019 году, соавторстве и применении draudrau. Полный просмотр
-    видео не заявлен.
+    видео не заявлен. Перечитано напрямую 09.11.2026.
 
 # Региональные росписи, графика и текстиль: партия 1
 - id: rusmuseum-gorodets-melnikov
@@ -1195,35 +1195,35 @@
   publisher: Государственный Русский музей
   url: https://rusmuseumvrm.ru/data/collections/folk_art/onir-2888/index.php
   sourceType: museum
-  checked: 2026-11-09
-  note: "Предмет ОНИ/Р-2888: дерево, роспись. Имя Антон Васильевич Мельников раскрыто самим музеем. Резные предшественники не подставлены в корпус расписных вещей. Перечитано 09.11.2026: перечитан 09.11.2026 в снимке веб-архива 13.05.2025."
+  checked: "2026-11-09"
+  note: "Предмет ОНИ/Р-2888: дерево, роспись. Имя Антон Васильевич Мельников раскрыто самим музеем. Резные предшественники не подставлены в корпус расписных вещей. Перечитано напрямую 09.11.2026."
 - id: rusmuseum-gorodets-dontse-4987
   title: Донце прялки, ОНИ/Р-4987, вторая половина XIX века
   publisher: Государственный Русский музей
   url: https://rusmuseumvrm.ru/data/collections/folk_art/onir-4987/index.php
   sourceType: museum
-  checked: '2026-10-14'
+  checked: "2026-11-09"
   note: >-
     Дерево, роспись. Имя изготовителя не указано. Т. А. Маврина — собирательница этой вещи и художница, на
-    которую повлияло народное искусство, но не автор донца.
+    которую повлияло народное искусство, но не автор донца. Перечитано напрямую 09.11.2026.
 - id: rusmuseum-gorodets-harvest
   title: И. А. Мазин. «Праздник урожая», 1935
   publisher: Государственный Русский музей
   url: https://rusmuseumvrm.ru/data/collections/folk_art/oni-r-4282/index.php
   sourceType: museum
-  checked: '2026-10-14'
+  checked: "2026-11-09"
   note: >-
     ОНИ/Р-4282: бумага, роспись. Инициалы автора сохранены без отождествления с однофамильцами. Это
-    самостоятельная композиция, а не фотография донца.
+    самостоятельная композиция, а не фотография донца. Перечитано напрямую 09.11.2026.
 - id: rusmuseum-gorodets-kryukov
   title: Д. И. Крюков. Панно, 1938
   publisher: Государственный Русский музей
   url: https://rusmuseumvrm.ru/data/collections/folk_art/onir-1426/
   sourceType: museum
-  checked: '2026-10-14'
+  checked: "2026-11-09"
   note: >-
     ОНИ/Р-1426: бумага, масло, стекло, полихромная роспись; д. Косково. Куратор рассматривает переход к новым
-    изделиям в 1930-е годы.
+    изделиям в 1930-е годы. Перечитано напрямую 09.11.2026.
 - id: sergiev-posad-gorodets
   title: Хохломская и городецкая роспись
   publisher: Сергиево-Посадский государственный историко-художественный музей-заповедник
@@ -1269,29 +1269,29 @@
   publisher: Государственный Русский музей
   url: https://rusmuseumvrm.ru/data/collections/engraving/gr.lub.-2916/index.php
   sourceType: museum
-  checked: '2026-10-14'
+  checked: "2026-11-09"
   note: >-
     Прочитана запись: бумага, раскрашенная резцовая гравюра; неизвестный художник, предметное поле даты — XIX
-    век. Более узкая рубрика периода не подменяет эту датировку.
+    век. Более узкая рубрика периода не подменяет эту датировку. Перечитано напрямую 09.11.2026.
 - id: rusmuseum-lubok-judgement
   title: Образ страшного суда, Гр.Луб.-3270, XVII–XIX
   publisher: Государственный Русский музей
   url: https://rusmuseumvrm.ru/data/collections/engraving/gr.lub.-3270/index.php
   sourceType: museum
-  checked: '2026-10-14'
+  checked: "2026-11-09"
   note: >-
     В предметном поле стоит широкий интервал XVII–XIX, а в рубрике периода — XVII век. Расхождение сохранено,
     точный год не выбран. Бумага, резцовая гравюра. П. Шилинговский указан в истории поступления, не как автор
-    листа.
+    листа. Перечитано напрямую 09.11.2026.
 - id: rusmuseum-lubok-collection
   title: 'Лубок: музейная типологическая подборка'
   publisher: Государственный Русский музей
   url: https://rusmuseumvrm.ru/reference/classifier/typology/lubok/index.php
   sourceType: museum
-  checked: '2026-10-14'
+  checked: "2026-11-09"
   note: >-
     Коллекция включает религиозные, исторические и другие изображения, разные техники и мастерские. Термин не
-    принят как название одной неизменной манеры.
+    принят как название одной неизменной манеры. Перечитано напрямую 09.11.2026.
 
 # Региональная графика, бумага и росписи: партия 2
 - id: aaav-yangliuqing-theatre
@@ -1639,8 +1639,8 @@
   publisher: Государственный Русский музей
   url: https://rusmuseumvrm.ru/data/collections/folk_art/oni-r-3389/index.php
   sourceType: museum
-  checked: 2026-11-09
-  note: "Дерево, роспись; 1901. Музей описывает палащельский центр с середины XIX века до 1930-х. Имя автора на странице сокращено до Н. Федотова. Перечитано 09.11.2026: перечитан 09.11.2026 в снимке веб-архива; прямой сайт на обслуживании."
+  checked: "2026-11-09"
+  note: "Дерево, роспись; 1901. Музей описывает палащельский центр с середины XIX века до 1930-х. Имя автора на странице сокращено до Н. Федотова. Перечитано напрямую 09.11.2026."
 - id: met-chola-parvati
   title: Standing Parvati, 57.51.3
   publisher: The Metropolitan Museum of Art
@@ -1762,28 +1762,28 @@
   publisher: Museum of New Zealand Te Papa Tongarewa
   url: https://collections.tepapa.govt.nz/object/158009
   sourceType: museum
-  checked: "2026-10-15"
+  checked: "2026-11-09"
   note: >-
     Тене Вайтере, 1896–1899, Ротоити; дерево, краска, pāua. Дата в заголовке фотографии 1899 и заказ
-    1896 не сведены к одному выдуманному году.
+    1896 не сведены к одному выдуманному году. Перечитано напрямую 09.11.2026.
 - id: tepapa-waka-huia
   title: Wakahuia (treasure box), WE000946
   publisher: Museum of New Zealand Te Papa Tongarewa
   url: https://collections.tepapa.govt.nz/object/448890
   sourceType: museum
-  checked: "2026-10-15"
+  checked: "2026-11-09"
   note: >-
     1800–1900; мастер неизвестен. Музей различает waka huia и papa hou и объясняет резьбу на нижней
-    поверхности, подвешивание и ракушечные вставки.
+    поверхности, подвешивание и ракушечные вставки. Перечитано напрямую 09.11.2026.
 - id: tepapa-titokowaru
   title: Poupou (carved panel) Titokowaru, ME002589
   publisher: Museum of New Zealand Te Papa Tongarewa
   url: https://collections.tepapa.govt.nz/object/138173
   sourceType: museum
-  checked: "2026-10-15"
+  checked: "2026-11-09"
   note: >-
     Мастер неизвестен; около 1880; дерево, pāua, краска. Предметная запись не даёт определённой
-    атрибуции резчику.
+    атрибуции резчику. Перечитано напрямую 09.11.2026.
 - id: toi-maori-whakairo
   title: "Whakairo: carving"
   publisher: Toi Māori Aotearoa
@@ -1938,11 +1938,11 @@
   title: Neo-Expressionism — National Galleries of Scotland
   url: https://www.nationalgalleries.org/art-and-artists/glossary-terms/neo-expressionism
   sourceType: primary
-  checked: "2026-10-15"
+  checked: "2026-11-09"
   publisher: nationalgalleries.org
   note: >-
     Немецкий экспрессионизм прямо назван вдохновлявшим неоэкспрессионистов источником среди нескольких других
-    влияний. Прочитана содержательная часть страницы
+    влияний. Страница прочитана целиком в браузере 09.11.2026.
 - id: ra26-barbizon-impressionism
   title: Corot to Monet — National Gallery
   url: https://www.nationalgallery.org.uk/exhibitions/past/corot-to-monet
@@ -2794,11 +2794,12 @@
   title: Afrofuturism — NMAAHC
   url: https://nmaahc.si.edu/explore/exhibitions/afrofuturism
   sourceType: museum
-  checked: "2026-10-15"
+  checked: "2026-11-09"
   publisher: nmaahc.si.edu
   note: >-
     Sun Ra, фантастика и влияние психоделии на P-Funk; космическая тема не равна влиянию конкретного дизайна
-    Space Age. Изучена содержательная индексированная выдержка; не весь текст
+    Space Age. Перечитано в браузере 09.11.2026: Sun Ra с середины 1950-х; в блоке о Джордже Клинтоне психоделия,
+    движение за гражданские права и научная фантастика названы источниками P-Funk.
 - id: ra26-computer-history
   title: Graphics & Games — Computer History Museum
   url: https://www.computerhistory.org/timeline/graphics-games/
@@ -3598,13 +3599,12 @@
   title: Baroque — National Galleries of Scotland, glossary
   url: https://www.nationalgalleries.org/art-and-artists/glossary-terms/baroque
   sourceType: primary
-  checked: "2026-10-16"
+  checked: "2026-11-09"
   publisher: nationalgalleries.org
   note: >-
     Музей помещает Caravaggio и его воздействие на европейскую живопись в историю Baroque; подтверждает
     контекст, не происхождение всех искусств эпохи из Caravaggism. Локатор: Baroque Painting: Caravaggio и
-    влияние на Rubens. Baroque Painting: Caravaggio и влияние на Rubens Прочитана содержательная часть
-    страницы
+    влияние на Rubens. Страница прочитана целиком в браузере 09.11.2026.
 - id: ra26-d3-beardsley-study
   title: Aubrey Beardsley in the Russian “World of Art”
   url: https://britishartstudies.ac.uk/issues/18/aubrey-bearsley-russian-world-of-art/
@@ -5675,11 +5675,11 @@
   note: "Отдел искусств ислама, OA 7171, Петербургский альбом; XVII век, автор в записи не указан."
 - id: dekathedraal-raising
   title: De Kruisoprichting
-  publisher: De Kathedraal (Antwerpen), снимок веб-архива 03.08.2025
-  url: https://web.archive.org/web/20250803204807/https://www.dekathedraal.be/nl/rubens-kruisoprichting
+  publisher: De Kathedraal (Antwerpen)
+  url: https://www.dekathedraal.be/nl/rubens-kruisoprichting
   sourceType: official
-  checked: 2026-11-09
-  note: "Рубенс, 1609–1610, масло на доске. Сам сайт собора из этой сети не открывается, поэтому прочитан снимок."
+  checked: "2026-11-09"
+  note: "Рубенс, 1609–1610, масло на доске. Перечитано напрямую 09.11.2026."
 - id: kungligaslotten-chinese-pavilion
   title: The Chinese Pavilion, history
   publisher: Kungliga slotten, снимок веб-архива 20.04.2026
@@ -5866,11 +5866,11 @@
   note: "Шпицвег, 1839, 36,2×44,6 см; поэт в мансарде держит зонт от капающей воды."
 - id: prado-third-of-may
   title: The 3rd of May 1808 in Madrid, or "The Executions"
-  publisher: Museo Nacional del Prado, снимок веб-архива 31.08.2026
-  url: https://web.archive.org/web/20260831223553/https://www.museodelprado.es/en/the-collection/art-work/the-3rd-of-may-1808-in-madrid-or-the-executions/5e177409-2993-4240-97fb-847a02c6496c
+  publisher: Museo Nacional del Prado
+  url: https://www.museodelprado.es/en/the-collection/art-work/the-3rd-of-may-1808-in-madrid-or-the-executions/5e177409-2993-4240-97fb-847a02c6496c
   sourceType: museum
-  checked: 2026-11-09
-  note: "Гойя, 1814, масло на холсте, P000749. Сама страница Прадо закрыта проверкой Cloudflare."
+  checked: "2026-11-09"
+  note: "Гойя, 1814, масло на холсте, P000749. Перечитано в браузере 09.11.2026."
 - id: tate-ophelia
   title: Ophelia
   publisher: Tate
@@ -5938,11 +5938,11 @@
   note: "Уистлер, 1875; фейерверк в садах Креморн; дело о клевете, один фартинг."
 - id: historicengland-st-pancras
   title: St Pancras Station and Former Midland Grand Hotel (1342037)
-  publisher: Historic England, снимок веб-архива 13.01.2026
-  url: https://web.archive.org/web/20260113034903/https://historicengland.org.uk/listing/the-list/list-entry/1342037
+  publisher: Historic England
+  url: https://historicengland.org.uk/listing/the-list/list-entry/1342037
   sourceType: official
-  checked: 2026-11-09
-  note: "Отель 1868–1876, Джордж Гилберт Скотт."
+  checked: "2026-11-09"
+  note: "Отель 1868–1876, Джордж Гилберт Скотт. Перечитано в браузере 09.11.2026."
 - id: met-impressionism
   title: "Impressionism: Art and Modernity"
   publisher: The Metropolitan Museum of Art
@@ -5952,11 +5952,11 @@
   note: "Выставка 1874 года, Леруа, короткие мазки, чистые цвета, цветные тени; восемь выставок до 1886 года; обсуждения с 1867 года."
 - id: nationaltrust-red-house
   title: The history of Red House
-  publisher: National Trust, снимок веб-архива 04.10.2026
-  url: https://web.archive.org/web/20261004034054/https://www.nationaltrust.org.uk/visit/london/red-house/the-history-of-red-house
+  publisher: National Trust
+  url: https://www.nationaltrust.org.uk/visit/london/red-house/the-history-of-red-house
   sourceType: official
-  checked: 2026-11-09
-  note: "Заказ 1859 года Филипу Уэббу; Моррисы въехали в июне 1860 года."
+  checked: "2026-11-09"
+  note: "Заказ 1859 года Филипу Уэббу; Моррисы въехали в июне 1860 года. Перечитано в браузере 09.11.2026."
 - id: neuschwanstein-history
   title: Neuschwanstein Castle, history
   publisher: Bayerische Schlösserverwaltung
@@ -6968,11 +6968,11 @@
   note: "Дом «Футуро» у Die Neue Sammlung в Мюнхене."
 - id: spaceneedle-history
   title: "Space Needle history"
-  publisher: "Space Needle, снимок веб-архива 08.09.2026"
-  url: https://web.archive.org/web/20260908082045/https://www.spaceneedle.com/history
+  publisher: Space Needle
+  url: https://www.spaceneedle.com/history
   sourceType: official
-  checked: 2026-11-09
-  note: "Башня к Всемирной выставке 1962 года; верх в форме летающей тарелки; Грэм и Стайнбрук."
+  checked: "2026-11-09"
+  note: "Башня к Всемирной выставке 1962 года; верх в форме летающей тарелки; Грэм и Стайнбрук. Перечитано в браузере 09.11.2026."
 - id: tate-land-art
   title: "Land art"
   publisher: "Tate"
@@ -6982,18 +6982,18 @@
   note: "Часть концептуального движения 1960–1970-х; «Спиральная дамба»; документация фото и картами."
 - id: dia-spiral-jetty
   title: "Robert Smithson, Spiral Jetty"
-  publisher: "Dia Art Foundation, снимок веб-архива 10.10.2026"
-  url: https://web.archive.org/web/20261010082720/https://diaart.org/visit/visit-our-locations-sites/robert-smithson-spiral-jetty
+  publisher: Dia Art Foundation
+  url: https://www.diaart.org/visit/visit-our-locations-sites/robert-smithson-spiral-jetty
   sourceType: museum
-  checked: 2026-11-09
-  note: "1970; виток длиной 1500 футов из базальта; энтропия и уровень воды."
+  checked: "2026-11-09"
+  note: "1970; виток длиной 1500 футов из базальта; энтропия и уровень воды. Перечитано в браузере 09.11.2026."
 - id: dia-lightning-field
   title: "Walter De Maria, The Lightning Field"
-  publisher: "Dia Art Foundation, снимок веб-архива 11.10.2026"
-  url: https://web.archive.org/web/20261011081921/https://www.diaart.org/visit/visit-our-locations-sites/walter-de-maria-the-lightning-field
+  publisher: Dia Art Foundation
+  url: https://www.diaart.org/visit/visit-our-locations-sites/walter-de-maria-the-lightning-field
   sourceType: museum
-  checked: 2026-11-09
-  note: "1977; 400 шестов из полированной нержавеющей стали, Нью-Мексико."
+  checked: "2026-11-09"
+  note: "1977; 400 шестов из полированной нержавеющей стали, Нью-Мексико. Перечитано в браузере 09.11.2026."
 - id: christo-gates
   title: "The Gates"
   publisher: "Christo and Jeanne-Claude"
@@ -7593,3 +7593,17 @@
   note: >-
     Страница проекта на сайте студии. Подтверждает название проекта; текст и даты при чтении не показались,
     поэтому год у копии не указан.
+- id: aic-grande-jatte
+  title: "A Sunday on La Grande Jatte — 1884"
+  publisher: The Art Institute of Chicago
+  url: https://www.artic.edu/artworks/27992/a-sunday-on-la-grande-jatte-1884
+  sourceType: museum
+  checked: "2026-11-09"
+  note: "Сёра, 1884–1886, кайма добавлена в 1888–1889; масло на холсте; 1926.224."
+- id: rmgallery-bakst-supper
+  title: "Supper. 1902"
+  publisher: "Русский музей, проект дополненной реальности"
+  url: https://rmgallery.ru/en/151
+  sourceType: museum
+  checked: "2026-11-09"
+  note: "Бакст, 1902, холст, масло, 150×100, Государственный Русский музей. То же собрание названо на старом портале «Русский музей: виртуальный филиал»."
