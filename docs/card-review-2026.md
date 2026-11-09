@@ -31,6 +31,7 @@
 | 15 | `15-regional-graphics.yaml` | | | 10 | 30 | не начата |
 | 16 | `16-regional-languages.yaml` | | | 10 | 27 | не начата |
 | 06a | `06-xix.yaml: neoclassicism … peredvizhniki` | [#63](https://github.com/amchercashin/aesthetics-atlas/pull/63) | 09.11.2026 | 8 | 16 | слита |
+| 06b | `06-xix.yaml: historicism … impressionism` | [#64](https://github.com/amchercashin/aesthetics-atlas/pull/64) | 09.11.2026 | 7 | 14 | слита |
 
 ## Партия 0. Подготовка (28.10.2026)
 
@@ -489,7 +490,7 @@
 ### Время
 Около часа на партию; замер приблизительный.
 
-## Партия 06b. `06-xix.yaml`: historicism … impressionism (09.11.2026)
+## Партия 06b. `06-xix.yaml`: historicism … impressionism (09.11.2026, [#64](https://github.com/amchercashin/aesthetics-atlas/pull/64))
 
 Карточек: 7, все переведены в `reviewed` с полным `scope`; изображений: 7 главных и 14 в галереях; новых источников: 21, повторно прочитано 5.
 
