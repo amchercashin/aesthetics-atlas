@@ -526,11 +526,8 @@
   publisher: Государственный Русский музей
   url: https://rusmuseumvrm.ru/data/collections/folk_art/onir-1293/index.php
   sourceType: museum
-  checked: '2026-10-14'
-  note: >-
-    Предмет XIX века из Семёновского уезда; материалы и техника. Кураторский текст описывает известность
-    промысла с XVII века, грунт с оловянным порошком и изменение колорита старой олифы. Точный год
-    происхождения не установлен.
+  checked: 2026-11-09
+  note: "Предмет XIX века из Семёновского уезда; материалы и техника. Кураторский текст описывает известность промысла с XVII века, грунт с оловянным порошком и изменение колорита старой олифы. Точный год происхождения не установлен. Перечитано 09.11.2026: перечитан 09.11.2026 в снимке веб-архива 08.06.2026: сайт на техническом обслуживании."
 - id: rusmuseum-khokhloma-ladle
   title: С. С. Юзиков. Ковш, ОНИ/Р-2376
   publisher: Государственный Русский музей
@@ -570,17 +567,15 @@
   publisher: National Gallery of Victoria
   url: https://www.ngv.vic.gov.au/explore/collection/work/57498/
   sourceType: museum
-  checked: '2026-10-14'
-  note: >-
-    Автор, материал, дата и линейный язык Big yam Dreaming. Текст связывает позднюю живопись с батиком
-    1977–1988 и переходом к холсту в 1988–1989; значения относятся к Alhalker и практике автора.
+  checked: 2026-11-09
+  note: "Автор, материал, дата и линейный язык Big yam Dreaming. Текст связывает позднюю живопись с батиком 1977–1988 и переходом к холсту в 1988–1989; значения относятся к Alhalker и практике автора. Перечитано 09.11.2026: перечитан 09.11.2026."
 - id: az-zverev-portrait-1958
   title: Анатолий Зверев. Портрет, 1958
   publisher: Музей AZ
   url: https://museum-az.com/art_co/portret/
   sourceType: museum
-  checked: '2026-10-14'
-  note: 'Предметная запись и репродукция: 1958, бумага, гуашь, 64,5 × 43,5 см. Имя модели в записи не указано.'
+  checked: 2026-11-09
+  note: "Предметная запись и репродукция: 1958, бумага, гуашь, 64,5 × 43,5 см. Имя модели в записи не указано. Перечитано 09.11.2026: перечитан 09.11.2026."
 - id: az-zverev-portrait-corpus
   title: 'Прекрасные создания. Девушка: картины-вдохновение'
   publisher: Музей AZ
@@ -606,20 +601,15 @@
   url: >-
     https://www.cincinnatiartmuseum.org/art/exhibitions/exhibition-archive/2025/shahzia-sikander-collective-behavior/audio-exhibition/
   sourceType: museum
-  checked: '2026-10-14'
-  note: >-
-    Датировки, материалы и репродукции The Scroll (1989–1990), Perilous Order (1989–1997) и Usurpia (2002).
-    Использована актуальная датировка Perilous Order; в ранних каталогах встречаются другие границы.
+  checked: 2026-11-09
+  note: "Датировки, материалы и репродукции The Scroll (1989–1990), Perilous Order (1989–1997) и Usurpia (2002). Использована актуальная датировка Perilous Order; в ранних каталогах встречаются другие границы. Перечитано 09.11.2026: перечитан 09.11.2026."
 - id: curtin-carrolup-overview
   title: The Carrolup Artworks
   publisher: John Curtin Gallery / Curtin University
   url: https://www.curtin.edu.au/jcg/carrolup-centre/overview/
   sourceType: museum
-  checked: '2026-10-14'
-  note: >-
-    Историческая среда работ детей Карролап, насильственное разлучение с семьями, роль преподавателей Noel и
-    Lily White, возвращение коллекции и участие представителей сообществ. Не определяет единый стиль всех
-    нунгар.
+  checked: 2026-11-09
+  note: "Историческая среда работ детей Карролап, насильственное разлучение с семьями, роль преподавателей Noel и Lily White, возвращение коллекции и участие представителей сообществ. Не определяет единый стиль всех нунгар. Перечитано 09.11.2026: перечитан 09.11.2026."
 - id: carrolup-documented-works
   title: 'The Carrolup Story: Art'
   publisher: 'Aboriginal Child Artists of Carrolup: Healing Trauma'
@@ -636,10 +626,8 @@
   publisher: The Metropolitan Museum of Art
   url: https://www.metmuseum.org/art/collection/search/675696
   sourceType: museum
-  checked: '2026-10-14'
-  note: >-
-    Шерстяное платье осень/зима 1983–1984, коллекция Gloves, Skirts, Quilted Bag Coats; музей описывает
-    асимметричные складки и увеличение объёма.
+  checked: 2026-11-09
+  note: "Шерстяное платье осень/зима 1983–1984, коллекция Gloves, Skirts, Quilted Bag Coats; музей описывает асимметричные складки и увеличение объёма. Перечитано 09.11.2026: перечитан 09.11.2026 через API музея."
 - id: met-kawakubo-1997
   title: Rei Kawakubo / Comme des Garçons. Dress, 1997
   publisher: The Metropolitan Museum of Art
@@ -672,10 +660,8 @@
   publisher: Walker Art Center
   url: https://www.walkerart.org/collections/artwork/bacongo-viii/
   sourceType: museum
-  checked: '2026-10-14'
-  note: >-
-    Предметная запись 2022.86: акрил, раковины каури, пластиковые пуговицы и зеркала, пришитые к
-    шелкографически запечатанному холсту с набивкой.
+  checked: 2026-11-09
+  note: "Предметная запись 2022.86: акрил, раковины каури, пластиковые пуговицы и зеркала, пришитые к шелкографически запечатанному холсту с набивкой. Перечитано 09.11.2026: перечитан 09.11.2026."
 - id: walker-abad-liberty
   title: Pacita Abad. L.A. Liberty, 1992
   publisher: Walker Art Center
@@ -708,10 +694,8 @@
   publisher: Esther Mahlangu — official artist site
   url: https://www.esthermahlangu.com/bmw-projects/bmw-art-car-1991
   sourceType: primary
-  checked: '2026-10-14'
-  note: >-
-    Документация росписи BMW 525i геометрическими мотивами. Источник автора подтверждает проект; внешнее
-    музейное признание и коллективная традиция рассмотрены отдельно Iziko.
+  checked: 2026-11-09
+  note: "Документация росписи BMW 525i геометрическими мотивами. Источник автора подтверждает проект; внешнее музейное признание и коллективная традиция рассмотрены отдельно Iziko. Перечитано 09.11.2026: перечитан 09.11.2026 в снимке веб-архива 16.05.2026."
 - id: espacio-mahlangu-2016
   title: Esther Mahlangu. Untitled, 2016
   publisher: El Espacio 23
@@ -727,11 +711,8 @@
   url: >-
     https://www.iziko.org.za/news/iziko-museums-of-south-africa-presentsthen-i-knew-i-was-good-at-painting-esthermahlangu-a-retrospective/
   sourceType: museum
-  checked: '2026-10-14'
-  note: >-
-    Прочитан обзор ретроспективы 2024 года, более 100 работ, переход от росписи стен к другим поверхностям.
-    Для круглого Ndebele Abstract (2023) использованы подпись и репродукция этого материала. Размер в подписи
-    и имени файла различается, поэтому размеры не воспроизводятся.
+  checked: 2026-11-09
+  note: "Прочитан обзор ретроспективы 2024 года, более 100 работ, переход от росписи стен к другим поверхностям. Для круглого Ndebele Abstract (2023) использованы подпись и репродукция этого материала. Размер в подписи и имени файла различается, поэтому размеры не воспроизводятся. Перечитано 09.11.2026: перечитан 09.11.2026."
 - id: ngv-rennie-regalia
   title: Reko Rennie. Regalia, 2013
   publisher: National Gallery of Victoria
@@ -774,10 +755,8 @@
   publisher: The Metropolitan Museum of Art
   url: https://www.metmuseum.org/art/collection/search/45434
   sourceType: museum
-  checked: '2026-10-14'
-  note: >-
-    Конкретный оттиск из Thirty-six Views of Mount Fuji, около 1830–1832: цветная ксилография, чернила и цвет
-    на бумаге. Изображение в музейной записи public domain.
+  checked: 2026-11-09
+  note: "Конкретный оттиск из Thirty-six Views of Mount Fuji, около 1830–1832: цветная ксилография, чернила и цвет на бумаге. Изображение в музейной записи public domain. Перечитано 09.11.2026: перечитан 09.11.2026 через API музея."
 - id: met-hokusai-kajikazawa
   title: Hokusai. Kajikazawa in Kai Province
   publisher: The Metropolitan Museum of Art
@@ -800,10 +779,8 @@
   publisher: Аниматор.ру
   url: https://animator.ru/db/?fid=2670&p=show_film
   sourceType: catalog
-  checked: '2026-10-14'
-  note: >-
-    Профессиональный каталог российской анимации: режиссёр и аниматор Юрий Норштейн, художник-постановщик
-    Франческа Ярбусова, оператор Александр Жуковский. Опубликован кадр.
+  checked: 2026-11-09
+  note: "Профессиональный каталог российской анимации: режиссёр и аниматор Юрий Норштейн, художник-постановщик Франческа Ярбусова, оператор Александр Жуковский. Опубликован кадр. Перечитано 09.11.2026: перечитан 09.11.2026."
 - id: animator-norstein-hedgehog
   title: Ёжик в тумане, 1975 — фильмография и роли
   publisher: Аниматор.ру
@@ -1484,13 +1461,8 @@
   publisher: Serpentine Galleries
   url: https://www.serpentinegalleries.org/whats-on/dr-esther-mahlangu-umuntu-ngumuntu-ngabantu/
   sourceType: museum
-  checked: '2026-10-14'
-  note: >-
-    Прочитаны описание проекта, авторство и подпись; просмотрена фотография George Darrell. Шестнадцать
-    деревянных панелей образуют один публичный мурал. Описание домашней работы с природными материалами и
-    акриловой живописи на холсте не выдаётся за точный состав красок именно этого проекта. Дата 2024 относится
-    к произведению, даты показа не являются сроком существования традиции.
-
+  checked: 2026-11-09
+  note: "Прочитаны описание проекта, авторство и подпись; просмотрена фотография George Darrell. Шестнадцать деревянных панелей образуют один публичный мурал. Описание домашней работы с природными материалами и акриловой живописи на холсте не выдаётся за точный состав красок именно этого проекта. Дата 2024 относится к произведению, даты показа не являются сроком существования традиции. Перечитано 09.11.2026: перечитан 09.11.2026."
 # Региональная графика, бумага и росписи: партия 2
 - id: warsaw-childhood-wycinanki-2021
   title: 'Dzieciństwo / Childhood. Каталог собрания, 2021: выцинанки'
