@@ -2891,20 +2891,16 @@
   title: What is Postmodernism? — V&A
   url: https://www.vam.ac.uk/articles/what-is-postmodernism/
   sourceType: museum
-  checked: "2026-10-15"
+  checked: 2026-11-09
   publisher: vam.ac.uk
-  note: >-
-    Отход от модернистских утопий и смешение исторических форм; историзм и сознательное revival не
-    равнозначны. Изучена содержательная индексированная выдержка; не весь текст
+  note: "Отход от модернистских утопий и смешение исторических форм; историзм и сознательное revival не равнозначны. Изучена содержательная индексированная выдержка; не весь текст Перечитано 09.11.2026: перечитан 09.11.2026: окраина 1970-х и господствующий стиль 1980-х."
 - id: ra26-memphis
   title: "Memphis Group: awful or awesome? — Design Museum"
   url: https://designmuseum.org/discover-design/all-stories/memphis-group-awful-or-awesome
   sourceType: museum
-  checked: "2026-10-15"
+  checked: 2026-11-09
   publisher: designmuseum.org
-  note: >-
-    Поп-арт и ар-деко названы вдохновлявшими группу стилями. Изучена содержательная индексированная выдержка;
-    не весь текст
+  note: "Поп-арт и ар-деко названы вдохновлявшими группу стилями. Изучена содержательная индексированная выдержка; не весь текст Перечитано 09.11.2026: перечитан 09.11.2026: встреча в декабре 1980 года, ламинат, распад через шесть лет."
 - id: ra26-basquiat
   title: Jean-Michel Basquiat — MoMA
   url: https://www.moma.org/artists/370-jean-michel-basquiat
@@ -3513,12 +3509,9 @@
   title: Hyperrealism 1967–2012 — Museo Nacional Thyssen-Bornemisza (2013)
   url: https://static.museothyssen.org/microsites/exposiciones/2013/hiperrealismo/index_en.html
   sourceType: primary
-  checked: "2026-10-16"
+  checked: 2026-11-09
   publisher: static.museothyssen.org
-  note: >-
-    Установлена передача сюжетов и интереса к стереотипным массовым изображениям из Pop Art к американскому
-    Photorealism конца 1960-х; позднейший гиперреализм шире. Локатор: Вступление к выставке. Вступление к
-    выставке Прочитана содержательная часть страницы
+  note: "Установлена передача сюжетов и интереса к стереотипным массовым изображениям из Pop Art к американскому Photorealism конца 1960-х; позднейший гиперреализм шире. Локатор: Вступление к выставке. Вступление к выставке Прочитана содержательная часть страницы Перечитано 09.11.2026: перечитан 09.11.2026: конец 1960-х, Мейзел, Документа 5, Эстес."
 - id: ra26-d2-hightech-docomomo
   title: "Foster and Rogers: The start of British High Tech — Colin Davies, DOCOMOMO Dossier 13 (2014)"
   url: https://docomomo.com/wp-content/uploads/2025/07/2014-Dossier-13_Perceived-Technologies_FINAL_web.pdf
@@ -7154,3 +7147,270 @@
   sourceType: museum
   checked: 2026-11-09
   note: "С 1964 года Zuse Graphomat Z64; выставки 1965 года вместе с Нисом."
+# Партия 10 (09.11.2026)
+- id: tate-photorealism
+  title: "Photorealism"
+  publisher: "Tate"
+  url: https://www.tate.org.uk/art/art-terms/p/photorealism
+  sourceType: museum
+  checked: 2026-11-09
+  note: "Появился в Европе и США в конце 1960-х; отказ от живописного почерка; новый интерес в начале 1990-х."
+- id: tate-postmodernism
+  title: "Postmodernism"
+  publisher: "Tate"
+  url: https://www.tate.org.uk/art/art-terms/p/postmodernism
+  sourceType: museum
+  checked: 2026-11-09
+  note: "Реакция на модернизм; термин появился около 1970 года."
+- id: britannica-graves
+  title: "Michael Graves"
+  publisher: "Encyclopaedia Britannica"
+  url: https://www.britannica.com/biography/Michael-Graves
+  sourceType: encyclopedia
+  checked: 2026-11-09
+  note: "Портленд-билдинг; исторические отсылки, цвет и орнамент."
+- id: britannica-johnson
+  title: "Philip Johnson"
+  publisher: "Encyclopaedia Britannica"
+  url: https://www.britannica.com/biography/Philip-Johnson
+  sourceType: encyclopedia
+  checked: 2026-11-09
+  note: "AT&T Building, 1984, верх в духе шкафа чиппендейл."
+- id: tclf-piazza
+  title: "Piazza d'Italia"
+  publisher: "The Cultural Landscape Foundation"
+  url: https://www.tclf.org/landscapes/piazza-ditalia
+  sourceType: official
+  checked: 2026-11-09
+  note: "Проект 1978 года; Чарльз Мур и Perez & Associates."
+- id: commons-portland-1982
+  title: "File:Portland Building 1982.jpg"
+  publisher: "Wikimedia Commons"
+  url: https://commons.wikimedia.org/wiki/File:Portland_Building_1982.jpg
+  sourceType: catalog
+  checked: 2026-11-09
+  note: "Снимок августа 1982 года, за восемь недель до открытия; архитектор Майкл Грейвз."
+- id: britannica-pompidou
+  title: "Pompidou Centre"
+  publisher: "Encyclopaedia Britannica"
+  url: https://www.britannica.com/topic/Pompidou-Centre
+  sourceType: encyclopedia
+  checked: 2026-11-09
+  note: "Открыт 31 января 1977 года; Пьяно и Роджерс; инженерные системы снаружи."
+- id: he-lloyds
+  title: "Lloyd's Building, list entry 1405493"
+  publisher: "Historic England"
+  url: https://historicengland.org.uk/listing/the-list/list-entry/1405493
+  sourceType: official
+  checked: 2026-11-09
+  note: "Проект с 1978 года, открыт в 1986 году; хай-тек; Richard Rogers Partnership."
+- id: britannica-foster
+  title: "Norman Foster"
+  publisher: "Encyclopaedia Britannica"
+  url: https://www.britannica.com/biography/Lord-Norman-Foster
+  sourceType: encyclopedia
+  checked: 2026-11-09
+  note: "Центр Сейнсбери, 1978; штаб-квартира HSBC, 1986; лифты снаружи."
+- id: mad-memphis
+  title: "Memphis"
+  publisher: "Musée des Arts Décoratifs"
+  url: https://madparis.fr/memphis
+  sourceType: museum
+  checked: 2026-11-09
+  note: "Создан зимой 1980–1981 годов; название от песни Дилана; первая коллекция 1981 года; шкаф Карлтон."
+- id: met-carlton
+  title: "\"Carlton\" Room Divider"
+  publisher: "The Metropolitan Museum of Art"
+  url: https://www.metmuseum.org/art/collection/search/486989
+  sourceType: museum
+  checked: 2026-11-09
+  note: "Соттсасс, 1981; дерево и пластиковый ламинат."
+- id: memphis-ashoka
+  title: "Ashoka"
+  publisher: "Memphis Milano"
+  url: https://www.memphis-milano.com/product/ashoka/
+  sourceType: official
+  checked: 2026-11-09
+  note: "Страница лампы Соттсасса у производителя."
+- id: vam-god-save-queen
+  title: "God Save the Queen"
+  publisher: "Victoria and Albert Museum"
+  url: https://collections.vam.ac.uk/item/O1159869/god-save-the-queen-poster-reid-jamie/
+  sourceType: museum
+  checked: 2026-11-09
+  note: "Плакат Джейми Рида, 1977; вырезки и коллаж; ситуационисты; Кройдон."
+- id: vam-never-mind
+  title: "Never Mind The Bollocks Here's The Sex Pistols"
+  publisher: "Victoria and Albert Museum"
+  url: https://collections.vam.ac.uk/item/O1009010/never-mind-the-bollocks-heres-poster-reid-jamie/
+  sourceType: museum
+  checked: 2026-11-09
+  note: "Плакат 1977 года; Virgin Records; Рид и Варном."
+- id: tate-graffiti-art
+  title: "Graffiti art"
+  publisher: "Tate"
+  url: https://www.tate.org.uk/art/art-terms/g/graffiti-art
+  sourceType: museum
+  checked: 2026-11-09
+  note: "Истоки в Нью-Йорке 1970-х; теги и wildstyle; Баския, Харинг, Макги, Бэнкси."
+- id: tate-street-art
+  title: "Street art"
+  publisher: "Tate"
+  url: https://www.tate.org.uk/art/art-terms/s/street-art
+  sourceType: museum
+  checked: 2026-11-09
+  note: "Расклейка, трафареты, стикеры, рисунок от руки, проекции."
+- id: commons-bus129
+  title: "File:Bus129 dondi ny 1984.jpg"
+  publisher: "Wikimedia Commons"
+  url: https://commons.wikimedia.org/wiki/File:Bus129_dondi_ny_1984.jpg
+  sourceType: catalog
+  checked: 2026-11-09
+  note: "Описание снимка: bus129 by dondi, панель вагона нью-йоркского метро, 1984."
+- id: tate-neo-expressionism
+  title: "Neo-expressionism"
+  publisher: "Tate"
+  url: https://www.tate.org.uk/art/art-terms/n/neo-expressionism
+  sourceType: museum
+  checked: 2026-11-09
+  note: "Возрождение экспрессионистской живописи в 1980-е; новые дикие; трансавангард."
+- id: cbs-basquiat-2017
+  title: "Basquiat painting fetches record $110.5M at New York auction"
+  publisher: "CBS News"
+  url: https://www.cbsnews.com/news/basquiat-painting-record-sale-sothebys-auction-new-york-yusaku-maezawa/
+  sourceType: press
+  checked: 2026-11-09
+  note: "«Без названия», 1982; лицо в форме черепа; Sotheby's, 2017."
+- id: enwiki-basquiat-1984
+  title: "File:Untitled acrylic and mixed media on canvas by --Jean-Michel Basquiat--, 1984.jpg"
+  publisher: "English Wikipedia"
+  url: https://en.wikipedia.org/wiki/File:Untitled_acrylic_and_mixed_media_on_canvas_by_--Jean-Michel_Basquiat--,_1984.jpg
+  sourceType: catalog
+  checked: 2026-11-09
+  note: "Работа Баския 1984 года, по названию файла."
+- id: moma-deconstructivist
+  title: "Deconstructivist Architecture"
+  publisher: "MoMA"
+  url: https://www.moma.org/calendar/exhibitions/1813
+  sourceType: museum
+  checked: 2026-11-09
+  note: "Выставка 23 июня — 30 августа 1988 года; Джонсон и Уигли."
+- id: guggenheim-bilbao-building
+  title: "The Building"
+  publisher: "Guggenheim Museum Bilbao"
+  url: https://www.guggenheim-bilbao.eus/en/the-building
+  sourceType: museum
+  checked: 2026-11-09
+  note: "Здание Фрэнка Гери как скульптурная форма."
+- id: britannica-gehry
+  title: "Frank Gehry"
+  publisher: "Encyclopaedia Britannica"
+  url: https://www.britannica.com/biography/Frank-Gehry
+  sourceType: encyclopedia
+  checked: 2026-11-09
+  note: "Гуггенхайм в Бильбао, 1997, титан и известняк; концертный зал Диснея, 2003."
+- id: britannica-libeskind
+  title: "Daniel Libeskind"
+  publisher: "Encyclopaedia Britannica"
+  url: https://www.britannica.com/biography/Daniel-Libeskind
+  sourceType: encyclopedia
+  checked: 2026-11-09
+  note: "Кристалл Майкла Ли-Чина, Королевский музей Онтарио, 2007."
+- id: britannica-cyberpunk
+  title: "Cyberpunk"
+  publisher: "Encyclopaedia Britannica"
+  url: https://www.britannica.com/art/cyberpunk
+  sourceType: encyclopedia
+  checked: 2026-11-09
+  note: "Поджанр научной фантастики; реакция на технооптимизм; примеры."
+- id: britannica-neuromancer
+  title: "Neuromancer"
+  publisher: "Encyclopaedia Britannica"
+  url: https://www.britannica.com/topic/Neuromancer
+  sourceType: encyclopedia
+  checked: 2026-11-09
+  note: "Роман Гибсона 1984 года, основополагающий текст киберпанка."
+- id: enwiki-blade-runner-spinner
+  title: "File:Blade Runner spinner flyby.png"
+  publisher: "English Wikipedia"
+  url: https://en.wikipedia.org/wiki/File:Blade_Runner_spinner_flyby.png
+  sourceType: catalog
+  checked: 2026-11-09
+  note: "Кадр фильма, правообладатель Warner Bros."
+- id: chm-utah-teapot
+  title: "The Utah Teapot"
+  publisher: "Computer History Museum"
+  url: https://www.computerhistory.org/revolution/computer-graphics-music-and-art/15/206
+  sourceType: museum
+  checked: 2026-11-09
+  note: "Мартин Ньюэлл, Университет Юты, 1975; координаты вручную."
+- id: chm-popular-culture
+  title: "Timeline of Computer History: Popular Culture"
+  publisher: "Computer History Museum"
+  url: https://www.computerhistory.org/timeline/popular-culture/
+  sourceType: museum
+  checked: 2026-11-09
+  note: "«Трон» как большой шаг вперёд для компьютерной графики в кино."
+- id: britannica-hancock
+  title: "Herbie Hancock"
+  publisher: "Encyclopaedia Britannica"
+  url: https://www.britannica.com/biography/Herbie-Hancock
+  sourceType: encyclopedia
+  checked: 2026-11-09
+  note: "Танцевальный хит Rockit, 1983."
+- id: britannica-afrofuturism
+  title: "Afrofuturism"
+  publisher: "Encyclopaedia Britannica"
+  url: https://www.britannica.com/topic/Afrofuturism
+  sourceType: encyclopedia
+  checked: 2026-11-09
+  note: "Термин Марка Дери, 1994; Сан Ра; Клинтон; Батлер; Чёрная пантера."
+- id: aiga-weingart
+  title: "2013 AIGA Medalist: Wolfgang Weingart"
+  publisher: "AIGA"
+  url: https://www.aiga.org/membership-community/aiga-awards/2013-aiga-medalist-wolfgang-weingart
+  sourceType: official
+  checked: 2026-11-09
+  note: "Типографические опыты и преподавание в Базеле; влияние через учеников."
+- id: aiga-carson
+  title: "2014 AIGA Medalist: David Carson"
+  publisher: "AIGA"
+  url: https://www.aiga.org/membership-community/aiga-awards/2014-aiga-medalist-david-carson
+  sourceType: official
+  checked: 2026-11-09
+  note: "Ray Gun; почти отделённая от сообщения читаемость."
+- id: eyeondesign-greiman
+  title: "Don’t Call April Greiman the “Queen of New Wave”"
+  publisher: "Eye on Design / AIGA"
+  url: https://eyeondesign.aiga.org/april-greiman-is-still-ahead-of-the-curve/
+  sourceType: press
+  checked: 2026-11-09
+  note: "Грейман и Одгерс; выпуски журнала Wet конца 1970-х — начала 1980-х."
+- id: wiki-pixel-art
+  title: "Pixel art"
+  publisher: "English Wikipedia"
+  url: https://en.wikipedia.org/wiki/Pixel_art
+  sourceType: encyclopedia
+  checked: 2026-11-09
+  note: "Определение и связь с 8- и 16-битными системами; статья отмечена как нуждающаяся в источниках."
+- id: enwiki-maniac-mansion
+  title: "File:Maniac Mansion.png"
+  publisher: "English Wikipedia"
+  url: https://en.wikipedia.org/wiki/File:Maniac_Mansion.png
+  sourceType: catalog
+  checked: 2026-11-09
+  note: "Кадр игры Lucasfilm Games, 1987."
+- id: wiki-lowbrow
+  title: "Lowbrow (art movement)"
+  publisher: "English Wikipedia"
+  url: https://en.wikipedia.org/wiki/Lowbrow_(art_movement)
+  sourceType: encyclopedia
+  checked: 2026-11-09
+  note: "Лос-Анджелес, конец 1960-х; корни движения; термин Уильямса."
+- id: wiki-juxtapoz
+  title: "Juxtapoz"
+  publisher: "English Wikipedia"
+  url: https://en.wikipedia.org/wiki/Juxtapoz
+  sourceType: encyclopedia
+  checked: 2026-11-09
+  note: "Журнал создан в 1994 году."
