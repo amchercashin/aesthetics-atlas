@@ -41,6 +41,7 @@
 | 11 | `11-digital.yaml` | [#71](https://github.com/amchercashin/aesthetics-atlas/pull/71) | 09.11.2026 | 12 | 24 | слита |
 | 12a | `12-internet.yaml: vaporwave … weirdcore` | [#72](https://github.com/amchercashin/aesthetics-atlas/pull/72) | 09.11.2026 | 8 | 17 | слита |
 | 12b | `12-internet.yaml: dreamcore … alien-core` | [#73](https://github.com/amchercashin/aesthetics-atlas/pull/73) | 09.11.2026 | 8 | 16 | слита |
+| 13 | `13-pilot.yaml` | [#74](https://github.com/amchercashin/aesthetics-atlas/pull/74) | 09.11.2026 | 12 | 29 | слита |
 
 ## Партия 0. Подготовка (28.10.2026)
 
@@ -1160,7 +1161,7 @@
 ### Время
 Около часа на партию; замер приблизительный.
 
-## Партия 13. `13-pilot.yaml` (09.11.2026)
+## Партия 13. `13-pilot.yaml` (09.11.2026, [#74](https://github.com/amchercashin/aesthetics-atlas/pull/74))
 
 Карточек: 12, все переведены в `reviewed` с полным `scope` и корпусом; изображений: 12 главных и 29 в галереях; новых источников: 0, повторно прочитано 12.
 
