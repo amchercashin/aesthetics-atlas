@@ -431,10 +431,8 @@
   publisher: National Galleries of Scotland
   url: https://www.nationalgalleries.org/art-and-artists/glossary-terms/constructivism
   sourceType: museum
-  checked: '2026-10-14'
-  note: >-
-    Ранние конструкции Татлина и связь с кубизмом; одного примера Лисицкого недостаточно, чтобы вывести всё
-    движение из супрематизма.
+  checked: 2026-11-09
+  note: "Ранние конструкции Татлина и связь с кубизмом; одного примера Лисицкого недостаточно, чтобы вывести всё движение из супрематизма. Перечитано 09.11.2026: Татлин и кубизм."
 - id: pinterest-predicts-2026
   title: Pinterest Predicts 2026 — Extra Celestial
   publisher: Pinterest
@@ -2287,11 +2285,9 @@
   title: French Art Deco — The Met
   url: https://www.metmuseum.org/essays/french-art-deco
   sourceType: museum
-  checked: "2026-10-15"
+  checked: 2026-11-09
   publisher: metmuseum.org
-  note: >-
-    Кубизм и орфизм влияли на декоративный дизайн; орфизм прямо назван развитием кубизма. Прочитана
-    содержательная часть страницы
+  note: "Кубизм и орфизм влияли на декоративный дизайн; орфизм прямо назван развитием кубизма. Прочитана содержательная часть страницы Перечитано 09.11.2026: орфизм как развитие кубизма, термин Аполлинера."
 - id: ra26-geometric
   title: Geometric Abstraction — The Met
   url: https://www.metmuseum.org/essays/geometric-abstraction
@@ -3341,12 +3337,9 @@
   title: Liubov’ Popova’s Objects from a Dyer’s Shop, 1914 — Masha Chlenova, MoMA post (2019)
   url: https://post.moma.org/liubov-popovas-objects-from-a-dyers-shop-1914/
   sourceType: museum
-  checked: "2026-10-16"
+  checked: 2026-11-09
   publisher: post.moma.org
-  note: >-
-    Конкретная картина Поповой соединяет французский кубизм и итальянский футуризм; изменить evolved на
-    influence. Локатор: Первый аналитический абзац и примечание о Cubo-Futurism. Первый аналитический абзац и
-    примечание о Cubo-Futurism Прочитана содержательная часть страницы
+  note: "Конкретная картина Поповой соединяет французский кубизм и итальянский футуризм; изменить evolved на influence. Локатор: Первый аналитический абзац и примечание о Cubo-Futurism. Первый аналитический абзац и примечание о Cubo-Futurism Прочитана содержательная часть страницы Перечитано 09.11.2026: соединение французского кубизма и итальянского футуризма."
 - id: ra26-d2-kandinsky-utopia
   title: "Abstraction: Kandinsky’s Vision of Utopia — Guggenheim archival lecture transcript"
   url: >-
@@ -6403,3 +6396,187 @@
   sourceType: encyclopedia
   checked: 2026-11-09
   note: "Кандинский, Марк; выставки 1911–1914 годов; абстракция."
+
+# Партия 08a (09.11.2026)
+- id: tate-cubism
+  title: "Cubism"
+  publisher: Tate
+  url: https://www.tate.org.uk/art/art-terms/c/cubism
+  sourceType: museum
+  checked: 2026-11-09
+  note: "Около 1907–1908, Пикассо и Брак; аналитический период 1908–1912, синтетический 1912–1914; Сезанн и африканские маски."
+- id: tate-futurism
+  title: "Futurism"
+  publisher: Tate
+  url: https://www.tate.org.uk/art/art-terms/f/futurism
+  sourceType: museum
+  checked: 2026-11-09
+  note: "Манифест Маринетти 1909 года; красота скорости; Балла, Боччони, Северини."
+- id: tate-orphism
+  title: "Orphism"
+  publisher: Tate
+  url: https://www.tate.org.uk/art/art-terms/o/orphism
+  sourceType: museum
+  checked: 2026-11-09
+  note: "Абстрактный стиль на основе кубизма, Робер и Соня Делоне, около 1912 года."
+- id: tate-abstract-art
+  title: "Abstract art"
+  publisher: Tate
+  url: https://www.tate.org.uk/art/art-terms/a/abstract-art
+  sourceType: museum
+  checked: 2026-11-09
+  note: "Малевич и Мондриан — первопроходцы чистой абстракции примерно с 1910–1920 годов."
+- id: tate-suprematism
+  title: "Suprematism"
+  publisher: Tate
+  url: https://www.tate.org.uk/art/art-terms/s/suprematism
+  sourceType: museum
+  checked: 2026-11-09
+  note: "С 1913 года; выставка декабря 1915 года; чёрный квадрат (Третьяковская галерея); Лисицкий 1919."
+- id: tate-constructivism
+  title: "Constructivism"
+  publisher: Tate
+  url: https://www.tate.org.uk/art/art-terms/c/constructivism
+  sourceType: museum
+  checked: 2026-11-09
+  note: "Около 1915 года, Татлин и Родченко; Пикассо; конструктивисты к 1921 году."
+- id: tate-dada
+  title: "Dada"
+  publisher: Tate
+  url: https://www.tate.org.uk/art/art-terms/d/dada
+  sourceType: museum
+  checked: 2026-11-09
+  note: "Цюрих, реакция на войну; Кабаре Вольтер, 1916; основа сюрреализма."
+- id: tate-readymade
+  title: "Readymade"
+  publisher: Tate
+  url: https://www.tate.org.uk/art/art-terms/r/readymade
+  sourceType: museum
+  checked: 2026-11-09
+  note: "Bicycle Wheel 1913; Fountain 1917, писсуар с чужой подписью."
+- id: tate-fountain
+  title: "Fountain, Marcel Duchamp, 1917, replica 1964"
+  publisher: Tate
+  url: https://www.tate.org.uk/art/artworks/duchamp-fountain-t07573
+  sourceType: museum
+  checked: 2026-11-09
+  note: "Дюшан, 1917; реплика 1964 года в Тейт."
+- id: tate-surrealism
+  title: "Surrealism"
+  publisher: Tate
+  url: https://www.tate.org.uk/art/art-terms/s/surrealism
+  sourceType: museum
+  checked: 2026-11-09
+  note: "Слово Аполлинера 1917; манифест Бретона 1924; психический автоматизм."
+- id: tate-celebes
+  title: "Celebes, Max Ernst, 1921"
+  publisher: Tate
+  url: https://www.tate.org.uk/art/artworks/ernst-celebes-t01988
+  sourceType: museum
+  checked: 2026-11-09
+  note: "Эрнст, 1921, T01988."
+- id: tate-five-ways-square
+  title: "Five ways to look at Malevich’s Black Square"
+  publisher: Tate
+  url: https://www.tate.org.uk/art/artists/kazimir-malevich-1561/five-ways-look-malevichs-black-square
+  sourceType: museum
+  checked: 2026-11-09
+  note: "Квадрат появился в 1913 году как эскиз занавеса к опере «Победа над солнцем»."
+- id: moma-girl-mandolin
+  title: "Girl with a Mandolin (Fanny Tellier)"
+  publisher: The Museum of Modern Art
+  url: https://www.moma.org/collection/works/80430
+  sourceType: museum
+  checked: 2026-11-09
+  note: "Пикассо, Париж, поздняя весна 1910 года."
+- id: moma-demoiselles
+  title: "Les Demoiselles d’Avignon"
+  publisher: The Museum of Modern Art
+  url: https://www.moma.org/collection/works/79766
+  sourceType: museum
+  checked: 2026-11-09
+  note: "Пикассо, Париж, июнь–июль 1907 года."
+- id: moma-white-on-white
+  title: "Suprematist Composition: White on White"
+  publisher: The Museum of Modern Art
+  url: https://www.moma.org/collection/works/80385
+  sourceType: museum
+  checked: 2026-11-09
+  note: "Малевич, 1918."
+- id: moma-song-of-love
+  title: "The Song of Love"
+  publisher: The Museum of Modern Art
+  url: https://www.moma.org/collection/works/80419
+  sourceType: museum
+  checked: 2026-11-09
+  note: "Де Кирико, Париж, июнь–июль 1914 года."
+- id: moma-persistence
+  title: "The Persistence of Memory"
+  publisher: The Museum of Modern Art
+  url: https://www.moma.org/collection/works/79018
+  sourceType: museum
+  checked: 2026-11-09
+  note: "Дали, 1931."
+- id: britannica-futurism
+  title: "Futurism"
+  publisher: Encyclopaedia Britannica
+  url: https://www.britannica.com/art/Futurism
+  sourceType: encyclopedia
+  checked: 2026-11-09
+  note: "Манифест 20 февраля 1909 года; смерть Боччони в 1916 году фактически завершила движение."
+- id: britannica-lissitzky
+  title: "El Lissitzky"
+  publisher: Encyclopaedia Britannica
+  url: https://www.britannica.com/biography/El-Lissitzky
+  sourceType: encyclopedia
+  checked: 2026-11-09
+  note: "Проуны — геометрические работы между живописью и архитектурой."
+- id: britannica-metaphysical
+  title: "Metaphysical painting"
+  publisher: Encyclopaedia Britannica
+  url: https://www.britannica.com/art/Metaphysical-painting
+  sourceType: encyclopedia
+  checked: 2026-11-09
+  note: "Расцвет между 1911 и 1920 годами; де Кирико и Карра; влияние на сюрреалистов."
+- id: commons-city-rises
+  title: "File:The City Rises by Umberto Boccioni 1910.jpg"
+  publisher: Wikimedia Commons
+  url: https://commons.wikimedia.org/wiki/File:The_City_Rises_by_Umberto_Boccioni_1910.jpg
+  sourceType: catalog
+  checked: 2026-11-09
+  note: "Боччони, 1910, Музей современного искусства."
+- id: commons-knife-grinder
+  title: "File:The Knife Grinder Principle of Glittering by Kazimir Malevich.jpeg"
+  publisher: Wikimedia Commons
+  url: https://commons.wikimedia.org/wiki/File:The_Knife_Grinder_Principle_of_Glittering_by_Kazimir_Malevich.jpeg
+  sourceType: catalog
+  checked: 2026-11-09
+  note: "Малевич, 1913, галерея Йельского университета."
+- id: commons-delaunay-windows
+  title: "File:Robert Delaunay, 1912, Les Fenêtres simultanée sur la ville"
+  publisher: Wikimedia Commons
+  url: https://commons.wikimedia.org/wiki/File:Robert_Delaunay,_1912,_Les_Fen%C3%AAtres_simultan%C3%A9e_sur_la_ville_(Simultaneous_Windows_on_the_City),_40_x_46_cm,_Kunsthalle_Hamburg.jpg
+  sourceType: catalog
+  checked: 2026-11-09
+  note: "Делоне, 1912, Гамбургский кунстхалле."
+- id: commons-composition-vii
+  title: "File:Composition VII - Wassily Kandinsky, GAC.jpg"
+  publisher: Wikimedia Commons
+  url: https://commons.wikimedia.org/wiki/File:Composition_VII_-_Wassily_Kandinsky,_GAC.jpg
+  sourceType: catalog
+  checked: 2026-11-09
+  note: "Кандинский, 1913, Третьяковская галерея."
+- id: commons-red-wedge
+  title: "File:Beat the Whites with the Red Wedge.jpg"
+  publisher: Wikimedia Commons
+  url: https://commons.wikimedia.org/wiki/File:Beat_the_Whites_with_the_Red_Wedge.jpg
+  sourceType: catalog
+  checked: 2026-11-09
+  note: "Лисицкий, 1919; собрание на странице не указано."
+- id: commons-fountain
+  title: "File:Marcel Duchamp, 1917, Fountain, photograph by Alfred Stieglitz.jpg"
+  publisher: Wikimedia Commons
+  url: https://commons.wikimedia.org/wiki/File:Marcel_Duchamp,_1917,_Fountain,_photograph_by_Alfred_Stieglitz.jpg
+  sourceType: catalog
+  checked: 2026-11-09
+  note: "Снимок Альфреда Стиглица, 1917."
