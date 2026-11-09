@@ -7414,3 +7414,151 @@
   sourceType: encyclopedia
   checked: 2026-11-09
   note: "Журнал создан в 1994 году."
+# Партия 11 (09.11.2026)
+- id: wiki-geocities
+  title: "GeoCities"
+  publisher: "English Wikipedia"
+  url: https://en.wikipedia.org/wiki/GeoCities
+  sourceType: encyclopedia
+  checked: 2026-11-09
+  note: "Запуск в ноябре 1994 года; тематические города; закрытие в США в октябре 2009 года."
+- id: cari-y2k
+  title: "Y2K Aesthetic"
+  publisher: "Consumer Aesthetics Research Institute"
+  url: https://cari.institute/aesthetics/y2k-aesthetic
+  sourceType: community
+  checked: 2026-11-09
+  note: "Период актуальности — 1990-е; блеск, серебро, градиенты и округлая электроника."
+- id: vam-imac
+  title: "iMac G3"
+  publisher: "Victoria and Albert Museum"
+  url: https://collections.vam.ac.uk/item/O158296/imac-g3-personal-computer-ive-jonathan/
+  sourceType: museum
+  checked: 2026-11-09
+  note: "Джонатан Айв, 1998; полупрозрачный цветной поликарбонат."
+- id: nngroup-flat
+  title: "Flat Design: Its Origins, Its Problems, and Why Flat 2.0 Is Better for Users"
+  publisher: "Nielsen Norman Group"
+  url: https://www.nngroup.com/articles/flat-design/
+  sourceType: press
+  checked: 2026-11-09
+  note: "Определение плоского и скевоморфного дизайна; роль Metro и Windows 8."
+- id: wiki-skeuomorph
+  title: "Skeuomorph"
+  publisher: "English Wikipedia"
+  url: https://en.wikipedia.org/wiki/Skeuomorph
+  sourceType: encyclopedia
+  checked: 2026-11-09
+  note: "Apple при Джобсе; Форстолл и Айв; переход с iOS 7 в 2013 году."
+- id: tate-internet-art
+  title: "Internet art"
+  publisher: "Tate"
+  url: https://www.tate.org.uk/art/art-terms/i/internet-art
+  sourceType: museum
+  checked: 2026-11-09
+  note: "Искусство, сделанное в интернете и для него; появилось в 1990-е."
+- id: rhizome-my-boyfriend
+  title: "My Boyfriend Came Back From the War"
+  publisher: "Rhizome, Net Art Anthology"
+  url: https://anthology.rhizome.org/my-boyfriend-came-back-from-the-war
+  sourceType: museum
+  checked: 2026-11-09
+  note: "Ольга Лялина, 1996; фреймы, гипертекст, изображения."
+- id: rhizome-form-art
+  title: "Form Art"
+  publisher: "Rhizome, Net Art Anthology"
+  url: https://anthology.rhizome.org/form-art
+  sourceType: museum
+  checked: 2026-11-09
+  note: "Алексей Шульгин, 1997; кнопки и поля HTML как материал."
+- id: wiki-glitch-art
+  title: "Glitch art"
+  publisher: "English Wikipedia"
+  url: https://en.wikipedia.org/wiki/Glitch_art
+  sourceType: encyclopedia
+  checked: 2026-11-09
+  note: "Термин из музыки середины 1990-х; симпозиум в Осло 2002 года; датамошинг; Менкман."
+- id: wiki-material-design
+  title: "Material Design"
+  publisher: "English Wikipedia"
+  url: https://en.wikipedia.org/wiki/Material_Design
+  sourceType: encyclopedia
+  checked: 2026-11-09
+  note: "Объявлена 25 июня 2014 года; Material You — май 2021 года."
+- id: google-material-launch
+  title: "Google's Material Design: A Look Back at Its Beginning"
+  publisher: "Google Design"
+  url: https://design.google/library/material-design-launch-2014
+  sourceType: official
+  checked: 2026-11-09
+  note: "Бумага как метафора; значки из настоящей бумаги; дебют на Google I/O."
+- id: wiki-post-internet
+  title: "Post-Internet"
+  publisher: "English Wikipedia"
+  url: https://en.wikipedia.org/wiki/Post-Internet
+  sourceType: encyclopedia
+  checked: 2026-11-09
+  note: "Термин Марисы Олсон 2006 года; Макхью; перечень художников."
+- id: commons-dis-fair-trade
+  title: "File:Fair Trade. Frieze Projects 2012.jpg"
+  publisher: "Wikimedia Commons"
+  url: https://commons.wikimedia.org/wiki/File:Fair_Trade._Frieze_Projects_2012.jpg
+  sourceType: catalog
+  checked: 2026-11-09
+  note: "Снимок DIS, 2012, Fair Trade, Frieze Projects."
+- id: wiki-seapunk
+  title: "Seapunk"
+  publisher: "English Wikipedia"
+  url: https://en.wikipedia.org/wiki/Seapunk
+  sourceType: encyclopedia
+  checked: 2026-11-09
+  note: "Tumblr, 2011; Lil Internet; Бэнкс и Рианна, 2012."
+- id: nngroup-neobrutalism
+  title: "Neobrutalism: Definition and Best Practices"
+  publisher: "Nielsen Norman Group"
+  url: https://www.nngroup.com/articles/neobrutalism/
+  sourceType: press
+  checked: 2026-11-09
+  note: "Высокий контраст, блочная вёрстка, яркие цвета, толстые обводки; Figma и Gumroad."
+- id: adobe-brutalist
+  title: "Brutalist Web Designers Eschew Rules for UX Best Practices"
+  publisher: "Adobe Blog"
+  url: https://blog.adobe.com/en/publish/2016/12/01/brutalist-web-designers-eschew-rules-for-ux-best-practices
+  sourceType: press
+  checked: 2026-11-09
+  note: "Паскаль Девиль одним из первых описал брутализм в вебе."
+- id: brutalistwebsites
+  title: "Brutalist Websites"
+  publisher: "brutalistwebsites.com"
+  url: https://brutalistwebsites.com/
+  sourceType: official
+  checked: 2026-11-09
+  note: "Брутализм как реакция молодого поколения на лёгкость и оптимизм веб-дизайна."
+- id: britannica-murakami
+  title: "Takashi Murakami"
+  publisher: "Encyclopaedia Britannica"
+  url: https://www.britannica.com/biography/Murakami-Takashi
+  sourceType: encyclopedia
+  checked: 2026-11-09
+  note: "Louis Vuitton, 2003; от улыбающихся цветов к черепам и чудовищам."
+- id: britannica-superflat
+  title: "Superflat"
+  publisher: "Encyclopaedia Britannica"
+  url: https://www.britannica.com/topic/Superflat
+  sourceType: encyclopedia
+  checked: 2026-11-09
+  note: "Движение прославляло взаимодействие искусства и коммерции."
+- id: wiki-superflat
+  title: "Superflat"
+  publisher: "English Wikipedia"
+  url: https://en.wikipedia.org/wiki/Superflat
+  sourceType: encyclopedia
+  checked: 2026-11-09
+  note: "Основан Мураками; манга и аниме; выставка 2000 года."
+- id: frieze-open
+  title: "Open Up"
+  publisher: "Frieze"
+  url: https://www.frieze.com/article/open
+  sourceType: press
+  checked: 2026-11-09
+  note: "DIS использовали ярмарку как тему и фон работы Fair Trade."
