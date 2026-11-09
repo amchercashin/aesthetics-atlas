@@ -40,6 +40,7 @@
 | 10 | `10-postmodern.yaml` | [#70](https://github.com/amchercashin/aesthetics-atlas/pull/70) | 09.11.2026 | 14 | 28 | слита |
 | 11 | `11-digital.yaml` | [#71](https://github.com/amchercashin/aesthetics-atlas/pull/71) | 09.11.2026 | 12 | 24 | слита |
 | 12a | `12-internet.yaml: vaporwave … weirdcore` | [#72](https://github.com/amchercashin/aesthetics-atlas/pull/72) | 09.11.2026 | 8 | 17 | слита |
+| 12b | `12-internet.yaml: dreamcore … alien-core` | [#73](https://github.com/amchercashin/aesthetics-atlas/pull/73) | 09.11.2026 | 8 | 16 | слита |
 
 ## Партия 0. Подготовка (28.10.2026)
 
@@ -1099,7 +1100,7 @@
 ### Время
 Около часа на партию; замер приблизительный.
 
-## Партия 12b. `12-internet.yaml`: dreamcore … alien-core (09.11.2026)
+## Партия 12b. `12-internet.yaml`: dreamcore … alien-core (09.11.2026, [#73](https://github.com/amchercashin/aesthetics-atlas/pull/73))
 
 Карточек: 8, все переведены в `reviewed` с полным `scope`; изображений: 8 главных и 16 в галереях; новых источников: 10, повторно прочитано 0.
 
