@@ -143,9 +143,8 @@
   publisher: "Tate"
   url: https://www.tate.org.uk/art/art-terms/d/de-stijl
   sourceType: museum
-  checked: 2026-10-13
-  note: "Мондриан вышел из группы в 1923 году, после того как ван Дусбург ввёл в работы диагональные элементы."
-
+  checked: 2026-11-09
+  note: "Мондриан вышел из группы в 1923 году, после того как ван Дусбург ввёл в работы диагональные элементы. Перечитано 09.11.2026: журнал 1917 года; Мондриан вышел в 1923 году; издание до 1931 года."
 - id: asia-society-buddha
   title: "Buddhist Art and the Trade Routes: India"
   publisher: "Asia Society Museum"
@@ -2274,13 +2273,9 @@
   title: An introduction to Art Deco — V&A
   url: https://www.vam.ac.uk/articles/an-introduction-to-art-deco
   sourceType: museum
-  checked: "2026-10-16"
+  checked: 2026-11-09
   publisher: vam.ac.uk
-  note: >-
-    Формы Art Nouveau переработаны в Art Deco, а геометрическая ветвь Hoffmann названа прямым источником;
-    blanket reaction слишком однозначна. Локатор: Первые абзацы об Art Nouveau и геометрической ветви
-    Hoffmann/Mackintosh. Первые абзацы об Art Nouveau и геометрической ветви Hoffmann/Mackintosh Прочитана
-    содержательная часть страницы
+  note: "Формы Art Nouveau переработаны в Art Deco, а геометрическая ветвь Hoffmann названа прямым источником; blanket reaction слишком однозначна. Локатор: Первые абзацы об Art Nouveau и геометрической ветви Hoffmann/Mackintosh. Первые абзацы об Art Nouveau и геометрической ветви Hoffmann/Mackintosh Прочитана содержательная часть страницы Перечитано 09.11.2026: кубизм и Хоффман среди источников."
 - id: ra26-french-artdeco
   title: French Art Deco — The Met
   url: https://www.metmuseum.org/essays/french-art-deco
@@ -2741,11 +2736,9 @@
   title: "German Expressionism Styles: New Objectivity — MoMA"
   url: https://www.moma.org/s/ge/curated_ge/styles/new_objectivity.html
   sourceType: museum
-  checked: "2026-10-15"
+  checked: 2026-11-09
   publisher: moma.org
-  note: >-
-    Новая вещественность описана как вызов экспрессионизму. Изучена содержательная индексированная выдержка;
-    не весь текст
+  note: "Новая вещественность описана как вызов экспрессионизму. Изучена содержательная индексированная выдержка; не весь текст Перечитано 09.11.2026: вызов экспрессионизму."
 - id: ra26-new-objectivity-dada
   title: The modern drawing — MoMA
   url: https://www.moma.org/documents/moma_catalogue_1699_300296451.pdf
@@ -2768,11 +2761,9 @@
   title: Mexican Muralism — MoMA
   url: https://www.moma.org/collection/terms/mexican-muralism
   sourceType: museum
-  checked: "2026-10-15"
+  checked: 2026-11-09
   publisher: moma.org
-  note: >-
-    Доколониальная история и культура — важная тема движения; историческая тема не доказывает восстановление
-    всех мезоамериканских форм. Изучена содержательная индексированная выдержка; не весь текст
+  note: "Доколониальная история и культура — важная тема движения; историческая тема не доказывает восстановление всех мезоамериканских форм. Изучена содержательная индексированная выдержка; не весь текст Перечитано 09.11.2026: с начала 1920-х; Ривера, Ороско, Сикейрос."
 - id: ra26-rivera
   title: Diego Rivera — The Met
   url: >-
@@ -3397,25 +3388,18 @@
   title: Социалистический реализм — Российская академия художеств, глоссарий
   url: https://rah.ru/science/glossary/detail.php?ID=19592
   sourceType: primary
-  checked: "2026-10-16"
+  checked: 2026-11-09
   publisher: rah.ru
-  note: >-
-    Отказ от авангарда в целом входит в институциональный контекст; не доказывает, что Constructivism —
-    единственный или точно названный объект реакции. Локатор: История формирования программы и исключение
-    авангарда. История формирования программы и исключение авангарда Прочитана содержательная часть страницы
+  note: "Отказ от авангарда в целом входит в институциональный контекст; не доказывает, что Constructivism — единственный или точно названный объект реакции. Локатор: История формирования программы и исключение авангарда. История формирования программы и исключение авангарда Прочитана содержательная часть страницы Перечитано 09.11.2026: официальное направление с середины 1930-х до начала 1980-х."
 - id: ra26-d2-stalin-barkhin
   title: >-
     Ар-деко и историзм в архитектуре московских высотных зданий — А.Д.Бархин, НИИТИАГ (2013/2016), авторский
     текст
   url: https://archi.ru/russia/72752/ar-deko-i-istorizm-v-arkhitekture-moskovskikh-vysotnykh-zdanii
   sourceType: primary
-  checked: "2026-10-16"
+  checked: 2026-11-09
   publisher: archi.ru
-  note: >-
-    Конкретизирует американские высотные образцы, ар-деко и историзм. Авторская интерпретация не означает
-    тождество всей сталинской архитектуры ар-деко. Локатор: Основной текст и примечания, сравнения советских и
-    американских высотных проектов. Основной текст и примечания, сравнения советских и американских высотных
-    проектов Прочитана содержательная часть страницы
+  note: "Конкретизирует американские высотные образцы, ар-деко и историзм. Авторская интерпретация не означает тождество всей сталинской архитектуры ар-деко. Локатор: Основной текст и примечания, сравнения советских и американских высотных проектов. Основной текст и примечания, сравнения советских и американских высотных проектов Прочитана содержательная часть страницы Перечитано 09.11.2026: опора на небоскрёбы ар-деко; подписи к постройкам."
 - id: ra26-d2-stalin-niitiag
   title: Вопросы всеобщей истории архитектуры, вып.6 — НИИТИАГ, аннотация статьи А.Д.Бархина
   url: https://www.niitiag.ru/pub/pub_cat/voprosy_vseobschey_istorii_arkhitektury_6.html
@@ -6580,3 +6564,159 @@
   sourceType: catalog
   checked: 2026-11-09
   note: "Снимок Альфреда Стиглица, 1917."
+
+# Партия 08b (09.11.2026)
+- id: tate-bauhaus
+  title: "Bauhaus"
+  publisher: Tate
+  url: https://www.tate.org.uk/art/art-terms/b/bauhaus
+  sourceType: museum
+  checked: 2026-11-09
+  note: "Основан Гропиусом в Веймаре в 1919 году; Дессау 1925–1926; закрыт нацистами в 1933 году."
+- id: tate-art-deco
+  title: "Art deco"
+  publisher: Tate
+  url: https://www.tate.org.uk/art/art-terms/a/art-deco
+  sourceType: museum
+  checked: 2026-11-09
+  note: "Стиль 1920–1930-х годов; название от выставки 1925 года."
+- id: tate-new-objectivity
+  title: "Neue Sachlichkeit"
+  publisher: Tate
+  url: https://www.tate.org.uk/art/art-terms/n/neue-sachlichkeit
+  sourceType: museum
+  checked: 2026-11-09
+  note: "Немецкое реалистическое движение 1920-х годов; Мангейм; Дикс и Гросс."
+- id: tate-international-style
+  title: "International style"
+  publisher: Tate
+  url: https://www.tate.org.uk/art/art-terms/i/international-style
+  sourceType: museum
+  checked: 2026-11-09
+  note: "Термин 1932 года; выставка MoMA; Хичкок и Джонсон."
+- id: tate-socialist-realism
+  title: "Socialist realism"
+  publisher: Tate
+  url: https://www.tate.org.uk/art/art-terms/s/socialist-realism
+  sourceType: museum
+  checked: 2026-11-09
+  note: "Доктрина провозглашена в 1934 году; оптимизм, запрет критики."
+- id: britannica-bauhaus
+  title: "Bauhaus"
+  publisher: Encyclopaedia Britannica
+  url: https://www.britannica.com/art/Bauhaus
+  sourceType: encyclopedia
+  checked: 2026-11-09
+  note: "Школа 1919–1933; Веймар, Дессау, Берлин; слияние двух школ."
+- id: britannica-chrysler
+  title: "Chrysler Building"
+  publisher: Encyclopaedia Britannica
+  url: https://www.britannica.com/topic/Chrysler-Building
+  sourceType: encyclopedia
+  checked: 2026-11-09
+  note: "Уильям ван Ален, 1928–1930."
+- id: britannica-mies
+  title: "Ludwig Mies van der Rohe"
+  publisher: Encyclopaedia Britannica
+  url: https://www.britannica.com/biography/Ludwig-Mies-van-der-Rohe
+  sourceType: encyclopedia
+  checked: 2026-11-09
+  note: "«Меньше — значит больше»; Farnsworth House, Seagram Building."
+- id: britannica-international-style
+  title: "International Style"
+  publisher: Encyclopaedia Britannica
+  url: https://www.britannica.com/art/International-Style-architecture
+  sourceType: encyclopedia
+  checked: 2026-11-09
+  note: "1920–1930-е, середина века; прямоугольные формы без орнамента; термин 1932 года."
+- id: britannica-fallingwater
+  title: "Fallingwater"
+  publisher: Encyclopaedia Britannica
+  url: https://www.britannica.com/place/Fallingwater
+  sourceType: encyclopedia
+  checked: 2026-11-09
+  note: "Райт, заказ 1935 года, завершён в 1937 году."
+- id: britannica-loewy
+  title: "Raymond Loewy"
+  publisher: Encyclopaedia Britannica
+  url: https://www.britannica.com/biography/Raymond-Loewy
+  sourceType: encyclopedia
+  checked: 2026-11-09
+  note: "1930–1940-е, закруглённые углы и простые очертания."
+- id: unesco-rietveld
+  title: "Rietveld Schröderhuis"
+  publisher: UNESCO World Heritage Centre
+  url: https://whc.unesco.org/en/list/965/
+  sourceType: official
+  checked: 2026-11-09
+  note: "Ритвелд, 1924; манифест идей De Stijl."
+- id: unesco-bauhaus
+  title: "Bauhaus and its Sites in Weimar, Dessau and Bernau"
+  publisher: UNESCO World Heritage Centre
+  url: https://whc.unesco.org/en/list/729/
+  sourceType: official
+  checked: 2026-11-09
+  note: "1919–1933; Haus Am Horn в Веймаре."
+- id: unesco-le-corbusier
+  title: "The Architectural Work of Le Corbusier"
+  publisher: UNESCO World Heritage Centre
+  url: https://whc.unesco.org/en/list/1321/
+  sourceType: official
+  checked: 2026-11-09
+  note: "Постройки современного движения."
+- id: unesco-wright
+  title: "The 20th-Century Architecture of Frank Lloyd Wright"
+  publisher: UNESCO World Heritage Centre
+  url: https://whc.unesco.org/en/list/1496/
+  sourceType: official
+  checked: 2026-11-09
+  note: "Органическая архитектура: открытый план, размывание границ, новые материалы; Fallingwater, Guggenheim."
+- id: unesco-cabanas
+  title: "Hospicio Cabañas, Guadalajara"
+  publisher: UNESCO World Heritage Centre
+  url: https://whc.unesco.org/en/list/815/
+  sourceType: official
+  checked: 2026-11-09
+  note: "Росписи Ороско в часовне."
+- id: si-streamlined-design
+  title: "The Airplane and Streamlined Design"
+  publisher: Smithsonian National Air and Space Museum
+  url: https://airandspace.si.edu/stories/editorial/airplane-and-streamlined-design
+  sourceType: museum
+  checked: 2026-11-09
+  note: "Дизайнеры 1920–1930-х годов переносили линии самолёта на поезда, автомобили, архитектуру."
+- id: msi-pioneer-zephyr
+  title: "Pioneer Zephyr"
+  publisher: Griffin Museum of Science and Industry
+  url: https://www.msichicago.org/explore/whats-here/exhibits/pioneer-zephyr
+  sourceType: museum
+  checked: 2026-11-09
+  note: "Рейс 26 мая 1934 года из Денвера в Чикаго, чуть больше 13 часов."
+- id: smb-skat-players
+  title: "Die Skatspieler"
+  publisher: Staatliche Museen zu Berlin
+  url: https://search.smb.museum/object/obj-962482
+  sourceType: museum
+  checked: 2026-11-09
+  note: "Отто Дикс, 1920; Neue Nationalgalerie."
+- id: enwiki-sy-von-harden
+  title: "File:Otto Dix Sy von Harden.jpg"
+  publisher: English Wikipedia
+  url: https://en.wikipedia.org/wiki/File:Otto_Dix_Sy_von_Harden.jpg
+  sourceType: catalog
+  checked: 2026-11-09
+  note: "Дикс, 1926; собрание указано в прежней подписи."
+- id: commons-mondrian-comp-ii
+  title: "File:Piet Mondriaan, 1930 - Mondrian Composition II in Red, Blue, and Yellow.jpg"
+  publisher: Wikimedia Commons
+  url: https://commons.wikimedia.org/wiki/File:Piet_Mondriaan,_1930_-_Mondrian_Composition_II_in_Red,_Blue,_and_Yellow.jpg
+  sourceType: catalog
+  checked: 2026-11-09
+  note: "Мондриан, 1930, Кунстхаус, Цюрих."
+- id: commons-worker-1937
+  title: "File:Ouvrier kolkhosienne 2.jpg"
+  publisher: Wikimedia Commons
+  url: https://commons.wikimedia.org/wiki/File:Ouvrier_kolkhosienne_2.jpg
+  sourceType: catalog
+  checked: 2026-11-09
+  note: "Снимок Виллема ван де Полла, 1 августа 1937 года: статуя на павильоне СССР."
