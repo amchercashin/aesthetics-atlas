@@ -2997,11 +2997,9 @@
   title: Facebook Alegria — BUCK
   url: https://buck.co/work/facebook-alegria
   sourceType: primary
-  checked: "2026-10-15"
+  checked: 2026-11-09
   publisher: buck.co
-  note: >-
-    Создатели описывают разработку системы с 2017 года; плоская иллюстрация, не заявленное возрождение
-    Memphis. Изучена содержательная индексированная выдержка; не весь текст
+  note: "Создатели описывают разработку системы с 2017 года; плоская иллюстрация, не заявленное возрождение Memphis. Изучена содержательная индексированная выдержка; не весь текст Перечитано 09.11.2026: перечитан 09.11.2026: запрос Facebook 2017 года, плоские формы, увеличенные конечности."
 - id: ra26-corporate-memphis
   title: What the Think Pieces About Corporate Memphis Tell Us — AIGA
   url: >-
@@ -7562,3 +7560,67 @@
   sourceType: press
   checked: 2026-11-09
   note: "DIS использовали ярмарку как тему и фон работы Fair Trade."
+# Партия 12a (09.11.2026)
+- id: wiki-vaporwave
+  title: "Vaporwave"
+  publisher: "English Wikipedia"
+  url: https://en.wikipedia.org/wiki/Vaporwave
+  sourceType: encyclopedia
+  checked: 2026-11-09
+  note: "Микрожанр начала 2010-х; ироничный вариант чилвейва; пионеры."
+- id: wiki-floral-shoppe
+  title: "Floral Shoppe"
+  publisher: "English Wikipedia"
+  url: https://en.wikipedia.org/wiki/Floral_Shoppe
+  sourceType: encyclopedia
+  checked: 2026-11-09
+  note: "Альбом Macintosh Plus, 9 декабря 2011 года, образец жанра."
+- id: wiki-synthwave
+  title: "Synthwave"
+  publisher: "English Wikipedia"
+  url: https://en.wikipedia.org/wiki/Synthwave
+  sourceType: encyclopedia
+  checked: 2026-11-09
+  note: "Жанр середины и конца 2000-х; Kavinsky и College; Драйв; outrun."
+- id: wiki-corporate-memphis
+  title: "Corporate Memphis"
+  publisher: "English Wikipedia"
+  url: https://en.wikipedia.org/wiki/Corporate_Memphis
+  sourceType: encyclopedia
+  checked: 2026-11-09
+  note: "Alegria; название Майка Меррилла; технокомпании."
+- id: wiki-cottagecore
+  title: "Cottagecore"
+  publisher: "English Wikipedia"
+  url: https://en.wikipedia.org/wiki/Cottagecore
+  sourceType: encyclopedia
+  checked: 2026-11-09
+  note: "Название на Tumblr в 2018 году; рост интереса в 2020 году."
+- id: wiki-dark-academia
+  title: "Dark academia"
+  publisher: "English Wikipedia"
+  url: https://en.wikipedia.org/wiki/Dark_academia
+  sourceType: encyclopedia
+  checked: 2026-11-09
+  note: "Появилась на Tumblr в середине 2010-х; одежда, палитра, архитектура."
+- id: fandom-kidcore
+  title: "Kidcore"
+  publisher: "Aesthetics Wiki (Fandom)"
+  url: https://aesthetics.fandom.com/wiki/Kidcore
+  sourceType: community
+  checked: 2026-11-09
+  note: "Энциклопедия сообщества: конец 2010-х, ключевые мотивы."
+- id: wiki-liminal-space
+  title: "Liminal space (aesthetic)"
+  publisher: "English Wikipedia"
+  url: https://en.wikipedia.org/wiki/Liminal_space_(aesthetic)
+  sourceType: encyclopedia
+  checked: 2026-11-09
+  note: "Пустые переходные места; Backrooms 2019 года; рост интереса в пандемию."
+- id: wiki-weirdcore
+  title: "Weirdcore"
+  publisher: "English Wikipedia"
+  url: https://en.wikipedia.org/wiki/Weirdcore
+  sourceType: encyclopedia
+  checked: 2026-11-09
+  note: "Популярность в начале 2020-х; мотивы."
