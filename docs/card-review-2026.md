@@ -13,6 +13,7 @@
 | 02 | `02-ancient.yaml` | [#58](https://github.com/amchercashin/aesthetics-atlas/pull/58) | 08.11.2026 | 9 | 22 (было 21) | слита |
 | 03 | `03-antiquity.yaml` | [#59](https://github.com/amchercashin/aesthetics-atlas/pull/59) | 08.11.2026 | 7 | 17 (было 16) | слита |
 | 04 | `04-medieval.yaml` | [#60](https://github.com/amchercashin/aesthetics-atlas/pull/60) | 08.11.2026 | 13 | 28 | слита |
+| 05 | `05-renaissance.yaml` | [#62](https://github.com/amchercashin/aesthetics-atlas/pull/62) | 09.11.2026 | 13 | 26 | слита |
 | 05 | `05-renaissance.yaml` | | | 13 | 26 | не начата |
 | 06a | `06-xix.yaml`: neoclassicism … peredvizhniki | | | 8 | 16 | не начата |
 | 06b | `06-xix.yaml`: historicism … impressionism | | | 7 | 14 | не начата |
@@ -340,7 +341,7 @@
 - `islamic-art`: страница отдела исламского искусства Метмузея открыта заново.
 - Карта: проверены точка, линия и подписи у карточек со сдвинутыми датами — `minoan-art`, `greek-archaic`, `celtic-art`, `viking-art`, `wabi-sabi`. Тёмная тема проверена на `old-russian-icons`. Ошибок и наложений нет.
 
-## Партия 05. `05-renaissance.yaml` (08–09.11.2026)
+## Партия 05. `05-renaissance.yaml` (08–09.11.2026, [#62](https://github.com/amchercashin/aesthetics-atlas/pull/62))
 
 Карточек: 13, все переведены в `reviewed` с полным `scope`; изображений: 13 главных и 26 в галереях; новых источников: 67, повторно прочитано 11.
 
