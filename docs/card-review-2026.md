@@ -30,6 +30,7 @@
 | 14 | `14-regional-traditions.yaml` | | | 10 | 30 | не начата |
 | 15 | `15-regional-graphics.yaml` | | | 10 | 30 | не начата |
 | 16 | `16-regional-languages.yaml` | | | 10 | 27 | не начата |
+| 06a | `06-xix.yaml: neoclassicism … peredvizhniki` | [#63](https://github.com/amchercashin/aesthetics-atlas/pull/63) | 09.11.2026 | 8 | 16 | слита |
 
 ## Партия 0. Подготовка (28.10.2026)
 
@@ -429,7 +430,7 @@
 ### Время
 Партия шла с перерывом; время не замерено.
 
-## Партия 06a. `06-xix.yaml`: neoclassicism … peredvizhniki (09.11.2026)
+## Партия 06a. `06-xix.yaml`: neoclassicism … peredvizhniki (09.11.2026, [#63](https://github.com/amchercashin/aesthetics-atlas/pull/63))
 
 Карточек: 8, все переведены в `reviewed` с полным `scope`; изображений: 8 главных и 16 в галереях; новых источников: 29, повторно прочитано 6.
 
