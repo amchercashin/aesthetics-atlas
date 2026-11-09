@@ -7624,3 +7624,74 @@
   sourceType: encyclopedia
   checked: 2026-11-09
   note: "Популярность в начале 2020-х; мотивы."
+# Партия 12b (09.11.2026)
+- id: wiki-dreamcore
+  title: "Dreamcore (aesthetic)"
+  publisher: "English Wikipedia"
+  url: https://en.wikipedia.org/wiki/Dreamcore_(aesthetic)
+  sourceType: encyclopedia
+  checked: 2026-11-09
+  note: "Популярность в начале и середине 2020-х; мотивы; неясное происхождение."
+- id: wiki-glassmorphism
+  title: "Glassmorphism"
+  publisher: "English Wikipedia"
+  url: https://en.wikipedia.org/wiki/Glassmorphism
+  sourceType: encyclopedia
+  checked: 2026-11-09
+  note: "Термин Малевича, 2020; macOS Big Sur; признаки стиля."
+- id: wiki-solarpunk
+  title: "Solarpunk"
+  publisher: "English Wikipedia"
+  url: https://en.wikipedia.org/wiki/Solarpunk
+  sourceType: encyclopedia
+  checked: 2026-11-09
+  note: "Жанр об экологически устойчивом будущем; противоположность киберпанку."
+- id: wiki-coquette
+  title: "Coquette aesthetic"
+  publisher: "English Wikipedia"
+  url: https://en.wikipedia.org/wiki/Coquette_aesthetic
+  sourceType: encyclopedia
+  checked: 2026-11-09
+  note: "Мода 2020-х; Tumblr начала 2010-х; TikTok около 2021 года."
+- id: wiki-barbie
+  title: "Barbie"
+  publisher: "English Wikipedia"
+  url: https://en.wikipedia.org/wiki/Barbie
+  sourceType: encyclopedia
+  checked: 2026-11-09
+  note: "Фильм 2023 года вызвал модный тренд Barbiecore."
+- id: wiki-brat-summer
+  title: "Brat summer"
+  publisher: "English Wikipedia"
+  url: https://en.wikipedia.org/wiki/Brat_summer
+  sourceType: encyclopedia
+  checked: 2026-11-09
+  note: "Альбом 7 июня 2024 года; Brat Generator; кампания Харрис."
+- id: wiki-brat-album
+  title: "Brat (album)"
+  publisher: "English Wikipedia"
+  url: https://en.wikipedia.org/wiki/Brat_(album)
+  sourceType: encyclopedia
+  checked: 2026-11-09
+  note: "Лаймово-зелёный квадрат, строчные буквы Arial; студия Special Offer."
+- id: wiki-deepdream
+  title: "DeepDream"
+  publisher: "English Wikipedia"
+  url: https://en.wikipedia.org/wiki/DeepDream
+  sourceType: encyclopedia
+  checked: 2026-11-09
+  note: "Выпущен в июле 2015 года; сновидческие изображения."
+- id: wiki-edmond-belamy
+  title: "Edmond de Belamy"
+  publisher: "English Wikipedia"
+  url: https://en.wikipedia.org/wiki/Edmond_de_Belamy
+  sourceType: encyclopedia
+  checked: 2026-11-09
+  note: "Obvious, 2018; Christie's, 432 500 долларов."
+- id: wiki-ai-visual-art
+  title: "Artificial intelligence visual art"
+  publisher: "English Wikipedia"
+  url: https://en.wikipedia.org/wiki/Artificial_intelligence_visual_art
+  sourceType: encyclopedia
+  checked: 2026-11-09
+  note: "Широкая доступность моделей в 2020-е; конкурс в Колорадо 2022 года."
