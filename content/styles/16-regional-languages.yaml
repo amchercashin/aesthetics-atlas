@@ -26,13 +26,28 @@
     - Mezen painting
   gallery:
     - file: Прялка Мезенская роспись Палитра ремёсел Саратов.jpg
-      title: Мезенская прялка
+      title: Самопрялка с мезенской росписью
+      author: мастер не указан
+      year: снимок 2025 года
+      place: Фестиваль «Палитра ремёсел», Саратов
+      role: revival
+      note: Современное изделие, не исторический палащельский предмет.
+      whyRepresentative: Красная штриховая роспись идёт по ободу колеса и стойке.
     - file: Vologda PTO museum 74.jpg
-      title: Мезенская роспись в музее Вологды
+      title: Бочонки с мезенской росписью
+      author: мастер не указан
+      year: снимок 2010 года
+      place: Музей ПТО, Вологда
+      role: revival
+      note: Дата изделий не указана; другая форма, не прялка из корпуса.
+      whyRepresentative: Ряды красных коней и геометрические пояса перенесены на круглую форму.
     - file: File:Мезенская роспись.jpg
-      title: Мезенская роспись
-      author: Максим Шанин
-      whyRepresentative: Прялка с ярусами коней, оленей и геометрических знаков.
+      title: Мезенская роспись на доске
+      author: автор росписи не указан; снимок Максима Шанина
+      year: снимок 2017 года
+      place: Архангельская область
+      note: Дата изделия не указана.
+      whyRepresentative: Ярусы птиц и животных чередуются с геометрическими поясами на форме прялки.
   summary: >-
     Графическая роспись деревянных прялок строится из рядов животных, узких орнаментальных поясов и
     тонких тёмных росчерков на тёплом поле дерева.
@@ -136,6 +151,7 @@
         Круглова связывает рис. 3 с М. А. Новиковым и надписью 1898; рис. 2 — деталь отдельной прялки Е.
         М. Аксёнова 1921 года.
       source: kruglova-mezen-1964
+    - { claim: "Прялка как главный предмет; ярусы птиц, оленей и коней среди геометрических полос", field: description, source: rm-mezen-fedotov }
   example:
     workId: mezen-rm-3389
     title: Прялка, Р-3389
@@ -167,13 +183,11 @@
       src: Советская этнография / ИЭА РАН
       lang: ru
   review:
-    status: partial
-    date: "2026-10-15"
-    scope: [corpus]
+    status: reviewed
+    date: "2026-11-09"
+    scope: [relations, dates, text, images, gallery, corpus]
     note: >-
-      Предмет Русского музея и две разные прялки в научной публикации просмотрены. У Аксёнова доступна
-      только деталь; чёрно-белые снимки не подтверждают точные цвета. Современное местонахождение
-      экспедиционных вещей и инвентарные номера не уточнены.
+      Корпус — 14.10.2026: Предмет Русского музея и две разные прялки в научной публикации просмотрены. У Аксёнова доступна только деталь; чёрно-белые снимки не подтверждают точные цвета. Современное местонахождение экспедиционных вещей и инвентарные номера не уточнены. Родство не утверждается, связи у записей. 09.11.2026: описание и даты — запись Русского музея (снимок веб-архива); галерея — страницы файлов, современные изделия помечены как продолжение традиции.
   compare:
     - id: khokhloma
       note: >-
@@ -213,8 +227,17 @@
   gallery:
     - file: Shiva_as_the_Lord_of_Dance_LACMA_edit.jpg
       title: Шива Натараджа
-    - file: Brihadisvara_Temple_during_Maha_Shivaratri-WUS03611_(edit).jpg
-      title: Брихадисвара
+      author: мастер не указан
+      year: около 950–1000
+      place: Художественный музей округа Лос-Анджелес
+      whyRepresentative: Огненный ореол и развёрнутые руки задают пространственный силуэт.
+    - file: MET DT5250.jpg
+      title: Беседующий Хануман
+      author: мастер не указан
+      year: XI век
+      place: Метрополитен-музей
+      note: Медный сплав; период Чола по записи музея.
+      whyRepresentative: Изгиб оси тела и жесты кистей собирают стоящую фигуру в ясный силуэт.
   summary: >-
     Южноиндийская пластика соединяет округлый объём тела, ясный силуэт и точно поставленные жесты;
     фигуры воспринимаются со всех сторон.
@@ -299,6 +322,8 @@
     - field: scope
       claim: Парная композиция Шивы и Парвати отнесена музеем к периоду Чола и выполнена из медного сплава.
       source: met-chola-shiva-parvati
+    - { claim: "Парвати — около первой четверти X века", field: dates, source: met-chola-parvati }
+    - { claim: "Пара Шивы и Парвати — XIII век", field: dates, source: met-chola-shiva-parvati }
   example:
     workId: chola-parvati-57513
     title: Стоящая Парвати, 57.51.3
@@ -333,12 +358,11 @@
       src: The Metropolitan Museum of Art
       lang: en
   review:
-    status: partial
-    date: "2026-10-15"
-    scope: [corpus]
+    status: reviewed
+    date: "2026-11-09"
+    scope: [relations, dates, text, images, gallery, corpus]
     note: >-
-      Три предмета, подписи и изображения сверены. Корпус не покрывает всю скульптуру периода Чола;
-      полная история владения и технологическое исследование сплавов здесь не выполнены.
+      Корпус — 14.10.2026: Три предмета, подписи и изображения сверены. Корпус не покрывает всю скульптуру периода Чола; полная история владения и технологическое исследование сплавов здесь не выполнены. Родство не утверждается, связи у записей. 09.11.2026: даты и текст — записи Метрополитена; галерея: снимок храма заменён скульптурой (Р2).
   compare:
     - id: gandhara
       note: >-
@@ -378,13 +402,23 @@
     - Джамини Рой
     - Jamini Roy
   gallery:
-    - file: "\"Two Vaishnavas\" Painting by Jamini Roy (cropped).jpeg"
+    - file: '"Two Vaishnavas" Painting by Jamini Roy (cropped).jpeg'
       title: Рой. Два вайшнава
+      author: Джамини Рой
+      year: дата картины не указана; марка 1978 года
+      note: Репродукция с почтовой марки Индии.
+      whyRepresentative: Крупные глаза и широкий контур собирают две фигуры в единый знак.
     - file: Jamini Roy's painting of four womens painted on wall.jpg
-      title: Рой. Четыре женщины
+      title: Настенная роспись по мотивам Джамини Роя
+      author: исполнитель не указан
+      year: снимок 2021 года
+      role: revival
+      note: Роспись на стене по мотивам Роя, не его работа.
+      whyRepresentative: Четыре женские фигуры повторяют большие глаза и плоские цветовые поля.
     - file: File:Untitled (Cat) by Jamini Roy.jpg
-      title: Untitled (Cat) by Jamini Roy
-      author: THL India
+      title: Без названия (кошка)
+      author: Джамини Рой
+      year: около 1920–1950-х
       whyRepresentative: Упрощённая фигура кошки с крупными глазами и локальными цветами.
   summary: >-
     Толстый гибкий контур, крупные глаза и немногие насыщенные цветовые поля придают фигурам плотность и
@@ -474,7 +508,6 @@
       различать этапы его практики.
     sources:
       - ngma-jamini-roy-tour
-      - ngma-modern-collection
   evidence:
     - field: dates
       claim: >-
@@ -486,6 +519,7 @@
         В комментарии к Yashoda and Krishna, 3134, Калигхат прямо назван источником каллиграфической
         линии.
       source: ngma-jamini-roy-tour
+    - { claim: "С конца 1920-х Рой отказывается от масла и обращается к местным пигментам и деревенским образам", field: description, source: ngma-jamini-roy-tour }
   example:
     workId: roy-ngma-107
     title: Cat and Lobster / Кошка с омаром, 107
@@ -513,12 +547,11 @@
       src: National Gallery of Modern Art, India
       lang: en
   review:
-    status: partial
-    date: "2026-10-15"
-    scope: [corpus]
+    status: reviewed
+    date: "2026-11-09"
+    scope: [relations, dates, text, images, gallery, corpus]
     note: >-
-      Сверены три самостоятельные подписи и музейный текст о Калигхате. Даты предметов не установлены;
-      влияние описано для формирования языка, а не как точная история изготовления этих трёх работ.
+      Корпус — 14.10.2026: Сверены три самостоятельные подписи и музейный текст о Калигхате. Даты предметов не установлены; влияние описано для формирования языка, а не как точная история изготовления этих трёх работ. Родство не утверждается, связи у записей. 09.11.2026: описание и даты — виртуальная выставка NGMA; галерея: настенная роспись больше не выдаётся за работу Роя, у «Двух вайшнавов» указана марка.
   compare:
     - id: bengal-patachitra
       note: >-
@@ -558,22 +591,28 @@
     - asset: assets/works/xu-bing-phoenix.jpg
       title: Феникс
       author: Сюй Бин
-      year: 2007–2011
-      place: Проект Phoenix
-      credit: Xu Bing Studio
-      license: © Xu Bing
+      year: год снимка не установлен
+      credit: источник копии не установлен
+      license: права не установлены; образовательное использование
       nonfree: true
-      reference: https://www.xubing.com/
-      whyRepresentative: Скульптурные птицы из строительного мусора продолжают тему письма и культурного перевода в пространственной форме.
+      reference: https://www.xubing.com/en/work/details/172
+      note: Инсталляция, не работа с письмом; показана как контекст.
+      whyRepresentative: Птица из строительных материалов подвешена в большом пустом зале.
+      sources: [xu-phoenix-project]
     - file: EnglishChinaWriting.jpg
-      title: English China Writing
-      author: Xu Bing
-      whyRepresentative: Латинские буквы и китайские знаки как изображение; работа с письмом.
+      title: Слово wiki в манере Square Word
+      author: участник китайской Википедии Prattflora
+      year: файл загружен в 2005 году
+      role: illustration
+      note: Пример принципа по странице файла; работой студии не подтверждён.
+      whyRepresentative: Латинские буквы собраны в форму, похожую на китайский знак.
     - file: Xu Bing Phoenixes 037.JPG
       title: Фениксы
-      author: Xu Bing
-      whyRepresentative: Инсталляция из найденных материалов; контекст практики, не «Книга с неба».
+      author: Сюй Бин
+      year: снимок 2014 года
+      place: Собор Иоанна Богослова, Нью-Йорк
       note: Инсталляция, не работа с письмом; показана как контекст.
+      whyRepresentative: Голова птицы собрана из листового металла и шлангов.
   summary: >-
     Знаки выглядят знакомым письмом, но меняют правила чтения: вымышленные иероглифы, английские слова в
     квадрате и слова как пространственные фигуры.
@@ -692,6 +731,7 @@
         Smithsonian связывает Monkeys Grasp for the Moon с выставкой 2001 года и описывает 21 деревянное
         звено.
       source: smithsonian-xu-word-play
+    - { claim: "Книги и свитки напечатаны с вырезанных деревянных литер изобретённых знаков", field: description, source: blanton-xu-sky }
   example:
     workId: xu-book-sky
     title: Book from the Sky / Книга с неба
@@ -731,13 +771,11 @@
       src: Xu Bing Studio
       lang: en
   review:
-    status: partial
-    date: "2026-10-15"
-    scope: [corpus]
+    status: reviewed
+    date: "2026-11-09"
+    scope: [relations, dates, text, images, gallery, corpus]
     note: >-
-      Три самостоятельных проекта и их изображения сверены по музейным и авторским записям.
-      Это ограниченная операция над письмом, не полный обзор авторской практики; состав производственных
-      команд поимённо не установлен.
+      Корпус — 14.10.2026: Три самостоятельных проекта и их изображения сверены по музейным и авторским записям. Это ограниченная операция над письмом, не полный обзор авторской практики; состав производственных команд поимённо не установлен. Родство не утверждается, связи у записей. 09.11.2026: описание и даты — Blanton и сайт студии; галерея: источник копии не установлен, пример Square Word больше не приписан художнику.
   compare:
     - id: conceptual-art
       note: >-
@@ -773,9 +811,18 @@
     - Ilé-Ifẹ̀
   gallery:
     - file: Ife terracotta head of a queen from ITA YEMO.jpg
-      title: Терракотовая голова из Ифе
+      title: Терракотовая голова царицы из Ита Йемо
+      author: мастер не указан
+      year: снимок 2023 года
+      note: Снимок через витрину, с этикеткой.
+      whyRepresentative: Плотный ряд причёски и спокойные черты лица.
     - file: Yoruba-bronze-head.jpg
-      title: Йорубская бронзовая голова
+      title: Маска царя Обалуфона II
+      author: мастер йоруба, имя не установлено
+      year: около XIV–XV века
+      place: Музей древностей Ифе
+      note: По странице файла — медь, не бронза.
+      whyRepresentative: Гладкая моделировка лица и ряды отверстий вокруг рта.
   summary: >-
     Точная моделировка головы соединяется с ритмами насечек, причёски, украшений и знаков статуса;
     сходная пластическая задача решается в металле и глине.
@@ -872,6 +919,9 @@
         Met указывает для головы лошади XII–XV века, Иле-Ифе и статус временно предоставленного
         предмета.
       source: met-ife-horse
+    - { claim: "Латунная голова — вероятно XIV — начало XV века", field: dates, source: bm-ife-brass }
+    - { claim: "Терракотовая голова — XII–XV века", field: dates, source: bm-ife-terracotta }
+    - { claim: "Голова лошади — XII–XV века", field: dates, source: met-ife-horse }
   example:
     workId: ife-bm-af1939341
     title: Латунная голова, Af1939,34.1
@@ -908,13 +958,11 @@
       src: The Metropolitan Museum of Art
       lang: en
   review:
-    status: partial
-    date: "2026-10-15"
-    scope: [corpus]
+    status: reviewed
+    date: "2026-11-09"
+    scope: [relations, dates, text, images, gallery, corpus]
     note: >-
-      Предметные характеристики сверены с музейными записями. Неопределённости функции, личности и
-      происхождения сохранены; полная история владения всех трёх вещей не исследована. Прямой
-      HTML-доступ к BM ограничен.
+      Корпус — 14.10.2026: Предметные характеристики сверены с музейными записями. Неопределённости функции, личности и происхождения сохранены; полная история владения всех трёх вещей не исследована. Записи BM заново открыты в браузере 09.11.2026. Родство не утверждается, связи у записей. 09.11.2026: даты и текст — Британский музей и Метрополитен, записи открыты заново; галерея — страницы файлов, «бронзовая голова» уточнена.
   compare:
     - id: chola-bronzes
       note: >-
@@ -960,26 +1008,31 @@
   gallery:
     - asset: assets/works/anatsui-1.jpg
       title: "Эль Анацуи: металлическое панно"
-      author: Эль Анацуи
-      year: 2000-е
-      credit: El Anatsui / Jack Shainman Gallery
-      license: © El Anatsui
+      author: Эль Анацуи (по прежней подписи, не подтверждено)
+      year: год не установлен
+      credit: источник копии не установлен
+      license: права не установлены; образовательное использование
       nonfree: true
-      reference: https://en.wikipedia.org/wiki/El_Anatsui
-      whyRepresentative: Сшитые крышечки и металлические полосы образуют ткань — фирменный материал Анацуи.
+      reference: https://collections.lacma.org/object/140524
+      note: Название работы не установлено.
+      whyRepresentative: Металлические элементы образуют большое полотно с цветными полями.
+      sources: [lacma-anatsui-scroll]
     - asset: assets/works/anatsui-2.jpg
       title: "Эль Анацуи: драпировка"
-      author: Эль Анацуи
-      year: 2000-е
-      credit: El Anatsui / Jack Shainman Gallery
-      license: © El Anatsui
+      author: Эль Анацуи (по прежней подписи, не подтверждено)
+      year: год не установлен
+      credit: источник копии не установлен
+      license: права не установлены; образовательное использование
       nonfree: true
-      reference: https://en.wikipedia.org/wiki/El_Anatsui
-      whyRepresentative: Металл ведёт себя как ткань, образуя складки и монументальную поверхность.
+      reference: https://collections.lacma.org/object/140524
+      note: Название работы не установлено.
+      whyRepresentative: Складки красного полотна показывают, как металл ведёт себя на стене.
+      sources: [lacma-anatsui-scroll]
     - file: File:El Anatsui - Man's Cloth.jpg
-      title: El Anatsui - Man's Cloth
-      author: hahnchen
-      whyRepresentative: Металлическая драпировка из переплетённых фрагментов.
+      title: Мужская ткань
+      author: Эль Анацуи
+      year: снимок 2009 года
+      whyRepresentative: Плотные ряды металлических фрагментов образуют неровную драпировку.
   summary: >-
     Множество металлических фрагментов соединяется проволокой в гибкую поверхность, где цветовые полосы,
     разрывы и складки образуют изменяемую скульптуру.
@@ -1094,6 +1147,10 @@
     - field: corpus
       claim: Fading Scroll создан в 2007 из алюминиевых бутылочных укупорок и медной проволоки.
       source: lacma-anatsui-scroll
+    - { claim: "Between Earth and Heaven — 2006 год", field: dates, source: met-anatsui-earth }
+    - { claim: "Dusasa II — 2007 год", field: dates, source: met-anatsui-dusasa }
+    - { claim: "Fading Scroll — 2007 год", field: dates, source: lacma-anatsui-scroll }
+    - { claim: "Алюминиевые укупорки бутылок и медная проволока", field: description, source: lacma-anatsui-scroll }
   example:
     workId: anatsui-earth-2006
     title: Between Earth and Heaven, 2007.96
@@ -1133,12 +1190,11 @@
       src: Talbot Rice Gallery, University of Edinburgh
       lang: en
   review:
-    status: partial
-    date: "2026-10-15"
-    scope: [corpus]
+    status: reviewed
+    date: "2026-11-09"
+    scope: [relations, dates, text, images, gallery, corpus]
     note: >-
-      Три самостоятельных полотна, подписи и изображения сверены. Текстильные связи подтверждены;
-      полная история мастерской, состав помощников и варианты всех развесок не исследованы.
+      Корпус — 14.10.2026: Три самостоятельных полотна, подписи и изображения сверены. Текстильные связи подтверждены; полная история мастерской, состав помощников и варианты всех развесок не исследованы. Родство не утверждается, связи у записей. 09.11.2026: даты и материалы — Метрополитен и LACMA; галерея: галерея Джека Шейнмана как источник копий не подтвердилась, годы сняты.
 - domain:
     - art
   tier: 2
@@ -1170,12 +1226,24 @@
   gallery:
     - file: Māori_carving_school,_Whakarewarewa,_1982.jpg
       title: Школа резьбы в Факареварева
+      author: Эрик Уильям Янг
+      year: 1982
+      place: Институт искусств и ремёсел маори, Роторуа
+      role: illustration
+      note: Снимок процесса.
+      whyRepresentative: Резчик работает долотом по спиральному узору панели.
     - file: TamatekapuaMeetingHouse.jpg
       title: Дом собраний Таматекапуа
+      author: резчики не указаны; снимок Джеймса Шука
+      year: снимок 2005 года
+      place: Марае Те Папаиоуру, Охинемуту, Роторуа
+      whyRepresentative: Резной столб и панели фронтона покрыты спиралями со вставками.
     - file: File:Nuova zelanda, maori, contenitore per tesoro waka huia, 1850-90 ca. 02 m.jpg
-      title: Nuova zelanda, maori, contenitore per tesoro waka huia, 1850-90 ca. 02 m
-      author: Francesco Bini
-      whyRepresentative: "Резной ларец для перьев: геометрический узор и скульптурная рукоять."
+      title: Вака хуиа, ларец для перьев
+      author: мастер маори, имя не указано
+      year: около 1850–1890
+      place: Временная выставка в Национальном музее Катара
+      whyRepresentative: Рельефные фигуры на крышке и плотные параллельные борозды поверхности.
   summary: >-
     Резные панели и сосуды соединяют объём, линейные борозды, спирали и ракушечные вставки; значения и
     формы различаются по назначению и местной традиции.
@@ -1297,13 +1365,11 @@
       src: Museum of New Zealand Te Papa Tongarewa
       lang: en
   review:
-    status: partial
-    date: "2026-10-15"
-    scope: [corpus]
+    status: reviewed
+    date: "2026-11-09"
+    scope: [relations, dates, text, images, gallery, corpus]
     note: >-
-      Подготовлен обзор трёх предметов; точная локальная атрибуция двух анонимных вещей и полный
-      региональный охват не установлены. История сбора и возврата taonga требует отдельного
-      исследования.
+      Корпус — 14.10.2026: Подготовлен обзор трёх предметов; точная локальная атрибуция двух анонимных вещей и полный региональный охват не установлены. История сбора и возврата taonga требует отдельного исследования. Родство не утверждается, связи у записей. 09.11.2026: описание и даты — Te Papa (записи корпуса) и Toi Māori; галерея — страницы файлов, снимок процесса помечен как иллюстрация.
   compare:
     - id: viking-art
       note: >-
@@ -1341,31 +1407,37 @@
     - Torres Strait Islander art
   gallery:
     - asset: assets/works/torres-print-1.jpg
-      title: "Торресова пролива: эстамп"
-      author: Художник Торресова пролива
-      year: 1990-е
-      credit: Torres Strait Islander artists
-      license: ©; образовательное использование
+      title: "Торресов пролив: эстамп"
+      author: художник не установлен
+      year: год не установлен
+      credit: источник копии не установлен
+      license: права не установлены; образовательное использование
       nonfree: true
-      reference: https://en.wikipedia.org/wiki/Torres_Strait_Islander_art
-      whyRepresentative: Чёрно-белая линейная графика с островными мотивами — язык печати Торресова пролива.
+      reference: https://www.qagoma.qld.gov.au/exhibition/time-and-tides
+      note: Прежняя подпись называла только регион и 1990-е; не подтверждено.
+      whyRepresentative: Чёрные фигуры на мелкой резной сетке заполняют клиновидный лист.
+      sources: [qag-torres-time-tides]
     - asset: assets/works/torres-print-2.jpg
-      title: "Торресова пролива: графика"
-      author: Художник Торресова пролива
-      year: 1990-е
-      credit: Torres Strait Islander artists
-      license: ©; образовательное использование
+      title: "Торресов пролив: линогравюра"
+      author: художник не установлен
+      year: год не установлен
+      credit: источник копии не установлен
+      license: права не установлены; образовательное использование
       nonfree: true
-      reference: https://en.wikipedia.org/wiki/Torres_Strait_Islander_art
-      whyRepresentative: Плотный узор и симметрия — характерная композиция островной печати.
+      reference: https://www.qagoma.qld.gov.au/exhibition/time-and-tides
+      note: Прежняя подпись называла только регион и 1990-е; не подтверждено.
+      whyRepresentative: Звери и охотники выделены чёрным на плотном белом узоре.
+      sources: [qag-torres-time-tides]
     - asset: assets/works/torres-strait-printmaking.jpg
-      reference: https://printsandprintmaking.gov.au/works/5018/
       title: Aralpaia Ar Zenikula, 1998
-      author: Alick Tipoti
+      author: Алик Типоти
+      year: 1998
       credit: Australian Prints + Printmaking / National Gallery of Australia
       license: © Alick Tipoti
       nonfree: true
+      reference: https://printsandprintmaking.gov.au/works/5018/
       whyRepresentative: Плотный линогравюрный узор с фигурами, лодкой и морскими мотивами.
+      sources: [app-tipoti-aralpaia-1998]
   summary: >-
     Современная региональная печатная графика связывает сильный контраст, подробный линейный рисунок,
     рассказы и новые предметные мотивы; художники сохраняют собственные системы формы.
@@ -1488,6 +1560,7 @@
     - field: corpus
       claim: Работа Робинсона датирована 2020; 2021 относится к программе резиденции.
       source: sunshine-robinson-fisherman
+    - { claim: "В 1990-х молодые резчики освоили лино- и ксилографию; названы Типоти, Мисси, Робинсон", field: description, source: qag-torres-time-tides }
   example:
     workId: tipoti-cairns-199936
     title: Kobupa thoerapiese, 1999.36
@@ -1528,12 +1601,11 @@
       src: QAGOMA
       lang: en
   review:
-    status: partial
-    date: "2026-10-15"
-    scope: [corpus]
+    status: reviewed
+    date: "2026-11-09"
+    scope: [relations, dates, text, images, gallery, corpus]
     note: >-
-      Обзор ограничен тремя листами трёх авторов. Разночтения имени Мисси и дат разных оттисков не
-      унифицированы без основания; сцена не считается полностью представленной.
+      Корпус — 14.10.2026: Обзор ограничен тремя листами трёх авторов. Разночтения имени Мисси и дат разных оттисков не унифицированы без основания; сцена не считается полностью представленной. Родство не утверждается, связи у записей. 09.11.2026: описание и даты — QAGOMA, NGA, Sunshine Coast; галерея: у двух копий источник не установлен, у третьей подтверждена запись NGA.
 - domain:
     - art
   tier: 3
@@ -1561,30 +1633,36 @@
   gallery:
     - asset: assets/works/alick-print-1.jpg
       title: "Алик Типоти: линогравюра"
-      author: Алик Типоти
-      year: 2000-е
-      credit: Alick Tipoti
-      license: © Alick Tipoti
+      author: Алик Типоти (по прежней подписи, не подтверждено)
+      year: год не установлен
+      credit: источник копии не установлен
+      license: права не установлены; образовательное использование
       nonfree: true
-      reference: https://en.wikipedia.org/wiki/Alick_Tipoti
-      whyRepresentative: Силуэты каноэ и фигур на чёрном фоне — фирменный язык линогравюр Типоти.
+      reference: https://www.visualarts.qld.gov.au/content/fortitude_standard0.asp?name=AlickTipoti_Artwork
+      note: Название работы не установлено.
+      whyRepresentative: Ряд гребцов и воинов заполняет лист в форме лодки.
+      sources: [qag-tipoti-artwork]
     - asset: assets/works/alick-print-2.jpg
       title: "Алик Типоти: процессия"
-      author: Алик Типоти
-      year: 2000-е
-      credit: Alick Tipoti
-      license: © Alick Tipoti
+      author: Алик Типоти (по прежней подписи, не подтверждено)
+      year: год не установлен
+      credit: источник копии не установлен
+      license: права не установлены; образовательное использование
       nonfree: true
-      reference: https://en.wikipedia.org/wiki/Alick_Tipoti
-      whyRepresentative: Ритмический ряд фигур и гравированных линий — характерная композиция художника.
+      reference: https://www.visualarts.qld.gov.au/content/fortitude_standard0.asp?name=AlickTipoti_Artwork
+      note: Название работы не установлено.
+      whyRepresentative: Ритмический ряд фигур идёт по длинному горизонтальному полю.
+      sources: [qag-tipoti-artwork]
     - asset: assets/works/alick-tipoti.jpg
-      reference: https://printsandprintmaking.gov.au/works/19915/
       title: Paths of my tradition
-      author: Alick Tipoti
+      author: Алик Типоти
+      year: 1994
       credit: Australian Prints + Printmaking / National Gallery of Australia
       license: © Alick Tipoti
       nonfree: true
-      whyRepresentative: Линогравюра с лодкой, фигурами и знаками; характерная резкая чёрно-белая манера.
+      reference: https://printsandprintmaking.gov.au/works/19915/
+      whyRepresentative: Линогравюра с лодкой и дюгонем, цвет нанесён губкой.
+      sources: [app-tipoti-paths-1994]
   summary: >-
     Плотный рисунок из фигур, мелких заполнений и контрастных прорезей делает лист одновременно
     повествовательным изображением и орнаментальным полем.
@@ -1706,6 +1784,7 @@
         Архив QAG описывает движение от основных фигур к заполняющим мотивам и связь с островом Баду и
         рассказами старших.
       source: qag-tipoti-artwork
+    - { claim: "Soll — 2000 год; номер 2001.28 относится к приобретению", field: dates, source: cairns-tipoti-soll }
   example:
     workId: tipoti-cairns-199936
     title: Kobupa thoerapiese, 1999.36
@@ -1747,12 +1826,11 @@
       src: Queensland Art Gallery
       lang: en
   review:
-    status: partial
-    date: "2026-10-15"
-    scope: [dates, corpus]
+    status: reviewed
+    date: "2026-11-09"
+    scope: [relations, dates, text, images, gallery, corpus]
     note: >-
-      Даты, три отдельных экземпляра и ограниченный авторский корпус сверены. Сломанные относительные
-      ссылки Cairns исправлены в адресах атласа; права на воспроизведение не заявлены.
+      Корпус — 14.10.2026: Даты, три отдельных экземпляра и ограниченный авторский корпус сверены. Сломанные относительные ссылки Cairns исправлены в адресах атласа; права на воспроизведение не заявлены. Родство не утверждается, связи у записей. 09.11.2026: даты и описание — Cairns и архив QAG; галерея: у двух копий источник и год не установлены, у третьей подтверждена запись NGA, 1994 год.
 - domain:
     - art
   tier: 2
@@ -1783,8 +1861,18 @@
   gallery:
     - file: Turkey;_Iznik_-_Two_Tiles_-_Google_Art_Project.jpg
       title: Изникские изразцы
+      author: мастерская Изника; мастер не указан
+      year: около 1560
+      place: Чикагский институт искусств
+      note: Изразцы, не блюда; тот же центр, другой формат.
+      whyRepresentative: Кобальтовые завитки и зубчатые листья читаются на белом поле.
     - file: Rustem Pasha Mosque mihrab tiles DSCF2406.jpg
       title: Изразцы мечети Рюстема-паши
+      author: мастера Изника, имена не указаны
+      year: снимок 2011 года
+      place: Стамбул
+      note: Архитектурные изразцы, не блюда.
+      whyRepresentative: Стена михраба покрыта повторяющимся узором в синей гамме.
   summary: >-
     Чёткий рисунок под прозрачной глазурью связывает белое поле, насыщенный цвет, цветочные или фигурные
     мотивы и самостоятельный орнамент борта.
@@ -1880,6 +1968,7 @@
     - field: dates
       claim: Met датирует блюдо с калейдоскопическим узором приблизительно 1580–1585 годами.
       source: met-iznik-kaleido
+    - { claim: "Stonepaste, роспись под прозрачной глазурью, Изник", field: description, source: met-iznik-birds }
   example:
     workId: iznik-met-59691
     title: Блюдо с двумя птицами среди цветов, 59.69.1
@@ -1916,9 +2005,8 @@
       src: The Metropolitan Museum of Art
       lang: en
   review:
-    status: partial
-    date: "2026-10-15"
-    scope: [corpus]
+    status: reviewed
+    date: "2026-11-09"
+    scope: [relations, dates, text, images, gallery, corpus]
     note: >-
-      Три отдельных блюда, подписи и изображения сверены. Корпус ограничен концом XVI–XVII века;
-      изразцы, ранние изделия и полная история мастерских и владения не исследованы.
+      Корпус — 14.10.2026: Три отдельных блюда, подписи и изображения сверены. Корпус ограничен концом XVI–XVII века; изразцы, ранние изделия и полная история мастерских и владения не исследованы. Родство не утверждается, связи у записей. 09.11.2026: текст и даты — записи Метрополитена; галерея — страницы файлов, изразцы помечены как другой формат того же центра.
