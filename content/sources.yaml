@@ -7607,3 +7607,10 @@
   sourceType: museum
   checked: "2026-11-09"
   note: "Бакст, 1902, холст, масло, 150×100, Государственный Русский музей. То же собрание названо на старом портале «Русский музей: виртуальный филиал»."
+- id: portland-gov-building
+  title: "The Portland Building"
+  publisher: City of Portland
+  url: https://www.portland.gov/fleet-and-facilities/facilities/portland-building
+  sourceType: official
+  checked: "2026-11-09"
+  note: "Майкл Грейвз; здание построено в 1982 году, после реконструкции открыто в 2020 году."

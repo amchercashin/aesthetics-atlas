@@ -27,9 +27,6 @@ export const SOURCE_TYPES = ['museum', 'scholarly', 'primary', 'official', 'ency
 export const REVIEW_STATUS = ['reviewed', 'partial'];
 // Что именно сверено: заголовок отметки на странице собирается из этого списка.
 export const REVIEW_SCOPE = ['relations', 'dates', 'text', 'corpus', 'images', 'gallery'];
-// С этой даты отметка о сверке должна оставлять следы в данных (reviewTraceIssues). Более ранние отметки
-// ставились до правил; порог снимается, когда пройдут все партии (docs/superpowers/plans/2026-10-28-card-review.md).
-export const REVIEW_STANDARD_FROM = '2026-10-28';
 const HEX = /^#[0-9a-f]{6}$/i;
 const ID = /^[a-z0-9]+(-[a-z0-9]+)*$/;
 const DATE = /^\d{4}(-\d{2}(-\d{2})?)?$/;
@@ -252,7 +249,8 @@ export function validate(styles, eras, sources = []) {
         // reviewed — полная сверка: все части, которые есть у карточки. Иначе partial.
         const missing = applicableScope(s).filter((k) => !scope.includes(k));
         if (s.review.status === 'reviewed' && missing.length) errors.push(`${at} review.status reviewed, but not checked: ${missing.join(', ')}`);
-        if ((ymd(s.review.date) ?? '') >= REVIEW_STANDARD_FROM) for (const issue of reviewTraceIssues(s)) errors.push(`${at} review ${issue}`);
+        // Каждая заявленная часть оставляет следы в данных (стандарт — docs/superpowers/plans/2026-10-28-card-review.md).
+        for (const issue of reviewTraceIssues(s)) errors.push(`${at} review ${issue}`);
       }
     }
 

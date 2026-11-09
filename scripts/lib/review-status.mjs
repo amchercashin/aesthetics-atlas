@@ -1,6 +1,6 @@
 // Ход сверки карточек (план docs/superpowers/plans/2026-10-28-card-review.md): что не сверено, каких следов
 // сверки не хватает и сколько осталось по issues №44–48. Чистые функции без сети.
-import { applicableScope, reviewTraceIssues, REVIEW_STANDARD_FROM, ymd } from './validate.mjs';
+import { applicableScope, reviewTraceIssues, ymd } from './validate.mjs';
 
 const PART = { relations: 'связи', dates: 'даты', text: 'описание', corpus: 'корпус', images: 'главная иллюстрация', gallery: 'галерея' };
 export const partNames = (keys) => keys.map((k) => PART[k] ?? k).join(', ');
@@ -16,9 +16,8 @@ export function reviewStatus(files, issues) {
     return {
       id: s.id, file, status: s.review?.status ?? 'legacy', date, scope,
       missing: applicableScope(s).filter((k) => !scope.includes(k)),
-      // Следы проверяются для заявленного scope; до порога это долг, после — ошибка сборки.
+      // Следы проверяются для заявленного scope; их нехватка — ошибка сборки.
       trace: s.review ? reviewTraceIssues(s) : [],
-      enforced: (date ?? '') >= REVIEW_STANDARD_FROM,
       gallery: (s.gallery ?? []).length, galleryGaps: galleryGaps(s),
     };
   }));
@@ -50,13 +49,13 @@ export function toMarkdown({ cards, progress }, { file = null } = {}) {
     `- №46, черновые карточки: осталось ${p[46].left.length} из ${p[46].total}.`,
     `- №48, неполная сверка: осталось ${p[48].left.length} из ${ofCards(p[48].total)}.`,
     `- Полностью сверены: ${cards.filter((c) => c.status === 'reviewed').length} из ${cards.length}.`,
-    `- Ошибки стандарта сверки (отметки с ${REVIEW_STANDARD_FROM}): ${cards.filter((c) => c.enforced && c.trace.length).length}; старых отметок без следов: ${cards.filter((c) => !c.enforced && c.trace.length).length}.`,
+    `- Ошибки стандарта сверки: ${cards.filter((c) => c.trace.length).length}.`,
   ];
   for (const f of [...new Set(cards.map((c) => c.file))].filter((f) => !file || f === file)) {
     const rows = cards.filter((c) => c.file === f);
     lines.push('', `## ${f}`, '', '| Карточка | Статус | Не сверено | Не хватает следов | Галерея без подписи |', '|---|---|---|---|---|');
     for (const c of rows) {
-      const trace = c.trace.length ? `${c.enforced ? '**ошибка:** ' : ''}${c.trace.join('; ')}` : '';
+      const trace = c.trace.length ? `**ошибка:** ${c.trace.join('; ')}` : '';
       lines.push(`| \`${c.id}\` | ${c.status} | ${partNames(c.missing)} | ${trace} | ${c.galleryGaps ? `${c.galleryGaps} из ${c.gallery}` : ''} |`);
     }
   }

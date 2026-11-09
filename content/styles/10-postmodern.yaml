@@ -149,7 +149,7 @@
     note: Снимок августа 1982 года, примерно за восемь недель до открытия.
     whyRepresentative: >-
       Плоский фасад с крупными пилястрами-символами, гирляндами и резким цветом: классика превращена в цитату.
-    sources: [britannica-graves, commons-portland-1982]
+    sources: [britannica-graves, commons-portland-1982, portland-gov-building]
   evidence:
     - { claim: "Термин появился около 1970 года; реакция на модернизм", field: dates, source: tate-postmodernism }
     - { claim: "Радикальная окраина 1970-х, господствующий стиль 1980-х", field: description, source: ra26-postmodern }
