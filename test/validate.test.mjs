@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { validate, relationDateIssue, applicableScope, reviewTraceIssues, REVIEW_STANDARD_FROM } from '../scripts/lib/validate.mjs';
+import { validate, relationDateIssue, applicableScope, reviewTraceIssues } from '../scripts/lib/validate.mjs';
 
 const eras = [{ id: 'a', name: 'A', start: -50000, end: 0 }, { id: 'b', name: 'B', start: 0, end: 2030 }];
 const base = (over = {}) => ({
@@ -151,8 +151,8 @@ test('promptCues are optional, but when present they are 3–4 non-empty phrases
 });
 
 test('review must say what was checked', () => {
-  const review = (scope) => base({ review: { status: 'partial', date: '2026-10-16', scope } });
-  assert.deepEqual(validate([root, review(['relations', 'dates'])], eras).errors, []);
+  const review = (scope) => base({ parents: [{ id: 'root', type: 'evolved', status: 'unverified' }], review: { status: 'partial', date: '2026-10-16', scope } });
+  assert.deepEqual(validate([root, review(['relations'])], eras).errors, []);
   for (const [scope, msg] of [[undefined, 'must list'], [[], 'must list'], [['images', 'photos'], 'bad review.scope'], [['text', 'text'], 'duplicate review.scope']]) {
     assert.ok(validate([root, review(scope)], eras).errors.some((e) => e.includes(msg)), JSON.stringify(scope));
   }
@@ -169,7 +169,7 @@ test('subjects come only from the fixed vocabulary; any marks a universal style;
   assert.deepEqual(validate([root, base({ medium: ['sculpture', 'relief'] })], eras).errors, []);
 });
 
-// Сверка: reviewed — только полная; с REVIEW_STANDARD_FROM каждая заявленная часть оставляет следы в данных.
+// Сверка: reviewed — только полная; каждая заявленная часть оставляет следы в данных.
 const reviewSources = [{ id: 'src', title: 'Музей', url: 'https://museum.example/', sourceType: 'museum' }];
 const g = (over = {}) => ({ file: 'G.jpg', title: 'Ваза', author: 'мастер неизвестен', year: 'ок. 500 до н. э.', whyRepresentative: 'Чернофигурная роспись по оранжевой глине.', ...over });
 const traced = (scope, over = {}) => base({
@@ -178,7 +178,7 @@ const traced = (scope, over = {}) => base({
   evidence: [{ claim: 'Даты', field: 'dates', source: 'src' }, { claim: 'Описание', field: 'description', source: 'src' }],
   example: { file: 'X.jpg', title: 't', whyRepresentative: 'Видны признаки.', sources: ['src'] },
   gallery: [g()],
-  review: { status: 'partial', date: REVIEW_STANDARD_FROM, scope },
+  review: { status: 'partial', date: '2026-11-09', scope },
   ...over,
 });
 const reviewErrors = (s) => validate([root, s], eras, reviewSources).errors.filter((e) => e.includes('review'));
@@ -191,21 +191,21 @@ test('applicable review scope includes corpus and gallery only when the card has
 
 test('status reviewed requires every applicable part of the scope', () => {
   const full = ['relations', 'dates', 'text', 'images', 'gallery'];
-  assert.deepEqual(reviewErrors(traced(full, { review: { status: 'reviewed', date: REVIEW_STANDARD_FROM, scope: full } })), []);
+  assert.deepEqual(reviewErrors(traced(full, { review: { status: 'reviewed', date: '2026-11-09', scope: full } })), []);
   const short = reviewErrors(traced(['relations', 'text'], { review: { status: 'reviewed', date: '2026-10-14', scope: ['relations', 'text'] } }));
   assert.ok(short.some((e) => e.includes('not checked: dates, images, gallery')), short.join('\n'));
   // partial с неполной сверкой — нормальное состояние.
   assert.deepEqual(reviewErrors(traced(['relations'])), []);
 });
 
-test('review traces are enforced from the standard date, not for older reviews', () => {
+test('review traces are enforced whatever the review date', () => {
   const bare = { parents: [{ id: 'root', type: 'evolved' }], dateKind: undefined, evidence: [], example: { file: 'X.jpg', title: 't' }, gallery: [g({ author: 'Unknown authorUnknown author', year: null, whyRepresentative: 'Ваза' })] };
   const scope = ['relations', 'dates', 'text', 'images', 'gallery'];
-  const old = traced(scope, { ...bare, review: { status: 'partial', date: '2026-10-16', scope } });
-  assert.deepEqual(reviewErrors(old), []);
-  const fresh = reviewErrors(traced(scope, bare));
+  const earlier = reviewErrors(traced(scope, { ...bare, review: { status: 'partial', date: '2026-10-16', scope } }));
+  const later = reviewErrors(traced(scope, bare));
   for (const part of ['explicit status', 'dateKind', 'field "dates"', 'evidence for the text', 'whyRepresentative', 'caption sources', 'author of the work', 'needs a year', 'not the title']) {
-    assert.ok(fresh.some((e) => e.includes(part)), `${part}\n${fresh.join('\n')}`);
+    assert.ok(earlier.some((e) => e.includes(part)), `${part}\n${earlier.join('\n')}`);
+    assert.ok(later.some((e) => e.includes(part)), `${part}\n${later.join('\n')}`);
   }
 });
 

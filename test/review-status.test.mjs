@@ -1,7 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { reviewStatus, toMarkdown, checklist } from '../scripts/lib/review-status.mjs';
-import { REVIEW_STANDARD_FROM } from '../scripts/lib/validate.mjs';
 
 const g = { file: 'G.jpg', title: 'Ваза', author: 'мастер неизвестен', year: 'дата неизвестна', whyRepresentative: 'Роспись по глине.' };
 const files = [
@@ -10,9 +9,9 @@ const files = [
     { id: 'rel', review: { status: 'partial', date: '2026-10-16', scope: ['relations'] }, gallery: [g] },
   ] },
   { file: '02-b.yaml', styles: [
-    { id: 'full', review: { status: 'reviewed', date: REVIEW_STANDARD_FROM, scope: ['relations', 'dates', 'text', 'images', 'gallery'] },
+    { id: 'full', review: { status: 'reviewed', date: '2026-11-09', scope: ['relations', 'dates', 'text', 'images', 'gallery'] },
       dateKind: 'period', evidence: [{ field: 'dates' }, { field: 'description' }], example: { whyRepresentative: 'w', sources: ['s'] }, gallery: [g] },
-    { id: 'part', review: { status: 'partial', date: REVIEW_STANDARD_FROM, scope: ['relations', 'images'] }, example: {}, gallery: [g] },
+    { id: 'part', review: { status: 'partial', date: '2026-11-09', scope: ['relations', 'images'] }, example: {}, gallery: [g] },
   ] },
 ];
 const issues = { issues: {
@@ -30,12 +29,12 @@ test('progress per issue counts only the parts each issue asks for', () => {
   assert.deepEqual(r.progress[48].left, ['part']);
   const part = r.cards.find((c) => c.id === 'part');
   assert.deepEqual(part.missing, ['dates', 'text', 'gallery']);
-  assert.ok(part.enforced && part.trace.some((t) => t.includes('whyRepresentative')));
+  assert.ok(part.trace.some((t) => t.includes('whyRepresentative')));
   assert.equal(r.cards.find((c) => c.id === 'draft').galleryGaps, 1);
   assert.equal(r.cards.find((c) => c.id === 'full').galleryGaps, 0);
 });
 
-test('markdown report marks enforced trace problems and can be limited to one file', () => {
+test('markdown report marks trace problems and can be limited to one file', () => {
   const md = toMarkdown(reviewStatus(files, issues), { file: '02-b.yaml' });
   assert.match(md, /№45, даты, описание и главная иллюстрация: осталось 1 из 2 карточек/);
   assert.match(md, /№48, неполная сверка: осталось 1 из 1 карточки/);

@@ -5,7 +5,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import yaml from 'js-yaml';
-import { validate, reviewTraceIssues, SUBJECTS, MEDIUMS } from '../scripts/lib/validate.mjs';
+import { validate, reviewTraceIssues, applicableScope, SUBJECTS, MEDIUMS } from '../scripts/lib/validate.mjs';
 import { buildRecord } from '../scripts/lib/record.mjs';
 import { createStore } from '../js/store.js';
 import { buildIndex, search } from '../js/search.js';
@@ -106,7 +106,16 @@ test('every tier-1 card has visual promptCues without names of artists', () => {
   }
 });
 
-// Правила следов сверки (reviewTraceIssues) валидатор применяет к отметкам с REVIEW_STANDARD_FROM.
+// Сверка всех карточек закончена 09.11.2026: новая карточка входит в каталог только полностью сверенной.
+test('every card has a full review', () => {
+  for (const s of styles) {
+    assert.ok(s.review, `${s.id}: нет review`);
+    assert.equal(s.review.status, 'reviewed', `${s.id}: review.status`);
+    assert.deepEqual(applicableScope(s).filter((k) => !s.review.scope.includes(k)), [], `${s.id}: неполный review.scope`);
+  }
+});
+
+// Правила следов сверки (reviewTraceIssues) валидатор применяет ко всем отметкам.
 // Здесь — что сверенная галерея действительно подписана: этот тест заменил запрет на gallery в scope.
 test('every review lists its scope, and a checked gallery carries its captions', () => {
   for (const s of styles.filter((x) => x.review)) {

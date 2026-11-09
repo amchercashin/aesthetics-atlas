@@ -14,22 +14,6 @@
 | 03 | `03-antiquity.yaml` | [#59](https://github.com/amchercashin/aesthetics-atlas/pull/59) | 08.11.2026 | 7 | 17 (было 16) | слита |
 | 04 | `04-medieval.yaml` | [#60](https://github.com/amchercashin/aesthetics-atlas/pull/60) | 08.11.2026 | 13 | 28 | слита |
 | 05 | `05-renaissance.yaml` | [#62](https://github.com/amchercashin/aesthetics-atlas/pull/62) | 09.11.2026 | 13 | 26 | слита |
-| 05 | `05-renaissance.yaml` | | | 13 | 26 | не начата |
-| 06a | `06-xix.yaml`: neoclassicism … peredvizhniki | | | 8 | 16 | не начата |
-| 06b | `06-xix.yaml`: historicism … impressionism | | | 7 | 14 | не начата |
-| 07 | `07-fin-de-siecle.yaml` | | | 10 | 20 | не начата |
-| 08a | `08-avant-garde.yaml`: cubism … surrealism | | | 10 | 20 | не начата |
-| 08b | `08-avant-garde.yaml`: de-stijl … mexican-muralism | | | 10 | 21 | не начата |
-| 09a | `09-postwar.yaml`: abstract-expressionism … metabolism | | | 9 | 19 | не начата |
-| 09b | `09-postwar.yaml`: pop-art … computer-art | | | 9 | 18 | не начата |
-| 10 | `10-postmodern.yaml` | | | 14 | 28 | не начата |
-| 11 | `11-digital.yaml` | | | 12 | 24 | не начата |
-| 12a | `12-internet.yaml`: vaporwave … weirdcore | | | 8 | 18 | не начата |
-| 12b | `12-internet.yaml`: dreamcore … alien-core | | | 8 | 16 | не начата |
-| 13 | `13-pilot.yaml` | | | 12 | 31 | не начата |
-| 14 | `14-regional-traditions.yaml` | | | 10 | 30 | не начата |
-| 15 | `15-regional-graphics.yaml` | | | 10 | 30 | не начата |
-| 16 | `16-regional-languages.yaml` | | | 10 | 27 | не начата |
 | 06a | `06-xix.yaml: neoclassicism … peredvizhniki` | [#63](https://github.com/amchercashin/aesthetics-atlas/pull/63) | 09.11.2026 | 8 | 16 | слита |
 | 06b | `06-xix.yaml: historicism … impressionism` | [#64](https://github.com/amchercashin/aesthetics-atlas/pull/64) | 09.11.2026 | 7 | 14 | слита |
 | 07 | `07-fin-de-siecle.yaml` | [#65](https://github.com/amchercashin/aesthetics-atlas/pull/65) | 09.11.2026 | 10 | 20 | слита |
@@ -1441,6 +1425,14 @@
 - Страницы фонда Дибенкорна, журнала Time и города Портленд не перечитывались; карточки на них не опираются.
 
 Проверки: сборка 0 ошибок, тесты 201 из 201, `review-status` чист, `diff-atlas --expect` — 9 карточек с правкой примечания и подписи, `check-links` 0 битых по пяти изменённым файлам, снимки 390 и 1440.
+
+## Фаза 3. Завершение (09.11.2026)
+
+- Порог `REVIEW_STANDARD_FROM` снят: правила следов сверки действуют для всех карточек, включая новые.
+- Добавлен тест `every card has a full review`: у каждой карточки `review` со статусом `reviewed` и полным `scope`.
+- Итог: 195 карточек, 195 главных иллюстраций, 433 изображения галерей, 146 работ корпусов; в журнале 84 строки «Исправлено», 135 «Снято», замены изображений в 27 карточках. В реестре 942 источника.
+- «О проекте», README и `docs/content-audit.md` обновлены. Формулировка «открытых вопросов не осталось» заменена: чего источники не называют, то указано в подписи.
+- Что осталось открытым — [issue №80](https://github.com/amchercashin/aesthetics-atlas/issues/80).
 
 ## Шаблон раздела партии
 
