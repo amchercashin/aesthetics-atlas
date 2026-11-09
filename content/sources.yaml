@@ -2875,11 +2875,9 @@
   title: Psychedlic Promotion — Cooper Hewitt
   url: https://www.cooperhewitt.org/2013/12/16/psychedlic-promotion/
   sourceType: primary
-  checked: "2026-10-15"
+  checked: 2026-11-09
   publisher: cooperhewitt.org
-  note: >-
-    В психоделических плакатах прямо названа смесь ар-нуво и оп-арта. Изучена содержательная индексированная
-    выдержка; не весь текст
+  note: "В психоделических плакатах прямо названа смесь ар-нуво и оп-арта. Изучена содержательная индексированная выдержка; не весь текст Перечитано 09.11.2026: перечитан 09.11.2026: смесь ар-нуво и оп-арта в плакатах."
 - id: ra26-digital
   title: Digital art — V&A
   url: https://www.vam.ac.uk/articles/digital-art
@@ -6959,3 +6957,200 @@
   sourceType: press
   checked: 2026-11-09
   note: "Тангэ не входил в группу метаболистов, но был её наставником."
+# Партия 09b (09.11.2026)
+- id: tate-pop-art
+  title: "Pop art"
+  publisher: "Tate"
+  url: https://www.tate.org.uk/art/art-terms/p/pop-art
+  sourceType: museum
+  checked: 2026-11-09
+  note: "Середина 1950-х в Британии, конец 1950-х в Америке; источники образов; ирония британской ветви."
+- id: tate-whaam
+  title: "'Whaam!', Roy Lichtenstein, 1963"
+  publisher: "Tate"
+  url: https://www.tate.org.uk/art/artworks/lichtenstein-whaam-t00897
+  sourceType: museum
+  checked: 2026-11-09
+  note: "Лихтенштейн, 1963; показывается в Тейт Модерн."
+- id: tate-drawing-whaam
+  title: "Drawing for 'Whaam!', Roy Lichtenstein, 1963"
+  publisher: "Tate"
+  url: https://www.tate.org.uk/art/artworks/lichtenstein-drawing-for-whaam-t01131
+  sourceType: museum
+  checked: 2026-11-09
+  note: "Рисунок 1963 года; Т01131."
+- id: moma-campbell
+  title: "Campbell's Soup Cans"
+  publisher: "MoMA"
+  url: https://www.moma.org/collection/works/79809
+  sourceType: museum
+  checked: 2026-11-09
+  note: "Уорхол, 1962; акрил с металлизированной эмалью на холсте, 32 панели."
+- id: tate-op-art
+  title: "Op art"
+  publisher: "Tate"
+  url: https://www.tate.org.uk/art/art-terms/o/op-art
+  sourceType: museum
+  checked: 2026-11-09
+  note: "Живопись 1960-х; геометрия и оптические эффекты; Райли, Сото, Вазарели."
+- id: moma-responsive-eye
+  title: "The Responsive Eye"
+  publisher: "MoMA"
+  url: https://www.moma.org/calendar/exhibitions/2914
+  sourceType: museum
+  checked: 2026-11-09
+  note: "Выставка 23 февраля — 25 апреля 1965 года."
+- id: acc-movement-squares
+  title: "Movement in Squares"
+  publisher: "Arts Council Collection"
+  url: https://artscouncilcollection.org.uk/artwork/movement-squares
+  sourceType: museum
+  checked: 2026-11-09
+  note: "Бриджет Райли, 1961, Собрание Совета по делам искусств."
+- id: tate-kinetic-art
+  title: "Kinetic art"
+  publisher: "Tate"
+  url: https://www.tate.org.uk/art/art-terms/k/kinetic-art
+  sourceType: museum
+  checked: 2026-11-09
+  note: "С начала XX века; Габо 1919–1920; Калдер с 1930 года; крупное явление конца 1950-х и 1960-х."
+- id: tate-etc-homage
+  title: "Homage to destruction: Jean Tinguely"
+  publisher: "Tate Etc."
+  url: https://www.tate.org.uk/tate-etc/issue-17-autumn-2009/homage-destruction
+  sourceType: museum
+  checked: 2026-11-09
+  note: "Homage to New York, 1960, скульптура из хлама со свалок Нью-Джерси."
+- id: calder-crinkly
+  title: "Crinkly with a Red Disc, 1973"
+  publisher: "Calder Foundation"
+  url: https://calder.org/works/monumental-sculpture/crinkly-with-a-red-disc-1973
+  sourceType: official
+  checked: 2026-11-09
+  note: "Запись каталога фонда Калдера."
+- id: tate-minimalism
+  title: "Minimalism"
+  publisher: "Tate"
+  url: https://www.tate.org.uk/art/art-terms/m/minimalism
+  sourceType: museum
+  checked: 2026-11-09
+  note: "Конец 1950-х; расцвет 1960–1970-х; главные художники; материал и форма."
+- id: chinati-judd
+  title: "Donald Judd"
+  publisher: "Chinati Foundation"
+  url: https://chinati.org/collection/donald-judd/
+  sourceType: museum
+  checked: 2026-11-09
+  note: "15 работ в бетоне, 1980–1984, Марфа."
+- id: tonysmith-free-ride
+  title: "Free Ride"
+  publisher: "Tony Smith Estate"
+  url: https://www.tonysmithestate.com/sculpture/free-ride
+  sourceType: official
+  checked: 2026-11-09
+  note: "1962, сталь, чёрная окраска."
+- id: tate-conceptual-art
+  title: "Conceptual art"
+  publisher: "Tate"
+  url: https://www.tate.org.uk/art/art-terms/c/conceptual-art
+  sourceType: museum
+  checked: 2026-11-09
+  note: "Середина 1960-х — середина 1970-х; идея важнее предмета; «Фонтан» как первая концептуальная работа."
+- id: moma-one-three-chairs
+  title: "One and Three Chairs"
+  publisher: "MoMA"
+  url: https://www.moma.org/collection/works/81435
+  sourceType: museum
+  checked: 2026-11-09
+  note: "Кошут, 1965; стул, фотография и увеличенная словарная статья."
+- id: tate-monastyrski-mani
+  title: "Andrei Monastyrski on bringing together the work of the Moscow conceptualists"
+  publisher: "Tate Etc."
+  url: https://www.tate.org.uk/tate-etc/issue-41-autumn-2017/andrei-monastyrski-MANI-folders-moscow-conceptualists
+  sourceType: museum
+  checked: 2026-11-09
+  note: "«Коллективные действия» основаны в 1976 году; Кабаков участвовал в ранних акциях."
+- id: cooperhewitt-deliberately-disorienting
+  title: "Deliberately Disorienting"
+  publisher: "Cooper Hewitt, Smithsonian Design Museum"
+  url: https://www.cooperhewitt.org/2018/10/23/deliberately-disorienting/
+  sourceType: museum
+  checked: 2026-11-09
+  note: "56 плакатов Уилсона для Fillmore, 1966–1968; модерн; светошоу; жертва читаемостью."
+- id: commons-oracle-5
+  title: "File:San Francisco Oracle Cover Vol.1 No.5, January 1967.jpg"
+  publisher: "Wikimedia Commons"
+  url: https://commons.wikimedia.org/wiki/File:San_Francisco_Oracle_Cover_Vol.1_No.5,_January_1967.jpg
+  sourceType: catalog
+  checked: 2026-11-09
+  note: "Скан факсимильного издания The San Francisco Oracle, с. 89."
+- id: vam-space-age-chairs
+  title: "Space age chairs"
+  publisher: "Victoria and Albert Museum"
+  url: https://www.vam.ac.uk/articles/space-age-chairs
+  sourceType: museum
+  checked: 2026-11-09
+  note: "От спутника 1957 года до Луны 1969 года; стул Пантона, 1960; кресло-шар Аарнио."
+- id: boijmans-futuro
+  title: "Futuro: the house of the future renovated"
+  publisher: "Museum Boijmans Van Beuningen"
+  url: https://www.boijmans.nl/en/collection/in-depth/futuro-the-house-of-the-future-renovated
+  sourceType: museum
+  checked: 2026-11-09
+  note: "Сууронен, 1968; полиэстер, армированный стекловолокном."
+- id: eflux-futuro
+  title: "FUTURO"
+  publisher: "e-flux (объявление Die Neue Sammlung)"
+  url: https://www.e-flux.com/announcements/149367/futuro
+  sourceType: press
+  checked: 2026-11-09
+  note: "Дом «Футуро» у Die Neue Sammlung в Мюнхене."
+- id: spaceneedle-history
+  title: "Space Needle history"
+  publisher: "Space Needle, снимок веб-архива 08.09.2026"
+  url: https://web.archive.org/web/20260908082045/https://www.spaceneedle.com/history
+  sourceType: official
+  checked: 2026-11-09
+  note: "Башня к Всемирной выставке 1962 года; верх в форме летающей тарелки; Грэм и Стайнбрук."
+- id: tate-land-art
+  title: "Land art"
+  publisher: "Tate"
+  url: https://www.tate.org.uk/art/art-terms/l/land-art
+  sourceType: museum
+  checked: 2026-11-09
+  note: "Часть концептуального движения 1960–1970-х; «Спиральная дамба»; документация фото и картами."
+- id: dia-spiral-jetty
+  title: "Robert Smithson, Spiral Jetty"
+  publisher: "Dia Art Foundation, снимок веб-архива 10.10.2026"
+  url: https://web.archive.org/web/20261010082720/https://diaart.org/visit/visit-our-locations-sites/robert-smithson-spiral-jetty
+  sourceType: museum
+  checked: 2026-11-09
+  note: "1970; виток длиной 1500 футов из базальта; энтропия и уровень воды."
+- id: dia-lightning-field
+  title: "Walter De Maria, The Lightning Field"
+  publisher: "Dia Art Foundation, снимок веб-архива 11.10.2026"
+  url: https://web.archive.org/web/20261011081921/https://www.diaart.org/visit/visit-our-locations-sites/walter-de-maria-the-lightning-field
+  sourceType: museum
+  checked: 2026-11-09
+  note: "1977; 400 шестов из полированной нержавеющей стали, Нью-Мексико."
+- id: christo-gates
+  title: "The Gates"
+  publisher: "Christo and Jeanne-Claude"
+  url: https://christojeanneclaude.net/artworks/the-gates/
+  sourceType: official
+  checked: 2026-11-09
+  note: "1979–2005; 7503 рамы в Центральном парке, завершены 12 февраля 2005 года."
+- id: dam-noll
+  title: "A. Michael Noll"
+  publisher: "Digital Art Museum"
+  url: https://dam.org/museum/artists_ui/artists/noll-a-michael/
+  sourceType: museum
+  checked: 2026-11-09
+  note: "Первые работы — 1962 год, Bell Labs; выставка 1965 года."
+- id: dam-nake
+  title: "Frieder Nake"
+  publisher: "Digital Art Museum"
+  url: https://dam.org/museum/artists_ui/artists/nake-frieder/
+  sourceType: museum
+  checked: 2026-11-09
+  note: "С 1964 года Zuse Graphomat Z64; выставки 1965 года вместе с Нисом."
