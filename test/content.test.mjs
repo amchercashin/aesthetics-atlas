@@ -151,3 +151,20 @@ test('every card in the architecture domain lists architecture among its techniq
     assert.ok([].concat(s.medium).includes('architecture'), s.id);
   }
 });
+
+// Пояснения к связям, сопоставлениям и контекстам и примечания к источникам читатель видит на сайте.
+// В них не должно быть указаний редактору, английских кодов типов связи и склеенных служебных хвостов.
+test('reader-facing notes carry no editor instructions, relation codes or duplicated trace tails', () => {
+  const code = /\b(evolved|influence|reaction|revival|compare)\b|(^|[.;:]\s+)(Evolved|Influence|Reaction|Revival|Compare)\b/;
+  const verbs = 'ограничи|уточни|измени|сохрани|остави|ослаби|объявля|утвержда|подменя|распространя|представи|выводи|различа|приписыва|счита|замени|сня|убра|помети|понизи|повыси|отдели|предлага';
+  const order = new RegExp(`(^|[.;:]\\s+)(?:(?!нельзя|можно)[А-ЯЁа-яё]+\\s+)?(?:не\\s+)?(?:${verbs})[а-яё]*т[ьи](?=[\\s,:.;])|(нужно|следует|надо)\\s+(не\\s+)?(?:${verbs})`, 'i');
+  const jargon = /(?<![А-Яа-яЁё])стрелк[а-яё]*/i;
+  const tails = /Локатор: (.+?)\. \1(?= |$)|Перечитано [\d.]+: перечитан/;
+  const notes = [
+    ...styles.flatMap((s) => ['parents', 'compare', 'contexts'].flatMap((k) => (s[k] ?? [])
+      .filter((x) => x.note).map((x) => [`${s.id} ${k} ${x.id}`, x.note]))),
+    ...sources.filter((x) => x.note).map((x) => [`source ${x.id}`, x.note]),
+  ];
+  const bad = notes.filter(([, n]) => code.test(n) || order.test(n) || jargon.test(n) || tails.test(n)).map(([id]) => id);
+  assert.deepEqual(bad, []);
+});
