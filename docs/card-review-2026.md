@@ -1571,7 +1571,7 @@
 
 Сборка — 0 ошибок; тесты — 204 из 204; `review-status` — 0; `research:check` пройдена; `diff-atlas` против `main` с `--expect benin-court-art,kuba-textiles,ethiopian-christian-art,ife-sculpture,asante-kente,byzantine-art,old-russian-icons` — правки только у них (у четырёх старых карточек — обратные сопоставления или новый потомок); `check-links a-02-africa.yaml` — 28 ссылок, 0 битых, 13 «не проверить» (страницы Met открыты вручную, остальное — общие ресурсы сайта); снимки трёх карточек на 390 и 1440, карта; ошибок в консоли нет.
 
-## Партия A-03. Китай и Корея (13.11.2026)
+## Партия A-03. Китай и Корея (13.11.2026, PR #91)
 
 Новые карточки — в `content/styles/a-03-china-korea.yaml`.
 
