@@ -7630,3 +7630,87 @@
     сплав. Этикетка: фигуры повторяют монументальную каменную группу центрального святилища храма Мендут,
     построенного около 800 года, и отлиты, вероятно, вскоре после завершения храма. Изображение отмечено как
     общественное достояние.
+- id: unesco-ich-batik
+  title: Indonesian Batik
+  publisher: UNESCO Intangible Cultural Heritage
+  url: https://ich.unesco.org/en/RL/indonesian-batik-00170
+  sourceType: official
+  checked: '2026-11-13'
+  note: >-
+    Прочитано в браузере 13.11.2026 (автоматический запрос получает капчу). Включён в репрезентативный список в
+    2009 году. Мастера наносят точки и линии горячим воском; воск удерживает краситель, ткань окрашивают,
+    воск снимают кипятком и повторяют для новых цветов. Батик сопровождает жизнь от рождения до похорон.
+    Разнообразие узоров вобрало арабскую каллиграфию, европейские букеты, китайских фениксов, японскую сакуру,
+    индийских и персидских павлинов. Начала практики страница не датирует.
+- id: met-batik-selendang
+  title: Shoulder Cloth (Selendang), 22.167.1
+  publisher: The Metropolitan Museum of Art
+  url: https://www.metmuseum.org/art/collection/search/307893
+  sourceType: museum
+  checked: '2026-11-13'
+  note: >-
+    Прочитано в браузере 13.11.2026. Этикетка: упорядоченные композиции и сдержанные цвета характерны для
+    батика Центральной Явы; два основных типа узоров — растительный семен и геометрический чеплок. При дворах
+    Джокьякарты и Суракарты узор указывал на ранг; в XVIII веке часть узоров разрешалась только знати и
+    королевской семье (pola larangan, «запретные узоры»), позже запреты ослабли.
+- id: met-batik-tambal
+  title: Headcloth, 58.33.4
+  publisher: The Metropolitan Museum of Art
+  url: https://www.metmuseum.org/art/collection/search/308267
+  sourceType: museum
+  checked: '2026-11-13'
+  note: >-
+    Прочитано в браузере 13.11.2026. Головной платок из Пекалонгана с узором тамбал, середина XIX — начало
+    XX века. Этикетка: тамбал делают на северном побережье и во внутренней части Центральной Явы; на северном
+    побережье такие узоры в основном декоративны, в Центральной Яве части мотивов приписывали защитную силу.
+- id: met-batik-hokokai
+  title: Panel, 65.38.1
+  publisher: The Metropolitan Museum of Art
+  url: https://www.metmuseum.org/art/collection/search/309297
+  sourceType: museum
+  checked: '2026-11-13'
+  note: >-
+    Прочитано в браузере 13.11.2026. Многоцветная панель из Пекалонгана. Этикетка: в годы японской оккупации
+    сложился батик хококай, где почти не остаётся однотонного фона; он продолжает смешение яванских,
+    европейских и китайских влияний, начавшееся в центрах северного побережья в конце XIX века; мотив
+    кавунг когда-то был закреплён за дворами Центральной Явы. Дата в записи — около 1920-х, этикетка
+    относит панель к военным годам; расхождение в записи не разрешено.
+- id: met-pekalongan-kain-panjang
+  title: Sarong (Kain Panjang), 69.145
+  publisher: The Metropolitan Museum of Art
+  url: https://www.metmuseum.org/art/collection/search/309556
+  sourceType: museum
+  checked: '2026-11-13'
+  note: >-
+    Прочитано в браузере 13.11.2026: Пекалонган, Ява; середина XIX — начало XX века; хлопок; 69.145.
+    Изображение в открытом доступе Met (общественное достояние); локальная копия сделана с файла записи.
+    Этикетки у записи нет.
+- id: commons-ch-1961-115-27
+  title: "Kain Panjang (long Sarong) (Indonesia), 19th century (CH 18437553)"
+  publisher: Wikimedia Commons, данные Cooper Hewitt, Smithsonian Design Museum
+  url: https://commons.wikimedia.org/wiki/File:Kain_Panjang_(long_Sarong)_(Indonesia),_19th_century_(CH_18437553).jpg
+  sourceType: catalog
+  checked: '2026-11-13'
+  note: >-
+    Страница файла с данными собрания: 1961-115-27, Индонезия, XIX век, хлопок; узор семен из листьев, цветов
+    и растений равномерно покрывает ткань. Сайт музея закрыт проверкой от ботов, запись читалась на Commons.
+- id: commons-nmvw-7082-s-4393-29
+  title: "Wikkelrok met parang patroon, 7082-S-4393-29"
+  publisher: Wikimedia Commons, данные Nationaal Museum van Wereldculturen
+  url: https://commons.wikimedia.org/wiki/File:Collectie_NMvWereldculturen,_7082-S-4393-29,_Wikkelrok,_%27Wikkelrok_met_parang_patroon%27,_Batikatelier_van_Lawick_van_Pabst,_1875-1900.jpg
+  sourceType: catalog
+  checked: '2026-11-13'
+  note: >-
+    Страница файла с данными собрания: батиковая мастерская ван Лавик ван Пабст, 1875–1900, батик тулис по
+    хлопку; место — Джокьякарта; мотивы по образцу паранга, внутри — коричневые цветы и листья. Сайт музея
+    при проверке не ответил.
+- id: commons-tm-949-1
+  title: "Katoenen kokerrok met een Garebeg-optocht, TM-949-1"
+  publisher: Wikimedia Commons, данные Wereldmuseum Amsterdam
+  url: https://commons.wikimedia.org/wiki/File:COLLECTIE_TROPENMUSEUM_Katoenen_kokerrok_met_een_Garebeg-optocht_TMnr_949-1.jpg
+  sourceType: catalog
+  checked: '2026-11-13'
+  note: >-
+    Страница файла с описанием музея: саронг 1840–1867 годов; «голова» с треугольниками тумпал, на «теле» —
+    шесть рядов процессии Гаребег с каретами, воинами и сановниками. По записке при предмете это, возможно,
+    ткань мастерской Каролины фон Франкмон; музей это не утверждает.

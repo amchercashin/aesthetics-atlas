@@ -88,7 +88,7 @@ node -e 'const c=require("./research/expansion/catalog.json");const t={};for(con
 
 | ID | Тема партии | Кандидаты | Статус | PR | Итог |
 | --- | --- | --- | --- | --- | --- |
-| A-01 | Юго-Восточная Азия | `borobudur-art`, `indonesian-batik` (обзор), `nanyang-art`, `iban-pua-kumbu`, `tboli-tnalak`, `cheong-soo-pieng` | в работе | | `borobudur-art` готова |
+| A-01 | Юго-Восточная Азия | `borobudur-art`, `indonesian-batik` (обзор), `nanyang-art`, `iban-pua-kumbu`, `tboli-tnalak`, `cheong-soo-pieng` | в работе | | готовы `borobudur-art`, `indonesian-batik` |
 | A-02 | Африка южнее Сахары | `benin-court-art`, `ethiopian-christian-art` (обзор), `congolese-popular-painting`, `kuba-textiles`, `zaria-art-society`, `ibrahim-el-salahi`, `zanele-muholi` | — | | |
 | A-03 | Китай и Корея | `chinese-calligraphy` (обзор), `haipai-painting`, `lingnan-school`, `shamate`, `goryeo-celadon`, `buncheong`, `bojagi`, `dansaekhwa` | — | | |
 | A-04 | Япония | `rinpa`, `shin-hanga`, `hiroshige-landscape-prints`, `ainu-attus-ornament` | — | | |
