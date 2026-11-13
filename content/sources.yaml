@@ -7714,3 +7714,63 @@
     Страница файла с описанием музея: саронг 1840–1867 годов; «голова» с треугольниками тумпал, на «теле» —
     шесть рядов процессии Гаребег с каретами, воинами и сановниками. По записке при предмете это, возможно,
     ткань мастерской Каролины фон Франкмон; музей это не утверждает.
+- id: met-pua-cloud-ladder
+  title: Pua Kumbu “Cloud Ladder”, 2021.438.5
+  publisher: The Metropolitan Museum of Art
+  url: https://www.metmuseum.org/art/collection/search/855876
+  sourceType: museum
+  checked: '2026-11-13'
+  note: >-
+    Прочитано в браузере 13.11.2026. Ибаны, XIX век; варповый икат на хлопке ручного прядения, натуральные
+    красители. Этикетка: ткут ибанские женщины Саравака на станке с поясным упором; красно-коричневый тон даёт
+    энгкуду (корни и стебли Morinda citrifolia), чёрный — местное индиго тарум; стилизованные растения, узкие
+    ромбы с каймой и побеги наслаиваются в строго симметричный повтор; мотивы, по описанию музея, приходят
+    мастерицам во снах, такие ткани высокого статуса. Изображения в записи нет.
+- id: met-pua-figured-strips
+  title: Ceremonial cloth (pua kumbu), 2021.439.2
+  publisher: The Metropolitan Museum of Art
+  url: https://www.metmuseum.org/art/collection/search/855903
+  sourceType: museum
+  checked: '2026-11-13'
+  note: >-
+    Прочитано в браузере 13.11.2026. Ибанская мастерица, конец XIX века, хлопок. Этикетка: по краям — продольные
+    полосы с вытянутыми антропоморфными фигурами, центр — сцепленные узоры и ряды геометрии на красном фоне с
+    серо-голубыми акцентами индиго; узор заполняет всё полотно, кроме красных концов. Изображения в записи нет.
+- id: met-pua-1999-47-163
+  title: Ceremonial Textile (Pua Kumbu), 1999.47.163
+  publisher: The Metropolitan Museum of Art
+  url: https://www.metmuseum.org/art/collection/search/317626
+  sourceType: museum
+  checked: '2026-11-13'
+  note: >-
+    Прочитано в браузере 13.11.2026: ибаны, вероятно XVIII век, Малайзия, Борнео; хлопок; 240 × 108 см;
+    изображение — общественное достояние. Этикетки нет. Описание файла на Commons называет Западный Калимантан;
+    в подписи атласа принято место из записи музея.
+- id: cma-pua-1983-1041
+  title: Pua (Ceremonial Blanket), 1983.1041
+  publisher: The Cleveland Museum of Art
+  url: https://clevelandart.org/art/1983.1041
+  sourceType: museum
+  checked: '2026-11-13'
+  note: >-
+    Запись прочитана через открытый API музея (openaccess-api.clevelandart.org) 13.11.2026: Индонезия, Борнео,
+    район Саравака, ибаны; конец XIX — начало XX века; полотняное переплетение, хлопок, окраска икат;
+    197,5 × 88,6 см; CC0. Описания у записи нет.
+- id: rijks-pua-ak-mak-1742-14
+  title: Doek, AK-MAK-1742-14
+  publisher: Rijksmuseum
+  url: https://www.rijksmuseum.nl/en/collection/AK-MAK-1742-14
+  sourceType: museum
+  checked: '2026-11-13'
+  note: >-
+    Прочитано в браузере 13.11.2026: мастер неизвестен, 1900–1949; тканый хлопок, варповый икат; в центре —
+    мотив Baya Belanggar, обращённые друг к другу крокодилы. Полные данные на сайте не раскрылись.
+- id: commons-rijks-ak-mak-1742-14
+  title: "Doek Pua kumbu Baya belanggai, AK-MAK-1742-14"
+  publisher: Wikimedia Commons, данные Rijksmuseum
+  url: https://commons.wikimedia.org/wiki/File:Doek_Pua_kumbu_Baya_belanggai,_AK-MAK-1742-14.jpg
+  sourceType: catalog
+  checked: '2026-11-13'
+  note: >-
+    Страница файла с данными собрания: название «Pua kumbu. Baya belanggai», ткачиха анонимна, место
+    создания — Западный Калимантан, 1900–1949, хлопок, варповый икат.
