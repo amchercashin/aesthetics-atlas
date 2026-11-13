@@ -1462,7 +1462,7 @@
 
 Проверки: сборка 0 ошибок, тесты 203 из 203, `review-status` чист, `research:check` без ошибок, `diff-atlas --expect vaporwave,metaphysical-painting` — правки только у этих двух карточек, `check-links` 0 битых по двум изменённым файлам карточек (новые адреса The Art Story и Hyperallergic ответили; часть других адресов не проверилась из-за таймаутов сети), снимки 390 и 1440.
 
-## Партия A-01. Юго-Восточная Азия (13.11.2026)
+## Партия A-01. Юго-Восточная Азия (13.11.2026, PR #87)
 
 Первая партия [программы расширения](superpowers/plans/2026-11-13-expansion-program.md). Новые карточки — в `content/styles/a-01-southeast-asia.yaml`, решения — в `research/expansion/catalog.json`.
 
