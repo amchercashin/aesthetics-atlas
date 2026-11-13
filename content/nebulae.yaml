@@ -482,6 +482,14 @@ nebulae:
         name: Бронзы Чола
         styles:
           - chola-bronzes
+  - id: iskusstvo-dvora-benina
+    name: Искусство двора Бенина
+    color: '#7A5C2E'
+    parts:
+      - id: latun-i-kost-benina
+        name: Латунь и слоновая кость Бенина
+        styles:
+          - benin-court-art
   - id: skulptura-ife
     name: Скульптура Ифе
     color: '#95633D'
