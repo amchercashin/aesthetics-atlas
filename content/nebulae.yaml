@@ -76,6 +76,10 @@ nebulae:
           - fayum-portraits
           - byzantine-art
           - old-russian-icons
+      - id: hristianskaya-efiopiya
+        name: Христианская Эфиопия
+        styles:
+          - ethiopian-christian-art
       - id: islamskiy-mir
         name: Исламский мир
         styles:
