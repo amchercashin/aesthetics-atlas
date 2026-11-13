@@ -518,6 +518,18 @@ nebulae:
         name: Пуа кумбу ибанов
         styles:
           - iban-pua-kumbu
+  - id: keramika-korei
+    name: Керамика Кореи
+    color: '#5E8C7A'
+    parts:
+      - id: seladon-koryo
+        name: Селадон Корё
+        styles:
+          - goryeo-celadon
+      - id: punchkhon
+        name: Пунчхон
+        styles:
+          - buncheong
   - id: rezba-maori
     name: Резьба по дереву маори
     color: '#AF563C'
