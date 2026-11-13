@@ -70,7 +70,8 @@ test('map layout: the check catches a part torn away from its sea in the plain g
   // и «Караваджо и голландцы» рвались между двумя концами карты.
   const old = layoutGenealogy(nodes, sc.x, { now: NOW, dot: 16, gap: 22, tail: 28, longGap: LONG });
   const v = violations(old);
-  assert.ok(v.some((m) => m.includes('vozrozhdenie-i-barokko/karavadzho-i-gollandcy')), v.join('\n'));
+  // Какая именно часть оторвётся, зависит от состава карточек; важно, что проверка видит разрыв части.
+  assert.ok(v.some((m) => m.startsWith('часть ')), v.join('\n'));
   assert.ok(v.some((m) => m.startsWith('области')), v.join('\n'));
 });
 

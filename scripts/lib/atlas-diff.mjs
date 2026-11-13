@@ -23,6 +23,11 @@ export function diffAtlas(before, after) {
     .filter((k) => !['styles', 'builtAt'].includes(k) && !same(before[k], after[k]));
   const prev = new Map(before.styles.map((s) => [s.id, s]));
   const next = new Map(after.styles.map((s) => [s.id, s]));
+  // order — номер после сортировки; новая карточка сдвигает его у всех следующих. Правка — только
+  // перестановка среди карточек, которые есть в обоих файлах.
+  const rank = (list, other) => new Map(list.filter((s) => other.has(s.id))
+    .sort((x, y) => (x.order ?? 0) - (y.order ?? 0)).map((s, i) => [s.id, i]));
+  const rankBefore = rank(before.styles, next), rankAfter = rank(after.styles, prev);
   const styles = [];
   for (const id of new Set([...prev.keys(), ...next.keys()])) {
     const a = prev.get(id), b = next.get(id);
@@ -30,6 +35,7 @@ export function diffAtlas(before, after) {
     const fields = [];
     for (const k of new Set([...Object.keys(a), ...Object.keys(b)])) {
       if (same(a[k], b[k])) continue;
+      if (k === 'order' && rankBefore.get(id) === rankAfter.get(id)) continue;
       if (k === 'example') fields.push(...imageChanges(a[k], b[k]).map((x) => `example.${x}`));
       else if (k === 'gallery' || k === 'corpus') fields.push(...listChanges(a[k], b[k]).map((x) => `${k}.${x}`));
       else fields.push(k);

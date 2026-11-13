@@ -29,6 +29,10 @@ nebulae:
         name: Ангкор
         styles:
           - khmer-temple-art
+      - id: buddiyskaya-yava
+        name: Буддийская Ява
+        styles:
+          - borobudur-art
       - id: greciya
         name: Греция
         styles:
@@ -486,6 +490,14 @@ nebulae:
         name: Металл и терракота Ифе
         styles:
           - ife-sculpture
+  - id: tekstil-yugo-vostochnoy-azii
+    name: Текстиль Юго-Восточной Азии
+    color: '#9B5A8C'
+    parts:
+      - id: batik-indonezii
+        name: Батик Индонезии
+        styles:
+          - indonesian-batik
   - id: rezba-maori
     name: Резьба по дереву маори
     color: '#AF563C'
