@@ -8080,3 +8080,101 @@
     Запись прочитана через открытый API Met 13.11.2026: Елюй Чуцай, датировано 1240 годом, свиток, тушь на
     бумаге. Очерк Met о каллиграфии приводит этот свиток среди примеров того, как движения кисти выдают
     характер пишущего. Файл DT6277 совпадает с Commons.
+- id: met-essay-rinpa
+  title: "Rinpa Painting Style"
+  publisher: The Metropolitan Museum of Art, Heilbrunn Timeline of Art History
+  url: https://www.metmuseum.org/essays/rinpa-painting-style
+  sourceType: museum
+  checked: '2026-11-13'
+  note: >-
+    Очерк отдела искусства Азии (2003), прочитан 13.11.2026. Ринпа — часть возрождения в эпоху Эдо местных
+    художественных интересов, описываемых словом ямато-э; живопись, ткани, керамика и лак с яркими цветами в
+    декоративной узорчатой манере; темы — природа и времена года из японской литературы («Гэндзи», «Исэ»,
+    придворная поэзия Хэйан). Начало — Хонъами Коэцу (1558–1637) и Таварая Сотацу (ум. около 1640): каллиграфия
+    Коэцу поверх декоративной живописи Сотацу, ритм и «узор на узоре». Название — от Огаты Корина (1658–1716);
+    это не организованная и не наследственная школа. Корин работал в ярких цветах или тушью, часто по золотому
+    фону, обобщённее предшественников; узоры переносились на ткани, лак и керамику. Возрождение в начале XIX века
+    — Сакаи Хоицу (1761–1828) в Эдо, темы времён года, больше подробностей; его ученик Судзуки Кицу (1796–1858)
+    — больше натурализма. Влияние продолжалось в XIX–XX веках, смешиваясь с укиё-э и нихонга.
+- id: met-koetsu-sotatsu-1975-268-59
+  title: "Poem by Kamo no Chōmei with Underpainting of Cherry Blossoms, 1975.268.59"
+  publisher: The Metropolitan Museum of Art
+  url: https://www.metmuseum.org/art/collection/search/44861
+  sourceType: museum
+  checked: '2026-11-13'
+  note: >-
+    Запись Met (открытый API, 13.11.2026): Хонъами Коэцу (каллиграфия), подмалёвок приписан Таварая Сотацу; 1606; лист сикиси, оформленный как свиток; тушь, золото и серебро на бумаге. Общественное достояние; файл DP341228 совпадает с Commons.
+- id: met-korin-irises-53-7
+  title: "Ogata Kōrin. Irises at Yatsuhashi (Eight Bridges), 53.7.1, .2"
+  publisher: The Metropolitan Museum of Art
+  url: https://www.metmuseum.org/art/collection/search/39664
+  sourceType: museum
+  checked: '2026-11-13'
+  note: >-
+    Запись Met (открытый API, 13.11.2026): Огата Корин, после 1709; пара шестистворчатых ширм; тушь и краски по сусальному золоту на бумаге. Этикетка (прочитана): вертикальные ирисы и угловатый мост, пересекающий обе ширмы по диагонали, отсылают к эпизоду «Исэ моногатари». Общественное достояние; файл DT231 совпадает с Commons.
+- id: met-korin-waves-26-117
+  title: "Ogata Kōrin. Rough Waves, 26.117"
+  publisher: The Metropolitan Museum of Art
+  url: https://www.metmuseum.org/art/collection/search/44918
+  sourceType: museum
+  checked: '2026-11-13'
+  note: >-
+    Запись Met (открытый API, 13.11.2026): Огата Корин, около 1704–1709; двустворчатая ширма; тушь, краски и сусальное золото на бумаге. Общественное достояние; файл DT1615 совпадает с Commons.
+- id: met-hoitsu-persimmon-57-156-3
+  title: "Sakai Hōitsu. Persimmon Tree, 57.156.3"
+  publisher: The Metropolitan Museum of Art
+  url: https://www.metmuseum.org/art/collection/search/45392
+  sourceType: museum
+  checked: '2026-11-13'
+  note: >-
+    Запись Met (открытый API, 13.11.2026): Сакаи Хоицу, 1816; двустворчатая ширма; тушь и краски на бумаге. Общественное достояние; файл DT966 совпадает с Commons.
+- id: met-kiitsu-morning-glories-54-69
+  title: "Suzuki Kiitsu. Morning Glories, 54.69.1, .2"
+  publisher: The Metropolitan Museum of Art
+  url: https://www.metmuseum.org/art/collection/search/48982
+  sourceType: museum
+  checked: '2026-11-13'
+  note: >-
+    Запись Met (открытый API, 13.11.2026): Судзуки Кицу, начало XIX века; пара шестистворчатых ширм; тушь, краски и сусальное золото на бумаге. Общественное достояние; файл DT1588 совпадает с Commons.
+- id: met-hiroshige-kanbara-jp2492
+  title: "Utagawa Hiroshige. Evening Snow at Kanbara, JP2492"
+  publisher: The Metropolitan Museum of Art
+  url: https://www.metmuseum.org/art/collection/search/56915
+  sourceType: museum
+  checked: '2026-11-13'
+  note: >-
+    Прочитано 13.11.2026. Утагава Хиросигэ (1797–1858), серия «Пятьдесят три станции Токайдо», около
+    1833–1834; цветная ксилография. Этикетка: глубокий снег на склоне Камбары вечером, тишина; сцена
+    воображаемая — Хиросигэ проезжал Камбару летом, а такой снег там необычен. Файл DP109333 совпадает с
+    Commons.
+- id: met-hiroshige-shono-jp41
+  title: "Utagawa Hiroshige. Sudden Shower at Shōno, JP41"
+  publisher: The Metropolitan Museum of Art
+  url: https://www.metmuseum.org/art/collection/search/36521
+  sourceType: museum
+  checked: '2026-11-13'
+  note: >-
+    Прочитано 13.11.2026. Хиросигэ, «Пятьдесят три станции Токайдо», 1834–1835; цветная ксилография.
+    Этикетка: носильщики и путники бегут сквозь ливень, струи дождя переданы чёткими косыми линиями; вид,
+    по-видимому, вымышлен; на зонте — фамилия издателя серии Такэноути. Хиросигэ создал две очень популярные
+    серии — «53 станции Токайдо» и «Сто знаменитых видов Эдо». Файл DP122216 совпадает с Commons.
+- id: met-hiroshige-karasaki-jp52
+  title: "Utagawa Hiroshige. Night Rain at Karasaki, JP52"
+  publisher: The Metropolitan Museum of Art
+  url: https://www.metmuseum.org/art/collection/search/36531
+  sourceType: museum
+  checked: '2026-11-13'
+  note: >-
+    Прочитано 13.11.2026. Хиросигэ, серия «Восемь видов Оми», около 1835; цветная ксилография. Этикетка:
+    священная сосна Карасаки; впечатление ливня создано завесой тонких вертикальных линий туши поверх мягких
+    тональных переходов огромной сосны. Файл DP122118 совпадает с Commons.
+- id: met-hiroshige-jumantsubo-jp2520
+  title: "Utagawa Hiroshige. Jūmantsubo Plain at Fukagawa Susaki, JP2520"
+  publisher: The Metropolitan Museum of Art
+  url: https://www.metmuseum.org/art/collection/search/55733
+  sourceType: museum
+  checked: '2026-11-13'
+  note: >-
+    Прочитано 13.11.2026. Хиросигэ, серия «Сто знаменитых видов Эдо», 1856; ксилография нисики-э,
+    вертикальный формат обан. Этикетка: ястреб пикирует на заснеженные болота Дзюмантсубо; огромная фигура
+    птицы, увиденная с необычной точки, подчёркивает суровость погоды. Файл DP121668 совпадает с Commons.

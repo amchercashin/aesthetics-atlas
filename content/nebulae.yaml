@@ -59,9 +59,11 @@ nebulae:
         name: Япония
         styles:
           - yamato-e
+          - rinpa
           - wabi-sabi
           - ukiyo-e
           - hokusai-landscape-prints
+          - hiroshige-landscape-prints
       - id: pismo-syuya-bina
         name: Письмо как изображение у Сюй Бина
         styles:
