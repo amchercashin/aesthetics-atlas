@@ -76,6 +76,10 @@ nebulae:
           - fayum-portraits
           - byzantine-art
           - old-russian-icons
+      - id: hristianskaya-efiopiya
+        name: Христианская Эфиопия
+        styles:
+          - ethiopian-christian-art
       - id: islamskiy-mir
         name: Исламский мир
         styles:
@@ -424,6 +428,10 @@ nebulae:
         name: Боголанфини
         styles:
           - bogolanfini
+      - id: tkani-kuba
+        name: Ткани куба
+        styles:
+          - kuba-textiles
       - id: rospis-ndebele
         name: Роспись ндебеле
         styles:
@@ -482,6 +490,14 @@ nebulae:
         name: Бронзы Чола
         styles:
           - chola-bronzes
+  - id: iskusstvo-dvora-benina
+    name: Искусство двора Бенина
+    color: '#7A5C2E'
+    parts:
+      - id: latun-i-kost-benina
+        name: Латунь и слоновая кость Бенина
+        styles:
+          - benin-court-art
   - id: skulptura-ife
     name: Скульптура Ифе
     color: '#95633D'
