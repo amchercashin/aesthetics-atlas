@@ -498,6 +498,10 @@ nebulae:
         name: Батик Индонезии
         styles:
           - indonesian-batik
+      - id: pua-kumbu-ibanov
+        name: Пуа кумбу ибанов
+        styles:
+          - iban-pua-kumbu
   - id: rezba-maori
     name: Резьба по дереву маори
     color: '#AF563C'
