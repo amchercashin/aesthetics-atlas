@@ -29,6 +29,10 @@ nebulae:
         name: Ангкор
         styles:
           - khmer-temple-art
+      - id: buddiyskaya-yava
+        name: Буддийская Ява
+        styles:
+          - borobudur-art
       - id: greciya
         name: Греция
         styles:

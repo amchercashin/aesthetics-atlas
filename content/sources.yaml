@@ -390,8 +390,12 @@
   publisher: UNESCO World Heritage Centre
   url: https://whc.unesco.org/en/list/592/
   sourceType: official
-  checked: '2026-10-14'
-  note: Боробудур — буддийский памятник Явы; исключён из перечня кхмерских примеров.
+  checked: '2026-11-13'
+  note: >-
+    Боробудур — буддийский памятник Явы; исключён из перечня кхмерских примеров. Перечитано 13.11.2026 в
+    браузере (автоматический запрос получает 403): VIII–IX века, династия Шайлендра, долина Кеду; три яруса —
+    пять квадратных террас, три круглые платформы и ступа; рельефы около 2500 м²; 72 ажурные ступы со
+    статуями Будды; Мендут с монолитным Буддой и двумя бодхисаттвами и Павон стоят на одной оси с Боробудуром.
 - id: met-chinese-landscape
   title: Landscape Painting in Chinese Art
   publisher: The Metropolitan Museum of Art
@@ -7605,3 +7609,24 @@
   sourceType: official
   checked: "2026-11-09"
   note: "Майкл Грейвз; здание построено в 1982 году, после реконструкции открыто в 2020 году."
+- id: unesco-prambanan
+  title: Prambanan Temple Compounds
+  publisher: UNESCO World Heritage Centre
+  url: https://whc.unesco.org/en/list/642/
+  sourceType: official
+  checked: '2026-11-13'
+  note: >-
+    Прочитано в браузере 13.11.2026. Комплекс включает индуистский Лоро Джонгранг (IX век) и буддийский
+    ансамбль Севу — крупнейший буддийский комплекс Индонезии с четырьмя парами статуй дварапал; храмы
+    построены в VIII веке. Точных лет строительства Севу страница не называет.
+- id: met-mendut-triad
+  title: Enthroned Buddha with Avalokiteshvara and Vajrapani
+  publisher: The Metropolitan Museum of Art
+  url: https://www.metmuseum.org/art/collection/search/924665
+  sourceType: museum
+  checked: '2026-11-13'
+  note: >-
+    Запись 2025.295a–c, прочитана в браузере 13.11.2026: Центральная Ява, начало IX века, литой серебряный
+    сплав. Этикетка: фигуры повторяют монументальную каменную группу центрального святилища храма Мендут,
+    построенного около 800 года, и отлиты, вероятно, вскоре после завершения храма. Изображение отмечено как
+    общественное достояние.

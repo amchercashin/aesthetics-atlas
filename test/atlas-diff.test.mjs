@@ -37,3 +37,11 @@ test('added, removed and resized lists are reported, unchanged cards are not', (
   assert.deepEqual(styles.map((c) => [c.id, c.fields]), [['a', ['gallery.count']], ['b', ['removed']], ['n', ['added']]]);
   assert.deepEqual(diffAtlas(before, before).styles, []);
 });
+
+test('a new card shifting order is not an edit; a real reordering is', () => {
+  const before = atlas([card('a', { order: 0 }), card('b', { order: 1 }), card('c', { order: 2 })]);
+  const inserted = atlas([card('a', { order: 0 }), card('n', { order: 1 }), card('b', { order: 2 }), card('c', { order: 3 })]);
+  assert.deepEqual(diffAtlas(before, inserted).styles.map((c) => [c.id, c.fields]), [['n', ['added']]]);
+  const swapped = atlas([card('a', { order: 0 }), card('c', { order: 1 }), card('b', { order: 2 })]);
+  assert.deepEqual(diffAtlas(before, swapped).styles.map((c) => [c.id, c.fields]).sort(), [['b', ['order']], ['c', ['order']]]);
+});
