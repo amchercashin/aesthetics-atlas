@@ -193,6 +193,7 @@ nebulae:
         styles:
           - symbolism
           - mir-iskusstva
+          - bakst-stage-design
       - id: knizhnaya-grafika
         name: Книжная графика
         styles:
