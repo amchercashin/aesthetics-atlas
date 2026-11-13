@@ -458,6 +458,96 @@
         "N19"
       ],
       "instruction": "Проверить точный корпус, направление и источник; не импортировать как подтверждённую связь."
+    },
+    {
+      "fromId": "arts-and-crafts",
+      "toId": "deutscher-werkbund",
+      "type": "influence",
+      "status": "unverified",
+      "note": "Мутезиус изучал английское жилище и движение искусств и ремёсел; не выводить всю программу Веркбунда из Arts and Crafts без источника.",
+      "sourceCandidates": [],
+      "instruction": "Проверить направление и точный scope. Только после подтверждения добавить в parents целевой карточки."
+    },
+    {
+      "fromId": "deutscher-werkbund",
+      "toId": "bauhaus",
+      "type": "influence",
+      "status": "unverified",
+      "note": "Гропиус участвовал в выставке Веркбунда 1914 года (образцовая фабрика с Адольфом Мейером); влияние на программу Баухауса подтвердить источником.",
+      "sourceCandidates": [],
+      "instruction": "Проверить направление и точный scope. Только после подтверждения добавить в parents целевой карточки."
+    },
+    {
+      "fromId": "ulm-school",
+      "toId": "braun-rams-design",
+      "type": "influence",
+      "status": "unverified",
+      "note": "Карточка ulm-school описывает работу Гугелота с Braun (SK 4, 1956); проверить, насколько ульмская методика определила поздний корпус Braun.",
+      "sourceCandidates": [],
+      "instruction": "Проверить направление и точный scope. Только после подтверждения добавить в parents целевой карточки."
+    },
+    {
+      "fromId": "italian-radical-design",
+      "toId": "memphis-design",
+      "type": "evolved",
+      "status": "unverified",
+      "note": "Соттсасс работал со Studio Alchimia до основания Memphis в 1981 году; проверить формулировку по источнику.",
+      "sourceCandidates": [],
+      "instruction": "Проверить направление и точный scope. Только после подтверждения добавить в parents целевой карточки."
+    },
+    {
+      "fromId": "pop-art",
+      "toId": "italian-radical-design",
+      "type": "influence",
+      "status": "unverified",
+      "note": "Поп-цвет и ирония над потребительскими вещами; влияние подтвердить по конкретным предметам и текстам групп.",
+      "sourceCandidates": [],
+      "instruction": "Проверить направление и точный scope. Только после подтверждения добавить в parents целевой карточки."
+    },
+    {
+      "fromId": "shaker-design",
+      "toId": "scandinavian-modern",
+      "type": "influence",
+      "status": "unverified",
+      "note": "Датские мебельщики обращались к образцам шейкеров; назвать конкретные предметы и источник.",
+      "sourceCandidates": [],
+      "instruction": "Проверить направление и точный scope. Только после подтверждения добавить в parents целевой карточки."
+    },
+    {
+      "fromId": "streamline-moderne",
+      "toId": "populuxe-styling",
+      "type": "evolved",
+      "status": "unverified",
+      "note": "Харли Эрл возглавлял стайлинг General Motors с конца 1920-х; преемственность от стримлайна проверить.",
+      "sourceCandidates": [],
+      "instruction": "Проверить направление и точный scope. Только после подтверждения добавить в parents целевой карточки."
+    },
+    {
+      "fromId": "ulm-school",
+      "toId": "soviet-industrial-design",
+      "type": "influence",
+      "status": "unverified",
+      "note": "Методические контакты ВНИИТЭ с Ульмской школой — гипотеза; подтвердить по изданиям ВНИИТЭ.",
+      "sourceCandidates": [],
+      "instruction": "Проверить направление и точный scope. Только после подтверждения добавить в parents целевой карточки."
+    },
+    {
+      "fromId": "cubism",
+      "toId": "czech-cubism",
+      "type": "influence",
+      "status": "unverified",
+      "note": "Связь заявлена названием; перенос живописных приёмов в архитектуру и предметы подтвердить источником.",
+      "sourceCandidates": [],
+      "instruction": "Проверить направление и точный scope. Только после подтверждения добавить в parents целевой карточки."
+    },
+    {
+      "fromId": "mingei",
+      "toId": "japanese-industrial-design",
+      "type": "influence",
+      "status": "unverified",
+      "note": "Биографическая связь через Сори Янаги; визуальное влияние на промышленные изделия не доказано.",
+      "sourceCandidates": [],
+      "instruction": "Проверить направление и точный scope. Только после подтверждения добавить в parents целевой карточки."
     }
   ],
   "comparisonCandidates": [
@@ -796,6 +886,20 @@
       "note": "Различные локальные системы цветочного декоративного рисунка.",
       "genealogy": false,
       "status": "unverified"
+    },
+    {
+      "a": "y2k-aesthetic",
+      "b": "blobject-design",
+      "note": "Цветной полупрозрачный пластик и обтекаемая оболочка; проверить, не дублирует ли blobject предметную часть Y2K.",
+      "status": "editorial-proposal",
+      "genealogy": false
+    },
+    {
+      "a": "googie",
+      "b": "populuxe-styling",
+      "note": "Атомные и ракетные мотивы 1950-х; разграничить архитектуру и вывески с промышленными изделиями.",
+      "status": "editorial-proposal",
+      "genealogy": false
     }
   ],
   "contextCandidates": [
@@ -1069,6 +1173,14 @@
       "type": "uses-technique",
       "status": "unverified",
       "note": "Предложение редакционного размещения; уточнить период и применимость к выбранному корпусу.",
+      "instruction": "Контекстная связь не является parents/influence. Проверить принадлежность по источнику."
+    },
+    {
+      "fromId": "scandinavian-modern",
+      "toId": "mid-century-modern",
+      "type": "context-overlap",
+      "status": "unverified",
+      "note": "mid-century-modern включает Скандинавию в region и поисковые слова; решить, отдельная карточка или подраздел.",
       "instruction": "Контекстная связь не является parents/influence. Проверить принадлежность по источнику."
     }
   ]
