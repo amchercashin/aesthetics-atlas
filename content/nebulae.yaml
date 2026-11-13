@@ -424,6 +424,10 @@ nebulae:
         name: Боголанфини
         styles:
           - bogolanfini
+      - id: tkani-kuba
+        name: Ткани куба
+        styles:
+          - kuba-textiles
       - id: rospis-ndebele
         name: Роспись ндебеле
         styles:
