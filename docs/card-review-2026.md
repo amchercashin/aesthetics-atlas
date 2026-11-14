@@ -1668,7 +1668,7 @@
 node -e 'const fs=require("fs"),y=require("js-yaml");let n=0,c=new Set();for(const f of fs.readdirSync("content/styles").filter(f=>f.endsWith(".yaml")))for(const s of y.load(fs.readFileSync("content/styles/"+f,"utf8")))for(const im of [s.example,...(s.gallery||[]),...(s.corpus||[])].filter(Boolean))if(im.reference&&(!(im.file||im.asset)||im.rights?.embed===false)){n++;c.add(s.id)}console.log(n,c.size)'
 ```
 
-## Партия A-04b. Син-ханга (14.11.2026)
+## Партия A-04b. Син-ханга (14.11.2026, PR #95)
 
 Первая тема, закрытая по правилу изображений от 14.11.2026.
 
