@@ -288,12 +288,11 @@ nebulae:
           - googie
           - space-age
           - high-tech
-      - id: psihodeliya-i-solarpank
-        name: Психоделия и футуризмы
+      - id: psihodeliya-i-afrofuturizm
+        name: Психоделия и афрофутуризм
         styles:
           - psychedelic-art
           - afrofuturism
-          - solarpunk
   - id: pop-i-ulica
     name: Поп и улица
     color: '#E24B4A'
@@ -353,6 +352,7 @@ nebulae:
           - new-wave-graphic
           - cyberpunk
           - synthwave
+          - solarpunk
       - id: y2k
         name: Y2K и глянец нулевых
         styles:
