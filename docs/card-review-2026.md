@@ -1658,6 +1658,16 @@
 
 Сборка — 0 ошибок; тесты — 204 из 204; `review-status` — 0; `research:check` пройдена; `diff-atlas` против `main` с `--expect bakst-stage-design,vrubel-painting,mir-iskusstva,art-nouveau,symbolism` — правки только у них (у трёх старых — сопоставление и контексты); `check-links a-05-russia-ukraine.yaml` — 22 ссылки, 0 битых, 7 «не проверить» (страницы Met открыты скриптом); снимки обеих карточек на 390 и 1440; ошибок в консоли нет.
 
+## Поправка: правило изображений (14.11.2026)
+
+Решение владельца проекта: сайт некоммерческий, поэтому видимое изображение произведения берётся всегда — файл Commons или локальная копия, для охраняемых работ с `nonfree: true`. Ссылки вместо картинок в новых карточках не ставятся, у карточки 2–3 изображения. Права на изображение больше не повод откладывать тему. Правило записано в `CLAUDE.md` и в плане расширения.
+
+Пересчёт старых мест со ссылкой вместо картинки (`reference` без `file`/`asset` или `rights.embed: false`): 177 мест в 42 карточках. Меньше двух изображений нет ни у одной карточки. Замена — строка I-01 плана.
+
+```bash
+node -e 'const fs=require("fs"),y=require("js-yaml");let n=0,c=new Set();for(const f of fs.readdirSync("content/styles").filter(f=>f.endsWith(".yaml")))for(const s of y.load(fs.readFileSync("content/styles/"+f,"utf8")))for(const im of [s.example,...(s.gallery||[]),...(s.corpus||[])].filter(Boolean))if(im.reference&&(!(im.file||im.asset)||im.rights?.embed===false)){n++;c.add(s.id)}console.log(n,c.size)'
+```
+
 ## Шаблон раздела партии
 
 ```

@@ -79,6 +79,7 @@ node -e 'const c=require("./research/expansion/catalog.json");const t={};for(con
 - **Карточка входит только полностью сверенной:** `review.status: reviewed`, полный `scope`, следы в `evidence`, корпус из 3–5 самостоятельных работ, `medium` и `subjects`, место ровно в одной части моря в `content/nebulae.yaml`.
 - **Обзоры** (`overview`) проходят проверку полезности навигации и ясности охвата, а не четыре основания стиля. Одна картинка не представляет весь обзор.
 - **Журнал:** раздел «Партия A-NN» в [журнале сверки](../../card-review-2026.md) — что добавлено, объединено, отложено и почему.
+- **Изображения** (решение владельца, 14.11.2026, подробно — в `CLAUDE.md`). Видимое изображение произведения берётся всегда: файл Commons или локальная копия, для охраняемых работ — с `nonfree: true`. Ссылки вместо картинок не ставятся; у карточки 2–3 изображения. Права на изображение — не повод откладывать тему: остатки партий, отложенные из-за авторского права (Наньян, Чонг Су Пиенг, син-ханга, Линнань, тансэкхва, Приймаченко, Эль-Салахи, Мухоли и другие), закрываются карточками.
 
 **Проверки перед слиянием:** `npm run build` без ошибок, `npm test`, `npm run review-status` (0), `npm run research:check`, `node scripts/diff-atlas.mjs --expect <id новых карточек>`, `npm run check-links <файл партии>`, снимки каждой новой карточки на 390 и 1440 и карта с новыми точками.
 
@@ -197,6 +198,14 @@ R означает: сначала решить, нужен ли отдельн�
 | --- | --- | --- | --- | --- |
 | R-01 | Тренды и интернет-эстетики: `new-russian-folk-design`, `slavic-girl-aesthetic`, `post-soviet-doomer`, `indian-vernacular-maximalism`, `alte-lagos`, `hanfu-revival`, `sinofuturism`, `ps1-retro-aesthetic`; заодно P2 `calligraffiti` из той же группы | — | | |
 | R-02 | Авторы и обзоры: `chalermchai-temple-art`, `thandiwe-muriu`, `lisa-reihana`, `anna-ridler-datasets`, `japanese-animation`, `contemporary-photography`, `architecture-models`, `science-fiction-illustration`, `populuxe-styling`, `blobject-design`, `picasso-synthetic-cubism`, `recycle-group-digital-reliefs`, `pokras-lampas-calligraphy`, `andrey-bartenev-costume`, `orijit-sen-graphics` | — | | |
+
+## Поток I — изображения в старых карточках
+
+После решения владельца от 14.11.2026 ссылки вместо картинок заменяются изображениями. На 14.11.2026 таких мест 177 в 42 карточках, в основном в корпусах пилота и региональных партий. Пересчёт — скрипт в журнале раздела «Поправка: правило изображений».
+
+| ID | Что сделать | Статус | PR |
+| --- | --- | --- | --- |
+| I-01 | Заменить `reference` без картинки и `rights.embed: false` локальными копиями или файлами Commons с той же подписью; сверить, что на копии та же работа | — | |
 
 ## Поток S — служебный
 
