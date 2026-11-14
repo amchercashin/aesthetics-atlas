@@ -106,6 +106,15 @@ test('every tier-1 card has visual promptCues without names of artists', () => {
   }
 });
 
+// Лента главной берёт карточки tier 1: у каждого моря должна быть хотя бы одна, иначе море выпадает из ленты.
+test('every sea has at least one tier-1 card', () => {
+  const tierOf = new Map(styles.map((s) => [s.id, s.tier]));
+  for (const n of read('content/nebulae.yaml').nebulae) {
+    const ids = n.parts.flatMap((p) => p.styles);
+    assert.ok(ids.some((id) => tierOf.get(id) === 1), `${n.id}: нет карточки tier 1`);
+  }
+});
+
 // Сверка всех карточек закончена 09.11.2026: новая карточка входит в каталог только полностью сверенной.
 test('every card has a full review', () => {
   for (const s of styles) {
