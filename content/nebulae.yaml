@@ -190,6 +190,7 @@ nebulae:
         styles:
           - arts-and-crafts
           - art-nouveau
+          - neo-russian-style
           - vienna-secession
       - id: simvolizm
         name: Символизм
@@ -408,6 +409,18 @@ nebulae:
         name: Мезенские прялки
         styles:
           - mezen-painting
+  - id: ukrainskoe-narodnoe-iskusstvo
+    name: Украинское народное искусство
+    color: '#3A6EA5'
+    parts:
+      - id: petrikovskaya-rospis
+        name: Петриковская роспись
+        styles:
+          - petrykivka
+      - id: priymachenko
+        name: Мария Приймаченко
+        styles:
+          - prymachenko-imagery
   - id: zhivopis-indii
     name: Живопись Индии
     color: '#8D6EAA'
