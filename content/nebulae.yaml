@@ -523,6 +523,26 @@ nebulae:
         name: Металл и терракота Ифе
         styles:
           - ife-sculpture
+  - id: modernizm-i-sovremennost-afriki
+    name: Модернизм и современность Африки
+    color: '#C9A227'
+    parts:
+      - id: obshchestvo-zarii
+        name: Общество искусств Зарии
+        styles:
+          - zaria-art-society
+      - id: el-salahi
+        name: Ибрагим эль-Салахи
+        styles:
+          - ibrahim-el-salahi
+      - id: narodnaya-zhivopis-kongo
+        name: Народная живопись Конго
+        styles:
+          - congolese-popular-painting
+      - id: muholi
+        name: Занеле Мухоли
+        styles:
+          - zanele-muholi
   - id: modernizm-yugo-vostochnoy-azii
     name: Модернизм Юго-Восточной Азии
     color: '#C2703D'
