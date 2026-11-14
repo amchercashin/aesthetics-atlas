@@ -55,6 +55,8 @@ nebulae:
           - ancient-chinese-art
           - shan-shui
           - chinese-calligraphy
+          - haipai-painting
+          - lingnan-school
       - id: yaponskie-traditsii
         name: Япония
         styles:
@@ -241,6 +243,10 @@ nebulae:
           - conceptual-art
           - minimalism
           - land-art
+      - id: tansekhva
+        name: Тансэкхва
+        styles:
+          - dansaekhwa
   - id: modernizm-v-arhitekture
     name: Архитектура и дизайн
     color: '#378ADD'
@@ -352,6 +358,7 @@ nebulae:
           - y2k-aesthetic
           - frutiger-aero
           - skeuomorphism
+          - shamate
       - id: kory
         name: Коры
         styles:
@@ -540,6 +547,14 @@ nebulae:
         name: Пуа кумбу ибанов
         styles:
           - iban-pua-kumbu
+  - id: tkani-korei
+    name: Ткани Кореи
+    color: '#B5536B'
+    parts:
+      - id: pobagi
+        name: Побаги и чогакпо
+        styles:
+          - bojagi
   - id: keramika-korei
     name: Керамика Кореи
     color: '#5E8C7A'
