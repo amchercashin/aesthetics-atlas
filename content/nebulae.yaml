@@ -45,6 +45,7 @@ nebulae:
           - celtic-art
           - insular-art
           - viking-art
+          - perm-animal-style
   - id: dalniy-vostok
     name: Дальний Восток
     color: '#1D9E75'
@@ -409,6 +410,10 @@ nebulae:
         name: Мезенские прялки
         styles:
           - mezen-painting
+      - id: gzhel
+        name: Гжель
+        styles:
+          - gzhel-ceramics
   - id: ukrainskoe-narodnoe-iskusstvo
     name: Украинское народное искусство
     color: '#3A6EA5'
