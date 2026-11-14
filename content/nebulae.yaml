@@ -64,6 +64,7 @@ nebulae:
           - ukiyo-e
           - hokusai-landscape-prints
           - hiroshige-landscape-prints
+          - shin-hanga
       - id: ayny
         name: Айны
         styles:
