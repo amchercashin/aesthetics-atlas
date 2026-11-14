@@ -528,3 +528,378 @@
       note: >-
         Два способа резервной окраски ткани: в батике воск наносят на готовое полотно, в пуа кумбу узор
         задают перевязкой нитей основы до ткачества. Визуальное сравнение, не происхождение.
+- domain:
+    - art
+  tier: 3
+  origin: unknown
+  parents: []
+  approx: true
+  maturity: established
+  labelStatus: editorial-scope-title
+  id: cheong-soo-pieng
+  name: "Чонг Су Пиенг: китайская кисть и западная форма"
+  orig: 鍾泗濱 / Cheong Soo Pieng
+  kind: author-style
+  start: 1949
+  end: 1978
+  era: postwar
+  dateKind: corpus
+  dates: 1949–1978; выбранный корпус
+  medium:
+    - painting
+  subjects: [figure, everyday-life]
+  region: Сингапур, Юго-Восточная Азия; поездка на Бали в 1952 году
+  aliases:
+    - Чонг Су Пиенг
+    - Cheong Soo Pieng
+    - Чжун Сыбинь
+  searchKeywords:
+    - Наньян
+    - Бали
+    - Академия Наньян
+    - Лежащая женщина
+    - Сушка солёной рыбы
+    - маруфляж
+    - Сингапур
+  wiki: { en: Cheong Soo Pieng }
+  gallery:
+    - asset: assets/works/roots-cheong-balinese-selling-toddy-1954.jpg
+      title: Чонг Су Пиенг. «Балиец, продающий тодди»
+      author: Чонг Су Пиенг
+      year: 1954
+      medium: Акварель на бумаге
+      nonfree: true
+      credit: "National Heritage Board (Roots), очерк «Cheong Soo Pieng: Art and Patronage»"
+      license: охраняемое произведение; копия для некоммерческого атласа
+      reference: https://roots.gov.sg/stories-landing/stories/cheong-soo-pieng-art-and-patronage/story
+      place: Национальный совет по наследию Сингапура
+      sources: [roots-cheong-art-patronage]
+      whyRepresentative: >-
+        Сидящая фигура под зонтом окружена сосудами, контур тёмный и плотный, цвет положен плоскими пятнами: балийский сюжет после поездки 1952 года.
+  summary: >-
+    Живопись Чонг Су Пиенга 1949–1978 годов: китайские форматы свитка и тушь соединены с приёмами западного
+    модернизма, а фигуры Юго-Восточной Азии становятся всё более вытянутыми и стилизованными.
+  description: >-
+    Чонг Су Пиенг (1917–1983) приехал в Сингапур в 1946 году и преподавал в Академии изящных искусств Наньян.
+    Очерк Ло Сзе Ви на портале Национального совета по наследию разбирает три его женские фигуры, похожие по
+    сюжету и совершенно разные по технике. «Лежащая женщина» (1949) написана тушью в длинном формате
+    горизонтального свитка, обычно отведённом пейзажу. «Пляж на Бали» (1955) — масло с чертами примитивизма,
+    кубизма, фовизма и экспрессионизма. «Девушка с птичьей клеткой» — вертикальный свиток, где шея и руки
+    вытянуты, а веки тяжёлые.
+
+
+    Национальная галерея Сингапура подчёркивает, что Чонг переносил мотивы из техники в технику, а «Сушку
+    солёной рыбы» (1978), изображённую на купюре в 50 долларов, написал разными жидкими тушами по шёлку. Общий
+    принцип его языка — не один стиль, а соединение китайского формата и кисти с западной модернистской формой.
+    Этим он отличается от обзора «стиль Наньян»: по Ео Ман Тхонгу, четыре художника этого круга писали очень
+    по-разному.
+  traits:
+    - Китайские форматы горизонтального и вертикального свитка с западным сюжетом и композицией
+    - Плоский цвет и тёмный контур, заимствованные у западного модернизма
+    - Вытянутые стилизованные фигуры с тяжёлыми веками
+    - Сюжеты Юго-Восточной Азии — Бали, деревня, рынок — в тушью и в масле
+  corpus:
+    - workId: roots-woman-lying-down
+      asset: assets/works/roots-cheong-woman-lying-down-1949.jpg
+      title: Чонг Су Пиенг. «Лежащая женщина»
+      author: Чонг Су Пиенг
+      year: 1949
+      medium: Китайская тушь и краски на бумаге
+      nonfree: true
+      credit: "National Heritage Board (Roots), очерк «Cheong Soo Pieng: Art and Patronage»"
+      license: охраняемое произведение; копия для некоммерческого атласа
+      reference: https://roots.gov.sg/stories-landing/stories/cheong-soo-pieng-art-and-patronage/story
+      place: Национальный совет по наследию Сингапура
+      sources: [roots-cheong-art-patronage]
+      whyRepresentative: >-
+        Лежащая фигура вытянута по длинному горизонтальному полю, как пейзаж на свитке, тушь и мягкий цвет сочетаются с европейским мотивом обнажённой.
+    - workId: roots-bali-beach
+      asset: assets/works/roots-cheong-bali-beach-1955.jpg
+      title: Чонг Су Пиенг. «Пляж на Бали»
+      author: Чонг Су Пиенг
+      year: 1955
+      medium: Масло на холсте
+      nonfree: true
+      credit: "National Heritage Board (Roots), очерк «Cheong Soo Pieng: Art and Patronage»"
+      license: охраняемое произведение; копия для некоммерческого атласа
+      reference: https://roots.gov.sg/stories-landing/stories/cheong-soo-pieng-art-and-patronage/story
+      place: Национальный совет по наследию Сингапура
+      sources: [roots-cheong-art-patronage]
+      whyRepresentative: >-
+        Две женщины на пляже написаны плоскими красными, зелёными и охристыми полями с тёмным контуром, тела упрощены до крупных форм: западный модернизм в масле.
+    - workId: roots-girl-with-birdcage
+      asset: assets/works/roots-cheong-girl-with-birdcage.jpg
+      title: Чонг Су Пиенг. «Без названия (Девушка с птичьей клеткой)»
+      author: Чонг Су Пиенг
+      year: дата не указана
+      medium: Акварель на бумаге (по подписи; в тексте очерка — тушь)
+      nonfree: true
+      credit: "National Heritage Board (Roots), очерк «Cheong Soo Pieng: Art and Patronage»"
+      license: охраняемое произведение; копия для некоммерческого атласа
+      reference: https://roots.gov.sg/stories-landing/stories/cheong-soo-pieng-art-and-patronage/story
+      place: Национальный совет по наследию Сингапура
+      sources: [roots-cheong-art-patronage]
+      whyRepresentative: >-
+        Вытянутая фигура девушки с тяжёлыми веками стоит перед решёткой окон и клеток, фон разбит на прямоугольники: стилизация, о которой пишет очерк.
+    - workId: roots-drying-salted-fish
+      asset: assets/works/roots-cheong-drying-salted-fish-1978.jpg
+      title: Чонг Су Пиенг. «Сушка солёной рыбы»
+      author: Чонг Су Пиенг
+      year: 1978
+      medium: Китайская тушь и краски на ткани (шёлке)
+      nonfree: true
+      credit: "National Heritage Board (Roots), очерк «Cheong Soo Pieng: Art and Patronage»"
+      license: охраняемое произведение; копия для некоммерческого атласа
+      reference: https://roots.gov.sg/stories-landing/stories/cheong-soo-pieng-art-and-patronage/story
+      place: Национальный совет по наследию Сингапура
+      sources: [roots-cheong-art-patronage, ngs-cheong-layer-by-layer]
+      whyRepresentative: >-
+        Люди, корзины и рыба на жердях собраны в длинный фриз, мелкий узор кроны заполняет фон: поздняя работа тушью по ткани с той же стилизованной фигурой.
+  creators:
+    - name: Чонг Су Пиенг
+      orig: 鍾泗濱 / Cheong Soo Pieng
+      role: автор живописи
+      sources:
+        - roots-cheong-art-patronage
+  contexts:
+    - id: nanyang-art
+      type: related-context
+      status: verified
+      note: >-
+        Ео Ман Тхонг называет Чонга среди четырёх художников, чьи работы 1950-х описывали как «стиль Наньян», и
+        приводит отзыв 1957 года о «неповторимом стиле Наньяна» в его работах. Он же подчёркивает, что единой
+        школы не было. Это контекст, а не принадлежность к школе.
+      sources:
+        - ngs-yeo-nanyang-school
+  admission:
+    language: >-
+      Соединение китайских форматов свитка и туши с плоским цветом и контуром западного модернизма, вытянутые
+      стилизованные фигуры Юго-Восточной Азии.
+    corpus: Четыре самостоятельные работы 1949–1978 годов в туши, акварели и масле, а не снимки одной картины.
+    distinctness: >-
+      Уже обзора «стиль Наньян»: по Ео, художники этого круга писали очень по-разному, и язык Чонга нельзя
+      перенести на Лю Кана или Чэнь Вэньси.
+    significance: >-
+      Очерк Национального совета по наследию называет Чонга одним из самых новаторских и влиятельных
+      художников Сингапура XX века; Национальная галерея посвятила ему выставку 2024 года, а его картина
+      изображена на купюре в 50 долларов.
+    sources:
+      - roots-cheong-art-patronage
+      - ngs-cheong-layer-by-layer
+  scopeNote: >-
+    Четыре работы Чонг Су Пиенга 1949–1978 годов и балийская акварель 1954 года по очерку Ло Сзе Ви и
+    пресс-релизу Национальной галереи Сингапура. Абстрактные работы 1960-х, скульптура, батик и печатная
+    графика в корпус не входят.
+  dateNote: >-
+    1949 и 1978 — даты датированных работ корпуса; «Девушка с птичьей клеткой» в подписи без даты. Это не годы
+    жизни художника (1917–1983).
+  evidence:
+    - field: dates
+      claim: «Лежащая женщина» — 1949, «Пляж на Бали» — 1955, «Сушка солёной рыбы» — 1978.
+      source: roots-cheong-art-patronage
+    - field: description
+      claim: >-
+        Чонг — один из самых новаторских и влиятельных художников Сингапура XX века; преподавал в Академии Наньян
+        с 1947 года; «Лежащая женщина» — формат горизонтального свитка; «Пляж на Бали» — черты примитивизма,
+        кубизма, фовизма и экспрессионизма; в «Девушке с птичьей клеткой» вытянуты шея и руки, веки тяжёлые.
+      source: roots-cheong-art-patronage
+    - field: description
+      claim: Чонг переносил мотивы из техники в технику; «Сушка солёной рыбы» на купюре в 50 долларов написана разными тушами по шёлку.
+      source: ngs-cheong-layer-by-layer
+  example:
+    asset: assets/works/roots-cheong-bali-beach-1955.jpg
+    title: Чонг Су Пиенг. «Пляж на Бали»
+    author: Чонг Су Пиенг
+    year: 1955
+    nonfree: true
+    credit: "National Heritage Board (Roots), очерк «Cheong Soo Pieng: Art and Patronage»"
+    license: охраняемое произведение; копия для некоммерческого атласа
+    reference: https://roots.gov.sg/stories-landing/stories/cheong-soo-pieng-art-and-patronage/story
+    place: Национальный совет по наследию Сингапура
+    sources: [roots-cheong-art-patronage]
+    whyRepresentative: >-
+      Две женщины на пляже написаны плоскими красными, зелёными и охристыми полями с тёмным контуром: черты примитивизма, кубизма и фовизма, которые видит в этой картине очерк.
+  names:
+    - Чонг Су Пиенг
+  links:
+    - title: "Cheong Soo Pieng: Art and Patronage"
+      url: https://roots.gov.sg/stories-landing/stories/cheong-soo-pieng-art-and-patronage/story
+      src: National Heritage Board
+      lang: en
+    - title: "Cheong Soo Pieng: Layer by Layer"
+      url: https://www.nationalgallery.sg/sg/en/about/media-centre/encounter-art-in-new-ways-and-rediscover-one-of-singapore-s-leading-artists-at-national-gallery-singapores-s-choong-soo-pieng-layer-by-layer.html
+      src: National Gallery Singapore
+      lang: en
+  review:
+    status: reviewed
+    date: "2026-11-14"
+    scope: [relations, dates, text, images, gallery, corpus]
+    note: >-
+      14.11.2026: связи — контекст «стиля Наньян» по очерку Ео Ман Тхонга. Даты — по подписям очерка Ло Сзе
+      Ви. Описание — 3 утверждения по очерку и пресс-релизу Национальной галереи. Корпус и галерея — локальные
+      копии изображений со страницы очерка (охраняемые работы, правило от 14.11.2026). Открыто: у «Девушки с
+      птичьей клеткой» нет даты, а техника в подписи (акварель) расходится с текстом (тушь); копии небольшие.
+- domain:
+    - art
+  tier: 2
+  origin: unknown
+  parents: []
+  approx: true
+  maturity: contested
+  labelStatus: historical
+  id: nanyang-art
+  name: Стиль Наньян
+  orig: 南洋风格 / Nanyang style
+  kind: overview
+  kindNote: >-
+    Обзор исторического термина: «стиль Наньян» и «малайский стиль» 1950-х означали соединение восточных и
+    западных приёмов в местных сюжетах. «Школа Наньян» появилась в прессе только в 1985 году, и, по Ео Ман
+    Тхонгу, художники этого круга писали очень по-разному; карточка не утверждает единой школы.
+  start: 1938
+  end: 1966
+  era: avant-garde
+  dateKind: practice
+  dates: 1938 — 1960-е
+  medium:
+    - painting
+  subjects: [everyday-life, figure, landscape]
+  region: Сингапур и Малайя, Юго-Восточная Азия
+  aliases:
+    - Наньян
+    - Школа Наньян
+    - Nanyang style
+    - Nanyang school
+    - Малайский стиль
+  searchKeywords:
+    - Лю Кан
+    - Чэнь Вэньси
+    - Чэнь Чунжуй
+    - Чонг Су Пиенг
+    - Жоржетт Чен
+    - Академия изящных искусств Наньян
+    - Лим Хак Тай
+    - Бали
+    - Сингапурское художественное общество
+  wiki: { en: Nanyang Style }
+  gallery:
+    - asset: assets/works/roots-liu-kang-artist-and-model-1954.jpg
+      title: Лю Кан. «Художник и модель», P-1070
+      author: Лю Кан
+      year: 1954
+      medium: Масло на холсте
+      nonfree: true
+      credit: National Heritage Board (Roots), собрание Национальной галереи Сингапура
+      license: охраняемое произведение; копия для некоммерческого атласа
+      reference: https://www.roots.gov.sg/Collection-Landing/listing/1032028
+      place: Национальная галерея Сингапура
+      sources: [roots-liu-kang-artist-and-model]
+      whyRepresentative: >-
+        Художник с этюдником и балийская модель за столиком на фоне гор написаны чистыми цветовыми полями с
+        чёткими контурами и без теней — манера, которую запись сравнивает с батиком.
+    - asset: assets/works/roots-cheong-indian-men-two-cows-1949.jpg
+      title: Чонг Су Пиенг. «Индийцы с двумя коровами»
+      author: Чонг Су Пиенг
+      year: 1949
+      medium: Масло на холсте, наклеенном на основу
+      nonfree: true
+      credit: "National Heritage Board (Roots), очерк «Cheong Soo Pieng: Art and Patronage»"
+      license: охраняемое произведение; копия для некоммерческого атласа
+      reference: https://roots.gov.sg/stories-landing/stories/cheong-soo-pieng-art-and-patronage/story
+      place: Национальная галерея Сингапура
+      sources: [ngs-cheong-layer-by-layer, roots-cheong-art-patronage]
+      note: Пресс-релиз галереи называет основу холстом, подпись очерка — доской; галерея объясняет это наклейкой холста на жёсткую основу.
+      whyRepresentative: >-
+        Коровы и люди под деревом сведены к крупным формам, цвет яркий и плоский: местная деревенская сцена,
+        написанная языком европейского модернизма.
+  summary: >-
+    Живопись Сингапура и Малайи 1930–1960-х, где мигранты из Китая соединяли китайские и западные приёмы в
+    изображении местных людей, пейзажей и быта; «школой» её назвали лишь позднее, и манеры художников очень
+    разные.
+  description: >-
+    По очерку Ео Ман Тхонга, опубликованному Национальной галереей Сингапура, слова «стиль Наньян» и
+    «малайский стиль» в 1950-х обозначали искусство, соединявшее восточные и западные приёмы в изображении
+    местных пейзажей, людей и культуры. Художники-мигранты вносили «вкус Наньяна» с 1930-х, а Лим Хак Тай
+    основал в 1938 году Академию изящных искусств Наньян, чтобы соединить искусство Востока и Запада. В 1951
+    году Чэнь Чунжуй, Лю Кан, Чэнь Вэньси и Чонг Су Пиенг показали совместную выставку, а в 1952 году вместе
+    поехали на Бали.
+
+
+    Слова «школа Наньян» появились в прессе лишь в 1985 году, и Ео считает её «фантазией комментаторов»: четыре
+    художника писали очень по-разному. Поэтому карточка — путеводитель по кругу, а не описание единого стиля.
+    Общее у работ — местный сюжет и соединение традиций: у Чэнь Чунжуя балийские танцовщицы написаны
+    акварельно с тонким контуром, у Лю Кана — чистые цветовые поля, близкие к батику, у Чонг Су Пиенга — плоский
+    цвет европейского модернизма.
+  traits:
+    - Местные сюжеты — деревня, рынок, танцовщицы Бали, люди Малайи
+    - Соединение китайской кисти и туши с масляной живописью и приёмами западного модернизма
+    - Яркий плоский цвет и чёткий контур в масле, тонкая линия и размывка в работах на бумаге
+    - Сильные различия авторских манер внутри одного круга
+  scopeNote: >-
+    Обзор исторического термина «стиль Наньян» по очерку Ео Ман Тхонга и работам Чэнь Чунжуя, Лю Кана и Чонг
+    Су Пиенга 1949–1954 годов. Отдельные авторские языки — в карточке Чонг Су Пиенга и будущих карточках других
+    художников. В балийской поездке 1952 года источники называют четверых — Чэнь Чунжуя, Лю Кана, Чэнь Вэньси
+    и Чонга; Жоржетт Чен среди них нет.
+  dateNote: >-
+    1938 — основание Академии изящных искусств Наньян; верхняя граница — 1960-е, до которых очерк приводит
+    высказывания о «малайском стиле». Термин «школа Наньян» появился в 1985 году и в даты стиля не входит.
+  evidence:
+    - field: dates
+      claim: Академия изящных искусств Наньян основана в 1938 году; высказывания о «малайском стиле» очерк приводит до 1966 года.
+      source: ngs-yeo-nanyang-school
+    - field: kindNote
+      claim: «Школа Наньян» появилась в прессе в 1985 году; по Ео, четыре художника писали очень по-разному и единой школы не было.
+      source: ngs-yeo-nanyang-school
+    - field: description
+      claim: >-
+        «Стиль Наньян» и «малайский стиль» — соединение восточных и западных приёмов в изображении местных
+        пейзажей, людей и культуры; совместная выставка четырёх художников в 1951 году.
+      source: ngs-yeo-nanyang-school
+    - field: description
+      claim: В 1952 году Чонг ездил на Бали с Чэнь Вэньси, Чэнь Чунжуем и Лю Каном.
+      source: roots-cheong-art-patronage
+    - field: description
+      claim: В «Художнике и модели» Лю Кан убрал лишние детали и тени, подчеркнув контуры и цветовые поля; манера близка к батику.
+      source: roots-liu-kang-artist-and-model
+  example:
+    asset: assets/works/ngs-chen-chong-swee-dancing-lesson-1952.jpg
+    title: Чэнь Чунжуй. «Урок танца»
+    author: Чэнь Чунжуй
+    year: 1952
+    nonfree: true
+    credit: National Gallery Singapore, Perspectives Magazine
+    license: охраняемое произведение; копия для некоммерческого атласа
+    reference: https://www.nationalgallery.sg/sg/en/learn-about-art/magazine/the-nanyang-school-a-fantasy-in-the-hearts-of-commentators.html
+    place: Национальная галерея Сингапура
+    sources: [ngs-yeo-nanyang-school]
+    whyRepresentative: >-
+      Две балийские танцовщицы в узорных одеждах написаны тонким контуром и прозрачной размывкой на фоне храма:
+      местный сюжет 1952 года, соединяющий китайскую линию и западный рисунок с натуры.
+  names:
+    - Лю Кан
+    - Чэнь Вэньси
+    - Чэнь Чунжуй
+    - Чонг Су Пиенг
+    - Лим Хак Тай
+  links:
+    - title: "The Nanyang School: A Fantasy in the Hearts of Commentators"
+      url: https://www.nationalgallery.sg/sg/en/learn-about-art/magazine/the-nanyang-school-a-fantasy-in-the-hearts-of-commentators.html
+      src: National Gallery Singapore
+      lang: en
+    - title: Liu Kang. Artist and Model
+      url: https://www.roots.gov.sg/Collection-Landing/listing/1032028
+      src: National Heritage Board
+      lang: en
+  review:
+    status: reviewed
+    date: "2026-11-14"
+    scope: [relations, dates, text, images, gallery]
+    note: >-
+      14.11.2026: связи — сопоставление с постимпрессионизмом (запись Roots о влиянии фовизма и постимпрессионизма
+      на Лю Кана в Париже). Даты — по очерку Ео Ман Тхонга. Описание — 5 утверждений по очерку, рассказу Ло Сзе
+      Ви и записи Roots. Главная иллюстрация и галерея — локальные копии со страниц Национальной галереи и Roots
+      (охраняемые работы, правило от 14.11.2026). Открыто: работы Чэнь Вэньси и Жоржетт Чен в галерею не взяты.
+  compare:
+    - id: post-impressionism
+      note: >-
+        Плоский цвет и чёткий контур в масле круга Наньян рядом с постимпрессионизмом; по записи Roots, Лю Кан в
+        Париже испытал влияние фовизма и постимпрессионизма. Визуальное сравнение, не происхождение всего круга.
