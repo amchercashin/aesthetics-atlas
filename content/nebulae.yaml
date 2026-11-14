@@ -516,6 +516,18 @@ nebulae:
         name: Металл и терракота Ифе
         styles:
           - ife-sculpture
+  - id: modernizm-yugo-vostochnoy-azii
+    name: Модернизм Юго-Восточной Азии
+    color: '#C2703D'
+    parts:
+      - id: stil-nanyan
+        name: Стиль Наньян
+        styles:
+          - nanyang-art
+      - id: chong-su-pieng
+        name: Чонг Су Пиенг
+        styles:
+          - cheong-soo-pieng
   - id: tekstil-yugo-vostochnoy-azii
     name: Текстиль Юго-Восточной Азии
     color: '#9B5A8C'
