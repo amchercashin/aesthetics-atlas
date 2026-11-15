@@ -585,7 +585,7 @@
 - domain:
     - art
     - design
-  tier: 2
+  tier: 1
   origin: unknown
   parents: []
   approx: true
@@ -640,6 +640,11 @@
     - Птицы, петухи и калина как символы
     - Лёгкие свободные мазки — лепестки, листья, перья
     - Светлое поле стены, утвари или бумаги
+  promptCues:
+    - Фантастические цветы и травы
+    - Птицы, петухи и гроздья калины
+    - Лёгкие свободные мазки-лепестки
+    - Светлое поле стены или бумаги
   corpus:
     - workId: nmdau-pata-1913
       asset: assets/works/gac-pata-decorative-motif-1913.jpg

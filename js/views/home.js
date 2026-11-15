@@ -1,4 +1,4 @@
-// Главная: заголовок с «Удиви меня» (промт для генератора картинок), лента эпох (вся история одной полосой), три входа и стиль дня.
+// Главная: заголовок с «Удиви меня» (промт для генератора картинок), лента эпох (главные стили и хотя бы по одному от каждого моря), три входа и стиль дня.
 // Поиск — в шапке, на главной он не дублируется.
 import { html, mount } from '../html.js';
 import { fmtDates, fmtYear, plural } from '../format.js?v=audit';
@@ -66,13 +66,13 @@ export default {
     <section class="frieze" aria-label="Лента эпох: главные стили по порядку">
       <div class="frieze-track" tabindex="0">
         ${frieze.map((s) => html`<a class="frieze-item" href="#/s/${s.id}" style="--c:var(--era-${s.era})">
-          ${frame(s.example.img, s.palette, { sizes: '320px', alt: '', size: 500 })}
+          ${frame(s.example.img ?? s.gallery.find((g) => g.img)?.img ?? null, s.palette, { sizes: '320px', alt: '', size: 500 })}
           <span class="frieze-year">${fmtYear(s.start)}</span>
           <span class="frieze-name">${s.name}</span>
         </a>`)}
       </div>
       <div class="frieze-foot page-x">
-        <p class="muted">Вся история одной полосой: листайте ленту или нажмите на работу, чтобы войти в зал.</p>
+        <p class="muted">Главные стили и хотя бы по одному от каждого моря атласа: листайте ленту или нажмите на работу, чтобы войти в зал.</p>
         <div class="frieze-btns">
           <button class="icon-btn" type="button" data-scroll="-1" aria-label="Назад по ленте"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M15 6l-6 6 6 6"/></svg></button>
           <button class="icon-btn" type="button" data-scroll="1" aria-label="Вперёд по ленте"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M9 6l6 6-6 6"/></svg></button>
