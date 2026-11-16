@@ -214,6 +214,7 @@ nebulae:
           - cubism
           - futurism
           - cubo-futurism
+          - filonov-analytical-art
           - orphism
           - dada
           - de-stijl
@@ -302,6 +303,7 @@ nebulae:
         name: Поп-арт и Мемфис
         styles:
           - pop-art
+          - sots-art
           - hyperrealism
           - lowbrow
           - memphis-design
@@ -328,6 +330,7 @@ nebulae:
           - web-1-0
           - net-art
           - post-internet
+          - aes-f-digital-tableaux
       - id: veyporveyv-i-neyroseti
         name: Вейпорвейв и нейросети
         styles:
@@ -637,3 +640,4 @@ free:
   - pacita-abad
   - reko-rennie
   - norshtein-animation
+  - polissky-land-art
