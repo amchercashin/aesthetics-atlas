@@ -10,7 +10,7 @@ import { segmentTicks } from '../timescale.js';
 import { routeBranches } from '../layout.js?v=seas-1';
 import { OV_K, LONG, R, mapTimeScale, mapLayoutNodes, layoutMap } from '../map-layout.js?v=seas-1';
 import { frame, markLoaded } from '../ui/image.js?v=author-pilot';
-import { artItem, cardImages } from '../ui/art-item.js?v=corpus-top-3';
+import { artItem, cardImages } from '../ui/art-item.js?v=works-2';
 import { eraTag, thumb } from '../ui/common.js?v=author-pilot';
 import { replaceParams, pushParams } from '../router.js?v=map4';
 import { pushStep, toParam, parseTrail } from '../trail.js?v=map4';

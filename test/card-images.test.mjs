@@ -1,7 +1,7 @@
 // test/card-images.test.mjs
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { cardImages, imgKey } from '../js/ui/art-item.js';
+import { cardImages, cardRefs, imgKey } from '../js/ui/art-item.js';
 
 const img = (file, page = 'https://museum.example/collection') => ({ page, src: { 250: `assets/works/${file}` } });
 
@@ -24,4 +24,14 @@ test('works copied from one shared museum page stay separate images', () => {
 test('a card without the main image still shows its other images', () => {
   const s = { example: { title: 'По ссылке', external: { page: 'https://museum.example/work' } }, gallery: [], corpus: [{ title: 'Корпус', img: img('c.jpg') }] };
   assert.deepEqual(cardImages(s).map((w) => w.title), ['Корпус']);
+});
+
+test('works without an image become link tiles, except the main work', () => {
+  const ref = (title, page) => ({ title, external: { page, reference: true } });
+  const s = {
+    example: { title: 'Главная', external: { page: 'https://museum.example/1', reference: true } },
+    gallery: [ref('Галерея', 'https://museum.example/2')],
+    corpus: [ref('Главная', 'https://museum.example/1'), ref('Корпус', 'https://museum.example/3'), ref('Корпус', 'https://museum.example/3'), { title: 'С изображением', img: img('d.jpg') }, ref('С изображением', 'https://museum.example/4')],
+  };
+  assert.deepEqual(cardRefs(s).map((w) => w.title), ['Галерея', 'Корпус']);
 });

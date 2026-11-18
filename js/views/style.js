@@ -4,11 +4,11 @@
 import { html, mount, safeUrl } from '../html.js';
 import { fmtDates, fmtYear, RELATION, DOMAIN, KIND, DATE_KIND, REL_STATUS, SUBJECT, MEDIUM, roleLabel, plural, reviewScopeText } from '../format.js?v=subjects-4';
 import { frame, credit } from '../ui/image.js?v=author-pilot';
-import { artItem, cardImages, imgKey } from '../ui/art-item.js?v=corpus-top-3';
+import { artItem, cardImages, cardRefs, imgKey } from '../ui/art-item.js?v=works-2';
 import { eraTag, thumb, footer } from '../ui/common.js?v=links-1';
 import { toast } from '../ui/toast.js';
 import notfound from './notfound.js';
-import { authorshipSection, corpusSection, contextSection } from '../ui/corpus.js?v=corpus-top-3';
+import { authorshipSection, contextSection } from '../ui/corpus.js?v=works-2';
 import { directLinks, linkStep, linkKey, egoMap, mountEgoMap } from '../ui/ego-map.js?v=links-1';
 import { promptFor, styleAnchor, pickOther } from '../prompt.js?v=ai-5';
 import { aiHead, aiPromptBody, mountAiPrompt } from '../ui/ai-prompt.js?v=ai-5';
@@ -147,7 +147,8 @@ export default {
     if (cover) lightboxItems.push(artItem(img ? ex : galleryCover, store, cover));
     for (const w of thumbItems) lightboxItems.push(artItem(w, store));
     const lightboxIndex = new Map(lightboxItems.map((it, i) => [imgKey(it.img), i]));
-    const galleryRefs = s.gallery.filter((g) => !g.img && g.external);
+    // Работы без изображения (галерея и корпус) — плашками-ссылками в том же ряду.
+    const refItems = cardRefs(s);
     const line = store.mainLine(s.id);
     const direct = directLinks(store, s);
     const linkCount = direct.from.length + direct.to.length;
@@ -187,12 +188,12 @@ export default {
             ${frame(null, p, { sizes: '(min-width: 1100px) 58vw, 100vw', eager: true, size: 960, alt: ex.title ?? '', note: ex.note, capUpscale: true })}
           </button>`}
         </figure>
-        ${thumbItems.length || galleryRefs.length ? html`<div class="room-thumbs" role="group" aria-label="Другие изображения этого стиля">
+        ${thumbItems.length || refItems.length ? html`<div class="room-thumbs" role="group" aria-label="Другие изображения этого стиля">
           ${thumbItems.map((g) => html`<button class="room-thumb" type="button" data-gallery="${lightboxIndex.get(imgKey(g.img))}" aria-label="Открыть крупно: ${g.title ?? ''}">
             <img src="${g.img.src[250]}" alt="${g.title ?? ''}">
             <span class="room-thumb-cap">${g.title ?? ''}</span>
           </button>`)}
-          ${galleryRefs.map((g) => html`<a class="room-thumb room-thumb-ref" href="${safeUrl(g.external.page)}" target="_blank" rel="noopener">
+          ${refItems.map((g) => html`<a class="room-thumb room-thumb-ref" href="${safeUrl(g.external.page)}" target="_blank" rel="noopener">
             <span class="room-thumb-ref-mark" aria-hidden="true">↗</span>
             <span class="room-thumb-cap">${g.title ?? 'Репродукция у источника'}</span>
           </a>`)}
@@ -235,7 +236,6 @@ export default {
       </section>
 
       ${authorshipSection(store, s)}
-      ${corpusSection(store, s, img ? { lightboxIndex, coverKey, mainTitle: ex.title } : { lightboxIndex })}
       ${contextSection(store, s)}
 
       <section class="lineage">
@@ -313,7 +313,7 @@ export default {
         navigator.clipboard?.writeText(pal.dataset.hex).then(() => toast(`Скопировано: ${pal.dataset.hex}`), () => toast(pal.dataset.hex));
         return;
       }
-      const thumb = e.target.closest('.room-thumb, .corpus-thumb');
+      const thumb = e.target.closest('.room-thumb[data-gallery]');
       if (thumb) {
         openLightbox(lightboxItems, Number(thumb.dataset.gallery) || 0);
         return;
