@@ -4,11 +4,11 @@
 import { html, mount, safeUrl } from '../html.js';
 import { fmtDates, fmtYear, RELATION, DOMAIN, KIND, DATE_KIND, REL_STATUS, SUBJECT, MEDIUM, roleLabel, plural, reviewScopeText } from '../format.js?v=subjects-4';
 import { frame, credit } from '../ui/image.js?v=author-pilot';
-import { artItem } from '../ui/art-item.js?v=review-0';
+import { artItem, cardImages, imgKey } from '../ui/art-item.js?v=corpus-top-3';
 import { eraTag, thumb, footer } from '../ui/common.js?v=links-1';
 import { toast } from '../ui/toast.js';
 import notfound from './notfound.js';
-import { authorshipSection, corpusSection, contextSection } from '../ui/corpus.js';
+import { authorshipSection, corpusSection, contextSection } from '../ui/corpus.js?v=corpus-top-3';
 import { directLinks, linkStep, linkKey, egoMap, mountEgoMap } from '../ui/ego-map.js?v=links-1';
 import { promptFor, styleAnchor, pickOther } from '../prompt.js?v=ai-5';
 import { aiHead, aiPromptBody, mountAiPrompt } from '../ui/ai-prompt.js?v=ai-5';
@@ -140,14 +140,13 @@ export default {
     const galleryCover = img ? null : s.gallery.find((g) => g.img) ?? null;
     const cover = img ?? galleryCover?.img ?? null;
     const coverTitle = img ? ex.title : galleryCover?.title ?? null;
-    const galleryImgs = s.gallery.filter((g) => g.img);
+    // Под главной работой — все остальные изображения карточки: галерея и корпус, без повторов.
+    const coverKey = imgKey(cover);
+    const thumbItems = cardImages(s).filter((w) => imgKey(w.img) !== coverKey);
     const lightboxItems = [];
     if (cover) lightboxItems.push(artItem(img ? ex : galleryCover, store, cover));
-    for (const g of galleryImgs) {
-      if (cover && g.img.page === cover.page) continue;
-      lightboxItems.push(artItem(g, store));
-    }
-    const thumbItems = galleryImgs.filter((g) => !cover || g.img.page !== cover.page);
+    for (const w of thumbItems) lightboxItems.push(artItem(w, store));
+    const lightboxIndex = new Map(lightboxItems.map((it, i) => [imgKey(it.img), i]));
     const galleryRefs = s.gallery.filter((g) => !g.img && g.external);
     const line = store.mainLine(s.id);
     const direct = directLinks(store, s);
@@ -189,7 +188,7 @@ export default {
           </button>`}
         </figure>
         ${thumbItems.length || galleryRefs.length ? html`<div class="room-thumbs" role="group" aria-label="Другие изображения этого стиля">
-          ${thumbItems.map((g) => html`<button class="room-thumb" type="button" data-gallery="${lightboxItems.findIndex((x) => x.img.page === g.img.page)}" aria-label="Открыть крупно: ${g.title ?? ''}">
+          ${thumbItems.map((g) => html`<button class="room-thumb" type="button" data-gallery="${lightboxIndex.get(imgKey(g.img))}" aria-label="Открыть крупно: ${g.title ?? ''}">
             <img src="${g.img.src[250]}" alt="${g.title ?? ''}">
             <span class="room-thumb-cap">${g.title ?? ''}</span>
           </button>`)}
@@ -236,7 +235,7 @@ export default {
       </section>
 
       ${authorshipSection(store, s)}
-      ${corpusSection(store, s)}
+      ${corpusSection(store, s, img ? { lightboxIndex, coverKey, mainTitle: ex.title } : { lightboxIndex })}
       ${contextSection(store, s)}
 
       <section class="lineage">
@@ -314,7 +313,7 @@ export default {
         navigator.clipboard?.writeText(pal.dataset.hex).then(() => toast(`Скопировано: ${pal.dataset.hex}`), () => toast(pal.dataset.hex));
         return;
       }
-      const thumb = e.target.closest('.room-thumb');
+      const thumb = e.target.closest('.room-thumb, .corpus-thumb');
       if (thumb) {
         openLightbox(lightboxItems, Number(thumb.dataset.gallery) || 0);
         return;
