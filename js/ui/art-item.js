@@ -13,3 +13,20 @@ export function artItem(work, store, img = work?.img) {
     : ''}${credit(img)}`;
   return { img, caption, details };
 }
+
+// Один и тот же файл может стоять в примере, галерее и корпусе. Сравниваем по самому файлу, а не по странице:
+// у локальных копий одна страница музея бывает общей для нескольких работ.
+export const imgKey = (img) => img?.src?.[250] ?? img?.page ?? null;
+
+// Все изображения карточки без повторов: главная работа, галерея, затем корпус.
+export function cardImages(s) {
+  const seen = new Set();
+  const out = [];
+  for (const w of [s.example, ...(s.gallery ?? []), ...(s.corpus ?? [])]) {
+    const k = imgKey(w?.img);
+    if (!k || seen.has(k)) continue;
+    seen.add(k);
+    out.push(w);
+  }
+  return out;
+}

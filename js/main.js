@@ -33,7 +33,7 @@ async function route(base, { first = false } = {}) {
     current.instance.update({ ...base, ...r });
     return;
   }
-  const mod = await import(`./views/${r.view}.js?v=frieze-1`);
+  const mod = await import(`./views/${r.view}.js?v=corpus-top-3`);
   if (seq !== routeSeq) return;
   const swap = () => {
     current?.instance?.destroy?.();
