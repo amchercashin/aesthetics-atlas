@@ -722,8 +722,8 @@ button.chip.more:hover { text-decoration-color: currentColor; }
 
 .empty-page p { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; }
 
-/* Authored practices and their documented comparison corpus. */
-.authorship, .room-corpus, .contexts { margin-block: clamp(36px, 5vw, 70px); }
+/* Авторы, границы практики и культурный контекст. */
+.authorship, .contexts { margin-block: clamp(36px, 5vw, 70px); }
 .creator-list { list-style: none; padding: 0; }
 .creator-list > li { margin-block: 16px; }
 .admission { border-block: 1px solid var(--line, #d8d2c6); padding-block: 16px; }
@@ -731,23 +731,9 @@ button.chip.more:hover { text-decoration-color: currentColor; }
 .admission dl { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px 32px; }
 .admission dt { font-weight: 600; margin-bottom: 6px; }
 .admission dd { margin: 0; line-height: 1.65; }
-/* Подписи корпуса: изображения — вверху зала, здесь превью и текст. */
-.corpus-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px 40px; list-style: none; padding: 0; margin: 0; }
-.corpus-work { display: grid; grid-template-columns: 112px minmax(0, 1fr); gap: 18px; align-items: start; margin: 0; min-width: 0; overflow-wrap: anywhere; }
-.corpus-media { min-width: 0; }
-.corpus-thumb { display: block; width: 100%; padding: 4px; border: 1px solid var(--rule); background: var(--paper-2); cursor: zoom-in; }
-.corpus-thumb:hover, .corpus-thumb:focus-visible { border-color: var(--ink-3); }
-.corpus-thumb img { display: block; width: 100%; height: 104px; object-fit: contain; background: var(--paper); }
-.corpus-ref { display: block; padding: 8px; overflow-wrap: normal; border: 1px solid var(--rule); background: var(--paper); font-size: 12px; line-height: 1.35; color: var(--ink-2); text-decoration: none; }
-.corpus-ref:hover, .corpus-ref:focus-visible { border-color: var(--ink-3); }
-.corpus-main { margin: 0; padding: 8px; overflow-wrap: normal; border: 1px dashed var(--rule); font-size: 12px; line-height: 1.35; color: var(--ink-2); }
-.corpus-work h3 { font-size: 1.1rem; line-height: 1.4; margin-block: 0 8px; }
-.corpus-work p { font-size: .92rem; line-height: 1.6; }
 .context-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; list-style: none; padding: 0; }
 @media (max-width: 760px) {
-  .corpus-list, .context-list, .admission dl { grid-template-columns: 1fr; }
-  .corpus-work { grid-template-columns: 84px minmax(0, 1fr); gap: 14px; }
-  .corpus-thumb img { height: 84px; }
+  .context-list, .admission dl { grid-template-columns: 1fr; }
 }
 .edge.context { stroke: var(--ink-3, #687b71); stroke-width: 1.4; stroke-dasharray: 9 3 1 3; fill: none; }
 .map-svg .context-hit { stroke-width: 12; }
