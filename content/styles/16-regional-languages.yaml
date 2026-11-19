@@ -1285,6 +1285,10 @@
     - Вставки из раковины на месте глаз
   corpus:
     - workId: maori-waka-we000946
+      asset: assets/works/maori-waka-we000946.jpg
+      credit: "Museum of New Zealand Te Papa Tongarewa"
+      license: "All Rights Reserved (Te Papa)"
+      nonfree: true
       title: Waka huia, WE000946
       author: Мастер не указан
       year: 1800–1900
@@ -1297,10 +1301,12 @@
         подвесного назначения вещи.
       place: Te Papa
       rights:
-        embed: false
-        reviewed: "2026-10-15"
-        note: В атласе дана предметная ссылка; разрешение на встраивание этой репродукции не заявляется.
+        reviewed: "2026-11-19"
     - workId: maori-titoko-me002589
+      asset: assets/works/maori-titoko-me002589.jpg
+      credit: "Museum of New Zealand Te Papa Tongarewa"
+      license: "All Rights Reserved (Te Papa)"
+      nonfree: true
       title: Poupou «Titokowaru», ME002589
       author: Мастер не указан
       year: Около 1880
@@ -1311,10 +1317,12 @@
       whyRepresentative: Вертикальная фигура соотносит лицо, корпус и резную поверхность с форматом панели.
       place: Te Papa
       rights:
-        embed: false
-        reviewed: "2026-10-15"
-        note: В атласе дана предметная ссылка; разрешение на встраивание этой репродукции не заявляется.
+        reviewed: "2026-11-19"
     - workId: maori-moko-me004211
+      asset: assets/works/maori-moko-me004211.jpg
+      credit: "Museum of New Zealand Te Papa Tongarewa"
+      license: "All Rights Reserved (Te Papa)"
+      nonfree: true
       title: Tā Moko panel, ME004211
       author: Тене Вайтере
       year: 1896–1899
@@ -1327,9 +1335,7 @@
         симметричного орнаментального повторения.
       place: Te Papa
       rights:
-        embed: false
-        reviewed: "2026-10-15"
-        note: В атласе дана предметная ссылка; разрешение на встраивание этой репродукции не заявляется.
+        reviewed: "2026-11-19"
   creators:
     - name: Тене Вайтере
       orig: Tene Waitere
@@ -1354,6 +1360,10 @@
       source: tepapa-waka-huia
   example:
     workId: maori-waka-we000946
+    asset: assets/works/maori-waka-we000946.jpg
+    credit: "Museum of New Zealand Te Papa Tongarewa"
+    license: "All Rights Reserved (Te Papa)"
+    nonfree: true
     title: Waka huia, WE000946
     author: Мастер не указан
     year: 1800–1900
@@ -1366,9 +1376,7 @@
       назначения вещи.
     place: Te Papa
     rights:
-      embed: false
-      reviewed: "2026-10-15"
-      note: В атласе дана предметная ссылка; разрешение на встраивание этой репродукции не заявляется.
+      reviewed: "2026-11-19"
   names:
     - Тене Вайтере
   links:
@@ -1386,10 +1394,11 @@
       lang: en
   review:
     status: reviewed
-    date: "2026-11-09"
+    date: "2026-11-19"
     scope: [relations, dates, text, images, gallery, corpus]
     note: >-
       Корпус — 15.10.2026: Подготовлен обзор трёх предметов; точная локальная атрибуция двух анонимных вещей и полный региональный охват не установлены. История сбора и возврата taonga требует отдельного исследования. Родство не утверждается, связи у записей. 09.11.2026: описание и даты — Te Papa (записи корпуса) и Toi Māori; галерея — страницы файлов, снимок процесса помечен как иллюстрация.
+      19.11.2026. Три резные вещи сверены с предметными записями и изображениями Те Папа.
   compare:
     - id: viking-art
       note: >-
@@ -1484,6 +1493,10 @@
     - Ручная раскраска поверх оттиска
   corpus:
     - workId: tipoti-cairns-199936
+      asset: assets/works/tipoti-cairns-199936.jpg
+      credit: "Cairns Art Gallery"
+      license: "Свободная лицензия не указана"
+      nonfree: true
       title: Kobupa thoerapiese, 1999.36
       author: Алик Типоти
       year: 1999
@@ -1496,10 +1509,12 @@
         поверхность.
       place: Cairns Art Gallery
       rights:
-        embed: false
-        reviewed: "2026-10-15"
-        note: В атласе дана предметная ссылка; разрешение на встраивание этой репродукции не заявляется.
+        reviewed: "2026-11-19"
     - workId: missi-nga-2000588
+      asset: assets/works/missi-nga-2000588.jpg
+      credit: "National Gallery of Australia, Australian Prints + Printmaking"
+      license: "Свободная лицензия не указана"
+      nonfree: true
       title: Sugu Ah Mabud / Sugu A Madhub, 2000.588
       author: Билли Мисси; в базе NGA — Billy Missy
       year: 2000
@@ -1512,10 +1527,12 @@
         плотности Типоти.
       place: National Gallery of Australia
       rights:
-        embed: false
-        reviewed: "2026-10-15"
-        note: В атласе дана предметная ссылка; разрешение на встраивание этой репродукции не заявляется.
+        reviewed: "2026-11-19"
     - workId: robinson-fisherman-2020
+      asset: assets/works/robinson-fisherman-2020.jpg
+      credit: "Sunshine Coast Council; предоставлено художником и Mossenson Galleries"
+      license: "Свободная лицензия не указана"
+      nonfree: true
       title: Fisherman’s Still Life with Air Jordan 4’s
       author: Брайан Робинсон
       year: 2020
@@ -1529,9 +1546,7 @@
         замкнута в исторической орнаментике.
       place: Документация Sunshine Coast Gallery
       rights:
-        embed: false
-        reviewed: "2026-10-15"
-        note: В атласе дана предметная ссылка; разрешение на встраивание этой репродукции не заявляется.
+        reviewed: "2026-11-19"
   creators:
     - name: Алик Типоти
       orig: Alick Tipoti
@@ -1587,22 +1602,24 @@
       source: sunshine-robinson-fisherman
     - { claim: "В 1990-х молодые резчики освоили лино- и ксилографию; названы Типоти, Мисси, Робинсон", field: description, source: qag-torres-time-tides }
   example:
-    workId: tipoti-cairns-199936
-    title: Kobupa thoerapiese, 1999.36
-    author: Алик Типоти
-    year: 1999
-    medium: Линогравюра на бумаге; 6/98
-    reference: https://www.cairnsartgallery.com.au/collections/kobupa-thoerapiese
+    workId: missi-nga-2000588
+    asset: assets/works/missi-nga-2000588.jpg
+    credit: "National Gallery of Australia, Australian Prints + Printmaking"
+    license: "Свободная лицензия не указана"
+    nonfree: true
+    title: Sugu Ah Mabud / Sugu A Madhub, 2000.588
+    author: Билли Мисси; в базе NGA — Billy Missy
+    year: 2000
+    medium: Линогравюра чёрной краской с ручной раскраской; авторская проба
+    reference: https://www.printsandprintmaking.gov.au/impressions/31234/
     sources:
-      - cairns-tipoti-kobupa
+      - nga-missi-sugu
     whyRepresentative: >-
-      Крупная вертикальная фигура и плотные мелкие мотивы организованы в контрастную чёрно-белую
-      поверхность.
-    place: Cairns Art Gallery
+      Компактная горизонтальная композиция с осьминогом и двумя фигурами отличается от вертикальной
+      плотности Типоти.
+    place: National Gallery of Australia
     rights:
-      embed: false
-      reviewed: "2026-10-15"
-      note: В атласе дана предметная ссылка; разрешение на встраивание этой репродукции не заявляется.
+      reviewed: "2026-11-19"
   names:
     - Алик Типоти
     - Билли Мисси
@@ -1627,10 +1644,12 @@
       lang: en
   review:
     status: reviewed
-    date: "2026-11-09"
+    date: "2026-11-19"
     scope: [relations, dates, text, images, gallery, corpus]
     note: >-
       Корпус — 15.10.2026: Обзор ограничен тремя листами трёх авторов. Разночтения имени Мисси и дат разных оттисков не унифицированы без основания; сцена не считается полностью представленной. Родство не утверждается, связи у записей. 09.11.2026: описание и даты — QAGOMA, NGA, Sunshine Coast; галерея: у двух копий источник не установлен, у третьей подтверждена запись NGA.
+      19.11.2026. Три эстампа сверены с записями Cairns Art Gallery, базы австралийской NGA и Sunshine Coast Council.
+      Главным примером обзора выбран лист Мисси, чтобы отличать обзор от карточки Типоти в каталоге и на карте.
 - domain:
     - art
   tier: 3
@@ -1708,6 +1727,10 @@
     - Ручная раскраска может выделять части внутри той же графической системы
   corpus:
     - workId: tipoti-cairns-199936
+      asset: assets/works/tipoti-cairns-199936.jpg
+      credit: "Cairns Art Gallery"
+      license: "Свободная лицензия не указана"
+      nonfree: true
       title: Kobupa thoerapiese, 1999.36
       author: Алик Типоти
       year: 1999
@@ -1720,10 +1743,12 @@
         поверхность.
       place: Cairns Art Gallery
       rights:
-        embed: false
-        reviewed: "2026-10-15"
-        note: В атласе дана предметная ссылка; разрешение на встраивание этой репродукции не заявляется.
+        reviewed: "2026-11-19"
     - workId: tipoti-cairns-200128
+      asset: assets/works/tipoti-cairns-200128.jpg
+      credit: "Cairns Art Gallery"
+      license: "Свободная лицензия не указана"
+      nonfree: true
       title: Soll, 2001.28
       author: Алик Типоти
       year: 2000
@@ -1734,10 +1759,12 @@
       whyRepresentative: Ручной цвет иначе выделяет крупные части внутри подробного резного рисунка.
       place: Cairns Art Gallery
       rights:
-        embed: false
-        reviewed: "2026-10-15"
-        note: В атласе дана предметная ссылка; разрешение на встраивание этой репродукции не заявляется.
+        reviewed: "2026-11-19"
     - workId: tipoti-cairns-200633
+      asset: assets/works/tipoti-cairns-200633.jpg
+      credit: "Cairns Art Gallery"
+      license: "Свободная лицензия не указана"
+      nonfree: true
       title: Gubau Aimai Mabiag, 2006.33
       author: Алик Типоти
       year: 2006
@@ -1750,9 +1777,7 @@
         заполнения; это не панорамный одноимённый лист.
       place: Cairns Art Gallery
       rights:
-        embed: false
-        reviewed: "2026-10-15"
-        note: В атласе дана предметная ссылка; разрешение на встраивание этой репродукции не заявляется.
+        reviewed: "2026-11-19"
   creators:
     - name: Алик Типоти
       orig: Alick Tipoti
@@ -1812,6 +1837,10 @@
     - { claim: "Soll — 2000 год; номер 2001.28 относится к приобретению", field: dates, source: cairns-tipoti-soll }
   example:
     workId: tipoti-cairns-199936
+    asset: assets/works/tipoti-cairns-199936.jpg
+    credit: "Cairns Art Gallery"
+    license: "Свободная лицензия не указана"
+    nonfree: true
     title: Kobupa thoerapiese, 1999.36
     author: Алик Типоти
     year: 1999
@@ -1824,9 +1853,7 @@
       поверхность.
     place: Cairns Art Gallery
     rights:
-      embed: false
-      reviewed: "2026-10-15"
-      note: В атласе дана предметная ссылка; разрешение на встраивание этой репродукции не заявляется.
+      reviewed: "2026-11-19"
   names:
     - Алик Типоти
   links:
@@ -1852,10 +1879,11 @@
       lang: en
   review:
     status: reviewed
-    date: "2026-11-09"
+    date: "2026-11-19"
     scope: [relations, dates, text, images, gallery, corpus]
     note: >-
       Корпус — 15.10.2026: Даты, три отдельных экземпляра и ограниченный авторский корпус сверены. Сломанные относительные ссылки Cairns исправлены в адресах атласа; права на воспроизведение не заявлены. Родство не утверждается, связи у записей. 09.11.2026: даты и описание — Cairns и архив QAG; галерея: у двух копий источник и год не установлены, у третьей подтверждена запись NGA, 1994 год.
+      19.11.2026. Три линогравюры сверены по номерам и изображениям записей Cairns Art Gallery.
 - domain:
     - art
   tier: 2

@@ -552,12 +552,6 @@
       note: Снимок процесса, а не готовая работа.
       whyRepresentative: >-
         Луб скоблят раковиной, размягчая и растягивая волокна.
-    - file: File:Siapo mamanu (tapa cloth) - Google Art Project.jpg
-      title: Сиапо мамануу
-      author: мастер не указан
-      year: 1890-е
-      whyRepresentative: >-
-        Сиапо с сеткой геометрических форм и растительных мотивов.
   summary: >-
     Орнамент на лубяном полотне соединяет сетки, полосы, растительные силуэты и контраст коричневого рисунка
     со светлой основой.
@@ -595,22 +589,23 @@
         - tepapa-siapo-elei-11577
   corpus:
     - workId: siapo-fe825
+      file: "File:Siapo mamanu (tapa cloth) - Google Art Project.jpg"
       title: Siapo mamanu, FE000825
       author: Мастер не указан
       year: 1890-е
       medium: Лубяное полотно, пигмент; свободное рисование и роспись
       sources:
         - tepapa-siapo-825
-      reference: https://collections.tepapa.govt.nz/object/162815
       whyRepresentative: >-
         Крупные звёздчатые формы чередуются с узкими геометрическими полосами; заметны разные коричневые тона
         на светлой основе.
       place: Museum of New Zealand Te Papa Tongarewa
       rights:
-        embed: false
-        reviewed: "2026-10-14"
-        note: Репродукция доступна на предметной странице источника.
+        reviewed: "2026-11-19"
     - workId: siapo-fe11611
+      asset: assets/works/siapo-fe11611.jpg
+      credit: "Museum of New Zealand Te Papa Tongarewa"
+      license: "No Known Copyright Restrictions (Te Papa)"
       title: Siapo mamanu, FE011611
       author: Мастер не указан
       year: 1896
@@ -623,10 +618,11 @@
         орнаментальную поверхность.
       place: Museum of New Zealand Te Papa Tongarewa
       rights:
-        embed: false
-        reviewed: "2026-10-14"
-        note: Репродукция доступна на предметной странице источника.
+        reviewed: "2026-11-19"
     - workId: siapo-fe1425
+      asset: assets/works/siapo-fe1425.jpg
+      credit: "Museum of New Zealand Te Papa Tongarewa"
+      license: "No Known Copyright Restrictions (Te Papa)"
       title: Siapo mamanu, FE001425
       author: Мастер не указан
       year: 1900-е
@@ -639,10 +635,12 @@
         вытянутую композицию.
       place: Museum of New Zealand Te Papa Tongarewa
       rights:
-        embed: false
-        reviewed: "2026-10-14"
-        note: Репродукция доступна на предметной странице источника.
+        reviewed: "2026-11-19"
     - workId: siapo-elei-fe11577
+      asset: assets/works/siapo-elei-fe11577.jpg
+      credit: "Museum of New Zealand Te Papa Tongarewa"
+      license: "All Rights Reserved (Te Papa)"
+      nonfree: true
       title: Siapo elei, FE011577
       author: Fa'amuli Salu — по полю Production
       year: 2000
@@ -653,9 +651,7 @@
       whyRepresentative: Продольные полосы с круглыми розетками чередуются с треугольными сетками и крупными силуэтами листьев.
       place: Museum of New Zealand Te Papa Tongarewa
       rights:
-        embed: false
-        reviewed: "2026-10-14"
-        note: Репродукция доступна на предметной странице источника.
+        reviewed: "2026-11-19"
   compare:
     - id: tongan-ngatu
       note: >-
@@ -695,27 +691,26 @@
       - tepapa-pacific-tapa
   review:
     status: reviewed
-    date: "2026-11-09"
+    date: "2026-11-19"
     scope: [relations, dates, text, images, gallery, corpus]
     note: >-
       Корпус — 14.10.2026: Просмотрены четыре репродукции и записи. В записи siapo elei написание имени в Production отличается от подписи изображения; сохранена предметная атрибуция без объединения вариантов. Раннее происхождение и общая хронология не установлены этим корпусом. Родство не утверждается, связи у записей. 09.11.2026: описание и даты — Те Папа. Галерея: подписаны годы, снимок процесса помечен как иллюстрация.
+      19.11.2026. Четыре полотна сверены с Те Папа. FE000825 показано файлом Commons с тем же номером, повтор из галереи убран.
   example:
     workId: siapo-fe825
+    file: "File:Siapo mamanu (tapa cloth) - Google Art Project.jpg"
     title: Siapo mamanu, FE000825
     author: Мастер не указан
     year: 1890-е
     medium: Лубяное полотно, пигмент; свободное рисование и роспись
     sources:
       - tepapa-siapo-825
-    reference: https://collections.tepapa.govt.nz/object/162815
     whyRepresentative: >-
       Крупные звёздчатые формы чередуются с узкими геометрическими полосами; заметны разные коричневые тона на
       светлой основе.
     place: Museum of New Zealand Te Papa Tongarewa
     rights:
-      embed: false
-      reviewed: "2026-10-14"
-      note: Репродукция доступна на предметной странице источника.
+      reviewed: "2026-11-19"
   links:
     - title: Siapo mamanu, FE000825, 1890-е
       url: https://collections.tepapa.govt.nz/object/162815
@@ -806,6 +801,10 @@
     «1932?». Истоки нгату здесь не датированы; 1991 — последняя работа корпуса, а не конец практики.
   corpus:
     - workId: ngatu-fe8723
+      asset: assets/works/ngatu-fe8723.jpg
+      credit: "Museum of New Zealand Te Papa Tongarewa"
+      license: "All Rights Reserved (Te Papa)"
+      nonfree: true
       title: Ngatu с изображением самолёта, FE008723
       author: Мастер не указан
       year: около 1940-х
@@ -816,10 +815,12 @@
       whyRepresentative: Самолёт, деревья, птицы и геральдические формы размещены в повторяющихся ячейках, разделённых линиями.
       place: Museum of New Zealand Te Papa Tongarewa
       rights:
-        embed: false
-        reviewed: "2026-10-14"
-        note: Репродукция доступна на предметной странице источника.
+        reviewed: "2026-11-19"
     - workId: ngatu-fe8724
+      asset: assets/works/ngatu-fe8724.jpg
+      credit: "Museum of New Zealand Te Papa Tongarewa"
+      license: "All Rights Reserved (Te Papa)"
+      nonfree: true
       title: Ngatu со спортивными трофеями, FE008724
       author: Мастер не указан
       year: 1932?
@@ -832,10 +833,12 @@
         повторение модулей.
       place: Museum of New Zealand Te Papa Tongarewa
       rights:
-        embed: false
-        reviewed: "2026-10-14"
-        note: Репродукция доступна на предметной странице источника.
+        reviewed: "2026-11-19"
     - workId: ngatu-fe10244
+      asset: assets/works/ngatu-fe10244.jpg
+      credit: "Museum of New Zealand Te Papa Tongarewa"
+      license: "All Rights Reserved (Te Papa)"
+      nonfree: true
       title: Ngatu в честь появления электричества, FE010244
       author: Мастер не указан
       year: 1991
@@ -848,9 +851,7 @@
         рамку.
       place: Museum of New Zealand Te Papa Tongarewa
       rights:
-        embed: false
-        reviewed: "2026-10-14"
-        note: Репродукция доступна на предметной странице источника.
+        reviewed: "2026-11-19"
   compare: []
   evidence:
     - claim: Музей описывает купеси, растирание через полотно и последующую ручную дорисовку.
@@ -884,6 +885,10 @@
       - tepapa-decorating-ngatu
   example:
     workId: ngatu-fe8723
+    asset: assets/works/ngatu-fe8723.jpg
+    credit: "Museum of New Zealand Te Papa Tongarewa"
+    license: "All Rights Reserved (Te Papa)"
+    nonfree: true
     title: Ngatu с изображением самолёта, FE008723
     author: Мастер не указан
     year: около 1940-х
@@ -894,15 +899,14 @@
     whyRepresentative: Самолёт, деревья, птицы и геральдические формы размещены в повторяющихся ячейках, разделённых линиями.
     place: Museum of New Zealand Te Papa Tongarewa
     rights:
-      embed: false
-      reviewed: "2026-10-14"
-      note: Репродукция доступна на предметной странице источника.
+      reviewed: "2026-11-19"
   review:
     status: reviewed
-    date: "2026-11-09"
+    date: "2026-11-19"
     scope: [relations, dates, text, images, gallery, corpus]
     note: >-
       Корпус — 14.10.2026: Сверены указанные предметные записи, материалы и пределы датировок. Репродукции корпуса просмотрены; формальные наблюдения относятся к выбранным примерам. Родство не утверждается, связи у записей. 09.11.2026: описание и даты — Те Папа. Галерея: снимок этикетки заменён изображением самого полотна (Р2), убрано двойное вхождение снимка процесса.
+      19.11.2026. Три полотна сверены с репродукциями и номерами предметов Те Папа.
   links:
     - title: Ngatu, FE008723, около 1940-х
       url: https://collections.tepapa.govt.nz/object/83327
@@ -1946,6 +1950,10 @@
         - tepapa-masi-making-vase
   corpus:
     - workId: masi-fe3272-1
+      asset: assets/works/masi-fe3272-1.jpg
+      credit: "Museum of New Zealand Te Papa Tongarewa"
+      license: "All Rights Reserved (Te Papa)"
+      nonfree: true
       title: Masi kesa, FE003272/1
       author: Мастер не указан
       year: 1890-е
@@ -1958,10 +1966,12 @@
         предметные мотивы.
       place: Museum of New Zealand Te Papa Tongarewa
       rights:
-        embed: false
-        reviewed: "2026-10-14"
-        note: Репродукция доступна на предметной странице источника.
+        reviewed: "2026-11-19"
     - workId: masi-imanueli-fe11160
+      asset: assets/works/masi-imanueli-fe11160.jpg
+      credit: "Museum of New Zealand Te Papa Tongarewa"
+      license: "All Rights Reserved (Te Papa)"
+      nonfree: true
       title: Ubi ni davodavo, FE011160
       author: Керела Имануэли
       year: Дата изготовления не указана
@@ -1974,10 +1984,12 @@
         и светлым полями.
       place: Museum of New Zealand Te Papa Tongarewa
       rights:
-        embed: false
-        reviewed: "2026-10-14"
-        note: Репродукция доступна на предметной странице источника.
+        reviewed: "2026-11-19"
     - workId: masi-fe12791
+      asset: assets/works/masi-fe12791.jpg
+      credit: "Museum of New Zealand Te Papa Tongarewa"
+      license: "All Rights Reserved (Te Papa)"
+      nonfree: true
       title: Masi, FE012791
       author: Мастер не указан
       year: Дата изготовления не указана
@@ -1990,10 +2002,12 @@
         расположенными формами.
       place: Museum of New Zealand Te Papa Tongarewa
       rights:
-        embed: false
-        reviewed: "2026-10-14"
-        note: Репродукция доступна на предметной странице источника.
+        reviewed: "2026-11-19"
     - workId: masi-that-vase-2019
+      asset: assets/works/masi-that-vase-2019.jpg
+      credit: "Museum of New Zealand Te Papa Tongarewa"
+      license: "All Rights Reserved (Te Papa)"
+      nonfree: true
       title: That Vase, 2020-0026-1
       author: Робин Уайт; Тамари Кабеиканачеа
       year: 2019
@@ -2006,9 +2020,7 @@
         как элементы изображённого пространства.
       place: Museum of New Zealand Te Papa Tongarewa
       rights:
-        embed: false
-        reviewed: "2026-10-14"
-        note: Репродукция доступна на предметной странице источника.
+        reviewed: "2026-11-19"
   compare:
     - id: samoan-siapo
       note: >-
@@ -2054,12 +2066,17 @@
       - tepapa-masi-making-vase
   review:
     status: reviewed
-    date: "2026-11-09"
+    date: "2026-11-19"
     scope: [relations, dates, text, images, gallery, corpus]
     note: >-
       Корпус — 14.10.2026: Просмотрены четыре репродукции и прочитаны предметные тексты. Две даты изготовления неизвестны; современная сцена не выдана за неизменный исторический канон. Анализ видео ограничен сопровождающим музейным текстом. Родство не утверждается, связи у записей. 09.11.2026: описание и даты — Те Папа. Галерея: подписаны авторы, годы и собрания.
+      19.11.2026. Четыре репродукции сверены с предметными записями Те Папа.
   example:
     workId: masi-fe3272-1
+    asset: assets/works/masi-fe3272-1.jpg
+    credit: "Museum of New Zealand Te Papa Tongarewa"
+    license: "All Rights Reserved (Te Papa)"
+    nonfree: true
     title: Masi kesa, FE003272/1
     author: Мастер не указан
     year: 1890-е
@@ -2072,9 +2089,7 @@
       предметные мотивы.
     place: Museum of New Zealand Te Papa Tongarewa
     rights:
-      embed: false
-      reviewed: "2026-10-14"
-      note: Репродукция доступна на предметной странице источника.
+      reviewed: "2026-11-19"
   links:
     - title: Masi kesa, FE003272/1, 1890-е
       url: https://collections.tepapa.govt.nz/object/150726

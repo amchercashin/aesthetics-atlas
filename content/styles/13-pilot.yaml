@@ -255,6 +255,10 @@
     - Форма жеста и его нерегулярность сохраняются даже при многократном повторении
   corpus:
     - workId: em-after-rain
+      asset: assets/works/emily-kngwarray.jpg
+      credit: "National Gallery of Victoria"
+      license: "© Emily Kam Kngwarray, Copyright Agency, Australia"
+      nonfree: true
       title: After rain / После дождя
       author: Эмили Кам Кнгваррей
       year: 1990
@@ -265,10 +269,12 @@
       whyRepresentative: Плотное точечное поле меняет цвет и ритм по всей поверхности; под ним читается линейная структура.
       place: National Gallery of Victoria
       rights:
-        embed: false
-        reviewed: "2026-10-14"
-        note: В атласе дана ссылка на репродукцию у источника.
+        reviewed: "2026-11-19"
     - workId: em-awely-1993
+      asset: assets/works/em-awely-1993.jpg
+      credit: "National Gallery of Victoria"
+      license: "© Emily Kam Kngwarray, Copyright Agency, Australia"
+      nonfree: true
       title: "Body paint: Awely"
       author: Эмили Кам Кнгваррей
       year: 1993
@@ -279,10 +285,12 @@
       whyRepresentative: Неровные чёрные полосы и белые интервалы превращают повторение линии в основной ритм.
       place: National Gallery of Victoria
       rights:
-        embed: false
-        reviewed: "2026-10-14"
-        note: В атласе дана ссылка на репродукцию у источника.
+        reviewed: "2026-11-19"
     - workId: em-big-yam
+      asset: assets/works/em-big-yam.jpg
+      credit: "National Gallery of Victoria"
+      license: "© Emily Kam Kngwarray, Copyright Agency, Australia"
+      nonfree: true
       title: Anwerlarr anganenty / Big yam Dreaming
       author: Эмили Кам Кнгваррей
       year: 1995
@@ -293,15 +301,13 @@
       whyRepresentative: Сеть белых линий занимает широкий тёмный холст; сгущения и разрежения работают без единого центра.
       place: National Gallery of Victoria
       rights:
-        embed: false
-        reviewed: "2026-10-14"
-        note: В атласе дана ссылка на репродукцию у источника.
+        reviewed: "2026-11-19"
   example:
+    workId: em-after-rain
     asset: assets/works/emily-kngwarray.jpg
     credit: "National Gallery of Victoria"
-    license: "© National Gallery of Victoria"
+    license: "© Emily Kam Kngwarray, Copyright Agency, Australia"
     nonfree: true
-    workId: em-after-rain
     title: After rain / После дождя
     author: Эмили Кам Кнгваррей
     year: 1990
@@ -312,8 +318,7 @@
     whyRepresentative: Плотное точечное поле меняет цвет и ритм по всей поверхности; под ним читается линейная структура.
     place: National Gallery of Victoria
     rights:
-      reviewed: "2026-10-14"
-      note: В атласе дана ссылка на репродукцию у источника.
+      reviewed: "2026-11-19"
   names:
     - Эмили Кам Кнгваррей
   links:
@@ -342,10 +347,11 @@
     - { claim: "Работы связаны с Alhalker и anwerlarr; разные этапы живописи", field: description, source: ngv-kngwarray-big-yam }
   review:
     status: reviewed
-    date: "2026-11-09"
+    date: "2026-11-19"
     scope: [relations, dates, text, images, gallery, corpus]
     note: >-
       Корпус — 14.10.2026: Сверены указанный корпус, атрибуции и пределы текста; репродукции корпуса просмотрены. Историческая генеалогия не утверждается. Родство не утверждается, контексты у записей. 09.11.2026: описание и даты — NGV; галерея: указанные прежде Tate и NGV как источники копий не подтверждены, источник не установлен, названия работ неизвестны.
+      19.11.2026. Три репродукции сверены с предметными записями NGV, главная фотография заменена на более крупную из той же записи.
   maturity: established
   labelStatus: editorial-scope-title
   scopeNote: >-
@@ -837,6 +843,10 @@
     - Пастель, акварель и тушь дают разные способы сочетать плоскость и пространство
   corpus:
     - workId: ca-native-corroboree
+      asset: assets/works/ca-native-corroboree.jpg
+      credit: "John Curtin Gallery, Curtin University; репродукция The Carrolup Story"
+      license: "Свободная лицензия не указана"
+      nonfree: true
       title: A Native Corroboree
       author: Рейнольд Харт
       year: 1949
@@ -847,10 +857,12 @@
       whyRepresentative: Тёмные деревья обрамляют действие; фигуры и ряды стволов создают ритм на нескольких планах.
       place: Herbert Mayer Collection, John Curtin Gallery
       rights:
-        embed: false
-        reviewed: "2026-10-14"
-        note: В атласе дана ссылка на репродукцию у источника.
+        reviewed: "2026-11-19"
     - workId: ca-down-to-drink
+      asset: assets/works/ca-down-to-drink.jpg
+      credit: "John Curtin Gallery, Curtin University; репродукция The Carrolup Story"
+      license: "Свободная лицензия не указана"
+      nonfree: true
       title: Down to Drink
       author: Парнелл Демпстер
       year: 1949
@@ -861,10 +873,12 @@
       whyRepresentative: Оранжевый склон и тёмные стволы направляют взгляд к воде; силуэты животных связывают планы.
       place: Herbert Mayer Collection, John Curtin Gallery
       rights:
-        embed: false
-        reviewed: "2026-10-14"
-        note: В атласе дана ссылка на репродукцию у источника.
+        reviewed: "2026-11-19"
     - workId: ca-bounding-home
+      asset: assets/works/ca-bounding-home.jpg
+      credit: "John Curtin Gallery, Curtin University; репродукция The Carrolup Story"
+      license: "Свободная лицензия не указана"
+      nonfree: true
       title: Bounding for Home
       author: Барри Лу
       year: 1950
@@ -877,11 +891,13 @@
         масштаб.
       place: Herbert Mayer Collection, John Curtin Gallery
       rights:
-        embed: false
-        reviewed: "2026-10-14"
-        note: В атласе дана ссылка на репродукцию у источника.
+        reviewed: "2026-11-19"
   example:
     workId: ca-native-corroboree
+    asset: assets/works/ca-native-corroboree.jpg
+    credit: "John Curtin Gallery, Curtin University; репродукция The Carrolup Story"
+    license: "Свободная лицензия не указана"
+    nonfree: true
     title: A Native Corroboree
     author: Рейнольд Харт
     year: 1949
@@ -892,9 +908,7 @@
     whyRepresentative: Тёмные деревья обрамляют действие; фигуры и ряды стволов создают ритм на нескольких планах.
     place: Herbert Mayer Collection, John Curtin Gallery
     rights:
-      embed: false
-      reviewed: "2026-10-14"
-      note: В атласе дана ссылка на репродукцию у источника.
+      reviewed: "2026-11-19"
   names:
     - Рейнольд Харт
     - Парнелл Демпстер
@@ -926,10 +940,11 @@
       source: curtin-carrolup-transfer
   review:
     status: reviewed
-    date: "2026-11-09"
+    date: "2026-11-19"
     scope: [relations, dates, text, images, gallery, corpus]
     note: >-
       Корпус — 14.10.2026: Сверены указанный корпус, атрибуции и пределы текста; репродукции корпуса просмотрены. Историческая генеалогия не утверждается. Родство не утверждается, контексты у записей. 09.11.2026: описание и даты — Кёртинский университет; галерея: убрано двойное вхождение рисунка, снимок поселения подписан как исторический, ошибочное имя снято.
+      19.11.2026. Три работы сверены с подписями и репродукциями в галерее The Carrolup Story.
   maturity: established
   labelStatus: historical
   dateNote: >-
@@ -1665,6 +1680,10 @@
     - Знак переносится с плоскости и неона на предмет и экранное пространство
   corpus:
     - workId: rr-regalia-2013
+      asset: assets/works/reko-rennie.jpg
+      credit: "National Gallery of Victoria, courtesy blackartprojects, Melbourne"
+      license: "© Reko Rennie"
+      nonfree: true
       title: Regalia
       author: Реко Ренни
       year: 2013
@@ -1675,10 +1694,12 @@
       whyRepresentative: Три изолированных светящихся знака — корона, ромб и флаг — читаются как лаконичная эмблема.
       place: NGV, 2015.178.a–c
       rights:
-        embed: false
-        reviewed: "2026-10-14"
-        note: В атласе дана ссылка на репродукцию у источника.
+        reviewed: "2026-11-19"
     - workId: rr-oa-rr-film
+      asset: assets/works/rr-oa-rr-film.jpg
+      credit: "Art Gallery of South Australia, кадр из музейного материала"
+      license: "© Reko Rennie"
+      nonfree: true
       title: OA_RR — видео
       author: Реко Ренни
       year: 2017
@@ -1688,18 +1709,18 @@
       sources:
         - agsa-rennie-oa-rr
         - ngv-rennie-labels
-      whyRepresentative: >-
-        На опубликованном кадре автомобиль движется в пыльном ландшафте. Музей объясняет яркий камуфляж как
-        утверждение видимости, а не сокрытие.
+      whyRepresentative: На кадре сверху круговые следы шин выделяются на красной земле.
       place: Art Gallery of South Australia
       rights:
-        embed: false
-        reviewed: "2026-10-14"
-        note: В атласе дана ссылка на репродукцию у источника.
+        reviewed: "2026-11-19"
       note: >-
         Для видео принята предметная датировка NGV 2017. Автомобиль OA_RR датирован отдельно, 2016–2017;
         встречается и сокращённая датировка проекта 2016.
     - workId: rr-initiation-film
+      asset: assets/works/rr-initiation-film.jpg
+      credit: "National Gallery of Victoria, кадр со страницы выставки"
+      license: "© Reko Rennie"
+      nonfree: true
       title: Initiation OA_RR
       author: Реко Ренни; партитура Деборы Читэм
       year: 2021
@@ -1707,19 +1728,15 @@
       reference: https://www.ngv.vic.gov.au/exhibition/initiation-oa_rr/
       sources:
         - ngv-rennie-initiation
-      whyRepresentative: >-
-        Розовый автомобиль с контрастными полосами помещён в городской пейзаж: окраска предмета становится
-        видимым знаком присутствия.
+      whyRepresentative: Розовый автомобиль с тёмными полосами едет по дороге на фоне промышленных труб.
       rights:
-        embed: false
-        reviewed: "2026-10-14"
-        note: В атласе дана ссылка на репродукцию у источника.
+        reviewed: "2026-11-19"
   example:
-    asset: assets/works/reko-rennie.jpg
-    credit: "National Gallery of Victoria"
-    license: "© National Gallery of Victoria"
-    nonfree: true
     workId: rr-regalia-2013
+    asset: assets/works/reko-rennie.jpg
+    credit: "National Gallery of Victoria, courtesy blackartprojects, Melbourne"
+    license: "© Reko Rennie"
+    nonfree: true
     title: Regalia
     author: Реко Ренни
     year: 2013
@@ -1730,8 +1747,7 @@
     whyRepresentative: Три изолированных светящихся знака — корона, ромб и флаг — читаются как лаконичная эмблема.
     place: NGV, 2015.178.a–c
     rights:
-      reviewed: "2026-10-14"
-      note: В атласе дана ссылка на репродукцию у источника.
+      reviewed: "2026-11-19"
   names:
     - Реко Ренни
   links:
@@ -1767,10 +1783,11 @@
       source: ngv-rennie-initiation
   review:
     status: reviewed
-    date: "2026-11-09"
+    date: "2026-11-19"
     scope: [relations, dates, text, images, gallery, corpus]
     note: >-
       Корпус — 14.10.2026: Сверены предметные записи, роли и датировки; просмотрены Regalia и опубликованные кадры двух видео. Полный покадровый анализ видео не выполнялся; историческое влияние не утверждается. Родство не утверждается, контексты у записей. 09.11.2026: описание — NGV и AGSA; галерея: ссылка на Википедию как источник копий снята, годы не установлены.
+      19.11.2026. Сверены Regalia и кадры двух видео по публикациям NGV и AGSA, для Regalia взята более крупная фотография NGV.
   maturity: established
   labelStatus: editorial-scope-title
   scopeNote: >-
