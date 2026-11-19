@@ -292,42 +292,6 @@
       note: >-
         Музей и инвентарный номер в описании файла не указаны, источник файла — публикация в WeChat; дата
         оттиска не проверена по музейной записи.
-    - asset: assets/works/ylq-danao-tiangong.jpg
-      title: Danao tiangong / 大闹天宫 — Переполох в Небесном дворце, LDM G-6195
-      author: Мастерская Yixinghe (义兴合画店; Isinghe в подписи статьи)
-      year: Конец XIX — начало XX века
-      place: Lietuvos dailės muziejus (LDM; название в публикации)
-      credit: Lietuvos dailės muziejus; репродукция — M. Lebednykaitė, Acta Academiae Artium Vilnensis
-      license: © Acta Academiae Artium Vilnensis, 2020; репродукция из статьи
-      nonfree: true
-      reference: https://aaav.vda.lt/journal/article/download/52/52/74#page=14
-      sources:
-        - aaav-yangliuqing-theatre
-      rights:
-        basis: Решение редакции атласа — публикация не содержит запрета на воспроизведение
-        reviewed: "2026-10-26"
-      whyRepresentative: >-
-        Эпизод «Путешествия на Запад» в оперной постановке: фигуры в сценических костюмах, с лентами и
-        оружием разведены по двору, архитектура обрамляет действие, название пьесы — в верхнем поле.
-      note: Лист корпуса этой карточки; репродукция из исследования невысокого разрешения.
-    - asset: assets/works/ylq-qu-feng-ming-guan.jpg
-      title: Qu feng ming guan / 取凤鸣关 — Взятие перевала Фэнмин, ČDM Tt-5844
-      author: Мастерская Yixinghe (Isinghe в подписи статьи)
-      year: Конец XIX — начало XX века
-      place: M. K. Čiurlionis National Museum of Art (ČDM)
-      credit: Nacionalinis M. K. Čiurlionio dailės muziejus; репродукция — M. Lebednykaitė, Acta Academiae Artium Vilnensis
-      license: © Acta Academiae Artium Vilnensis, 2020; репродукция из статьи
-      nonfree: true
-      reference: https://aaav.vda.lt/journal/article/download/52/52/74#page=25
-      sources:
-        - aaav-yangliuqing-theatre
-      rights:
-        basis: Решение редакции атласа — публикация не содержит запрета на воспроизведение
-        reviewed: "2026-10-26"
-      whyRepresentative: >-
-        Сцена из «Троецарствия» как на подмостках: военачальники с флажками за спиной, гримом и оружием
-        выстроены активными диагоналями на свободном поле.
-      note: Главная работа карточки; репродукция из исследования невысокого разрешения.
   summary: >-
     Раскрашенные печатные листы переводят театральную сцену в ясное расположение фигур, выразительные жесты и
     подробный костюм.
@@ -364,6 +328,10 @@
         - aaav-yangliuqing-theatre
   corpus:
     - workId: ylq-ldm-g6195
+      asset: assets/works/ylq-danao-tiangong.jpg
+      credit: "Lietuvos dailės muziejus; публикация Miglė Lebednykaitė"
+      license: "Репродукция из Acta Academiae Artium Vilnensis, 2020"
+      nonfree: true
       title: Danao tiangong / 大闹天宫 — Переполох в Небесном дворце, LDM G-6195
       author: Мастерская Yixinghe (义兴合画店; Isinghe в подписи статьи)
       year: Конец XIX — начало XX века
@@ -376,12 +344,13 @@
         а надпись расположена в верхнем поле.
       place: Lietuvos dailės muziejus (LDM; название в публикации)
       rights:
-        embed: false
-        reviewed: "2026-10-14"
-        note: >-
-          Репродукция опубликована в исследовании; дана ссылка на соответствующую страницу PDF, разрешение на
-          встраивание не заявлено.
+        reviewed: "2026-11-19"
+        note: Изображение приведено в разрешении опубликованного рисунка.
     - workId: ylq-ldm-g6181
+      asset: assets/works/ylq-ldm-g6181.jpg
+      credit: "Lietuvos dailės muziejus; публикация Miglė Lebednykaitė"
+      license: "Репродукция из Acta Academiae Artium Vilnensis, 2020"
+      nonfree: true
       title: Na Cai Tianhua / 拿蔡天化 — Поимка Цай Тяньхуа, LDM G-6181
       author: Мастерская Yixinghe (Isinghe в подписи статьи)
       year: Конец XIX — начало XX века
@@ -394,12 +363,13 @@
         более мягким пейзажным окружением.
       place: Lietuvos dailės muziejus (LDM; название в публикации)
       rights:
-        embed: false
-        reviewed: "2026-10-14"
-        note: >-
-          Репродукция опубликована в исследовании; дана ссылка на соответствующую страницу PDF, разрешение на
-          встраивание не заявлено.
+        reviewed: "2026-11-19"
+        note: Изображение приведено в разрешении опубликованного рисунка.
     - workId: ylq-cdm-tt5842
+      asset: assets/works/ylq-cdm-tt5842.jpg
+      credit: "M. K. Čiurlionis National Museum of Art; фото Audrius Kapčius, публикация Miglė Lebednykaitė"
+      license: "Репродукция из Acta Academiae Artium Vilnensis, 2020"
+      nonfree: true
       title: San xia wu yi zhuona Deng Che / 三侠五义捉拿鄧車, ČDM Tt-5842
       author: Мастерская не установлена; янлюцинская атрибуция по исследованию
       year: Конец XIX — начало XX века
@@ -412,12 +382,13 @@
         большую часть повествования.
       place: M. K. Čiurlionis National Museum of Art (ČDM)
       rights:
-        embed: false
-        reviewed: "2026-10-14"
-        note: >-
-          Репродукция опубликована в исследовании; дана ссылка на соответствующую страницу PDF, разрешение на
-          встраивание не заявлено.
+        reviewed: "2026-11-19"
+        note: Изображение приведено в разрешении опубликованного рисунка.
     - workId: ylq-cdm-tt5844
+      asset: assets/works/ylq-qu-feng-ming-guan.jpg
+      credit: "M. K. Čiurlionis National Museum of Art; фото Audrius Kapčius, публикация Miglė Lebednykaitė"
+      license: "Репродукция из Acta Academiae Artium Vilnensis, 2020"
+      nonfree: true
       title: Qu feng ming guan / 取凤鸣关 — Взятие перевала Фэнмин, ČDM Tt-5844
       author: Мастерская Yixinghe (Isinghe в подписи статьи)
       year: Конец XIX — начало XX века
@@ -430,12 +401,13 @@
         на незаполненном фоне.
       place: M. K. Čiurlionis National Museum of Art (ČDM)
       rights:
-        embed: false
-        reviewed: "2026-10-14"
-        note: >-
-          Репродукция опубликована в исследовании; дана ссылка на соответствующую страницу PDF, разрешение на
-          встраивание не заявлено.
+        reviewed: "2026-11-19"
+        note: Изображение приведено в разрешении опубликованного рисунка.
     - workId: ylq-cdm-tt5843
+      asset: assets/works/ylq-cdm-tt5843.jpg
+      credit: "M. K. Čiurlionis National Museum of Art; фото Audrius Kapčius, публикация Miglė Lebednykaitė"
+      license: "Репродукция из Acta Academiae Artium Vilnensis, 2020"
+      nonfree: true
       title: Changshou shan dao wei yang cao / 長壽山盗違陽草, ČDM Tt-5843
       author: Мастерская Yixinghe (Isinghe в подписи статьи)
       year: Конец XIX — начало XX века
@@ -448,13 +420,14 @@
         поле.
       place: M. K. Čiurlionis National Museum of Art (ČDM)
       rights:
-        embed: false
-        reviewed: "2026-10-14"
-        note: >-
-          Репродукция опубликована в исследовании; дана ссылка на соответствующую страницу PDF, разрешение на
-          встраивание не заявлено.
+        reviewed: "2026-11-19"
+        note: Изображение приведено в разрешении опубликованного рисунка.
   example:
     workId: ylq-cdm-tt5844
+    asset: assets/works/ylq-qu-feng-ming-guan.jpg
+    credit: "M. K. Čiurlionis National Museum of Art; фото Audrius Kapčius, публикация Miglė Lebednykaitė"
+    license: "Репродукция из Acta Academiae Artium Vilnensis, 2020"
+    nonfree: true
     title: Qu feng ming guan / 取凤鸣关 — Взятие перевала Фэнмин, ČDM Tt-5844
     author: Мастерская Yixinghe (Isinghe в подписи статьи)
     year: Конец XIX — начало XX века
@@ -467,11 +440,8 @@
       незаполненном фоне.
     place: M. K. Čiurlionis National Museum of Art (ČDM)
     rights:
-      embed: false
-      reviewed: "2026-10-14"
-      note: >-
-        Репродукция опубликована в исследовании; дана ссылка на соответствующую страницу PDF, разрешение на
-        встраивание не заявлено.
+      reviewed: "2026-11-19"
+      note: Изображение приведено в разрешении опубликованного рисунка.
   compare:
     - id: lubok
       note: >-
@@ -515,10 +485,11 @@
       - met-china-popular-prints
   review:
     status: reviewed
-    date: "2026-11-09"
+    date: "2026-11-19"
     scope: [relations, dates, text, images, gallery, corpus]
     note: >-
       Корпус — 14.10.2026: Просмотрены пять репродукций и сверены предметные подписи в оригинальном PDF. Атрибуции и широкие даты опираются на это исследование; отдельные музейные записи ещё не сопоставлены. Неустановленная мастерская пятого листа и предел театральной выборки сохранены. Родство не утверждается, связи у записей. 09.11.2026: описание и даты — исследование в Acta Academiae Artium Vilnensis, PDF перечитан; галерея без изменений: источник двух копий назван точно.
+      19.11.2026. Пять изображений сверены по рисункам 4, 5, 8, 9 и 10 статьи. Две репродукции уже были в галерее и теперь показаны один раз вместе с предметными подписями.
   links:
     - title: "Miglė Lebednykaitė. The Case of Peking Opera in Lithuania: The Collection of Chinese Woodblock Prints"
       url: https://aaav.vda.lt/journal/article/download/52/52/74
@@ -641,6 +612,10 @@
         - kemper-foshan-misery
   corpus:
     - workId: jz-bao-jun-tianjin
+      asset: assets/works/jz-bao-jun-tianjin.jpg
+      credit: "China Paper Cutting Museum, Yangzhou / Google Arts & Culture"
+      license: "Свободная лицензия не указана"
+      nonfree: true
       title: “Cut-paper Paintings” by Bao Jun in Tianjin
       author: Бао Цзюнь / Bao Jun
       year: 1800 — поле музейной карточки; в описании более широкий период
@@ -650,14 +625,16 @@
       reference: >-
         https://artsandculture.google.com/asset/%E2%80%9Ccut-paper-paintings%E2%80%9D-by-bao-jun-in-tianjin/rAEgGs49qyf33w
       whyRepresentative: >-
-        Два изображения цветов и птиц расположены на светлых полях. Музей описывает сочетание вырезания,
+        Два изображения цветов, стрекозы и бабочки расположены на светлых полях. Музей описывает сочетание вырезания,
         наклеивания и живописи; микроскопическое устройство краёв по этой репродукции не устанавливается.
       place: Tianjin Museum; публикация музея Янчжоу
       rights:
-        embed: false
-        reviewed: "2026-10-14"
-        note: Репродукция доступна на предметной странице источника.
+        reviewed: "2026-11-19"
     - workId: jz-zhang-screen-2007
+      asset: assets/works/jz-zhang-screen-2007.jpg
+      credit: "China Paper Cutting Museum, Yangzhou / Google Arts & Culture"
+      license: "Свободная лицензия не указана"
+      nonfree: true
       title: Four-panel Decorative Screen
       author: Чжан Сюфан / Zhang Xiufang
       year: 2007
@@ -670,10 +647,12 @@
         Весь набор учтён как одно произведение.
       place: China Paper Cutting Museum, Yangzhou / Google Arts & Culture
       rights:
-        embed: false
-        reviewed: "2026-10-14"
-        note: Репродукция доступна на предметной странице источника.
+        reviewed: "2026-11-19"
     - workId: jz-zhang-cranes-2007
+      asset: assets/works/jz-zhang-cranes-2007.jpg
+      credit: "China Paper Cutting Museum, Yangzhou / Google Arts & Culture"
+      license: "Свободная лицензия не указана"
+      nonfree: true
       title: Cranes Flying Around Clouds
       author: Чжан Сюфан / Zhang Xiufang
       year: 2007
@@ -686,10 +665,12 @@
         же существенны, как оставшаяся бумага.
       place: China Paper Cutting Museum, Yangzhou / Google Arts & Culture
       rights:
-        embed: false
-        reviewed: "2026-10-14"
-        note: Репродукция доступна на предметной странице источника.
+        reviewed: "2026-11-19"
     - workId: jz-foshan-misery
+      asset: assets/works/jz-foshan-misery.jpg
+      credit: "Mildred Lane Kemper Art Museum"
+      license: "Музейная репродукция, свободная лицензия не указана"
+      nonfree: true
       title: The Years of Misery, from The East is Red, WU 1999.19.02
       author: Анонимные участники коммуны Фошань (Fatshan), по музейной записи
       year: XX век; около начала 1970-х по кураторскому тексту
@@ -703,11 +684,13 @@
         архитектурой и предметами; это иной формальный подход, чем ажурный орнамент.
       place: Mildred Lane Kemper Art Museum
       rights:
-        embed: false
-        reviewed: "2026-10-14"
-        note: Репродукция доступна на предметной странице источника.
+        reviewed: "2026-11-19"
   example:
     workId: jz-zhang-cranes-2007
+    asset: assets/works/jz-zhang-cranes-2007.jpg
+    credit: "China Paper Cutting Museum, Yangzhou / Google Arts & Culture"
+    license: "Свободная лицензия не указана"
+    nonfree: true
     title: Cranes Flying Around Clouds
     author: Чжан Сюфан / Zhang Xiufang
     year: 2007
@@ -720,9 +703,7 @@
       же существенны, как оставшаяся бумага.
     place: China Paper Cutting Museum, Yangzhou / Google Arts & Culture
     rights:
-      embed: false
-      reviewed: "2026-10-14"
-      note: Репродукция доступна на предметной странице источника.
+      reviewed: "2026-11-19"
   compare:
     - id: yang-liuqing-nianhua
       note: >-
@@ -765,10 +746,11 @@
       - kemper-foshan-misery
   review:
     status: reviewed
-    date: "2026-11-09"
+    date: "2026-11-19"
     scope: [relations, dates, text, images, gallery, corpus]
     note: >-
       Корпус — 14.10.2026: Просмотрены четыре репродукции и прочитаны предметные поля. У Бао Цзюня дата приблизительна по контексту; от ширмы показана одна панель. Подписи Kemper прочитаны веб-инструментом, изображение — по публичной предметной ссылке. Полнота регионального охвата не заявлена. Родство не утверждается, связи у записей. 09.11.2026: даты — Музей вырезания бумаги в Янчжоу; галерея — страницы файлов, подписаны годы и находка в Дуньхуане.
+      19.11.2026. Просмотрены три репродукции музея Янчжоу и вырезка WU 1999.19.02 в браузере. Для ширмы показана опубликованная панель.
   links:
     - title: Bao Jun. “Cut-paper Paintings” in Tianjin
       url: >-
@@ -2185,6 +2167,10 @@
         - hkbu-mianzhu-collection
   corpus:
     - workId: nianhua-hkbu-hu-double-whips
+      asset: assets/works/nianhua-hkbu-hu-double-whips.jpg
+      credit: "Hong Kong Baptist University Library"
+      license: "Свободная лицензия не указана"
+      nonfree: true
       title: 双扬鞭 — парные дверные божества
       author: Ху Мингуй (胡明貴); издатель 绵竹胡氏画坊
       year: "[19--?] — предположительно XX век; точный год неизвестен"
@@ -2197,10 +2183,12 @@
         вооружения и белое поле удерживают симметричную пару. Комплект считается одной работой.
       place: HKBU Library
       rights:
-        embed: false
-        reviewed: "2026-10-14"
-        note: Репродукция доступна на предметной странице источника.
+        reviewed: "2026-11-19"
     - workId: nianhua-bm-ding-1906-1128-0-3
+      asset: assets/works/nianhua-bm-ding-1906-1128-0-3.jpg
+      credit: "British Museum / Google Arts & Culture"
+      license: "Фото © Trustees of the British Museum"
+      nonfree: true
       title: Корзина цветов, 1906,1128,0.3
       author: Мастерская Дин — автор рисунка (Designed by Ding Workshop)
       year: 1700–1799
@@ -2215,10 +2203,12 @@
         предположено музеем.
       place: British Museum
       rights:
-        embed: false
-        reviewed: "2026-10-14"
-        note: Репродукция доступна на предметной странице источника.
+        reviewed: "2026-11-19"
     - workId: ylq-ldm-g6195
+      asset: assets/works/ylq-danao-tiangong.jpg
+      credit: "Lietuvos dailės muziejus; публикация Miglė Lebednykaitė"
+      license: "Репродукция из Acta Academiae Artium Vilnensis, 2020"
+      nonfree: true
       title: Danao tiangong / 大闹天宫 — Переполох в Небесном дворце, LDM G-6195
       author: Мастерская Yixinghe (义兴合画店; Isinghe в подписи статьи)
       year: Конец XIX — начало XX века
@@ -2232,12 +2222,13 @@
         корпус; повторная карточная позиция не является новой работой.
       place: Lietuvos dailės muziejus (LDM; название в публикации)
       rights:
-        embed: false
-        reviewed: "2026-10-14"
-        note: >-
-          Репродукция опубликована в исследовании; дана ссылка на соответствующую страницу PDF, разрешение на
-          встраивание не заявлено.
+        reviewed: "2026-11-19"
+        note: Изображение приведено в разрешении опубликованного рисунка.
     - workId: nianhua-hkbu-li-gourd-boys
+      asset: assets/works/nianhua-hkbu-li-gourd-boys.jpg
+      credit: "Hong Kong Baptist University Library"
+      license: "Свободная лицензия не указана"
+      nonfree: true
       title: 金瓜童子 — парные изображения детей с тыквами
       author: Ли Фанфу (李芳福 — написание предметной записи)
       year: "[19--?] — предположительно XX век; точный год неизвестен"
@@ -2251,9 +2242,7 @@
         работами.
       place: HKBU Library
       rights:
-        embed: false
-        reviewed: "2026-10-14"
-        note: Репродукция доступна на предметной странице источника.
+        reviewed: "2026-11-19"
   compare:
     - id: chinese-jianzhi
       note: >-
@@ -2305,12 +2294,17 @@
       - bm-ding-flower-basket
   review:
     status: reviewed
-    date: "2026-11-09"
+    date: "2026-11-19"
     scope: [relations, dates, text, images, gallery, corpus]
     note: >-
       Корпус — 14.10.2026: Просмотрены четыре композиции и предметные записи. У одного листа новогодняя функция предположительна; два комплекта датированы [19--?]. Разночтение имени не разрешено; лист «Переполох в Небесном дворце» входит и в корпус янлюцинской гравюры. Обзор не исчерпывает региональные школы. Родство не утверждается, связи у записей. 09.11.2026: описание и даты — Метрополитен, HKBU, Британский музей; галерея — страницы файлов, служебные строки об авторе заменены.
+      19.11.2026. Парные листы сверены с каталогом HKBU, «Корзина цветов» — с номером British Museum. Лист G-6195 показан той же репродукцией, что и в карточке Янлюцина.
   example:
     workId: nianhua-hkbu-hu-double-whips
+    asset: assets/works/nianhua-hkbu-hu-double-whips.jpg
+    credit: "Hong Kong Baptist University Library"
+    license: "Свободная лицензия не указана"
+    nonfree: true
     title: 双扬鞭 — парные дверные божества
     author: Ху Мингуй (胡明貴); издатель 绵竹胡氏画坊
     year: "[19--?] — предположительно XX век; точный год неизвестен"
@@ -2323,9 +2317,7 @@
       и белое поле удерживают симметричную пару. Комплект считается одной работой.
     place: HKBU Library
     rights:
-      embed: false
-      reviewed: "2026-10-14"
-      note: Репродукция доступна на предметной странице источника.
+      reviewed: "2026-11-19"
   links:
     - title: 双扬鞭 / Flipping with double whips
       url: https://bcc.lib.hkbu.edu.hk/artcollection/j218-3-h47e/
@@ -2396,11 +2388,6 @@
       year: дата на странице файла не указана
       whyRepresentative: >-
         Ребёнок с жабой выделен чёрным контуром на зернистой бумаге.
-    - file: File:Dong-ho-rat-wedding.jpg
-      title: Мышиная свадьба
-      author: мастера деревни Донгхо
-      year: дата на странице файла не указана
-      whyRepresentative: Процессия чёрных мышей и надписи собраны в плотную композицию.
   summary: >-
     Локальная цветная печать соединяет выразительный контур, плоские участки цвета и надписи: от животных и
     праздничных сцен до быта и общественных сюжетов.
@@ -2444,6 +2431,10 @@
         - faam-dongho-peace-2957
   corpus:
     - workId: dongho-faam-oanh-mouse-marriage
+      asset: assets/works/dongho-faam-oanh-mouse-marriage.jpg
+      credit: "Fukuoka Asian Art Museum"
+      license: "Музейная репродукция, свободная лицензия не указана"
+      nonfree: true
       title: The Marriage of a Mouse — Мышиная свадьба
       author: Nguyen Thi Oanh — написание музейной подписи
       year: Дата неизвестна
@@ -2456,10 +2447,12 @@
         котом и свадебную процессию. Надписи встроены в свободные участки листа.
       place: Fukuoka Asian Art Museum
       rights:
-        embed: false
-        reviewed: "2026-10-14"
-        note: Музейная репродукция просмотрена; право встраивания не установлено, дана ссылка на источник.
+        reviewed: "2026-11-19"
     - workId: dongho-lnma-dragon-dance-1960s
+      asset: assets/works/dongho-lnma-dragon-dance-1960s.jpg
+      credit: "Latvian National Museum of Art, выставочная фотография"
+      license: "Свободная лицензия не указана"
+      nonfree: true
       title: Dragon Dance — Танец дракона, опубликованная деталь
       author: Неизвестный мастер деревни Донгхо
       year: 1960-е
@@ -2472,10 +2465,12 @@
         тёплом поле. Полную композицию листа по этому фрагменту не восстанавливаем.
       place: Latvian National Museum of Art
       rights:
-        embed: false
-        reviewed: "2026-10-14"
-        note: Музейная репродукция просмотрена; право встраивания не установлено, дана ссылка на источник.
+        reviewed: "2026-11-19"
     - workId: dongho-faam-2973
+      asset: assets/works/dongho-faam-2973.jpg
+      credit: "Fukuoka Asian Art Museum"
+      license: "Музейная репродукция, свободная лицензия не указана"
+      nonfree: true
       title: Modernization (Hunter and Bicycle Rider), 2973
       author: Автор неизвестен — по предметной записи
       year: 2010 — оттиск; дата исходного дизайна неизвестна
@@ -2488,10 +2483,12 @@
         ограничивают плоское цветное поле; бытовая сцена отличается от регистров мышиной процессии.
       place: Fukuoka Asian Art Museum
       rights:
-        embed: false
-        reviewed: "2026-10-14"
-        note: Музейная репродукция просмотрена; право встраивания не установлено, дана ссылка на источник.
+        reviewed: "2026-11-19"
     - workId: dongho-faam-2957
+      asset: assets/works/dongho-faam-2957.jpg
+      credit: "Fukuoka Asian Art Museum"
+      license: "Музейная репродукция, свободная лицензия не указана"
+      nonfree: true
       title: Peace, Education for the Populace, in Memorial of September 8, 2957
       author: Nguyen Dang San — написание предметной записи
       year: 2010 — оттиск; дата исходного дизайна неизвестна
@@ -2504,9 +2501,7 @@
         контур и отдельные цветовые участки используются для общественно-политического сюжета.
       place: Fukuoka Asian Art Museum
       rights:
-        embed: false
-        reviewed: "2026-10-14"
-        note: Музейная репродукция просмотрена; право встраивания не установлено, дана ссылка на источник.
+        reviewed: "2026-11-19"
   compare:
     - id: nianhua
       note: >-
@@ -2559,12 +2554,17 @@
       - lnma-dongho-dragon-1960s
   review:
     status: reviewed
-    date: "2026-11-09"
+    date: "2026-11-19"
     scope: [relations, dates, text, images, gallery, corpus]
     note: >-
       Корпус — 14.10.2026: Прочитаны музейные тексты и просмотрены четыре репродукции с проверкой подписей. Дракон доступен деталью, одна вещь не датирована. У двух оттисков известен год печати, но не дата исходной композиции. Корпус не исчерпывает историю традиции. Родство не утверждается, связи у записей. 09.11.2026: описание и даты — Азиатский музей Фукуоки и Латвийский музей; галерея — страницы файлов, подписаны авторы.
+      19.11.2026. Листы сверены с выставкой и каталогом музея Фукуоки и с подписью детали «Танца дракона» Латвийского музея. В галерее «Мышиная свадьба» представлена экземпляром из музейной публикации.
   example:
     workId: dongho-faam-oanh-mouse-marriage
+    asset: assets/works/dongho-faam-oanh-mouse-marriage.jpg
+    credit: "Fukuoka Asian Art Museum"
+    license: "Музейная репродукция, свободная лицензия не указана"
+    nonfree: true
     title: The Marriage of a Mouse — Мышиная свадьба
     author: Nguyen Thi Oanh — написание музейной подписи
     year: Дата неизвестна
@@ -2577,9 +2577,7 @@
       котом и свадебную процессию. Надписи встроены в свободные участки листа.
     place: Fukuoka Asian Art Museum
     rights:
-      embed: false
-      reviewed: "2026-10-14"
-      note: Музейная репродукция просмотрена; право встраивания не установлено, дана ссылка на источник.
+      reviewed: "2026-11-19"
   links:
     - title: "New Collection Exhibition: Dong Ho Print from the Cynthea J. Bogel Collection"
       url: https://faam.city.fukuoka.lg.jp/en/exhibition/20238/

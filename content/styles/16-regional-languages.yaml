@@ -650,6 +650,10 @@
     - Знак может выйти из плоскости и стать самостоятельной пространственной формой
   corpus:
     - workId: xu-book-sky
+      asset: assets/works/xu-book-sky.jpg
+      credit: "Xu Bing Studio; вид выставки Blanton Museum of Art, 2016"
+      license: "Свободная лицензия не указана"
+      nonfree: true
       title: Book from the Sky / Книга с неба
       author: Сюй Бин; печатное и монтажное производство проекта
       year: 1987–1991
@@ -663,10 +667,12 @@
         разными работами.
       place: Инсталляционный вид Blanton Museum
       rights:
-        embed: false
-        reviewed: "2026-10-15"
-        note: В атласе дана предметная ссылка; разрешение на встраивание этой репродукции не заявляется.
+        reviewed: "2026-11-19"
     - workId: xu-square-classroom
+      asset: assets/works/xu-square-classroom.jpg
+      credit: "Xu Bing Studio"
+      license: "Свободная лицензия не указана"
+      nonfree: true
       title: Square Word Calligraphy Classroom
       author: Сюй Бин / студия
       year: 1994–1996
@@ -677,10 +683,12 @@
       whyRepresentative: Учебная расстановка и образцы превращают узнавание английского слова в практическое упражнение.
       place: Документация Xu Bing Studio
       rights:
-        embed: false
-        reviewed: "2026-10-15"
-        note: В атласе дана предметная ссылка; разрешение на встраивание этой репродукции не заявляется.
+        reviewed: "2026-11-19"
     - workId: xu-monkeys-moon
+      asset: assets/works/xu-monkeys-moon.jpg
+      credit: "Smithsonian National Museum of Asian Art"
+      license: "Свободная лицензия не указана"
+      nonfree: true
       title: Monkeys Grasp for the Moon
       author: Сюй Бин
       year: 2001
@@ -693,9 +701,7 @@
         также как фигуры.
       place: Smithsonian National Museum of Asian Art
       rights:
-        embed: false
-        reviewed: "2026-10-15"
-        note: В атласе дана предметная ссылка; разрешение на встраивание этой репродукции не заявляется.
+        reviewed: "2026-11-19"
   creators:
     - name: Сюй Бин
       orig: Xu Bing / 徐冰
@@ -751,6 +757,10 @@
     - { claim: "Книги и свитки напечатаны с вырезанных деревянных литер изобретённых знаков", field: description, source: blanton-xu-sky }
   example:
     workId: xu-book-sky
+    asset: assets/works/xu-book-sky.jpg
+    credit: "Xu Bing Studio; вид выставки Blanton Museum of Art, 2016"
+    license: "Свободная лицензия не указана"
+    nonfree: true
     title: Book from the Sky / Книга с неба
     author: Сюй Бин; печатное и монтажное производство проекта
     year: 1987–1991
@@ -764,9 +774,7 @@
       разными работами.
     place: Инсталляционный вид Blanton Museum
     rights:
-      embed: false
-      reviewed: "2026-10-15"
-      note: В атласе дана предметная ссылка; разрешение на встраивание этой репродукции не заявляется.
+      reviewed: "2026-11-19"
   names:
     - Сюй Бин
     - Xu Bing Studio
@@ -789,10 +797,11 @@
       lang: en
   review:
     status: reviewed
-    date: "2026-11-09"
+    date: "2026-11-19"
     scope: [relations, dates, text, images, gallery, corpus]
     note: >-
       Корпус — 15.10.2026: Три самостоятельных проекта и их изображения сверены по музейным и авторским записям. Это ограниченная операция над письмом, не полный обзор авторской практики; состав производственных команд поимённо не установлен. Родство не утверждается, связи у записей. 09.11.2026: описание и даты — Blanton и сайт студии; галерея: источник копии не установлен, пример Square Word больше не приписан художнику.
+      19.11.2026. Сверены виды двух инсталляций на сайте студии Сюй Бина и снимок Monkeys Grasp for the Moon в Smithsonian.
   compare:
     - id: conceptual-art
       note: >-
