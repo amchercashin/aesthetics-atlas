@@ -211,7 +211,7 @@ R означает: сначала решить, нужен ли отдельн�
 | ID | Что сделать | Статус | PR |
 | --- | --- | --- | --- |
 | I-01a | Россия. `lubok`, `zhostovo-painting`, `gorodets-painting`, `palekh-miniature`, `mezen-painting`, `khokhloma`, `zverev-portrait-graphics`, `norshtein-animation`. Закрыты 35 мест в 8 карточках, в том числе 6 главных иллюстраций. | готово | #111 |
-| I-01b | Океания. `maori-whakairo`, `samoan-siapo`, `fijian-masi`, `tongan-ngatu`, `carrolup-school`, `emily-kngwarray`, `torres-strait-printmaking`, `alick-tipoti`, `reko-rennie`. Закрыты 36 мест в 9 карточках, в том числе 7 главных иллюстраций. | готово | |
+| I-01b | Океания. `maori-whakairo`, `samoan-siapo`, `fijian-masi`, `tongan-ngatu`, `carrolup-school`, `emily-kngwarray`, `torres-strait-printmaking`, `alick-tipoti`, `reko-rennie`. Закрыты 36 мест в 9 карточках, в том числе 7 главных иллюстраций. | готово | #112 |
 | I-01c | Южная Азия. `chola-bronzes`, `kalighat-painting`, `jamini-roy-painting`, `shahzia-sikander`, `warli-painting`, `mithila-painting`, `bengal-patachitra`. | — | |
 | I-01d | Восточная и Юго-Восточная Азия. `nianhua`, `chinese-jianzhi`, `hokusai-landscape-prints`, `yang-liuqing-nianhua`, `dong-ho-prints`, `rei-kawakubo`, `xu-bing-writing-systems`, `pacita-abad`, `borobudur-art`. | — | |
 | I-01e | Африка, Европа и Западная Азия. `ife-sculpture`, `iznik-ceramics`, `asante-kente`, `adinkra`, `bogolanfini`, `polish-wycinanki`, `ndebele-murals`, `esther-mahlangu`, `el-anatsui-metal-textiles`. | — | |
