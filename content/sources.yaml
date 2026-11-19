@@ -1543,6 +1543,15 @@
   sourceType: museum
   checked: 2026-11-09
   note: "Прочитан текст и подпись Fishnet, 2009; просмотрена соответствующая фотография выставки. В alt она названа видом выставки 2025: год фотографии не заменяет год картины. Посетительница закрывает часть нижней композиции. Материалы отдельной работы не уточнены; общие или очень ранние датировки традиции из вводного текста не перенесены в карточку. Перечитано 09.11.2026."
+- id: artshebdo-mashe-fishnet
+  title: «Histoires de voir». Репродукция Fishnet
+  publisher: ArtsHebdoMédias
+  url: https://www.artshebdomedias.com/article/250612-fondation-cartier-art-avec-le-coeur/
+  sourceType: press
+  checked: '2026-11-19'
+  note: >-
+    В обзоре выставки Fondation Cartier опубликована полная репродукция Fishnet. В подписи названы
+    Дживья Сома Маше, собрание Fondation Cartier и фотограф Андре Морен.
 - id: banglanatak-warli-wedding-process
   title: A Wedding Depiction Underway, фотодокументация 2025
   publisher: Banglanatak / Google Arts & Culture

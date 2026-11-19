@@ -1626,6 +1626,10 @@
         - qagoma-monimala-santhal-2014
   corpus:
     - workId: bengal-mantu-gujarat-2012
+      asset: assets/works/bengal-mantu-gujarat-2012.jpg
+      credit: "Queensland Art Gallery & Gallery of Modern Art / Google Arts & Culture"
+      license: "Свободная лицензия не указана"
+      nonfree: true
       title: The Gujarat Earthquake / Землетрясение в Гуджарате
       author: Манту Читракар
       year: "2012"
@@ -1639,10 +1643,12 @@
         вертикаль.
       place: Собрание Queensland Art Gallery
       rights:
-        embed: false
-        reviewed: "2026-10-14"
-        note: Репродукция доступна на предметной странице источника.
+        reviewed: "2026-11-19"
     - workId: bengal-jaba-durga-ganga-2010
+      asset: assets/works/bengal-jaba-durga-ganga-2010.jpg
+      credit: "Queensland Art Gallery & Gallery of Modern Art / Google Arts & Culture"
+      license: "Свободная лицензия не указана"
+      nonfree: true
       title: The fight between Goddess Durga and Goddess Ganga / Борьба Дурги и Ганги
       author: Джаба Читракар
       year: "2010"
@@ -1656,10 +1662,12 @@
         прямоугольных рамок для каждого эпизода. Растительный бордюр объединяет всю длину.
       place: Собрание Queensland Art Gallery
       rights:
-        embed: false
-        reviewed: "2026-10-14"
-        note: Репродукция доступна на предметной странице источника.
+        reviewed: "2026-11-19"
     - workId: bengal-monimala-santhal-2014
+      asset: assets/works/bengal-monimala-santhal-2014.jpg
+      credit: "Queensland Art Gallery & Gallery of Modern Art / Google Arts & Culture"
+      license: "Свободная лицензия не указана"
+      nonfree: true
       title: Santhal Story of Origin / Рассказ о происхождении санталов
       author: Монимала Читракар
       year: "2014"
@@ -1673,10 +1681,12 @@
         и повтор цветных контуров связывают несколько масштабов изображения.
       place: Собрание Queensland Art Gallery
       rights:
-        embed: false
-        reviewed: "2026-10-14"
-        note: Репродукция доступна на предметной странице источника.
+        reviewed: "2026-11-19"
     - workId: bengal-jaba-nirbhaya-2013
+      asset: assets/works/bengal-jaba-nirbhaya-2013.jpg
+      credit: "Queensland Art Gallery & Gallery of Modern Art / Google Arts & Culture"
+      license: "Свободная лицензия не указана"
+      nonfree: true
       title: "Nirbhaya — Delhi rape case / Нирбхая: дело в Дели"
       author: Джаба Читракар
       year: "2013"
@@ -1689,11 +1699,13 @@
         отдельных полях диагональные формы меняют ритм горизонтальных рядов.
       place: Собрание Queensland Art Gallery
       rights:
-        embed: false
-        reviewed: "2026-10-14"
-        note: Репродукция доступна на предметной странице источника.
+        reviewed: "2026-11-19"
   example:
     workId: bengal-jaba-durga-ganga-2010
+    asset: assets/works/bengal-jaba-durga-ganga-2010.jpg
+    credit: "Queensland Art Gallery & Gallery of Modern Art / Google Arts & Culture"
+    license: "Свободная лицензия не указана"
+    nonfree: true
     title: The fight between Goddess Durga and Goddess Ganga / Борьба Дурги и Ганги
     author: Джаба Читракар
     year: "2010"
@@ -1707,9 +1719,7 @@
       прямоугольных рамок для каждого эпизода. Растительный бордюр объединяет всю длину.
     place: Собрание Queensland Art Gallery
     rights:
-      embed: false
-      reviewed: "2026-10-14"
-      note: Репродукция доступна на предметной странице источника.
+      reviewed: "2026-11-19"
   compare:
     - id: kalighat-painting
       note: >-
@@ -1761,10 +1771,11 @@
       - banglanatak-swarna-colour-process
   review:
     status: reviewed
-    date: "2026-11-09"
+    date: "2026-11-19"
     scope: [relations, dates, text, images, gallery, corpus]
     note: >-
       Корпус — 14.10.2026: Прочитаны четыре предметные записи, все четыре целых свитка просмотрены в опубликованных репродукциях; различены даты сюжета, работы, выставки и приобретения. Формальный анализ относится к этим статическим изображениям; исполнение песен и историческая полнота корпуса не заявлены. Родство не утверждается, связи у записей. 09.11.2026: описание и даты — QAGOMA; галерея: источник копий не установлен, прежний XX век снят.
+      19.11.2026. Четыре свитка целиком сопоставлены с предметными страницами Queensland Art Gallery & Gallery of Modern Art.
   links:
     - title: Mantu Chitrakar. The Gujarat Earthquake, 2012
       url: https://artsandculture.google.com/asset/the-gujarat-earthquake-mantu-chitrakar/LgFogX8rBOX6Qg
@@ -1873,7 +1884,7 @@
     требуют дальнейшего локального исследования; имена двух художниц на фотографии не установлены.
   dateNote: >-
     Около 1990 и 2009 — даты произведений. У росписи Crafts Museum дата отсутствует; 2025 относится к
-    выставочной фотографии Fishnet и записи отдельного рабочего процесса. Координаты карты ограничивают это
+    записи отдельного рабочего процесса. Координаты карты ограничивают это
     документированное сопоставление, а не время существования варли.
   creators:
     - name: Дживья Сома Маше
@@ -1894,6 +1905,10 @@
         - crafts-museum-vangad-ladke-warli
   corpus:
     - workId: warli-map-mashe-c1990
+      asset: assets/works/warli-map-mashe-c1990.jpg
+      credit: "Museum of Art & Photography, Бангалор / Google Arts & Culture"
+      license: "Свободная лицензия не указана"
+      nonfree: true
       title: Untitled Warli painting / Живопись варли без названия
       author: Дживья Сома Маше
       year: Около 1990
@@ -1906,10 +1921,12 @@
         заполняют пространство вокруг неё; белый рисунок контрастирует с коричневой основой.
       place: Museum of Art & Photography, Бангалор
       rights:
-        embed: false
-        reviewed: "2026-10-14"
-        note: Репродукция доступна на предметной странице источника.
+        reviewed: "2026-11-19"
     - workId: warli-crafts-vangad-ladke-wall
+      asset: assets/works/warli-crafts-vangad-ladke-wall.jpg
+      credit: "National Crafts Museum, Нью-Дели / Google Arts & Culture"
+      license: "Свободная лицензия не указана"
+      nonfree: true
       title: Warli Painting / Роспись внешних стен Crafts Museum
       author: Раджеш Чайтья Вангад и Балу Ладке
       year: Дата не указана
@@ -1923,30 +1940,32 @@
         фоне.
       place: National Crafts Museum, Нью-Дели
       rights:
-        embed: false
-        reviewed: "2026-10-14"
-        note: Репродукция доступна на предметной странице источника.
+        reviewed: "2026-11-19"
       note: Два художника названы соавторами одного ансамбля; отдельные поля и снимки не увеличивают число работ.
     - workId: warli-cartier-fishnet-2009
+      asset: assets/works/warli-cartier-fishnet-2009.jpg
+      credit: "Fondation Cartier pour l’art contemporain; фото Андре Морена, ArtsHebdoMédias"
+      license: "© Jivya Soma Mashe; фото © André Morin"
+      nonfree: true
       title: Fishnet / Рыболовная сеть
       author: Дживья Сома Маше
       year: "2009"
-      medium: Материалы этой работы страница не уточняет
       sources:
         - cartier-mashe-fishnet-2009
-      reference: https://www.fondationcartier.com/en/collection/artists/jivya-soma-mashe
+        - artshebdo-mashe-fishnet
+      reference: https://www.artshebdomedias.com/article/250612-fondation-cartier-art-avec-le-coeur/
       whyRepresentative: >-
         Крупная конусообразная сеть собрана из множества тонких светлых линий; её масштаб резко отличается от
-        мелких фигур на поверхности. Нижний участок на выставочной фотографии частично закрыт посетительницей.
+        мелких фигур на поверхности.
       place: Fondation Cartier pour l’art contemporain
       rights:
-        embed: false
-        reviewed: "2026-10-14"
-        note: Репродукция доступна на предметной странице источника.
-      note: >-
-        Год произведения взят из подписи 2009; вид выставки подписан 2025. Это не портрет художника и не новая
-        работа 2025 года.
+        reviewed: "2026-11-19"
+      note: Фотография Андре Морена опубликована в обзоре выставки Histoires de voir 2012 года.
     - workId: warli-wedding-process-document-2025
+      asset: assets/works/warli-wedding-process-document-2025.jpg
+      credit: "Banglanatak / Google Arts & Culture"
+      license: "Свободная лицензия не указана"
+      nonfree: true
       title: Свадебная композиция в процессе создания
       author: Две художницы; имена не сообщены
       year: Дата выполнения не уточнена; фотодокументация 2025
@@ -1959,14 +1978,16 @@
         границы. Видны руки двух художниц, продолжающих один рисунок.
       place: Махараштра, Индия
       rights:
-        embed: false
-        reviewed: "2026-10-14"
-        note: Репродукция доступна на предметной странице источника.
+        reviewed: "2026-11-19"
       note: >-
         Дополнительная композиция показана в работе и фрагментарно. Организация Banglanatak документирует
         процесс, а не названа автором росписи.
   example:
     workId: warli-map-mashe-c1990
+    asset: assets/works/warli-map-mashe-c1990.jpg
+    credit: "Museum of Art & Photography, Бангалор / Google Arts & Culture"
+    license: "Свободная лицензия не указана"
+    nonfree: true
     title: Untitled Warli painting / Живопись варли без названия
     author: Дживья Сома Маше
     year: Около 1990
@@ -1979,9 +2000,7 @@
       заполняют пространство вокруг неё; белый рисунок контрастирует с коричневой основой.
     place: Museum of Art & Photography, Бангалор
     rights:
-      embed: false
-      reviewed: "2026-10-14"
-      note: Репродукция доступна на предметной странице источника.
+      reviewed: "2026-11-19"
   compare:
     - id: mithila-painting
       note: >-
@@ -2030,10 +2049,11 @@
       - banglanatak-palghar-living-heritage
   review:
     status: reviewed
-    date: "2026-11-09"
+    date: "2026-11-19"
     scope: [relations, dates, text, images, gallery, corpus]
     note: >-
       Корпус — 14.10.2026: Просмотрены три самостоятельных произведения и фрагмент четвёртой композиции в работе. Выставочный вид Fishnet частично закрыт посетительницей; дата росписи Crafts Museum и имена двух женщин не сообщены. Ранние датировки, точная рецептура красок каждого примера и полнота ритуального корпуса не установлены. Родство не утверждается, связи у записей. 09.11.2026: даты и описание — MAP и Fondation Cartier; галерея: источник копий не установлен; у работы Маше автором указан художник, а не фотограф.
+      19.11.2026. Четыре изображения сверены с исходными публикациями. Fishnet показана целиком по фотографии Андре Морена из собрания Fondation Cartier.
   links:
     - title: Jivya Soma Mashe. Untitled Warli painting, около 1990
       url: https://artsandculture.google.com/asset/untitled-warli-painting-jivya-soma-mashe/qgF8F8jGsjAQRw

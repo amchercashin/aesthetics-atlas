@@ -269,47 +269,44 @@
     - Фигура, читаемая со всех сторон
   corpus:
     - workId: chola-parvati-57513
+      file: MET DT239.jpg
       title: Стоящая Парвати, 57.51.3
       author: Мастер не указан
       year: Около первой четверти X века
       medium: Медный сплав
-      reference: https://www.metmuseum.org/art/collection/search/39325
       sources:
         - met-chola-parvati
       whyRepresentative: Сдержанная поза позволяет проследить мягкие переходы торса, изгиб бедра и ритм украшений.
       place: Met
       rights:
-        embed: false
-        reviewed: "2026-10-15"
-        note: В атласе дана предметная ссылка; разрешение на встраивание этой репродукции не заявляется.
+        reviewed: "2026-11-19"
+        basis: CC0 1.0 по открытому каталогу Met
     - workId: chola-nataraja-1987801
+      file: MET DT240.jpg
       title: Шива Натараджа, 1987.80.1
       author: Мастер не указан
       year: Около конца XI века
       medium: Медный сплав
-      reference: https://www.metmuseum.org/art/collection/search/39328
       sources:
         - met-chola-nataraja
       whyRepresentative: Дуга ореола и разведённые конечности превращают объём в открытый пространственный рисунок.
       place: Met
       rights:
-        embed: false
-        reviewed: "2026-10-15"
-        note: В атласе дана предметная ссылка; разрешение на встраивание этой репродукции не заявляется.
+        reviewed: "2026-11-19"
+        basis: CC0 1.0 по открытому каталогу Met
     - workId: chola-shiva-parvati-20002845
+      file: MET DP124085.jpg
       title: Стоящие Шива и Парвати, 2000.284.5
       author: Мастер не указан
       year: XIII век
       medium: Медный сплав
-      reference: https://www.metmuseum.org/art/collection/search/39252
       sources:
         - met-chola-shiva-parvati
       whyRepresentative: Парная группа показывает согласование двух силуэтов на общем основании; это один ансамбль.
       place: Met
       rights:
-        embed: false
-        reviewed: "2026-10-15"
-        note: В атласе дана предметная ссылка; разрешение на встраивание этой репродукции не заявляется.
+        reviewed: "2026-11-19"
+        basis: CC0 1.0 по открытому каталогу Met
   creators:
     - name: Неустановленные мастера периода Чола
       role: авторы трёх скульптур; индивидуальные имена в записях не указаны
@@ -369,10 +366,11 @@
       lang: en
   review:
     status: reviewed
-    date: "2026-11-09"
+    date: "2026-11-19"
     scope: [relations, dates, text, images, gallery, corpus]
     note: >-
       Корпус — 15.10.2026: Три предмета, подписи и изображения сверены. Корпус не покрывает всю скульптуру периода Чола; полная история владения и технологическое исследование сплавов здесь не выполнены. Родство не утверждается, связи у записей. 09.11.2026: даты и текст — записи Метрополитена; галерея: снимок храма заменён скульптурой (Р2).
+      19.11.2026. Три музейных фотографии на Commons сопоставлены с номерами и изображениями открытого каталога Met.
   compare:
     - id: gandhara
       note: >-
@@ -451,6 +449,10 @@
     - Повтор фигур и внутренних линий создаёт ясный ритм замкнутой композиции
   corpus:
     - workId: roy-ngma-107
+      asset: assets/works/roy-ngma-107.jpg
+      credit: "National Gallery of Modern Art, India"
+      license: "Свободная лицензия не указана"
+      nonfree: true
       title: Cat and Lobster / Кошка с омаром, 107
       author: Джамини Рой
       year: Дата в записи не указана
@@ -461,10 +463,12 @@
       whyRepresentative: Замкнутый контур, большие глаза и плоские цветовые участки собирают животное в компактный знак.
       place: NGMA
       rights:
-        embed: false
-        reviewed: "2026-10-15"
-        note: В атласе дана предметная ссылка; разрешение на встраивание этой репродукции не заявляется.
+        reviewed: "2026-11-19"
     - workId: roy-ngma-79
+      asset: assets/works/roy-ngma-79.jpg
+      credit: "National Gallery of Modern Art, India"
+      license: "Свободная лицензия не указана"
+      nonfree: true
       title: Black Horse / Чёрная лошадь, 79
       author: Джамини Рой
       year: Дата в записи не указана
@@ -472,13 +476,15 @@
       reference: https://www.ngmaindia.gov.in/virtual-tour-of-modern-art-1.asp
       sources:
         - ngma-jamini-roy-tour
-      whyRepresentative: Тёмный силуэт и немногие светлые внутренние линии противопоставлены сплошному красному полю.
+      whyRepresentative: Тёмный силуэт лошади выделен на красном поле, светлые линии подчёркивают сбрую и изгибы фигуры.
       place: NGMA
       rights:
-        embed: false
-        reviewed: "2026-10-15"
-        note: В атласе дана предметная ссылка; разрешение на встраивание этой репродукции не заявляется.
+        reviewed: "2026-11-19"
     - workId: roy-ngma-63
+      asset: assets/works/roy-ngma-63.jpg
+      credit: "National Gallery of Modern Art, India"
+      license: "Свободная лицензия не указана"
+      nonfree: true
       title: Three Pujarins / Три служительницы культа, 63
       author: Джамини Рой
       year: Дата в записи не указана
@@ -489,9 +495,7 @@
       whyRepresentative: Повтор близких фигур превращает группу в ритм контуров, лиц и цветовых полей.
       place: NGMA
       rights:
-        embed: false
-        reviewed: "2026-10-15"
-        note: В атласе дана предметная ссылка; разрешение на встраивание этой репродукции не заявляется.
+        reviewed: "2026-11-19"
   creators:
     - name: Джамини Рой
       orig: Jamini Roy
@@ -532,6 +536,10 @@
     - { claim: "С конца 1920-х Рой отказывается от масла и обращается к местным пигментам и деревенским образам", field: description, source: ngma-jamini-roy-tour }
   example:
     workId: roy-ngma-107
+    asset: assets/works/roy-ngma-107.jpg
+    credit: "National Gallery of Modern Art, India"
+    license: "Свободная лицензия не указана"
+    nonfree: true
     title: Cat and Lobster / Кошка с омаром, 107
     author: Джамини Рой
     year: Дата в записи не указана
@@ -542,9 +550,7 @@
     whyRepresentative: Замкнутый контур, большие глаза и плоские цветовые участки собирают животное в компактный знак.
     place: NGMA
     rights:
-      embed: false
-      reviewed: "2026-10-15"
-      note: В атласе дана предметная ссылка; разрешение на встраивание этой репродукции не заявляется.
+      reviewed: "2026-11-19"
   names:
     - Джамини Рой
   links:
@@ -558,10 +564,11 @@
       lang: en
   review:
     status: reviewed
-    date: "2026-11-09"
+    date: "2026-11-19"
     scope: [relations, dates, text, images, gallery, corpus]
     note: >-
       Корпус — 15.10.2026: Сверены три самостоятельные подписи и музейный текст о Калигхате. Даты предметов не установлены; влияние описано для формирования языка, а не как точная история изготовления этих трёх работ. Родство не утверждается, связи у записей. 09.11.2026: описание и даты — виртуальная выставка NGMA; галерея: настенная роспись больше не выдаётся за работу Роя, у «Двух вайшнавов» указана марка.
+      19.11.2026. Три репродукции сверены с работами 63, 79 и 107 в виртуальной галерее NGMA.
   compare:
     - id: bengal-patachitra
       note: >-

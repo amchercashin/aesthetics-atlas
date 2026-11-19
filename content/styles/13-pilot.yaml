@@ -646,6 +646,10 @@
     - Повествование разворачивается через несколько точек зрения и состояний фигуры
   corpus:
     - workId: si-scroll
+      asset: assets/works/si-scroll.jpg
+      credit: "Cincinnati Art Museum; предоставлено Шахзией Сикандер и Sean Kelly"
+      license: "© Shahzia Sikander"
+      nonfree: true
       title: The Scroll / Свиток
       author: Шахзия Сикандер
       year: 1989–1990
@@ -659,10 +663,12 @@
         чтение вдоль листа.
       place: Собрание художницы
       rights:
-        embed: false
-        reviewed: "2026-10-14"
-        note: В атласе дана ссылка на репродукцию у источника.
+        reviewed: "2026-11-19"
     - workId: si-perilous-order
+      asset: assets/works/si-perilous-order.jpg
+      credit: "Cincinnati Art Museum; собрание Whitney Museum of American Art, 97.83.2"
+      license: "© Shahzia Sikander"
+      nonfree: true
       title: Perilous Order
       author: Шахзия Сикандер
       year: 1989–1997
@@ -674,10 +680,12 @@
       whyRepresentative: Овальный портрет, парящие фигуры и точечное поле сталкивают несколько масштабов и уровней изображения.
       place: Whitney Museum of American Art
       rights:
-        embed: false
-        reviewed: "2026-10-14"
-        note: В атласе дана ссылка на репродукцию у источника.
+        reviewed: "2026-11-19"
     - workId: si-usurpia
+      asset: assets/works/si-usurpia.jpg
+      credit: "Cincinnati Art Museum; собрание Ану и Арджуна Аггарвал"
+      license: "© Shahzia Sikander"
+      nonfree: true
       title: Usurpia
       author: Шахзия Сикандер
       year: 2002
@@ -691,11 +699,13 @@
         меняется.
       place: Собрание Ану и Арджуна Аггарвал
       rights:
-        embed: false
-        reviewed: "2026-10-14"
-        note: В атласе дана ссылка на репродукцию у источника.
+        reviewed: "2026-11-19"
   example:
     workId: si-scroll
+    asset: assets/works/si-scroll.jpg
+    credit: "Cincinnati Art Museum; предоставлено Шахзией Сикандер и Sean Kelly"
+    license: "© Shahzia Sikander"
+    nonfree: true
     title: The Scroll / Свиток
     author: Шахзия Сикандер
     year: 1989–1990
@@ -709,9 +719,7 @@
       вдоль листа.
     place: Собрание художницы
     rights:
-      embed: false
-      reviewed: "2026-10-14"
-      note: В атласе дана ссылка на репродукцию у источника.
+      reviewed: "2026-11-19"
   names:
     - Шахзия Сикандер
   links:
@@ -736,10 +744,11 @@
     - { claim: "Датировки The Scroll, Perilous Order и Usurpia", field: dates, source: cincinnati-sikander-audio }
   review:
     status: reviewed
-    date: "2026-11-09"
+    date: "2026-11-19"
     scope: [relations, dates, text, images, gallery, corpus]
     note: >-
       Корпус — 14.10.2026: Сверены указанный корпус, атрибуции и пределы текста; репродукции корпуса просмотрены. Историческая генеалогия не утверждается. Родство не утверждается, контексты у записей. 09.11.2026: даты — Музей искусства Цинциннати; галерея: указанные прежде Whitney и MoMA как источники копий не подтверждены; у скульптуры указаны автор и год.
+      19.11.2026. Три репродукции сверены с подписями и описаниями выставки Cincinnati Art Museum.
   maturity: established
   labelStatus: editorial-scope-title
   scopeNote: >-
