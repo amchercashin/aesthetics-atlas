@@ -1028,6 +1028,10 @@
         - sarmaya-mithila-exhibition
   corpus:
     - workId: mithila-ganga-tree
+      asset: assets/works/mithila-ganga-tree.jpg
+      credit: "Mithila Museum, Japan; выставка Sarmaya"
+      license: "Свободная лицензия не указана"
+      nonfree: true
       title: Tree of Surya Mukhi
       author: Ганга Деви
       year: 1990
@@ -1040,10 +1044,12 @@
         сосредоточено внутри фигур.
       place: Mithila Museum, Japan; выставка Sarmaya
       rights:
-        embed: false
-        reviewed: "2026-10-14"
-        note: Репродукция доступна на предметной странице источника.
+        reviewed: "2026-11-19"
     - workId: mithila-ganga-lion
+      asset: assets/works/mithila-ganga-lion.jpg
+      credit: "Mithila Museum, Japan; выставка Sarmaya"
+      license: "Свободная лицензия не указана"
+      nonfree: true
       title: Lion eating a young moon
       author: Ганга Деви
       year: 1990
@@ -1056,10 +1062,12 @@
         заполнением поверхности.
       place: Mithila Museum, Japan; выставка Sarmaya
       rights:
-        embed: false
-        reviewed: "2026-10-14"
-        note: Репродукция доступна на предметной странице источника.
+        reviewed: "2026-11-19"
     - workId: mithila-ganga-train
+      asset: assets/works/mithila-ganga-train.jpg
+      credit: "Mithila Museum, Japan; выставка Sarmaya"
+      license: "Свободная лицензия не указана"
+      nonfree: true
       title: Train in India
       author: Ганга Деви
       year: 1990
@@ -1072,10 +1080,12 @@
         кайма охватывает всю сцену.
       place: Mithila Museum, Japan; выставка Sarmaya
       rights:
-        embed: false
-        reviewed: "2026-10-14"
-        note: Репродукция доступна на предметной странице источника.
+        reviewed: "2026-11-19"
     - workId: mithila-sita-krishna
+      asset: assets/works/mithila-sita-krishna.jpg
+      credit: "Mithila Museum, Japan; выставка Sarmaya"
+      license: "Свободная лицензия не указана"
+      nonfree: true
       title: Krishna and Radha
       author: Сита Деви
       year: Дата в публикации не указана
@@ -1088,10 +1098,12 @@
         обрамляет их и заполняет одежду.
       place: Mithila Museum, Japan; выставка Sarmaya
       rights:
-        embed: false
-        reviewed: "2026-10-14"
-        note: Репродукция доступна на предметной странице источника.
+        reviewed: "2026-11-19"
     - workId: mithila-godawari-shiva
+      asset: assets/works/mithila-godawari-shiva.jpg
+      credit: "Mithila Museum, Japan; выставка Sarmaya"
+      license: "Свободная лицензия не указана"
+      nonfree: true
       title: Shiva-Shakti
       author: Годавари Дутта
       year: Дата в публикации не указана
@@ -1104,9 +1116,7 @@
         подчёркивают плоскость.
       place: Mithila Museum, Japan; выставка Sarmaya
       rights:
-        embed: false
-        reviewed: "2026-10-14"
-        note: Репродукция доступна на предметной странице источника.
+        reviewed: "2026-11-19"
   compare:
     - id: kalighat-painting
       note: >-
@@ -1143,12 +1153,17 @@
       - vam-kalighat
   review:
     status: reviewed
-    date: "2026-11-09"
+    date: "2026-11-19"
     scope: [relations, dates, text, images, gallery, corpus]
     note: >-
       Корпус — 14.10.2026: Просмотрены все пять репродукций и музейные подписи. Две работы не датированы, у трёх не указаны материалы; эти сведения оставлены неизвестными. Корпус не обосновывает дату возникновения или полноту региональной традиции. Родство не утверждается, связи у записей. 09.11.2026: описание и даты — Сармая. Галерея: обобщённое «Madhubani artists» снято, источник и годы копий не установлены.
+      19.11.2026. Пять репродукций сопоставлены с подписями выставки Sarmaya и Mithila Museum.
   example:
     workId: mithila-ganga-tree
+    asset: assets/works/mithila-ganga-tree.jpg
+    credit: "Mithila Museum, Japan; выставка Sarmaya"
+    license: "Свободная лицензия не указана"
+    nonfree: true
     title: Tree of Surya Mukhi
     author: Ганга Деви
     year: 1990
@@ -1161,9 +1176,7 @@
       сосредоточено внутри фигур.
     place: Mithila Museum, Japan; выставка Sarmaya
     rights:
-      embed: false
-      reviewed: "2026-10-14"
-      note: Репродукция доступна на предметной странице источника.
+      reviewed: "2026-11-19"
   links:
     - title: Crossing Borders with Mithila
       url: https://sarmaya.in/exhibitions/crossing-borders-with-mithila/
@@ -1231,7 +1244,7 @@
     Отдельно показан современный пример 2010 года. Все бенгальские патуа и все виды индийской популярной
     графики к этой школе не приравниваются.
   dateNote: >-
-    На оси расположены выбранные работы около 1860–1870, около 1870, около 1900 и 1920-х. Музейная коллекция
+    На оси расположены выбранные работы около 1860–1870, около 1870–1885, около 1900 и 1920-х. Музейная коллекция
     шире этого корпуса; даты не являются точным периодом существования всей практики.
   creators:
     - name: Нибаран Чандра Гхош
@@ -1251,69 +1264,77 @@
         - vam-kalighat
   corpus:
     - workId: kalighat-peacock-247
+      asset: assets/works/kalighat-peacock-247.jpg
+      credit: "Victoria and Albert Museum"
+      license: "© Victoria and Albert Museum, London"
+      nonfree: true
       title: A lady holding a peacock, IS.247-1953
       author: Автор не указан
       year: около 1860–1870
-      medium: Работа на бумаге; точные материалы в подписи не указаны
+      medium: Непрозрачная акварель и сплав олова на бумаге
       sources:
         - vam-kalighat
-      reference: https://www.vam.ac.uk/articles/kalighat-painting
+      reference: https://collections.vam.ac.uk/item/O432696/
       whyRepresentative: >-
         Наклон головы, изгиб руки и силуэт павлина выделены на незаполненном поле; крупные цветовые участки
         держат фигуру.
       place: Victoria and Albert Museum
       rights:
-        embed: false
-        reviewed: "2026-10-14"
-        note: Репродукция доступна на предметной странице источника.
+        reviewed: "2026-11-19"
     - workId: kalighat-rose-31
+      asset: assets/works/kalighat-rose-31.jpg
+      credit: "Victoria and Albert Museum"
+      license: "© Victoria and Albert Museum, London"
+      nonfree: true
       title: A woman putting a rose in her hair, IS.31-1952
       author: Нибаран Чандра Гхош
       year: около 1900
-      medium: Работа на бумаге; точные материалы в подписи не указаны
+      medium: Акварель на бумаге
       sources:
         - vam-kalighat
-      reference: https://www.vam.ac.uk/articles/kalighat-painting
+      reference: https://collections.vam.ac.uk/item/O72647/
       whyRepresentative: >-
         Поднятая рука, наклон корпуса и крупная чёрная прядь задают движение; тональные переходы остаются
         внутри ясного силуэта.
       place: Victoria and Albert Museum
       rights:
-        embed: false
-        reviewed: "2026-10-14"
-        note: Репродукция доступна на предметной странице источника.
+        reviewed: "2026-11-19"
     - workId: kalighat-cat-45
+      asset: assets/works/kalighat-cat-45.jpg
+      credit: "Victoria and Albert Museum"
+      license: "© Victoria and Albert Museum, London"
+      nonfree: true
       title: A cat with a fish, IS.45-1952
       author: Канаи Лал Гхош
       year: 1920-е
-      medium: Линейный рисунок; точные материалы в подписи не указаны
+      medium: Краска на бумаге, линейный рисунок
       sources:
         - vam-kalighat
-      reference: https://www.vam.ac.uk/articles/kalighat-painting
+      reference: https://collections.vam.ac.uk/item/O72691/
       whyRepresentative: >-
         Изгиб спины, усы и рыба сведены к выразительному контуру; незаполненное поле делает линию особенно
         заметной.
       place: Victoria and Albert Museum
       rights:
-        embed: false
-        reviewed: "2026-10-14"
-        note: Репродукция доступна на предметной странице источника.
+        reviewed: "2026-11-19"
     - workId: kalighat-babu-8144
-      title: A babu seated on a chair, playing the sitar, 08144(IS)
+      asset: assets/works/kalighat-babu-8144.jpg
+      credit: "Victoria and Albert Museum"
+      license: "© Victoria and Albert Museum, London"
+      nonfree: true
+      title: A babu seated on a chair, playing the sitar, 08144A/(IS)
       author: Автор не указан
-      year: около 1870
-      medium: Работа на бумаге; точные материалы в подписи не указаны
+      year: около 1870–1885
+      medium: Акварель и сплав олова на бумаге
       sources:
         - vam-kalighat
-      reference: https://www.vam.ac.uk/articles/kalighat-painting
+      reference: https://collections.vam.ac.uk/item/O152951/
       whyRepresentative: >-
         Стул, инструмент и фигура образуют компактную группу на свободном фоне; тёмный контур и тональные
         переходы связывают её части.
       place: Victoria and Albert Museum
       rights:
-        embed: false
-        reviewed: "2026-10-14"
-        note: Репродукция доступна на предметной странице источника.
+        reviewed: "2026-11-19"
   gallery:
     - file: Brooklyn Museum - Goddess Lakshmi with a Rose and a Peacock.jpg
       title: Лакшми с розой и павлином
@@ -1333,14 +1354,21 @@
       year: снимок 2024 года
       note: Снимок Rajan Guptta.
       whyRepresentative: Движение и драпировка; плотный контур и локальные заливки.
-    - title: The policeman’s bribe, IS.49-2011
+    - asset: assets/works/kalighat-bribe-49.jpg
+      credit: "Victoria and Albert Museum"
+      license: "© Victoria and Albert Museum, London"
+      nonfree: true
+      title: The policeman’s bribe, IS.49-2011
       author: Анвар Читракар
       year: 2010
+      medium: Растительный пигмент на холсте
       place: Victoria and Albert Museum
-      whyRepresentative: Современный пример с группой фигур и городской сценой; он показывает продолжение практики и не расширяет исторический корпус.
-      reference: https://www.vam.ac.uk/articles/kalighat-painting
+      whyRepresentative: Машина, полицейский и женщины с зонтами собраны в ряд на фоне деревьев.
+      reference: https://collections.vam.ac.uk/item/O1241572/
       sources:
         - vam-kalighat
+      rights:
+        reviewed: "2026-11-19"
   compare: []
   evidence:
     - claim: >-
@@ -1374,27 +1402,30 @@
       - vam-kipling-popular-art
   review:
     status: reviewed
-    date: "2026-11-09"
+    date: "2026-11-19"
     scope: [relations, dates, text, images, gallery, corpus]
     note: >-
       Корпус — 14.10.2026: Просмотрены четыре исторические композиции и современный пример в музейных монтажах и репродукциях. Неуказанные материалы не угаданы. Каждый номер обозначает отдельное произведение; повторная публикация изображения не увеличивает корпус. Родство не утверждается, связи у записей. 09.11.2026: описание и даты — Музей Виктории и Альберта. Галерея: у снимков работ указан автор как мастер Калигхата, а не фотограф.
+      19.11.2026. Пять отдельных репродукций сверены с предметными записями V&A. У листа с ситаром использованы номер и датировка предметной записи.
   example:
     workId: kalighat-peacock-247
+    asset: assets/works/kalighat-peacock-247.jpg
+    credit: "Victoria and Albert Museum"
+    license: "© Victoria and Albert Museum, London"
+    nonfree: true
     title: A lady holding a peacock, IS.247-1953
     author: Автор не указан
     year: около 1860–1870
-    medium: Работа на бумаге; точные материалы в подписи не указаны
+    medium: Непрозрачная акварель и сплав олова на бумаге
     sources:
       - vam-kalighat
-    reference: https://www.vam.ac.uk/articles/kalighat-painting
+    reference: https://collections.vam.ac.uk/item/O432696/
     whyRepresentative: >-
       Наклон головы, изгиб руки и силуэт павлина выделены на незаполненном поле; крупные цветовые участки
       держат фигуру.
     place: Victoria and Albert Museum
     rights:
-      embed: false
-      reviewed: "2026-10-14"
-      note: Репродукция доступна на предметной странице источника.
+      reviewed: "2026-11-19"
   links:
     - title: Kalighat painting
       url: https://www.vam.ac.uk/articles/kalighat-painting
