@@ -206,11 +206,15 @@ R означает: сначала решить, нужен ли отдельн�
 
 ## Поток I — изображения в старых карточках
 
-После решения владельца от 14.11.2026 ссылки вместо картинок заменяются изображениями. На 14.11.2026 таких мест 177 в 42 карточках, в основном в корпусах пилота и региональных партий. Пересчёт — скрипт в журнале раздела «Поправка: правило изображений».
+После решения владельца от 14.11.2026 ссылки вместо картинок заменяются изображениями. На 14.11.2026 таких мест 177 в 42 карточках, в основном в корпусах пилота и региональных партий. Пересчёт — скрипт в журнале раздела «Поправка: правило изображений». Во всех частях сверяем репродукцию с предметной записью и заменяем ссылку или `rights.embed: false` файлом Commons либо локальной копией.
 
 | ID | Что сделать | Статус | PR |
 | --- | --- | --- | --- |
-| I-01 | Заменить `reference` без картинки и `rights.embed: false` локальными копиями или файлами Commons с той же подписью; сверить, что на копии та же работа | — | |
+| I-01a | Россия. `lubok`, `zhostovo-painting`, `gorodets-painting`, `palekh-miniature`, `mezen-painting`, `khokhloma`, `zverev-portrait-graphics`, `norshtein-animation`. Закрыты 35 мест в 8 карточках, в том числе 6 главных иллюстраций. | готово | #111 |
+| I-01b | Океания. `maori-whakairo`, `samoan-siapo`, `fijian-masi`, `tongan-ngatu`, `carrolup-school`, `emily-kngwarray`, `torres-strait-printmaking`, `alick-tipoti`, `reko-rennie`. | — | |
+| I-01c | Южная Азия. `chola-bronzes`, `kalighat-painting`, `jamini-roy-painting`, `shahzia-sikander`, `warli-painting`, `mithila-painting`, `bengal-patachitra`. | — | |
+| I-01d | Восточная и Юго-Восточная Азия. `nianhua`, `chinese-jianzhi`, `hokusai-landscape-prints`, `yang-liuqing-nianhua`, `dong-ho-prints`, `rei-kawakubo`, `xu-bing-writing-systems`, `pacita-abad`, `borobudur-art`. | — | |
+| I-01e | Африка, Европа и Западная Азия. `ife-sculpture`, `iznik-ceramics`, `asante-kente`, `adinkra`, `bogolanfini`, `polish-wycinanki`, `ndebele-murals`, `esther-mahlangu`, `el-anatsui-metal-textiles`. | — | |
 
 ## Поток S — служебный
 

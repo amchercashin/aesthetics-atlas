@@ -29,11 +29,6 @@
     - illustration
   subjects: [everyday-life, religion-myth, animals, any]
   gallery:
-    - file: BearWedding.jpg
-      title: Свадьба медведя
-      author: автор не указан
-      year: 1868
-      whyRepresentative: Звериная свадьба с человеческими ролями; плотная группа над текстом листа.
     - file: ChickenDivination.jpg
       title: Гадание на курице
       author: автор не указан
@@ -83,54 +78,52 @@
         - nypl-lubok-ilya-1868
   corpus:
     - workId: lubok-cat-nypl-479510
+      file: "Mice burying a cat (engraving).jpg"
       title: Похороны кота крысами и мышами
       author: Автор не указан
       year: 1866 — выпуск листа
       medium: Литография
       sources:
         - nypl-lubok-cat-1866
-      reference: https://digitalcollections.nypl.org/items/6a809960-c641-012f-46fc-58d385a7bc34
       whyRepresentative: >-
         Процессия и отдельные группы животных объединены пейзажем; заголовок находится сверху, поясняющий
         текст занимает широкое нижнее поле.
       place: The New York Public Library
       rights:
-        embed: false
-        reviewed: "2026-10-14"
-        note: Репродукция доступна на предметной странице источника.
+        reviewed: "2026-11-18"
     - workId: lubok-bear-nypl-479508
+      file: "BearWedding.jpg"
       title: Свадьба медведя Мишки косолапого
       author: Автор не указан
       year: 1868 — выпуск листа
       medium: Литография
       sources:
         - nypl-lubok-bear-1868
-      reference: https://digitalcollections.nypl.org/items/6a098e00-c641-012f-bcc6-58d385a7bc34
       whyRepresentative: >-
-        Многолюдное застолье животных занимает единое плотное поле; подробные подписи вынесены под
-        изображение.
+        На переднем плане звери играют на музыкальных инструментах. За ними медвежьи пары идут в ряд.
+        Название и текст напечатаны под изображением.
       place: The New York Public Library
       rights:
-        embed: false
-        reviewed: "2026-10-14"
-        note: Репродукция доступна на предметной странице источника.
+        reviewed: "2026-11-18"
     - workId: lubok-ilya-nypl-479522
+      file: "Sil'nyi khrabryi bogatyr' Il'ia Muromets.jpg"
       title: Сильный храбрый богатырь Илья Муромец
       author: Иван Александрович Голышев — литограф
       year: 1868 — выпуск листа
       medium: Литография
       sources:
         - nypl-lubok-ilya-1868
-      reference: https://digitalcollections.nypl.org/items/6e1ac700-c641-012f-80de-58d385a7bc34
       whyRepresentative: >-
         Несколько сцен разного размера заключены в орнаментальные очертания; центральный эпизод и боковые
         фигуры читаются как составной рассказ.
       place: The New York Public Library
       rights:
-        embed: false
-        reviewed: "2026-10-14"
-        note: Репродукция доступна на предметной странице источника.
+        reviewed: "2026-11-18"
     - workId: lubok-comfort-rm-2916
+      asset: assets/works/lubok-comfort-rm-2916.jpg
+      credit: "Государственный Русский музей"
+      license: "Музейная репродукция, свободная лицензия не указана"
+      nonfree: true
       title: Икона Божией Матери «Утоли моя печали», Гр.Луб.-2916
       author: Художник не указан
       year: XIX век
@@ -143,10 +136,12 @@
         печатным штрихом.
       place: Государственный Русский музей
       rights:
-        embed: false
-        reviewed: "2026-10-14"
-        note: Репродукция доступна на предметной странице источника.
+        reviewed: "2026-11-18"
     - workId: lubok-judgement-rm-3270
+      asset: assets/works/lubok-judgement-rm-3270.jpg
+      credit: "Государственный Русский музей"
+      license: "Музейная репродукция, свободная лицензия не указана"
+      nonfree: true
       title: Образ страшного суда, Гр.Луб.-3270
       author: Художник не указан
       year: XVII–XIX — предметная датировка музея
@@ -159,9 +154,7 @@
         показывает отличие духовного варианта от сюжетной литографической картинки.
       place: Государственный Русский музей
       rights:
-        embed: false
-        reviewed: "2026-10-14"
-        note: Репродукция доступна на предметной странице источника.
+        reviewed: "2026-11-18"
   compare:
     - id: bilibin-illustration
       note: >-
@@ -172,6 +165,9 @@
         Сравниваются самостоятельные печатные листы: в выбранном лубке текст и многочастный рассказ заметнее,
         чем в пейзажном корпусе Хокусая. Ни одна техника не приравнивается ко всей национальной графике.
   evidence:
+    - field: images
+      claim: Лист «Свадьба медведя Мишки косолапого» (Image ID 479508) указан на Commons как источник файла BearWedding.jpg.
+      source: nypl-lubok-bear-1868
     - claim: NYPL датирует три самостоятельных литографических листа выпусками 1866 и 1868 годов.
       field: corpus
       source: nypl-lubok-cat-1866
@@ -209,27 +205,26 @@
       - rusmuseum-lubok-collection
   review:
     status: reviewed
-    date: "2026-11-09"
+    date: "2026-11-19"
     scope: [relations, dates, text, images, gallery, corpus]
     note: >-
       Корпус — 14.10.2026: Просмотрены все пять репродукций и прочитаны предметные записи. Датировка одного листа остаётся широкой и расходится с рубрикой периода; ранняя ксилография этим корпусом не представлена. Различены автор, литограф, коллекционер и год выпуска. Родство не утверждается, связи у записей. 09.11.2026: описание и даты — NYPL и Русский музей; галерея: подписаны годы, служебная строка об авторе заменена.
+      19.11.2026. Три репродукции листов NYPL взяты с Commons, две гравюры сверены с записями Русского музея. Повтор «Свадьбы медведя» снят по общему номеру NYPL 479508.
   example:
     workId: lubok-cat-nypl-479510
+    file: "Mice burying a cat (engraving).jpg"
     title: Похороны кота крысами и мышами
     author: Автор не указан
     year: 1866 — выпуск листа
     medium: Литография
     sources:
       - nypl-lubok-cat-1866
-    reference: https://digitalcollections.nypl.org/items/6a809960-c641-012f-46fc-58d385a7bc34
     whyRepresentative: >-
       Процессия и отдельные группы животных объединены пейзажем; заголовок находится сверху, поясняющий текст
       занимает широкое нижнее поле.
     place: The New York Public Library
     rights:
-      embed: false
-      reviewed: "2026-10-14"
-      note: Репродукция доступна на предметной странице источника.
+      reviewed: "2026-11-18"
   links:
     - title: Похороны кота крысами и мышами, 1866
       url: https://digitalcollections.nypl.org/items/6a809960-c641-012f-46fc-58d385a7bc34
