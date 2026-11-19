@@ -684,6 +684,13 @@
   note: >-
     Куратор LACMA анализирует текстильный коллаж и происхождение тканей в работе 1998 года. Заголовок содержит
     From Batanes to Jolo, подпись сокращает название; обе формы относятся к одному произведению.
+- id: tate-abad-european-mask
+  title: Understanding Pacita Abad’s European Mask
+  publisher: Tate / архив Pacita Abad Art Estate
+  url: https://pacitaabad.com/usr/documents/press/download_url/219/press-tate.com-apr2021-by-maggie-hills.pdf#page=1
+  sourceType: museum
+  checked: '2026-11-19'
+  note: Репродукция и подпись на первой странице подтверждают название, дату 1990 и собрание Tate.
 - id: walker-abad-retrospective
   title: Pacita Abad — retrospective, 2023
   publisher: Walker Art Center
