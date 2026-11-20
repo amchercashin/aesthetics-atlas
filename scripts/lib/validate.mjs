@@ -313,6 +313,12 @@ export function validate(styles, eras, sources = []) {
   const former = new Map();
   for (const s of styles) {
     for (const c of s.contexts ?? []) if (!byId.has(c.id)) errors.push(`[${s.id}] unknown context ${c.id}`);
+    if (s.featuredContext != null) {
+      const other = byId.get(s.featuredContext);
+      if (!other || !(s.contexts?.some((c) => c.id === other.id) || other.contexts?.some((c) => c.id === s.id))) {
+        errors.push(`[${s.id}] featuredContext must name an existing context: ${s.featuredContext}`);
+      }
+    }
     for (const f of s.formerIds ?? []) {
       if (byId.has(f)) errors.push(`[${s.id}] formerId "${f}" is still an active id`);
       if (former.has(f)) errors.push(`[${s.id}] formerId "${f}" also claimed by "${former.get(f)}"`);

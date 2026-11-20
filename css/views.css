@@ -115,6 +115,8 @@ body[data-view="style"] .room, body[data-view="style"] .site-footer {
 .review.st-partial { border-left-color: var(--accent); }
 .review.st-reviewed { border-left-color: var(--accent); color: var(--ink); }
 .review a { color: inherit; }
+.room-context-link { display: inline-block; margin-top: 16px; font-size: var(--t-sm); font-weight: 500; }
+.room-context-link svg { display: inline-block; width: 1em; height: 1em; vertical-align: -0.15em; }
 
 .room-hang {
   display: grid; grid-template-columns: minmax(0, 1.65fr) minmax(260px, 1fr); gap: clamp(28px, 4.5vw, 72px);
