@@ -5572,26 +5572,26 @@
   sourceType: encyclopedia
   checked: 2026-11-08
   note: "Стиль XVII–XVIII веков; Фарфоровый Трианон 1670–1671; позолота, лак, бело-синяя гамма; пагоды и чайные павильоны в парках."
-- id: met-36490
-  title: South Wind, Clear Sky (Red Fuji)
+- id: met-sharaku-otani-oniji
+  title: Kabuki Actor Ōtani Oniji III as Yakko Edobei
   publisher: The Metropolitan Museum of Art
-  url: https://www.metmuseum.org/art/collection/search/36490
+  url: https://www.metmuseum.org/art/collection/search/37358
   sourceType: museum
-  checked: 2026-11-08
-  note: "Хокусай, около 1830–1832 годов, цветная ксилография, JP9."
-- id: met-45434
-  title: Under the Wave off Kanagawa (The Great Wave)
+  checked: 2026-11-20
+  note: "Сяраку, 1794, JP2822. Цветная ксилография с белой слюдой. Музей описывает жест рук и поворот лица актёра."
+- id: met-utamaro-woman-reading-letter
+  title: A Young Woman Reading A Letter
   publisher: The Metropolitan Museum of Art
-  url: https://www.metmuseum.org/art/collection/search/45434
+  url: https://www.metmuseum.org/art/collection/search/36626
   sourceType: museum
-  checked: 2026-11-08
-  note: "Хокусай, около 1830–1832 годов, JP1847."
+  checked: 2026-11-20
+  note: "Утамаро, 1790-е, JP147, цветная ксилография. Музей описывает крупный портрет и паузу в чтении письма."
 - id: met-55433
   title: Sudden Shower over Shin-Ōhashi Bridge and Atake
   publisher: The Metropolitan Museum of Art
   url: https://www.metmuseum.org/art/collection/search/55433
   sourceType: museum
-  checked: 2026-11-08
+  checked: 2026-11-20
   note: "Хиросигэ, 1857, JP2522, серия «Сто знаменитых видов Эдо»."
 - id: met-447743
   title: The Spy Zambur Brings Mahiya to the City of Tawariq, Folio from a Hamzanama

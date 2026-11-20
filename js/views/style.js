@@ -157,6 +157,7 @@ export default {
     const evidence = s.evidence.map((e) => ({ ...e, src: store.source(e.source) })).filter((e) => e.src);
     let subject = pickOther(store.promptSubjects);
     const anchor = styleAnchor(store, s);
+    const featuredContext = store.get(s.featuredContext);
 
     mount(root, html`
     <article class="room">
@@ -172,6 +173,7 @@ export default {
         ${s.kind.length ? html`<p class="room-kind">${s.kind.map((k) => html`<span class="kind-badge">${KIND[k]}</span>`)}${s.kindNote ? html`<span class="kind-note">${s.kindNote}</span>` : ''}</p>` : ''}
         ${s.scopeNote ? html`<p class="room-scope"><strong>Границы карточки.</strong> ${s.scopeNote}</p>` : ''}
         ${reviewLine(s)}
+        ${featuredContext ? html`<a class="room-context-link" href="#/s/${featuredContext.id}">${featuredContext.name} ${ARROW_R}</a>` : ''}
       </header>
 
       <div class="room-hang">

@@ -115,6 +115,7 @@ export function buildRecord(s, { links = [], palette = null, paletteFromImages =
     root: !!s.root, origin: s.origin ?? null, row: s.row ?? null,
     parents: (s.parents ?? []).map(relation), children, comparisons,
     contexts: contexts ?? (s.contexts ?? []).map((c) => ({ ...relation(c), direction: 'out' })),
+    ...(s.featuredContext ? { featuredContext: s.featuredContext } : {}),
     summary: String(s.summary).trim(), description: paragraphs(s.description),
     traits: s.traits ?? [], promptCues: s.promptCues ?? [], names: s.names ?? [],
     example,
