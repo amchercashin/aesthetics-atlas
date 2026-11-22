@@ -3,10 +3,10 @@
 // и проверяет, что все карточки области лежат в одном острове. Ещё — карточки, окружённые чужим морем.
 // Обёрнуто в async-функцию, результат — объект; split пустой, если ничего не разорвано.
 (async () => {
-const neb = await import('/aesthetics-atlas/js/nebulae.js?v=years-only-1');
-const ml = await import('/aesthetics-atlas/js/map-layout.js?v=seas-1');
-const { fmtDates } = await import('/aesthetics-atlas/js/format.js?v=regional-01');
-const a = await fetch('/aesthetics-atlas/data/atlas.json').then((r) => r.json());
+const neb = await import('/aesthetics-atlas/js/nebulae.js');
+const ml = await import('/aesthetics-atlas/js/map-layout.js');
+const { fmtDates } = await import('/aesthetics-atlas/js/format.js');
+const a = await fetch('/aesthetics-atlas/data/index.json').then((r) => r.json());
 // Та же раскладка, что строит карта: ширины подписей — тем же canvas.
 const FONT = { 1: '600 16px Spectral', 2: '500 14px "Golos Text"', 3: '400 13px "Golos Text"' }, DATE_FONT = '400 11px "Golos Text"';
 const cv = document.createElement('canvas').getContext('2d');

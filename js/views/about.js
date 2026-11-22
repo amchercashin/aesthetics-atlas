@@ -22,13 +22,15 @@ export default {
     const galleryImgs = st?.galleryImgs ?? store.styles.reduce((n, s) => n + (s.gallery ?? []).filter((g) => g.img).length, 0);
     const corpusWorks = st?.corpusWorks ?? store.styles.reduce((n, s) => n + (s.corpus ?? []).length, 0);
     const sourceCount = st?.sources ?? store.sources.length;
-    const reviewed = store.styles.filter((s) => s.review?.status !== 'legacy').length;
+    const reviewed = st?.reviewed ?? store.styles.filter((s) => s.review?.status !== 'legacy').length;
     const rels = store.styles.flatMap((s) => s.parents);
     const verified = rels.filter((r) => r.status === 'verified').length;
     const cmp = store.styles.reduce((n, s) => n + s.comparisons.length, 0) / 2;
     const extracted = store.styles.filter((s) => s.palette?.source === 'image').length;
-    const byScope = Object.keys(REVIEW_SCOPE).map((k) => [k, store.styles.filter((s) => s.review?.scope?.includes(k)).length]).filter(([, n]) => n);
-    const full = store.styles.filter((s) => s.review?.status === 'reviewed').length;
+    const byScope = Object.keys(REVIEW_SCOPE)
+      .map((k) => [k, st?.byScope?.[k] ?? store.styles.filter((s) => s.review?.scope?.includes(k)).length])
+      .filter(([, n]) => n);
+    const full = st?.full ?? store.styles.filter((s) => s.review?.status === 'reviewed').length;
 
     mount(root, html`
     <article class="page about">

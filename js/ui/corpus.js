@@ -1,6 +1,6 @@
 import { html, safeUrl } from '../html.js';
-import { CONTEXT, LABEL, MATURITY, REL_STATUS } from '../format.js?v=author-pilot';
-import { thumb } from './common.js?v=author-pilot';
+import { CONTEXT, LABEL, MATURITY, REL_STATUS } from '../format.js';
+import { thumb } from './common.js';
 
 const refs = (store, ids) => {
   const sources = (ids ?? []).map((id) => store.source(id)).filter(Boolean);

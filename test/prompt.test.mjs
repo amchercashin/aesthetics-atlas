@@ -2,13 +2,15 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
+import { fileURLToPath } from 'node:url';
 import yaml from 'js-yaml';
 import { createStore } from '../js/store.js';
 import { buildPrompt, promptFor, styleAnchor, chatgptUrl, shedevrumUrl, pickOther, surprisePool, PROMPT_LIMIT } from '../js/prompt.js';
 import { validatePromptSubjects } from '../scripts/lib/validate.mjs';
+import { loadBuiltAtlas } from '../scripts/lib/load-atlas.mjs';
 
 const subjects = yaml.load(fs.readFileSync(new URL('../content/prompt-subjects.yaml', import.meta.url), 'utf8'));
-const atlas = JSON.parse(fs.readFileSync(new URL('../data/atlas.json', import.meta.url)));
+const atlas = loadBuiltAtlas(fileURLToPath(new URL('..', import.meta.url)));
 const real = createStore(atlas);
 
 const card = (over = {}) => ({

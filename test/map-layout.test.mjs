@@ -3,12 +3,13 @@
 // иначе море рвётся на острова, а часть оказывается среди чужих морей.
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import fs from 'node:fs';
+import { fileURLToPath } from 'node:url';
 import { layoutGenealogy, solidShape } from '../js/layout.js';
 import { mapTimeScale, mapLayoutNodes, layoutMap, SEA_GAP, LONG } from '../js/map-layout.js';
 import { fmtDates } from '../js/format.js';
+import { loadBuiltAtlas } from '../scripts/lib/load-atlas.mjs';
 
-const atlas = JSON.parse(fs.readFileSync(new URL('../data/atlas.json', import.meta.url), 'utf8'));
+const atlas = loadBuiltAtlas(fileURLToPath(new URL('..', import.meta.url)));
 const NOW = 2026;
 // Карта меряет подписи на canvas; здесь — средняя ширина знака по замерам этих шрифтов.
 const PX = { 1: 8.9, 2: 8, 3: 7.4 };

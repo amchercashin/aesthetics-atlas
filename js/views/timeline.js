@@ -1,8 +1,8 @@
 // Хронология: двенадцать глав-эпох, у каждой свой пигмент; внутри — стили по времени.
 import { html, mount } from '../html.js';
-import { fmtDates, fmtYear, RELATION } from '../format.js?v=author-pilot';
-import { frame } from '../ui/image.js?v=author-pilot';
-import { footer } from '../ui/common.js?v=author-pilot';
+import { fmtDates, fmtYear, RELATION } from '../format.js';
+import { frame } from '../ui/image.js';
+import { footer } from '../ui/common.js';
 
 export default {
   render(root, ctx) {

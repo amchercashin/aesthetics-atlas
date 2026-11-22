@@ -67,10 +67,11 @@ test('comparison links do not change the genealogy layout', () => {
 
 // ---- родословное древо (карта v3) ----
 import { layoutGenealogy, routeBranches } from '../js/layout.js';
-import fs from 'node:fs';
+import { fileURLToPath } from 'node:url';
 import { createTimeScale, segmentWidths } from '../js/timescale.js';
+import { loadBuiltAtlas } from '../scripts/lib/load-atlas.mjs';
 
-const atlas = JSON.parse(fs.readFileSync(new URL('../data/atlas.json', import.meta.url), 'utf8'));
+const atlas = loadBuiltAtlas(fileURLToPath(new URL('..', import.meta.url)));
 const realNodes = atlas.styles.map((s) => ({ id: s.id, start: s.start, end: s.end, tier: s.tier, width: s.name.length * 8 + 20, parents: s.parents.map((p) => p.id) }));
 const brk = [...atlas.eras.map((e) => e.start), 2027];
 const scReal = createTimeScale(brk, segmentWidths(brk, atlas.styles.map((s) => s.start), { base: 60, perItem: 70, min: 160 }));

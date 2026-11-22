@@ -2,8 +2,8 @@
 // Стороны означают направление, а не тип: реакция может стоять с любой стороны. Тип — подпись и рисунок линии
 // (как на карте), дальние поколения — только на карте. Модуль без DOM на верхнем уровне: его импортируют тесты.
 import { html } from '../html.js';
-import { fmtDates, RELATION, REL_STATUS } from '../format.js?v=regional-01';
-import { thumb } from './common.js?v=links-1';
+import { fmtDates, RELATION, REL_STATUS } from '../format.js';
+import { thumb } from './common.js';
 
 // Больше стольких соседей на стороне — карточки мельче, чтобы столбец не уходил за экран.
 const DENSE = 4;

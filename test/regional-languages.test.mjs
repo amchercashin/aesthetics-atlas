@@ -1,10 +1,12 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
+import { fileURLToPath } from 'node:url';
 import yaml from 'js-yaml';
+import { loadBuiltAtlas } from '../scripts/lib/load-atlas.mjs';
 
 const raw = yaml.load(fs.readFileSync(new URL('../content/styles/16-regional-languages.yaml', import.meta.url), 'utf8'));
-const atlas = JSON.parse(fs.readFileSync(new URL('../data/atlas.json', import.meta.url)));
+const atlas = loadBuiltAtlas(fileURLToPath(new URL('..', import.meta.url)));
 const byId = new Map(atlas.styles.map(s => [s.id, s]));
 
 test('the regional batch retains its bounded corpora and source links after compilation', () => {

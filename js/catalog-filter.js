@@ -1,6 +1,6 @@
 // Фильтры каталога: чистые функции, чтобы отбор, счётчики и адрес проверялись тестами (test/catalog-filter.test.mjs).
-import { DOMAIN, KIND_FAMILY, SUBJECT, MEDIUM } from './format.js?v=subjects-4';
-import { normalize } from './search.js?v=author-pilot';
+import { DOMAIN, KIND_FAMILY, SUBJECT, MEDIUM } from './format.js';
+import { normalize } from './search.js';
 
 // Каждый ряд фильтров — одно условие на карточку. Эпохи — отдельно: их можно выбрать несколько.
 const TESTS = {

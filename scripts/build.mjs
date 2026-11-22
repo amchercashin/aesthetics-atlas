@@ -12,6 +12,8 @@ import { resolveFiles, resolveWiki, commonsCategories, commonsCategoriesExist, s
 import { downloadThumb, paletteFromImages, paletteFromHexList, mapLimit } from './lib/palette.mjs';
 import { resolveLocalAssets } from './lib/local-images.mjs';
 import { mirrorWikimediaAssets } from './lib/mirror-media.mjs';
+import { writeSplitAtlas } from './lib/split-atlas.mjs';
+import { stampAssets } from './lib/stamp.mjs';
 import { worksOf, imageUsage } from './lib/works.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
@@ -168,7 +170,28 @@ const allRel = out.reduce((n, s) => n + s.parents.length, 0);
 console.log(`\n${out.length} styles · ${usage.embedded} embedded image placements (${usage.corpus} in corpora; ${usage.nonfree} non-free, ${usage.withoutBasis} without recorded basis) · ${out.reduce((n, s) => n + s.links.length, 0)} links`);
 console.log(`${reviewed} reviewed + ${partial} partial cards · ${verifiedRel}/${allRel} verified relations · ${out.reduce((n, s) => n + s.comparisons.length, 0) / 2} comparisons · ${errors.length} errors · ${warnings.length} warnings`);
 
-if (errors.length) { console.error('\nBuild failed — data/atlas.json not written.'); process.exit(1); }
+if (errors.length) { console.error('\nBuild failed — data not written.'); process.exit(1); }
+
+const scopeCounts = {};
+for (const s of out) for (const k of s.review?.scope ?? []) scopeCounts[k] = (scopeCounts[k] ?? 0) + 1;
+const stats = {
+  styles: out.length,
+  sources: sources.length,
+  links: out.reduce((n, s) => n + s.links.length, 0),
+  embedded: usage.embedded,
+  corpusImages: usage.corpus,
+  nonfree: usage.nonfree,
+  galleryImgs: out.reduce((n, s) => n + (s.gallery ?? []).filter((g) => g.img).length, 0),
+  corpusWorks: out.reduce((n, s) => n + (s.corpus ?? []).length, 0),
+  reviewed: out.filter((s) => s.review?.status !== 'legacy').length,
+  full: reviewed,
+  partial,
+  byScope: scopeCounts,
+  verifiedRelations: verifiedRel,
+  totalRelations: allRel,
+  comparisons: out.reduce((n, s) => n + s.comparisons.length, 0) / 2,
+  seas: nebulae.length,
+};
 
 const atlas = {
   _generated: 'Сгенерировано scripts/build.mjs из content/*.yaml. Не редактировать вручную — правьте content/ и запускайте npm run build.',
@@ -183,5 +206,6 @@ const atlas = {
   })),
   styles: out,
 };
-fs.writeFileSync(path.join(ROOT, 'data/atlas.json'), JSON.stringify(atlas));
-console.log(`Wrote data/atlas.json (${(fs.statSync(path.join(ROOT, 'data/atlas.json')).size / 1024).toFixed(0)} KB)`);
+const written = writeSplitAtlas(ROOT, atlas, stats);
+const stamped = stampAssets(ROOT, written.version);
+console.log(`Wrote data/index.json (${(written.indexBytes / 1024).toFixed(0)} KB) + ${written.styleCount} data/styles/*.json (v=${written.version}); stamped ${stamped.jsCount} JS + ${stamped.cssCount} CSS in index.html`);

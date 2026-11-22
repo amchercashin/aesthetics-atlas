@@ -1,7 +1,8 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import fs from 'node:fs';
+import { fileURLToPath } from 'node:url';
 import { readLinkSettings, historicalLinkVisible } from '../js/map-links.js';
+import { loadBuiltAtlas } from '../scripts/lib/load-atlas.mjs';
 
 test('a plain map restores the main tree with unverified links visible', () => {
   assert.deepEqual(readLinkSettings(new URLSearchParams()), { mode: 'main', verifiedOnly: false });
@@ -29,7 +30,7 @@ test('legacy links remain usable while an explicit mode wins over legacy overlay
 });
 
 test('real atlas defaults show the complete primary tree and verification filters the current data', () => {
-  const atlas = JSON.parse(fs.readFileSync(new URL('../data/atlas.json', import.meta.url)));
+  const atlas = loadBuiltAtlas(fileURLToPath(new URL('..', import.meta.url)));
   const links = atlas.styles.flatMap((s) => s.parents.map((r, i) => ({ primary: i === 0, status: r.status })));
   const count = (mode, verifiedOnly = false) => links.filter((e) => historicalLinkVisible({ ...e, mode, verifiedOnly })).length;
   assert.equal(count('none'), 0);

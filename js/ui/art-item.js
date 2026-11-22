@@ -2,7 +2,7 @@
 // (автор снимка, лицензия, «несвободное»). Один для зала и панели карты, чтобы у изображений
 // галереи была та же атрибуция, что у главной работы.
 import { html, safeUrl } from '../html.js';
-import { credit } from './image.js?v=author-pilot';
+import { credit } from './image.js';
 
 // work — запись изображения из atlas.json (example, gallery, corpus); img — показываемый файл.
 export function artItem(work, store, img = work?.img) {

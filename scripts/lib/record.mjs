@@ -2,6 +2,7 @@
 // build.mjs передаёт сюда уже разрешённые картинки, ссылки и палитру.
 
 import { ymd } from './validate.mjs';
+import { macroRegions } from './regions.mjs';
 
 const asList = (v) => (v == null ? [] : Array.isArray(v) ? v : [v]);
 const str = (v) => (v == null ? null : String(v).trim() || null);
@@ -101,6 +102,8 @@ export function buildRecord(s, { links = [], palette = null, paletteFromImages =
   const example = imageRecord(s.example, img(s.example?.file ?? s.example?.asset));
   return {
     id: s.id, name: s.name, orig: s.orig,
+    ...(s.shortTitle ? { shortTitle: str(s.shortTitle) } : {}),
+    ...(s.subtitle ? { subtitle: str(s.subtitle) } : {}),
     kind: asList(s.kind), kindNote: str(s.kindNote), scopeNote: str(s.scopeNote),
     aliases: s.aliases ?? [], searchKeywords: s.searchKeywords ?? [], formerIds: s.formerIds ?? [],
     labelStatus: str(s.labelStatus), maturity: s.maturity ?? 'not-assessed',
@@ -111,7 +114,7 @@ export function buildRecord(s, { links = [], palette = null, paletteFromImages =
     endKind: s.end == null ? s.endKind ?? 'ongoing' : null,
     termAttested: s.termAttested ? { year: s.termAttested.year, source: s.termAttested.source, note: str(s.termAttested.note) } : null,
     revivals: (s.revivals ?? []).map((r) => ({ start: r.start, end: r.end ?? null, note: str(r.note) })),
-    era: s.era, domain: s.domain, medium: asList(s.medium), subjects: asList(s.subjects), region: s.region ?? null, tier: s.tier,
+    era: s.era, domain: s.domain, medium: asList(s.medium), subjects: asList(s.subjects), region: s.region ?? null, regions: s.region ? macroRegions(s.region) : [], tier: s.tier,
     root: !!s.root, origin: s.origin ?? null, row: s.row ?? null,
     parents: (s.parents ?? []).map(relation), children, comparisons,
     contexts: contexts ?? (s.contexts ?? []).map((c) => ({ ...relation(c), direction: 'out' })),

@@ -2,7 +2,7 @@
 // Общая для карты и тестов: map.js меряет подписи на canvas, тесты — моделью ширины,
 // а расстановка одна и та же.
 import { createTimeScale, segmentWidths } from './timescale.js';
-import { layoutRegions } from './layout.js?v=seas-1';
+import { layoutRegions } from './layout.js';
 
 export const OV_K = 0.2;    // просторный обзор (вид по умолчанию): раскладка оставляет место под все подписи
 export const LONG = 1200;   // разрыв во времени (px рабочего масштаба), после которого связь рисуется парными отростками

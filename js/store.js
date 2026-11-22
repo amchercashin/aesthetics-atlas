@@ -1,13 +1,23 @@
 // Данные атласа и навигация по графу родословной.
-import { NOW } from './format.js?v=author-pilot';
+// Поддерживает разделённую загрузку: лёгкий data/index.json при старте + ленивую подгрузку data/styles/<id>.json.
+import { NOW } from './format.js';
 
-export async function loadAtlas(url = 'data/atlas.json') {
-  const res = await fetch(url, { cache: 'no-cache' });
-  if (!res.ok) throw new Error(`Не удалось загрузить данные (${res.status})`);
-  return createStore(await res.json());
+function indexVersionFromDom() {
+  return typeof document !== 'undefined'
+    ? document.querySelector('meta[name="atlas-version"]')?.getAttribute('content') ?? ''
+    : '';
 }
 
-export function createStore(data) {
+export async function loadAtlas(url) {
+  const domVersion = indexVersionFromDom();
+  const target = url ?? (domVersion ? `data/index.json?v=${encodeURIComponent(domVersion)}` : 'data/index.json');
+  const res = await fetch(target, domVersion ? {} : { cache: 'no-cache' });
+  if (!res.ok) throw new Error(`Не удалось загрузить данные (${res.status})`);
+  const data = await res.json();
+  return createStore(data, { baseUrl: 'data/styles', version: data.version || domVersion });
+}
+
+export function createStore(data, { baseUrl = 'data/styles', version = data.version ?? '', fetcher } = {}) {
   const styles = [...data.styles].sort((a, b) => a.order - b.order);
   const byId = new Map(styles.map((s) => [s.id, s]));
   // Старые адреса после разделения или переименования карточек ведут на новые.
@@ -17,6 +27,7 @@ export function createStore(data) {
   const nebulae = data.nebulae ?? [];
   const nebulaById = new Map(nebulae.map((n) => [n.id, n]));
   const eraById = new Map(eras.map((e, i) => [e.id, { ...e, index: i }]));
+  const inflight = new Map();
 
   const walk = (id, key) => {
     const seen = new Set();
@@ -28,18 +39,51 @@ export function createStore(data) {
     return seen;
   };
 
+  const resolve = (id) => (byId.has(id) ? id : former.get(id) ?? null);
+  const isLoaded = (s) => Boolean(s?._loaded || (Array.isArray(s?.description) && Array.isArray(s?.evidence)));
+
+  async function loadStyle(id) {
+    const realId = resolve(id);
+    if (!realId) return null;
+    const s = byId.get(realId);
+    if (isLoaded(s)) return s;
+    if (inflight.has(realId)) return inflight.get(realId);
+
+    const doFetch = fetcher ?? ((u) => fetch(u));
+    const url = `${baseUrl}/${encodeURIComponent(realId)}.json${version ? `?v=${encodeURIComponent(version)}` : ''}`;
+    const p = Promise.resolve(doFetch(url))
+      .then((res) => {
+        if (!res.ok) throw new Error(`Не удалось загрузить карточку ${realId} (${res.status})`);
+        return res.json();
+      })
+      .then((full) => {
+        for (const src of full.sources ?? []) sources.set(src.id, src);
+        const { sources: _s, ...card } = full;
+        Object.assign(s, card, { _loaded: true });
+        return s;
+      })
+      .finally(() => { inflight.delete(realId); });
+
+    inflight.set(realId, p);
+    return p;
+  }
+
   return {
     raw: data,
     styles,
     eras,
     builtAt: data.builtAt,
+    version,
+    stats: data.stats ?? null,
     resources: data.resources ?? [],
     promptSubjects: data.promptSubjects ?? [],
+    trails: data.trails ?? [],
     get: (id) => byId.get(id) ?? byId.get(former.get(id)),
     has: (id) => byId.has(id) || former.has(id),
-    resolve: (id) => (byId.has(id) ? id : former.get(id) ?? null),
+    resolve,
+    loadStyle,
     source: (id) => sources.get(id) ?? null,
-    sources: [...sources.values()],
+    get sources() { return [...sources.values()]; },
     era: (id) => eraById.get(id),
     eraColor: (id) => `var(--era-${id})`,
     nebulae,

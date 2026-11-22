@@ -31,7 +31,7 @@ function lev(a, b, max) {
 }
 
 const FIELDS = [
-  ['name', 3], ['orig', 3], ['aliases', 2.5], ['searchKeywords', 1.8], ['names', 1.6], ['traits', 0.7], ['summary', 0.4],
+  ['name', 3], ['shortTitle', 3], ['orig', 3], ['aliases', 2.5], ['searchKeywords', 1.8], ['names', 1.6], ['traits', 0.7], ['summary', 0.4],
   ['creators', 2], ['corpus', 0.9],
 ];
 
@@ -40,7 +40,7 @@ export function buildIndex(styles) {
     const f = {};
     for (const [k] of FIELDS) {
       const v = k === 'creators' ? (s.creators ?? []).flatMap((c) => [c.name, c.orig, ...(c.aliases ?? [])]).join(' ')
-        : k === 'corpus' ? (s.corpus ?? []).map((w) => w.title).join(' ')
+        : k === 'corpus' ? (s.corpusTitles ?? (s.corpus ?? []).map((w) => w.title)).join(' ')
         : Array.isArray(s[k]) ? s[k].join(' ') : s[k];
       f[k] = { full: normalize(v), toks: tokens(v) };
     }

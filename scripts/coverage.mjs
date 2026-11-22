@@ -4,10 +4,11 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { MACRO, macroRegions } from './lib/regions.mjs';
+import { loadBuiltAtlas } from './lib/load-atlas.mjs';
 import { SUBJECT, MEDIUM } from '../js/format.js';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
-const atlas = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/atlas.json'), 'utf8'));
+const atlas = loadBuiltAtlas(ROOT);
 const { styles, eras } = atlas;
 const DOMAIN = { art: 'Искусство', architecture: 'Архитектура', design: 'Дизайн', internet: 'Интернет и цифра' };
 const regions = [...MACRO, { id: 'unknown', name: 'Не определён' }];
