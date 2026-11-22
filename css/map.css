@@ -57,6 +57,9 @@ body[data-view="map"] .site-footer { display: none; }
 .map-legend-pop .edge { stroke-opacity: 0.9; }
 .edge.sec-legend { stroke: var(--ink-2); stroke-width: 1.4; fill: none; }
 .lg-note { margin-top: 12px; padding-top: 10px; border-top: 1px solid var(--rule); font-size: var(--t-xs); color: var(--ink-3); line-height: 1.5; }
+.lg-note ul { list-style: disc; padding-left: 16px; display: grid; gap: 5px; margin-bottom: 8px; }
+.lg-note li { display: list-item; font-size: var(--t-xs); color: var(--ink-3); }
+.lg-note a { color: var(--ink-2); }
 .zoom-ctrls { margin-left: auto; display: flex; align-items: center; gap: 2px; }
 
 /* Чистый вид скрывает также маршруты, подписи линий и области попадания. */
@@ -312,41 +315,37 @@ body[data-view="map"] .site-footer { display: none; }
 .mp-open { margin-top: 16px; justify-content: center; }
 
 .map-loading { position: absolute; inset: 0; display: grid; place-items: center; font-family: var(--serif); font-size: var(--t-xl); color: var(--ink-3); }
-.map-hint { position: absolute; left: 304px; bottom: 14px; font-size: var(--t-xs); color: var(--ink-3); pointer-events: none; background: color-mix(in oklab, var(--paper) 85%, transparent); padding: 4px 9px; border-radius: 6px; }
 
 @media (max-width: 900px) {
   .map-switch { font-size: var(--t-xs); }
 }
 @media (max-width: 760px) {
-  .map-toolbar { gap: 8px; padding: 8px var(--gutter); }
-  .map-find { flex: 1 1 0; min-width: 0; }
+  .map-toolbar { grid-template-columns: minmax(0, 1fr) auto auto; gap: 8px; padding: 8px var(--gutter); }
+  .map-find { grid-column: 1; grid-row: 1; min-width: 0; }
+  .map-filter-wrap { grid-column: 2; grid-row: 1; }
+  .map-legend-wrap { grid-column: 3; grid-row: 1; }
+  .map-links { grid-column: 1 / 3; grid-row: 2; justify-self: stretch; }
+  .zoom-ctrls { grid-column: 3; grid-row: 2; margin-left: 0; justify-self: end; }
   .map-switch { gap: 6px; font-size: 12px; }
   .map-switch .sw { width: 28px; height: 16px; }
   .map-switch .sw::after { width: 12px; height: 12px; }
   .map-switch input:checked + .sw::after { transform: translateX(12px); }
   .zoom-ctrls .chip { padding: 0 10px; font-size: 12px; }
   .zoom-ctrls .icon-btn { display: none; }
-  .map-links { justify-self: stretch; }
   .map-links button { flex: 1; padding: 6px 8px; font-size: 12px; }
-  .map-filter-btn .mfb-label { max-width: 96px; overflow: hidden; text-overflow: ellipsis; }
+  .map-filter-btn .mfb-label { max-width: 84px; overflow: hidden; text-overflow: ellipsis; }
   .map-filter-pop { position: fixed; left: 8px; right: 8px; top: calc(var(--header-h) + 58px); width: auto; max-height: 68dvh; overflow-y: auto; }
   .minimap { width: 136px; height: 60px; }
   .mm-box { left: 10px; bottom: 10px; }
-  .map-hint { display: none; }
 
   /* Легенда нужна и на телефоне: в ней слои и объяснение статусов связей. */
   .map-legend-pop { position: fixed; left: 8px; right: 8px; top: calc(var(--header-h) + 58px); width: auto; max-height: 68dvh; overflow-y: auto; }
-  .zoom-ctrls { margin-left: 0; }
   .en-seg { flex: 0 0 auto; min-width: 84px; }
   .map-panel { top: auto; left: 8px; right: 8px; bottom: 8px; width: auto; max-height: 46%; animation-name: sheet-in; }
   .mp-art .art-frame { aspect-ratio: 21 / 9 !important; }
   @keyframes sheet-in { from { opacity: 0; transform: translateY(24px); } }
 }
-.map-stage:has(.map-panel:not([hidden])) .map-hint { display: none; }
-.map-stage:has(.mm-box.collapsed) .map-hint { left: 62px; }
-.map-hint { transition: opacity .4s ease; }
-.map-hint.is-gone { opacity: 0; }
-@media (min-width: 761px) and (max-height: 820px) { .minimap { width: 208px; height: 84px; } .map-hint { left: 264px; } }
+@media (min-width: 761px) and (max-height: 820px) { .minimap { width: 208px; height: 84px; } }
 @media (max-width: 760px) { .map-stage:has(.map-panel:not([hidden])) .mm-box { display: none; } }
 
 /* Маршрут по карте: трек и цепочка стилей */
@@ -376,11 +375,14 @@ body[data-view="map"] .site-footer { display: none; }
 
 /* Масштаб меняет предмет чтения: моря → части → отдельные эстетики. */
 .mm-box.is-quiet { display: none; }
-.map-hint { display: none; }
 .label, .plate { transition: none; }
 .m-nebnames .region-name { pointer-events: visiblePainted; cursor: pointer; outline: none; }
 .region-name:hover, .region-name:focus-visible { filter: brightness(0.75); text-decoration: underline; text-underline-offset: 4px; }
-[data-theme="dark"] .region-name:hover, [data-theme="dark"] .region-name:focus-visible { filter: brightness(1.25); }
+:root[data-theme="dark"] .region-name:hover, :root[data-theme="dark"] .region-name:focus-visible { filter: brightness(1.25); }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .region-name:hover,
+  :root:not([data-theme="light"]) .region-name:focus-visible { filter: brightness(1.25); }
+}
 .summary-case { fill: none; stroke: var(--paper); stroke-linecap: round; pointer-events: none; }
 .summary-line { fill: none; stroke: var(--ink-2); stroke-dasharray: 5 6; stroke-linecap: round; pointer-events: none; }
 .summary-port { fill: var(--paper); stroke: var(--ink-2); stroke-width: 1.1; pointer-events: none; }

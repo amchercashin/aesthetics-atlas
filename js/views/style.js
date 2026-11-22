@@ -2,16 +2,16 @@
 // Ниже — текст, родословная, ссылки.
 // Статус проверки карточки и связей виден сразу; источники утверждений — под раскрытием.
 import { html, mount, safeUrl } from '../html.js';
-import { fmtDates, fmtYear, RELATION, DOMAIN, KIND, DATE_KIND, REL_STATUS, SUBJECT, MEDIUM, roleLabel, plural, reviewScopeText } from '../format.js?v=subjects-4';
-import { frame, credit } from '../ui/image.js?v=author-pilot';
-import { artItem, cardImages, cardRefs, imgKey } from '../ui/art-item.js?v=works-2';
-import { eraTag, thumb, footer } from '../ui/common.js?v=links-1';
+import { fmtDates, fmtYear, RELATION, DOMAIN, KIND, DATE_KIND, REL_STATUS, SUBJECT, MEDIUM, roleLabel, plural, reviewScopeText } from '../format.js';
+import { frame, credit } from '../ui/image.js';
+import { artItem, cardImages, cardRefs, imgKey } from '../ui/art-item.js';
+import { eraTag, thumb, footer } from '../ui/common.js';
 import { toast } from '../ui/toast.js';
 import notfound from './notfound.js';
-import { authorshipSection, contextSection } from '../ui/corpus.js?v=works-2';
-import { directLinks, linkStep, linkKey, egoMap, mountEgoMap } from '../ui/ego-map.js?v=links-1';
-import { promptFor, styleAnchor, pickOther } from '../prompt.js?v=ai-5';
-import { aiHead, aiPromptBody, mountAiPrompt } from '../ui/ai-prompt.js?v=ai-5';
+import { authorshipSection, contextSection } from '../ui/corpus.js';
+import { directLinks, linkStep, linkKey, egoMap, mountEgoMap } from '../ui/ego-map.js';
+import { promptFor, styleAnchor, pickOther } from '../prompt.js';
+import { aiHead, aiPromptBody, mountAiPrompt } from '../ui/ai-prompt.js';
 
 const ARROW_L = html`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>`;
 const ARROW_R = html`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>`;
@@ -259,7 +259,7 @@ export default {
           ? html`<p class="lineage-lead">Связи происхождения пока не представлены на карте.${s.comparisons.length ? ' Похожие по виду стили — в разделе «Визуальные сопоставления».' : ''}</p>`
           : html`<p class="lineage-lead">Один из независимых истоков в атласе: связей с другими стилями здесь пока нет.</p>`}
         ${linkCount ? html`<div class="lineage-sub"><h3>Прямые связи</h3></div>
-        <p class="lineage-lead">Слева — из чего вырос стиль, справа — что выросло из него. Тип связи подписан у каждого стиля, дальние поколения — на карте.</p>
+        <p class="lineage-lead">Из чего вырос стиль и что выросло из него. Тип связи подписан у каждого стиля, дальние поколения — на карте.</p>
         ${egoMap(store, s)}
         ${linkNotes(store, s, direct)}` : ''}
         <div class="em-actions">

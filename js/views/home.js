@@ -1,13 +1,13 @@
 // Главная: заголовок с «Удиви меня» (промт для генератора картинок), лента эпох (главные стили и хотя бы по одному от каждого моря), три входа и стиль дня.
 // Поиск — в шапке, на главной он не дублируется.
 import { html, mount } from '../html.js';
-import { fmtDates, fmtYear, plural } from '../format.js?v=audit';
-import { frame } from '../ui/image.js?v=audit-p1p2';
-import { footer, thumb } from '../ui/common.js?v=audit-p1p2';
+import { fmtDates, fmtYear, plural } from '../format.js';
+import { frame } from '../ui/image.js';
+import { footer, thumb } from '../ui/common.js';
 import { createTimeScale, segmentWidths } from '../timescale.js';
 import { layoutRows } from '../layout.js';
-import { promptFor, pickOther, surprisePool } from '../prompt.js?v=ai-5';
-import { aiHead, aiPromptBody, mountAiPrompt } from '../ui/ai-prompt.js?v=ai-5';
+import { promptFor, pickOther, surprisePool } from '../prompt.js';
+import { aiHead, aiPromptBody, mountAiPrompt } from '../ui/ai-prompt.js';
 
 const DICE = html`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="3"/><g fill="currentColor" stroke="none"><circle cx="8.5" cy="8.5" r="1.3"/><circle cx="15.5" cy="15.5" r="1.3"/><circle cx="12" cy="12" r="1.3"/></g></svg>`;
 
@@ -49,6 +49,10 @@ export default {
       <h1 class="hero-title">Как люди придумывали красоту: от пещеры Ласко до уирдкора</h1>
       <div class="hero-side">
         <p class="hero-lead">${n} ${plural(n, 'визуальный стиль', 'визуальных стиля', 'визуальных стилей')} — от трафаретов ладоней, которым не меньше 67 тысяч лет, до интернет-эстетик. Для каждого — откуда он, по версии атласа, произошёл, как его узнать, главная работа и что почитать дальше.</p>
+        <div class="hero-actions">
+          <a class="btn" href="#/map">Открыть карту</a>
+          <a class="btn ghost" href="#/catalog">Смотреть каталог</a>
+        </div>
         ${store.promptSubjects.length ? html`<section class="hero-ai" aria-labelledby="hero-ai-title">
           ${aiHead('hero-ai-title', { nextHidden: true })}
           <div class="hero-ai-intro" data-ai-intro>
