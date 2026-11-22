@@ -489,6 +489,8 @@
   labelStatus: historical
   id: haipai-painting
   name: Шанхайская школа живописи (хайпай)
+  shortTitle: "Шанхайская школа"
+  subtitle: "Живопись хайпай"
   orig: 海上画派 / Shanghai School, Haipai
   kind: school
   kindNote: >-

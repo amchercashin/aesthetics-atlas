@@ -9,6 +9,8 @@
   labelStatus: self-designation
   id: filonov-analytical-art
   name: Аналитическое искусство Филонова и школа МАИ
+  shortTitle: "Аналитическое искусство"
+  subtitle: "Павел Филонов и школа МАИ"
   orig: Аналитическое искусство / Мастера аналитического искусства (МАИ)
   kind: school
   kindNote: >-
@@ -535,6 +537,8 @@
   labelStatus: editorial-scope-title
   id: polissky-land-art
   name: "Николай Полисский и Никола-Ленивецкие промыслы: объекты в пейзаже"
+  shortTitle: "Николай Полисский"
+  subtitle: "Никола-Ленивецкие промыслы: объекты в пейзаже"
   orig: Николай Полисский / Nikolay Polissky; Никола-Ленивецкие промыслы
   kind: author-style
   start: 2004
@@ -759,6 +763,8 @@
   labelStatus: editorial-scope-title
   id: aes-f-digital-tableaux
   name: "AES+F: многофигурные цифровые картины «Трилогии лиминального пространства»"
+  shortTitle: "AES+F"
+  subtitle: "Многофигурные цифровые картины «Трилогии лиминального пространства»"
   orig: AES+F — The Liminal Space Trilogy (Last Riot, The Feast of Trimalchio, Allegoria Sacra)
   kind: author-style
   start: 2005

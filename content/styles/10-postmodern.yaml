@@ -1001,6 +1001,8 @@
 
 - id: new-wave-graphic
   name: Новая волна и гранж-типографика
+  shortTitle: "Новая волна и гранж"
+  subtitle: "Экспериментальная типографика"
   orig: New Wave and grunge typography
   aliases: [новая волна в типографике, New Wave typography, Swiss Punk, гранж-типографика]
   searchKeywords: [Вайнгарт, Эйприл Грейман, Дэвид Карсон, Ray Gun, Emigre, Design Quarterly]

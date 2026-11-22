@@ -1,8 +1,29 @@
 // Хронология: двенадцать глав-эпох, у каждой свой пигмент; внутри — стили по времени.
+// В современных главах карточки с датами музейного корпуса (dateKind: corpus) отделены в аккуратный подраздел.
 import { html, mount } from '../html.js';
-import { fmtDates, fmtYear, RELATION } from '../format.js';
+import { fmtDates, fmtYear, displayTitle, RELATION } from '../format.js';
 import { frame } from '../ui/image.js';
 import { footer } from '../ui/common.js';
+
+const SPLIT_CORPUS_ERAS = new Set(['postwar', 'postmodern', 'digital', 'internet']);
+
+function entryItem(store, s) {
+  return html`<li class="entry${s.dateKind === 'corpus' ? ' is-corpus' : ''}">
+    <a class="entry-link" href="#/s/${s.id}">
+      <span class="e-art">${frame(s.example.img ?? s.gallery.find((g) => g.img)?.img ?? null, s.palette, { ratio: '4 / 3', sizes: '(min-width: 900px) 220px, 34vw', alt: '', size: 500, note: s.example.img || s.gallery.some((g) => g.img) ? '' : s.example.external ? 'Репродукция — у источника' : '' })}</span>
+      <span class="e-text">
+        <span class="e-dates">${fmtDates(s)}${s.dateKind === 'corpus' ? html` <span class="e-badge">корпус работ</span>` : ''}</span>
+        <span class="e-name">${displayTitle(s)}</span>
+        <span class="e-orig">${s.subtitle ?? s.orig}</span>
+        <span class="e-sum">${s.summary}</span>
+      </span>
+    </a>
+    ${s.parents.length ? html`<p class="e-from">${s.parents.every((p) => p.status !== 'verified') ? 'По версии атласа: ' : ''}${s.parents.map((p, i) => {
+      const par = store.get(p.id);
+      return par ? html`${i ? ', ' : ''}${RELATION[p.type].from} <a href="#/s/${par.id}">${displayTitle(par)}</a>${p.status === 'verified' ? html` <span class="st st-verified" title="Связь подтверждена источником"><span class="visually-hidden">подтверждено</span></span>` : ''}` : '';
+    })}</p>` : s.origin === 'unknown' ? html`<p class="e-from">Связи происхождения пока не представлены на карте</p>` : ''}
+  </li>`;
+}
 
 export default {
   render(root, ctx) {
@@ -21,10 +42,13 @@ export default {
       <div class="tl-main">
         <header class="tl-head">
           <h1 class="tl-title">Хронология</h1>
-          <p class="tl-lead">От первых отпечатков ладоней до современных визуальных языков. Читайте по порядку или переходите к нужному временному разделу через оглавление. Корпуса традиций расположены по датам выбранных работ; сведения о происхождении и границах практики приведены в карточках.</p>
+          <p class="tl-lead">От первых отпечатков ладоней до визуальных языков 2020-х. Читайте по порядку или переходите к нужному временному разделу через оглавление. Живые традиции и авторские корпуса в главах XX–XXI веков вынесены в отдельный подраздел: их даты обозначают выбранный музейный корпус, а не возраст всей традиции.</p>
         </header>
         ${store.eras.map((e) => {
           const items = store.inEra(e.id);
+          const split = SPLIT_CORPUS_ERAS.has(e.id);
+          const mainItems = split ? items.filter((s) => s.dateKind !== 'corpus') : items;
+          const corpusItems = split ? items.filter((s) => s.dateKind === 'corpus') : [];
           return html`<section class="chapter" id="era-${e.id}" style="--c:var(--era-${e.id})" aria-labelledby="t-${e.id}">
             <header class="chapter-head">
               <div class="paint-chip" aria-hidden="true"><span class="paint"></span><span class="paint-name">${e.pigment}</span></div>
@@ -34,23 +58,12 @@ export default {
                 <p class="chapter-intro">${e.intro}</p>
               </div>
             </header>
-            ${items.length ? html`<ol class="entries">
-              ${items.map((s) => html`<li class="entry">
-                <a class="entry-link" href="#/s/${s.id}">
-                  <span class="e-art">${frame(s.example.img ?? s.gallery.find((g) => g.img)?.img ?? null, s.palette, { ratio: '4 / 3', sizes: '(min-width: 900px) 220px, 34vw', alt: '', size: 500, note: s.example.img || s.gallery.some((g) => g.img) ? '' : s.example.external ? 'Репродукция — у источника' : '' })}</span>
-                  <span class="e-text">
-                    <span class="e-dates">${fmtDates(s)}</span>
-                    <span class="e-name">${s.name}</span>
-                    <span class="e-orig">${s.orig}</span>
-                    <span class="e-sum">${s.summary}</span>
-                  </span>
-                </a>
-                ${s.parents.length ? html`<p class="e-from">${s.parents.every((p) => p.status !== 'verified') ? 'По версии атласа: ' : ''}${s.parents.map((p, i) => {
-                  const par = store.get(p.id);
-                  return par ? html`${i ? ', ' : ''}${RELATION[p.type].from} <a href="#/s/${par.id}">${par.name}</a>${p.status === 'verified' ? html` <span class="st st-verified" title="Связь подтверждена источником"><span class="visually-hidden">подтверждено</span></span>` : ''}` : '';
-                })}</p>` : s.origin === 'unknown' ? html`<p class="e-from">Связи происхождения пока не представлены на карте</p>` : ''}
-              </li>`)}
-            </ol>` : html`<p class="chapter-empty">Стили этой эпохи появятся в атласе позже.</p>`}
+            ${mainItems.length ? html`<ol class="entries">${mainItems.map((s) => entryItem(store, s))}</ol>` : !corpusItems.length ? html`<p class="chapter-empty">Стили этой эпохи появятся в атласе позже.</p>` : ''}
+            ${corpusItems.length ? html`<div class="chapter-corpus">
+              <h3 class="chapter-corpus-title">Живые традиции и авторские корпуса этих десятилетий</h3>
+              <p class="chapter-corpus-note">Даты указывают годы выбранного корпуса музейных работ — сама традиция может быть значительно старше.</p>
+              <ol class="entries">${corpusItems.map((s) => entryItem(store, s))}</ol>
+            </div>` : ''}
           </section>`;
         })}
       </div>

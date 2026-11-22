@@ -750,3 +750,56 @@ button.chip.more:hover { text-decoration-color: currentColor; }
 @media (max-width: 760px) {
   .map-toolbar .map-authors-switch { display: none; }
 }
+
+/* =================== Фаза 4: Подзаголовок зала, компактный каталог, корпус в хронологии =================== */
+.room-subtitle {
+  margin-top: 8px; font-family: var(--serif); font-size: clamp(1.1rem, 0.95rem + 0.5vw, 1.38rem);
+  line-height: 1.35; color: var(--ink-2); max-width: var(--measure);
+}
+.room-verified {
+  display: inline-flex; align-items: center; gap: 4px; padding: 2px 8px;
+  border-radius: 999px; border: 1px solid var(--rule); background: transparent;
+  font-size: var(--t-xs); color: var(--ink-3); cursor: pointer;
+  transition: color 0.15s, border-color 0.15s, background 0.15s;
+}
+.room-verified:hover { color: var(--ink); border-color: var(--ink-3); background: var(--paper-2); }
+.room-meta-details { margin-top: 24px; padding-top: 16px; border-top: 1px solid var(--rule); }
+.room-meta-details .review { margin-top: 12px; }
+
+.cat-filters-compact { display: grid; gap: 12px; }
+.cat-top-row { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px 14px; }
+.cat-top-ctrls { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+.cat-sort-seg { display: inline-flex; gap: 4px; }
+.cat-all-btn { display: inline-flex; align-items: center; gap: 6px; }
+.cat-all-btn svg { width: 15px; height: 15px; }
+.cat-all-btn.is-active { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+.cat-extra-badge {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-width: 18px; height: 18px; padding: 0 5px; border-radius: 999px;
+  font-size: 0.72rem; font-weight: 600; background: var(--paper); color: var(--ink);
+}
+.cat-active-pills { display: flex; flex-wrap: wrap; gap: 6px; }
+.cat-active-pills .active-pill { background: var(--paper-3); border-color: var(--rule-strong); }
+.cat-sheet-head {
+  display: flex; align-items: center; justify-content: space-between; gap: 12px;
+  padding-bottom: 10px; margin-bottom: 12px; border-bottom: 1px solid var(--rule);
+}
+.cat-sheet-actions { display: flex; align-items: center; gap: 8px; }
+.cat-sheet-group { margin-bottom: 14px; }
+.cat-sheet-group:last-child { margin-bottom: 0; }
+.cat-sheet-label { font-size: var(--t-xs); text-transform: uppercase; letter-spacing: 0.08em; color: var(--ink-3); margin-bottom: 6px; }
+.cat-sheet.from-top { top: calc(var(--header-h) + 8px); max-height: calc(100dvh - var(--header-h) - 24px); overflow-y: auto; }
+@media (max-width: 760px) {
+  .cat-top-row { padding: 0 var(--gutter); }
+  .cat-top-row .cat-domain-row { padding: 0; width: 100%; }
+  .cat-active-pills { padding: 0 var(--gutter); }
+}
+
+.chapter-corpus { margin-top: 36px; padding-top: 24px; border-top: 1px dashed var(--rule-strong); }
+.chapter-corpus-title { font-family: var(--serif); font-weight: 500; font-size: var(--t-xl); color: var(--ink-2); }
+.chapter-corpus-note { margin-top: 4px; margin-bottom: 18px; font-size: var(--t-sm); color: var(--ink-3); max-width: var(--measure); }
+.e-badge {
+  display: inline-block; margin-left: 6px; padding: 1px 6px; border-radius: 999px;
+  font-size: 0.7rem; letter-spacing: 0.04em; text-transform: uppercase;
+  background: var(--paper-3); color: var(--ink-2); vertical-align: middle;
+}

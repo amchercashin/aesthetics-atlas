@@ -268,6 +268,8 @@
   labelStatus: historical
   id: yang-liuqing-nianhua
   name: Янлюцинская театральная гравюра
+  shortTitle: "Гравюры Янлюцина"
+  subtitle: "Театральные новогодние листы"
   orig: Yangliuqing xichu nianhua / 杨柳青戏出年画
   kind: tradition
   kindNote: Ограниченный театральный корпус внутри более широкой янлюцинской популярной графики.
@@ -529,6 +531,8 @@
   labelStatus: editorial-scope-title
   id: chinese-jianzhi
   name: "Китайское вырезание бумаги: обзор"
+  shortTitle: "Цзяньчжи"
+  subtitle: "Китайское вырезание бумаги"
   orig: Jiǎnzhǐ / 剪纸 / 剪紙 — Chinese paper cutting
   kind: overview
   kindNote: Навигационный обзор разных подходов; единого национального визуального стиля не заявляет.
@@ -791,6 +795,8 @@
   labelStatus: historical
   id: adinkra
   name: "Адинкра: печатные ткани и графические знаки"
+  shortTitle: "Адинкра"
+  subtitle: "Печатные ткани и графические знаки"
   orig: Adinkra — Akan stamped textiles and graphic signs
   kind: tradition
   start: 1900
@@ -1020,6 +1026,8 @@
   labelStatus: historical
   id: ndebele-murals
   name: Настенная роспись ндебеле в ЮАР и её адаптации
+  shortTitle: "Роспись ндебеле"
+  subtitle: "Настенная живопись в ЮАР и её адаптации"
   orig: South African Ndebele wall painting
   kind: tradition
   kindNote: >-
@@ -1265,6 +1273,8 @@
   labelStatus: editorial-scope-title
   id: polish-wycinanki
   name: "Польские выцинанки: Лович и Курпе"
+  shortTitle: "Польские выцинанки"
+  subtitle: "Лович и Курпе"
   orig: Wycinanki — Łowicz i Kurpie
   kind: overview
   kindNote: >-
@@ -2079,6 +2089,8 @@
   labelStatus: editorial-scope-title
   id: nianhua
   name: "Няньхуа: региональные новогодние картинки Китая"
+  shortTitle: "Няньхуа"
+  subtitle: "Региональные новогодние картинки Китая"
   orig: 年画 / 年畫 / nianhua
   kind: overview
   kindNote: Обзор жанра и нескольких региональных практик; не единый национальный визуальный стиль.

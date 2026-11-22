@@ -8,6 +8,8 @@
   labelStatus: editorial-scope-title
   id: mezen-painting
   name: "Мезенская роспись: палащельские прялки"
+  shortTitle: "Мезенская роспись"
+  subtitle: "Палащельские прялки"
   orig: Мезенская / палащельская роспись
   kind: tradition
   start: 1850
@@ -394,6 +396,8 @@
   labelStatus: editorial-scope-title
   id: jamini-roy-painting
   name: Темперная фигурация Джамини Роя
+  shortTitle: "Джамини Рой"
+  subtitle: "Темперная фигурация"
   orig: "Jamini Roy: tempera figuration"
   kind: author-style
   start: 1928
@@ -584,6 +588,8 @@
   labelStatus: editorial-scope-title
   id: xu-bing-writing-systems
   name: Письмо как изображение у Сюй Бина
+  shortTitle: "Письмо Сюй Бина"
+  subtitle: "Иероглифика как изображение"
   orig: "Xu Bing: writing as image"
   kind: author-style
   start: 1987
@@ -817,6 +823,8 @@
   labelStatus: editorial-scope-title
   id: ife-sculpture
   name: "Скульптура Ифе: металл и терракота"
+  shortTitle: "Скульптура Ифе"
+  subtitle: "Металл и терракота"
   orig: Sculpture of Ilé-Ifẹ̀ / Ife
   kind: tradition
   start: 1100
@@ -1019,6 +1027,8 @@
   labelStatus: editorial-scope-title
   id: el-anatsui-metal-textiles
   name: Металлические полотна Эль Анацуи
+  shortTitle: "Полотна Эль Анацуи"
+  subtitle: "Металлические гобелены"
   orig: "El Anatsui: metal hangings"
   kind: author-style
   start: 2006
@@ -1236,6 +1246,8 @@
   labelStatus: editorial-scope-title
   id: maori-whakairo
   name: "Маорийская резьба по дереву: обзор"
+  shortTitle: "Маорийская резьба"
+  subtitle: "Традиция вакаиро по дереву"
   orig: "Whakairo rākau: selected Māori woodcarving"
   kind: overview
   kindNote: Обзор разных предметных и локальных практик; не общий набор признаков всех искусств маори.
@@ -1430,6 +1442,8 @@
   labelStatus: editorial-scope-title
   id: torres-strait-printmaking
   name: "Графика Торресова пролива: обзор"
+  shortTitle: "Графика Торресова пролива"
+  subtitle: "Печатная традиция островов"
   orig: Contemporary Torres Strait Islander printmaking
   kind: overview
   kindNote: >-
@@ -1910,6 +1924,8 @@
   labelStatus: editorial-scope-title
   id: iznik-ceramics
   name: "Изникская керамика: расписные блюда"
+  shortTitle: "Изникская керамика"
+  subtitle: "Расписные блюда"
   orig: "İznik pottery: painted dishes"
   kind: tradition
   start: 1575

@@ -1,7 +1,8 @@
-// Каталог: «шпалерная» сетка работ (строки выравниваются по ширине), фильтры по области, типу, сюжету, технике и эпохам.
+// Каталог: «шпалерная» сетка работ (строки выравниваются по ширине), компактная верхняя панель фильтров
+// + раскрывающийся лист всех фильтров (область, регион, тип, сюжет, техника, эпохи).
 // Отбор, счётчики и параметры адреса — чистые функции в js/catalog-filter.js.
 import { html, mount } from '../html.js';
-import { fmtDates, DOMAIN, KIND, KIND_FAMILY, SUBJECT, MEDIUM, plural } from '../format.js';
+import { fmtDates, displayTitle, DOMAIN, REGION, KIND, KIND_FAMILY, SUBJECT, MEDIUM, plural } from '../format.js';
 import { frame, markLoaded } from '../ui/image.js';
 import { footer } from '../ui/common.js';
 import { replaceParams } from '../router.js';
@@ -9,37 +10,50 @@ import { readState, stateParams, emptyState, isFiltered, filterStyles, facetCoun
 
 const clampAr = (img) => (img ? Math.min(2.1, Math.max(0.62, img.w / img.h)) : 0.8);
 
-// Ряды с одним выбором: «Все» и значения словаря. Длинный ряд техник на широком экране свёрнут в одну строку.
+// Все ряды фильтров внутри листа .cat-sheet (и для подсчёта счётчиков).
 const ROWS = [
   { key: 'domain', label: 'Область', all: 'Все', items: Object.entries(DOMAIN).map(([v, name]) => ({ v, name })) },
+  { key: 'region', label: 'Регион', all: 'Все регионы', items: Object.entries(REGION).map(([v, name]) => ({ v, name })) },
   { key: 'family', label: 'Тип карточки', all: 'Все типы', items: Object.entries(KIND_FAMILY).map(([v, f]) => ({ v, name: f.label, title: f.kinds.map((x) => KIND[x]).join(', ') })) },
   { key: 'subject', label: 'Сюжет', all: 'Все сюжеты', items: Object.entries(SUBJECT).map(([v, name]) => ({ v, name })) },
-  { key: 'medium', label: 'Техника', all: 'Любая техника', collapse: true, items: Object.entries(MEDIUM).map(([v, name]) => ({ v, name })) },
+  { key: 'medium', label: 'Техника', all: 'Любая техника', items: Object.entries(MEDIUM).map(([v, name]) => ({ v, name })) },
 ];
-
-// Ряды фильтров. На телефоне и при прокрутке они показаны дважды: в начале страницы и в листе под полоской
-// «Фильтры». Кнопки связаны через data-атрибуты, состояние общее. Числа на чипах ставит apply().
-function filterRows(store) {
-  return html`
-    ${ROWS.map((row) => html`<div class="filter-row${row.collapse ? ' is-collapsible' : ''}" role="group" aria-label="${row.label}">
-      <button class="chip" type="button" data-f="${row.key}" data-v="">${row.all}</button>
-      ${row.items.map((it) => html`<button class="chip" type="button" data-f="${row.key}" data-v="${it.v}"${it.title ? html` title="${it.title}"` : ''}>${it.name} <span class="count"></span></button>`)}
-      ${row.collapse ? html`<button class="chip more" type="button" data-more aria-expanded="false" hidden></button>` : ''}
-    </div>`)}
-    <div class="era-bar" role="group" aria-label="Эпохи">
-      ${store.eras.map((e) => html`<button type="button" class="era-seg" data-era="${e.id}" style="--c:var(--era-${e.id})" title="${e.name}">
-        <span class="seg-bar"></span><span class="seg-name">${e.short}</span>
-      </button>`)}
-    </div>
-    <div class="filter-row sort-row" role="group" aria-label="Порядок">
-      <button class="chip" type="button" data-sort="time">По времени</button>
-      <button class="chip" type="button" data-sort="az">По алфавиту</button>
-      <button class="chip reset" type="button" data-reset hidden>Сбросить фильтры</button>
-    </div>`;
-}
 
 const FILTER_ICON = html`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><path d="M4 6h16M7 12h10M10 18h4"/></svg>`;
 const CHEVRON = html`<svg class="cat-bar-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>`;
+
+function sheetFilters(store) {
+  return html`
+    <div class="cat-sheet-head">
+      <strong>Фильтры каталога</strong>
+      <div class="cat-sheet-actions">
+        <button class="chip reset" type="button" data-reset hidden>Сбросить</button>
+        <button class="icon-btn" type="button" data-sheet-close aria-label="Закрыть фильтры">×</button>
+      </div>
+    </div>
+    ${ROWS.map((row) => html`<div class="cat-sheet-group">
+      <p class="cat-sheet-label">${row.label}</p>
+      <div class="filter-row" role="group" aria-label="${row.label}">
+        <button class="chip" type="button" data-f="${row.key}" data-v="">${row.all}</button>
+        ${row.items.map((it) => html`<button class="chip" type="button" data-f="${row.key}" data-v="${it.v}"${it.title ? html` title="${it.title}"` : ''}>${it.name} <span class="count"></span></button>`)}
+      </div>
+    </div>`)}
+    <div class="cat-sheet-group">
+      <p class="cat-sheet-label">Эпохи</p>
+      <div class="era-bar" role="group" aria-label="Эпохи">
+        ${store.eras.map((e) => html`<button type="button" class="era-seg" data-era="${e.id}" style="--c:var(--era-${e.id})" title="${e.name}">
+          <span class="seg-bar"></span><span class="seg-name">${e.short}</span>
+        </button>`)}
+      </div>
+    </div>
+    <div class="cat-sheet-group">
+      <p class="cat-sheet-label">Порядок</p>
+      <div class="filter-row sort-row" role="group" aria-label="Порядок">
+        <button class="chip" type="button" data-sort="time">По времени</button>
+        <button class="chip" type="button" data-sort="az">По алфавиту</button>
+      </div>
+    </div>`;
+}
 
 export default {
   render(root, ctx) {
@@ -53,7 +67,30 @@ export default {
         <h1 class="cat-title">Каталог</h1>
         <p class="cat-count" aria-live="polite"></p>
       </header>
-      <div class="cat-filters">${filterRows(store)}</div>
+      <div class="cat-filters cat-filters-compact">
+        <div class="cat-top-row">
+          <div class="filter-row cat-domain-row" role="group" aria-label="Область">
+            <button class="chip" type="button" data-f="domain" data-v="">Все</button>
+            ${ROWS[0].items.map((it) => html`<button class="chip" type="button" data-f="domain" data-v="${it.v}">${it.name} <span class="count"></span></button>`)}
+          </div>
+          <div class="cat-top-ctrls">
+            <button class="chip cat-all-btn" type="button" data-open-sheet aria-expanded="false" aria-controls="cat-sheet">
+              ${FILTER_ICON}<span>Фильтры</span><span class="cat-extra-badge" hidden></span>
+            </button>
+            <div class="cat-sort-seg" role="group" aria-label="Порядок">
+              <button class="chip" type="button" data-sort="time">По времени</button>
+              <button class="chip" type="button" data-sort="az">А–Я</button>
+            </div>
+            <button class="chip reset" type="button" data-reset hidden>Сбросить</button>
+          </div>
+        </div>
+        <div class="era-bar" role="group" aria-label="Эпохи">
+          ${store.eras.map((e) => html`<button type="button" class="era-seg" data-era="${e.id}" style="--c:var(--era-${e.id})" title="${e.name}">
+            <span class="seg-bar"></span><span class="seg-name">${e.short}</span>
+          </button>`)}
+        </div>
+        <div class="cat-active-pills" aria-label="Выбранные фильтры" hidden></div>
+      </div>
       <div class="cat-bar">
         <button class="cat-bar-toggle" type="button" aria-expanded="false" aria-controls="cat-sheet">
           ${FILTER_ICON}<span class="cat-bar-text"><span class="cat-bar-label">Фильтры</span> <span class="cat-bar-summary"></span></span>
@@ -61,7 +98,7 @@ export default {
         </button>
       </div>
       <div class="cat-scrim" hidden></div>
-      <div class="cat-sheet" id="cat-sheet" role="region" aria-label="Фильтры каталога" hidden>${filterRows(store)}</div>
+      <div class="cat-sheet" id="cat-sheet" role="region" aria-label="Фильтры каталога" hidden>${sheetFilters(store)}</div>
       <div class="cat-grid"></div>
       <div class="cat-empty" hidden>
         <p>Под эти фильтры ничего не подходит.</p>
@@ -83,6 +120,9 @@ export default {
     const anyBox = root.querySelector('.cat-any');
     const anyGrid = root.querySelector('#cat-any-grid');
     const anyToggle = anyBox.querySelector('[data-any-toggle]');
+    const activePills = root.querySelector('.cat-active-pills');
+    const topOpenBtn = root.querySelector('[data-open-sheet]');
+    const extraBadge = root.querySelector('.cat-extra-badge');
     let anyOpen = false, anyFor = '';
 
     const tiles = (list) => html`${list.map((s) => {
@@ -90,13 +130,11 @@ export default {
       const ar = clampAr(cover);
       return html`<a class="tile" href="#/s/${s.id}" style="--ar:${ar.toFixed(3)}">
         ${frame(cover, s.palette, { ratio: ar.toFixed(3), sizes: `${Math.round(ar * 240)}px`, alt: '', size: ar > 1.3 ? 960 : 500, note: !cover && s.example.external ? 'Репродукция — у источника' : '' })}
-        <span class="tile-cap"><span class="swatch" style="--c:var(--era-${s.era})"></span><span class="tile-name">${s.name}</span><span class="tile-dates">${s.kind[0] ? `${KIND[s.kind[0]]}, ` : ''}${fmtDates(s)}</span></span>
+        <span class="tile-cap"><span class="swatch" style="--c:var(--era-${s.era})"></span><span class="tile-name">${displayTitle(s)}</span><span class="tile-dates">${s.kind[0] ? `${KIND[s.kind[0]]}, ` : ''}${fmtDates(s)}</span></span>
       </a>`;
     })}`;
-    const sorted = (list) => (state.sort === 'az' ? [...list].sort((a, b) => a.name.localeCompare(b.name, 'ru')) : list);
+    const sorted = (list) => (state.sort === 'az' ? [...list].sort((a, b) => displayTitle(a).localeCompare(displayTitle(b), 'ru')) : list);
 
-    // Под выбранным сюжетом — универсальные стили, свёрнутые. Если стилей, известных этим сюжетом,
-    // при остальных фильтрах нет, раздел раскрыт сразу. Плитки строятся только при раскрытии.
     function renderAny(main, extras) {
       if (state.subject !== anyFor) { anyOpen = false; anyFor = state.subject; }
       const forced = !main.length && extras.length > 0;
@@ -125,7 +163,7 @@ export default {
         + (extras.length ? ` · ещё ${extras.length} ${plural(extras.length, 'универсальный', 'универсальных', 'универсальных')}` : '');
       root.querySelector('.cat-empty').hidden = list.length > 0 || extras.length > 0;
       renderAny(list, extras);
-      // Число на чипе — сколько стилей останется, если выбрать его при остальных фильтрах; ноль приглушён.
+
       for (const row of ROWS) {
         const counts = facetCounts(store.styles, state, row.key);
         root.querySelectorAll(`[data-f="${row.key}"]`).forEach((b) => {
@@ -133,121 +171,83 @@ export default {
           b.setAttribute('aria-pressed', String(v === state[row.key]));
           if (!v) return;
           const n = counts.get(v);
-          b.querySelector('.count').textContent = String(n);
+          const cnt = b.querySelector('.count');
+          if (cnt) cnt.textContent = String(n);
           b.classList.toggle('is-empty', n === 0);
         });
       }
       root.querySelectorAll('[data-era]').forEach((b) => b.setAttribute('aria-pressed', String(state.eras.has(b.dataset.era))));
       root.querySelectorAll('[data-sort]').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.sort === state.sort)));
       root.querySelectorAll('.reset').forEach((b) => { b.hidden = !(isFiltered(state) || state.sort !== 'time'); });
+
+      // Выбранные «глубокие» фильтры (регион, тип, сюжет, техника) показываем пиллами под строкой эпох.
+      const pills = [
+        state.region && { key: 'region', label: `Регион: ${REGION[state.region]}` },
+        state.family && { key: 'family', label: `Тип: ${KIND_FAMILY[state.family].label}` },
+        state.subject && { key: 'subject', label: `Сюжет: ${SUBJECT[state.subject]}` },
+        state.medium && { key: 'medium', label: `Техника: ${MEDIUM[state.medium]}` },
+      ].filter(Boolean);
+      extraBadge.hidden = !pills.length;
+      extraBadge.textContent = String(pills.length);
+      topOpenBtn.classList.toggle('is-active', pills.length > 0);
+      activePills.hidden = !pills.length;
+      mount(activePills, pills.length ? html`${pills.map((p) => html`<button class="chip active-pill" type="button" data-clear-key="${p.key}">${p.label} <span aria-hidden="true">×</span></button>`)}` : '');
+
       const eras = store.eras.filter((e) => state.eras.has(e.id)).map((e) => e.short);
-      const summary = [DOMAIN[state.domain], KIND_FAMILY[state.family]?.label, SUBJECT[state.subject], MEDIUM[state.medium], eras.length > 2 ? `${eras.slice(0, 2).join(', ')} и ещё ${eras.length - 2}` : eras.join(', '), state.sort === 'az' ? 'по алфавиту' : ''].filter(Boolean);
+      const summary = [DOMAIN[state.domain], REGION[state.region], KIND_FAMILY[state.family]?.label, SUBJECT[state.subject], MEDIUM[state.medium], eras.length > 2 ? `${eras.slice(0, 2).join(', ')} и ещё ${eras.length - 2}` : eras.join(', '), state.sort === 'az' ? 'по алфавиту' : ''].filter(Boolean);
       root.querySelector('.cat-bar-summary').textContent = summary.length ? summary.join(' · ') : 'все стили';
       root.querySelector('.cat-bar-count').textContent = String(list.length);
       replaceParams('catalog', stateParams(state));
-      fitRows();
-      revealPressed();
     }
 
-    // Панель фильтров стоит в начале страницы и не липнет: с рядами сюжетов и техники она выше экрана ноутбука.
-    // Когда она уходит под шапку, сверху появляется тонкая полоска «Фильтры»; нажатие раскрывает под ней те же
-    // фильтры листом. Лист закрывается повторным нажатием, тапом мимо, Esc или прокруткой страницы.
     const header = document.querySelector('.site-header');
     const panel = root.querySelector('.cat-filters');
     const bar = root.querySelector('.cat-bar');
     const toggle = root.querySelector('.cat-bar-toggle');
     const sheet = root.querySelector('.cat-sheet');
     const scrim = root.querySelector('.cat-scrim');
-    let openedAt = null, raf = 0;
-    const setOpen = (open) => {
+    let openedAt = null, openedFromBar = false, raf = 0;
+
+    const setOpen = (open, { fromBar = false } = {}) => {
       sheet.hidden = scrim.hidden = !open;
       toggle.setAttribute('aria-expanded', String(open));
+      topOpenBtn.setAttribute('aria-expanded', String(open));
       bar.classList.toggle('is-open', open);
+      sheet.classList.toggle('from-top', open && !fromBar);
       openedAt = open ? window.scrollY : null;
+      openedFromBar = open && fromBar;
     };
-    // Нижний край полоски — из состояния шапки, а не из её рамки: рамка в это время ещё едет
-    // за анимацией шапки (и сдвинута, пока полоска спрятана).
     const syncBar = () => {
       raf = 0;
       const headerBottom = document.documentElement.classList.contains('header-away') ? 0 : header.offsetHeight;
       const shown = panel.getBoundingClientRect().bottom <= headerBottom + bar.offsetHeight;
       bar.classList.toggle('is-shown', shown);
-      if (openedAt !== null && (!shown || Math.abs(window.scrollY - openedAt) > 48)) setOpen(false);
+      if (openedAt !== null && ((openedFromBar && !shown) || Math.abs(window.scrollY - openedAt) > 120)) setOpen(false);
     };
     const onScroll = () => { raf ||= requestAnimationFrame(syncBar); };
-    const onKey = (e) => { if (e.key === 'Escape' && openedAt !== null) { setOpen(false); toggle.focus(); } };
-    // Выбор в листе показывает новый список с начала, лист остаётся открытым для следующего выбора.
-    // Прокрутка вверх возвращает шапку, поэтому место оставляем под шапкой и полоской.
+    const onKey = (e) => { if (e.key === 'Escape' && openedAt !== null) { setOpen(false); (openedFromBar ? toggle : topOpenBtn).focus(); } };
     const toResults = () => {
       const top = grid.getBoundingClientRect().top + window.scrollY - header.offsetHeight - bar.offsetHeight - 12;
       if (window.scrollY > top) window.scrollTo(0, top);
       openedAt = window.scrollY;
     };
-    // Свёрнутый ряд: на широком экране в панели видна одна строка, остальное — по кнопке «Ещё N».
-    // Выбранный чип не прячется: вместо него уходят соседние. На телефоне ряд прокручивается вбок,
-    // а в листе переносится целиком.
-    const narrow = matchMedia('(max-width: 760px)');
-    function fitRows() {
-      for (const row of panel.querySelectorAll('.is-collapsible')) {
-        const chips = [...row.querySelectorAll('[data-f]')];
-        const more = row.querySelector('[data-more]');
-        chips.forEach((c) => { c.hidden = false; });
-        more.hidden = true;
-        const top = chips[0].offsetTop;
-        if (narrow.matches || chips.at(-1).offsetTop === top) continue;
-        more.hidden = false;
-        more.textContent = 'Ещё 00'; // ширина подписи, пока подбираем строку
-        const open = row.classList.contains('is-open');
-        let hidden = 0;
-        for (let i = chips.length - 1; !open && i > 0 && more.offsetTop !== top; i--) {
-          if (chips[i].getAttribute('aria-pressed') === 'true') continue;
-          chips[i].hidden = true;
-          hidden++;
-        }
-        more.textContent = open ? 'Свернуть' : `Ещё ${hidden}`;
-        more.setAttribute('aria-expanded', String(open));
-      }
-    }
-    // Телефон: ряды панели прокручиваются вбок, и выбранный чип может оказаться за краем — например,
-    // при открытии ссылки с фильтром. Тогда ряд подъезжает к нему; если выбранное уже видно, ряд стоит.
-    // Ряд двигается, только когда изменился выбор в нём самом, и не на resize: иначе ряд, прокрученный
-    // вручную, отскакивал бы назад. Снятый выбор (например, эпох) возвращает ряд к началу.
-    const shownPressed = new Map();
-    function revealPressed() {
-      if (!narrow.matches) return;
-      for (const row of panel.querySelectorAll('.filter-row, .era-bar')) {
-        const pressed = [...row.querySelectorAll('[aria-pressed="true"]')];
-        const key = pressed.map((el) => el.dataset.v ?? el.dataset.era ?? el.dataset.sort).join(',');
-        if (shownPressed.get(row) === key) continue;
-        shownPressed.set(row, key);
-        if (!pressed.length) { row.scrollLeft = 0; continue; }
-        const view = row.getBoundingClientRect();
-        const fade = 28; // угасающий правый край ряда (views.css)
-        if (pressed.some((el) => { const r = el.getBoundingClientRect(); return r.left >= view.left && r.right <= view.right - fade; })) continue;
-        const start = view.left + (parseFloat(getComputedStyle(row).paddingLeft) || 0);
-        row.scrollLeft += pressed[0].getBoundingClientRect().left - start;
-      }
-    }
-    const onResize = () => { fitRows(); onScroll(); };
 
-    toggle.addEventListener('click', () => setOpen(openedAt === null));
+    toggle.addEventListener('click', () => setOpen(openedAt === null, { fromBar: true }));
+    topOpenBtn.addEventListener('click', () => setOpen(openedAt === null, { fromBar: false }));
     scrim.addEventListener('click', () => setOpen(false));
     window.addEventListener('scroll', onScroll, { passive: true });
-    window.addEventListener('resize', onResize);
-    const onNarrow = () => { onResize(); shownPressed.clear(); revealPressed(); };
-    narrow.addEventListener('change', onNarrow);
+    window.addEventListener('resize', onScroll);
     document.addEventListener('keydown', onKey);
-    // Шрифт меняет ширину чипов: после его загрузки подгоняем ряды заново.
-    document.fonts?.ready.then(() => { if (root.contains(panel)) { fitRows(); shownPressed.clear(); revealPressed(); } });
 
     const onClick = (e) => {
+      if (e.target.closest('[data-sheet-close]')) { setOpen(false); return; }
       if (e.target.closest('[data-any-toggle]')) {
         anyOpen = !anyOpen;
         renderAny(filterStyles(store.styles, state), sorted(universalExtras(store.styles, state)));
         return;
       }
-      const more = e.target.closest('[data-more]');
-      if (more) { more.closest('.filter-row').classList.toggle('is-open'); fitRows(); return; }
+      const clr = e.target.closest('[data-clear-key]');
+      if (clr) { state[clr.dataset.clearKey] = ''; apply(); return; }
       const f = e.target.closest('[data-f]');
       const er = e.target.closest('[data-era]');
       const so = e.target.closest('[data-sort]');
@@ -257,7 +257,7 @@ export default {
       else if (e.target.closest('[data-reset]')) state = emptyState();
       else return;
       apply();
-      if (e.target.closest('.cat-sheet')) toResults();
+      if (e.target.closest('.cat-sheet') && openedFromBar) toResults();
     };
     root.addEventListener('click', onClick);
     apply();
@@ -268,8 +268,7 @@ export default {
       destroy() {
         root.removeEventListener('click', onClick);
         window.removeEventListener('scroll', onScroll);
-        window.removeEventListener('resize', onResize);
-        narrow.removeEventListener('change', onNarrow);
+        window.removeEventListener('resize', onScroll);
         document.removeEventListener('keydown', onKey);
         cancelAnimationFrame(raf);
       },

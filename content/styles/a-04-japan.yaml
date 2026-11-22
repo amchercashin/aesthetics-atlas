@@ -194,6 +194,8 @@
   labelStatus: editorial-scope-title
   id: hiroshige-landscape-prints
   name: "Пейзажные гравюры Хиросигэ: погода и путь"
+  shortTitle: "Пейзажи Хиросигэ"
+  subtitle: "Погода и путь"
   orig: 歌川広重 / Utagawa Hiroshige
   kind: author-style
   start: 1833

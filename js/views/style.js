@@ -2,7 +2,7 @@
 // Ниже — текст, родословная, ссылки.
 // Статус проверки карточки и связей виден сразу; источники утверждений — под раскрытием.
 import { html, mount, safeUrl } from '../html.js';
-import { fmtDates, fmtYear, RELATION, DOMAIN, KIND, DATE_KIND, REL_STATUS, SUBJECT, MEDIUM, roleLabel, plural, reviewScopeText } from '../format.js';
+import { fmtDates, fmtYear, displayTitle, RELATION, DOMAIN, KIND, DATE_KIND, REL_STATUS, SUBJECT, MEDIUM, roleLabel, plural, reviewScopeText } from '../format.js';
 import { frame, credit } from '../ui/image.js';
 import { artItem, cardImages, cardRefs, imgKey } from '../ui/art-item.js';
 import { eraTag, thumb, footer } from '../ui/common.js';
@@ -58,7 +58,7 @@ export function lineageStrip(line, currentId) {
         : html`<span class="ls-rel">Начало маршрута</span>`}</span>
       <a href="#/s/${s.id}" ${s.id === currentId ? html`aria-current="page"` : ''}>
         <span class="ls-medallion">${thumb(s, 96)}</span>
-        <span class="ls-copy"><span class="ls-name">${s.name}</span><span class="ls-dates">${fmtDates(s)}</span>${s.id === currentId ? html`<span class="ls-now">вы здесь</span>` : ''}</span>
+        <span class="ls-copy"><span class="ls-name">${displayTitle(s)}</span><span class="ls-dates">${fmtDates(s)}</span>${s.id === currentId ? html`<span class="ls-now">вы здесь</span>` : ''}</span>
       </a>
     </li>`;
   })}</ol>`;
@@ -167,13 +167,13 @@ export default {
           <span>${fmtDates(s)}</span>
           ${s.region && s.region !== 'Интернет' ? html`<span>${s.region}</span>` : ''}
           <span>${s.domain.map((d) => DOMAIN[d]).join(', ')}</span>
+          ${s.review?.status === 'reviewed' ? html`<button type="button" class="room-verified" data-scroll-to="room-meta-details" title="Сверено полностью · ${fmtDay(s.review.date)}">✓ сверено</button>` : ''}
         </div>
-        <h1 class="room-title">${s.name}</h1>
+        <h1 class="room-title">${displayTitle(s)}</h1>
+        ${s.subtitle ? html`<p class="room-subtitle">${s.subtitle}</p>` : ''}
         <p class="room-orig">${s.orig}</p>
         ${s.kind.length ? html`<p class="room-kind">${s.kind.map((k) => html`<span class="kind-badge">${KIND[k]}</span>`)}${s.kindNote ? html`<span class="kind-note">${s.kindNote}</span>` : ''}</p>` : ''}
-        ${s.scopeNote ? html`<p class="room-scope"><strong>Границы карточки.</strong> ${s.scopeNote}</p>` : ''}
-        ${reviewLine(s)}
-        ${featuredContext ? html`<a class="room-context-link" href="#/s/${featuredContext.id}">${featuredContext.name} ${ARROW_R}</a>` : ''}
+        ${featuredContext ? html`<a class="room-context-link" href="#/s/${featuredContext.id}">${displayTitle(featuredContext)} ${ARROW_R}</a>` : ''}
       </header>
 
       <div class="room-hang">
@@ -234,6 +234,10 @@ export default {
           ${s.names.length ? html`<h2 class="side-title">Ключевые имена</h2><p class="names">${s.names.join(', ')}</p>` : ''}
           ${facetsBlock(s)}
           ${datesBlock(store, s)}
+          <div id="room-meta-details" class="room-meta-details">
+            ${s.scopeNote ? html`<h2 class="side-title">Границы карточки</h2><p class="dates-note">${s.scopeNote}</p>` : ''}
+            ${reviewLine(s)}
+          </div>
         </aside>
       </section>
 
@@ -274,7 +278,7 @@ export default {
         <p class="lineage-lead">Похожие по виду стили. Это сходство, а не заявление о происхождении.</p>
         <ul class="cmp-list">
           ${s.comparisons.map((c) => { const o = store.get(c.id); return o ? html`<li class="ego-item">
-            <a class="ego-link" href="#/s/${o.id}">${thumb(o, 44)}<span><span class="ego-name">${o.name}</span><span class="ego-dates">${fmtDates(o)}</span></span></a>
+            <a class="ego-link" href="#/s/${o.id}">${thumb(o, 44)}<span><span class="ego-name">${displayTitle(o)}</span><span class="ego-dates">${fmtDates(o)}</span></span></a>
             ${c.note ? html`<p class="ego-note">${c.note}</p>` : ''}
           </li>` : ''; })}
         </ul>
@@ -310,6 +314,13 @@ export default {
 
     // Интерактив
     const onClick = (e) => {
+      const jump = e.target.closest('[data-scroll-to]');
+      if (jump) {
+        const target = root.querySelector(`#${CSS.escape(jump.dataset.scrollTo)}`);
+        target?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        target?.querySelector('details')?.setAttribute('open', '');
+        return;
+      }
       const pal = e.target.closest('.pal');
       if (pal) {
         navigator.clipboard?.writeText(pal.dataset.hex).then(() => toast(`Скопировано: ${pal.dataset.hex}`), () => toast(pal.dataset.hex));

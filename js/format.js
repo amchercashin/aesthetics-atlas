@@ -145,6 +145,22 @@ export const MEDIUM = {
   'rock-art': 'Наскальное искусство',
 };
 
+// Короткое журнальное название для плиток, карты, ленты и заголовка зала; полное name остаётся в поиске и метаданных.
+export const displayTitle = (s) => (s?.shortTitle || s?.name || '');
+
+export const REGION = {
+  europe: 'Европа',
+  'east-asia': 'Восточная Азия',
+  'south-asia': 'Южная Азия',
+  'se-asia': 'Юго-Восточная Азия',
+  mena: 'Ближний Восток и Сев. Африка',
+  africa: 'Африка южнее Сахары',
+  steppe: 'Центральная Азия и степь',
+  americas: 'Америка',
+  oceania: 'Океания',
+  global: 'Интернет и весь мир',
+};
+
 export function plural(n, one, few, many) {
   const m10 = n % 10, m100 = n % 100;
   if (m10 === 1 && m100 !== 11) return one;

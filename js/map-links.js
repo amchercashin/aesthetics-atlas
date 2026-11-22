@@ -1,4 +1,4 @@
-export const LINK_MODES = { none: 'Без связей', main: 'Основные', all: 'Все связи' };
+export const LINK_MODES = { none: 'Без связей', main: 'Основные', kinship: 'Сходства', all: 'Все связи' };
 
 export function readLinkSettings(params) {
   const requested = params.get('links');
@@ -11,5 +11,6 @@ export function readLinkSettings(params) {
 
 export function historicalLinkVisible({ mode, primary, highlighted = false, verifiedOnly = false, status, filtered = false }) {
   if (mode === 'none' || filtered || (verifiedOnly && status !== 'verified')) return false;
+  if (mode === 'kinship') return highlighted;
   return mode === 'all' || primary || highlighted;
 }

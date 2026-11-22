@@ -1,6 +1,6 @@
 // Мелкие общие куски разметки.
 import { html } from '../html.js';
-import { fmtDates, plural } from '../format.js';
+import { fmtDates, displayTitle, plural } from '../format.js';
 import { frame } from './image.js';
 
 export function eraTag(store, eraId, { link = true } = {}) {
@@ -12,7 +12,7 @@ export function eraTag(store, eraId, { link = true } = {}) {
 }
 
 export function styleLink(s) {
-  return html`<a href="#/s/${s.id}">${s.name}</a>`;
+  return html`<a href="#/s/${s.id}">${displayTitle(s)}</a>`;
 }
 
 // res — ширина исходника: крупным кругам мало 250 px.
@@ -37,7 +37,7 @@ export function footer(store) {
 }
 
 export function styleCaption(s) {
-  return html`<span class="cap-name">${s.name}</span><span class="cap-dates">${fmtDates(s)}</span>`;
+  return html`<span class="cap-name">${displayTitle(s)}</span><span class="cap-dates">${fmtDates(s)}</span>`;
 }
 
 export { frame };

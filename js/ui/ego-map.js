@@ -2,7 +2,7 @@
 // Стороны означают направление, а не тип: реакция может стоять с любой стороны. Тип — подпись и рисунок линии
 // (как на карте), дальние поколения — только на карте. Модуль без DOM на верхнем уровне: его импортируют тесты.
 import { html } from '../html.js';
-import { fmtDates, RELATION, REL_STATUS } from '../format.js';
+import { fmtDates, displayTitle, RELATION, REL_STATUS } from '../format.js';
 import { thumb } from './common.js';
 
 // Больше стольких соседей на стороне — карточки мельче, чтобы столбец не уходил за экран.
@@ -35,7 +35,7 @@ export function relMark(rel) {
 function node({ style: o, rel }, side, key) {
   return html`<a class="em-node" href="#/s/${o.id}" data-link="${key}" data-side="${side}" data-rel="${rel.type}" data-st="${rel.status}">
     <span class="em-med">${thumb(o, 96)}</span>
-    <span class="em-copy"><span class="em-rel">${relMark(rel)}</span><span class="em-name">${o.name}</span><span class="em-dates">${fmtDates(o)}</span></span>
+    <span class="em-copy"><span class="em-rel">${relMark(rel)}</span><span class="em-name">${displayTitle(o)}</span><span class="em-dates">${fmtDates(o)}</span></span>
   </a>`;
 }
 
@@ -52,7 +52,7 @@ export function egoMap(store, s) {
     <div class="em-side em-from${from.length > DENSE ? ' is-dense' : ''}">
       ${from.length ? from.map((x, i) => node(x, 'from', linkKey('f', i))) : html`<p class="em-empty">${s.origin === 'unknown' ? 'Связи пока не показаны' : 'Исток'}</p>`}
     </div>
-    <div class="em-hub"><span class="em-med">${thumb(s, 216, 500)}</span><span class="em-name">${s.name}</span><span class="em-dates">${fmtDates(s)}</span><span class="ls-now">вы здесь</span></div>
+    <div class="em-hub"><span class="em-med">${thumb(s, 216, 500)}</span><span class="em-name">${displayTitle(s)}</span><span class="em-dates">${fmtDates(s)}</span><span class="ls-now">вы здесь</span></div>
     <div class="em-side em-to${to.length > DENSE ? ' is-dense' : ''}">
       ${to.length ? to.map((x, i) => node(x, 'to', linkKey('t', i))) : html`<p class="em-empty">Продолжения пока не появились или ещё не описаны в атласе.</p>`}
     </div>

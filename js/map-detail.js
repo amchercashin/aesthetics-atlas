@@ -27,7 +27,11 @@ export function aggregateMapLinks(records, groupOf, { mode = 'main', verifiedOnl
   if (mode === 'none') return [];
   const groups = new Map();
   for (const r of records) {
-    if (mode !== 'all' && (!r.primary || r.kind !== 'history')) continue;
+    if (mode === 'kinship') {
+      if (r.kind === 'history') continue;
+    } else if (mode !== 'all' && (!r.primary || r.kind !== 'history')) {
+      continue;
+    }
     if (verifiedOnly && (r.kind === 'comparison' || r.status !== 'verified')) continue;
     const from = groupOf(r.from), to = groupOf(r.to);
     if (!from || !to || from === to) continue;

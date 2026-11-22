@@ -10,6 +10,8 @@
   labelStatus: editorial-scope-title
   id: borobudur-art
   name: Боробудур и буддийское искусство Центральной Явы
+  shortTitle: "Боробудур"
+  subtitle: "Буддийское искусство Центральной Явы"
   orig: Candi Borobudur; Central Javanese Buddhist art
   kind: tradition
   start: 700
@@ -544,6 +546,8 @@
   labelStatus: editorial-scope-title
   id: cheong-soo-pieng
   name: "Чонг Су Пиенг: китайская кисть и западная форма"
+  shortTitle: "Чонг Су Пиенг"
+  subtitle: "Китайская кисть и западная форма"
   orig: 鍾泗濱 / Cheong Soo Pieng
   kind: author-style
   start: 1949

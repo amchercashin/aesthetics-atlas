@@ -163,6 +163,12 @@ export function validate(styles, eras, sources = []) {
     for (const f of ['name', 'orig', 'summary', 'description']) {
       if (typeof s[f] !== 'string' || !s[f].trim()) errors.push(`${at} missing ${f}`);
     }
+    if (s.shortTitle != null && (typeof s.shortTitle !== 'string' || !s.shortTitle.trim() || s.shortTitle.trim().length > 36)) {
+      errors.push(`${at} shortTitle must be a non-empty string up to 36 chars`);
+    }
+    if (s.subtitle != null && (typeof s.subtitle !== 'string' || !s.subtitle.trim())) {
+      errors.push(`${at} subtitle must be a non-empty string`);
+    }
     if (!Number.isFinite(s.start)) errors.push(`${at} start must be a number`);
     if (s.end !== null && s.end !== undefined && !Number.isFinite(s.end)) errors.push(`${at} end must be a number or null`);
     if (Number.isFinite(s.start) && Number.isFinite(s.end) && s.start > s.end) errors.push(`${at} start > end`);

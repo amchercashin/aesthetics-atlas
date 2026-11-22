@@ -1,5 +1,7 @@
 - id: paleolithic-cave-art
   name: Палеолитическая наскальная живопись
+  shortTitle: "Наскальная живопись"
+  subtitle: "Искусство верхнего палеолита"
   orig: Paleolithic cave art
   aliases: [наскальная живопись, пещерная живопись, cave painting]
   searchKeywords: [Ласко, Шове, Альтамира, Сулавеси, Муна, трафарет ладони]
@@ -125,6 +127,8 @@
 
 - id: venus-figurines
   name: Палеолитические женские статуэтки
+  shortTitle: "Палеолитические венеры"
+  subtitle: "Женские статуэтки верхнего палеолита"
   orig: Paleolithic Venus figurines
   aliases:
     - палеолитические венеры
@@ -231,6 +235,8 @@
 
 - id: petroglyphs
   name: Петроглифы доисторических традиций
+  shortTitle: "Петроглифы"
+  subtitle: "Наскальная резьба доисторических традиций"
   orig: Petroglyphs
   aliases: [наскальные рисунки, наскальные изображения, писаницы, Онежские петроглифы]
   start: -11000

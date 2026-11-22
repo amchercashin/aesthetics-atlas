@@ -1,7 +1,7 @@
 // Главная: заголовок с «Удиви меня» (промт для генератора картинок), лента эпох (главные стили и хотя бы по одному от каждого моря), три входа и стиль дня.
 // Поиск — в шапке, на главной он не дублируется.
 import { html, mount } from '../html.js';
-import { fmtDates, fmtYear, plural } from '../format.js';
+import { fmtDates, fmtYear, displayTitle, plural } from '../format.js';
 import { frame } from '../ui/image.js';
 import { footer, thumb } from '../ui/common.js';
 import { createTimeScale, segmentWidths } from '../timescale.js';
@@ -72,7 +72,7 @@ export default {
         ${frieze.map((s) => html`<a class="frieze-item" href="#/s/${s.id}" style="--c:var(--era-${s.era})">
           ${frame(s.example.img ?? s.gallery.find((g) => g.img)?.img ?? null, s.palette, { sizes: '320px', alt: '', size: 500 })}
           <span class="frieze-year">${fmtYear(s.start)}</span>
-          <span class="frieze-name">${s.name}</span>
+          <span class="frieze-name">${displayTitle(s)}</span>
         </a>`)}
       </div>
       <div class="frieze-foot page-x">
@@ -108,7 +108,7 @@ export default {
       <a class="day-work" href="#/s/${day.id}">${frame(day.example.img, day.palette, { sizes: '(min-width: 900px) 50vw, 100vw', alt: day.example.title ?? '', size: 960 })}</a>
       <div class="day-text">
         <h2 class="day-kicker" id="day-title">Стиль дня</h2>
-        <p class="day-name"><a href="#/s/${day.id}">${day.name}</a></p>
+        <p class="day-name"><a href="#/s/${day.id}">${displayTitle(day)}</a></p>
         <p class="day-dates">${fmtDates(day)}</p>
         <p class="day-summary">${day.summary}</p>
         <div class="day-actions">
@@ -127,7 +127,7 @@ export default {
     const surprise = () => {
       const style = pickOther(pool, Math.random, pick?.style);
       pick = { style, subject: pickOther(store.promptSubjects, Math.random, pick?.subject) };
-      mount(box.querySelector('[data-ai-style]'), html`<a href="#/s/${style.id}">${thumb(style, 40)}<span><span class="ai-style-name">${style.name}</span><span class="ai-style-dates">${fmtDates(style)} · открыть зал</span></span></a>`);
+      mount(box.querySelector('[data-ai-style]'), html`<a href="#/s/${style.id}">${thumb(style, 40)}<span><span class="ai-style-name">${displayTitle(style)}</span><span class="ai-style-dates">${fmtDates(style)} · открыть зал</span></span></a>`);
       return promptFor(store, style, pick.subject);
     };
     const ai = box && mountAiPrompt(box, { next: surprise });

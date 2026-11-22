@@ -824,6 +824,8 @@
 
 - id: shan-shui
   name: Китайская пейзажная живопись шань-шуй
+  shortTitle: "Шань-шуй"
+  subtitle: "Китайская пейзажная живопись"
   orig: Shan shui
   aliases:
     - шань-шуй

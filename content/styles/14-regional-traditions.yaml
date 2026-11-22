@@ -1902,6 +1902,8 @@
   labelStatus: historical
   id: fijian-masi
   name: "Фиджийский маси: трафаретный декор"
+  shortTitle: "Фиджийский маси"
+  subtitle: "Трафаретный декор по лубу"
   orig: Fijian masi kesa and related decorated masi
   kind: tradition
   start: 1890

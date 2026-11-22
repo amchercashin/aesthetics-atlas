@@ -913,7 +913,7 @@ export default {
         c.path.style.opacity = alpha; c.hit.style.pointerEvents = alpha < 0.15 ? 'none' : '';
         const offA = c.a.g.style.display === 'none', offB = c.b.g.style.display === 'none';
         c.path.classList.toggle('near', near || sel);
-        const enabled = linkMode === 'all';
+        const enabled = linkMode === 'all' || linkMode === 'kinship';
         const hidden = alpha === 0 || linkMode === 'none' || (!(sel || near) && (c.a.zone !== 'C' || c.b.zone !== 'C')) || (c.context && verifiedOnly && c.status !== 'verified');
         if (hidden || !(enabled || near || sel) || (offA && offB && !sel)) { c.path.setAttribute('d', ''); c.hit.setAttribute('d', ''); continue; }
         const [l, r] = c.a.x <= c.b.x ? [c.a, c.b] : [c.b, c.a];

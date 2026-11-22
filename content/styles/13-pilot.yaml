@@ -397,6 +397,8 @@
       - ngv-kngwarray-big-yam
 - id: zverev-portrait-graphics
   name: Экспрессивные портреты Анатолия Зверева
+  shortTitle: "Портреты Зверева"
+  subtitle: "Экспрессивная графика Анатолия Зверева"
   orig: Expressive portraits by Anatoly Zverev
   kind: author-style
   start: 1958
@@ -578,6 +580,8 @@
       - az-zverev-portrait-corpus
 - id: shahzia-sikander
   name: Миниатюры и работы на бумаге Шахзии Сикандер
+  shortTitle: "Шахзия Сикандер"
+  subtitle: "Миниатюры и работы на бумаге"
   orig: Manuscript-based works on paper by Shahzia Sikander
   kind: author-style
   start: 1989
@@ -1011,6 +1015,8 @@
       - curtin-carrolup-transfer
 - id: rei-kawakubo
   name: Преобразование силуэта у Рэй Кавакубо
+  shortTitle: "Рэй Кавакубо"
+  subtitle: "Преобразование силуэта"
   orig: Rei Kawakubo / Comme des Garçons
   kind: author-style
   start: 1983
@@ -1230,6 +1236,8 @@
       - met-kawakubo-galleries
 - id: pacita-abad
   name: Расписанные текстильные поверхности Паситы Абад
+  shortTitle: "Пасита Абад"
+  subtitle: "Расписанные текстильные поверхности"
   orig: "Pacita Abad: trapunto and textile collage"
   kind: author-style
   start: 1988
@@ -1445,6 +1453,8 @@
       - walker-abad-retrospective
 - id: esther-mahlangu
   name: Геометрические композиции Эстер Малангу
+  shortTitle: "Эстер Малангу"
+  subtitle: "Геометрические композиции"
   orig: Esther Mahlangu
   kind: author-style
   start: 1991
@@ -1652,6 +1662,8 @@
         - serpentine-mahlangu-mural-2024
 - id: reko-rennie
   name: Знаки и публичная видимость у Реко Ренни
+  shortTitle: "Реко Ренни"
+  subtitle: "Знаки и публичная видимость"
   orig: "Reko Rennie: signs, camouflage and moving image"
   kind: author-style
   start: 2013
@@ -1880,6 +1892,8 @@
     - Gamilaroi
 - id: hokusai-landscape-prints
   name: "Пейзажные гравюры Хокусая: виды Фудзи"
+  shortTitle: "Пейзажи Хокусая"
+  subtitle: "Гравюры и виды Фудзи"
   orig: 葛飾北斎 — 冨嶽三十六景 / Katsushika Hokusai
   kind: author-style
   start: 1830
@@ -2058,6 +2072,8 @@
       - chiba-hokusai-red-fuji
 - id: norshtein-animation
   name: Экранный язык Норштейна, Ярбусовой и съёмочных групп
+  shortTitle: "Анимация Норштейна"
+  subtitle: "Экранный язык Норштейна, Ярбусовой и съёмочных групп"
   orig: Yuri Norstein, Francheska Yarbusova and collaborators
   kind: author-style
   start: 1974
@@ -2271,6 +2287,8 @@
       - momi-norstein-program
 - id: bilibin-illustration
   name: Сказочная книжная графика Ивана Билибина
+  shortTitle: "Графика Билибина"
+  subtitle: "Сказочная книжная иллюстрация"
   orig: "Ivan Bilibin: illustrated fairy-tale books"
   kind: author-style
   start: 1900

@@ -1,19 +1,20 @@
 // Фильтры каталога: чистые функции, чтобы отбор, счётчики и адрес проверялись тестами (test/catalog-filter.test.mjs).
-import { DOMAIN, KIND_FAMILY, SUBJECT, MEDIUM } from './format.js';
+import { DOMAIN, KIND_FAMILY, SUBJECT, MEDIUM, REGION } from './format.js';
 import { normalize } from './search.js';
 
 // Каждый ряд фильтров — одно условие на карточку. Эпохи — отдельно: их можно выбрать несколько.
 const TESTS = {
   domain: (s, v) => s.domain.includes(v),
+  region: (s, v) => (s.regions ?? []).includes(v),
   family: (s, v) => KIND_FAMILY[v].kinds.includes(s.kind[0]), // по основному типу (первому в списке kind)
   subject: (s, v) => s.subjects.includes(v),
   medium: (s, v) => s.medium.includes(v),
 };
-// Ключи адреса: d — область, k — тип карточки, t — сюжет, m — техника, e — эпохи через запятую, sort=az.
-const PARAM = { domain: 'd', family: 'k', subject: 't', medium: 'm' };
-const DICT = { domain: DOMAIN, family: KIND_FAMILY, subject: SUBJECT, medium: MEDIUM };
+// Ключи адреса: d — область, r — регион, k — тип карточки, t — сюжет, m — техника, e — эпохи через запятую, sort=az.
+const PARAM = { domain: 'd', region: 'r', family: 'k', subject: 't', medium: 'm' };
+const DICT = { domain: DOMAIN, region: REGION, family: KIND_FAMILY, subject: SUBJECT, medium: MEDIUM };
 
-export const emptyState = () => ({ domain: '', family: '', subject: '', medium: '', eras: new Set(), sort: 'time' });
+export const emptyState = () => ({ domain: '', region: '', family: '', subject: '', medium: '', eras: new Set(), sort: 'time' });
 
 // Неизвестное значение в адресе не выбирает ничего, а не оставляет пустой список.
 export function readState(params) {
@@ -100,6 +101,18 @@ const STEMS = {
     web: ['веб', 'сайт', 'web', 'website'],
     manuscript: ['рукопис', 'манускрипт', 'manuscript'],
     'rock-art': ['наскальн', 'петроглиф', 'rock art', 'petroglyph'],
+  },
+  region: {
+    europe: ['европ', 'европейск', 'europe', 'european'],
+    'east-asia': ['восточная азия', 'япон', 'японск', 'китай', 'китайск', 'корей', 'корейск', 'japan', 'china', 'korea', 'east asia'],
+    'south-asia': ['южная азия', 'инди', 'индийск', 'пакистан', 'india', 'indian', 'south asia'],
+    'se-asia': ['юго-восточная азия', 'индонез', 'вьетнам', 'камбодж', 'филиппин', 'southeast asia'],
+    mena: ['ближний восток', 'египет', 'перси', 'иран', 'осман', 'турц', 'араб', 'middle east'],
+    africa: ['африк', 'африканск', 'нигери', 'эфиоп', 'конго', 'africa', 'african'],
+    steppe: ['степь', 'степн', 'центральная азия', 'скиф', 'сибир', 'алтай', 'central asia'],
+    americas: ['америк', 'американск', 'мексик', 'перу', 'сша', 'americas', 'latin america'],
+    oceania: ['океан', 'австрал', 'полинез', 'маори', 'фиджи', 'самоа', 'oceania', 'australia'],
+    global: ['весь мир', 'глобальн', 'internet', 'global'],
   },
 };
 export const FACET_STEMS = STEMS;

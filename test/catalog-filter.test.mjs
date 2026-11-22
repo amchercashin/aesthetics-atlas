@@ -7,7 +7,7 @@ import { fileURLToPath } from 'node:url';
 import yaml from 'js-yaml';
 import { buildRecord } from '../scripts/lib/record.mjs';
 import { readState, stateParams, emptyState, isFiltered, filterStyles, facetCounts, matches, facetHits, FACET_STEMS, universalExtras } from '../js/catalog-filter.js';
-import { DOMAIN, KIND_FAMILY, SUBJECT, MEDIUM } from '../js/format.js';
+import { DOMAIN, REGION, KIND_FAMILY, SUBJECT, MEDIUM } from '../js/format.js';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const styles = fs.readdirSync(path.join(ROOT, 'content/styles')).filter((f) => f.endsWith('.yaml')).sort()
@@ -49,7 +49,7 @@ test('filters combine: subject, technique, domain, type and eras all have to mat
 
 // Число на чипе обещает, сколько стилей покажет каталог после нажатия, — проверяем это для каждого чипа.
 test('every chip count equals the list the catalog shows after choosing that chip', () => {
-  const dicts = { domain: DOMAIN, family: KIND_FAMILY, subject: SUBJECT, medium: MEDIUM };
+  const dicts = { domain: DOMAIN, region: REGION, family: KIND_FAMILY, subject: SUBJECT, medium: MEDIUM };
   for (const st of [emptyState(), state({ subject: 'landscape' }), state({ medium: 'sculpture', eras: new Set(['antiquity']) }), state({ domain: 'design', subject: 'ornament' })]) {
     for (const [key, dict] of Object.entries(dicts)) {
       const counts = facetCounts(styles, st, key);
@@ -67,13 +67,20 @@ test('without other filters the chip counts are plain totals', () => {
   assert.deepEqual(facetCounts(styles, state({ subject: 'landscape' }), 'subject'), subjects);
 });
 
-test('URL parameters: t — subject, m — technique; unknown values are ignored; state round-trips', () => {
-  const st = readState(new URLSearchParams('t=landscape&m=relief&d=art&k=history&e=ancient,medieval&sort=az'));
-  assert.deepEqual({ ...st, eras: [...st.eras] }, { domain: 'art', family: 'history', subject: 'landscape', medium: 'relief', eras: ['ancient', 'medieval'], sort: 'az' });
-  assert.deepEqual(stateParams(st), { d: 'art', k: 'history', t: 'landscape', m: 'relief', e: 'ancient,medieval', sort: 'az' });
+test('URL parameters: t — subject, m — technique, r — region; unknown values are ignored; state round-trips', () => {
+  const st = readState(new URLSearchParams('t=landscape&m=relief&d=art&r=east-asia&k=history&e=ancient,medieval&sort=az'));
+  assert.deepEqual({ ...st, eras: [...st.eras] }, { domain: 'art', region: 'east-asia', family: 'history', subject: 'landscape', medium: 'relief', eras: ['ancient', 'medieval'], sort: 'az' });
+  assert.deepEqual(stateParams(st), { d: 'art', r: 'east-asia', k: 'history', t: 'landscape', m: 'relief', e: 'ancient,medieval', sort: 'az' });
   const again = readState(new URLSearchParams(stateParams(st)));
   assert.deepEqual({ ...again, eras: [...again.eras] }, { ...st, eras: [...st.eras] });
-  assert.deepEqual(readState(new URLSearchParams('t=unicorns&m=lasers&d=nope&k=toString')), emptyState());
+  assert.deepEqual(readState(new URLSearchParams('t=unicorns&m=lasers&d=nope&r=mars&k=toString')), emptyState());
+});
+
+test('region filter finds styles by macro-region', () => {
+  const ea = ids(filterStyles(styles, state({ region: 'east-asia' })));
+  for (const id of ['shan-shui', 'ukiyo-e', 'goryeo-celadon']) assert.ok(ea.includes(id), id);
+  const af = ids(filterStyles(styles, state({ region: 'africa' })));
+  for (const id of ['benin-court-art', 'ife-sculpture', 'asante-kente']) assert.ok(af.includes(id), id);
 });
 
 test('reset state shows everything and nothing counts as filtered', () => {

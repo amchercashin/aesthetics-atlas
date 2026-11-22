@@ -2,13 +2,13 @@
 // Слово вроде «барельеф» или «пейзажи» сначала предлагает фильтр каталога, затем — карточки по тексту.
 import { html, mount } from '../html.js';
 import { buildIndex, search, parseYear } from '../search.js';
-import { fmtDates, fmtYear, plural } from '../format.js';
+import { fmtDates, fmtYear, displayTitle, plural } from '../format.js';
 import { thumb } from './common.js';
 import { markLoaded } from './image.js';
 import { facetHits, facetCounts, emptyState } from '../catalog-filter.js';
 
 const FILTER_ICON = html`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><path d="M4 6h16M7 12h10M10 18h4"/></svg>`;
-const FACET_KIND = { subject: 'Сюжет', medium: 'Техника' };
+const FACET_KIND = { subject: 'Сюжет', medium: 'Техника', region: 'Регион' };
 
 export function initSearch(store) {
   const dlg = document.querySelector('.search-dialog');
@@ -16,13 +16,17 @@ export function initSearch(store) {
   const list = dlg.querySelector('.search-results');
   const hint = dlg.querySelector('.search-hint');
   const index = buildIndex(store.styles);
-  const totals = { subject: facetCounts(store.styles, emptyState(), 'subject'), medium: facetCounts(store.styles, emptyState(), 'medium') };
+  const totals = {
+    subject: facetCounts(store.styles, emptyState(), 'subject'),
+    medium: facetCounts(store.styles, emptyState(), 'medium'),
+    region: facetCounts(store.styles, emptyState(), 'region'),
+  };
   let items = []; // адреса строк в порядке показа: по ним ходят стрелки и Enter
   let active = 0;
 
   const row = (s, i) => html`<li role="presentation"><a href="#/s/${s.id}" role="option" id="sr-${i}" aria-selected="${i === active}">
       ${thumb(s)}
-      <span><span class="r-name">${s.name}</span><br><span class="r-sub">${s.orig}</span></span>
+      <span><span class="r-name">${displayTitle(s)}</span><br><span class="r-sub">${s.subtitle ?? s.orig}</span></span>
       <span class="r-dates"><span class="swatch" style="--c:var(--era-${s.era});display:inline-block;margin-right:6px"></span>${fmtDates(s)}</span>
     </a></li>`;
   const facetRow = (f, i) => {

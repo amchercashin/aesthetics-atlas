@@ -25,6 +25,7 @@ nebulae:
         styles:
           - ancient-indian-art
           - gandhara
+          - chola-bronzes
       - id: angkor
         name: Ангкор
         styles:
@@ -68,12 +69,18 @@ nebulae:
           - hokusai-landscape-prints
           - hiroshige-landscape-prints
           - shin-hanga
+      - id: koreya-keramika-i-tkani
+        name: "Корея: керамика и ткани"
+        styles:
+          - goryeo-celadon
+          - buncheong
+          - bojagi
       - id: ayny
         name: Айны
         styles:
           - ainu-attus-ornament
       - id: pismo-syuya-bina
-        name: Письмо как изображение у Сюй Бина
+        name: Письмо Сюй Бина
         styles:
           - xu-bing-writing-systems
   - id: srednevekove
@@ -392,8 +399,8 @@ nebulae:
         styles:
           - web-brutalism
           - brat
-  - id: russkie-rospisi-i-lubok
-    name: Русские росписи и лубок
+  - id: vostochnoevropeyskoe-narodnoe
+    name: Народное искусство Восточной Европы
     color: '#A05C3B'
     parts:
       - id: rospis-dereva-i-metalla
@@ -418,18 +425,15 @@ nebulae:
         name: Гжель
         styles:
           - gzhel-ceramics
-  - id: ukrainskoe-narodnoe-iskusstvo
-    name: Украинское народное искусство
-    color: '#3A6EA5'
-    parts:
-      - id: petrikovskaya-rospis
-        name: Петриковская роспись
+      - id: ukrainskoe-narodnoe
+        name: Петриковка и Приймаченко
         styles:
           - petrykivka
-      - id: priymachenko
-        name: Мария Приймаченко
-        styles:
           - prymachenko-imagery
+      - id: polskie-vycinanki
+        name: Польские выцинанки
+        styles:
+          - polish-wycinanki
   - id: zhivopis-indii
     name: Живопись Индии
     color: '#8D6EAA'
@@ -454,180 +458,77 @@ nebulae:
         name: Темперная фигурация Роя
         styles:
           - jamini-roy-painting
-  - id: tekstil-i-rospisi-afriki
-    name: Текстиль и росписи Африки
-    color: '#0B827E'
-    parts:
-      - id: tekstil-asante
-        name: Кенте и адинкра
-        styles:
-          - asante-kente
-          - adinkra
-      - id: bogolan
-        name: Боголанфини
-        styles:
-          - bogolanfini
-      - id: tkani-kuba
-        name: Ткани куба
-        styles:
-          - kuba-textiles
-      - id: rospis-ndebele
-        name: Роспись ндебеле
-        styles:
-          - ndebele-murals
-          - esther-mahlangu
-      - id: metallicheskie-polotna
-        name: Металлические полотна Эль Анацуи
-        styles:
-          - el-anatsui-metal-textiles
-  - id: polotna-iz-kory-okeanii
-    name: Полотна из коры Океании
-    color: '#3C829A'
-    parts:
-      - id: samoanskoe-siapo
-        name: Самоанское сиапо
-        styles:
-          - samoan-siapo
-      - id: tonganskoe-ngatu
-        name: Тонганское нгату
-        styles:
-          - tongan-ngatu
-      - id: fidjiyskoe-masi
-        name: Фиджийское маси
-        styles:
-          - fijian-masi
-  - id: bumazhnye-vyrezki
-    name: Вырезание бумаги
-    color: '#667A2A'
-    parts:
-      - id: kitayskoe-vyrezanie-bumagi
-        name: Вырезание бумаги Китая
-        styles:
-          - chinese-jianzhi
-      - id: polskie-vycinanki
-        name: Польские выцинанки
-        styles:
-          - polish-wycinanki
-  - id: kartinki-kitaya-i-vietnama
-    name: Картинки Китая и Вьетнама
+  - id: narodnaya-grafika-i-tekstil-azii
+    name: Графика, текстиль и модернизм Азии
     color: '#B77620'
     parts:
       - id: nyanhua
-        name: Няньхуа
+        name: Няньхуа и цзяньчжи
         styles:
           - nianhua
           - yang-liuqing-nianhua
+          - chinese-jianzhi
       - id: dongkho
         name: Донгхо
         styles:
           - dong-ho-prints
-  - id: bronzy-yuzhnoy-indii
-    name: Бронзовая пластика Южной Индии
-    color: '#A67B35'
-    parts:
-      - id: bronzy-chola
-        name: Бронзы Чола
-        styles:
-          - chola-bronzes
-  - id: iskusstvo-dvora-benina
-    name: Искусство двора Бенина
-    color: '#7A5C2E'
-    parts:
-      - id: latun-i-kost-benina
-        name: Латунь и слоновая кость Бенина
-        styles:
-          - benin-court-art
-  - id: skulptura-ife
-    name: Скульптура Ифе
-    color: '#95633D'
-    parts:
-      - id: metall-i-terrakota-ife
-        name: Металл и терракота Ифе
-        styles:
-          - ife-sculpture
-  - id: modernizm-i-sovremennost-afriki
-    name: Модернизм и современность Африки
-    color: '#C9A227'
-    parts:
-      - id: obshchestvo-zarii
-        name: Общество искусств Зарии
-        styles:
-          - zaria-art-society
-      - id: el-salahi
-        name: Ибрагим эль-Салахи
-        styles:
-          - ibrahim-el-salahi
-      - id: narodnaya-zhivopis-kongo
-        name: Народная живопись Конго
-        styles:
-          - congolese-popular-painting
-      - id: muholi
-        name: Занеле Мухоли
-        styles:
-          - zanele-muholi
-  - id: modernizm-yugo-vostochnoy-azii
-    name: Модернизм Юго-Восточной Азии
-    color: '#C2703D'
-    parts:
-      - id: stil-nanyan
-        name: Стиль Наньян
-        styles:
-          - nanyang-art
-      - id: chong-su-pieng
-        name: Чонг Су Пиенг
-        styles:
-          - cheong-soo-pieng
-  - id: tekstil-yugo-vostochnoy-azii
-    name: Текстиль Юго-Восточной Азии
-    color: '#9B5A8C'
-    parts:
-      - id: batik-indonezii
-        name: Батик Индонезии
+      - id: tekstil-yuva
+        name: Батик и икат Юго-Восточной Азии
         styles:
           - indonesian-batik
-      - id: pua-kumbu-ibanov
-        name: Пуа кумбу ибанов
-        styles:
           - iban-pua-kumbu
-  - id: tkani-korei
-    name: Ткани Кореи
-    color: '#B5536B'
-    parts:
-      - id: pobagi
-        name: Побаги и чогакпо
+      - id: modernizm-yuva
+        name: Стиль Наньян и Чонг Су Пиенг
         styles:
-          - bojagi
-  - id: keramika-korei
-    name: Керамика Кореи
-    color: '#5E8C7A'
+          - nanyang-art
+          - cheong-soo-pieng
+  - id: iskusstvo-afriki
+    name: Искусство и модернизм Африки
+    color: '#0B827E'
     parts:
-      - id: seladon-koryo
-        name: Селадон Корё
+      - id: dvory-ife-i-benina
+        name: Ифе и двор Бенина
         styles:
-          - goryeo-celadon
-      - id: punchkhon
-        name: Пунчхон
+          - ife-sculpture
+          - benin-court-art
+      - id: tekstil-asante
+        name: Кенте, адинкра и боголанфини
         styles:
-          - buncheong
-  - id: rezba-maori
-    name: Резьба по дереву маори
-    color: '#AF563C'
+          - asante-kente
+          - adinkra
+          - bogolanfini
+          - kuba-textiles
+      - id: rospis-ndebele
+        name: Роспись ндебеле и Эль Анацуи
+        styles:
+          - ndebele-murals
+          - esther-mahlangu
+          - el-anatsui-metal-textiles
+      - id: modernizm-afriki
+        name: Модернизм и современность Африки
+        styles:
+          - zaria-art-society
+          - ibrahim-el-salahi
+          - congolese-popular-painting
+          - zanele-muholi
+  - id: iskusstvo-okeanii
+    name: Искусство Океании
+    color: '#3C829A'
     parts:
-      - id: paneli-i-sosudy-maori
-        name: Панели и сосуды
+      - id: rezba-maori-part
+        name: Резьба маори
         styles:
           - maori-whakairo
-  - id: grafika-torresova-proliva
-    name: Графика Торресова пролива
-    color: '#207D8B'
-    parts:
-      - id: grafika-ostrovov-obzor
-        name: Три авторские практики
+      - id: polotna-iz-kory
+        name: Сиапо, нгату и маси
+        styles:
+          - samoan-siapo
+          - tongan-ngatu
+          - fijian-masi
+      - id: grafika-torresova-proliva-part
+        name: Графика Торресова пролива
         styles:
           - torres-strait-printmaking
-      - id: linogravyury-tipoti
-        name: Линогравюры Типоти
-        styles:
           - alick-tipoti
 free:
   - aboriginal-art

@@ -1,5 +1,7 @@
 - id: neoclassicism
   name: Неоклассицизм XVIII — начала XIX века
+  shortTitle: "Неоклассицизм"
+  subtitle: "XVIII — начало XIX века"
   orig: Neoclassicism
   aliases:
     - неоклассицизм

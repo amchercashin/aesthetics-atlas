@@ -10,6 +10,8 @@
   labelStatus: editorial-scope-title
   id: bakst-stage-design
   name: "Театральные эскизы Бакста для «Русских балетов»"
+  shortTitle: "Театр Бакста"
+  subtitle: "Эскизы для «Русских балетов»"
   orig: Léon Bakst / Лев Бакст
   kind: author-style
   start: 1911
@@ -219,6 +221,8 @@
   labelStatus: editorial-scope-title
   id: vrubel-painting
   name: "Врубель 1890-х: кристаллическая форма"
+  shortTitle: "Врубель 1890-х"
+  subtitle: "Кристаллическая форма"
   orig: Михаил Врубель / Mikhail Vrubel
   kind: author-style
   start: 1890
@@ -424,6 +428,8 @@
   labelStatus: editorial-scope-title
   id: neo-russian-style
   name: "Неорусский стиль: абрамцевский «русский модерн»"
+  shortTitle: "Неорусский стиль"
+  subtitle: "Абрамцевский «русский модерн»"
   orig: Неорусский стиль / русский модерн (Абрамцево)
   kind: movement
   kindNote: >-
@@ -755,6 +761,8 @@
   labelStatus: editorial-scope-title
   id: prymachenko-imagery
   name: "Мария Приймаченко: фантастические звери"
+  shortTitle: "Мария Приймаченко"
+  subtitle: "Фантастические звери"
   orig: Марія Приймаченко / Maria Prymachenko
   kind: author-style
   start: 1936
@@ -1123,6 +1131,8 @@
   labelStatus: historical
   id: gzhel-ceramics
   name: "Гжель: от многоцветной майолики к синему кобальту"
+  shortTitle: "Гжель"
+  subtitle: "От многоцветной майолики к синему кобальту"
   orig: Гжель / Gzhel ceramics
   kind: tradition
   start: 1750
