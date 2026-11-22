@@ -10,16 +10,46 @@ export function placeholder(palette) {
 }
 
 export function srcset(img) {
-  if (img.local) return ''; // локальная схема или локальная репродукция
-  const parts = WIDTHS.filter((w) => w < img.w).map((w) => `${img.src[w]} ${w}w`);
-  if (img.w <= 1280) parts.push(`${img.src[1280] ?? img.src[960]} ${img.w}w`);
+  if (img.local && img.kind !== 'work') return ''; // локальная SVG-схема
+  const seen = new Set();
+  const parts = [];
+  const add = (url, w) => {
+    if (!url || seen.has(url)) return;
+    seen.add(url);
+    parts.push(`${url} ${w}w`);
+  };
+  if (img.local || img.mirrored) {
+    const thumb = img.src[500] ?? img.src[250];
+    const full = img.src[1280] ?? img.src[960] ?? thumb;
+    if (thumb && full && thumb !== full) {
+      add(thumb, Math.min(480, img.w));
+      add(full, img.w);
+      return parts.join(', ');
+    }
+    return '';
+  }
+  for (const w of WIDTHS) if (w < img.w) add(img.src[w], w);
+  if (img.w <= 1280) add(img.src[1280] ?? img.src[960], img.w);
   return parts.join(', ');
+}
+
+// Запасные адреса меньших размеров: если upload.wikimedia.org не отвечает или таймаутит,
+// браузер автоматически пробует thumb.wikimedia.org (500 / 250) вместо заглушки.
+export function fallbacksOf(img, primaryUrl) {
+  const out = [];
+  for (const w of [960, 500, 250]) {
+    const u = img.src?.[w];
+    if (u && u !== primaryUrl && !out.includes(u)) out.push(u);
+  }
+  return out;
 }
 
 export function imgTag(img, { sizes = '100vw', alt = '', eager = false, size = 500 } = {}) {
   if (!img) return '';
   const src = img.src[size] ?? img.src[500];
-  return html`<img src="${src}" srcset="${srcset(img)}" sizes="${sizes}" width="${img.w}" height="${img.h}" alt="${alt}" ${eager ? '' : raw('loading="lazy"')} decoding="async" referrerpolicy="no-referrer">`;
+  const fbs = fallbacksOf(img, src);
+  const fbAttr = fbs.length ? html` data-fb="${fbs.join('|')}"` : '';
+  return html`<img src="${src}" srcset="${srcset(img)}" sizes="${sizes}" width="${img.w}" height="${img.h}" alt="${alt}"${fbAttr} ${eager ? '' : raw('loading="lazy"')} decoding="async" referrerpolicy="no-referrer">`;
 }
 
 export function paletteCard(palette, note) {
@@ -78,6 +108,16 @@ export function initImageEvents(root = document) {
   root.addEventListener('error', (e) => {
     const img = e.target;
     if (img.tagName !== 'IMG') return;
+    if (img.dataset.fb) {
+      const rest = img.dataset.fb.split('|').filter(Boolean);
+      const next = rest.shift();
+      img.dataset.fb = rest.join('|');
+      if (next) {
+        img.removeAttribute('srcset');
+        img.src = next;
+        return;
+      }
+    }
     const frameEl = img.closest('.art-frame');
     if (frameEl) { img.remove(); frameEl.insertAdjacentHTML('beforeend', '<span class="palette-card-note">Изображение недоступно</span>'); }
     else img.style.visibility = 'hidden';

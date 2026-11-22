@@ -21,12 +21,16 @@ test('eager images do not get a loading attribute', () => {
   assert.match(out, / alt="работа"/);
 });
 
-test('images expose intrinsic dimensions and a webp-friendly srcset', () => {
-  const out = String(imgTag(img, { sizes: '100vw' }));
+test('images expose intrinsic dimensions, responsive srcset and fallback sizes', () => {
+  const out = String(imgTag(img, { sizes: '100vw', size: 960 }));
   assert.match(out, /width="800"/);
   assert.match(out, /height="600"/);
   assert.match(out, /sizes="100vw"/);
   assert.match(out, /250\.jpg 250w/);
+  assert.match(out, /data-fb="500\.jpg\|250\.jpg"/);
+  // Локальная пара WebP/оригинал формирует srcset по двум ширинам.
+  const localWork = { local: true, kind: 'work', w: 1200, h: 900, src: { 250: 'assets/thumbs/a-480.webp', 500: 'assets/thumbs/a-480.webp', 960: 'assets/works/a.jpg', 1280: 'assets/works/a.jpg' } };
+  assert.match(String(imgTag(localWork)), /srcset="assets\/thumbs\/a-480\.webp 480w, assets\/works\/a\.jpg 1200w"/);
 });
 
 test('lightbox item carries caption, what to look at, caption sources and file credit', async () => {

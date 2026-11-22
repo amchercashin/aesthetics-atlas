@@ -14,7 +14,11 @@ export function initLightbox() {
   const render = () => {
     const item = items[index];
     if (!item) return;
-    img.src = item.img.src[1280] ?? item.img.src[960] ?? item.img.src[500];
+    const primary = item.img.src[1280] ?? item.img.src[960] ?? item.img.src[500];
+    const fbs = [item.img.src[960], item.img.src[500], item.img.src[250]]
+      .filter((u, i, arr) => u && u !== primary && arr.indexOf(u) === i);
+    img.dataset.fb = fbs.join('|');
+    img.src = primary;
     img.alt = item.caption || '';
     cap.textContent = item.caption || '';
     // «Что здесь видно», источники и сведения о файле — уже экранированный шаблон из artItem().

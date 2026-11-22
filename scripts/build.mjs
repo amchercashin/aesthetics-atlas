@@ -11,6 +11,7 @@ import { buildRecord, childrenOf, comparisonsOf, contextsOf } from './lib/record
 import { resolveFiles, resolveWiki, commonsCategories, commonsCategoriesExist, saveCache, cleanArtist } from './lib/wikimedia.mjs';
 import { downloadThumb, paletteFromImages, paletteFromHexList, mapLimit } from './lib/palette.mjs';
 import { resolveLocalAssets } from './lib/local-images.mjs';
+import { mirrorWikimediaAssets } from './lib/mirror-media.mjs';
 import { worksOf, imageUsage } from './lib/works.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
@@ -48,6 +49,13 @@ for (const s of styles) {
   for (const ref of worksOf(s).map((g) => g.file).filter(Boolean)) {
     const m = media.get(ref);
     if (!m || m.missing) errors.push(`[${s.id}] image ${m?.error ? `not resolved (${m.error})` : 'not found'} on Wikimedia: "${ref}"`);
+  }
+}
+if (!errors.length) {
+  try {
+    await mirrorWikimediaAssets(media, ROOT, opts);
+  } catch (e) {
+    errors.push(`mirror media: ${e.message}`);
   }
 }
 
@@ -91,7 +99,7 @@ await mapLimit(styles, 3, async (s) => {
       const m = media.get(ref);
       if (!m || m.missing) continue;
       try {
-        bufs.push(m.local ? m.buffer : await downloadThumb(m.thumbs[250] ?? m.url, opts));
+        bufs.push(m.local ? m.buffer : m.palettePath ? fs.readFileSync(m.palettePath) : await downloadThumb(m.thumbs[250] ?? m.url, opts));
       } catch (e) {
         warnings.push(`[${s.id}] palette image skipped: ${e.message}`);
       }
@@ -118,6 +126,7 @@ const img = (ref) => {
   if (!m || m.missing) return null;
   return {
     ...(m.local ? { local: true, kind: m.kind } : {}),
+    ...(m.mirrored ? { mirrored: true } : {}),
     w: m.width, h: m.height, src: m.thumbs, page: m.page,
     artist: m.local ? m.artist : cleanArtist(m.artist), artistUrl: m.artistUrl, license: m.license, licenseUrl: m.licenseUrl,
     credit: m.credit, nonfree: m.nonfree,

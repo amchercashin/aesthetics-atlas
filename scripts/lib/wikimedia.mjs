@@ -140,6 +140,27 @@ export function parseFileRef(ref) {
 
 function pickMeta(em, k) { return em?.[k]?.value ?? null; }
 
+// Убираем трекинговые utm-параметры, которые Wikimedia API добавляет к thumburl/url.
+export function cleanWikimediaUrl(url) {
+  if (!url) return url;
+  try {
+    const u = new URL(url);
+    for (const k of ['utm_source', 'utm_campaign', 'utm_content', 'utm_medium']) u.searchParams.delete(k);
+    return u.toString();
+  } catch {
+    return url;
+  }
+}
+
+function cleanRecordUrls(rec) {
+  if (!rec || rec.missing) return rec;
+  const rawCacheUrls = [rec.thumbs?.[250], rec.thumbs?.[500], rec.url].filter(Boolean);
+  const thumbs = rec.thumbs
+    ? Object.fromEntries(Object.entries(rec.thumbs).map(([w, u]) => [w, cleanWikimediaUrl(u)]))
+    : rec.thumbs;
+  return { ...rec, url: cleanWikimediaUrl(rec.url), thumbs, rawCacheUrls };
+}
+
 export async function resolveFiles(refs, { offline = false, refresh = false, log = () => {} } = {}) {
   const c = loadCache();
   const out = new Map();
@@ -147,7 +168,7 @@ export async function resolveFiles(refs, { offline = false, refresh = false, log
   for (const ref of new Set(refs)) {
     const p = parseFileRef(ref);
     const ck = 'file:' + p.key;
-    if (!refresh && c[ck]) { out.set(ref, c[ck]); continue; }
+    if (!refresh && c[ck]) { out.set(ref, cleanRecordUrls(c[ck])); continue; }
     if (offline) { out.set(ref, { missing: true, error: 'not cached (offline)' }); continue; }
     todo[p.site].push({ ref, ...p });
   }
@@ -218,13 +239,13 @@ function buildFileRecord(b, perWidth) {
   const ii = base.imageinfo[0];
   const em = ii.extmetadata ?? {};
   const thumbs = {};
-  for (const w of THUMB_WIDTHS) thumbs[w] = findPage(perWidth[w], b.name).imageinfo[0].thumburl ?? ii.url;
+  for (const w of THUMB_WIDTHS) thumbs[w] = cleanWikimediaUrl(findPage(perWidth[w], b.name).imageinfo[0].thumburl ?? ii.url);
   const nonfree = String(pickMeta(em, 'NonFree') ?? '').toLowerCase() === 'true';
   return {
     site: b.site,
     name: b.name,
     page: ii.descriptionurl,
-    url: ii.url,
+    url: cleanWikimediaUrl(ii.url),
     width: ii.width,
     height: ii.height,
     mime: ii.mime,

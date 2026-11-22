@@ -96,11 +96,30 @@ export function fitContrast(rgb, bg, min = 4.5) {
 }
 
 export function paletteFromClusters(clusters, pts = null) {
-  const colors = clusters.slice(0, 5).map((c) => toHex(labToRgb(c.lab)));
-  // (палитра — пять самых весомых кластеров)
+  const chroma = (lab) => Math.hypot(lab[1], lab[2]);
+  const dist = (a, b) => Math.hypot(a[0] - b[0], a[1] - b[1], a[2] - b[2]);
+  // Для цветных работ поднимаем хроматические кластеры над нейтральным музейным фоном;
+  // для монохромной графики и туши (maxChroma <= 18) оставляем естественный порядок по весу.
+  const significant = clusters.filter((c) => c.weight >= 0.015);
+  const maxChroma = significant.reduce((m, c) => Math.max(m, chroma(c.lab)), 0);
+  const colorful = maxChroma > 18;
+  const rank = (c) => (colorful
+    ? Math.pow(c.weight, 0.55) * (1 + chroma(c.lab) / 20)
+    : c.weight);
+  const ranked = [...clusters].sort((a, b) => rank(b) - rank(a));
+  const minDelta = colorful ? 13 : 9;
+  const chosen = [];
+  for (const c of ranked) {
+    if (chosen.length >= 5) break;
+    if (chosen.every((o) => dist(c.lab, o.lab) >= minDelta)) chosen.push(c);
+  }
+  for (const c of ranked) {
+    if (chosen.length >= 5) break;
+    if (!chosen.includes(c)) chosen.push(c);
+  }
+  const colors = chosen.slice(0, 5).map((c) => toHex(labToRgb(c.lab)));
   // Акцент — самый «цветной» кластер заметного веса; если всё серое — самый весомый.
   // Небольшое, но яркое пятно (солнце у Моне) важнее большого серого поля.
-  const chroma = (lab) => Math.hypot(lab[1], lab[2]);
   const score = (c) => chroma(c.lab) * Math.pow(c.weight, 0.3);
   const candidates = clusters.filter((c) => c.weight >= 0.012);
   const pick = candidates.reduce((best, c) => (score(c) > score(best) ? c : best), candidates[0] ?? clusters[0]);
@@ -146,11 +165,27 @@ export async function downloadThumb(url, { offline = false } = {}) {
   return buf;
 }
 
+// Выборка пикселей с ослаблением внешней рамки (12% по краям — там чаще всего музейный фон и паспарту).
+function sampleLabPoints(data, info) {
+  const { width, height, channels } = info;
+  const mx = Math.floor(width * 0.12), my = Math.floor(height * 0.12);
+  const pts = [];
+  for (let y = 0; y < height; y++) {
+    const edgeY = y < my || y >= height - my;
+    for (let x = 0; x < width; x++) {
+      const edge = edgeY || x < mx || x >= width - mx;
+      if (edge && ((x + y) & 3) !== 0) continue;
+      const i = (y * width + x) * channels;
+      pts.push(rgbToLab([data[i], data[i + 1], data[i + 2]]));
+    }
+  }
+  return pts;
+}
+
 export async function paletteFromImage(buf) {
   const { data, info } = await sharp(buf).resize(64, 64, { fit: 'inside' }).removeAlpha().raw().toBuffer({ resolveWithObject: true });
-  const pts = [];
-  for (let i = 0; i < data.length; i += info.channels) pts.push(rgbToLab([data[i], data[i + 1], data[i + 2]]));
-  return paletteFromClusters(kmeans(pts, 9), pts);
+  const pts = sampleLabPoints(data, info);
+  return paletteFromClusters(kmeans(pts, 11), pts);
 }
 
 // Палитра по всем изображениям карточки: каждая работа даёт равный вклад,
@@ -160,11 +195,11 @@ export async function paletteFromImages(buffers) {
   for (const buf of buffers) {
     try {
       const { data, info } = await sharp(buf).resize(48, 48, { fit: 'inside' }).removeAlpha().raw().toBuffer({ resolveWithObject: true });
-      for (let i = 0; i < data.length; i += info.channels) pts.push(rgbToLab([data[i], data[i + 1], data[i + 2]]));
+      pts.push(...sampleLabPoints(data, info));
     } catch { /* битое изображение пропускаем */ }
   }
   if (!pts.length) throw new Error('нет пригодных изображений');
-  return paletteFromClusters(kmeans(pts, 9), pts);
+  return paletteFromClusters(kmeans(pts, 11), pts);
 }
 
 // Простой пул с ограниченной параллельностью.

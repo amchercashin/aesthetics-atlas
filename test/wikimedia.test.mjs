@@ -1,7 +1,7 @@
 // Разбор ответов Wikimedia без сети: сбой API не должен попадать в кэш как «файла нет».
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { apiProblem, fileStatus, cleanArtist, THUMB_WIDTHS } from '../scripts/lib/wikimedia.mjs';
+import { apiProblem, fileStatus, cleanArtist, cleanWikimediaUrl, THUMB_WIDTHS } from '../scripts/lib/wikimedia.mjs';
 
 const page = (title, extra = {}) => ({ title: `File:${title}`, ...extra });
 const info = { url: 'https://upload.wikimedia.org/x.jpg', thumburl: 'https://upload.wikimedia.org/t.jpg' };
@@ -56,4 +56,13 @@ test('service strings in the Artist field become a plain statement or nothing', 
   assert.equal(cleanArtist('Museo de Altamira y D. Rodríguez'), 'Museo de Altamira y D. Rodríguez');
   assert.equal(cleanArtist('Anonymous folk artist'), 'Anonymous folk artist');
   assert.equal(cleanArtist('Unknown artisan from the village of Dong Ho.'), 'Unknown artisan from the village of Dong Ho.');
+});
+
+test('cleanWikimediaUrl strips tracking utm parameters while preserving the path', () => {
+  assert.equal(
+    cleanWikimediaUrl('https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1e/Lascaux.jpg/500px-Lascaux.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail'),
+    'https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1e/Lascaux.jpg/500px-Lascaux.jpg',
+  );
+  assert.equal(cleanWikimediaUrl('https://example.org/a.jpg?foo=1&utm_source=x'), 'https://example.org/a.jpg?foo=1');
+  assert.equal(cleanWikimediaUrl(null), null);
 });
