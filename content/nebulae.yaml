@@ -500,6 +500,22 @@ nebulae:
         styles:
           - nanyang-art
           - cheong-soo-pieng
+      - id: tekstil-centralnoy-azii
+        name: Текстиль и войлок Центральной Азии
+        styles:
+          - central-asian-ikat
+          - shyrdak
+      - id: tekstil-yuzhnoy-azii
+        name: Текстиль Южной Азии
+        styles:
+          - ajrakh
+          - kantha
+      - id: iskusstvo-pakistana
+        name: Пакистан — новая миниатюра и роспись грузовиков
+        styles:
+          - pakistani-truck-art
+          - pakistani-neo-miniature
+          - shahzia-sikander
   - id: iskusstvo-afriki
     name: Искусство и модернизм Африки
     band: south
@@ -556,7 +572,6 @@ free:
   - andean-art
   - emily-kngwarray
   - zverev-portrait-graphics
-  - shahzia-sikander
   - carrolup-school
   - rei-kawakubo
   - pacita-abad

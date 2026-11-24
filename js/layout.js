@@ -297,18 +297,22 @@ function packBlocks(blocks, sep, { passes, gather }) {
     by((a, b) => first(a) - first(b) || b.members.length - a.members.length),
     by((a, b) => b.h * width(b) - a.h * width(a)),
     by((a, b) => b.members.length - a.members.length || first(a) - first(b)),
+    by((a, b) => b.h - a.h || width(b) - width(a)),
+    by((a, b) => width(b) - width(a) || b.h - a.h),
   ];
   let best = null;
-  for (const order of orders) {
-    const off = place(order);
-    const lo = Math.min(...off), h = Math.max(...blocks.map((b, i) => off[i] - lo + b.h));
-    let len = 0;
-    blocks.forEach((b, i) => { for (const l of links[i]) len += l.w * Math.abs(off[i] + l.mine - off[l.other] - l.theirs); });
-    if (!best || h < best.h || (h === best.h && len < best.len - 1e-9)) best = { off, h, len };
+  for (const compact of [false, true]) {
+    for (const order of orders) {
+      const off = place(order, compact);
+      const lo = Math.min(...off), h = Math.max(...blocks.map((b, i) => off[i] - lo + b.h));
+      let len = 0;
+      blocks.forEach((b, i) => { for (const l of links[i]) len += l.w * Math.abs(off[i] + l.mine - off[l.other] - l.theirs); });
+      if (!best || h < best.h || (h === best.h && len < best.len - 1e-9)) best = { off, h, len };
+    }
   }
   const off = best.off;
 
-  function place(order) {
+  function place(order, compact) {
     const off = blocks.map(() => null);
     const occ = new Map(); // строка → [[x0, x1, блок]]
     const put = (i) => { for (const [r, ivs] of blocks[i].shape) { const R = off[i] + r; if (!occ.has(R)) occ.set(R, []); for (const [a, b] of ivs) occ.get(R).push([a, b, i]); } };
@@ -324,20 +328,36 @@ function packBlocks(blocks, sep, { passes, gather }) {
     // Средняя длина связей блока с уже поставленными родственниками, в строках.
     const pull = (i, o) => { let c = 0, w = 0; for (const l of links[i]) if (off[l.other] !== null) { c += l.w * Math.abs(o + l.mine - off[l.other] - l.theirs); w += l.w; } return w ? c / w : 0; };
 
-    // Блок встаёт у родственников, уже стоящих на карте; без них — у середины. Направление поиска
-    // чередуется, чтобы карта росла в обе стороны.
+    // Блок встаёт у родственников, уже стоящих на карте; без них — у середины. В плотном режиме
+    // сначала выбирается строка, не растягивающая высоту полосы, и лишь затем — близость к родне.
+    let curLo = Infinity, curHi = -Infinity;
     order.forEach((i, k) => {
       let sw = 0, sp = 0;
       for (const l of links[i]) if (off[l.other] !== null) { sw += l.w; sp += l.w * (off[l.other] + l.theirs - l.mine); }
       const pref = sw ? Math.round(sp / sw) : -Math.floor(blocks[i].h / 2);
-      const up = k % 2 === 1;
-      for (let d = 0; off[i] === null; d++) {
-        for (const o of d === 0 ? [pref] : up ? [pref - d, pref + d] : [pref + d, pref - d]) if (free(i, o)) { off[i] = o; break; }
+      if (compact && k > 0) {
+        let bestO = null, bestSpan = Infinity, bestScore = Infinity;
+        for (let o = curLo - blocks[i].h - sep.rows; o <= curHi + 1 + sep.rows; o++) {
+          if (!free(i, o)) continue;
+          const span = Math.max(curHi, o + blocks[i].h - 1) - Math.min(curLo, o) + 1;
+          const score = pull(i, o) + 0.05 * Math.abs(o - pref);
+          if (span < bestSpan || (span === bestSpan && score < bestScore - 1e-9)) {
+            bestSpan = span; bestScore = score; bestO = o;
+          }
+        }
+        off[i] = bestO;
+      } else {
+        const up = k % 2 === 1;
+        for (let d = 0; off[i] === null; d++) {
+          for (const o of d === 0 ? [pref] : up ? [pref - d, pref + d] : [pref + d, pref - d]) if (free(i, o)) { off[i] = o; break; }
+        }
       }
       put(i);
+      curLo = Math.min(curLo, off[i]);
+      curHi = Math.max(curHi, off[i] + blocks[i].h - 1);
     });
 
-    // Уплотнение: блок ближе к родственникам и к середине карты.
+    // Уплотнение: блок ближе к родственникам и к середине карты (в плотном режиме — не увеличивая высоту).
     for (let it = 0; it < passes; it++) {
       let moved = 0;
       const lo = Math.min(...off), hi = Math.max(...blocks.map((b, i) => off[i] + b.h - 1));
@@ -345,11 +365,16 @@ function packBlocks(blocks, sep, { passes, gather }) {
       const total = (i, o) => pull(i, o) + gather * Math.abs(o + (blocks[i].h - 1) / 2 - mid);
       for (const i of order) {
         take(i);
+        let oLo = Infinity, oHi = -Infinity;
+        if (compact) for (let j = 0; j < blocks.length; j++) if (j !== i) { oLo = Math.min(oLo, off[j]); oHi = Math.max(oHi, off[j] + blocks[j].h - 1); }
         let to = off[i], bc = total(i, off[i]);
+        let bs = compact ? Math.max(oHi, off[i] + blocks[i].h - 1) - Math.min(oLo, off[i]) + 1 : 0;
         for (let o = lo - blocks[i].h - sep.rows; o <= hi + 1 + sep.rows; o++) {
           if (o === off[i] || !free(i, o)) continue;
+          const s = compact ? Math.max(oHi, o + blocks[i].h - 1) - Math.min(oLo, o) + 1 : 0;
+          if (compact && s > bs) continue;
           const c = total(i, o);
-          if (c < bc - 1e-9) { bc = c; to = o; }
+          if ((compact && s < bs) || c < bc - 1e-9) { bs = s; bc = c; to = o; }
         }
         if (to !== off[i]) moved++;
         off[i] = to;
