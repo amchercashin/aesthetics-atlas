@@ -20,7 +20,7 @@ import { buildIndex, search } from '../search.js';
 import { fitLabelText } from '../map-labels.js';
 import { LINK_MODES, readLinkSettings, historicalLinkVisible } from '../map-links.js';
 import { mapDetail, aggregateSeaFlows } from '../map-detail.js';
-import { summaryCurve, flowRibbon } from '../map-summary.js';
+import { flowRibbon } from '../map-summary.js';
 import { el, spatialGrid, branchPath as calcBranchPath, stubPath as calcStubPath, arcPath as calcArcPath, durPath as calcDurPath } from '../map/geometry.js';
 import { renderMapPanel, renderSummaryPopup, renderEdgePopup } from '../map/panel.js';
 
@@ -79,9 +79,6 @@ export default {
             <button class="btn ghost mf-reset" type="button" data-f-reset>Сбросить</button>
           </div>
         </div>
-        <div class="map-links" role="group" aria-label="Связи на карте">
-          ${Object.entries(LINK_MODES).map(([id, name]) => html`<button type="button" data-link-mode="${id}" aria-pressed="${id === 'main'}">${name}</button>`)}
-        </div>
         <div class="map-pop-wrap map-legend-wrap">
           <button class="icon-btn" type="button" data-legend aria-expanded="false" aria-label="Как читать карту">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9.6 9.3a2.5 2.5 0 1 1 3.3 2.4c-.6.2-.9.7-.9 1.3v.5M12 16.6v.3"/></svg>
@@ -106,7 +103,7 @@ export default {
             <div class="lg-note">
               <ul>
                 <li><strong>Масштаб и широты:</strong> моря → части → эстетики; по вертикали — три культурные широты (Азия/Океания, Средиземноморье/Европа/глобальный поток, народные традиции/Африка/Америки). Нажмите на море, чтобы приблизить; полный список — в меню ☰.</li>
-                <li><strong>Течения и связи:</strong> градиентные стрелки между морями — подтверждённые исторические потоки (наведите на море, чтобы увидеть все его входы и выходы; нажмите на течение — откроется список пар). «Сходства» добавляет пунктирные визуальные сопоставления.</li>
+                <li><strong>Течения и связи:</strong> полупрозрачные градиентные стрелки между морями показывают все подтверждённые исторические потоки; наведение на море подсвечивает его входы и выходы, нажатие на течение открывает список пар.</li>
                 <li><strong>Жесты:</strong> перетаскивание двигает карту; колесо мыши, щипок или двойной клик меняют масштаб.</li>
               </ul>
               <a href="#/about">Подробнее о карте и источниках →</a>
@@ -751,38 +748,20 @@ export default {
         ...contextEdges.map((c) => ({ from: c.a.s.id, to: c.b.s.id, kind: 'context', status: c.status, info: { context: c } })),
       ].filter((r) => !nodeById.get(r.from).g.classList.contains('out') && !nodeById.get(r.to).g.classList.contains('out'));
       const seaKeys = new Map(store.nebulae.map((s, i) => [s.id, `neb:${i}`]));
-      const { flows, bridges } = aggregateSeaFlows(records, (id) => seaKeys.get(nodeById.get(id).s.nebula), { mode: linkMode, verifiedOnly });
-      const namedFlows = flows.filter((g) => regionNames.has(g.a) && regionNames.has(g.b));
-      const namedBridges = bridges.filter((g) => regionNames.has(g.a) && regionNames.has(g.b));
+      const { flows } = aggregateSeaFlows(records, (id) => seaKeys.get(nodeById.get(id).s.nebula), { mode: linkMode, verifiedOnly });
+      const shownFlows = flows.filter((g) => regionNames.has(g.a) && regionNames.has(g.b));
       const incident = (g) => g.a === regionHover || g.b === regionHover;
-
-      // Магистральные течения (≥ 2 подтверждённых связей) видны всегда; при наведении на море
-      // проявляются также его одиночные «ручейки» (1 связь), а чужие течения мягко притухают.
-      const shownFlows = [
-        ...namedFlows.filter((g) => g.records.length >= 2),
-        ...(regionHover ? namedFlows.filter((g) => g.records.length === 1 && incident(g)) : []),
-      ];
-      const shownBridges = (linkMode === 'kinship' || linkMode === 'all')
-        ? [
-          ...namedBridges.filter((g) => g.records.length >= 2),
-          ...(regionHover ? namedBridges.filter((g) => g.records.length === 1 && incident(g)).slice(0, 4) : []),
-        ]
-        : [];
-      aggregateLinks = [...shownFlows, ...shownBridges];
+      aggregateLinks = shownFlows;
 
       const defs = el('defs', {}, G.summary);
       const bounds = [6, rot ? 6 : AXIS_H + 6, pw - (rot ? AXIS_H + 6 : 6), ph - 6];
       const shores = new Map();
       const shore = (k) => { if (!shores.has(k)) shores.set(k, nebulaShore(k, nameCam().toScreen, regionNames.get(k))); return shores.get(k); };
-      const labelBoxes = [...regionNames.values()].map((r) => {
-        const x0 = Math.min(...r.boxes.map((b) => b[0])) - 5, y0 = Math.min(...r.boxes.map((b) => b[1])) - 4;
-        const x1 = Math.max(...r.boxes.map((b) => b[2])) + 5, y1 = Math.max(...r.boxes.map((b) => b[3])) + 4;
-        return [x0, y0, x1, y1];
-      });
       const flowKeySet = new Set(shownFlows.map((g) => `${g.a}>${g.b}`));
       const focusOn = !!(regionHover || summaryHover);
 
-      // 1. Направленные градиентные течения (основание растворяется в море-источнике, наконечник контрастный).
+      // Направленные градиентные течения (основание растворяется в море-источнике, наконечник контрастный).
+      // В спокойном виде все потоки полупрозрачны, чтобы не перекрывать моря; при наведении нужные проявляются.
       shownFlows.forEach((g, idx) => {
         const a = regionNames.get(g.a), b = regionNames.get(g.b);
         const regA = nebulaRegion(g.a), regB = nebulaRegion(g.b);
@@ -798,18 +777,17 @@ export default {
         const flowKey = `${g.a}>${g.b}`;
         const isExact = summaryHover === flowKey;
         const isInc = isExact || (regionHover && incident(g));
-        const subtle = linkMode === 'kinship' && !isInc;
         const bodyOp = detail.aggregates * (
           isExact ? 0.86
-            : isInc ? (n === 1 ? 0.56 : 0.78)
-              : focusOn ? 0.09
-                : subtle ? 0.22 : 0.42
+            : isInc ? (n === 1 ? 0.58 : 0.78)
+              : focusOn ? 0.08
+                : 0.22
         );
         const tipOp = detail.aggregates * (
           isExact ? 1
-            : isInc ? (n === 1 ? 0.8 : 0.96)
-              : focusOn ? 0.12
-                : subtle ? 0.34 : 0.74
+            : isInc ? (n === 1 ? 0.82 : 0.96)
+              : focusOn ? 0.11
+                : 0.34
         );
 
         const gradId = `sf-g-${idx}`;
@@ -838,28 +816,6 @@ export default {
           'aria-label': `${a.name} → ${b.name}: ${count}. Открыть список`,
         }, G['summary-hits']);
         el('title', {}, h).textContent = `${a.name} → ${b.name} · ${count}`;
-      });
-
-      // 2. Ненаправленные мостики визуального сходства и контекста (в режимах «Сходства» и «Все связи»).
-      shownBridges.forEach((g, j) => {
-        const idx = shownFlows.length + j;
-        const a = regionNames.get(g.a), b = regionNames.get(g.b);
-        if (!a || !b) return;
-        const route = summaryCurve({ ...a, ports: shore(g.a) }, { ...b, ports: shore(g.b) }, labelBoxes, bounds);
-        if (!route) return;
-        const bridgeKey = `${g.a}|${g.b}`;
-        const isExact = summaryHover === bridgeKey;
-        const isInc = isExact || (regionHover && incident(g));
-        const op = detail.aggregates * (isExact ? 0.92 : isInc ? 0.78 : focusOn ? 0.12 : 0.48);
-        const w = Math.min(2.2, 1 + Math.log2(g.records.length + 1) * 0.35);
-        el('path', { class: 'bridge-line', d: route.d, 'stroke-width': w.toFixed(2), opacity: op.toFixed(3) }, G.summary);
-        const count = `${g.records.length} ${plural(g.records.length, 'сопоставление', 'сопоставления', 'сопоставлений')}`;
-        const h = el('path', {
-          class: 'summary-hit', d: route.d,
-          'data-summary': idx, 'data-key': bridgeKey, role: 'button', tabindex: 0,
-          'aria-label': `${a.name} и ${b.name}: ${count}. Открыть список`,
-        }, G['summary-hits']);
-        el('title', {}, h).textContent = `${a.name} ↔ ${b.name} · ${count}`;
       });
     }
 
@@ -1629,7 +1585,6 @@ export default {
       linkMode = Object.hasOwn(LINK_MODES, next) ? next : 'main';
       svg.dataset.linkMode = linkMode;
       svg.classList.toggle('show-all', linkMode === 'all');
-      root.querySelectorAll('button[data-link-mode]').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.linkMode === linkMode)));
       hideEdgeInfo();
       if (sc) drawMinimap();
       schedule();
@@ -1970,8 +1925,6 @@ export default {
         else { const k = Math.max(kOv(), k0 * 2.2) * (level.dataset.detail === 'parts' ? 0.83 : 1.7); zoomAt(vw / 2, vh / 2, k / t.k, true); }
         return;
       }
-      const links = e.target.closest('button[data-link-mode]');
-      if (links) { setLinkMode(links.dataset.linkMode); syncUrl(); return; }
       if (e.target.closest('[data-trail-clear]')) { trail = selected ? [selected] : []; syncUrl(); schedule(); return; }
       const z = e.target.closest('button[data-zoom]');
       if (z) {
