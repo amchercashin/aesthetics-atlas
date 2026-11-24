@@ -819,7 +819,7 @@ export default {
       });
     }
 
-    function focusRegion(key) {
+    function focusRegion(key, at = null) {
       const r = nebulaRegion(key);
       if (!r) return;
       directory.hidden = true; q('[data-browse]').setAttribute('aria-expanded', 'false');
@@ -828,8 +828,10 @@ export default {
       const members = r.members.map((i) => nodes[i]);
       const xs = members.map((n) => sc.x(n.s.start)), ys = members.map(yRef);
       const anchor = Math.max(kOv(), k0 * 2.2);
+      const xFocus = at ? (at.x - t.tx) / t.k : (r.center ? (r.center[0] - NEB_PADX) / OV_K : null);
+      const yFocus = at ? (at.y - AXIS_H - t.ty) / syOf(t.k) : (r.center ? (r.center[1] - NEB_PADY) / SY_OV : null);
       fitBox(Math.min(...xs) - 90, Math.max(...xs) + 240, Math.min(...ys) - 55, Math.max(...ys) + 55,
-        { kMin: anchor * (r.kind === 'neb' ? 0.83 : 1.7), kMax: r.kind === 'neb' ? anchor * 1.7 : 1.15 });
+        { kMin: anchor * (r.kind === 'neb' ? 0.83 : 1.7), kMax: r.kind === 'neb' ? anchor * 1.7 : 1.15, xFocus, yFocus });
     }
 
     function showSummaryInfo(group, px, py) {
@@ -1336,14 +1338,21 @@ export default {
     // fitY: false — не ужимать масштаб ради высоты (рабочий вид, вертикаль листается);
     // тогда по вертикали центрируется «центр тяжести» yFocus.
     // keep — стиль, который обязан остаться в видимой области (не под панелью и не за краем).
-    function fitBox(x0, x1, y0, y1, { kMin = k0, kMax = 1.15, ms = 650, fitY = true, yFocus = null, keep = null } = {}) {
+    function fitBox(x0, x1, y0, y1, { kMin = k0, kMax = 1.15, ms = 650, fitY = true, xFocus = null, yFocus = null, keep = null } = {}) {
       const rect = viewRect();
       const gut = lensNow() ? 56 : 0;   // желоба по краям занимают место: рабочий вид начинается правее левого желоба
       const availW = Math.max(120, rect.x1 - rect.x0 - 80 - 2 * gut - (isNarrow() ? 60 : 160)), availH = rect.y1 - rect.y0 - 50;
       let k = clamp(availW / Math.max(1, x1 - x0), kMin, kMax);
       if (fitY) for (let i = 0; i < 6; i++) { if ((y1 - y0) * syOf(k) > availH && k > kMin) k = Math.max(kMin, k * 0.85); else break; }
       const sy = syOf(k);
-      let tx = rect.x0 + 40 + gut + Math.max(0, availW - (x1 - x0) * k) / 2 - x0 * k;
+      const spanW = (x1 - x0) * k;
+      let tx;
+      if (spanW <= availW || xFocus == null) {
+        tx = rect.x0 + 40 + gut + Math.max(0, availW - spanW) / 2 - x0 * k;
+      } else {
+        const left = rect.x0 + 40 + gut;
+        tx = clamp(left + availW / 2 - xFocus * k, left + availW - x1 * k, left - x0 * k);
+      }
       const yc = (y1 - y0) * sy <= availH || yFocus == null ? (y0 + y1) / 2 : yFocus;
       let ty = (rect.y1 - rect.y0) / 2 - yc * sy;
       if (keep) {
@@ -1734,10 +1743,10 @@ export default {
             : drag.edge.dataset.cmp != null ? { cmp: cmps[+drag.edge.dataset.cmp] } : { edge: edges[+drag.edge.dataset.edge] };
           showEdgeInfo(info, e.clientX - rect.left, e.clientY - rect.top);
         } else if (drag.summary) showSummaryInfo(aggregateLinks[+drag.summary.dataset.summary], e.clientX - rect.left, e.clientY - rect.top);
-        else if (drag.region) focusRegion(drag.region);
+        else if (drag.region) focusRegion(drag.region, toV(e.clientX, e.clientY));
         else if (neb.ready && detail.nodes < 0.15) {
           const pt = toV(e.clientX, e.clientY), key = nebulaRegionAt(pt.x, pt.y, nebulaCam(), detail.level === 'parts');
-          if (key) focusRegion(key); else clearSelection();
+          if (key) focusRegion(key, pt); else clearSelection();
         } else clearSelection();
       }
       if (!pointers.size) drag = null;
@@ -1805,7 +1814,10 @@ export default {
       const regionEl = e.target.closest?.('.region-name'), summaryEl = e.target.closest?.('.summary-hit');
       if ((regionEl || summaryEl) && (e.key === 'Enter' || e.key === ' ')) {
         e.preventDefault();
-        if (regionEl) focusRegion(regionEl.dataset.region);
+        if (regionEl) {
+          const b = regionEl.getBoundingClientRect();
+          focusRegion(regionEl.dataset.region, toV(b.left + b.width / 2, b.top + b.height / 2));
+        }
         else { const b = summaryEl.getBoundingClientRect(), r = stage.getBoundingClientRect(); showSummaryInfo(aggregateLinks[+summaryEl.dataset.summary], b.x - r.x, b.y - r.y); }
         return;
       }

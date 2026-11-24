@@ -845,7 +845,8 @@ export const nebulaStats = () => ({ ...dbg });
 export function nebulaRegion(key) {
   const [kind, id] = key.split(':');
   const r = (kind === 'neb' ? nebRegs : partRegs).find((r) => r.id === Number(id));
-  return r && { key, kind, name: r.name, color: css(r.col), line: r.line, ink: r.ink, members: r.members.slice(), box: r.box.slice() };
+  const b0 = r?.basins?.[0];
+  return r && { key, kind, name: r.name, color: css(r.col), line: r.line, ink: r.ink, members: r.members.slice(), box: r.box.slice(), center: b0 ? [b0.cx, b0.cy] : null };
 }
 
 // Порты обзорных течений лежат строго на береге главного (подписанного) бассейна моря,
