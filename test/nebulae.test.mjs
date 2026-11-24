@@ -72,3 +72,11 @@ test('the real content/nebulae.yaml covers every style in content/styles', () =>
   const real = yaml.load(fs.readFileSync(path.join(root, 'content/nebulae.yaml'), 'utf8'));
   assert.deepEqual(validateNebulae(real, all).errors, []);
 });
+
+test('sea label nodes are pooled in-place and never cleared per frame during zoom', () => {
+  const root = path.resolve(import.meta.dirname, '..');
+  const mapSrc = fs.readFileSync(path.join(root, 'js/views/map.js'), 'utf8');
+  const cssSrc = fs.readFileSync(path.join(root, 'css/map.css'), 'utf8');
+  assert.doesNotMatch(mapSrc, /G\.nebnames\.replaceChildren\(/, 'G.nebnames must not detach hovered sea labels on every frame');
+  assert.doesNotMatch(cssSrc, /\.region-name:hover[^{]*\{[^}]*filter:/, '.region-name:hover must not trigger SVG filter rasterization');
+});

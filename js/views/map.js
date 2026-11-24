@@ -15,7 +15,7 @@ import { replaceParams, pushParams } from '../router.js';
 import { pushStep, toParam, parseTrail } from '../trail.js';
 import { stepTarget } from '../graphnav.js';
 import { createGutterLens } from '../lens.js';
-import { initNebulae, drawNebulae, drawNebulaNames, disposeNebulae, setNebulaDirtyHandler, nebulaRegion, nebulaRegionAt, nebulaShore } from '../nebulae.js';
+import { initNebulae, drawNebulae, drawNebulaNames, hideNebulaNames, disposeNebulae, setNebulaDirtyHandler, nebulaRegion, nebulaRegionAt, nebulaShore } from '../nebulae.js';
 import { buildIndex, search } from '../search.js';
 import { fitLabelText } from '../map-labels.js';
 import { LINK_MODES, readLinkSettings, historicalLinkVisible } from '../map-links.js';
@@ -163,9 +163,37 @@ export default {
     const svg = q('.map-svg');
     const G = Object.fromEntries(['summary', 'summary-hits', 'dur', 'life', 'cmp', 'contexts', 'edges', 'edge-hits', 'trail', 'nebnames', 'plates', 'nodes', 'labels', 'stubs', 'sel', 'elabels', 'axis'].map((k) => [k, svg.querySelector(`.m-${k}`)]));
     const summaryMask = el('mask', { id: 'map-summary-mask', maskUnits: 'userSpaceOnUse', maskContentUnits: 'userSpaceOnUse' }, svg.querySelector('defs'));
-    G.summary.setAttribute('mask', 'url(#map-summary-mask)'); G['summary-hits'].setAttribute('mask', 'url(#map-summary-mask)');
     const regionMask = el('mask', { id: 'map-region-mask', maskUnits: 'userSpaceOnUse', maskContentUnits: 'userSpaceOnUse' }, svg.querySelector('defs'));
-    for (const g of [G.edges, G['edge-hits'], G.cmp, G.contexts, G.life, G.trail, G.dur]) g.setAttribute('mask', 'url(#map-region-mask)');
+    const MASKED_GROUPS = [G.edges, G['edge-hits'], G.cmp, G.contexts, G.life, G.trail, G.dur];
+    let masksActive = false;
+    const setMasks = (onMask) => {
+      if (masksActive === onMask) return;
+      masksActive = onMask;
+      if (onMask) {
+        G.summary.setAttribute('mask', 'url(#map-summary-mask)');
+        G['summary-hits'].setAttribute('mask', 'url(#map-summary-mask)');
+        for (const g of MASKED_GROUPS) g.setAttribute('mask', 'url(#map-region-mask)');
+      } else {
+        G.summary.removeAttribute('mask');
+        G['summary-hits'].removeAttribute('mask');
+        for (const g of MASKED_GROUPS) g.removeAttribute('mask');
+      }
+    };
+    let zoomActive = false, zoomTimer = 0, summarySnap = null;
+    const markZooming = () => {
+      if (!zoomActive) {
+        zoomActive = true;
+        stage.classList.add('is-zooming');
+      }
+      clearTimeout(zoomTimer);
+      zoomTimer = setTimeout(() => {
+        zoomTimer = 0;
+        if (!zoomActive) return;
+        zoomActive = false;
+        stage.classList.remove('is-zooming');
+        if (!destroyed) schedule();
+      }, 140);
+    };
     const directory = q('.map-directory');
     const tip = q('.map-tip');
     const edgePop = q('.map-edge-pop');
@@ -552,8 +580,8 @@ export default {
       }
       // На «Всей истории» названия туманностей важнее подписей стилей: ставятся первыми, подписи их обходят.
       const nebNamesFirst = neb.ready && nebOn && detail.labels < 0.65;
-      G.nebnames.replaceChildren();
       regionNames.clear();
+      if (!neb.ready || !nebOn) hideNebulaNames(G.nebnames);
       const placeNebNames = (labelBoxes) => {
         const reserved = uiBox.mm[1] > uiBox.mm[0] ? [[uiBox.mm[0], uiBox.mm[2], uiBox.mm[1], uiBox.mm[3]]] : [];
         if (panelWidth()) reserved.push([vw - panelWidth(), AXIS_H, vw, vh]);
@@ -636,11 +664,19 @@ export default {
       drawOffscreen();
       updateFitButton();
       drawMinimapFrame();
-      if (focusedRegion) [...G.nebnames.querySelectorAll('.region-name')].find((n) => n.dataset.region === focusedRegion)?.focus({ preventScroll: true });
+      if (focusedRegion) {
+        const cur = [...G.nebnames.querySelectorAll('.region-name')].find((n) => n.dataset.region === focusedRegion && n.style.visibility !== 'hidden');
+        if (cur && document.activeElement !== cur) cur.focus({ preventScroll: true });
+      }
       if (focusedSummary) [...G['summary-hits'].children].find((n) => n.dataset.key === focusedSummary)?.focus({ preventScroll: true });
     }
 
     function updateRegionMasks() {
+      if (zoomActive || regionNames.size === 0) {
+        setMasks(false);
+        return;
+      }
+      setMasks(true);
       for (const [mask, w, h, project] of [[summaryMask, pw, ph, (b) => b], [regionMask, vw, vh, fromNameBox]]) {
         mask.replaceChildren();
         for (const [k, value] of Object.entries({ x: 0, y: 0, width: w, height: h })) mask.setAttribute(k, value);
@@ -654,12 +690,37 @@ export default {
     }
     function drawSummary() {
       const inactive = !neb.ready || !nebOn || detail.aggregates < 0.15 || linkMode === 'none' || selected;
-      const key = inactive ? 'off' : `${detail.aggregates.toFixed(2)}|${linkMode}|${verifiedOnly}|${regionHover ?? ''}|${t.k.toFixed(4)}|${Math.round(t.tx)}|${Math.round(t.ty)}|${filter.domain}|${filter.family}`;
-      if (key === lastSummaryKey) return;
+      if (inactive) {
+        if (lastSummaryKey !== 'off') {
+          lastSummaryKey = 'off';
+          summarySnap = null;
+          G.summary.style.opacity = '';
+          G.summary.replaceChildren(); G['summary-hits'].replaceChildren();
+          aggregateLinks = [];
+        }
+        return;
+      }
+      // Во время активного зума не перестраиваем обзорные дуги summaryCurve на каждом кадре:
+      // растягиваем уже отрисованный слой аффинной матрицей и пересчитываем один раз после паузы.
+      if (zoomActive && !rot && summarySnap && summarySnap.rot === rot) {
+        const sy = syOf(t.k);
+        const ax = t.k / summarySnap.k, ay = sy / summarySnap.sy;
+        const dx = t.tx - summarySnap.tx * ax;
+        const dy = (AXIS_H + t.ty) - (AXIS_H + summarySnap.ty) * ay;
+        G.summary.setAttribute('transform', `matrix(${ax.toFixed(4)},0,0,${ay.toFixed(4)},${dx.toFixed(1)},${dy.toFixed(1)})`);
+        G.summary.style.opacity = Math.min(1, detail.aggregates / Math.max(0.15, summarySnap.agg)).toFixed(3);
+        return;
+      }
+      const key = `${detail.aggregates.toFixed(2)}|${linkMode}|${verifiedOnly}|${regionHover ?? ''}|${t.k.toFixed(4)}|${Math.round(t.tx)}|${Math.round(t.ty)}|${filter.domain}|${filter.family}`;
+      if (key === lastSummaryKey) {
+        G.summary.style.opacity = '';
+        return;
+      }
       lastSummaryKey = key;
+      G.summary.style.opacity = '';
       G.summary.replaceChildren(); G['summary-hits'].replaceChildren();
       aggregateLinks = [];
-      if (inactive) return;
+      summarySnap = { k: t.k, sy: syOf(t.k), tx: t.tx, ty: t.ty, rot, agg: detail.aggregates };
       const records = [
         ...edges.map((e) => ({ from: e.par.s.id, to: e.ch.s.id, kind: 'history', primary: e.primary, status: e.rel.status, info: { edge: e } })),
         ...cmps.map((c) => ({ from: c.a.s.id, to: c.b.s.id, kind: 'comparison', info: { cmp: c } })),
@@ -1152,12 +1213,15 @@ export default {
       let last = performance.now();
       const step = (now) => {
         const { k, px, py } = wheelTarget;
+        const dt = Math.max(8, Math.min(64, now - last));
         const gap = Math.log(k / t.k);
         const done = Math.abs(gap) < 0.001;
-        const nextK = done ? k : t.k * Math.exp(gap * (1 - Math.exp(-(now - last) / 70)));
+        const nextK = done ? k : t.k * Math.exp(gap * (1 - Math.exp(-dt / 70)));
         last = now;
         Object.assign(t, zoomTransformAt(px, py, nextK));
-        clampT(); draw();
+        clampT();
+        if (raf) { cancelAnimationFrame(raf); raf = 0; }
+        draw();
         if (done) { anim = 0; wheelTarget = null; }
         else anim = requestAnimationFrame(step);
       };
@@ -1174,7 +1238,9 @@ export default {
         t.k = Math.exp(Math.log(from.k) + (Math.log(k) - Math.log(from.k)) * e);
         t.tx = from.tx + (tx - from.tx) * e;
         t.ty = from.ty + (ty - from.ty) * e;
-        clampT(); draw();
+        clampT();
+        if (raf) { cancelAnimationFrame(raf); raf = 0; }
+        draw();
         if (p < 1) anim = requestAnimationFrame(step);
       };
       anim = requestAnimationFrame(step);
@@ -1549,11 +1615,11 @@ export default {
       if (!pointers.has(e.pointerId)) {
         if (uiTarget(e)) return;
         if (e.target.closest('.summary-hit')) return;
-        if (neb.ready && detail.nodes < 0.15 && e.pointerType === 'mouse') {
+        if (!zoomActive && !wheelTarget && neb.ready && detail.nodes < 0.15 && e.pointerType === 'mouse') {
           const pt = toV(e.clientX, e.clientY);
           const next = nebulaRegionAt(pt.x, pt.y, nebulaCam(), detail.level === 'parts');
           if (next !== regionHover) { regionHover = next; schedule(); }
-        } else if (regionHover) { regionHover = null; schedule(); }
+        } else if (!zoomActive && !wheelTarget && regionHover) { regionHover = null; schedule(); }
         const nodeEl = e.target.closest('.node, .label');
         if (nodeEl && e.pointerType === 'mouse') {
           const id = nodeEl.dataset.id;
@@ -1566,6 +1632,7 @@ export default {
       }
       pointers.set(e.pointerId, { x: e.clientX, y: e.clientY });
       if (pinch && pointers.size >= 2) {
+        markZooming();
         const [a, b] = [...pointers.values()];
         const dist = Math.hypot(a.x - b.x, a.y - b.y);
         const k2 = clamp(pinch.k * (dist / pinch.d), Math.min(k0 * 0.9, pinch.k), MAX_K);
@@ -1613,6 +1680,7 @@ export default {
       hideTip();
       if (nativeGesture) return; // Safari может послать и wheel в той же последовательности.
       if (!Number.isFinite(e.deltaY) || e.deltaY === 0) return;
+      markZooming();
       const p = toV(e.clientX, e.clientY);
       // Chromium передаёт щипок небольшими пиксельными ctrl+wheel: сохраняем
       // прямой отклик. Крупные шаги мыши, в том числе с Ctrl/⌘, сглаживаем.
@@ -1631,12 +1699,14 @@ export default {
       e.preventDefault();
       stopAnimation(); clearTimeout(flightTimer);
       hideTip();
+      markZooming();
       nativeGesture = { scale: 1, point: gesturePoint(e) };
     }, { passive: false });
     on(stage, 'gesturechange', (e) => {
       if (!nativeGesture) return;
       e.preventDefault();
       if (pointers.size || !Number.isFinite(e.scale) || e.scale <= 0) return;
+      markZooming();
       const p = gesturePoint(e);
       zoomAt(p.x, p.y, e.scale / nativeGesture.scale);
       nativeGesture = { scale: e.scale, point: p };
@@ -1832,7 +1902,7 @@ export default {
       },
       destroy() {
         destroyed = true;
-        cancelAnimationFrame(raf); stopAnimation(); clearTimeout(tipTimer); clearTimeout(flightTimer);
+        cancelAnimationFrame(raf); stopAnimation(); clearTimeout(tipTimer); clearTimeout(flightTimer); clearTimeout(zoomTimer);
         cleanups.forEach((f) => f());
       },
     };

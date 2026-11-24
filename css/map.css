@@ -376,15 +376,12 @@ body[data-view="map"] .site-footer { display: none; }
 /* Масштаб меняет предмет чтения: моря → части → отдельные эстетики. */
 .mm-box.is-quiet { display: none; }
 .label, .plate { transition: none; }
-.m-nebnames .region-name { pointer-events: visiblePainted; cursor: pointer; outline: none; }
-.region-name:hover, .region-name:focus-visible { filter: brightness(0.75); text-decoration: underline; text-underline-offset: 4px; }
-:root[data-theme="dark"] .region-name:hover, :root[data-theme="dark"] .region-name:focus-visible { filter: brightness(1.25); }
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) .region-name:hover,
-  :root:not([data-theme="light"]) .region-name:focus-visible { filter: brightness(1.25); }
-}
-.summary-case { fill: none; stroke: var(--paper); stroke-linecap: round; pointer-events: none; }
-.summary-line { fill: none; stroke: var(--ink-2); stroke-dasharray: 5 6; stroke-linecap: round; pointer-events: none; }
+.m-nebnames .region-name { pointer-events: visiblePainted; cursor: pointer; outline: none; fill: var(--rn-fill); fill-opacity: var(--rn-op, 0.9); paint-order: stroke; stroke-linejoin: round; }
+.region-name:hover, .region-name:focus-visible { fill: var(--ink); fill-opacity: 1; text-decoration: underline; text-underline-offset: 4px; }
+.map-stage.is-zooming .m-nebnames .region-name,
+.map-stage.is-zooming .m-summary-hits .summary-hit { pointer-events: none; }
+.summary-case { fill: none; stroke: var(--paper); stroke-linecap: round; pointer-events: none; vector-effect: non-scaling-stroke; }
+.summary-line { fill: none; stroke: var(--ink-2); stroke-dasharray: 5 6; stroke-linecap: round; pointer-events: none; vector-effect: non-scaling-stroke; }
 .summary-port { fill: var(--paper); stroke: var(--ink-2); stroke-width: 1.1; pointer-events: none; }
 .summary-hit { fill: none; stroke: transparent; stroke-width: 16; pointer-events: stroke; cursor: pointer; outline: none; }
 .summary-hit:focus-visible { stroke: var(--accent); stroke-width: 2; stroke-dasharray: 3 5; }

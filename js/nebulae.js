@@ -591,25 +591,48 @@ const MAX_ANG = 0.22;   // наклон названия на экране, ра
     }
     return out;
   }
+  const namePools = new WeakMap();
+  function hideNames(g) {
+    const pool = namePools.get(g);
+    if (!pool) return;
+    for (const entry of pool.items.values()) {
+      if (!entry.visible) continue;
+      entry.visible = false;
+      entry.interactive = false;
+      entry.tab = '-1';
+      entry.text.style.visibility = 'hidden';
+      entry.text.style.pointerEvents = 'none';
+      entry.text.setAttribute('tabindex', '-1');
+      entry.text.setAttribute('aria-hidden', 'true');
+    }
+  }
   // Возвращает рамки поставленных названий ([x0, y0, x1, y1]) — чтобы подписи стилей их обходили.
+  // DOM-узлы .region-name и их <textPath> переиспользуются на месте и скрываются через visibility:hidden,
+  // а не удаляются на каждом кадре: иначе в Safari/Chrome при наведении на название моря обрывается
+  // захват цели колеса/жеста (wheel target latching) и зум почти останавливается.
   function names(g, v) {
-    if (!washFar) return [];
+    if (!washFar) { hideNames(g); return []; }
     const k = v.kx, t1 = v.detail?.partMix ?? sstep(0.62, 0.95, k), t2 = sstep(1.45, 2.05, k);
-    if (v.detail ? v.detail.seaNames + v.detail.partNames < 0.02 : t2 > 0.6) return [];
+    if (v.detail ? v.detail.seaNames + v.detail.partNames < 0.02 : t2 > 0.6) { hideNames(g); return []; }
+    let pool = namePools.get(g);
+    if (!pool || !pool.defs?.isConnected) {
+      g.replaceChildren();
+      pool = { defs: v.svg('defs', {}, g), items: new Map() };
+      namePools.set(g, pool);
+    }
     // hard — с запасом между названиями; tight — без запаса: на него переходим, если иначе названию не нашлось места.
     const hard = new BoxIdx(v.w, v.h), tight = new BoxIdx(v.w, v.h), soft = new BoxIdx(v.w, v.h);
     // Запасной вариант уплотняет названия областей, сохраняя отступ от подписей стилей.
     for (const b of v.labelBoxes || []) { const padded = [b[0] - 6, b[1] - 4, b[2] + 6, b[3] + 4]; hard.add(padded); tight.add(padded); }
     for (const b of v.dotBoxes || []) { hard.add(b); tight.add(b); }
     for (const b of v.reserved || []) { hard.add(b); tight.add(b); }
-    const defs = v.svg('defs', {}, g);
     const sets = [];
     // Два набора названий не показываются вместе: перетекание — в узком окне t1 ∈ [0.4, 0.6].
     const fFar = v.detail?.seaNames ?? Math.min(1, Math.max(0, (0.6 - t1) / 0.2)), fPart = v.detail?.partNames ?? Math.min(1, Math.max(0, (t1 - 0.4) / 0.2));
     if (fFar > 0.02) sets.push({ regs: nebRegs, op: fFar, far: true });
     if (fPart > 0.02) sets.push({ regs: partRegs, op: fPart * (1 - 0.35 * t2), far: false });
     if (sets.length === 2 && t1 > 0.5) sets.reverse();
-    let uid = 0;
+    const seen = new Set();
     const placed = [];
     for (const set of sets) {
       const regs = set.regs.slice().sort((a, b) => b.area - a.area);
@@ -620,9 +643,21 @@ const MAX_ANG = 0.22;   // наклон названия на экране, ра
         const best = placeName(r, v, set.far, hard, soft, t2) || placeName(r, v, set.far, tight, soft, t2);
         if (!best) continue;
         for (const bx of best.boxes) { hard.add([bx[0] - 5, bx[1] - 3, bx[2] + 5, bx[3] + 3]); tight.add(bx); placed.push(bx); }
-        renderName(g, defs, v, r, best, set.op * (set.far ? 1 : 0.95), uid++, set.far);
+        const key = `${r.kind}:${r.id}`;
+        seen.add(key);
+        renderName(pool, g, v, r, best, set.op * (set.far ? 1 : 0.95), set.far, key);
         v.onName?.({ kind: r.kind, id: r.id, name: r.name, members: r.members, x: best.cx, y: best.cy, boxes: best.boxes });
       }
+    }
+    for (const [key, entry] of pool.items) {
+      if (seen.has(key) || !entry.visible) continue;
+      entry.visible = false;
+      entry.interactive = false;
+      entry.tab = '-1';
+      entry.text.style.visibility = 'hidden';
+      entry.text.style.pointerEvents = 'none';
+      entry.text.setAttribute('tabindex', '-1');
+      entry.text.setAttribute('aria-hidden', 'true');
     }
     return placed;
   }
@@ -726,16 +761,49 @@ const MAX_ANG = 0.22;   // наклон названия на экране, ра
     ang = Math.max(-MAX_ANG, Math.min(MAX_ANG, ang));
     return { x: mx, y: my, ang, L: 2 * Math.sqrt(Math.max(cxx, cyy) / sw) };
   }
-  function renderName(g, defs, v, r, best, op, uid, far) {
+  function renderName(pool, g, v, r, best, op, far, key) {
     const { c, cx, cy, ang, curv } = best, fs = c.fs, lh = fs * 1.18, nL = c.lines.length;
     const ux = Math.cos(ang), uy = Math.sin(ang), nx = -uy, ny = ux;
-    const t = v.svg('text', { 'text-anchor': 'middle', style: `font:italic ${far ? 500 : 500} ${fs.toFixed(1)}px Spectral, Georgia, serif;letter-spacing:${c.ls.toFixed(2)}px;fill:${r.ink};fill-opacity:${(op * (far ? 0.92 : 0.9)).toFixed(3)};paint-order:stroke;stroke:${P.paper};stroke-opacity:${(op * 0.55).toFixed(3)};stroke-width:${far ? 3.2 : 2.6}px;stroke-linejoin:round` }, null);
-    t.classList.add('region-name');
-    t.dataset.region = `${r.kind}:${r.id}`;
-    t.setAttribute('role', 'button'); t.setAttribute('tabindex', op > 0.2 ? '0' : '-1');
-    t.setAttribute('aria-hidden', String(op < 0.15));
-    if (op < 0.15) t.style.pointerEvents = 'none';
-    t.setAttribute('aria-label', `${r.name}. Карточек: ${r.members.length}. Приблизить`);
+    let entry = pool.items.get(key);
+    if (!entry) {
+      const text = v.svg('text', { 'text-anchor': 'middle', role: 'button' }, g);
+      text.classList.add('region-name');
+      text.dataset.region = key;
+      entry = { text, paths: [], tps: [], ds: [], txts: [], sig: '', visible: true, interactive: null, tab: '', aria: '' };
+      pool.items.set(key, entry);
+    }
+    const qFs = (Math.round(fs * 2) / 2).toFixed(1);
+    const qLs = (Math.round(c.ls * 5) / 5).toFixed(1);
+    const fillOp = (op * (far ? 0.92 : 0.9)).toFixed(3);
+    const strokeOp = (op * 0.55).toFixed(3);
+    const strokeW = far ? '3.2px' : '2.6px';
+    const sig = `${qFs}|${qLs}|${r.ink}|${fillOp}|${P.paper}|${strokeOp}|${strokeW}`;
+    if (entry.sig !== sig) {
+      entry.sig = sig;
+      const st = entry.text.style;
+      st.font = `italic 500 ${qFs}px Spectral, Georgia, serif`;
+      st.letterSpacing = `${qLs}px`;
+      st.setProperty('--rn-fill', r.ink);
+      st.setProperty('--rn-op', fillOp);
+      st.stroke = P.paper;
+      st.strokeOpacity = strokeOp;
+      st.strokeWidth = strokeW;
+    }
+    if (!entry.visible) {
+      entry.visible = true;
+      entry.text.style.visibility = '';
+    }
+    const interactive = op >= 0.15;
+    if (entry.interactive !== interactive) {
+      entry.interactive = interactive;
+      entry.text.style.pointerEvents = interactive ? '' : 'none';
+      entry.text.setAttribute('aria-hidden', String(!interactive));
+    }
+    const tab = op > 0.2 ? '0' : '-1';
+    if (entry.tab !== tab) { entry.tab = tab; entry.text.setAttribute('tabindex', tab); }
+    const aria = `${r.name}. Карточек: ${r.members.length}. Приблизить`;
+    if (entry.aria !== aria) { entry.aria = aria; entry.text.setAttribute('aria-label', aria); }
+
     for (let li = 0; li < nL; li++) {
       const ln = c.lines[li], wid = ln.w * fs / 100 + c.ls * ln.n, T2 = wid / 2 + 40;
       // базовая линия ниже оси на полвысоты строчных/прописных букв
@@ -743,15 +811,32 @@ const MAX_ANG = 0.22;   // наклон названия на экране, ра
       const P0 = [cx - ux * T2 + nx * (curv * T2 * T2 + off), cy - uy * T2 + ny * (curv * T2 * T2 + off)];
       const P2 = [cx + ux * T2 + nx * (curv * T2 * T2 + off), cy + uy * T2 + ny * (curv * T2 * T2 + off)];
       const P1 = [cx + nx * (-curv * T2 * T2 + off), cy + ny * (-curv * T2 * T2 + off)];
-      const id = `eng-n${uid}-${li}`;
-      v.svg('path', { id, d: `M${P0[0].toFixed(1)} ${P0[1].toFixed(1)}Q${P1[0].toFixed(1)} ${P1[1].toFixed(1)} ${P2[0].toFixed(1)} ${P2[1].toFixed(1)}`, fill: 'none' }, defs);
-      const tp = v.svg('textPath', { href: `#${id}`, startOffset: '50%' }, t); tp.textContent = li < nL - 1 ? ln.s + ' ' : ln.s;
+      const d = `M${P0[0].toFixed(1)} ${P0[1].toFixed(1)}Q${P1[0].toFixed(1)} ${P1[1].toFixed(1)} ${P2[0].toFixed(1)} ${P2[1].toFixed(1)}`;
+      if (!entry.paths[li]) {
+        const id = `eng-n-${r.kind}-${r.id}-${li}`;
+        entry.paths[li] = v.svg('path', { id, d, fill: 'none' }, pool.defs);
+        entry.tps[li] = v.svg('textPath', { href: `#${id}`, startOffset: '50%' }, entry.text);
+        entry.ds[li] = d;
+      } else if (entry.ds[li] !== d) {
+        entry.ds[li] = d;
+        entry.paths[li].setAttribute('d', d);
+      }
+      const txt = li < nL - 1 ? ln.s + ' ' : ln.s;
+      if (entry.txts[li] !== txt) {
+        entry.txts[li] = txt;
+        entry.tps[li].textContent = txt;
+      }
     }
-    g.appendChild(t);
+    for (let li = nL; li < entry.tps.length; li++) {
+      if (entry.txts[li] !== '') {
+        entry.txts[li] = '';
+        entry.tps[li].textContent = '';
+      }
+    }
   }
 
   export { edt, contours, chaikin, rdp, components };
-export { init as initNebulae, draw as drawNebulae, names as drawNebulaNames };
+export { init as initNebulae, draw as drawNebulae, names as drawNebulaNames, hideNames as hideNebulaNames };
 // Группы без членов (например, нет «свободных звёзд») поле не строят.
 export const keepNonEmpty = (groups) => groups.filter((g) => g.idx.length);
 export function disposeNebulae() { initVersion++; washFar = washMid = null; nebRegs = []; partRegs = []; cache = null; clearTimeout(timer); lastCam = null; }
