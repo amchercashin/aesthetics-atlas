@@ -874,6 +874,10 @@
         - 89plus-glover-sankofa
   corpus:
     - workId: adinkra-bm-af1935-1005-2
+      asset: assets/works/adinkra-bm-af1935-1005-2.jpg
+      credit: "The British Museum; каталог Met, 2008, с. 49"
+      license: Репродукция из музейного каталога, свободная лицензия не указана
+      nonfree: true
       title: Полотно адинкра, Af1935,1005.2
       author: Мастер асанте; имя не указано
       year: 1934 — предметная запись; I четверть XX века — каталог 2008
@@ -888,12 +892,15 @@
         знаков. Анализ ограничен видимой частью полотна.
       place: The British Museum
       rights:
-        embed: false
-        reviewed: "2026-10-14"
+        reviewed: "2026-11-24"
         note: >-
-          Просмотрена фотографическая деталь на печатной с. 49 музейного каталога 2008. Она не считается
+          Показана фотографическая деталь на печатной с. 49 музейного каталога 2008. Она не считается
           отдельным произведением.
     - workId: adinkra-met-2015-614-6
+      asset: assets/works/adinkra-met-2015-614-6.jpg
+      credit: The Metropolitan Museum of Art
+      license: Музейная фотография, свободная лицензия не указана
+      nonfree: true
       title: Adinkra prestige cloth, 2015.614.6
       author: Мастер асанте-акан; имя не указано
       year: 1960-е
@@ -906,10 +913,12 @@
         отделяют группы этих полей.
       place: The Metropolitan Museum of Art
       rights:
-        embed: false
-        reviewed: "2026-10-14"
-        note: Репродукция доступна на предметной странице источника.
+        reviewed: "2026-11-24"
     - workId: adinkra-glover-sankofa
+      asset: assets/works/adinkra-glover-sankofa.jpg
+      credit: 89plus / Google Arts & Culture
+      license: Репродукция проекта, свободная лицензия не указана
+      nonfree: true
       title: Sankofa Adinkra symbol drawn by artist Ablade Glover
       author: Абладе Гловер — рисунок; Ханс Ульрих Обрист — проект
       year: 2015-07-31 — дата цифровой записи проекта
@@ -923,11 +932,13 @@
         поверх орнаментальной ткани. Фон не посчитан дополнительной работой.
       place: 89plus
       rights:
-        embed: false
-        reviewed: "2026-10-14"
-        note: Репродукция доступна на предметной странице источника.
+        reviewed: "2026-11-24"
   example:
     workId: adinkra-met-2015-614-6
+    asset: assets/works/adinkra-met-2015-614-6.jpg
+    credit: The Metropolitan Museum of Art
+    license: Музейная фотография, свободная лицензия не указана
+    nonfree: true
     title: Adinkra prestige cloth, 2015.614.6
     author: Мастер асанте-акан; имя не указано
     year: 1960-е
@@ -940,9 +951,7 @@
       группы этих полей.
     place: The Metropolitan Museum of Art
     rights:
-      embed: false
-      reviewed: "2026-10-14"
-      note: Репродукция доступна на предметной странице источника.
+      reviewed: "2026-11-24"
   compare:
     - id: asante-kente
       note: >-
@@ -991,10 +1000,11 @@
       - met-african-textiles-2008
   review:
     status: reviewed
-    date: "2026-11-09"
+    date: "2026-11-24"
     scope: [relations, dates, text, images, gallery, corpus]
     note: >-
       Корпус — 14.10.2026: Просмотрены ткань Met, опубликованная деталь British Museum и рисунок Гловера. Две даты исторической ткани расходятся; предметная запись BM заново открыта и прочитана 09.11.2026. Знак не объявлен универсальной манерой всей живописи Гловера или всех тканей акан. Родство не утверждается, связи у записей. 09.11.2026: описание и даты — Метрополитен, галерея — страницы файлов: убрано двойное вхождение ткани; таблица знаков помечена как иллюстрация.
+      24.11.2026. Восстановлены репродукции корпуса и главной работы: деталь Af1935,1005.2 со с. 49 каталога Met 2008, ткань 2015.614.6 из Met и рисунок Sankofa Гловера (89plus / Google Arts & Culture).
   links:
     - title: Adinkra cloth, Af1935,1005.2
       url: https://www.britishmuseum.org/collection/object/E_Af1935-1005-2
@@ -1124,6 +1134,10 @@
         - serpentine-mahlangu-mural-2024
   corpus:
     - workId: ndebele-botshabelo-courtyard-loubser
+      asset: assets/works/ndebele-botshabelo-courtyard.jpg
+      credit: "Фото Annette Loubser; Staffrider 9(4), 1991, с. 61"
+      license: Архивная журнальная публикация, свободная лицензия не указана
+      nonfree: true
       title: Стена внутреннего двора со ступенью, Ботшабело
       author: Автор росписи не указан
       year: "Не позднее 1991: год публикации фотографии; дата выполнения неизвестна"
@@ -1138,13 +1152,15 @@
         Нижняя горизонталь связана со ступенью; исходные цвета по этому снимку не определяются.
       place: Ботшабело, ЮАР
       rights:
-        embed: false
-        reviewed: "2026-10-14"
-        note: Репродукция доступна на предметной странице источника.
+        reviewed: "2026-11-24"
       note: >-
         Фотография Аннет Лубсер. Стена рассматривается по опубликованному фрагменту; жилое или музейное
         назначение ансамбля подпись отдельно не сообщает.
     - workId: ndebele-mahlangu-home-photo-2014
+      asset: assets/works/ndebele-mahlangu-home-2014.jpg
+      credit: "Фото Richard B. Woodward; Virginia Museum of Fine Arts, 2014"
+      license: Музейная фотография, свободная лицензия не указана
+      nonfree: true
       title: Роспись дома Эстер Малангу, фрагмент на фотографии 19 мая 2014
       author: Исполнитель конкретного фрагмента в подписи не указан
       year: "Не позднее 19 мая 2014: дата фотографии; дата росписи неизвестна"
@@ -1157,13 +1173,15 @@
         вложенные формы продолжаются за фигурой хозяйки.
       place: Дом Эстер Малангу, ЮАР
       rights:
-        embed: false
-        reviewed: "2026-10-14"
-        note: Репродукция доступна на предметной странице источника.
+        reviewed: "2026-11-24"
       note: >-
         Фото Richard B. Woodward. Присутствие художницы и расположение у её дома не заменяют отдельную
         атрибуцию каждого фрагмента росписи.
     - workId: ndebele-mahlangu-serpentine-2024
+      asset: assets/works/esther-mural.jpg
+      credit: Serpentine Galleries
+      license: Выставочная фотография, свободная лицензия не указана
+      nonfree: true
       title: Umuntu ngumuntu ngabantu
       author: Эстер Малангу
       year: "2024"
@@ -1176,14 +1194,16 @@
         ступенчатые формы, треугольники и цветные вставки в одну фронтальную композицию.
       place: Serpentine North Garden, Лондон
       rights:
-        embed: false
-        reviewed: "2026-10-14"
-        note: Репродукция доступна на предметной странице источника.
+        reviewed: "2026-11-24"
       note: >-
         Архитектурная выставочная адаптация, а не часть жилого дома. Все шестнадцать панелей и разные
         фотографии проекта посчитаны одной работой.
   example:
     workId: ndebele-mahlangu-serpentine-2024
+    asset: assets/works/esther-mural.jpg
+    credit: Serpentine Galleries
+    license: Выставочная фотография, свободная лицензия не указана
+    nonfree: true
     title: Umuntu ngumuntu ngabantu
     author: Эстер Малангу
     year: "2024"
@@ -1196,9 +1216,7 @@
       ступенчатые формы, треугольники и цветные вставки в одну фронтальную композицию.
     place: Serpentine North Garden, Лондон
     rights:
-      embed: false
-      reviewed: "2026-10-14"
-      note: Репродукция доступна на предметной странице источника.
+      reviewed: "2026-11-24"
     note: >-
       Архитектурная выставочная адаптация, а не часть жилого дома. Все шестнадцать панелей и разные фотографии
       проекта посчитаны одной работой.
@@ -1250,10 +1268,11 @@
       - serpentine-mahlangu-mural-2024
   review:
     status: reviewed
-    date: "2026-11-09"
+    date: "2026-11-24"
     scope: [relations, dates, text, images, gallery, corpus]
     note: >-
       Корпус — 14.10.2026: Все три опубликованных изображения просмотрены. Две даты относятся к документированию, авторы двух фрагментов не установлены; назначение ансамбля Ботшабело и ранняя хронология остаются открытыми. Один снимок монохромен, второй показывает часть домашней стены. Новая карточка не объявляет эти три работы исчерпывающим корпусом ндебеле. Родство не утверждается, связи у записей. 09.11.2026: даты и описание — Serpentine, VMFA, Staffrider; галерея: «Wikimedia» как источник копии снято; фартуки помечены как иллюстрации и не выдаются за источник мотивов.
+      24.11.2026. Восстановлены репродукции корпуса и главной иллюстрации: снимок стены в Ботшабело (Staffrider, 1991, с. 61), снимок дома Малангу (VMFA, 19.05.2014) и Umuntu ngumuntu ngabantu (2024, Serpentine).
   links:
     - title: "Annette Loubser. Contemporary Mural Art: Urban Dislocation and Indifference. Staffrider 9(4), 1991"
       url: https://sahistory.org.za/sites/default/files/archive-files3/stv9n491.pdf
@@ -1374,6 +1393,10 @@
         - rapperswil-wycinanka-lis
   corpus:
     - workId: wycinanki-pme-10509
+      asset: assets/works/wycinanki-pme-10509.jpg
+      credit: "Państwowe Muzeum Etnograficzne w Warszawie; фото Edward Koprowski"
+      license: Музейный каталог 2021, свободная лицензия не указана
+      nonfree: true
       title: Karuzela / «Карусель», PME 10509
       author: Janina Strycharska-Wawrykowicz
       year: Середина XX века
@@ -1388,13 +1411,15 @@
         силуэтами.
       place: Лович, Польша
       rights:
-        embed: false
-        reviewed: "2026-10-14"
-        note: Встроенная репродукция не используется; ссылка ведёт к музейному развороту с подписями.
+        reviewed: "2026-11-24"
       note: >-
         Каталог 2021, илл. 413; выбран один воспроизведённый предмет. Фотограф Edward Koprowski не является
         автором вырезки.
     - workId: wycinanki-pme-16916
+      asset: assets/works/wycinanki-pme-16916.jpg
+      credit: "Państwowe Muzeum Etnograficzne w Warszawie; фото Edward Koprowski"
+      license: Музейный каталог 2021, свободная лицензия не указана
+      nonfree: true
       title: 1 Maja / «Первое мая», PME 16916
       author: Stanisława Bakuła
       year: 1950-е
@@ -1408,13 +1433,15 @@
         внешний контур объединяют повествовательную сцену.
       place: Стшалки, регион Курпе, Польша
       rights:
-        embed: false
-        reviewed: "2026-10-14"
-        note: Встроенная репродукция не используется; ссылка ведёт к музейному развороту с подписями.
+        reviewed: "2026-11-24"
       note: >-
         Каталог 2021, илл. 414; выбран один воспроизведённый предмет. PME 17241 из общей заметки не добавлен
         вторым экземпляром.
     - workId: wycinanki-pme-10574
+      asset: assets/works/wycinanki-pme-10574.jpg
+      credit: "Państwowe Muzeum Etnograficzne w Warszawie; фото K. Wodecka"
+      license: Музейный каталог 2021, свободная лицензия не указана
+      nonfree: true
       title: Wesele / «Свадьба», PME 10574
       author: Elżbieta Żaczek
       year: 1950-е
@@ -1428,13 +1455,15 @@
         костюмов наложены на силуэтные фигуры и повторяются вдоль полосы.
       place: Злакув-Боровы, регион Лович, Польша
       rights:
-        embed: false
-        reviewed: "2026-10-14"
-        note: Встроенная репродукция не используется; ссылка ведёт к музейному развороту с подписями.
+        reviewed: "2026-11-24"
       note: >-
         Каталог 2021, илл. 415; выбран один воспроизведённый предмет. PME 18101 из общей музейной заметки не
         добавлен вторым экземпляром.
     - workId: wycinanki-rapperswil-lis-round
+      asset: assets/works/wycinanki-rapperswil-lis-round.jpg
+      credit: Muzeum Polskie w Rapperswilu / Google Arts & Culture
+      license: Музейная фотография, свободная лицензия не указана
+      nonfree: true
       title: Wycinanka łowicka / Круглая ловичская выцинанка
       author: Krystyna Lis? — музейная атрибуция с вопросительным знаком
       year: Дата не указана
@@ -1447,11 +1476,13 @@
         вставки наложены на общий чёрный рисунок.
       place: Muzeum Polskie w Rapperswilu
       rights:
-        embed: false
-        reviewed: "2026-10-14"
-        note: Репродукция доступна на предметной странице источника.
+        reviewed: "2026-11-24"
   example:
     workId: wycinanki-pme-10574
+    asset: assets/works/wycinanki-pme-10574.jpg
+    credit: "Państwowe Muzeum Etnograficzne w Warszawie; фото K. Wodecka"
+    license: Музейный каталог 2021, свободная лицензия не указана
+    nonfree: true
     title: Wesele / «Свадьба», PME 10574
     author: Elżbieta Żaczek
     year: 1950-е
@@ -1465,9 +1496,7 @@
       костюмов наложены на силуэтные фигуры и повторяются вдоль полосы.
     place: Злакув-Боровы, регион Лович, Польша
     rights:
-      embed: false
-      reviewed: "2026-10-14"
-      note: Встроенная репродукция не используется; ссылка ведёт к музейному развороту с подписями.
+      reviewed: "2026-11-24"
     note: >-
       Каталог 2021, илл. 415; выбран один воспроизведённый предмет. PME 18101 из общей музейной заметки не
       добавлен вторым экземпляром.
@@ -1517,10 +1546,11 @@
       - stl-stanislawa-bakula
   review:
     status: reviewed
-    date: "2026-11-09"
+    date: "2026-11-24"
     scope: [relations, dates, text, images, gallery, corpus]
     note: >-
       Корпус — 14.10.2026: Все четыре репродукции просмотрены; подписи трёх вещей сверены с музейными заметками. Атрибуция Krystyna Lis? остаётся неопределённой, дата этой вещи отсутствует. Обзор охватывает два местных контекста и не заменяет дальнейшие карточки регионов и мастеров. Родство не утверждается, связи у записей. 09.11.2026: даты — Этнографический музей Варшавы; галерея: вместо фотографов указаны авторы работ по страницам файлов.
+      24.11.2026. Восстановлены репродукции четырёх работ корпуса и главной иллюстрации: PME 10509, 16916 и 10574 с разворота каталога Варшавского этнографического музея 2021 года (с. 528–529) и круглая выцинанка музея Рапперсвиля.
   links:
     - title: "Dzieciństwo / Childhood. Каталог собрания, 2021: выцинанки"
       url: https://ethnomuseum.pl/wp-content/uploads/2025/12/Dziecinstwo_Childhood_katalog_rozkladowki1.pdf

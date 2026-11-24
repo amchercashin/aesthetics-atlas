@@ -1923,6 +1923,35 @@
   note: >-
     CC0 1.0; музейная фотография и керамическое произведение XVI века. Источник подтверждает лицензию
     фотографии и соответствие предметному номеру, а не всю историю стиля.
+- id: commons-iznik-kaleido
+  title: Dish with 'Kaleidoscope' Design MET DP166366.jpg
+  publisher: Met / Wikimedia Commons
+  url: >-
+    https://commons.wikimedia.org/wiki/File:Dish_with_%27Kaleidoscope%27_Design_MET_DP166366.jpg
+  sourceType: primary
+  checked: "2026-11-24"
+  note: >-
+    CC0 1.0; музейная фотография и керамическое произведение XVI века (Met 1991.172). Источник подтверждает
+    лицензию фотографии и соответствие предметному номеру, а не всю историю стиля.
+- id: commons-iznik-ship
+  title: Dish with Sailing-Ship Design MET DP-17904-001.jpg
+  publisher: Met / Wikimedia Commons
+  url: >-
+    https://commons.wikimedia.org/wiki/File:Dish_with_Sailing-Ship_Design_MET_DP-17904-001.jpg
+  sourceType: primary
+  checked: "2026-11-24"
+  note: >-
+    CC0 1.0; музейная фотография и керамическое произведение XVII века (Met 66.4.4). Источник подтверждает
+    лицензию фотографии и соответствие предметному номеру, а не всю историю стиля.
+- id: commons-mahlangu-bmw
+  title: BMW 525i Art Car - Esther Mahlangu (1991).jpg
+  publisher: Strainu / Wikimedia Commons
+  url: >-
+    https://commons.wikimedia.org/wiki/File:BMW_525i_Art_Car_-_Esther_Mahlangu_(1991).jpg
+  sourceType: primary
+  checked: "2026-11-24"
+  note: >-
+    Фотография Strainu — CC BY-SA 2.0; изображает BMW 525i Art Car с росписью Эстер Малангу 1991 года.
 - id: xu-sky-project
   title: "Book from the Sky: project record"
   publisher: Xu Bing Studio

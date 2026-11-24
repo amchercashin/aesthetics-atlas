@@ -1508,15 +1508,18 @@
   parents: []
   gallery:
     - asset: assets/works/esther-mural.jpg
-      title: Эстер Малангу. Роспись стены
+      title: Umuntu ngumuntu ngabantu
       author: Эстер Малангу
-      year: год не установлен
-      credit: источник копии не установлен
-      license: права не установлены; образовательное использование
+      year: 2024
+      place: Serpentine North Garden, Лондон
+      credit: Serpentine Galleries
+      license: Выставочная фотография, свободная лицензия не указана
       nonfree: true
       reference: https://www.serpentinegalleries.org/whats-on/dr-esther-mahlangu-umuntu-ngumuntu-ngabantu/
       whyRepresentative: Геометрические поля и чёрные контуры разворачиваются на всей стене.
       sources: [serpentine-mahlangu-mural-2024]
+      rights:
+        reviewed: "2026-11-24"
     - asset: assets/works/esther-pattern.jpg
       title: Эстер Малангу. Серия панно
       author: Эстер Малангу
@@ -1527,14 +1530,6 @@
       reference: https://www.iziko.org.za/news/iziko-museums-of-south-africa-presentsthen-i-knew-i-was-good-at-painting-esthermahlangu-a-retrospective/
       whyRepresentative: Сетка небольших панно с ромбами и полосами показывает перестройку системы.
       sources: [iziko-mahlangu-retrospective]
-    - file: File:BMW 525i Art Car - Esther Mahlangu (1991).jpg
-      title: BMW 525i Art Car
-      author: Эстер Малангу — роспись; BMW — автомобиль
-      year: 1991
-      note: Снимок 2010 года.
-      whyRepresentative: >-
-        Цветные поля и чёрно-белые линии перестроены под изгибы кузова.
-      sources: [mahlangu-bmw-1991]
   summary: >-
     Геометрические поля с чёрно-белыми контурами переносятся между кузовом, прямоугольным холстом и круглой
     поверхностью.
@@ -1560,21 +1555,26 @@
     - "Ясная монументальная графика без мягких градиентов"
   corpus:
     - workId: ma-bmw-1991
+      file: File:BMW 525i Art Car - Esther Mahlangu (1991).jpg
       title: "BMW Art Car: BMW 525i"
       author: Эстер Малангу — роспись; BMW — автомобиль
       year: 1991
       medium: Расписанный автомобиль; полный состав красок в выбранной записи не указан
-      reference: https://www.esthermahlangu.com/bmw-projects/bmw-art-car-1991
       sources:
         - mahlangu-bmw-1991
+        - commons-mahlangu-bmw
       whyRepresentative: >-
         Чёрно-белые контуры и цветные геометрические поля распределены по кузову и согласованы с его
         членением.
       rights:
-        embed: false
-        reviewed: "2026-10-14"
-        note: В атласе дана ссылка на репродукцию у источника.
+        embed: true
+        basis: Фотография Strainu — CC BY-SA 2.0 (Wikimedia Commons); роспись Эстер Малангу 1991 года
+        reviewed: "2026-11-24"
     - workId: ma-untitled-2016
+      asset: assets/works/ma-untitled-2016.jpg
+      credit: El Espacio 23
+      license: Музейная фотография, свободная лицензия не указана
+      nonfree: true
       title: Untitled
       author: Эстер Малангу
       year: 2016
@@ -1587,10 +1587,12 @@
         светлые поля.
       place: El Espacio 23
       rights:
-        embed: false
-        reviewed: "2026-10-14"
-        note: В атласе дана ссылка на репродукцию у источника.
+        reviewed: "2026-11-24"
     - workId: ma-ndebele-2023
+      asset: assets/works/ma-ndebele-2023.jpg
+      credit: Iziko Museums of South Africa
+      license: Музейная фотография, свободная лицензия не указана
+      nonfree: true
       title: Ndebele Abstract — круглый холст из публикации Iziko
       author: Эстер Малангу
       year: 2023
@@ -1603,23 +1605,22 @@
         Орнаментальная система приспособлена к кругу: центральная звезда, вложенные поля и повторяющийся
         наружный пояс.
       rights:
-        embed: false
-        reviewed: "2026-10-14"
-        note: В атласе дана ссылка на репродукцию у источника.
+        reviewed: "2026-11-24"
   example:
     workId: ma-bmw-1991
+    file: File:BMW 525i Art Car - Esther Mahlangu (1991).jpg
     title: "BMW Art Car: BMW 525i"
     author: Эстер Малангу — роспись; BMW — автомобиль
     year: 1991
     medium: Расписанный автомобиль; полный состав красок в выбранной записи не указан
-    reference: https://www.esthermahlangu.com/bmw-projects/bmw-art-car-1991
     sources:
       - mahlangu-bmw-1991
+      - commons-mahlangu-bmw
     whyRepresentative: Чёрно-белые контуры и цветные геометрические поля распределены по кузову и согласованы с его членением.
     rights:
-      embed: false
-      reviewed: "2026-10-14"
-      note: В атласе дана ссылка на репродукцию у источника.
+      embed: true
+      basis: Фотография Strainu — CC BY-SA 2.0 (Wikimedia Commons); роспись Эстер Малангу 1991 года
+      reviewed: "2026-11-24"
   names:
     - Эстер Малангу
   links:
@@ -1651,10 +1652,11 @@
     - { claim: "BMW Art Car, 1991; Ndebele Abstract, 2023", field: dates, source: iziko-mahlangu-retrospective }
   review:
     status: reviewed
-    date: "2026-11-09"
+    date: "2026-11-24"
     scope: [relations, dates, text, images, gallery, corpus]
     note: >-
       Корпус — 14.10.2026: Сверены указанный корпус, атрибуции и пределы текста; репродукции корпуса просмотрены. Историческая генеалогия не утверждается. Родство не утверждается, контексты у записей. 09.11.2026: даты — официальный сайт художницы и Изико; галерея: написание имени приведено к «Малангу», годы копий не установлены.
+      24.11.2026. Восстановлены репродукции корпуса: BMW 525i Art Car показан по снимку Commons (дубль снят из галереи), Untitled 2016 — по El Espacio 23, круглый холст 2023 — по Iziko; мурал в галерее атрибутирован как Umuntu ngumuntu ngabantu 2024 года (Serpentine).
   maturity: established
   labelStatus: editorial-scope-title
   scopeNote: >-

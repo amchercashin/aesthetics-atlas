@@ -1550,6 +1550,10 @@
         note: Лицензия относится к указанной репродукции, не ко всем изображениям традиции.
       file: Kente Cloth MET 1972.56.1.jpeg
     - workId: asante-kente-2010-556
+      asset: assets/works/asante-kente-2010-556.jpg
+      credit: The Metropolitan Museum of Art
+      license: Музейная фотография, свободная лицензия не указана
+      nonfree: true
       title: Man’s kente, 2010.556
       author: Мастер асанте-акан; имя не указано
       year: начало XX века
@@ -1562,10 +1566,12 @@
         прямоугольную композицию.
       place: The Metropolitan Museum of Art
       rights:
-        embed: false
-        reviewed: "2026-10-14"
-        note: Репродукция доступна на предметной странице источника.
+        reviewed: "2026-11-24"
     - workId: asante-kente-2023-329
+      asset: assets/works/asante-kente-2023-329.jpg
+      credit: The Metropolitan Museum of Art
+      license: Музейная фотография, свободная лицензия не указана
+      nonfree: true
       title: Royal man’s kente, 2023.329
       author: Мастер асанте-акан; имя не указано
       year: около 1910–1940
@@ -1578,10 +1584,13 @@
         текста, не из догадки по пикселям.
       place: The Metropolitan Museum of Art
       rights:
-        embed: false
-        reviewed: "2026-10-14"
-        note: Репродукция доступна на предметной странице источника.
+        reviewed: "2026-11-24"
+        note: Использовано превью в единственном размере, доступном на странице Met.
     - workId: asante-kente-1993-384-2
+      asset: assets/works/asante-kente-1993-384-2.jpg
+      credit: The Metropolitan Museum of Art
+      license: Музейная фотография, свободная лицензия не указана
+      nonfree: true
       title: Wrapper, 1993.384.2
       author: Мастер асанте-акан; имя не указано
       year: XX век
@@ -1594,9 +1603,7 @@
         меняющимся цветовым ритмом.
       place: The Metropolitan Museum of Art
       rights:
-        embed: false
-        reviewed: "2026-10-14"
-        note: Репродукция доступна на предметной странице источника.
+        reviewed: "2026-11-24"
   example:
     workId: asante-kente-1972-56-1
     title: "Кенте 1972.56.1: фотографическая деталь"
@@ -1657,10 +1664,11 @@
       - met-african-textiles-2008
   review:
     status: reviewed
-    date: "2026-11-09"
+    date: "2026-11-24"
     scope: [relations, dates, text, images, gallery, corpus]
     note: >-
       Корпус — 14.10.2026: Прочитаны четыре записи и соответствующие разделы музейного каталога; просмотрены четыре полотна. Для двух предметов доступно только небольшое превью, поэтому анализ ограничен общей композицией. Встроена только проверенная CC0-репродукция 1972.56.1. Родство не утверждается, связи у записей. 09.11.2026: описание и даты — Метрополитен. Галерея: подписаны снимки, ткачество помечено как иллюстрация.
+      24.11.2026. Восстановлены музейные репродукции Met для 2010.556, 2023.329 (в доступном превью) и 1993.384.2.
   links:
     - title: Man’s kente, 1972.56.1, XIX век
       url: https://www.metmuseum.org/art/collection/search/85576
@@ -1771,6 +1779,10 @@
         - cma-diarra-2016-49
   corpus:
     - workId: bogolan-met-1979-206-190
+      asset: assets/works/bogolan-met-1979-206-190.jpg
+      credit: The Metropolitan Museum of Art
+      license: Музейная фотография, свободная лицензия не указана
+      nonfree: true
       title: Bògòlanfini, 1979.206.190
       author: Мастер бамана; имя не указано
       year: первая половина XX века
@@ -1783,10 +1795,12 @@
         детали здесь не анализируются.
       place: The Metropolitan Museum of Art
       rights:
-        embed: false
-        reviewed: "2026-10-14"
-        note: Репродукция доступна на предметной странице источника.
+        reviewed: "2026-11-24"
     - workId: bogolan-met-2000-160-60
+      asset: assets/works/bogolan-met-2000-160-60.jpg
+      credit: The Metropolitan Museum of Art
+      license: Музейная фотография, свободная лицензия не указана
+      nonfree: true
       title: Wrapper (Bogolanfini), 2000.160.60
       author: Мастер бамана; имя не указано
       year: XX век
@@ -1799,10 +1813,12 @@
         центрального заполнения.
       place: The Metropolitan Museum of Art
       rights:
-        embed: false
-        reviewed: "2026-10-14"
-        note: Репродукция доступна на предметной странице источника.
+        reviewed: "2026-11-24"
     - workId: bogolan-diarra-1987
+      asset: assets/works/bogolan-diarra-1987.jpg
+      credit: Cleveland Museum of Art
+      license: Музейная фотография, свободная лицензия не указана
+      nonfree: true
       title: Koumi Diosseni Kandian (Koumi Diossé, The Long-Necked), 2016.48
       author: Накунте Диарра
       year: 1987
@@ -1815,10 +1831,12 @@
         геометрические мотивы заполняют крупную схему.
       place: Cleveland Museum of Art
       rights:
-        embed: false
-        reviewed: "2026-10-14"
-        note: Репродукция доступна на предметной странице источника.
+        reviewed: "2026-11-24"
     - workId: bogolan-diarra-1988
+      asset: assets/works/bogolan-diarra-1988.jpg
+      credit: Cleveland Museum of Art
+      license: Музейная фотография, свободная лицензия не указана
+      nonfree: true
       title: Surakamuso Kunkoro Talan (The Mauritanian Woman’s Head Pillow), 2016.49
       author: Накунте Диарра
       year: 1988
@@ -1831,11 +1849,13 @@
         сохраняется внутри регулярной сетки.
       place: Cleveland Museum of Art
       rights:
-        embed: false
-        reviewed: "2026-10-14"
-        note: Репродукция доступна на предметной странице источника.
+        reviewed: "2026-11-24"
   example:
     workId: bogolan-diarra-1988
+    asset: assets/works/bogolan-diarra-1988.jpg
+    credit: Cleveland Museum of Art
+    license: Музейная фотография, свободная лицензия не указана
+    nonfree: true
     title: Surakamuso Kunkoro Talan, 2016.49
     author: Накунте Диарра
     year: 1988
@@ -1846,9 +1866,7 @@
     whyRepresentative: Чётко видны различия между центральным заполнением и боковыми полосами; музей называет автора и технику.
     place: Cleveland Museum of Art
     rights:
-      embed: false
-      reviewed: "2026-10-14"
-      note: Репродукция доступна на предметной странице источника.
+      reviewed: "2026-11-24"
   compare: []
   evidence:
     - claim: Музей различает сшитую хлопчатую основу и нанесение рисунка с растительными составами и глиной.
@@ -1882,10 +1900,11 @@
       - met-african-textiles-2008
   review:
     status: reviewed
-    date: "2026-11-09"
+    date: "2026-11-24"
     scope: [relations, dates, text, images, gallery, corpus]
     note: >-
       Корпус — 14.10.2026: Сверены указанные предметные записи, материалы и пределы датировок. Репродукции корпуса просмотрены; формальные наблюдения относятся к выбранным примерам. Родство не утверждается, связи у записей. 09.11.2026: описание и даты — Метрополитен и Кливлендский музей. Галерея: снимок человека в однотонной накидке снят (Р2): узора боголанфини на нём не видно.
+      24.11.2026. Восстановлены репродукции четырёх работ корпуса и главной иллюстрации по музейным записям Met (1979.206.190, 2000.160.60) и Cleveland Museum of Art (2016.48, 2016.49).
   links:
     - title: Bògòlanfini, 1979.206.190, первая половина XX века
       url: https://www.metmuseum.org/art/collection/search/312395
