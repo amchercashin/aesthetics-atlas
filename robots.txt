@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://amchercashin.github.io/aesthetics-atlas/sitemap.xml

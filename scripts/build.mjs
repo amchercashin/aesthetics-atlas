@@ -14,6 +14,7 @@ import { resolveLocalAssets } from './lib/local-images.mjs';
 import { mirrorWikimediaAssets } from './lib/mirror-media.mjs';
 import { writeSplitAtlas } from './lib/split-atlas.mjs';
 import { stampAssets } from './lib/stamp.mjs';
+import { generatePages } from './generate-pages.mjs';
 import { worksOf, imageUsage } from './lib/works.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
@@ -215,4 +216,5 @@ const atlas = {
 };
 const written = writeSplitAtlas(ROOT, atlas, stats);
 const stamped = stampAssets(ROOT, written.version);
-console.log(`Wrote data/index.json (${(written.indexBytes / 1024).toFixed(0)} KB) + ${written.styleCount} data/styles/*.json (v=${written.version}); stamped ${stamped.jsCount} JS + ${stamped.cssCount} CSS in index.html`);
+const pages = generatePages(ROOT, atlas);
+console.log(`Wrote data/index.json (${(written.indexBytes / 1024).toFixed(0)} KB) + ${written.styleCount} data/styles/*.json (v=${written.version}); stamped ${stamped.jsCount} JS + ${stamped.cssCount} CSS; generated ${pages.totalPages} pages in s/ (${pages.written} updated)`);

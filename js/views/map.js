@@ -705,7 +705,7 @@ export default {
     function showSummaryInfo(group, px, py) {
       if (!group) return;
       summaryRecords = group.records;
-      renderSummaryPopup(edgePop, store, group, nebulaRegion);
+      renderSummaryPopup(edgePop, store, group, (key) => nebulaRegion(key)?.name ?? '');
       placeEdgeInfo(px, py);
     }
 
@@ -806,10 +806,11 @@ export default {
     }
 
     // Геометрия ветвей и дуг вынесена в js/map/geometry.js.
-    const branchPath = (e) => calcBranchPath(e, X, XR, store.now);
-    const stubPath = (e) => calcStubPath(e, X);
-    const arcPath = (e) => calcArcPath(e, X, store.now);
-    const durPath = (n) => calcDurPath(n, X, store.now);
+    const geom = { X, XR, now: store.now };
+    const branchPath = (e) => calcBranchPath(e, geom);
+    const stubPath = (e) => calcStubPath(e, geom);
+    const arcPath = (e) => calcArcPath(e, geom);
+    const durPath = (n) => calcDurPath(n, geom);
 
     // Стволы: от точки зарождения до места, где от строки отходит последняя ветвь (не дальше конца
     // жизни стиля — дальше ветвь идёт своим штрихом). Если есть далёкие потомки — стрелка «→».
