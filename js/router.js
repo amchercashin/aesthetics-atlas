@@ -1,4 +1,4 @@
-// Hash-роутер: #/, #/map, #/timeline, #/catalog, #/s/<id>, #/about. Параметры — после «?».
+// Hash-роутер: #/, #/map, #/timeline, #/catalog, #/collection, #/compare, #/s/<id>, #/about. Параметры — после «?».
 export function parseHash(hash = location.hash) {
   if (hash && !hash.startsWith('#/')) hash = '';
   const h = hash.replace(/^#/, '') || '/';
@@ -7,7 +7,7 @@ export function parseHash(hash = location.hash) {
   const parts = path.split('/').filter(Boolean);
   if (!parts.length) return { view: 'home', params };
   if (parts[0] === 's' && parts[1]) return { view: 'style', id: decodeURIComponent(parts[1]), params };
-  if (['map', 'timeline', 'catalog', 'about'].includes(parts[0])) return { view: parts[0], params };
+  if (['map', 'timeline', 'catalog', 'collection', 'compare', 'about'].includes(parts[0])) return { view: parts[0], params };
   return { view: 'notfound', params };
 }
 

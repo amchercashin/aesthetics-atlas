@@ -23,38 +23,39 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600&family=Spectral:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500;1,600&display=swap&subset=cyrillic" rel="stylesheet">
   <link rel="stylesheet" href="css/tokens.css?v=cd56519e">
-  <link rel="stylesheet" href="css/base.css?v=ddf68a38">
-  <link rel="stylesheet" href="css/views.css?v=9b334239">
+  <link rel="stylesheet" href="css/base.css?v=fb1aeaea">
+  <link rel="stylesheet" href="css/views.css?v=967847d7">
   <link rel="stylesheet" href="css/map.css?v=34b8d9bb">
-  <meta name="atlas-version" content="161aaa24">
+  <meta name="atlas-version" content="c631d146">
   <!-- build:importmap -->
   <script type="importmap">
   {
     "imports": {
       "./js/ambient.js": "./js/ambient.js?v=baac1681",
       "./js/catalog-filter.js": "./js/catalog-filter.js?v=8e3d9366",
+      "./js/favorites.js": "./js/favorites.js?v=e6917b17",
       "./js/format.js": "./js/format.js?v=2ed3d91f",
       "./js/graphnav.js": "./js/graphnav.js?v=4970e789",
       "./js/html.js": "./js/html.js?v=13973b5c",
       "./js/layout.js": "./js/layout.js?v=7ac4e814",
       "./js/lens.js": "./js/lens.js?v=b65d8c55",
-      "./js/main.js": "./js/main.js?v=7cb5ba0f",
+      "./js/main.js": "./js/main.js?v=c9275e1a",
       "./js/map-detail.js": "./js/map-detail.js?v=3f461da9",
       "./js/map-labels.js": "./js/map-labels.js?v=98527074",
       "./js/map-layout.js": "./js/map-layout.js?v=3569cf33",
       "./js/map-links.js": "./js/map-links.js?v=079029fa",
       "./js/map-summary.js": "./js/map-summary.js?v=5919437a",
       "./js/map/geometry.js": "./js/map/geometry.js?v=d4073a41",
-      "./js/map/panel.js": "./js/map/panel.js?v=45ca16f8",
+      "./js/map/panel.js": "./js/map/panel.js?v=0611a885",
       "./js/nebulae.js": "./js/nebulae.js?v=5ca8fd80",
-      "./js/prompt.js": "./js/prompt.js?v=492d5fd9",
-      "./js/router.js": "./js/router.js?v=f50f79c9",
+      "./js/prompt.js": "./js/prompt.js?v=cc4243b8",
+      "./js/router.js": "./js/router.js?v=c01c0147",
       "./js/search.js": "./js/search.js?v=e1b30ec7",
       "./js/store.js": "./js/store.js?v=b249ccfa",
       "./js/theme.js": "./js/theme.js?v=2e2156fd",
       "./js/timescale.js": "./js/timescale.js?v=2740e744",
       "./js/trail.js": "./js/trail.js?v=97955208",
-      "./js/ui/ai-prompt.js": "./js/ui/ai-prompt.js?v=985964f2",
+      "./js/ui/ai-prompt.js": "./js/ui/ai-prompt.js?v=a059d391",
       "./js/ui/art-item.js": "./js/ui/art-item.js?v=da04b144",
       "./js/ui/common.js": "./js/ui/common.js?v=d724893f",
       "./js/ui/corpus.js": "./js/ui/corpus.js?v=e9816e63",
@@ -66,10 +67,12 @@
       "./js/ui/toast.js": "./js/ui/toast.js?v=def797ff",
       "./js/views/about.js": "./js/views/about.js?v=4848c8a1",
       "./js/views/catalog.js": "./js/views/catalog.js?v=e1877339",
-      "./js/views/home.js": "./js/views/home.js?v=b2303226",
+      "./js/views/collection.js": "./js/views/collection.js?v=cf6b1ad6",
+      "./js/views/compare.js": "./js/views/compare.js?v=7d451135",
+      "./js/views/home.js": "./js/views/home.js?v=f9d57093",
       "./js/views/map.js": "./js/views/map.js?v=3cb7067a",
       "./js/views/notfound.js": "./js/views/notfound.js?v=58bd1ba1",
-      "./js/views/style.js": "./js/views/style.js?v=36267a62",
+      "./js/views/style.js": "./js/views/style.js?v=4619ba3f",
       "./js/views/timeline.js": "./js/views/timeline.js?v=ef429629"
     }
   }
@@ -95,6 +98,10 @@
       <a href="#/catalog" data-nav="catalog">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3.5" y="3.5" width="7" height="9" rx="1"/><rect x="13.5" y="3.5" width="7" height="5" rx="1"/><rect x="13.5" y="11.5" width="7" height="9" rx="1"/><rect x="3.5" y="15.5" width="7" height="5" rx="1"/></svg>
         Каталог
+      </a>
+      <a href="#/collection" data-nav="collection" class="nav-shelf">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" aria-hidden="true"><path d="M6 4.5h12v16l-6-4-6 4v-16Z"/></svg>
+        Полка <span class="nav-badge" data-fav-count hidden>0</span>
       </a>
       <a href="#/about" data-nav="about">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.5"/></svg>
@@ -142,7 +149,7 @@
 
   <div class="toast" role="status" aria-live="polite"></div>
 
-  <script type="module" src="js/main.js?v=7cb5ba0f"></script>
+  <script type="module" src="js/main.js?v=c9275e1a"></script>
 </body>
 </html>
 

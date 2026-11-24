@@ -390,3 +390,29 @@ export function validatePromptSubjects(list) {
   }
   return errors;
 }
+
+// Кураторские экскурсии (content/trails.yaml): каждая остановка ссылается на существующую карточку.
+export function validateTrails(trails, styles) {
+  if (trails == null) return [];
+  if (!Array.isArray(trails)) return ['trails: expected a list'];
+  const styleIds = new Set(styles.map((s) => s.id));
+  const seen = new Set();
+  const errors = [];
+  for (const t of trails) {
+    const at = `[trail ${t?.id ?? '?'}]`;
+    if (!t?.id || !ID.test(t.id)) errors.push(`${at} bad id`);
+    else if (seen.has(t.id)) errors.push(`${at} duplicate id`);
+    else seen.add(t.id);
+    if (typeof t?.title !== 'string' || !t.title.trim()) errors.push(`${at} missing title`);
+    if (typeof t?.subtitle !== 'string' || !t.subtitle.trim()) errors.push(`${at} missing subtitle`);
+    if (!Array.isArray(t?.stops) || t.stops.length < 3) { errors.push(`${at} needs at least 3 stops`); continue; }
+    const stopSeen = new Set();
+    for (const stop of t.stops) {
+      if (!stop?.id || !styleIds.has(stop.id)) errors.push(`${at} unknown style "${stop?.id}"`);
+      else if (stopSeen.has(stop.id)) errors.push(`${at} duplicate stop "${stop.id}"`);
+      else stopSeen.add(stop.id);
+      if (typeof stop?.note !== 'string' || !stop.note.trim()) errors.push(`${at} stop "${stop?.id}" missing note`);
+    }
+  }
+  return errors;
+}

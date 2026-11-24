@@ -6,6 +6,7 @@ import { initSearch } from './ui/search-dialog.js';
 import { initLightbox } from './ui/lightbox.js';
 import { initImageEvents, markLoaded } from './ui/image.js';
 import { initHeaderAutoHide } from './ui/header.js';
+import { initFavoritesBadge } from './favorites.js';
 import { html, mount } from './html.js';
 
 const app = document.getElementById('app');
@@ -78,6 +79,7 @@ async function boot() {
   }
   const base = { store, openLightbox: initLightbox() };
   initSearch(store);
+  initFavoritesBadge(store);
   document.querySelector('.skip-link')?.addEventListener('click', (e) => { e.preventDefault(); app.focus(); });
   // Хэши, не начинающиеся с «#/» (например, ссылка «К содержимому» → #app), — не маршруты.
   window.addEventListener('hashchange', () => { if (!location.hash || location.hash.startsWith('#/')) route(base); });

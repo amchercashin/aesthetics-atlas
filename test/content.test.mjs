@@ -89,10 +89,9 @@ test('macro-region rules: spread vs origin, multi-region and nothing unclassifie
   for (const s of styles) assert.ok(!macroRegions(s.region).includes('unknown'), `[${s.id}] ${s.region}`);
 });
 
-test('every tier-1 card has visual promptCues without names of artists', () => {
-  const tier1 = styles.filter((s) => s.tier === 1);
-  assert.ok(tier1.length > 0);
-  for (const s of tier1) {
+test('every card has visual promptCues without names of artists', () => {
+  assert.ok(styles.length > 0);
+  for (const s of styles) {
     assert.ok(Array.isArray(s.promptCues) && s.promptCues.length >= 3 && s.promptCues.length <= 4, `${s.id}: promptCues`);
     // Подсказки чисто визуальные: ни имён из «Ключевых имён», ни авторов.
     const stems = [...(s.names ?? []), ...(s.creators ?? []).map((c) => c.name)]

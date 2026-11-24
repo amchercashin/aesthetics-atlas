@@ -4,6 +4,10 @@ import { fmtDates, RELATION, REL_STATUS, CONTEXT, KIND, plural } from '../format
 import { frame, markLoaded } from '../ui/image.js';
 import { artItem, cardImages } from '../ui/art-item.js';
 import { eraTag } from '../ui/common.js';
+import { isSaved, toggleSaved } from '../favorites.js';
+import { toast } from '../ui/toast.js';
+
+const BOOKMARK = html`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" aria-hidden="true"><path d="M6 4.5h12v16l-6-4-6 4v-16Z"/></svg>`;
 
 const displayTitle = (s) => s.shortTitle || s.name;
 
@@ -45,6 +49,8 @@ export function renderMapPanel(panel, store, s, { focusMode, openLightbox, onRea
   const arts = cardImages(s).map((w) => artItem(w, store));
   const cover = arts[0]?.img ?? null;
   const title = displayTitle(s);
+  const saved = isSaved(s.id, store);
+  const comparePartner = s.comparisons[0]?.id ?? s.parents[0]?.id ?? s.children[0]?.id ?? store.styles.find((x) => x.id !== s.id)?.id;
   mount(panel, html`
     <button class="icon-btn mp-close" type="button" data-close-panel aria-label="Закрыть и вернуться к прежнему виду"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
     ${cover ? html`<div class="mp-art-wrap">
@@ -71,11 +77,26 @@ export function renderMapPanel(panel, store, s, { focusMode, openLightbox, onRea
       ${relList(store, s, 'children', 'to')}
       ${cmpList(store, s)}
       ${contextList(store, s)}
-      <a class="btn mp-open" href="#/s/${s.id}">Открыть зал</a>
+      <div class="mp-actions">
+        <a class="btn mp-open" href="#/s/${s.id}">Открыть зал</a>
+        <button type="button" class="chip mp-fav${saved ? ' is-saved' : ''}" data-mp-fav aria-pressed="${saved}" title="${saved ? 'Убрать с полки' : 'Сохранить на полку вкуса'}">${BOOKMARK}<span>${saved ? 'На полке' : 'На полку'}</span></button>
+        ${comparePartner ? html`<a class="chip" href="#/compare?a=${s.id}&b=${comparePartner}">Сравнить</a>` : ''}
+      </div>
     </div>`);
   panel.hidden = false;
   onReady?.();
   markLoaded(panel);
+  const favBtn = panel.querySelector('[data-mp-fav]');
+  if (favBtn) {
+    favBtn.addEventListener('click', () => {
+      const res = toggleSaved(s.id, store);
+      favBtn.classList.toggle('is-saved', res.saved);
+      favBtn.setAttribute('aria-pressed', String(res.saved));
+      const sp = favBtn.querySelector('span');
+      if (sp) sp.textContent = res.saved ? 'На полке' : 'На полку';
+      toast(res.saved ? 'Добавлено на полку вкуса' : 'Убрано с полки');
+    });
+  }
   const mainArt = panel.querySelector('[data-panel-open]');
   if (mainArt) {
     mainArt.addEventListener('click', () => openLightbox(arts, Number(mainArt.dataset.panelIndex) || 0));

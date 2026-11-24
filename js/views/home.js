@@ -54,7 +54,7 @@ export default {
           <a class="btn ghost" href="#/catalog">Смотреть каталог</a>
         </div>
         ${store.promptSubjects.length ? html`<section class="hero-ai" aria-labelledby="hero-ai-title">
-          ${aiHead('hero-ai-title', { nextHidden: true })}
+          ${aiHead('hero-ai-title', { nextHidden: true, nextLabel: 'Другой вариант' })}
           <div class="hero-ai-intro" data-ai-intro>
             <p class="hero-ai-lead">Случайный стиль атласа и случайный предмет — готовый промт для генератора картинок.</p>
             <button class="btn" type="button" data-surprise aria-controls="hero-ai-body">${DICE}Удиви меня</button>
@@ -103,6 +103,36 @@ export default {
         <span class="way-text">Все стили одной сеткой работ. Фильтры по эпохе, области, сюжету и технике: например, все стили для пейзажа или все рельефы.</span>
       </a>
     </section>
+
+    ${store.trails?.length ? html`<section class="trails-sec page" aria-labelledby="trails-title">
+      <div class="trails-head">
+        <div>
+          <p class="day-kicker">Кураторские маршруты</p>
+          <h2 class="trails-title" id="trails-title">Экскурсии на 5 минут</h2>
+        </div>
+        <p class="trails-lead">Короткие прогулки сквозь века и континенты — начните с любой темы, а дальше карта подскажет сама.</p>
+      </div>
+      <div class="trails-grid">
+        ${store.trails.map((t) => {
+          const stops = t.stops.map((st) => store.get(st.id)).filter(Boolean);
+          const first = stops[0];
+          if (!first) return '';
+          const mapTrail = stops.map((x) => x.id).join(',');
+          return html`<article class="trail-card">
+            <a class="tc-main" href="#/s/${first.id}?trail=${t.id}">
+              <div class="tc-strip">${stops.slice(0, 3).map((s) => thumb(s, 96))}</div>
+              <p class="tc-meta">${stops.length} ${plural(stops.length, 'остановка', 'остановки', 'остановок')} · ~${t.minutes} мин</p>
+              <h3 class="tc-title">${t.title}</h3>
+              <p class="tc-sub">${t.subtitle}</p>
+            </a>
+            <div class="tc-foot">
+              <a class="tc-start" href="#/s/${first.id}?trail=${t.id}">Начать →</a>
+              <a class="tc-map" href="#/map?s=${first.id}&trail=${mapTrail}">На карте</a>
+            </div>
+          </article>`;
+        })}
+      </div>
+    </section>` : ''}
 
     <section class="day page" aria-labelledby="day-title">
       <a class="day-work" href="#/s/${day.id}">${frame(day.example.img, day.palette, { sizes: '(min-width: 900px) 50vw, 100vw', alt: day.example.title ?? '', size: 960 })}</a>

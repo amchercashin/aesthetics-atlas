@@ -1,8 +1,6 @@
-// Блок «Нарисовать с ИИ»: компактный — в зале под палитрой, на главной в первом экране.
-// Начало промта видно сразу (три строки, целиком — по кнопке), копирование — значком в углу промта.
-// Ниже — кнопки сервисов в их фирменных цветах: ChatGPT и Шедеврум открываются с подставленным промтом,
-// ГигаЧат не принимает текст в адресе — его кнопка копирует промт и открывает сайт.
-// Что считать «другим вариантом», решает вызывающий.
+// Блок «Нарисовать с ИИ»: компактный — в зале под палитрой, на главной в первом экране, в сравнении стилей.
+// Поддерживает редактируемый сюжет (сохраняется в sessionStorage на время сессии), живое обновление
+// промта и ссылок в ChatGPT, Шедеврум и ГигаЧат.
 import { html } from '../html.js';
 import { chatgptUrl, shedevrumUrl, GIGACHAT_URL } from '../prompt.js';
 import { toast } from './toast.js';
@@ -11,19 +9,33 @@ const SHUFFLE = html`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" 
 const COPY = html`<svg class="ai-copy-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" aria-hidden="true"><rect x="8.5" y="8.5" width="11" height="11" rx="2"/><path d="M15.5 8.5V6.5a2 2 0 0 0-2-2h-7a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h2"/></svg>`;
 const CHECK = html`<svg class="ai-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>`;
 
-// Сервисы с промтом в адресе; ссылки обновляются при каждом новом варианте.
 const OPEN = { chatgpt: chatgptUrl, shedevrum: shedevrumUrl };
+const SUBJ_KEY = 'atlas-custom-subject';
 
-// Заголовок блока; «Другой вариант» — тихая ссылка-кнопка, чтобы блок не спорил с работой и палитрой.
-export function aiHead(id, { nextHidden = false } = {}) {
+export function readCustomSubject() {
+  try { return sessionStorage.getItem(SUBJ_KEY)?.trim() || ''; } catch { return ''; }
+}
+export function saveCustomSubject(val) {
+  try {
+    const clean = String(val ?? '').trim();
+    if (clean) sessionStorage.setItem(SUBJ_KEY, clean);
+    else sessionStorage.removeItem(SUBJ_KEY);
+  } catch { /* sessionStorage недоступен */ }
+}
+
+export function aiHead(id, { nextHidden = false, title = 'Нарисовать с ИИ', nextLabel = 'Другой сюжет' } = {}) {
   return html`<div class="ai-head">
-    <h2 class="ai-title" id="${id}">Нарисовать с ИИ</h2>
-    <button class="ai-next" type="button" data-ai-next ${nextHidden ? html`hidden` : ''}>${SHUFFLE}Другой вариант</button>
+    <h2 class="ai-title" id="${id}">${title}</h2>
+    <button class="ai-next" type="button" data-ai-next ${nextHidden ? html`hidden` : ''}>${SHUFFLE}${nextLabel}</button>
   </div>`;
 }
 
-export function aiPromptBody(prompt = '', { id, note = '' } = {}) {
-  return html`<div class="ai-prompt-box">
+export function aiPromptBody(prompt = '', { id, note = '', subject = null } = {}) {
+  return html`${subject !== null ? html`<label class="ai-subj-row">
+      <span class="ai-subj-label">Свой сюжет</span>
+      <input class="ai-subj-input" type="text" data-ai-subject value="${subject}" placeholder="маяк на скале, мой кот, кофейня…" maxlength="120" autocomplete="off">
+    </label>` : ''}
+    <div class="ai-prompt-box">
       <p class="ai-prompt" id="${id}" data-ai-text tabindex="-1" aria-live="polite">${prompt}</p>
       <button class="ai-copy" type="button" data-ai-copy aria-label="Скопировать промт" title="Скопировать промт">${COPY}${CHECK}<span class="ai-copied" aria-hidden="true">Скопировано</span></button>
     </div>
@@ -51,7 +63,6 @@ async function copyText(text, el) {
     await navigator.clipboard.writeText(text);
     return true;
   } catch {
-    // Буфер недоступен (нет https или разрешения): выделяем промт, чтобы его можно было скопировать вручную.
     const range = document.createRange();
     range.selectNodeContents(el);
     const sel = window.getSelection();
@@ -64,14 +75,15 @@ async function copyText(text, el) {
   }
 }
 
-// next() возвращает новый промт; set(prompt) обновляет текст и ссылки снаружи.
-export function mountAiPrompt(box, { next }) {
+// next() возвращает новый промт (строку или { prompt, subject }); onSubject(text) строит промт под введённый сюжет.
+export function mountAiPrompt(box, { next, onSubject } = {}) {
   const text = box.querySelector('[data-ai-text]');
   const copyBtn = box.querySelector('[data-ai-copy]');
   const more = box.querySelector('[data-ai-more]');
   const status = box.querySelector('[data-ai-status]');
+  const subjInput = box.querySelector('[data-ai-subject]');
   let timer;
-  // «Весь промт» нужен, только если текст не уместился в три строки.
+
   const syncMore = () => {
     if (text.classList.contains('is-open')) return;
     more.hidden = text.scrollHeight <= text.clientHeight + 1;
@@ -82,9 +94,10 @@ export function mountAiPrompt(box, { next }) {
     more.textContent = on ? 'Свернуть' : 'Весь промт';
     syncMore();
   };
-  const set = (prompt) => {
+  const set = (prompt, subject) => {
     text.textContent = prompt;
     box.querySelectorAll('[data-ai-open]').forEach((a) => { a.href = OPEN[a.dataset.aiOpen](prompt); });
+    if (subjInput && typeof subject === 'string' && subjInput.value !== subject) subjInput.value = subject;
     expand(false);
   };
   const announce = (msg) => {
@@ -92,10 +105,22 @@ export function mountAiPrompt(box, { next }) {
     clearTimeout(timer);
     timer = setTimeout(() => { copyBtn.classList.remove('is-done'); status.textContent = ''; }, 1800);
   };
+  const onInput = () => {
+    if (!subjInput || !onSubject) return;
+    const val = subjInput.value.trim();
+    saveCustomSubject(val);
+    const nextPrompt = onSubject(val);
+    if (nextPrompt) set(nextPrompt);
+  };
   const onClick = async (e) => {
-    if (e.target.closest('[data-ai-next]')) { set(next()); return; }
+    if (e.target.closest('[data-ai-next]') && next) {
+      saveCustomSubject('');
+      const res = next();
+      if (typeof res === 'string') set(res);
+      else if (res?.prompt) set(res.prompt, res.subject);
+      return;
+    }
     if (e.target.closest('[data-ai-more]')) { expand(!text.classList.contains('is-open')); return; }
-    // ГигаЧат: ссылка открывается как обычно, а промт в это время уходит в буфер.
     if (e.target.closest('[data-ai-giga]')) {
       if (await copyText(text.textContent, text)) {
         announce('Промт скопирован — вставьте его в ГигаЧат');
@@ -112,11 +137,17 @@ export function mountAiPrompt(box, { next }) {
     }
   };
   box.addEventListener('click', onClick);
+  subjInput?.addEventListener('input', onInput);
   const resize = new ResizeObserver(syncMore);
   resize.observe(text);
   syncMore();
   return {
     set,
-    destroy() { box.removeEventListener('click', onClick); resize.disconnect(); clearTimeout(timer); },
+    destroy() {
+      box.removeEventListener('click', onClick);
+      subjInput?.removeEventListener('input', onInput);
+      resize.disconnect();
+      clearTimeout(timer);
+    },
   };
 }

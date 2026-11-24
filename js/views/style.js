@@ -11,7 +11,12 @@ import notfound from './notfound.js';
 import { authorshipSection, contextSection } from '../ui/corpus.js';
 import { directLinks, linkStep, linkKey, egoMap, mountEgoMap } from '../ui/ego-map.js';
 import { promptFor, styleAnchor, pickOther } from '../prompt.js';
-import { aiHead, aiPromptBody, mountAiPrompt } from '../ui/ai-prompt.js';
+import { aiHead, aiPromptBody, mountAiPrompt, readCustomSubject } from '../ui/ai-prompt.js';
+import { isSaved, toggleSaved } from '../favorites.js';
+
+const BOOKMARK = html`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" aria-hidden="true"><path d="M6 4.5h12v16l-6-4-6 4v-16Z"/></svg>`;
+const SHARE_ICON = html`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12v6a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-6M16 6l-4-4-4 4M12 2v13"/></svg>`;
+const COMPARE_ICON = html`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="7" height="14" rx="1"/><rect x="14" y="5" width="7" height="14" rx="1"/></svg>`;
 
 const ARROW_L = html`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>`;
 const ARROW_R = html`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>`;
@@ -155,12 +160,39 @@ export default {
     const keys = [s.parents.length ? html`<kbd>←</kbd> главный предок` : '', s.children.length ? html`<kbd>→</kbd> ближайшее продолжение` : ''].filter(Boolean);
     const role = roleLabel(ex.role);
     const evidence = s.evidence.map((e) => ({ ...e, src: store.source(e.source) })).filter((e) => e.src);
-    let subject = pickOther(store.promptSubjects);
+    let subject = readCustomSubject() || pickOther(store.promptSubjects);
     const anchor = styleAnchor(store, s);
     const featuredContext = store.get(s.featuredContext);
+    const saved = isSaved(s.id, store);
+    const comparePartner = s.comparisons[0]?.id ?? s.parents[0]?.id ?? s.children[0]?.id ?? store.inEra(s.era).find((x) => x.id !== s.id)?.id ?? store.styles.find((x) => x.id !== s.id)?.id;
+    const trailId = ctx.params?.get('trail') ?? '';
+    const trail = trailId ? (store.trails ?? []).find((t) => t.id === trailId) ?? null : null;
+    const stopIdx = trail ? trail.stops.findIndex((st) => st.id === s.id) : -1;
+    const trailBar = (pos) => {
+      if (!trail || stopIdx < 0) return '';
+      const cur = trail.stops[stopIdx];
+      const prevStop = trail.stops[stopIdx - 1];
+      const nextStop = trail.stops[stopIdx + 1];
+      const prevStyle = prevStop && store.get(prevStop.id);
+      const nextStyle = nextStop && store.get(nextStop.id);
+      const mapTrail = trail.stops.map((x) => x.id).join(',');
+      return html`<nav class="trail-banner trail-banner-${pos}" aria-label="Экскурсия «${trail.title}»">
+        <div class="tb-head">
+          <span class="tb-kicker">Экскурсия · шаг ${stopIdx + 1} из ${trail.stops.length}</span>
+          <strong class="tb-title">${trail.title}</strong>
+          <a class="tb-map" href="#/map?s=${s.id}&trail=${mapTrail}">Весь маршрут на карте →</a>
+        </div>
+        ${cur.note ? html`<p class="tb-note">${cur.note}</p>` : ''}
+        <div class="tb-nav">
+          ${prevStyle ? html`<a class="chip" href="#/s/${prevStyle.id}?trail=${trail.id}">← ${displayTitle(prevStyle)}</a>` : html`<span class="tb-edge">Начало экскурсии</span>`}
+          ${nextStyle ? html`<a class="btn" href="#/s/${nextStyle.id}?trail=${trail.id}">Дальше: ${displayTitle(nextStyle)} →</a>` : html`<a class="btn ghost" href="#/">Экскурсия завершена · на главную</a>`}
+        </div>
+      </nav>`;
+    };
 
     mount(root, html`
     <article class="room">
+      ${trailBar('top')}
       <header class="room-head">
         <div class="room-meta">
           ${s.dateKind === 'corpus' ? '' : eraTag(store, s.era)}
@@ -172,6 +204,11 @@ export default {
         <h1 class="room-title">${displayTitle(s)}</h1>
         ${s.subtitle ? html`<p class="room-subtitle">${s.subtitle}</p>` : ''}
         <p class="room-orig">${s.orig}</p>
+        <div class="room-actions">
+          <button type="button" class="chip room-fav${saved ? ' is-saved' : ''}" data-fav-toggle aria-pressed="${saved}">${BOOKMARK}<span>${saved ? 'На полке' : 'На полку'}</span></button>
+          ${comparePartner ? html`<a class="chip" href="#/compare?a=${s.id}&b=${comparePartner}">${COMPARE_ICON}<span>Сравнить</span></a>` : ''}
+          <button type="button" class="chip" data-share-style>${SHARE_ICON}<span>Поделиться</span></button>
+        </div>
         ${s.kind.length ? html`<p class="room-kind">${s.kind.map((k) => html`<span class="kind-badge">${KIND[k]}</span>`)}${s.kindNote ? html`<span class="kind-note">${s.kindNote}</span>` : ''}</p>` : ''}
         ${featuredContext ? html`<a class="room-context-link" href="#/s/${featuredContext.id}">${displayTitle(featuredContext)} ${ARROW_R}</a>` : ''}
       </header>
@@ -221,7 +258,7 @@ export default {
           </aside>
           ${subject ? html`<section class="ai-block ai-panel" aria-labelledby="ai-title">
             ${aiHead('ai-title')}
-            ${aiPromptBody(promptFor(store, s, subject), { id: 'ai-text', note: anchor ? `Имя автора в промт не входит: он просит рисовать в духе ${anchor}.` : '' })}
+            ${aiPromptBody(promptFor(store, s, subject), { id: 'ai-text', subject, note: anchor ? `Имя автора в промт не входит: он просит рисовать в духе ${anchor}.` : '' })}
           </section>` : ''}
         </div>
       </div>
@@ -280,6 +317,7 @@ export default {
           ${s.comparisons.map((c) => { const o = store.get(c.id); return o ? html`<li class="ego-item">
             <a class="ego-link" href="#/s/${o.id}">${thumb(o, 44)}<span><span class="ego-name">${displayTitle(o)}</span><span class="ego-dates">${fmtDates(o)}</span></span></a>
             ${c.note ? html`<p class="ego-note">${c.note}</p>` : ''}
+            <a class="cmp-inline-link" href="#/compare?a=${s.id}&b=${o.id}">Сравнить рядом →</a>
           </li>` : ''; })}
         </ul>
       </section>` : ''}
@@ -309,11 +347,28 @@ export default {
         </ul>
       </section>
 
+      ${trailBar('bottom')}
     </article>
     ${footer(store)}`);
 
     // Интерактив
     const onClick = (e) => {
+      const favBtn = e.target.closest('[data-fav-toggle]');
+      if (favBtn) {
+        const res = toggleSaved(s.id, store);
+        favBtn.classList.toggle('is-saved', res.saved);
+        favBtn.setAttribute('aria-pressed', String(res.saved));
+        const sp = favBtn.querySelector('span');
+        if (sp) sp.textContent = res.saved ? 'На полке' : 'На полку';
+        toast(res.saved ? 'Добавлено на полку вкуса' : 'Убрано с полки');
+        return;
+      }
+      if (e.target.closest('[data-share-style]')) {
+        const base = location.href.split('#')[0].replace(/index\.html$/, '');
+        const shareUrl = new URL(`s/${encodeURIComponent(s.id)}/`, base).href;
+        navigator.clipboard?.writeText(shareUrl).then(() => toast('Ссылка на стиль скопирована'), () => toast(shareUrl));
+        return;
+      }
       const jump = e.target.closest('[data-scroll-to]');
       if (jump) {
         const target = root.querySelector(`#${CSS.escape(jump.dataset.scrollTo)}`);
@@ -347,7 +402,11 @@ export default {
     const unmountEgo = mountEgoMap(root);
     const aiBox = root.querySelector('.ai-block');
     const ai = aiBox && mountAiPrompt(aiBox, {
-      next: () => promptFor(store, s, (subject = pickOther(store.promptSubjects, Math.random, subject))),
+      next: () => {
+        subject = pickOther(store.promptSubjects, Math.random, subject);
+        return { prompt: promptFor(store, s, subject), subject };
+      },
+      onSubject: (val) => promptFor(store, s, val || subject),
     });
 
     // Полоса родословной: центрируем текущий стиль и управляем прокруткой.

@@ -5,7 +5,7 @@ import fs from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import yaml from 'js-yaml';
 import { createStore } from '../js/store.js';
-import { buildPrompt, promptFor, styleAnchor, chatgptUrl, shedevrumUrl, pickOther, surprisePool, PROMPT_LIMIT } from '../js/prompt.js';
+import { buildPrompt, promptFor, combinePrompt, styleAnchor, chatgptUrl, shedevrumUrl, pickOther, surprisePool, PROMPT_LIMIT } from '../js/prompt.js';
 import { validatePromptSubjects } from '../scripts/lib/validate.mjs';
 import { loadBuiltAtlas } from '../scripts/lib/load-atlas.mjs';
 
@@ -174,4 +174,16 @@ test('no author-style prompt carries the card name or a creator name', () => {
       for (const stem of st) assert.ok(!words.some((w) => w.startsWith(stem)), `${s.id}: «${stem}» в «${p}»`);
     }
   }
+});
+
+test('combinePrompt blends two styles within the prompt limit without leaking creator names', () => {
+  const a = real.get('impressionism');
+  const b = real.get('ukiyo-e');
+  const p = combinePrompt(real, a, b, 'маяк на скале');
+  assert.ok(p.startsWith('Нарисуй маяк на скале на стыке «Импрессионизм» и «Укиё-э»: '), p);
+  assert.ok(p.length <= PROMPT_LIMIT, `${p.length}`);
+  const author = real.get('hokusai-landscape-prints');
+  const pAuth = combinePrompt(real, a, author, 'кота');
+  assert.ok(!pAuth.includes('Хокус'), pAuth);
+  assert.ok(pAuth.length <= PROMPT_LIMIT, `${pAuth.length}`);
 });

@@ -67,6 +67,28 @@ export function buildPrompt(s, subject, { anchor = null, limit = PROMPT_LIMIT } 
 
 export const promptFor = (store, s, subject) => buildPrompt(s, subject, { anchor: styleAnchor(store, s) });
 
+// Промт на стыке двух стилей для экрана сравнения: по два визуальных признака от каждого,
+// с сохранением правила без имён для авторских карточек.
+export function combinePrompt(store, a, b, subject, { limit = PROMPT_LIMIT } = {}) {
+  const label = (s) => (isAuthor(s) ? (styleAnchor(store, s) ?? 'авторской традиции') : quote(plainName(s.name)));
+  const cuesOf = (s) => {
+    const stems = isAuthor(s) ? nameStems(s) : [];
+    const src = s.promptCues?.length ? s.promptCues : s.traits ?? [];
+    return src.map(lower).filter((t) => t && !mentions(t, stems)).slice(0, 2);
+  };
+  const head = `Нарисуй ${subject} на стыке ${label(a)} и ${label(b)}`;
+  let cues = [...cuesOf(a), ...cuesOf(b)];
+  const compose = () => `${head}${cues.length ? `: ${cues.join('; ')}` : ''}.`;
+  while (compose().length > limit && cues.length > 2) cues = cues.slice(0, -1);
+  if (compose().length > limit && cues.length) {
+    const budget = limit - head.length - ': '.length - '….'.length;
+    const text = cues.join('; ').slice(0, Math.max(0, budget + 1));
+    const cut = text.slice(0, Math.max(0, text.lastIndexOf(' '))).replace(/[\s;,:—-]+$/u, '');
+    return cut ? `${head}: ${cut}….` : `${head}.`;
+  }
+  return compose();
+}
+
 export const chatgptUrl = (prompt) => `https://chatgpt.com/?q=${encodeURIComponent(prompt)}`;
 // Шедеврум (Яндекс) подставляет ?prompt= в поле запроса формы «Создать картинку».
 export const shedevrumUrl = (prompt) => `https://shedevrum.ai/text-to-image/?prompt=${encodeURIComponent(prompt)}`;
