@@ -1,5 +1,7 @@
-// Состав туманностей: проверка, подсказка для нового стиля, цвета.
+// Состав туманностей: проверка, подсказка для нового стиля, цвета, широты.
 const HEX = /^#[0-9a-f]{6}$/i;
+export const BAND_IDS = ['north', 'center', 'south'];
+const BANDS = new Set(BAND_IDS);
 const W = { evolved: 1, influence: 0.7, reaction: 0.4, revival: 0.25 };
 
 // Куда по связям ближе всего стиль, которого ещё нет в туманностях.
@@ -22,6 +24,7 @@ export function validateNebulae(doc, styles) {
     if (nebIds.has(n.id)) errors.push(`duplicate nebula id "${n.id}"`);
     nebIds.add(n.id);
     if (n.color != null && !HEX.test(n.color)) errors.push(`nebula "${n.id}": color must be #rrggbb`);
+    if (n.band != null && !BANDS.has(n.band)) errors.push(`nebula "${n.id}": band must be one of ${BAND_IDS.join(', ')}`);
     if (!n.parts?.length) errors.push(`nebula "${n.id}" has no parts`);
     for (const p of n.parts ?? []) {
       if (!p.id || !p.name) errors.push(`nebula "${n.id}": part needs id and name`);
@@ -57,7 +60,7 @@ export function resolveNebulae(doc, styles) {
     const members = n.parts.flatMap((p) => p.styles.map((id) => byId.get(id)).filter(Boolean));
     for (const p of n.parts) for (const id of p.styles) byStyle.set(id, { nebula: n.id, part: p.id });
     const lead = members.filter((s) => s.palette?.accent).sort((a, b) => a.tier - b.tier || a.start - b.start)[0];
-    return { id: n.id, name: n.name, color: n.color ?? lead?.palette.accent ?? '#888780', parts: n.parts.map((p) => ({ id: p.id, name: p.name })) };
+    return { id: n.id, name: n.name, band: n.band ?? 'center', color: n.color ?? lead?.palette.accent ?? '#888780', parts: n.parts.map((p) => ({ id: p.id, name: p.name })) };
   });
   return { nebulae, byStyle };
 }

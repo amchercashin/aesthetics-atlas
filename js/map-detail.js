@@ -41,3 +41,31 @@ export function aggregateMapLinks(records, groupOf, { mode = 'main', verifiedOnl
   }
   return [...groups.values()].sort((a, b) => b.records.length - a.records.length || a.a.localeCompare(b.a) || a.b.localeCompare(b.b));
 }
+
+// Направленные межморские течения (по всем подтверждённым историческим связям, не только primary)
+// и ненаправленные мостики визуального сходства/контекста.
+export function aggregateSeaFlows(records, groupOf, { mode = 'main', verifiedOnly = false } = {}) {
+  if (mode === 'none') return { flows: [], bridges: [] };
+  const flowMap = new Map();
+  const bridgeMap = new Map();
+  for (const r of records) {
+    if (verifiedOnly && (r.kind === 'comparison' || r.status !== 'verified')) continue;
+    const from = groupOf(r.from), to = groupOf(r.to);
+    if (!from || !to || from === to) continue;
+    if (r.kind === 'history') {
+      const key = `${from}>${to}`;
+      if (!flowMap.has(key)) flowMap.set(key, { kind: 'flow', a: from, b: to, from, to, records: [] });
+      flowMap.get(key).records.push(r);
+    } else if (mode === 'kinship' || mode === 'all') {
+      const [a, b] = [from, to].sort();
+      const key = `${a}|${b}`;
+      if (!bridgeMap.has(key)) bridgeMap.set(key, { kind: 'bridge', a, b, records: [] });
+      bridgeMap.get(key).records.push(r);
+    }
+  }
+  const bySize = (x, y) => y.records.length - x.records.length || x.a.localeCompare(y.a) || x.b.localeCompare(y.b);
+  return {
+    flows: [...flowMap.values()].sort(bySize),
+    bridges: [...bridgeMap.values()].sort(bySize),
+  };
+}

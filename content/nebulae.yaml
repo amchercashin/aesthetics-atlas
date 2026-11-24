@@ -2,6 +2,7 @@
 nebulae:
   - id: drevnie-istoki
     name: Древние истоки
+    band: center
     color: '#BA7517'
     parts:
       - id: paleolit
@@ -49,6 +50,7 @@ nebulae:
           - perm-animal-style
   - id: dalniy-vostok
     name: Дальний Восток
+    band: north
     color: '#1D9E75'
     parts:
       - id: kitay-i-yaponiya
@@ -85,6 +87,7 @@ nebulae:
           - xu-bing-writing-systems
   - id: srednevekove
     name: Рим, Средневековье и исламский мир
+    band: center
     color: '#378ADD'
     parts:
       - id: rim-i-vizantiya
@@ -116,6 +119,7 @@ nebulae:
           - international-gothic
   - id: vozrozhdenie-i-barokko
     name: Возрождение и барокко
+    band: center
     color: '#D85A30'
     parts:
       - id: ranniy-renessans
@@ -143,6 +147,7 @@ nebulae:
           - chinoiserie
   - id: klassicizm-i-istorizm
     name: Классицизм и историзм
+    band: center
     color: '#888780'
     parts:
       - id: klassicizm
@@ -164,6 +169,7 @@ nebulae:
           - stalinist-architecture
   - id: ot-romantizma-k-ekspressionizmu
     name: От романтизма к экспрессионизму
+    band: center
     color: '#639922'
     parts:
       - id: romantizm-impressionizm
@@ -185,6 +191,7 @@ nebulae:
           - abstract-art
   - id: modern-i-simvolizm
     name: Модерн и символизм
+    band: center
     color: '#D4537E'
     parts:
       - id: prerafaelity
@@ -213,6 +220,7 @@ nebulae:
           - bilibin-illustration
   - id: avangard
     name: Авангард
+    band: center
     color: '#E24B4A'
     parts:
       - id: kubizm-futurizm-dada
@@ -235,6 +243,7 @@ nebulae:
           - kinetic-art
   - id: syurrealizm-i-abstrakciya
     name: Сюрреализм и абстракция
+    band: center
     color: '#7F77DD'
     parts:
       - id: syurrealizm
@@ -259,6 +268,7 @@ nebulae:
           - dansaekhwa
   - id: modernizm-v-arhitekture
     name: Архитектура и дизайн
+    band: center
     color: '#378ADD'
     parts:
       - id: organicheskaya-arhitektura
@@ -288,6 +298,7 @@ nebulae:
           - ulm-school
   - id: retrofuturizm
     name: Ар-деко и образы будущего
+    band: center
     color: '#BA7517'
     parts:
       - id: ar-deko-i-kosmos
@@ -305,6 +316,7 @@ nebulae:
           - afrofuturism
   - id: pop-i-ulica
     name: Поп и улица
+    band: center
     color: '#E24B4A'
     parts:
       - id: pop-art-i-memfis
@@ -323,6 +335,7 @@ nebulae:
           - neo-expressionism
   - id: cifrovye-estetiki
     name: Оптические и цифровые эстетики
+    band: center
     color: '#1D9E75'
     parts:
       - id: ranniy-kompyuter
@@ -355,6 +368,7 @@ nebulae:
           - dreamcore
   - id: y2k-i-kiberpank
     name: Y2K и киберпанк
+    band: center
     color: '#D4537E'
     parts:
       - id: kiberpank-i-pank
@@ -382,6 +396,7 @@ nebulae:
           - barbiecore
   - id: ploskiy-interfeys
     name: Интерфейсы и графика
+    band: center
     color: '#378ADD'
     parts:
       - id: ploskiy-dizayn
@@ -401,6 +416,7 @@ nebulae:
           - brat
   - id: vostochnoevropeyskoe-narodnoe
     name: Народное искусство Восточной Европы
+    band: south
     color: '#A05C3B'
     parts:
       - id: rospis-dereva-i-metalla
@@ -436,6 +452,7 @@ nebulae:
           - polish-wycinanki
   - id: zhivopis-indii
     name: Живопись Индии
+    band: north
     color: '#8D6EAA'
     parts:
       - id: mitkhila
@@ -460,6 +477,7 @@ nebulae:
           - jamini-roy-painting
   - id: narodnaya-grafika-i-tekstil-azii
     name: Графика, текстиль и модернизм Азии
+    band: north
     color: '#B77620'
     parts:
       - id: nyanhua
@@ -484,6 +502,7 @@ nebulae:
           - cheong-soo-pieng
   - id: iskusstvo-afriki
     name: Искусство и модернизм Африки
+    band: south
     color: '#0B827E'
     parts:
       - id: dvory-ife-i-benina
@@ -513,6 +532,7 @@ nebulae:
           - zanele-muholi
   - id: iskusstvo-okeanii
     name: Искусство Океании
+    band: north
     color: '#3C829A'
     parts:
       - id: rezba-maori-part

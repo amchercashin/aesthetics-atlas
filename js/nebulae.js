@@ -845,20 +845,39 @@ export const nebulaStats = () => ({ ...dbg });
 export function nebulaRegion(key) {
   const [kind, id] = key.split(':');
   const r = (kind === 'neb' ? nebRegs : partRegs).find((r) => r.id === Number(id));
-  return r && { key, kind, name: r.name, members: r.members.slice(), box: r.box.slice() };
+  return r && { key, kind, name: r.name, color: css(r.col), line: r.line, ink: r.ink, members: r.members.slice(), box: r.box.slice() };
 }
 
-// Порты обзорных связей лежат на настоящем береге, не на рамке названия.
-export function nebulaShore(key, toScreen) {
+// Порты обзорных течений лежат строго на береге главного (подписанного) бассейна моря,
+// а не на мелких безымянных островках-спутниках: так стрелки никогда не уходят в пустоту.
+export function nebulaShore(key, toScreen, anchor = null) {
   const [kind, id] = key.split(':');
   const r = (kind === 'neb' ? nebRegs : partRegs).find((r) => r.id === Number(id));
-  const out = [];
-  for (const loop of r?.shore ?? []) {
-    let prev = null;
+  const loops = r?.shore ?? [];
+  if (!loops.length) return [];
+  const scored = loops.map((loop) => {
+    const pts = [];
+    let len = 0, minD = Infinity;
     for (let i = 0; i < loop.length; i += 2) {
       const [x, y] = toScreen(loop[i], loop[i + 1]);
-      if (!prev || Math.hypot(x - prev.x, y - prev.y) >= 12) { prev = { x, y }; out.push(prev); }
+      pts.push({ x, y });
+      if (i > 0) len += Math.hypot(x - pts[pts.length - 2].x, y - pts[pts.length - 2].y);
+      if (anchor) {
+        const d = Math.hypot(x - anchor.x, y - anchor.y);
+        if (d < minD) minD = d;
+      }
     }
+    return { pts, len, minD };
+  });
+  const maxLen = Math.max(...scored.map((s) => s.len));
+  const mainCands = scored.filter((s) => s.len >= maxLen * 0.35);
+  const chosen = anchor
+    ? mainCands.sort((a, b) => a.minD - b.minD || b.len - a.len)[0]
+    : mainCands.sort((a, b) => b.len - a.len)[0];
+  const out = [];
+  let prev = null;
+  for (const pt of chosen?.pts ?? []) {
+    if (!prev || Math.hypot(pt.x - prev.x, pt.y - prev.y) >= 10) { prev = pt; out.push(pt); }
   }
   return out;
 }

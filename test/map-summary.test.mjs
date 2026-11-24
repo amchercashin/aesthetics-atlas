@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { summaryCurve } from '../js/map-summary.js';
+import { summaryCurve, flowRibbon } from '../js/map-summary.js';
 
 test('nearby sea names get a visible arc instead of an invisible clickable line', () => {
   const a = { x: 200, y: 200 }, b = { x: 300, y: 200 };
@@ -29,4 +29,19 @@ test('summary endpoints stay on the supplied coasts and clear the protected name
   assert.ok(a.ports.includes(route.ports[0]));
   assert.ok(b.ports.includes(route.ports[1]));
   assert.ok(route.visible / route.length > 0.9);
+});
+
+test('flowRibbon tucks base inside source sea and handles narrow straits cleanly', () => {
+  const a = { x: 100, y: 200, ports: [{ x: 150, y: 200 }] };
+  const b = { x: 260, y: 200, ports: [{ x: 210, y: 200 }] };
+  const r = flowRibbon(a, b, { width: 10, tuck: 14 });
+  assert.ok(r && r.ribbonD.startsWith('M') && r.ribbonD.endsWith('Z'));
+  assert.ok(r.chevronD.startsWith('M'));
+  assert.ok(r.p0.x < 150, 'base tucks inside source sea A');
+  assert.ok(r.p1.x > 210, 'tip enters target sea B');
+
+  const closeA = { x: 100, y: 200, ports: [{ x: 150, y: 200 }] };
+  const closeB = { x: 205, y: 200, ports: [{ x: 156, y: 200 }] };
+  const narrow = flowRibbon(closeA, closeB, { width: 10, tuck: 14 });
+  assert.ok(narrow && narrow.len >= 24, 'narrow strait still yields a readable current');
 });

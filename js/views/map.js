@@ -8,7 +8,7 @@ import { html, mount } from '../html.js';
 import { fmtDates, fmtYear, RELATION, CONTEXT, DOMAIN, KIND, KIND_FAMILY, plural } from '../format.js';
 import { segmentTicks } from '../timescale.js';
 import { routeBranches } from '../layout.js';
-import { OV_K, LONG, R, mapTimeScale, mapLayoutNodes, layoutMap } from '../map-layout.js';
+import { OV_K, LONG, R, LATITUDE_BANDS, mapTimeScale, mapLayoutNodes, layoutMap } from '../map-layout.js';
 import { markLoaded } from '../ui/image.js';
 import { thumb } from '../ui/common.js';
 import { replaceParams, pushParams } from '../router.js';
@@ -19,8 +19,8 @@ import { initNebulae, drawNebulae, drawNebulaNames, hideNebulaNames, disposeNebu
 import { buildIndex, search } from '../search.js';
 import { fitLabelText } from '../map-labels.js';
 import { LINK_MODES, readLinkSettings, historicalLinkVisible } from '../map-links.js';
-import { mapDetail, aggregateMapLinks } from '../map-detail.js';
-import { summaryCurve } from '../map-summary.js';
+import { mapDetail, aggregateSeaFlows } from '../map-detail.js';
+import { summaryCurve, flowRibbon } from '../map-summary.js';
 import { el, spatialGrid, branchPath as calcBranchPath, stubPath as calcStubPath, arcPath as calcArcPath, durPath as calcDurPath } from '../map/geometry.js';
 import { renderMapPanel, renderSummaryPopup, renderEdgePopup } from '../map/panel.js';
 
@@ -123,7 +123,7 @@ export default {
         <canvas class="map-neb" aria-hidden="true"></canvas>
         <svg class="map-svg z0">
           <defs>${[11, 13, 15].map((r) => html`<clipPath id="clip-${r}"><circle cx="0" cy="0" r="${r}"/></clipPath>`)}</defs>
-          <g class="m-summary"></g><g class="m-summary-hits"></g><g class="m-dur"></g><g class="m-life"></g><g class="m-cmp"></g><g class="m-contexts"></g><g class="m-edges"></g><g class="m-edge-hits"></g><g class="m-trail"></g><g class="m-nebnames"></g><g class="m-plates"></g>
+          <g class="m-latitudes" aria-hidden="true"></g><g class="m-summary"></g><g class="m-summary-hits"></g><g class="m-dur"></g><g class="m-life"></g><g class="m-cmp"></g><g class="m-contexts"></g><g class="m-edges"></g><g class="m-edge-hits"></g><g class="m-trail"></g><g class="m-nebnames"></g><g class="m-plates"></g>
           <g class="m-nodes"></g><g class="m-labels"></g><g class="m-stubs"></g><g class="m-sel"></g><g class="m-elabels"></g><g class="m-axis" role="group" aria-label="Годы. Неравномерная шкала времени"></g>
         </svg>
         <div class="map-offscreen" role="group" aria-label="Связи за краем экрана"></div>
@@ -161,22 +161,16 @@ export default {
     const q = (s) => root.querySelector(s);
     const stage = q('.map-stage');
     const svg = q('.map-svg');
-    const G = Object.fromEntries(['summary', 'summary-hits', 'dur', 'life', 'cmp', 'contexts', 'edges', 'edge-hits', 'trail', 'nebnames', 'plates', 'nodes', 'labels', 'stubs', 'sel', 'elabels', 'axis'].map((k) => [k, svg.querySelector(`.m-${k}`)]));
-    const summaryMask = el('mask', { id: 'map-summary-mask', maskUnits: 'userSpaceOnUse', maskContentUnits: 'userSpaceOnUse' }, svg.querySelector('defs'));
+    const G = Object.fromEntries(['latitudes', 'summary', 'summary-hits', 'dur', 'life', 'cmp', 'contexts', 'edges', 'edge-hits', 'trail', 'nebnames', 'plates', 'nodes', 'labels', 'stubs', 'sel', 'elabels', 'axis'].map((k) => [k, svg.querySelector(`.m-${k}`)]));
     const regionMask = el('mask', { id: 'map-region-mask', maskUnits: 'userSpaceOnUse', maskContentUnits: 'userSpaceOnUse' }, svg.querySelector('defs'));
     const MASKED_GROUPS = [G.edges, G['edge-hits'], G.cmp, G.contexts, G.life, G.trail, G.dur];
     let masksActive = false;
     const setMasks = (onMask) => {
       if (masksActive === onMask) return;
       masksActive = onMask;
-      if (onMask) {
-        G.summary.setAttribute('mask', 'url(#map-summary-mask)');
-        G['summary-hits'].setAttribute('mask', 'url(#map-summary-mask)');
-        for (const g of MASKED_GROUPS) g.setAttribute('mask', 'url(#map-region-mask)');
-      } else {
-        G.summary.removeAttribute('mask');
-        G['summary-hits'].removeAttribute('mask');
-        for (const g of MASKED_GROUPS) g.removeAttribute('mask');
+      for (const g of MASKED_GROUPS) {
+        if (onMask) g.setAttribute('mask', 'url(#map-region-mask)');
+        else g.removeAttribute('mask');
       }
     };
     let zoomActive = false, zoomTimer = 0, summarySnap = null;
@@ -235,7 +229,8 @@ export default {
     const axis = {};
     let raf = 0, selected = null, focusMode = 'near', hovered = null, mode = 'z0';
     let linkMode = 'main', verifiedOnly = false;
-    let detail = mapDetail(0, 0, OV_K), aggregateLinks = [], summaryRecords = [], regionHover = null;
+    let detail = mapDetail(0, 0, OV_K), aggregateLinks = [], summaryRecords = [], regionHover = null, summaryHover = null;
+    let layoutBands = [];
     const regionNames = new Map();
     let filter = { domain: '', family: '' };
     let camBeforeFocus = null, camBeforeFilter = null;
@@ -298,8 +293,9 @@ export default {
           descent: name.fontBoundingBoxDescent ?? FONT_PX[s.tier] * 0.55,
           dateDescent: dates.fontBoundingBoxDescent ?? 5 }];
       }));
-      const layNodes = mapLayoutNodes(store.styles, (s) => meta.get(s.id));
+      const layNodes = mapLayoutNodes(store.styles, (s) => meta.get(s.id), store.nebulae);
       const lay = layoutMap(layNodes, sc.x, store.now);
+      layoutBands = lay.bands ?? [];
       primaryOf = lay.primary;
       // Коридоры ищутся при масштабе обзора: свободный там — свободен и при любом более крупном.
       const routes = routeBranches(layNodes, sc.x, lay, { now: store.now, dot: 16, scale: OV_K, extent: (n) => n.reach });
@@ -655,6 +651,7 @@ export default {
         }
       }
       if (neb.ready && nebOn && !nebNamesFirst) placeNebNames(visible.filter((n) => n.lbox).map((n) => [n.lbox[0], n.lbox[2], n.lbox[1], n.lbox[3]]));
+      drawLatitudes();
       updateRegionMasks();
       drawSummary();
       if (nebT0) window.__mapPerf.push(performance.now() - nebT0);
@@ -671,21 +668,47 @@ export default {
       if (focusedSummary) [...G['summary-hits'].children].find((n) => n.dataset.key === focusedSummary)?.focus({ preventScroll: true });
     }
 
+    function drawLatitudes() {
+      const show = neb.ready && nebOn && !rot && detail.seaNames > 0.02 && layoutBands.length > 1;
+      if (!show) {
+        if (G.latitudes.childElementCount) G.latitudes.replaceChildren();
+        return;
+      }
+      G.latitudes.replaceChildren();
+      G.latitudes.style.opacity = (detail.seaNames * 0.78).toFixed(3);
+      const sy = syOf(t.k);
+      const rowY = (r) => AXIS_H + t.ty + (PAD + r * ROW) * sy;
+      const labelById = new Map(LATITUDE_BANDS.map((b) => [b.id, b.label]));
+      const x1 = Math.max(40, vw - panelWidth() - 16);
+      for (let i = 0; i < layoutBands.length; i++) {
+        const b = layoutBands[i];
+        const prev = layoutBands[i - 1];
+        const topY = prev ? rowY((prev.r1 + b.r0 + 1) / 2) : AXIS_H;
+        if (prev && topY > AXIS_H + 8 && topY < vh - 8) {
+          el('line', { class: 'lat-line', x1: 16, x2: x1.toFixed(1), y1: topY.toFixed(1), y2: topY.toFixed(1) }, G.latitudes);
+        }
+        const ly = Math.max(AXIS_H + 16, topY + 15);
+        const botY = layoutBands[i + 1] ? rowY((b.r1 + layoutBands[i + 1].r0 + 1) / 2) : vh;
+        if (ly < Math.min(vh - 12, botY - 8)) {
+          const tEl = el('text', { class: 'lat-label', x: 18, y: ly.toFixed(1) }, G.latitudes);
+          tEl.textContent = labelById.get(b.id) ?? '';
+        }
+      }
+    }
+
     function updateRegionMasks() {
       if (zoomActive || regionNames.size === 0) {
         setMasks(false);
         return;
       }
       setMasks(true);
-      for (const [mask, w, h, project] of [[summaryMask, pw, ph, (b) => b], [regionMask, vw, vh, fromNameBox]]) {
-        mask.replaceChildren();
-        for (const [k, value] of Object.entries({ x: 0, y: 0, width: w, height: h })) mask.setAttribute(k, value);
-        el('rect', { x: 0, y: 0, width: w, height: h, fill: 'white' }, mask);
-        for (const r of regionNames.values()) {
-          const bs = r.boxes.map(project);
-          const x = Math.min(...bs.map((b) => b[0])) - 5, y = Math.min(...bs.map((b) => b[1])) - 4;
-          el('rect', { x, y, width: Math.max(...bs.map((b) => b[2])) - x + 5, height: Math.max(...bs.map((b) => b[3])) - y + 4, fill: 'black' }, mask);
-        }
+      regionMask.replaceChildren();
+      for (const [k, value] of Object.entries({ x: 0, y: 0, width: vw, height: vh })) regionMask.setAttribute(k, value);
+      el('rect', { x: 0, y: 0, width: vw, height: vh, fill: 'white' }, regionMask);
+      for (const r of regionNames.values()) {
+        const bs = r.boxes.map(fromNameBox);
+        const x = Math.min(...bs.map((b) => b[0])) - 5, y = Math.min(...bs.map((b) => b[1])) - 4;
+        el('rect', { x, y, width: Math.max(...bs.map((b) => b[2])) - x + 5, height: Math.max(...bs.map((b) => b[3])) - y + 4, fill: 'black' }, regionMask);
       }
     }
     function drawSummary() {
@@ -694,13 +717,14 @@ export default {
         if (lastSummaryKey !== 'off') {
           lastSummaryKey = 'off';
           summarySnap = null;
+          summaryHover = null;
           G.summary.style.opacity = '';
           G.summary.replaceChildren(); G['summary-hits'].replaceChildren();
           aggregateLinks = [];
         }
         return;
       }
-      // Во время активного зума не перестраиваем обзорные дуги summaryCurve на каждом кадре:
+      // Во время активного зума не перестраиваем обзорные течения на каждом кадре:
       // растягиваем уже отрисованный слой аффинной матрицей и пересчитываем один раз после паузы.
       if (zoomActive && !rot && summarySnap && summarySnap.rot === rot) {
         const sy = syOf(t.k);
@@ -711,7 +735,7 @@ export default {
         G.summary.style.opacity = Math.min(1, detail.aggregates / Math.max(0.15, summarySnap.agg)).toFixed(3);
         return;
       }
-      const key = `${detail.aggregates.toFixed(2)}|${linkMode}|${verifiedOnly}|${regionHover ?? ''}|${t.k.toFixed(4)}|${Math.round(t.tx)}|${Math.round(t.ty)}|${filter.domain}|${filter.family}`;
+      const key = `${detail.aggregates.toFixed(2)}|${linkMode}|${verifiedOnly}|${regionHover ?? ''}|${summaryHover ?? ''}|${t.k.toFixed(4)}|${Math.round(t.tx)}|${Math.round(t.ty)}|${filter.domain}|${filter.family}`;
       if (key === lastSummaryKey) {
         G.summary.style.opacity = '';
         return;
@@ -727,28 +751,116 @@ export default {
         ...contextEdges.map((c) => ({ from: c.a.s.id, to: c.b.s.id, kind: 'context', status: c.status, info: { context: c } })),
       ].filter((r) => !nodeById.get(r.from).g.classList.contains('out') && !nodeById.get(r.to).g.classList.contains('out'));
       const seaKeys = new Map(store.nebulae.map((s, i) => [s.id, `neb:${i}`]));
-      const groups = aggregateMapLinks(records, (id) => seaKeys.get(nodeById.get(id).s.nebula), { mode: linkMode, verifiedOnly });
-      const named = groups.filter((g) => regionNames.has(g.a) && regionNames.has(g.b));
-      const baseline = named.filter((g) => verifiedOnly || g.records.length >= 2).slice(0, linkMode === 'all' ? 10 : 6);
+      const { flows, bridges } = aggregateSeaFlows(records, (id) => seaKeys.get(nodeById.get(id).s.nebula), { mode: linkMode, verifiedOnly });
+      const namedFlows = flows.filter((g) => regionNames.has(g.a) && regionNames.has(g.b));
+      const namedBridges = bridges.filter((g) => regionNames.has(g.a) && regionNames.has(g.b));
       const incident = (g) => g.a === regionHover || g.b === regionHover;
-      // Базовые маршруты сохраняются при наведении, чтобы карта не менялась под указателем.
-      aggregateLinks = [...baseline, ...(regionHover ? named.filter((g) => incident(g) && !baseline.includes(g)).slice(0, 4) : [])];
-      const boxes = [...summaryMask.querySelectorAll('rect[fill="black"]')].map((r) => [+r.getAttribute('x'), +r.getAttribute('y'), +r.getAttribute('x') + +r.getAttribute('width'), +r.getAttribute('y') + +r.getAttribute('height')]);
+
+      // Магистральные течения (≥ 2 подтверждённых связей) видны всегда; при наведении на море
+      // проявляются также его одиночные «ручейки» (1 связь), а чужие течения мягко притухают.
+      const shownFlows = [
+        ...namedFlows.filter((g) => g.records.length >= 2),
+        ...(regionHover ? namedFlows.filter((g) => g.records.length === 1 && incident(g)) : []),
+      ];
+      const shownBridges = (linkMode === 'kinship' || linkMode === 'all')
+        ? [
+          ...namedBridges.filter((g) => g.records.length >= 2),
+          ...(regionHover ? namedBridges.filter((g) => g.records.length === 1 && incident(g)).slice(0, 4) : []),
+        ]
+        : [];
+      aggregateLinks = [...shownFlows, ...shownBridges];
+
+      const defs = el('defs', {}, G.summary);
+      const bounds = [6, rot ? 6 : AXIS_H + 6, pw - (rot ? AXIS_H + 6 : 6), ph - 6];
       const shores = new Map();
-      const shore = (key) => { if (!shores.has(key)) shores.set(key, nebulaShore(key, nameCam().toScreen)); return shores.get(key); };
-      for (const [i, g] of aggregateLinks.entries()) {
+      const shore = (k) => { if (!shores.has(k)) shores.set(k, nebulaShore(k, nameCam().toScreen, regionNames.get(k))); return shores.get(k); };
+      const labelBoxes = [...regionNames.values()].map((r) => {
+        const x0 = Math.min(...r.boxes.map((b) => b[0])) - 5, y0 = Math.min(...r.boxes.map((b) => b[1])) - 4;
+        const x1 = Math.max(...r.boxes.map((b) => b[2])) + 5, y1 = Math.max(...r.boxes.map((b) => b[3])) + 4;
+        return [x0, y0, x1, y1];
+      });
+      const flowKeySet = new Set(shownFlows.map((g) => `${g.a}>${g.b}`));
+      const focusOn = !!(regionHover || summaryHover);
+
+      // 1. Направленные градиентные течения (основание растворяется в море-источнике, наконечник контрастный).
+      shownFlows.forEach((g, idx) => {
         const a = regionNames.get(g.a), b = regionNames.get(g.b);
-        const route = summaryCurve({ ...a, ports: shore(g.a) }, { ...b, ports: shore(g.b) }, boxes, [6, rot ? 6 : AXIS_H + 6, pw - (rot ? AXIS_H + 6 : 6), ph - 6]);
-        if (!route) continue;
-        const { d } = route;
-        const width = Math.min(2.6, 0.85 + Math.log2(g.records.length + 1) * 0.4);
-        el('path', { class: 'summary-case', d, 'stroke-width': width + 2.4, opacity: detail.aggregates * 0.85 }, G.summary);
-        el('path', { class: 'summary-line', d, 'stroke-width': width, opacity: detail.aggregates * (regionHover ? incident(g) ? 0.82 : 0.34 : 0.5) }, G.summary);
-        for (const p of route.ports) el('circle', { class: 'summary-port', cx: p.x, cy: p.y, r: 2.4, opacity: detail.aggregates * (regionHover && incident(g) ? 0.9 : 0.65) }, G.summary);
-        const count = `${g.records.length} ${plural(g.records.length, 'связь карточек', 'связи карточек', 'связей карточек')}`;
-        const h = el('path', { class: 'summary-hit', d, 'data-summary': i, 'data-key': `${g.a}/${g.b}`, role: 'button', tabindex: 0, 'aria-label': `${a.name} и ${b.name}: ${count}. Открыть список` }, G['summary-hits']);
-        el('title', {}, h).textContent = `${count} · ${a.name} / ${b.name}`;
-      }
+        const regA = nebulaRegion(g.a), regB = nebulaRegion(g.b);
+        if (!a || !b || !regA || !regB) return;
+        const n = g.records.length;
+        const width = n >= 5 ? 14 : n >= 3 ? 10.5 : n === 2 ? 7.5 : 5;
+        const hasReverse = flowKeySet.has(`${g.b}>${g.a}`);
+        const bendSign = hasReverse ? (g.a < g.b ? 1 : -1) : ((a.y > b.y ? -1 : 1) * (idx % 2 === 0 ? 1 : 0.8));
+        const route = flowRibbon({ ...a, ports: shore(g.a) }, { ...b, ports: shore(g.b) }, {
+          bendSign, bendScale: hasReverse ? 0.24 : 0.18, width, tuck: Math.max(12, width * 1.4), bounds,
+        });
+        if (!route) return;
+        const flowKey = `${g.a}>${g.b}`;
+        const isExact = summaryHover === flowKey;
+        const isInc = isExact || (regionHover && incident(g));
+        const subtle = linkMode === 'kinship' && !isInc;
+        const bodyOp = detail.aggregates * (
+          isExact ? 0.86
+            : isInc ? (n === 1 ? 0.56 : 0.78)
+              : focusOn ? 0.09
+                : subtle ? 0.22 : 0.42
+        );
+        const tipOp = detail.aggregates * (
+          isExact ? 1
+            : isInc ? (n === 1 ? 0.8 : 0.96)
+              : focusOn ? 0.12
+                : subtle ? 0.34 : 0.74
+        );
+
+        const gradId = `sf-g-${idx}`;
+        const gr = el('linearGradient', {
+          id: gradId, gradientUnits: 'userSpaceOnUse',
+          x1: route.p0.x.toFixed(1), y1: route.p0.y.toFixed(1),
+          x2: route.p1.x.toFixed(1), y2: route.p1.y.toFixed(1),
+        }, defs);
+        // 4-ступенчатый акварельный градиент: 0% у истока полностью прозрачен → течение «вытекает» без шва.
+        el('stop', { offset: '0%', 'stop-color': regA.color, 'stop-opacity': '0' }, gr);
+        el('stop', { offset: '22%', 'stop-color': regA.color, 'stop-opacity': '0.44' }, gr);
+        el('stop', { offset: '66%', 'stop-color': regB.color, 'stop-opacity': '0.82' }, gr);
+        el('stop', { offset: '100%', 'stop-color': regB.color, 'stop-opacity': '1' }, gr);
+
+        el('path', { class: 'flow-ribbon', d: route.ribbonD, fill: `url(#${gradId})`, opacity: bodyOp.toFixed(3) }, G.summary);
+        el('path', {
+          class: 'flow-tip', d: route.chevronD,
+          stroke: regB.ink, 'stroke-width': (n >= 5 ? 1.85 : n >= 3 ? 1.55 : 1.35).toFixed(2),
+          opacity: tipOp.toFixed(3),
+        }, G.summary);
+
+        const count = `${n} ${plural(n, 'связь карточек', 'связи карточек', 'связей карточек')}`;
+        const h = el('path', {
+          class: 'summary-hit', d: route.centerD,
+          'data-summary': idx, 'data-key': flowKey, role: 'button', tabindex: 0,
+          'aria-label': `${a.name} → ${b.name}: ${count}. Открыть список`,
+        }, G['summary-hits']);
+        el('title', {}, h).textContent = `${a.name} → ${b.name} · ${count}`;
+      });
+
+      // 2. Ненаправленные мостики визуального сходства и контекста (в режимах «Сходства» и «Все связи»).
+      shownBridges.forEach((g, j) => {
+        const idx = shownFlows.length + j;
+        const a = regionNames.get(g.a), b = regionNames.get(g.b);
+        if (!a || !b) return;
+        const route = summaryCurve({ ...a, ports: shore(g.a) }, { ...b, ports: shore(g.b) }, labelBoxes, bounds);
+        if (!route) return;
+        const bridgeKey = `${g.a}|${g.b}`;
+        const isExact = summaryHover === bridgeKey;
+        const isInc = isExact || (regionHover && incident(g));
+        const op = detail.aggregates * (isExact ? 0.92 : isInc ? 0.78 : focusOn ? 0.12 : 0.48);
+        const w = Math.min(2.2, 1 + Math.log2(g.records.length + 1) * 0.35);
+        el('path', { class: 'bridge-line', d: route.d, 'stroke-width': w.toFixed(2), opacity: op.toFixed(3) }, G.summary);
+        const count = `${g.records.length} ${plural(g.records.length, 'сопоставление', 'сопоставления', 'сопоставлений')}`;
+        const h = el('path', {
+          class: 'summary-hit', d: route.d,
+          'data-summary': idx, 'data-key': bridgeKey, role: 'button', tabindex: 0,
+          'aria-label': `${a.name} и ${b.name}: ${count}. Открыть список`,
+        }, G['summary-hits']);
+        el('title', {}, h).textContent = `${a.name} ↔ ${b.name} · ${count}`;
+      });
     }
 
     function focusRegion(key) {
@@ -1614,7 +1726,13 @@ export default {
       if (e.pointerType === 'mouse' && !uiTarget(e)) lastPointer = { clientX: e.clientX, clientY: e.clientY };
       if (!pointers.has(e.pointerId)) {
         if (uiTarget(e)) return;
-        if (e.target.closest('.summary-hit')) return;
+        const sumHit = e.target.closest('.summary-hit');
+        if (sumHit) {
+          const nextSum = sumHit.dataset.key ?? null;
+          if (nextSum !== summaryHover || regionHover) { summaryHover = nextSum; regionHover = null; schedule(); }
+          return;
+        }
+        if (summaryHover) { summaryHover = null; schedule(); }
         if (!zoomActive && !wheelTarget && neb.ready && detail.nodes < 0.15 && e.pointerType === 'mouse') {
           const pt = toV(e.clientX, e.clientY);
           const next = nebulaRegionAt(pt.x, pt.y, nebulaCam(), detail.level === 'parts');
@@ -1671,7 +1789,7 @@ export default {
     };
     on(stage, 'pointerup', end);
     on(stage, 'pointercancel', end);
-    on(stage, 'pointerleave', (e) => { if (e.pointerType === 'mouse' && !pointers.size) { hideTip(); setHover(null); if (regionHover) { regionHover = null; schedule(); } } });
+    on(stage, 'pointerleave', (e) => { if (e.pointerType === 'mouse' && !pointers.size) { hideTip(); setHover(null); if (regionHover || summaryHover) { regionHover = null; summaryHover = null; schedule(); } } });
 
     on(stage, 'wheel', (e) => {
       if (e.target.closest('.map-panel, .map-directory, .map-edge-pop')) return;

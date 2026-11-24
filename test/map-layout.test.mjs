@@ -15,7 +15,7 @@ const NOW = 2026;
 const PX = { 1: 8.9, 2: 8, 3: 7.4 };
 const widthOf = (s) => ({ w: [...s.name].length * PX[s.tier], wd: [...fmtDates(s)].length * 5.6 });
 const sc = mapTimeScale(atlas.eras, atlas.styles, NOW);
-const nodes = mapLayoutNodes(atlas.styles, widthOf);
+const nodes = mapLayoutNodes(atlas.styles, widthOf, atlas.nebulae);
 // Карточка части не дальше стольких строк от центра своего моря. Самое большое море, «Древние истоки»
 // (19 карточек в сжатой по времени древности), сейчас занимает ±7 строк, остальные — не больше ±4.
 const MAX_PART_ROWS = 8;
@@ -105,4 +105,11 @@ test('map layout is deterministic and does not depend on input order', () => {
   const a = layoutMap(nodes, sc.x, NOW);
   const b = layoutMap([...nodes].reverse(), sc.x, NOW);
   assert.deepEqual([...a.pos].sort(), [...b.pos].sort());
+});
+
+test('map layout keeps latitude bands ordered north < center < south with clean separation', () => {
+  const lay = layoutMap(nodes, sc.x, NOW);
+  assert.deepEqual(lay.bands.map((b) => b.id), ['north', 'center', 'south']);
+  assert.ok(lay.bands[0].r1 + 2 <= lay.bands[1].r0);
+  assert.ok(lay.bands[1].r1 + 2 <= lay.bands[2].r0);
 });

@@ -201,7 +201,7 @@ function treeRows(nodes, intervals, primary, { passes, center }) {
 // где блок встанет. lay.primary — по-прежнему parents[0]: от него рисуются ветви.
 //   levels — ключи блоков сверху вниз (море, часть); ключ null — карточка сама по себе блок.
 // У блока нет вертикальных дыр: чужой узел не встанет между строками моря в то же время.
-export function layoutRegions(nodes, x, { now = 2026, dot = 16, gap = 22, tail = 26, passes = 6, center = 0.08, longGap = Infinity, levels = [], sep = { rows: 1, x: 0 }, gather = 1 } = {}) {
+export function layoutRegions(nodes, x, { now = 2026, dot = 16, gap = 22, tail = 26, passes = 6, center = 0.08, longGap = Infinity, levels = [], sep = { rows: 1, x: 0 }, gather = 1, bandOrder = null, bandOf = null, bandGap = 2 } = {}) {
   const { primary, kids } = primaryTree(nodes);
   const intervals = occupancy(nodes, x, kids, { now, dot, gap, tail, longGap });
 
@@ -225,10 +225,33 @@ export function layoutRegions(nodes, x, { now = 2026, dot = 16, gap = 22, tail =
       groups.get(k).push(n);
     }
     const blocks = [...groups.values()].map((g) => build(g, depth + 1));
+    if (depth === 0 && bandOf && bandOrder?.length) {
+      const fallbackBand = bandOrder[Math.floor(bandOrder.length / 2)];
+      const byBand = new Map(bandOrder.map((b) => [b, []]));
+      for (const blk of blocks) {
+        const b = bandOf(blk.members[0]) ?? fallbackBand;
+        (byBand.get(b) ?? byBand.get(fallbackBand)).push(blk);
+      }
+      const rows = new Map();
+      const bands = [];
+      let cursor = 0;
+      const gapRows = Math.max(bandGap, sep.rows ?? 1);
+      for (const bId of bandOrder) {
+        const list = byBand.get(bId);
+        if (!list?.length) continue;
+        const packed = list.length === 1 ? list[0] : packBlocks(list, sep, { passes, gather });
+        const r0 = cursor;
+        for (const [id, r] of packed.rows) rows.set(id, r0 + r);
+        const r1 = r0 + packed.h - 1;
+        bands.push({ id: bId, r0, r1 });
+        cursor = r1 + 1 + gapRows;
+      }
+      return { members, rows, h: Math.max(0, cursor - gapRows), bands };
+    }
     return blocks.length === 1 ? blocks[0] : packBlocks(blocks, depth === 0 ? sep : { rows: 0, x: 0 }, { passes, gather });
   };
   const top = build(nodes, 0);
-  return { pos: top.rows, count: top.h, intervals, primary: new Map(nodes.map((n) => [n.id, primary(n)])) };
+  return { pos: top.rows, count: top.h, intervals, primary: new Map(nodes.map((n) => [n.id, primary(n)])), bands: top.bands ?? [] };
 }
 
 // Область блока без вертикальных дыр: в каждом промежутке времени заняты все строки

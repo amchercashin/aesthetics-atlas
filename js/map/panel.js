@@ -122,9 +122,15 @@ export function renderMapPanel(panel, store, s, { focusMode, openLightbox, onRea
 }
 
 export function renderSummaryPopup(edgePop, store, group, regionNameOf) {
-  mount(edgePop, html`<p class="ep-head">${regionNameOf(group.a)} · ${regionNameOf(group.b)}</p>
+  const arrow = group.kind === 'flow' ? ' → ' : group.kind === 'bridge' ? ' ↔ ' : ' · ';
+  const lead = group.kind === 'flow'
+    ? 'Направленный поток подтверждённых исторических связей между карточками этих морей. Откройте любую пару, чтобы увидеть источник.'
+    : group.kind === 'bridge'
+      ? 'Визуальные сопоставления и контексты между карточками этих морей (сходство, не заявление о происхождении).'
+      : 'Это сводка связей отдельных эстетик. Моря — области навигации, а не исторические предки. Откройте связь, чтобы увидеть её тип и источник.';
+  mount(edgePop, html`<p class="ep-head">${regionNameOf(group.a)}${arrow}${regionNameOf(group.b)}</p>
     <p class="ep-kind">${group.records.length} ${plural(group.records.length, 'связь карточек', 'связи карточек', 'связей карточек')}</p>
-    <p class="ep-note">Это сводка связей отдельных эстетик. Моря — области навигации, а не исторические предки. Откройте связь, чтобы увидеть её тип и источник.</p>
+    <p class="ep-note">${lead}</p>
     <div class="summary-records">${group.records.map((r, i) => html`<button type="button" data-summary-record="${i}">${displayTitle(store.get(r.from))} ${r.kind === 'comparison' ? '↔' : '→'} ${displayTitle(store.get(r.to))}<small>${r.kind === 'history' ? RELATION[r.info.edge.type].label : r.kind === 'comparison' ? 'Визуальное сходство' : 'Контекст'} · ${r.kind === 'comparison' ? 'редакционное сопоставление' : REL_STATUS[r.status]}</small></button>`)}</div>`);
 }
 

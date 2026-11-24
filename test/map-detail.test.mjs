@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { mapDetail, aggregateMapLinks } from '../js/map-detail.js';
+import { mapDetail, aggregateMapLinks, aggregateSeaFlows } from '../js/map-detail.js';
 
 test('whole history prioritises seas at phone, laptop and very wide viewport fits', () => {
   for (const fit of [0.013, 0.035, 0.06, 0.15, 0.3]) {
@@ -78,4 +78,17 @@ test('all three line modes and the verification filter also govern sea summaries
   assert.deepEqual(go({ mode: 'main' })[0].records, [records[0]]);
   assert.deepEqual(go({ mode: 'main', verifiedOnly: true }), []);
   assert.deepEqual(go({ mode: 'all', verifiedOnly: true })[0].records, [records[1], records[5]]);
+});
+
+test('aggregateSeaFlows separates directed historical currents from undirected similarity bridges', () => {
+  const main = aggregateSeaFlows(records, (id) => groups.get(id), { mode: 'main' });
+  assert.equal(main.flows.length, 2, 'opposite historical directions remain distinct flows');
+  assert.equal(main.bridges.length, 0, 'main mode omits non-historical bridges');
+  assert.equal(main.flows.find((f) => f.from === 'sea-1' && f.to === 'sea-2')?.records.length, 1);
+  assert.equal(main.flows.find((f) => f.from === 'sea-2' && f.to === 'sea-1')?.records.length, 1);
+
+  const kin = aggregateSeaFlows(records, (id) => groups.get(id), { mode: 'kinship' });
+  assert.equal(kin.bridges.length, 1);
+  assert.equal(kin.bridges[0].records.length, 2);
+  assert.equal(aggregateSeaFlows(records, (id) => groups.get(id), { mode: 'none' }).flows.length, 0);
 });

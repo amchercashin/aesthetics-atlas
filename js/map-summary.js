@@ -51,3 +51,102 @@ export function summaryCurve(a, b, boxes, bounds) {
   }
   return best;
 }
+
+// Геометрия градиентной ленты-течения от главного берега моря A к берегу моря B:
+// основание мягко утоплено внутрь акварели A (растворяется через прозрачность градиента 0→1),
+// тело плавно сужается и переходит в чёткий вогнутый наконечник-стрелку на входе в B.
+export function flowRibbon(a, b, { bendSign = 1, bendScale = 0.2, width = 10, tuck = 16, bounds = null } = {}) {
+  const inside = (p) => !bounds || (p.x >= bounds[0] && p.x <= bounds[2] && p.y >= bounds[1] && p.y <= bounds[3]);
+  const portsOf = (reg, other) => {
+    const raw = (reg.ports ?? []).filter(inside);
+    if (!raw.length) return [{ x: reg.x, y: reg.y }];
+    // Отбираем точки берега, обращённые к парному морю, чтобы течение выходило с ближнего берега.
+    const sorted = raw.slice().sort((p, q) =>
+      (Math.hypot(p.x - other.x, p.y - other.y) + Math.hypot(p.x - reg.x, p.y - reg.y) * 0.25)
+      - (Math.hypot(q.x - other.x, q.y - other.y) + Math.hypot(q.x - reg.x, q.y - reg.y) * 0.25));
+    const chosen = [];
+    for (const p of sorted) {
+      if (chosen.every((q) => Math.hypot(p.x - q.x, p.y - q.y) >= 16)) chosen.push(p);
+      if (chosen.length === 6) break;
+    }
+    return chosen;
+  };
+  const ap = portsOf(a, b), bp = portsOf(b, a);
+  let bestPair = null;
+  for (const p of ap) for (const q of bp) {
+    const d = Math.hypot(q.x - p.x, q.y - p.y);
+    if (d < 2) continue;
+    const cost = d + (Math.hypot(p.x - a.x, p.y - a.y) + Math.hypot(q.x - b.x, q.y - b.y)) * 0.14;
+    if (!bestPair || cost < bestPair.cost) bestPair = { p, q, d, cost };
+  }
+  if (!bestPair) {
+    const d = Math.hypot(b.x - a.x, b.y - a.y);
+    if (d < 16) return null;
+    bestPair = { p: { x: a.x, y: a.y }, q: { x: b.x, y: b.y }, d };
+  }
+
+  // Утапливаем основание внутрь исходного моря (к его центру), чтобы градиент плавно «вытекал» из воды.
+  // Если моря почти касаются берегами (узкий пролив), утапливаем исток глубже, чтобы течение оставалось читаемым.
+  const inDx = a.x - bestPair.p.x, inDy = a.y - bestPair.p.y;
+  const inLen = Math.hypot(inDx, inDy);
+  const minSpan = Math.max(30, width * 2.4);
+  const needExtra = Math.max(0, minSpan - bestPair.d);
+  const tuckDist = Math.min(Math.max(tuck, needExtra), inLen * 0.65);
+  const p0 = inLen > 1
+    ? { x: bestPair.p.x + (inDx / inLen) * tuckDist, y: bestPair.p.y + (inDy / inLen) * tuckDist }
+    : bestPair.p;
+
+  // Остриё стрелки чуть заходит на береговую линию приёмника (на 3–5 px), чтобы плотно стыковаться.
+  const toDx = b.x - bestPair.q.x, toDy = b.y - bestPair.q.y;
+  const toLen = Math.hypot(toDx, toDy);
+  const p1 = toLen > 1
+    ? { x: bestPair.q.x + (toDx / toLen) * Math.min(5, toLen * 0.25), y: bestPair.q.y + (toDy / toLen) * Math.min(5, toLen * 0.25) }
+    : bestPair.q;
+
+  const dx = p1.x - p0.x, dy = p1.y - p0.y, len = Math.hypot(dx, dy);
+  if (len < 16) return null;
+  const nx = -dy / len, ny = dx / len;
+  const bend = Math.min(58, Math.max(12, len * bendScale)) * bendSign;
+  const c = { x: (p0.x + p1.x) / 2 + nx * bend, y: (p0.y + p1.y) / 2 + ny * bend };
+
+  const qPt = (t) => { const u = 1 - t; return { x: u * u * p0.x + 2 * u * t * c.x + t * t * p1.x, y: u * u * p0.y + 2 * u * t * c.y + t * t * p1.y }; };
+  const qTan = (t) => {
+    const tx = 2 * (1 - t) * (c.x - p0.x) + 2 * t * (p1.x - c.x);
+    const ty = 2 * (1 - t) * (c.y - p0.y) + 2 * t * (p1.y - c.y);
+    const l = Math.hypot(tx, ty) || 1;
+    return { x: tx / l, y: ty / l };
+  };
+
+  // Пропорции ленты и вогнутого наконечника-стрелки.
+  const headLen = Math.min(len * 0.34, Math.max(11, width * 1.4));
+  const headHalfW = Math.max(5.5, Math.min(13, width * 0.78));
+  const tBarb = Math.max(0.5, 1 - headLen / len);
+  const tNeck = Math.max(tBarb + 0.03, Math.min(0.92, 1 - (headLen * 0.72) / len));
+  const steps = 20;
+  const left = [], right = [];
+  for (let i = 0; i <= steps; i++) {
+    const f = i / steps;
+    const t = f * tNeck;
+    const p = qPt(t), tan = qTan(t);
+    const rnx = -tan.y, rny = tan.x;
+    // Мягкий раструб у истока (внутри моря) → изящное сужение к шейке стрелки.
+    const ease = 1 - f * f * (3 - 2 * f);
+    const flare = Math.pow(1 - f, 3) * 0.38;
+    const hw = width * (0.21 + 0.34 * ease + flare);
+    left.push([p.x + rnx * hw, p.y + rny * hw]);
+    right.push([p.x - rnx * hw, p.y - rny * hw]);
+  }
+  const pBarb = qPt(tBarb), tB = qTan(tBarb);
+  const bnx = -tB.y, bny = tB.x;
+  const barbL = [pBarb.x + bnx * headHalfW, pBarb.y + bny * headHalfW];
+  const barbR = [pBarb.x - bnx * headHalfW, pBarb.y - bny * headHalfW];
+  const tip = [p1.x, p1.y];
+
+  const poly = [...left, barbL, tip, barbR, ...right.reverse()];
+  const fmt = (pt) => `${pt[0].toFixed(1)},${pt[1].toFixed(1)}`;
+  const ribbonD = 'M' + poly.map(fmt).join('L') + 'Z';
+  // Контрастный шеврон по передним кромкам наконечника — делает направление мгновенно читаемым.
+  const chevronD = `M${fmt(barbL)}L${fmt(tip)}L${fmt(barbR)}`;
+  const centerD = `M${p0.x.toFixed(1)},${p0.y.toFixed(1)}Q${c.x.toFixed(1)},${c.y.toFixed(1)} ${p1.x.toFixed(1)},${p1.y.toFixed(1)}`;
+  return { ribbonD, chevronD, centerD, p0, p1, c, len };
+}
