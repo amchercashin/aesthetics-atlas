@@ -1,4 +1,4 @@
-// Сборка данных: content/*.yaml → data/atlas.json
+// Сборка данных: content/*.yaml → data/index.json + data/styles/<id>.json + s/<id>/index.html + assets/media/
 //   node scripts/build.mjs [--offline] [--refresh]
 // Разрешает картинки и статьи через Wikimedia API, считает палитры, валидирует граф.
 import fs from 'node:fs';

@@ -1,4 +1,4 @@
-// Матрица покрытия: регион × эпоха × область, техника и сюжет по data/atlas.json → docs/coverage.md
+// Матрица покрытия: регион × эпоха × область, техника и сюжет по data/index.json + data/styles/*.json → docs/coverage.md
 //   node scripts/coverage.mjs        (сначала npm run build)
 import fs from 'node:fs';
 import path from 'node:path';
@@ -21,7 +21,7 @@ const cell = (list) => {
 const row = (cells) => `| ${cells.join(' | ')} |`;
 const lines = [];
 lines.push('# Матрица покрытия', '');
-lines.push(`> Сгенерировано \`scripts/coverage.mjs\` из \`data/atlas.json\` (данные от ${atlas.builtAt}). Не редактировать вручную.`, '');
+lines.push(`> Сгенерировано \`scripts/coverage.mjs\` из \`data/index.json\` + \`data/styles/*.json\` (данные от ${atlas.builtAt}). Не редактировать вручную.`, '');
 lines.push(`Карточек: ${styles.length}. Макрорегион выводится из свободного поля \`region\` грубыми правилами (\`scripts/lib/regions.mjs\`); карточка с несколькими регионами считается в каждом. «обз.» — сколько из них обзорных (\`kind: overview\`): одна обзорная карточка о цивилизации не равна нескольким самостоятельным традициям.`, '');
 
 lines.push('## Регион × эпоха', '');

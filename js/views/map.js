@@ -353,7 +353,8 @@ export default {
         seenCmp.add(key);
         const path = el('path', { class: 'edge cmp', 'data-from': s.id, 'data-to': c.id }, G.cmp);
         const hit = el('path', { class: 'edge-hit cmp-hit', 'data-cmp': cmps.length }, G['edge-hits']);
-        cmps.push({ a, b, path, hit, note: c.note, sources: c.sources });
+        const rev = b.s.comparisons.find((x) => x.id === s.id);
+        cmps.push({ a, b, path, hit, note: c.note ?? rev?.note, sources: c.sources ?? rev?.sources });
       }
       for (const s of store.styles) for (const c of s.contexts ?? []) {
         if (c.direction !== 'out') continue;

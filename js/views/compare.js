@@ -16,9 +16,15 @@ function relationBetween(a, b) {
   const pb = a.parents.find((r) => r.id === b.id);
   if (pb) return { kind: 'history', label: `${displayTitle(b)} → ${displayTitle(a)}: ${RELATION[pb.type]?.label} (${REL_STATUS[pb.status]})`, note: pb.note };
   const cmp = a.comparisons.find((c) => c.id === b.id);
-  if (cmp) return { kind: 'comparison', label: 'Визуальное сопоставление в атласе (сходство, не происхождение)', note: cmp.note };
+  if (cmp) {
+    const rev = b.comparisons.find((c) => c.id === a.id);
+    return { kind: 'comparison', label: 'Визуальное сопоставление в атласе (сходство, не происхождение)', note: cmp.note ?? rev?.note };
+  }
   const ctx = (a.contexts ?? []).find((c) => c.id === b.id);
-  if (ctx) return { kind: 'context', label: `Культурный контекст: ${CONTEXT[ctx.type]?.label ?? 'связанная практика'}`, note: ctx.note };
+  if (ctx) {
+    const rev = (b.contexts ?? []).find((c) => c.id === a.id && c.direction === 'out');
+    return { kind: 'context', label: `Культурный контекст: ${CONTEXT[ctx.type]?.label ?? 'связанная практика'}`, note: ctx.note ?? rev?.note };
+  }
   return null;
 }
 

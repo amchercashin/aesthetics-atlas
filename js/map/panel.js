@@ -16,7 +16,9 @@ function relList(store, s, key, dir) {
   return html`<div class="mp-rel"><h3>${dir === 'from' ? 'Откуда' : 'Куда'}</h3><ul>
     ${s[key].map((r) => {
       const o = store.get(r.id);
-      return o ? html`<li><button type="button" class="mp-node" data-select="${o.id}"><span class="swatch" style="--c:${store.nebulaColor(o.id)}"></span><span><span class="mp-node-rel">${RELATION[r.type][dir]} · <span class="st st-${r.status}">${REL_STATUS[r.status]}</span></span>${displayTitle(o)}</span></button>${r.note ? html`<p class="mp-rel-note">${r.note}</p>` : ''}</li>` : '';
+      if (!o) return '';
+      const note = r.note ?? (dir === 'to' ? o.parents?.find((p) => p.id === s.id)?.note : null);
+      return html`<li><button type="button" class="mp-node" data-select="${o.id}"><span class="swatch" style="--c:${store.nebulaColor(o.id)}"></span><span><span class="mp-node-rel">${RELATION[r.type][dir]} · <span class="st st-${r.status}">${REL_STATUS[r.status]}</span></span>${displayTitle(o)}</span></button>${note ? html`<p class="mp-rel-note">${note}</p>` : ''}</li>`;
     })}
   </ul></div>`;
 }
@@ -26,7 +28,9 @@ function cmpList(store, s) {
   return html`<div class="mp-rel"><h3>Похоже на</h3><ul>
     ${s.comparisons.map((c) => {
       const o = store.get(c.id);
-      return o ? html`<li><button type="button" class="mp-node" data-select="${o.id}"><span class="swatch" style="--c:${store.nebulaColor(o.id)}"></span><span><span class="mp-node-rel">сопоставление, не происхождение</span>${displayTitle(o)}</span></button>${c.note ? html`<p class="mp-rel-note">${c.note}</p>` : ''}</li>` : '';
+      if (!o) return '';
+      const note = c.note ?? o.comparisons?.find((x) => x.id === s.id)?.note;
+      return html`<li><button type="button" class="mp-node" data-select="${o.id}"><span class="swatch" style="--c:${store.nebulaColor(o.id)}"></span><span><span class="mp-node-rel">сопоставление, не происхождение</span>${displayTitle(o)}</span></button>${note ? html`<p class="mp-rel-note">${note}</p>` : ''}</li>`;
     })}
   </ul></div>`;
 }
@@ -35,7 +39,9 @@ function contextList(store, s) {
   if (!s.contexts?.length) return '';
   return html`<div class="mp-rel"><h3>Школы и контекст</h3><ul>${s.contexts.map((c) => {
     const other = store.get(c.id);
-    return other ? html`<li><button type="button" class="mp-node" data-select="${other.id}"><span class="swatch" style="--c:${store.nebulaColor(other.id)}"></span><span><span class="mp-node-rel">${CONTEXT[c.type]?.[c.direction]} · ${REL_STATUS[c.status]}</span>${displayTitle(other)}</span></button><p class="mp-rel-note">${c.note}</p></li>` : '';
+    if (!other) return '';
+    const note = c.note ?? other.contexts?.find((x) => x.id === s.id && x.direction === 'out')?.note;
+    return html`<li><button type="button" class="mp-node" data-select="${other.id}"><span class="swatch" style="--c:${store.nebulaColor(other.id)}"></span><span><span class="mp-node-rel">${CONTEXT[c.type]?.[c.direction]} · ${REL_STATUS[c.status]}</span>${displayTitle(other)}</span></button>${note ? html`<p class="mp-rel-note">${note}</p>` : ''}</li>`;
   })}</ul></div>`;
 }
 

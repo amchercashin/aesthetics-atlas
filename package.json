@@ -5,6 +5,7 @@
   "description": "Атлас эстетик — навигатор по визуальным стилям человечества",
   "scripts": {
     "build": "node scripts/build.mjs",
+    "optimize-works": "node scripts/optimize-works.mjs",
     "check-links": "node scripts/check-links.mjs",
     "find": "node scripts/find-media.mjs",
     "test": "node --test test/*.test.mjs",

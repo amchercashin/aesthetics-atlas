@@ -26,6 +26,43 @@ export function collectIndexSourceIds(styles) {
   return ids;
 }
 
+function toBriefImg(img) {
+  if (!img) return null;
+  return {
+    w: img.w,
+    h: img.h,
+    src: img.src,
+    ...(img.local ? { local: true } : {}),
+    ...(img.kind ? { kind: img.kind } : {}),
+    ...(img.mirrored ? { mirrored: true } : {}),
+    ...(img.nonfree ? { nonfree: true } : {}),
+  };
+}
+
+function toBriefWork(w) {
+  if (!w) return null;
+  return {
+    ...(w.title ? { title: w.title } : {}),
+    ...(w.author ? { author: w.author } : {}),
+    ...(w.year != null ? { year: w.year } : {}),
+    ...(w.place ? { place: w.place } : {}),
+    ...(w.external ? { external: w.external } : {}),
+    img: toBriefImg(w.img),
+  };
+}
+
+function toBriefPalette(p) {
+  if (!p) return null;
+  return {
+    colors: p.colors,
+    accent: p.accent,
+    accentLight: p.accentLight,
+    accentDark: p.accentDark,
+    source: p.source,
+    ...(p.from ? { from: p.from } : {}),
+  };
+}
+
 export function toBriefStyle(s) {
   const fallbackWork = !s.example?.img
     ? (s.gallery?.find((g) => g.img) ?? s.corpus?.find((c) => c.img) ?? null)
@@ -62,17 +99,19 @@ export function toBriefStyle(s) {
     origin: s.origin,
     row: s.row,
     parents: s.parents,
-    children: s.children,
-    comparisons: s.comparisons,
-    contexts: s.contexts,
+    // У детей, встречных сопоставлений и входящих контекстов пояснение и источники хранятся
+    // на канонической стороне (parents, min(id), direction==='out'), чтобы не дублировать текст в index.json.
+    children: (s.children ?? []).map(({ id, type, status }) => ({ id, type, status })),
+    comparisons: (s.comparisons ?? []).map((c) => (s.id <= c.id ? c : { id: c.id })),
+    contexts: (s.contexts ?? []).map((c) => (c.direction === 'out' ? c : { id: c.id, type: c.type, direction: c.direction, status: c.status })),
     ...(s.featuredContext ? { featuredContext: s.featuredContext } : {}),
     summary: s.summary,
     traits: s.traits,
     promptCues: s.promptCues,
     names: s.names,
-    palette: s.palette,
-    example: s.example,
-    gallery: fallbackWork ? [fallbackWork] : [],
+    palette: toBriefPalette(s.palette),
+    example: toBriefWork(s.example),
+    gallery: fallbackWork ? [toBriefWork(fallbackWork)] : [],
   };
 }
 

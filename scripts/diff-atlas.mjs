@@ -1,4 +1,4 @@
-// Что изменилось в data/atlas.json по карточкам:
+// Что изменилось в собранных данных (data/index.json + data/styles/*.json) по карточкам:
 //   node scripts/diff-atlas.mjs                       → закоммиченный (HEAD) против рабочего
 //   node scripts/diff-atlas.mjs old.json new.json     → два файла
 //   node scripts/diff-atlas.mjs --expect id1,id2      → ошибка, если менялось что-то кроме дрейфа у других карточек
