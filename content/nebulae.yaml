@@ -566,10 +566,29 @@ nebulae:
         styles:
           - torres-strait-printmaking
           - alick-tipoti
+  - id: iskusstvo-amerik
+    name: Искусство и традиции Америк
+    band: south
+    color: '#9B3B6B'
+    parts:
+      - id: drevnie-ameriki
+        name: Мезоамерика и Анды
+        styles:
+          - mesoamerican-art
+          - andean-art
+      - id: traditsii-latinskoy-ameriki
+        name: Традиции Латинской Америки
+        styles:
+          - mapuche-silverwork
+          - guna-mola
+          - chicha-posters
+      - id: zhivopis-karibov-i-latinskoy-ameriki
+        name: Живопись Латинской Америки и Карибов
+        styles:
+          - tarsila-do-amaral
+          - haitian-popular-painting
 free:
   - aboriginal-art
-  - mesoamerican-art
-  - andean-art
   - emily-kngwarray
   - zverev-portrait-graphics
   - carrolup-school

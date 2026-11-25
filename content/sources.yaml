@@ -9849,3 +9849,329 @@
     Очерк Мэтью Эйкинса (2013) с комментариями Дуррии Кази: звенящие цепи с колокольчиками («jingle trucks»),
     резная деревянная корона тадж, штампованные металлические пластины, связь цветовой пышности с украшением
     суфийских святынь и эволюция портретов на заднем борту.
+- id: mumo-exhibits
+  title: "Exhibitions — Museo de la Mola (MuMo)"
+  publisher: Museo de la Mola, Panamá (Fundación Alberto Motta)
+  url: https://museodelamola.org/en/exhibits/
+  sourceType: museum
+  checked: '2026-11-25'
+  note: >-
+    Страница экспозиций Музея молы в Панаме: пять постоянных разделов (техника и эволюция, космовидение,
+    окружающая среда, слои, нарративные молы), собрание около 200 мол (коллекции Фонда Льописа, Давида де Кастро
+    и Фонда Альберто Мотты) и очерк о революции дуле в феврале 1925 года.
+- id: mumo-about
+  title: "About Us — Museo de la Mola (MuMo)"
+  publisher: Museo de la Mola, Panamá (Fundación Alberto Motta)
+  url: https://museodelamola.org/en/about-us/
+  sourceType: museum
+  checked: '2026-11-25'
+  note: >-
+    Сведения об учреждении Музея молы в Каско-Антигуо (Панама) и его одобрении пятью правящими советами гуна
+    (Congreso General Guna Yala и региональные конгрессы).
+- id: aic-mola-blouse-37890
+  title: "Mola Blouse, Ailigandi, Guna Yala, Panama, 1960/69 (1971.630)"
+  publisher: Art Institute of Chicago
+  url: https://www.artic.edu/artworks/37890
+  sourceType: museum
+  checked: '2026-11-25'
+  note: >-
+    Каталожная запись и кураторский текст (прочитаны через официальный API Чикагского института искусств):
+    техника обратной аппликации из нескольких слоёв цветного хлопка с концентрическими вырезами и подшитыми
+    краями, связь орнамента с традиционной росписью тела, бытование у гуна в Панаме и Колумбии, переход от
+    блуз к самостоятельным художественным панелям.
+- id: met-guna-blouse-89803
+  title: "Blouse, Kuna (Guna), Panama, 1800–1938"
+  publisher: The Metropolitan Museum of Art
+  url: https://www.metmuseum.org/art/collection/search/89803
+  sourceType: museum
+  checked: '2026-11-25'
+  note: >-
+    Каталожная запись (прочитана через официальный Collection API Метрополитен-музея): хлопковая блуза гуна
+    из Панамы (73,7 × 81,3 см), датированная 1800–1938 годами — один из ранних музейных образцов традиции.
+- id: commons-mola-honolulu-3739
+  title: "Mola (blouse panel), Cuna (Kuna) Indians, Wichubuala, Honolulu Museum of Art 3739.1"
+  publisher: Wikimedia Commons (Honolulu Museum of Art)
+  url: https://commons.wikimedia.org/wiki/File:Mola_(blouse_panel),_Cuna_(Kuna)_Indians,_Honolulu_Museum_of_Art,_3739.1.JPG
+  sourceType: catalog
+  checked: '2026-11-25'
+  note: >-
+    Страница файла Commons (CC0) с музейной этикеткой Художественного музея Гонолулу: панель блузы мола,
+    остров Вичубуала (архипелаг Сан-Блас, Панама), XX век, хлопок, аппликация и обратная аппликация, инв. 3739.1.
+- id: commons-mola-honolulu-3740
+  title: "Mola (blouse panel), Cuna (Kuna) Indians, Nulanega, Honolulu Museum of Art 3740.1"
+  publisher: Wikimedia Commons (Honolulu Museum of Art)
+  url: https://commons.wikimedia.org/wiki/File:Mola_(blouse_panel),_Cuna_(Kuna)_Indians,_Honolulu_Museum_of_Art,_3740.1.JPG
+  sourceType: catalog
+  checked: '2026-11-25'
+  note: >-
+    Страница файла Commons (CC0) с музейной этикеткой Художественного музея Гонолулу: панель мола, остров
+    Нуланега (Сан-Блас, Панама), XX век, хлопок, аппликация, обратная аппликация и вышивка, инв. 3740.1.
+- id: commons-mola-honolulu-3742
+  title: "Mola (blouse panel), Cuna (Kuna) Indians, Nulanega, Honolulu Museum of Art 3742.1"
+  publisher: Wikimedia Commons (Honolulu Museum of Art)
+  url: https://commons.wikimedia.org/wiki/File:Mola_(blouse_panel),_Cuna_(Kuna)_Indians,_Honolulu_Museum_of_Art,_3742.1.JPG
+  sourceType: catalog
+  checked: '2026-11-25'
+  note: >-
+    Страница файла Commons (CC0) с музейной этикеткой Художественного музея Гонолулу: панель мола, остров
+    Нуланега (Сан-Блас, Панама), XX век, хлопок, аппликация и обратная аппликация, инв. 3742.1.
+- id: commons-mola-honolulu-3735
+  title: "Mola (blouse panel), Cuna (Kuna) Indians, Carti Yantupo, Honolulu Museum of Art 3735.1"
+  publisher: Wikimedia Commons (Honolulu Museum of Art)
+  url: https://commons.wikimedia.org/wiki/File:Mola_(blouse_panel),_Cuna_(Kuna)_Indians,_Honolulu_Museum_of_Art,_3735.1.JPG
+  sourceType: catalog
+  checked: '2026-11-25'
+  note: >-
+    Страница файла Commons (CC0) с музейной этикеткой Художественного музея Гонолулу: панель мола с геометрическим
+    узором, остров Карти-Янтупо (Сан-Блас, Панама), XX век, хлопок, обратная аппликация и вышивка, инв. 3735.1.
+- id: chileprecolombino-mapuche-art
+  title: "Native peoples: Mapuche — Art"
+  publisher: Museo Chileno de Arte Precolombino (Chile Precolombino)
+  url: https://chileprecolombino.cl/en/pueblos-originarios/mapuche/arte/
+  sourceType: museum
+  checked: '2026-11-25'
+  note: >-
+    Очерк Чилийского музея доколумбова искусства о ремесле рютран (rutran): синтез доиспанской обработки
+    листового металла и привнесённого плавления серебра, роль украшений в женском костюме и приданом, типология
+    (trarilonko, chaway, upul, trapelakucha, sikil, akucha, tupu, конская сбруя).
+- id: memoriachilena-plateria-mapuche
+  title: "Platería mapuche"
+  publisher: Memoria Chilena, Biblioteca Nacional de Chile
+  url: https://www.memoriachilena.gob.cl/602/w3-article-92351.html
+  sourceType: museum
+  checked: '2026-11-25'
+  note: >-
+    Статья Национальной библиотеки Чили: доиспанская металлургия, взлёт серебряного дела в конце XVIII века
+    на основе переплавки монет из пограничной торговли (La Frontera), статус лонко и ульменов, расцвет XIX века,
+    упадок после оккупации Араукании и современная традиция ювелирных украшений.
+- id: va-mapuche-katawe-o322196
+  title: "Katawe (Shawl pin), Chile, 1850–1900 (O322196)"
+  publisher: Victoria and Albert Museum
+  url: https://collections.vam.ac.uk/item/O322196/
+  sourceType: museum
+  checked: '2026-11-25'
+  note: >-
+    Каталожная запись V&A (прочитана через API музея): чилийская серебряная булавка катаве 1850–1900 годов —
+    полая сфера из двух спаянных полушарий с перекрёстной гравировкой по шву и подвесным крестиком.
+- id: va-mapuche-shawl-pin-o382363
+  title: "Shawl pin (tupu), Chile, 1800–1899 (O382363)"
+  publisher: Victoria and Albert Museum
+  url: https://collections.vam.ac.uk/item/O382363/
+  sourceType: museum
+  checked: '2026-11-25'
+  note: >-
+    Каталожная запись V&A (прочитана через API музея): чилийская серебряная булавка XIX века с ажурной каймой
+    и красной вставкой; кураторский комментарий об инкском происхождении типа тупу, свидетельстве миссионера
+    Диего де Оканья (1600) о женщинах мапуче с серебряными и золотыми булавками и переработке мотива пламенеющего сердца.
+- id: commons-mapuche-siquel-12809
+  title: "Adorno pectoral (siquel) de los indios araucanos de Chile, Nº inv. 12.809"
+  publisher: Wikimedia Commons (Museo de América, Madrid)
+  url: https://commons.wikimedia.org/wiki/File:Adorno_pectoral_(siquel)_de_los_indios_araucanos._Museo_de_Am%C3%A9rica.jpg
+  sourceType: catalog
+  checked: '2026-11-25'
+  note: >-
+    Страница файла Commons (CC BY-SA 4.0) с этикеткой Музея Америки в Мадриде: серебряное нагрудное украшение
+    (сикиль / трапелакуча) из Чили, инв. № 12.809.
+- id: commons-mapuche-siquel-12823
+  title: "Adorno pectoral de plata (siquel) mapuche, siglo XIX, Nº inv. 12.823"
+  publisher: Wikimedia Commons (Museo de América, Madrid)
+  url: https://commons.wikimedia.org/wiki/File:Adorno_pectoral_(siquel)_mapuche._Museo_de_Am%C3%A9rica.jpg
+  sourceType: catalog
+  checked: '2026-11-25'
+  note: >-
+    Страница файла Commons (CC BY-SA 4.0) с этикеткой Музея Америки в Мадриде: серебряный нагрудный сикиль
+    мапуче XIX века из Чили, инв. № 12.823 (в витрине вместе с обручем трарилонко, серьгами и булавкой).
+- id: commons-mapuche-milet-1890
+  title: "Gustavo Milet Ramírez. Studio portrait of a young Mapuche woman, Traiguén, ca. 1890"
+  publisher: Wikimedia Commons (British Museum Am,B5.23)
+  url: https://commons.wikimedia.org/wiki/File:Joven_Mapuche_-_Traiguen_1890.jpg
+  sourceType: catalog
+  checked: '2026-11-25'
+  note: >-
+    Страница файла Commons (общественное достояние) со ссылкой на запись Британского музея (Am,B5.23):
+    кабинетный портрет ок. 1890 года (Трайген, Чили), показывающий ношение серебряных украшений с традиционным
+    костюмом (трарилонко, чавай, тупу и нагрудная трапелакуча).
+- id: malba-tarsila-abaporu
+  title: "Tarsila do Amaral. Abaporu, 1928 (2003.33)"
+  publisher: Museo de Arte Latinoamericano de Buenos Aires (MALBA)
+  url: https://coleccion.malba.org.ar/Detail/objects/201
+  sourceType: museum
+  checked: '2026-11-25'
+  note: >-
+    Каталожная запись и кураторский очерк MALBA: масло на холсте 84,5 × 72,5 см, 1928 (инв. 2003.33); обучение
+    Тарсилы в Париже у Глеза, Лота и особенно Леже, период Pau-Brasil (1924–1927), создание «Абапору» как
+    подарка Освалду ди Андради, значение названия на тупи-гуарани и связь с «Антропофагическим манифестом».
+- id: grenoble-tarsila-cuca
+  title: "Tarsila do Amaral. A Cuca, vers février 1924"
+  publisher: Musée de Grenoble (Navigart)
+  url: https://www.navigart.fr/grenoble/artwork/140000000047513
+  sourceType: museum
+  checked: '2026-11-25'
+  note: >-
+    Каталожная запись Музея Гренобля (прочитана через API Navigart): «A Cuca», ок. февраля 1924, масло на холсте
+    60,5 × 72,5 см, рама выполнена Пьером Легреном по заказу художницы до июня 1926, дар художницы с Salon du Franc
+    (1926), на депозите в Музее Гренобля с 14 мая 1928 года; подтверждённая выставочная история (MoMA, AIC, MASP).
+- id: masp-tarsila-popular-2019
+  title: "Tarsila do Amaral: Cannibalizing Modernism (Tarsila Popular)"
+  publisher: Museu de Arte de São Paulo (MASP)
+  url: https://masp.org.br/en/exhibitions/tarsila-popular
+  sourceType: museum
+  checked: '2026-11-25'
+  note: >-
+    Кураторский текст крупнейшей ретроспективы Тарсилы (Адриано Педроса и Фернандо Олива, MASP, 2019, 92 работы):
+    учёба в Париже с 1923 года у Андре Лота и Фернана Леже, переработка кубизма и программа антропофагии,
+    заявление художницы об интересе к «деревенскому вкусу» (caipiras) и её формулировка «народной» палитры
+    («чистый синий, фиолетово-розовый, яркий жёлтый, поющий зелёный»).
+- id: guggenheim-bilbao-tarsila-2025
+  title: "Tarsila do Amaral: Painting Modern Brazil"
+  publisher: Guggenheim Museum Bilbao
+  url: https://www.guggenheim-bilbao.eus/en/exhibitions/tarsila-do-amaral-painting-modern-brazil
+  sourceType: museum
+  checked: '2026-11-25'
+  note: >-
+    Страница международной ретроспективы 2025 года (совместно с Musée du Luxembourg и GrandPalaisRmn, кураторы
+    Сесилия Браски и Хеанинне Гутьеррес-Гимарайнш): общие границы творчества 1920-х и отличия активистской
+    живописи 1930-х («Operários», 1933), а также точные каталожные данные и репродукции «Carnaval em Madureira»
+    (1924), «O Vendedor de Frutas» (1925) и «Urutu» (1928).
+- id: centredart-haiti-story
+  title: "Our story — Le Centre d'Art d'Haïti"
+  publisher: Le Centre d'Art, Port-au-Prince
+  url: https://www.lecentredart.org/en/le-centre-dart-en/about-us/our-story/
+  sourceType: museum
+  checked: '2026-11-25'
+  note: >-
+    Официальная история Центра искусств в Порт-о-Пренсе: основание в 1944 году американским акварелистом ДеУиттом
+    Питерсом и гаитянскими интеллектуалами (Морис Борно, Альбер Мангонес, Филипп Тоби-Марселен и др.),
+    формирование с 1945 года так называемого «наивного» движения, визиты Хосе Гомеса Сикре (1945) и Андре Бретона
+    (1948), росписи собора Святой Троицы, Музей гаитянского искусства (1972) и землетрясение 2010 года.
+- id: centredart-haiti-collections
+  title: "Our collections — Le Centre d'Art d'Haïti"
+  publisher: Le Centre d'Art, Port-au-Prince
+  url: https://www.lecentredart.org/en/our-collections/
+  sourceType: museum
+  checked: '2026-11-25'
+  note: >-
+    Сведения о собрании Центра искусств в Порт-о-Пренсе: около 5600 сохранившихся произведений с 1944 года,
+    более 3000 оцифрованных документов и включение архива в региональный реестр ЮНЕСКО «Память мира» в 2017 году.
+- id: mam-hyppolite-at-the-temple
+  title: "Hector Hyppolite. At the Temple [Au Tanpe], ca. 1947 (M1983.358)"
+  publisher: Milwaukee Art Museum
+  url: https://collection.mam.org/details.php?id=1741
+  sourceType: museum
+  checked: '2026-11-25'
+  note: >-
+    Каталожная запись Художественного музея Милуоки: Эктор Ипполит (1894–1948), «В храме [Au Tanpe]», ок. 1947,
+    масло на картоне/доске, 91,12 × 44,45 см, дар Ричарда и Эрны Флагг, инв. M1983.358.
+- id: mam-obin-lecontes-rebels
+  title: "Philomé Obin. Leconte's Rebels, July, 1911 (Les Cacos de Loconte, Juillet, 1911), 1946 (M1991.143)"
+  publisher: Milwaukee Art Museum
+  url: https://collection.mam.org/details.php?id=294
+  sourceType: museum
+  checked: '2026-11-25'
+  note: >-
+    Каталожная запись Художественного музея Милуоки: Филоме Обен (1891–1986), «Повстанцы Леконта, июль 1911 года»,
+    1946, масло на картоне/доске, 62,23 × 91,44 см, дар Ричарда и Эрны Флагг, инв. M1991.143.
+- id: mam-duffaut-floating-city
+  title: "Préfète Duffaut. Floating City, 1976 (M2018.340)"
+  publisher: Milwaukee Art Museum
+  url: https://collection.mam.org/details.php?id=36884
+  sourceType: museum
+  checked: '2026-11-25'
+  note: >-
+    Каталожная запись Художественного музея Милуоки: Префет Дюффо (1923–2012), «Парящий город», 1976, масло
+    на холсте, 90,17 × 58,42 см, дар семьи Вайзер, инв. M2018.340.
+- id: mam-benoit-boat-builders
+  title: "Rigaud Benoit. Boat Builders and Fishermen, ca. 1953 (M1977.168)"
+  publisher: Milwaukee Art Museum
+  url: https://collection.mam.org/details.php?id=10166
+  sourceType: museum
+  checked: '2026-11-25'
+  note: >-
+    Каталожная запись Художественного музея Милуоки: Риго Бенуа (1911–1986), «Строители лодок и рыбаки», ок. 1953,
+    масло на мазоните, в раме 71,12 × 87 см, дар Ричарда Флагга, инв. M1977.168.
+- id: mam-bazile-coumbite
+  title: "Castera Bazile. Coumbite [Konbite Communal Fieldwork], 1953 (M1991.106)"
+  publisher: Milwaukee Art Museum
+  url: https://collection.mam.org/details.php?id=2948
+  sourceType: museum
+  checked: '2026-11-25'
+  note: >-
+    Каталожная запись Художественного музея Милуоки: Кастера Базиль (1923–1966), «Кумбит (совместная работа
+    в поле)», 1953, масло на мазоните, 60,96 × 48,9 см, дар Ричарда и Эрны Флагг, инв. M1991.106.
+- id: si-peru-2015-urban-art
+  title: "Perú: Pachamama — Urban Art and Music"
+  publisher: Smithsonian Folklife Festival (2015)
+  url: https://festival.si.edu/2015/peru/performing-and-visual-arts/urban-art-and-music/smithsonian
+  sourceType: museum
+  checked: '2026-11-25'
+  note: >-
+    Кураторский очерк программы «Перу: Пачамама» Смитсоновского фестиваля 2015 года: происхождение музыки чича
+    и амазонской кумбии с конца 1960-х на фоне миграции в Лиму, шелкография мастеров центрального нагорья Хунин
+    с палитрой традиционной одежды, ручная резка и печать афиш, роль пионера Педро «Monky» Толомео (афиши для
+    Los Shapis и Chacalón y La Nueva Crema) и типографический вклад Эллиота Тупака.
+- id: si-peru-2015-monky-blog
+  title: "Georgia Ellie Dassler. Exploring with Ellie: Screen-Printing with MONKY"
+  publisher: Smithsonian Center for Folklife and Cultural Heritage
+  url: https://festival.si.edu/blog/2015/exploring-with-ellie-screen-printing-with-monky/
+  sourceType: museum
+  checked: '2026-11-25'
+  note: >-
+    Полевой репортаж с мастер-класса Педро «Monky» Толомео (июнь 2015): низкотехнологичная техника трафаретной
+    печати вручную с вырезанными бумажными шаблонами, пропитыванием бумаги растительным маслом для прозрачности
+    и ракельной накаткой краски на флуоресцентных листах.
+- id: si-peru-2015-painting-peru
+  title: "Alexia Fawcett. Painting Peru: Cultural Identity in Murals"
+  publisher: Smithsonian Center for Folklife and Cultural Heritage
+  url: https://festival.si.edu/blog/2015/painting-peru/
+  sourceType: museum
+  checked: '2026-11-25'
+  note: >-
+    Очерк кураторской команды Смитсоновского фестиваля (апрель 2015): связь эстетики чича с городской идентичностью
+    мигрантов в Лиме и Арекипе, переход чича-леттеринга в уличные муралы (включая «Antes Soñaba» Эллиота Тупака)
+    и общественная дискуссия вокруг закрашивания муралов в историческом центре Лимы в 2015 году.
+- id: erie-revolucion-chicha-2023
+  title: "Revolución Chicha (September 15, 2023 – February 2024)"
+  publisher: Erie Art Museum
+  url: https://www.erieartmuseum.org/revolucion-chicha
+  sourceType: museum
+  checked: '2026-11-25'
+  note: >-
+    Анонс музейной выставки перуанской чича-графики: участие Эллиота Тупака, Amapolay, Familia Gutierrez, Nación
+    Chicha, Moises Sants и Monky; происхождение из рабочей среды и миграции в Лиму с конца 1960-х, расширение
+    языка чича в социальный и протестный плакат (работы 2017–2018 годов).
+- id: commons-chicha-monky-cholo
+  title: "Pedro 'Monky' Tolomeo. Chicha-style poster 'Cholo fino', Smithsonian Folklife Festival, 2015"
+  publisher: Wikimedia Commons
+  url: https://commons.wikimedia.org/wiki/File:Monky_chicha_poster_Cholo_fino_2015.jpg
+  sourceType: catalog
+  checked: '2026-11-25'
+  note: >-
+    Страница файла Commons (CC BY-SA 2.0, фото Элверта Барнса, 29.06.2015): плакат «Cholo fino», выполненный
+    Педро «Monky» Толомео на 49-м Смитсоновском фестивале фольклора в Вашингтоне.
+- id: commons-chicha-monky-sff-2015
+  title: "Pedro 'Monky' Tolomeo screen-printing at 49th Smithsonian Folklife Festival, 5 July 2015"
+  publisher: Wikimedia Commons
+  url: https://commons.wikimedia.org/wiki/File:11a.Monky.Chicha.Peru.SFF.WDC.5July2015.jpg
+  sourceType: catalog
+  checked: '2026-11-25'
+  note: >-
+    Страница файла Commons (CC BY-SA 2.0, фото Элверта Барнса, 05.07.2015): документальный снимок ручной
+    шелкографической рамы Педро «Monky» Толомео с градиентной накаткой неоновой краски на Смитсоновском фестивале.
+- id: commons-chicha-lima-2013
+  title: "Carteles chicha, Lima, Peru (photo 2013)"
+  publisher: Wikimedia Commons
+  url: https://commons.wikimedia.org/wiki/File:Carteles_chicha.jpg
+  sourceType: catalog
+  checked: '2026-11-25'
+  note: >-
+    Страница файла Commons (CC BY-SA 2.0, фото Лусии Кальдерон Португаль, 15.02.2013): уличная стена Лимы,
+    плотно оклеенная концертными афишами чича и андской кумбии.
+- id: commons-chicha-puente-piedra-2022
+  title: "Cartel chicha, Puente Piedra, Lima Norte (photo December 2022)"
+  publisher: Wikimedia Commons
+  url: https://commons.wikimedia.org/wiki/File:Cartel_chicha_invitando_a_concierto_por_fin_de_a%C3%B1o_que_se_llevar%C3%A1_a_cabo_en_Puente_Piedra.jpg
+  sourceType: catalog
+  checked: '2026-11-25'
+  note: >-
+    Страница файла Commons (CC BY-SA 4.0, фото QM Keen, 28.12.2022): двухлистная концертная афиша чича
+    («Megafiesta / Nuevo Stilo», клеймо мастерской «Afiches Aquino»), расклеенная в районе Пуэнте-Пьедра в Лиме-Норте.
