@@ -2286,7 +2286,7 @@ node -e 'const fs=require("fs"),y=require("js-yaml");let n=0,c=new Set();for(con
 
 Проверки: `optimize-works` сжал 19 из 20 новых файлов `assets/works/` (экономия 3,3 МБ); 5 файлов Commons зеркалированы в `assets/media/`. `npm run build` — 237 карточек, 960 размещений изображений, 0 ошибок; `npm run coverage` — обновлено `docs/coverage.md`; `npm test` — 229 из 229; `npm run review-status` — 237 из 237, 0 ошибок; `npm run research:check` — пройден; `diff-atlas` — 0 дрейфа (у 9 существующих карточек обновились только обратные связи и перенос `shahzia-sikander` из `free`). `check-links` для файла партии: 49 ссылок, 0 битых, 4 не поддаются автоматической проверке (403/429 у AIC, Met, Smarthistory, World History). Все 6 новых карточек, лайтбокс и карта (обзор и приближение к новым точкам) осмотрены в Chromium на 1440 и 390 px: 0 ошибок консоли, 0 упавших запросов, 0 горизонтальной прокрутки, все изображения загружаются локально.
 
-## Партия A-10. Латинская Америка и Карибы (25.11.2026)
+## Партия A-10. Латинская Америка и Карибы (25.11.2026, PR #117)
 
 Добавлены все 5 кандидатов партии (`guna-mola`, `mapuche-silverwork`, `tarsila-do-amaral`, `haitian-popular-painting`, `chicha-posters`) в новом файле `content/styles/a-10-latin-america-caribbean.yaml`; все 5 переведены в `merged` в `research/expansion/catalog.json` (всего 89 `merged`, 486 `candidate`; на сайте 242 карточки). Добавлено 34 новых источника в `content/sources.yaml`, все страницы и музейные API прочитаны напрямую.
 
