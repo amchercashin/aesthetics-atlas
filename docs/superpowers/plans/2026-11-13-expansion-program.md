@@ -222,7 +222,7 @@ R означает: сначала решить, нужен ли отдельн�
 
 | ID | Что сделать | Статус | PR |
 | --- | --- | --- | --- |
-| S-01 | `npm run research:meta` — пересчитать счётчики `meta` в `catalog.json` по записям (`totalCandidates`, `newCandidates`, `authorStyleCandidates`, `priorities`, `mergedCards`) и вывести числа для README. `npm run expansion-status` — таблица «группа × приоритет × решение» и список веток `expansion/*` на сервере. Тесты на оба скрипта. | готово | |
+| S-01 | `npm run research:meta` — пересчитать счётчики `meta` в `catalog.json` по записям (`totalCandidates`, `newCandidates`, `authorStyleCandidates`, `priorities`, `mergedCards`) и вывести числа для README. `npm run expansion-status` — таблица «группа × приоритет × решение» и список веток `expansion/*` на сервере. Тесты на оба скрипта. | готово | #118 |
 
 ## Готовые запросы для запуска
 
