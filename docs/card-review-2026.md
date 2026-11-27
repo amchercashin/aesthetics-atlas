@@ -2319,7 +2319,7 @@ node -e 'const fs=require("fs"),y=require("js-yaml");let n=0,c=new Set();for(con
 
 Проверки: `optimize-works` обработал 17 новых файлов `assets/works/` (уменьшив общий объём каталога на 14,0 МБ); 8 файлов Commons зеркалированы в `assets/media/`. `npm run build` — 247 карточек, 1018 размещений изображений, 0 ошибок; `npm run coverage` — обновлено `docs/coverage.md`; `npm test` — 239 из 239; `npm run review-status` — 247 из 247, 0 ошибок; `npm run research:check` — пройден; `diff-atlas` — 0 дрейфа (у 7 прежних карточек обновились только обратные `comparisons`/`contexts`). `check-links` для файла партии: 47 ссылок, 0 битых, 3 не поддаются автоматической проверке (глобальные `resources.yaml` — Met, Smarthistory, World History; все 44 ссылки партии ответили 200 OK). Все 5 новых карточек, лайтбокс, тёмная тема и карта (обзор и приближение к `papunya-tula`) осмотрены в Chrome на 1440 и 390 px: 0 ошибок консоли, 0 упавших запросов, 0 битых изображений и 0 горизонтальной прокрутки.
 
-## Партия A-09. Северная Америка (27.11.2026)
+## Партия A-09. Северная Америка (27.11.2026, PR #121)
 
 Добавлены все 6 кандидатов партии (`northwest-coast-formline`, `inuit-printmaking`, `kenojuak-ashevak`, `norval-morrisseau`, `navajo-weaving`, `africobra`) в новом файле `content/styles/a-09-north-america.yaml`; все 6 переведены в `merged` в `research/expansion/catalog.json` (всего 100 `merged`, 475 `candidate`; на сайте 253 карточки). Добавлено 39 новых источников в `content/sources.yaml`, все страницы и музейные API прочитаны напрямую.
 
