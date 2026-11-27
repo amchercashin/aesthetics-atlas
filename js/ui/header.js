@@ -13,7 +13,8 @@ export function initHeaderAutoHide(header) {
   const update = () => {
     frame = 0;
     const y = window.scrollY;
-    if (!narrow.matches || document.body.dataset.view === 'map' || y < header.offsetHeight) { set(false); lastY = y; return; }
+    const overlayOpen = Boolean(document.querySelector('dialog[open], .cat-sheet:not([hidden])'));
+    if (!narrow.matches || document.body.dataset.view === 'map' || overlayOpen || y < header.offsetHeight) { set(false); lastY = y; return; }
     if (y > lastY + STEP) set(true);
     else if (y < lastY - STEP) set(false);
     else return;
