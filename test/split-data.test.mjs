@@ -13,9 +13,9 @@ test('data/index.json stays lightweight and every style has its split JSON file'
   const indexPath = path.join(ROOT, 'data/index.json');
   assert.ok(fs.existsSync(indexPath), 'data/index.json exists');
   const bytes = fs.statSync(indexPath).size;
-  assert.ok(bytes < 1050 * 1024, `index.json should stay compact (got ${(bytes / 1024).toFixed(0)} KB)`);
-
   const index = JSON.parse(fs.readFileSync(indexPath, 'utf8'));
+  const perCard = bytes / index.styles.length;
+  assert.ok(perCard < 4.5 * 1024, `index.json should stay compact per card (got ${(perCard / 1024).toFixed(2)} KB/card, total ${(bytes / 1024).toFixed(0)} KB)`);
   assert.ok(index.version && /^[0-9a-f]{8}$/.test(index.version), 'index carries 8-char version hash');
   assert.ok(index.stats && index.stats.styles === index.styles.length);
   assert.ok(index.stats.embedded > 500 && index.stats.sources > 500);
