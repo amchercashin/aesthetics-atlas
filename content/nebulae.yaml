@@ -475,6 +475,23 @@ nebulae:
         name: Темперная фигурация Роя
         styles:
           - jamini-roy-painting
+      - id: company-school
+        name: Живопись Company School
+        styles:
+          - company-painting
+      - id: bengalskaya-shkola
+        name: Бенгальская школа
+        styles:
+          - bengal-school
+      - id: gond-i-dzhangarkh
+        name: Пардхан-гонд и Джангарх Шьям
+        styles:
+          - gond-pardhan
+          - jangarh-singh-shyam
+      - id: pitkhora
+        name: Живопись питхора
+        styles:
+          - pithora-painting
   - id: narodnaya-grafika-i-tekstil-azii
     name: Графика, текстиль и модернизм Азии
     band: north
