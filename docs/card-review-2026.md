@@ -2337,7 +2337,7 @@ node -e 'const fs=require("fs"),y=require("js-yaml");let n=0,c=new Set();for(con
 
 Проверки: `optimize-works` обработал 24 новых файла `assets/works/` (уменьшив общий объём каталога на 4,1 МБ); 6 файлов Commons зеркалированы в `assets/media/`. `npm run build` — 253 карточки, 1054 размещения изображений, 0 ошибок; `npm run coverage` — обновлено `docs/coverage.md`; `npm test` — 244 из 244; `npm run review-status` — 253 из 253, 0 ошибок; `npm run research:check` — пройден; `diff-atlas` — 0 дрейфа (у 8 прежних карточек обновились только обратные `comparisons`). `check-links` для файла партии: 64 ссылки, 0 битых, 12 не поддаются автоматической проверке (9 страниц Бруклинского музея, ответивших 429 при пакетной проверке, но прочитанных напрямую по GET, плюс 3 глобальные ссылки `resources.yaml`). Все 6 новых карточек, лайтбокс, тёмная тема и карта (обзор и приближение к `northwest-coast-formline` и `africobra`) осмотрены в Chrome на 1440 и 390 px: 0 ошибок консоли, 0 упавших запросов, 0 битых изображений и 0 горизонтальной прокрутки.
 
-## Партия A-11. Живопись Индии (27.11.2026)
+## Партия A-11. Живопись Индии (27.11.2026, PR #122)
 
 Добавлены все 5 кандидатов партии (`jangarh-singh-shyam`, `gond-pardhan`, `pithora-painting`, `bengal-school`, `company-painting`) в новом файле `content/styles/a-11-india-painting.yaml`; все 5 переведены в `merged` в `research/expansion/catalog.json` (всего 105 `merged`, 470 `candidate`; на сайте 258 карточек). Добавлено 26 новых источников в `content/sources.yaml`, все страницы, официальные музейные API (V&A, Met, Mia) и архивные копии Wayback прочитаны напрямую.
 
