@@ -3,6 +3,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import yaml from 'js-yaml';
+import { applyResearchMeta } from './lib/research-meta.mjs';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const read = (name) => JSON.parse(fs.readFileSync(path.join(root, 'research/expansion', name), 'utf8'));
@@ -24,8 +25,9 @@ const decisionCounts = {};
 
 check(ids.size === catalog.items.length, 'Duplicate candidate IDs');
 check(sourceIds.size === sources.length, 'Duplicate research source IDs');
-check(catalog.meta.totalCandidates === catalog.items.length, 'Stale totalCandidates');
-check(catalog.meta.authorStyleCandidates === catalog.items.filter((item) => item.proposedKind === 'author-style').length, 'Stale authorStyleCandidates');
+for (const { field, before, after } of applyResearchMeta(catalog).changes) {
+  check(false, `Stale meta.${field}: ${JSON.stringify(before)} !== ${JSON.stringify(after)} (run npm run research:meta)`);
+}
 for (const item of catalog.items) {
   const at = `[${item.id}]`;
   check(/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(item.id), `${at} Invalid ID`);

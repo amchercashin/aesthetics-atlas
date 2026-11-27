@@ -12,7 +12,9 @@
     "coverage": "node scripts/coverage.mjs",
     "diff-atlas": "node scripts/diff-atlas.mjs",
     "review-status": "node scripts/review-status.mjs",
-    "research:check": "node scripts/check-research.mjs"
+    "research:check": "node scripts/check-research.mjs",
+    "research:meta": "node scripts/research-meta.mjs",
+    "expansion-status": "node scripts/expansion-status.mjs"
   },
   "devDependencies": {
     "js-yaml": "^4.1.0",
