@@ -10474,3 +10474,483 @@
   note: >-
     Страница файла Commons (CC BY-SA 2.0, фото Мэтта Киффера, 05.09.2013): интерьер бай Национального музея
     Белау в Короре с расписными поперечными балками и каменными очагами.
+
+# Партия A-09: Северная Америка (27.11.2026)
+- id: burke-holm-form
+  title: "Bill Holm's Northwest Coast Indian Art: An Analysis of Form"
+  publisher: Burke Museum of Natural History and Culture
+  url: https://www.burkemuseum.org/bill-holms-northwest-coast-indian-art-analysis-form
+  sourceType: museum
+  checked: '2026-11-27'
+  note: >-
+    Страница Музея Берка, прочитана напрямую 27.11.2026. Подтверждает исследования Билла Холма 1950-х годов на
+    материале сотен сундуков из гнутого кедра и выход книги «Northwest Coast Indian Art: An Analysis of Form»
+    (1965), закрепившей терминологию северного искусства северо-западного побережья.
+- id: cmh-haida-formline
+  title: "Formline Design — Haida Arts and Technologies"
+  publisher: Canadian Museum of History
+  url: https://www.historymuseum.ca/teachers-zone/haida-arts-and-technologies/formline-design
+  sourceType: museum
+  checked: '2026-11-27'
+  note: >-
+    Учебный раздел Канадского музея истории, прочитан напрямую 27.11.2026. Определяет формлайн как непрерывную
+    расширяющуюся и сужающуюся чёрную первичную ленту с красными вторичными элементами для изображения родовых
+    гербов у хайда и соседних северных народов побережья; упоминает разработку словаря на языке хайда.
+- id: cmh-haida-box-560
+  title: "Bentwood Box 1 (VII-B-560 a-b) — Haida Arts and Technologies"
+  publisher: Canadian Museum of History
+  url: https://www.historymuseum.ca/teachers-zone/haida-arts-and-technologies/bentwood-boxes/bentwood-box
+  sourceType: museum
+  checked: '2026-11-27'
+  note: >-
+    Предметная запись Канадского музея истории (VII-B-560 a-b, не позднее 1901), прочитана напрямую 27.11.2026.
+    Подтверждает конструкцию сундука tawt’aGaay из единой согнутой кедровой доски, наследование прав на гербовый
+    узор формлайн и использование для хранения ценного жира рыбы эйлахона.
+- id: commons-nw-moa-chest
+  title: "File:Bentwood chest, Haida, Haida Gwaii, British Columbia, c. 1850, yellow and red cedar - Museum of Anthropology, University of British Columbia - DSC08725.jpg"
+  publisher: Wikimedia Commons (MOA UBC)
+  url: https://commons.wikimedia.org/wiki/File:Bentwood_chest,_Haida,_Haida_Gwaii,_British_Columbia,_c._1850,_yellow_and_red_cedar_-_Museum_of_Anthropology,_University_of_British_Columbia_-_DSC08725.jpg
+  sourceType: catalog
+  checked: '2026-11-27'
+  note: >-
+    Страница файла Commons и метаданные проверены через API 27.11.2026 (Public domain, 5143×3501 px). Сундук
+    хайда из жёлтого и красного кедра, Хайда-Гуайи, ок. 1850, Музей антропологии UBC; изображение осмотрено.
+- id: commons-nw-met-chest
+  title: "File:Storage Chest MET DP268921.jpg"
+  publisher: Wikimedia Commons (The Metropolitan Museum of Art)
+  url: https://commons.wikimedia.org/wiki/File:Storage_Chest_MET_DP268921.jpg
+  sourceType: catalog
+  checked: '2026-11-27'
+  note: >-
+    Страница файла Commons и метаданные проверены через API 27.11.2026 (CC0, 2000×1538 px). Резной деревянный
+    сундук тлинкитов или цимшиан из собрания Метрополитен-музея; изображение осмотрено.
+- id: commons-nw-rom-chilkat
+  title: "File:Chilkat Blanket - Royal Ontario Museum (8032220562).jpg"
+  publisher: Wikimedia Commons (Royal Ontario Museum)
+  url: https://commons.wikimedia.org/wiki/File:Chilkat_Blanket_-_Royal_Ontario_Museum_(8032220562).jpg
+  sourceType: catalog
+  checked: '2026-11-27'
+  note: >-
+    Страница файла Commons и метаданные проверены через API 27.11.2026 (CC BY 2.0, 4564×2640 px). Церемониальный
+    плащ чилкат в Королевском музее Онтарио (ROM); изображение осмотрено.
+- id: cma-haida-rattle-1921
+  title: "Raven Rattle (1921.1577)"
+  publisher: The Cleveland Museum of Art
+  url: https://clevelandart.org/art/1921.1577
+  sourceType: museum
+  checked: '2026-11-27'
+  note: >-
+    Запись прочитана через открытый API Кливлендского музея искусств 27.11.2026: хайда, конец XIX — начало XX века,
+    резное дерево и пигменты, 31,8 × 9,3 × 11,2 см, CC0. Локальная копия осмотрена.
+- id: bkm-haida-frontlet-l52
+  title: "Crest Frontlet, attributed to Simeon Stilthda (L52.3)"
+  publisher: Brooklyn Museum
+  url: https://www.brooklynmuseum.org/objects/126569
+  sourceType: museum
+  checked: '2026-11-27'
+  note: >-
+    Предметная страница Бруклинского музея прочитана напрямую 27.11.2026: хайда, приписывается Симеону Стилтде
+    (1799–1883), 1850–1875, дерево, перламутр морского ушка, пигменты, 17,8 × 14,6 × 5,7 см; этикетка также
+    описывает трещотку Чарльза Эденшоу (L61.3.1). Локальная копия осмотрена.
+- id: cmh-capedorset-intro
+  title: "Inuit Prints of Cape Dorset — Introduction"
+  publisher: Canadian Museum of History
+  url: https://www.historymuseum.ca/capedorsetprints/introduction/
+  sourceType: museum
+  checked: '2026-11-27'
+  note: >-
+    Онлайн-выставка Канадского музея истории прочитана напрямую 27.11.2026 (включая предметные карточки
+    UN CD 1982-005 FOLIO IV Канангинака Путугука, CD 2009-034 Шувинай Ашуны и CD 2001-013 Кеножуак Ашевак).
+    Подтверждает собрание почти из 3 000 эстампов Кейп-Дорсета с 1957 года и значение названия Kinngait.
+- id: cmh-capedorset-1950s
+  title: "Inuit Prints of Cape Dorset — 1950s: The Experimental Years"
+  publisher: Canadian Museum of History
+  url: https://www.historymuseum.ca/capedorsetprints/history/1950s.php
+  sourceType: museum
+  checked: '2026-11-27'
+  note: >-
+    Раздел о 1950-х годах прочитан напрямую 27.11.2026 (включая предметную карточку CD 1959-008 SS «Rabbit Eating
+    Seaweed»). Подтверждает начало опытов в конце 1957 года, стажировку Хьюстона у Унъити Хирацуки (1958–1959),
+    первый каталог из 41 листа 1959 года и показ в Монреальском музее изящных искусств в феврале 1960 года.
+- id: cmh-capedorset-1960s
+  title: "Inuit Prints of Cape Dorset — 1960s: Establishing a Base"
+  publisher: Canadian Museum of History
+  url: https://www.historymuseum.ca/capedorsetprints/history/1960s.php
+  sourceType: museum
+  checked: '2026-11-27'
+  note: >-
+    Раздел о 1960-х годах прочитан напрямую 27.11.2026. Подтверждает приход Терри Райана (1960), введение гравюры
+    на меди и офорта (1961), тиражи по 50 экз. и состав шести ведущих резчиков-печатников десятилетия.
+- id: cmh-capedorset-1970s
+  title: "Inuit Prints of Cape Dorset — 1970s: The Years of Expansion"
+  publisher: Canadian Museum of History
+  url: https://www.historymuseum.ca/capedorsetprints/history/1970s.php
+  sourceType: museum
+  checked: '2026-11-27'
+  note: >-
+    Раздел о 1970-х годах прочитан напрямую 27.11.2026 (включая предметную карточку CD 1976-013 «Aeroplane»
+    Пудло Пудлата). Подтверждает марку 1970 года с «Заколдованной совой», запуск литографской мастерской в
+    1972–1975 годах и расширение состава печатников кооператива.
+- id: cmh-capedorset-stonecut
+  title: "Inuit Prints of Cape Dorset — Stonecut"
+  publisher: Canadian Museum of History
+  url: https://www.historymuseum.ca/capedorsetprints/techniques/stonecut.php
+  sourceType: museum
+  checked: '2026-11-27'
+  note: >-
+    Технический раздел Канадского музея истории прочитан напрямую 27.11.2026. Описывает этапы вырезания
+    рельефа на камне, ручной притирки тонкой бумаги, лимит 50 оттисков (плюс 5 пробных) и совместную работу
+    Кеножуак Ашевак с печатниками Киатсуком Нивиакси и Кававау Мануми.
+- id: dorset-fine-arts-printmaking
+  title: "Printmaking in Kinngait"
+  publisher: Dorset Fine Arts (West Baffin Eskimo Co-operative)
+  url: https://www.dorsetfinearts.com/printmaking
+  sourceType: official
+  checked: '2026-11-27'
+  note: >-
+    Официальная страница Dorset Fine Arts прочитана напрямую 27.11.2026. Подтверждает статус Kinngait Studios
+    как старейшей непрерывно работающей печатной мастерской Канады (ежегодные коллекции с 1959 года) и подробно
+    описывает техники гравюры на камне, трафарета, офорта, литографии и шелкографии.
+- id: aci-pitseolak-style
+  title: "Pitseolak Ashoona: Life & Work — Style & Technique (Christine Lalonde)"
+  publisher: Art Canada Institute
+  url: https://artbooks.artcanada.com/pitseolak-ashoona/style-and-technique
+  sourceType: museum
+  checked: '2026-11-27'
+  note: >-
+    Глава монографии куратора Национальной галереи Канады Кристин Лалонд прочитана напрямую 27.11.2026.
+    Подтверждает переход от шитья и аппликации к рисунку и эстампу, архив кооператива (более 8 000 рисунков
+    Питсеолак) и печать гравюры на камне «Innukshuk Builders» (1968) мастером Луктой Киатсуком.
+- id: aci-pitseolak-innukshuk
+  title: "Pitseolak Ashoona, Innukshuk Builders, 1968 — Key Works"
+  publisher: Art Canada Institute
+  url: https://artbooks.artcanada.com/pitseolak-ashoona/key-works/innukshuk-builders
+  sourceType: museum
+  checked: '2026-11-27'
+  note: >-
+    Разбор ключевой работы в монографии Кристин Лалонд прочитан напрямую 27.11.2026: гравюра на камне, 1968,
+    69,8 × 60,9 см (печатник Лукта Киатсук по главе «Style & Technique»); сюжет о строительстве каменного знака
+    для судна Компании Гудзонова залива. Локальная копия осмотрена.
+- id: aci-shuvinai-earth
+  title: "Shuvinai Ashoona: Life & Work — Earth and Sky (Nancy G. Campbell)"
+  publisher: Art Canada Institute
+  url: https://artbooks.artcanada.com/shuvinai-ashoona/key-works/earth-and-sky
+  sourceType: museum
+  checked: '2026-11-27'
+  note: >-
+    Страница монографии Нэнси Г. Кэмпбелл прочитана напрямую 27.11.2026. Подтверждает международное признание
+    третьего поколения графиков Киннгайта (выставка Sakahàn в Национальной галерее Канады, 2013; Биеннале в Сиднее).
+- id: bkm-pootagook-raven-1959
+  title: "Joseph (Eegyvudluk) Pootagook & Kananginak Pootoogook. With the Raven Comes the Fish (1959, 60.58.4)"
+  publisher: Brooklyn Museum
+  url: https://www.brooklynmuseum.org/objects/76835
+  sourceType: museum
+  checked: '2026-11-27'
+  note: >-
+    Предметная запись Бруклинского музея прочитана напрямую 27.11.2026: 1959, гравюра на камне, 35 × 19 см;
+    Канангинак Путугук вырезал и напечатал лист по рисунку своего отца Джозефа (Игивудлука) Путагука для первого
+    выпуска графики Кейп-Дорсета. Локальная копия осмотрена.
+- id: firstarts-pudlo-aeroplane-1976
+  title: "Pudlo Pudlat. Aeroplane (1976 #13) — Printmaker Qabavoak Qatsiya"
+  publisher: First Arts
+  url: https://firstarts.ca/artworks/1606-pudlo-pudlat-1916-1992-kinngait-cape-dorset-aeroplane-1976-13/
+  sourceType: catalog
+  checked: '2026-11-27'
+  note: >-
+    Каталожная запись со ссылками на монографию Национальной галереи Канады «Pudlo: Thirty Years of Drawing»
+    (1990) и Джин Блоджетт (McMichael, 1991) прочитана напрямую 27.11.2026. Подтверждает печатника Кабавоака
+    Катсию, технику гравюры на камне и трафарета и размер 63,5 × 86,4 см для листа CD 1976-013.
+- id: bkm-kenojuak-owl-1960
+  title: "Kenojuak Ashevak. The Enchanted Owl (1960, 1998.122)"
+  publisher: Brooklyn Museum
+  url: https://www.brooklynmuseum.org/objects/2454
+  sourceType: museum
+  checked: '2026-11-27'
+  note: >-
+    Предметная запись Бруклинского музея прочитана напрямую 27.11.2026: 1960, гравюра на камне, экз. 2/50,
+    53,7 × 66 см, подпись «The Enchanted Owl. Stone Cut 2/50. Cape Dorset Baffin Island 1960. Kenojuak»;
+    упомянута марка Канады 1970 года. Локальная копия осмотрена.
+- id: mbam-kenojuak-owl
+  title: "Kenojuak Ashevak. The Enchanted Owl (1960, Gr.1961.100)"
+  publisher: Montreal Museum of Fine Arts (MMFA)
+  url: https://www.mbam.qc.ca/en/works/20232/
+  sourceType: museum
+  checked: '2026-11-27'
+  note: >-
+    Предметная запись Монреальского музея изящных искусств прочитана напрямую 27.11.2026: гравюра на камне,
+    экз. 43/50, 61,1 × 66 см; указаны мастер-печатник Игивудлук Путугук (1931–2000) и печатник Ийола
+    Кингватсиак (1933–2000), а также связь пластики перьев-лучей с традицией аппликации по одежде.
+- id: cmh-blog-enchanted-owl
+  title: "Inuit print — The Enchanted Owl (CD 1960-024 ii)"
+  publisher: Canadian Museum of History
+  url: https://www.historymuseum.ca/blog/inuit-print
+  sourceType: museum
+  checked: '2026-11-27'
+  note: >-
+    Заметка Канадского музея истории (2018) прочитана напрямую 27.11.2026. Подтверждает инвентарный номер
+    CD 1960-024 ii и участие мастеров Ийолы Кингватсиака и Игивудлука Путугука в создании эстампа 1960 года.
+- id: mcmichael-kenojuak-archive
+  title: "Kenojuak Ashevak at the McMichael (Linda Morita)"
+  publisher: McMichael Canadian Art Collection
+  url: https://mcmichael.com/from-the-archive/kenojuak-ashevak-at-the-mcmichael/
+  sourceType: museum
+  checked: '2026-11-27'
+  note: >-
+    Архивная публикация коллекции Макмайкла прочитана напрямую 27.11.2026. Подтверждает первую крупную
+    ретроспективу Кеножуак Ашевак в 1986 году (куратор Джин Блоджетт) и хранение более 2 000 её рисунков и
+    эстампов в составе долгосрочного депозита архива WBEC.
+- id: dam-kenojuak-spirit-1969
+  title: "Kenojuak Ashevak. Owl Spirit (1969, 1984.797)"
+  publisher: Denver Art Museum
+  url: https://www.denverartmuseum.org/en/object/1984.797
+  sourceType: museum
+  checked: '2026-11-27'
+  note: >-
+    Предметная запись Денверского художественного музея прочитана напрямую 27.11.2026: 1969, гравюра на камне,
+    экз. 19/50, 62,9 × 86,0 см, печати Eskimo Arts Council и Cape Dorset. Локальная копия осмотрена.
+- id: dam-kenojuak-bears-1976
+  title: "Kenojuak Ashevak. Owl and Bears (1976, 2006.119)"
+  publisher: Denver Art Museum
+  url: https://www.denverartmuseum.org/en/object/2006.119
+  sourceType: museum
+  checked: '2026-11-27'
+  note: >-
+    Предметная запись Денверского художественного музея прочитана напрямую 27.11.2026: 1976, резцовая гравюра,
+    экз. 48/50, 35,6 × 40,6 см, тисненая печать слоговым письмом. Локальная копия осмотрена.
+- id: aci-morrisseau-bio
+  title: "Norval Morrisseau: Life & Work — Biography (Carmen Robertson)"
+  publisher: Art Canada Institute
+  url: https://artbooks.artcanada.com/norval-morrisseau/biography
+  sourceType: museum
+  checked: '2026-11-27'
+  note: >-
+    Глава монографии Кармен Робертсон прочитана напрямую 27.11.2026. Подтверждает годы жизни (1931–2007),
+    духовное имя Мискваабик Анимиики («Медная Громовая птица»), дебют 1962 года в галерее Поллока, участие в
+    PNIAI (1973–1974) и связи с наскальными пиктограммами и свитками Мидевивин.
+- id: aci-morrisseau-style
+  title: "Norval Morrisseau: Life & Work — Style & Technique (Carmen Robertson)"
+  publisher: Art Canada Institute
+  url: https://artbooks.artcanada.com/norval-morrisseau/style-and-technique
+  sourceType: museum
+  checked: '2026-11-27'
+  note: >-
+    Глава «Style & Technique» прочитана напрямую 27.11.2026. Разбирает симметричные композиции, «линии связи»
+    (power lines), разделённый круг от раковины мегис, внутреннее членение фигур и переход от земляных охр к
+    несмешанному яркому акрилу (медный, жёлтый, бирюзовый).
+- id: aci-morrisseau-sig
+  title: "Norval Morrisseau: Life & Work — Significance & Critical Issues (Carmen Robertson)"
+  publisher: Art Canada Institute
+  url: https://artbooks.artcanada.com/norval-morrisseau/significance-and-critical-issues
+  sourceType: museum
+  checked: '2026-11-27'
+  note: >-
+    Глава «Significance & Critical Issues» прочитана напрямую 27.11.2026. Подтверждает ретроспективу в
+    Национальной галерее Канады (2006), становление лесной школы (Woodland School), первую покупку NGC в 2004
+    году и острую проблему подделок на коммерческом арт-рынке.
+- id: aci-morrisseau-water-1972
+  title: "Norval Morrisseau. Water Spirit (1972) — Key Works"
+  publisher: Art Canada Institute
+  url: https://artbooks.artcanada.com/norval-morrisseau/key-works/water-spirit
+  sourceType: museum
+  checked: '2026-11-27'
+  note: >-
+    Очерк работы прочитан напрямую 27.11.2026: 1972, акрил на коричневой крафт-бумаге, 81 × 183 см, Канадский
+    музей истории (Гатино); разбирает связь Мисипишу с пиктограммами Агавы и семью разделёнными кругами мегис.
+    Локальная копия осмотрена.
+- id: aci-morrisseau-gift-1975
+  title: "Norval Morrisseau. The Gift (1975) — Key Works"
+  publisher: Art Canada Institute
+  url: https://artbooks.artcanada.com/norval-morrisseau/key-works/the-gift
+  sourceType: museum
+  checked: '2026-11-27'
+  note: >-
+    Очерк работы прочитан напрямую 27.11.2026: 1975, акрил на бумаге, 196 × 122 см, коллекция Хелен Э. Бэнд,
+    Художественная галерея Тандер-Бей; антиколониальная встреча шамана и миссионера. Локальная копия осмотрена.
+- id: aci-morrisseau-thunderbird-1977
+  title: "Norval Morrisseau. Man Changing into Thunderbird (1977) — Key Works"
+  publisher: Art Canada Institute
+  url: https://artbooks.artcanada.com/norval-morrisseau/key-works/man-changing-into-thunderbird
+  sourceType: museum
+  checked: '2026-11-27'
+  note: >-
+    Очерк работы прочитан напрямую 27.11.2026: 1977, акрил на холсте, шестичастный цикл (каждая панель
+    153,5 × 125,7 см), частное собрание на депозите в Художественной галерее Онтарио (AGO). Локальная копия осмотрена.
+- id: aci-morrisseau-androgyny-1983
+  title: "Norval Morrisseau. Androgyny (1983) — Key Works"
+  publisher: Art Canada Institute
+  url: https://artbooks.artcanada.com/norval-morrisseau/key-works/androgyny
+  sourceType: museum
+  checked: '2026-11-27'
+  note: >-
+    Очерк работы прочитан напрямую 27.11.2026: 1983, акрил на холсте, 366 × 610 см, Aboriginal Art Collection
+    (Гатино); центральный экспонат ретроспективы NGC 2006 года и дар художника Канаде. Локальная копия осмотрена.
+- id: aci-morrisseau-astral-1994
+  title: "Norval Morrisseau. Observations of the Astral World (c. 1994) — Key Works"
+  publisher: Art Canada Institute
+  url: https://artbooks.artcanada.com/norval-morrisseau/key-works/observations-of-the-astral-world
+  sourceType: museum
+  checked: '2026-11-27'
+  note: >-
+    Очерк работы прочитан напрямую 27.11.2026: ок. 1994, акрил на холсте, 236 × 514 см, Национальная галерея
+    Канады (Оттава; приобретена в 2004 году). Локальная копия осмотрена.
+- id: mcmichael-morrisseau-exh
+  title: "Norval Morrisseau (1931–2007)"
+  publisher: McMichael Canadian Art Collection
+  url: https://mcmichael.com/exhibition/norval-morrisseau-1931-2007/
+  sourceType: museum
+  checked: '2026-11-27'
+  note: >-
+    Страница выставки коллекции Макмайкла прочитана напрямую 27.11.2026. Подтверждает резиденцию Морриссо в
+    Макмайкле в 1979 году, основание лесной школы и круг её художников (Дафна Оджиг, Карл Рэй).
+- id: heard-textiles
+  title: "Textiles Collection — Diné (Navajo) and Pueblo"
+  publisher: Heard Museum
+  url: https://heard.org/collection/textiles/
+  sourceType: museum
+  checked: '2026-11-27'
+  note: >-
+    Обзор текстильного собрания Музея Хёрда прочитан напрямую 27.11.2026. Разграничивает плечевые одеяла и серапе
+    XIX века (первой и второй фаз) и региональные ковровые стили XX века (Ту-Грей-Хиллс, Ганадо, Кристал, Чинли,
+    Тис-Нос-Пос, Уайд-Руинс, Бёрнтуотер), а также отделяет традицию дине от церемониального ткачества пуэбло.
+- id: dam-taugelchee-1948
+  title: "Daisy Taugelchee. Two Grey Hills Rug (1947–1948, 1948.445)"
+  publisher: Denver Art Museum
+  url: https://www.denverartmuseum.org/en/object/1948.445
+  sourceType: museum
+  checked: '2026-11-27'
+  note: >-
+    Предметная запись Денверского художественного музея прочитана напрямую 27.11.2026: Дейзи Тогельчи (дине,
+    1911–1990), Тоадлена / Ту-Грей-Хиллс, 1947–1948, шерсть, 176,5 × 125,7 см; более 90 утков и 20 основ на дюйм.
+- id: spencer-jumbo-1959
+  title: "Julia Jumbo. Two Grey Hills Rug (c. 1959, 2007.2766)"
+  publisher: Spencer Museum of Art (University of Kansas)
+  url: https://spencerart.ku.edu/art/collections-online/object/34584
+  sourceType: museum
+  checked: '2026-11-27'
+  note: >-
+    Предметная запись и текст «Art Minute» Музея искусств Спенсера прочитаны напрямую 27.11.2026. Документирует
+    упоминания ткачества навахо с 1650 года, шерсть чурро, плотность 90–120 нитей на дюйм, замкнутые кромки,
+    натуральную неокрашенную палитру школы Ту-Грей-Хиллс и миф о Женщине-Паучихе.
+- id: cma-navajo-chief-4th-1900
+  title: "Fourth-Phase Chief Blanket Style Rug (1937.903)"
+  publisher: The Cleveland Museum of Art
+  url: https://clevelandart.org/art/1937.903
+  sourceType: museum
+  checked: '2026-11-27'
+  note: >-
+    Запись прочитана через открытый API Кливлендского музея искусств 27.11.2026: дине (навахо), ок. 1900,
+    ручная шерсть, германтаунская пряжа и байета, гобеленовое переплетение, 178,4 × 151,1 см, CC0. Копия осмотрена.
+- id: cma-navajo-wearing-1875
+  title: "Wearing Blanket (1921.556)"
+  publisher: The Cleveland Museum of Art
+  url: https://clevelandart.org/art/1921.556
+  sourceType: museum
+  checked: '2026-11-27'
+  note: >-
+    Запись прочитана через открытый API Кливлендского музея искусств 27.11.2026: мастерица дине (навахо),
+    ок. 1875–1880, ручная шерсть, германтаунская пряжа и байета, гобеленовое переплетение, 117,5 × 152,5 см, CC0.
+    Копия осмотрена.
+- id: commons-navajo-first-phase
+  title: "File:First Phase Navajo Blanket - ca. 1850-60 - Bowers Museum.jpg"
+  publisher: Wikimedia Commons (Bowers Museum)
+  url: https://commons.wikimedia.org/wiki/File:First_Phase_Navajo_Blanket_-_ca._1850-60_-_Bowers_Museum.jpg
+  sourceType: catalog
+  checked: '2026-11-27'
+  note: >-
+    Страница файла Commons и метаданные проверены через API 27.11.2026 (Public domain, 1280×895 px). Плечевое
+    «вождевое одеяло» первой фазы, ок. 1850–1860, шерсть, 181,6 × 136,5 см, Музей Бауэрса; изображение осмотрено.
+- id: commons-navajo-ganado-1910
+  title: "File:Ganado rug, Navajo, Honolulu Museum of Art accession 4689.JPG"
+  publisher: Wikimedia Commons (Honolulu Museum of Art)
+  url: https://commons.wikimedia.org/wiki/File:Ganado_rug,_Navajo,_Honolulu_Museum_of_Art_accession_4689.JPG
+  sourceType: catalog
+  checked: '2026-11-27'
+  note: >-
+    Страница файла Commons и метаданные проверены через API 27.11.2026 (CC0, 2288×2920 px). Ковёр школы Ганадо,
+    Аризона, ок. 1910, натуральная и окрашенная шерсть, Художественный музей Гонолулу (4689); изображение осмотрено.
+- id: commons-navajo-two-grey-hills
+  title: "File:Two Grey Hills rug.jpg"
+  publisher: Wikimedia Commons
+  url: https://commons.wikimedia.org/wiki/File:Two_Grey_Hills_rug.jpg
+  sourceType: catalog
+  checked: '2026-11-27'
+  note: >-
+    Страница файла Commons и метаданные проверены через API 27.11.2026 (CC0, 1536×1974 px). Ковёр региональной
+    школы Ту-Грей-Хиллс, ок. 1975, натуральные цвета шерсти и растительный краситель; изображение осмотрено.
+- id: tate-africobra
+  title: "AfriCOBRA — Art Term"
+  publisher: Tate
+  url: https://www.tate.org.uk/art/art-terms/a/africobra
+  sourceType: museum
+  checked: '2026-11-27'
+  note: >-
+    Статья словаря терминов Тейт прочитана напрямую 27.11.2026. Подтверждает основание AfriCOBRA в Чикаго в
+    1968 году, круг учредителей, задачу укрепления солидарности африканской диаспоры и пример костюма Джей Джаррелл.
+- id: saam-ohfreedom-bjh
+  title: "Oh Freedom! Barbara Jones-Hogu (Unite, 1971)"
+  publisher: Smithsonian American Art Museum
+  url: https://americanart.si.edu/education/oh-freedom/barbara-jones-hogu
+  sourceType: museum
+  checked: '2026-11-27'
+  note: >-
+    Образовательное эссе SAAM прочитано напрямую 27.11.2026. Подтверждает манифест Джеффа Дональдсона 1970 года,
+    связь Барбары Джонс-Хогу с муралом «Wall of Respect» (1967), разбор шелкографии «Unite» (1971, NMAAHC
+    TR2008-24) и трактовку «Revolutionary» Уодсворта Джаррелла.
+- id: bkm-wadsworth-rev-1971
+  title: "Wadsworth A. Jarrell. Revolutionary (Angela Davis) (1971, 2012.80.18)"
+  publisher: Brooklyn Museum
+  url: https://www.brooklynmuseum.org/objects/210696
+  sourceType: museum
+  checked: '2026-11-27'
+  note: >-
+    Предметная запись и кураторский текст Бруклинского музея прочитаны напрямую 27.11.2026: 1971, акрил и
+    смешанная техника на холсте, 162,6 × 129,5 см; описывает реплику «Революционного костюма» Джей Джаррелл
+    (1969), вплетённые лозунги и основание COBRA/AfriCOBRA в 1968 году. Локальная копия осмотрена.
+- id: bkm-bjh-unite-1971
+  title: "Barbara Jones-Hogu. Unite (1971, 2012.46)"
+  publisher: Brooklyn Museum
+  url: https://www.brooklynmuseum.org/objects/210164
+  sourceType: museum
+  checked: '2026-11-27'
+  note: >-
+    Предметная запись Бруклинского музея прочитана напрямую 27.11.2026: 1971, цветная шелкография на бумаге,
+    57,2 × 76,2 см, штамп издателя AfriCOBRA. Локальная копия осмотрена.
+- id: bkm-bjh-heritage-1971
+  title: "Barbara Jones-Hogu. Relate to Your Heritage (1971, 2012.80.26)"
+  publisher: Brooklyn Museum
+  url: https://www.brooklynmuseum.org/objects/210682
+  sourceType: museum
+  checked: '2026-11-27'
+  note: >-
+    Предметная запись Бруклинского музея прочитана напрямую 27.11.2026: 1971, цветная шелкография, 86,4 × 109,2 см;
+    этикетка прямо связывает образность с языком психоделических плакатов, палитрой «Cool Ade» и тиражным
+    распространением плакатов по цене около 10 долларов.
+- id: bkm-donaldson-shango-1969
+  title: "Jeff Donaldson. Wives of Shango (1969, 2012.80.13)"
+  publisher: Brooklyn Museum
+  url: https://www.brooklynmuseum.org/objects/210675
+  sourceType: museum
+  checked: '2026-11-27'
+  note: >-
+    Предметная запись Бруклинского музея прочитана напрямую 27.11.2026: 1969, матовая, полуглянцевая и золотая
+    металлическая краска на бумаге ручного отлива, 76,2 × 55,9 см; описывает иконографию жён Шанго (Ошун, Оба, Оя)
+    и патронташей движения Black Liberation. Локальная копия осмотрена.
+- id: bkm-jae-suit-1969
+  title: "Jae Jarrell. Urban Wall Suit (ca. 1969, 2012.80.16a-b)"
+  publisher: Brooklyn Museum
+  url: https://www.brooklynmuseum.org/objects/210702
+  sourceType: museum
+  checked: '2026-11-27'
+  note: >-
+    Предметная запись Бруклинского музея прочитана напрямую 27.11.2026: ок. 1969, сшитый и расписанный хлопок и
+    шёлк, костюм-двойка, 95,3 × 69,9 см; подтверждает роль Джей Джаррелл как сооснователя AfriCOBRA и палитру
+    «Coolade». Локальная копия осмотрена.
+- id: bkm-williams-wakeup-1971
+  title: "Gerald Williams. Wake Up (1971, 2012.80.44)"
+  publisher: Brooklyn Museum
+  url: https://www.brooklynmuseum.org/objects/210708
+  sourceType: museum
+  checked: '2026-11-27'
+  note: >-
+    Предметная запись Бруклинского музея прочитана напрямую 27.11.2026: 1971, цветная шелкография на бумаге,
+    106,7 × 71,1 см, издатель AfriCOBRA. Локальная копия осмотрена.
