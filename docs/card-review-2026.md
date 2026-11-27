@@ -2303,7 +2303,7 @@ node -e 'const fs=require("fs"),y=require("js-yaml");let n=0,c=new Set();for(con
 
 Проверки: `optimize-works` сжал 12 новых файлов `assets/works/` (экономия 3,5 МБ); 11 файлов Commons зеркалированы в `assets/media/`. `npm run build` — 242 карточки, 988 размещений изображений, 0 ошибок; `npm run coverage` — обновлено `docs/coverage.md`; `npm test` — все тесты пройдены; `npm run review-status` — 242 из 242, 0 ошибок; `npm run research:check` — пройден; `diff-atlas` — у прежних карточек обновились только обратные связи и перенос `mesoamerican-art` и `andean-art` в море `iskusstvo-amerik`. `check-links` для файла партии: 48 ссылок, 0 битых, 6 не поддаются автоматической проверке (403/429 у AIC, Met, Smarthistory, World History и HEAD 500 у блога Смитсоновского фестиваля, прочитанного напрямую по GET). Все 5 новых карточек, лайтбокс, тёмная тема и карта (обзор и приближение к новым точкам) осмотрены в Chrome на 1440 и 390 px: 0 ошибок консоли, 0 упавших запросов, 0 горизонтальной прокрутки.
 
-## Партия A-08. Австралия и Океания (27.11.2026)
+## Партия A-08. Австралия и Океания (27.11.2026, PR #120)
 
 Добавлены все 5 кандидатов партии (`papunya-tula`, `yolngu-bark-painting`, `pacific-sisters`, `vanuatu-sand-drawing`, `palauan-bai-painting`) в новом файле `content/styles/a-08-oceania.yaml`; все 5 переведены в `merged` в `research/expansion/catalog.json` (всего 94 `merged`, 481 `candidate`; на сайте 247 карточек). Добавлено 32 новых источника в `content/sources.yaml` (плюс повторно использована проверенная запись `papunya-tula-history`); все страницы и PDF прочитаны напрямую.
 
