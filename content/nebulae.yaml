@@ -601,6 +601,21 @@ nebulae:
         styles:
           - tarsila-do-amaral
           - haitian-popular-painting
+      - id: traditsii-severnoy-ameriki
+        name: Формлайн и ткачество Северной Америки
+        styles:
+          - northwest-coast-formline
+          - navajo-weaving
+      - id: iskusstvo-korennyh-narodov-kanady
+        name: Графика Киннгайта и Норвал Морриссо
+        styles:
+          - inuit-printmaking
+          - kenojuak-ashevak
+          - norval-morrisseau
+      - id: black-arts-i-africobra
+        name: Движение Black Arts и AfriCOBRA
+        styles:
+          - africobra
 free:
   - aboriginal-art
   - emily-kngwarray

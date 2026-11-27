@@ -5,7 +5,7 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { fileURLToPath } from 'node:url';
 import { layoutGenealogy, solidShape } from '../js/layout.js';
-import { mapTimeScale, mapLayoutNodes, layoutMap, SEA_GAP, LONG } from '../js/map-layout.js';
+import { mapTimeScale, mapLayoutNodes, layoutMap, SEA_GAP, BAND_GAP, LATITUDE_BANDS, LONG } from '../js/map-layout.js';
 import { fmtDates } from '../js/format.js';
 import { loadBuiltAtlas } from '../scripts/lib/load-atlas.mjs';
 
@@ -86,9 +86,14 @@ test('map layout: no overlapping intervals in a row, no empty rows except gaps, 
     for (const o of byRow.get(r) ?? []) { const [c, d] = lay.intervals.get(o); assert.ok(!(a < d && c < b), `${n.id} overlaps ${o}`); }
     byRow.set(r, [...(byRow.get(r) ?? []), n.id]);
   }
-  // Блоки морей занимают больше строк, чем сплошное древо, но карта не должна вытянуться вдвое.
-  const plain = layoutGenealogy(nodes, sc.x, { now: NOW, dot: 16, gap: 22, tail: 28, longGap: LONG });
-  assert.ok(lay.count <= plain.count * 1.75, `rows ${lay.count} vs ${plain.count}`);
+  // Блоки морей занимают больше строк, чем сплошное древо в тех же широтных полосах, но карта не должна вытянуться вдвое.
+  const bandedPlain = LATITUDE_BANDS.reduce((sum, b, i) => {
+    const sub = nodes.filter((n) => (n.band ?? 'center') === b.id);
+    if (!sub.length) return sum;
+    const p = layoutGenealogy(sub, sc.x, { now: NOW, dot: 16, gap: 22, tail: 28, longGap: LONG });
+    return sum + p.count + (i > 0 ? BAND_GAP : 0);
+  }, 0);
+  assert.ok(lay.count <= bandedPlain * 1.75, `rows ${lay.count} vs ${bandedPlain}`);
 });
 
 test('map layout scales to ~650 styles quickly', () => {
