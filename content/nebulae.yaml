@@ -111,6 +111,15 @@ nebulae:
         name: Керамика Изника
         styles:
           - iznik-ceramics
+      - id: zellidzh
+        name: Мозаика зеллидж
+        styles:
+          - zellij
+      - id: osmanskaya-kniga-i-ebru
+        name: Османская миниатюра и эбру
+        styles:
+          - ottoman-miniature
+          - ebru
       - id: gotika
         name: Романика и готика
         styles:
@@ -533,6 +542,15 @@ nebulae:
           - pakistani-truck-art
           - pakistani-neo-miniature
           - shahzia-sikander
+      - id: al-katt-al-asiri
+        name: Роспись аль-катт аль-асири
+        styles:
+          - al-qatt-al-asiri
+      - id: modernizm-irana
+        name: Модернизм Ирана — саккахане и Монир Фарманфармаян
+        styles:
+          - saqqakhaneh
+          - monir-farmanfarmaian
   - id: iskusstvo-afriki
     name: Искусство и модернизм Африки
     band: south
@@ -563,6 +581,10 @@ nebulae:
           - ibrahim-el-salahi
           - congolese-popular-painting
           - zanele-muholi
+      - id: shkola-kasablanki
+        name: Школа Касабланки
+        styles:
+          - casablanca-school
   - id: iskusstvo-okeanii
     name: Искусство Океании
     band: north
