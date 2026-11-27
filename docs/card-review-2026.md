@@ -2353,7 +2353,7 @@ node -e 'const fs=require("fs"),y=require("js-yaml");let n=0,c=new Set();for(con
 
 Проверки: `optimize-works` обработал 16 новых файлов `assets/works/` (уменьшив общий объём каталога на 2,7 МБ); 4 файла Commons зеркалированы в `assets/media/`. `npm run build` — 258 карточек, 1079 размещений изображений, 0 ошибок; `npm run coverage` — обновлено `docs/coverage.md`; `npm test` — 244 из 244; `npm run review-status` — 258 из 258, 0 ошибок; `npm run research:check` — пройден; `diff-atlas` — 0 дрейфа (у 7 прежних карточек обновились только обратные `children`/`comparisons`). `check-links` для `a-11-india-painting.yaml`: 40 ссылок, 0 битых, 8 не поддаются автоматической проверке (3 глобальные ссылки `resources.yaml` и 5 ссылок Met/Smarthistory/QAGOMA с защитой 403/429, прочитанных через официальный Met API и архив Wayback). Все 5 новых карточек, лайтбокс, тёмная тема и карта (обзор и приближение к `bengal-school`) осмотрены в Chrome на 1440 и 390 px: 0 ошибок консоли, 0 упавших запросов, 0 внешних запросов изображений и 0 горизонтальной прокрутки.
 
-## Партия A-12. Ближний Восток и Магриб (27.11.2026)
+## Партия A-12. Ближний Восток и Магриб (27.11.2026, PR #123)
 
 Добавлены все 7 кандидатов партии (`zellij`, `ottoman-miniature`, `ebru`, `al-qatt-al-asiri`, `saqqakhaneh`, `casablanca-school`, `monir-farmanfarmaian`) в новом файле `content/styles/a-12-mena.yaml`; все 7 переведены в `merged` в `research/expansion/catalog.json` (всего 112 `merged`, 463 `candidate`; на сайте 265 карточек). Добавлено 33 новых источника в `content/sources.yaml`; все музейные записи, каталоги, статьи и архивные копии Wayback прочитаны напрямую.
 
