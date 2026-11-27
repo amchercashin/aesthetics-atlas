@@ -566,6 +566,20 @@ nebulae:
         styles:
           - torres-strait-printmaking
           - alick-tipoti
+      - id: zhivopis-korennyh-narodov-avstralii
+        name: Западная пустыня и Арнем-Ленд
+        styles:
+          - papunya-tula
+          - yolngu-bark-painting
+      - id: melaneziya-i-mikroneziya
+        name: Меланезия и Микронезия
+        styles:
+          - vanuatu-sand-drawing
+          - palauan-bai-painting
+      - id: sovremennaya-aotearoa-i-pasifika
+        name: Аотеароа и Pasifika
+        styles:
+          - pacific-sisters
   - id: iskusstvo-amerik
     name: Искусство и традиции Америк
     band: south
