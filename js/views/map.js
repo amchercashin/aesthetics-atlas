@@ -244,7 +244,7 @@ export default {
     let nebBuildVersion = 0;
     const nebOn = ctx.params?.get('neb') !== '0';
     q('.map-levels').hidden = !nebOn;
-    const LABEL_PAD = window.innerWidth < 760 ? 110 : 170;
+    const labelPad = () => (isNarrow() ? 110 : 170);
     const isNarrow = () => pw <= 760;
     // Экранные координаты ↔ виртуальные (x_в = y_э, y_в = pw − x_э) и сдвиги.
     const toV = (cx, cy) => { const r = stage.getBoundingClientRect(), x = cx - r.left, y = cy - r.top; return rot ? { x: y, y: pw - x } : { x, y }; };
@@ -1243,7 +1243,7 @@ export default {
     // ---------- трансформация ----------
     function clampT() {
       const sy = syOf(t.k);
-      const w = sc.total * t.k + LABEL_PAD + panelWidth();
+      const w = sc.total * t.k + labelPad() + panelWidth();
       const minTx = Math.min(40, vw - w - 40), maxTx = Math.max(40, vw - w - 40);
       t.tx = clamp(t.tx, minTx, maxTx);
       const h = contentRefH * sy;
@@ -1775,19 +1775,21 @@ export default {
     }, { passive: false });
 
     // Safari на Mac передаёт щипок через GestureEvent. Касания экрана уже
-    // обслуживают PointerEvent: не применяем один жест дважды.
+    // обслуживают PointerEvent: не применяем один жест дважды, но браузерный зум страницы гасим.
     on(stage, 'gesturestart', (e) => {
-      if (uiTarget(e) || pointers.size) return;
+      if (uiTarget(e)) return;
       e.preventDefault();
+      if (pointers.size) return;
       stopAnimation(); clearTimeout(flightTimer);
       hideTip();
       markZooming();
       nativeGesture = { scale: 1, point: gesturePoint(e) };
     }, { passive: false });
     on(stage, 'gesturechange', (e) => {
+      if (pointers.size && !uiTarget(e)) { e.preventDefault(); return; }
       if (!nativeGesture) return;
       e.preventDefault();
-      if (pointers.size || !Number.isFinite(e.scale) || e.scale <= 0) return;
+      if (!Number.isFinite(e.scale) || e.scale <= 0) return;
       markZooming();
       const p = gesturePoint(e);
       zoomAt(p.x, p.y, e.scale / nativeGesture.scale);
@@ -1881,7 +1883,9 @@ export default {
       mount(findList, html`${findItems.map((s, i) => html`<li role="option" aria-selected="${i === 0}" data-find="${s.id}"><span class="swatch" style="--c:var(--era-${s.era})"></span><span class="mf-name">${s.name}</span><span class="mf-dates">${fmtDates(s)}</span></li>`)}`);
     };
     const pickFind = (id) => { findInput.value = ''; findList.hidden = true; findInput.blur(); select(id); };
+    let interactingFindList = false;
     on(findInput, 'input', renderFind);
+    on(findInput, 'focus', () => { if (findInput.value.trim()) renderFind(); });
     on(findInput, 'keydown', (e) => {
       if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
         e.preventDefault();
@@ -1892,8 +1896,12 @@ export default {
       else if (e.key === 'Escape') { e.preventDefault(); findInput.value = ''; findList.hidden = true; }
       e.stopPropagation();
     });
-    on(findList, 'pointerdown', (e) => { const li = e.target.closest('[data-find]'); if (li) { e.preventDefault(); pickFind(li.dataset.find); } });
-    on(findInput, 'blur', () => setTimeout(() => { findList.hidden = true; }, 150));
+    // mousedown предотвращает потерю фокуса на десктопе, но не мешает прокрутке списка пальцем на телефоне.
+    on(findList, 'mousedown', (e) => { if (e.target.closest('[data-find]')) e.preventDefault(); });
+    on(findList, 'touchstart', () => { interactingFindList = true; }, { passive: true });
+    on(findList, 'touchend', () => { setTimeout(() => { interactingFindList = false; }, 250); }, { passive: true });
+    on(findList, 'click', (e) => { const li = e.target.closest('[data-find]'); if (li) pickFind(li.dataset.find); });
+    on(findInput, 'blur', () => setTimeout(() => { if (!interactingFindList && document.activeElement !== findInput) findList.hidden = true; }, 200));
 
     // Всплывающие окна тулбара: легенда и фильтр.
     const pops = [...root.querySelectorAll('.map-pop-wrap')].map((wrap) => ({ wrap, btn: wrap.querySelector('button'), pop: wrap.querySelector('.map-pop') }));

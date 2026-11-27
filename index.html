@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
   <title>Атлас эстетик</title>
   <meta name="description" content="Навигатор по визуальным стилям человечества: от наскальной живописи до vaporwave и weirdcore. Родословная стилей, хронология, главные работы и ссылки для изучения.">
   <meta property="og:title" content="Атлас эстетик">
@@ -23,9 +23,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600&family=Spectral:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500;1,600&display=swap&subset=cyrillic" rel="stylesheet">
   <link rel="stylesheet" href="css/tokens.css?v=cd56519e">
-  <link rel="stylesheet" href="css/base.css?v=fb1aeaea">
-  <link rel="stylesheet" href="css/views.css?v=967847d7">
-  <link rel="stylesheet" href="css/map.css?v=3e887606">
+  <link rel="stylesheet" href="css/base.css?v=215e9883">
+  <link rel="stylesheet" href="css/views.css?v=b448076b">
+  <link rel="stylesheet" href="css/map.css?v=b71f1e0d">
   <meta name="atlas-version" content="e4023d81">
   <!-- build:importmap -->
   <script type="importmap">
@@ -39,7 +39,7 @@
       "./js/html.js": "./js/html.js?v=13973b5c",
       "./js/layout.js": "./js/layout.js?v=8f09281f",
       "./js/lens.js": "./js/lens.js?v=b65d8c55",
-      "./js/main.js": "./js/main.js?v=c9275e1a",
+      "./js/main.js": "./js/main.js?v=27532fe4",
       "./js/map-detail.js": "./js/map-detail.js?v=56289b37",
       "./js/map-labels.js": "./js/map-labels.js?v=98527074",
       "./js/map-layout.js": "./js/map-layout.js?v=8cc3e2f7",
@@ -60,17 +60,18 @@
       "./js/ui/common.js": "./js/ui/common.js?v=d724893f",
       "./js/ui/corpus.js": "./js/ui/corpus.js?v=e9816e63",
       "./js/ui/ego-map.js": "./js/ui/ego-map.js?v=77f63fdc",
-      "./js/ui/header.js": "./js/ui/header.js?v=38899be8",
+      "./js/ui/header.js": "./js/ui/header.js?v=35739907",
       "./js/ui/image.js": "./js/ui/image.js?v=80d612b7",
-      "./js/ui/lightbox.js": "./js/ui/lightbox.js?v=a22c64f0",
-      "./js/ui/search-dialog.js": "./js/ui/search-dialog.js?v=283fcfab",
+      "./js/ui/lightbox.js": "./js/ui/lightbox.js?v=497c3f91",
+      "./js/ui/mobile-viewport.js": "./js/ui/mobile-viewport.js?v=8aec625d",
+      "./js/ui/search-dialog.js": "./js/ui/search-dialog.js?v=8c43642e",
       "./js/ui/toast.js": "./js/ui/toast.js?v=def797ff",
       "./js/views/about.js": "./js/views/about.js?v=caeba7bb",
       "./js/views/catalog.js": "./js/views/catalog.js?v=e1877339",
       "./js/views/collection.js": "./js/views/collection.js?v=cf6b1ad6",
       "./js/views/compare.js": "./js/views/compare.js?v=9b138975",
       "./js/views/home.js": "./js/views/home.js?v=f9d57093",
-      "./js/views/map.js": "./js/views/map.js?v=a922213a",
+      "./js/views/map.js": "./js/views/map.js?v=a8893f7c",
       "./js/views/notfound.js": "./js/views/notfound.js?v=58bd1ba1",
       "./js/views/style.js": "./js/views/style.js?v=4619ba3f",
       "./js/views/timeline.js": "./js/views/timeline.js?v=ef429629"
@@ -128,6 +129,9 @@
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4.5 4.5"/></svg>
       <input type="search" role="combobox" aria-expanded="false" aria-autocomplete="list" placeholder="Импрессионизм, Малевич, 1920…" autocomplete="off" spellcheck="false" aria-label="Запрос" aria-controls="search-results">
       <kbd>Esc</kbd>
+      <button class="icon-btn search-close" type="button" data-close-search aria-label="Закрыть поиск">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+      </button>
     </div>
     <ul class="search-results" id="search-results" role="listbox" aria-label="Результаты поиска"></ul>
     <div class="search-hint"></div>
@@ -139,7 +143,9 @@
     </button>
     <button class="lb-nav lb-prev" type="button" data-prev aria-label="Предыдущее изображение"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="m15 5-7 7 7 7"/></svg></button>
     <button class="lb-nav lb-next" type="button" data-next aria-label="Следующее изображение"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="m9 5 7 7-7 7"/></svg></button>
-    <img alt="">
+    <div class="lb-stage">
+      <img alt="">
+    </div>
     <div class="lb-bar">
       <span class="lb-count" aria-live="polite"></span>
       <p class="lb-caption"></p>
@@ -149,7 +155,7 @@
 
   <div class="toast" role="status" aria-live="polite"></div>
 
-  <script type="module" src="js/main.js?v=c9275e1a"></script>
+  <script type="module" src="js/main.js?v=27532fe4"></script>
 </body>
 </html>
 

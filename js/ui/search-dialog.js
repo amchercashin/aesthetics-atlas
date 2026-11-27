@@ -62,7 +62,7 @@ export function initSearch(store) {
     mount(list, html`${facets.length ? html`<li class="search-group-title" role="presentation">В каталоге</li>${facets.map(facetRow)}` : ''}
       ${byYear ? html`<li class="search-group-title" role="presentation">Карточки по датам: ${fmtYear(year)}</li>` : facets.length && styles.length ? html`<li class="search-group-title" role="presentation">Карточки</li>` : ''}
       ${styles.map((s, i) => row(s, facets.length + i))}`);
-    mount(hint, html`<kbd>↑</kbd> <kbd>↓</kbd> выбрать, <kbd>Enter</kbd> открыть`);
+    mount(hint, html`<span class="search-hint-keys"><kbd>↑</kbd> <kbd>↓</kbd> выбрать, <kbd>Enter</kbd> открыть</span>`);
     markLoaded(list);
   }
 
@@ -109,6 +109,7 @@ export function initSearch(store) {
   });
   list.addEventListener('click', (e) => { if (e.target.closest('a')) close(); });
   hint.addEventListener('click', (e) => { const b = e.target.closest('[data-q]'); if (b) { input.value = b.dataset.q; update(); input.focus(); } });
+  dlg.querySelector('[data-close-search]')?.addEventListener('click', close);
   dlg.addEventListener('click', (e) => { if (e.target === dlg) close(); });
 
   window.addEventListener('hashchange', close);

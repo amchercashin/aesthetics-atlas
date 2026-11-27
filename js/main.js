@@ -6,6 +6,7 @@ import { initSearch } from './ui/search-dialog.js';
 import { initLightbox } from './ui/lightbox.js';
 import { initImageEvents, markLoaded } from './ui/image.js';
 import { initHeaderAutoHide } from './ui/header.js';
+import { initMobileViewport } from './ui/mobile-viewport.js';
 import { initFavoritesBadge } from './favorites.js';
 import { html, mount } from './html.js';
 
@@ -46,6 +47,7 @@ async function route(base, { first = false } = {}) {
   if (seq !== routeSeq) return;
   const swap = () => {
     current?.instance?.destroy?.();
+    document.documentElement.classList.remove('header-away');
     document.body.removeAttribute('style');
     document.body.dataset.view = r.view;
     app.replaceChildren();
@@ -67,6 +69,7 @@ async function route(base, { first = false } = {}) {
 }
 
 async function boot() {
+  initMobileViewport();
   initTheme(document.querySelector('.theme-toggle'));
   initHeaderAutoHide(document.querySelector('.site-header'));
   initImageEvents();
